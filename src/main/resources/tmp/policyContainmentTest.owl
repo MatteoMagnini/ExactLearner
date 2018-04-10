@@ -1,0 +1,143 @@
+Prefix: : <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#>
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: policyContainmentTest: <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#>
+
+
+
+Ontology: <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl>
+
+
+Annotations: 
+    rdfs:comment "This is an example ontology with some toy WS-Policies expressed as OWL Classes."
+
+AnnotationProperty: rdfs:comment
+
+    
+ObjectProperty: testProperty
+
+    Domain: 
+        Reliable
+    
+    
+ObjectProperty: testSubSubProperty
+
+    SubPropertyOf: 
+        testSubProperty
+    
+    
+ObjectProperty: testSubProperty
+
+    SubPropertyOf: 
+        testProperty
+    
+    
+Class: Policy
+
+    
+Class: Retry-Until-SucceedUsernamePolicy
+
+    EquivalentTo: 
+        Retry-Until-Succeed
+         and UsernameToken
+    
+    SubClassOf: 
+        Policy
+    
+    
+Class: IncoherentPolicy
+
+    EquivalentTo: 
+        Retry-On-FailureUsernamePolicy
+         and Retry-Until-SucceedUsernamePolicy
+    
+    SubClassOf: 
+        Policy
+    
+    
+Class: GeneralReliabilityKerberosPolicy
+
+    SubClassOf: 
+        Policy
+    
+    
+Class: UsernameToken
+
+    SubClassOf: 
+        SecurityTokenType
+    
+    
+Class: X509
+
+    SubClassOf: 
+        SecurityTokenType
+    
+    
+Class: SecurityTokenType
+
+    
+Class: GeneralReliabilityUsernamePolicy
+
+    EquivalentTo: 
+        Reliable
+         and UsernameToken
+    
+    SubClassOf: 
+        Policy
+    
+    DisjointWith: 
+        Messaging
+    
+    
+Class: Reliable
+
+    SubClassOf: 
+        Messaging
+    
+    
+Class: Retry-On-FailureUsernamePolicy
+
+    EquivalentTo: 
+        Retry-On-Failure
+         and UsernameToken
+    
+    SubClassOf: 
+        Policy
+    
+    
+Class: Messaging
+
+    DisjointWith: 
+        GeneralReliabilityUsernamePolicy, Kerberos
+    
+    
+Class: ExactlyOneExamplePolicy
+
+    SubClassOf: 
+        Policy
+    
+    
+Class: Retry-On-Failure
+
+    SubClassOf: 
+        Reliable
+    
+    
+Class: Kerberos
+
+    SubClassOf: 
+        SecurityTokenType
+    
+    DisjointWith: 
+        Messaging
+    
+    
+Class: Retry-Until-Succeed
+
+    SubClassOf: 
+        Reliable
+    
+    

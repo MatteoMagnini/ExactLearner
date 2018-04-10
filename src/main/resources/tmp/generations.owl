@@ -1,0 +1,203 @@
+Prefix: : <http://www.owl-ontologies.com/generations.owl#>
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: owl2xml: <http://www.w3.org/2006/12/owl2-xml#>
+Prefix: generations: <http://www.owl-ontologies.com/generations.owl#>
+
+
+
+Ontology: <http://www.owl-ontologies.com/generations.owl>
+
+
+Annotations: 
+    owl:versionInfo "An example ontology created by Matthew Horridge"^^xsd:string
+
+AnnotationProperty: owl:versionInfo
+
+    
+ObjectProperty: hasChild
+
+    InverseOf: 
+        hasParent
+    
+    
+ObjectProperty: hasSibling
+
+    Characteristics: 
+        Symmetric
+    
+    
+ObjectProperty: hasParent
+
+    InverseOf: 
+        hasChild
+    
+    
+ObjectProperty: hasSex
+
+    Characteristics: 
+        Functional
+    
+    Range: 
+        Sex
+    
+    
+Class: GrandMother
+
+    EquivalentTo: 
+        Person
+         and (hasChild some 
+            (Person
+             and (hasChild some Person)))
+         and (hasSex value FemaleSex)
+    
+    
+Class: owl:Thing
+
+    
+Class: Son
+
+    EquivalentTo: 
+        Person
+         and (hasParent some Person)
+         and (hasSex value MaleSex)
+    
+    
+Class: Female
+
+    EquivalentTo: 
+        hasSex value FemaleSex
+    
+    
+Class: Father
+
+    EquivalentTo: 
+        Person
+         and (hasChild some Person)
+         and (hasSex value MaleSex)
+    
+    
+Class: Child
+
+    SubClassOf: 
+        Person
+    
+    
+Class: Person
+
+    
+Class: Brother
+
+    EquivalentTo: 
+        Person
+         and ((hasSibling some Person)
+         and (hasSex value MaleSex))
+    
+    
+Class: Parent
+
+    EquivalentTo: 
+        Person
+         and (hasChild some Person)
+    
+    
+Class: Daughter
+
+    EquivalentTo: 
+        Person
+         and (hasParent some Person)
+         and (hasSex value FemaleSex)
+    
+    
+Class: Man
+
+    EquivalentTo: 
+        Person
+         and (hasSex value MaleSex)
+    
+    
+Class: Mother
+
+    EquivalentTo: 
+        Person
+         and (hasChild some Person)
+         and (hasSex value FemaleSex)
+    
+    
+Class: GrandParent
+
+    EquivalentTo: 
+        Person
+         and (hasChild some 
+            (Person
+             and (hasChild some Person)))
+    
+    
+Class: Sex
+
+    EquivalentTo: 
+        {FemaleSex , MaleSex}
+    
+    
+Class: Sister
+
+    EquivalentTo: 
+        Person
+         and (hasSibling some Person)
+         and (hasSex value FemaleSex)
+    
+    
+Class: OffSpring
+
+    EquivalentTo: 
+        Person
+         and (hasParent some Person)
+    
+    
+Class: Woman
+
+    EquivalentTo: 
+        Person
+         and (hasSex value FemaleSex)
+    
+    
+Class: Male
+
+    EquivalentTo: 
+        hasSex value MaleSex
+    
+    
+Class: Sibling
+
+    EquivalentTo: 
+        Person
+         and (hasSibling some Person)
+    
+    
+Class: GrandFather
+
+    EquivalentTo: 
+        Person
+         and (hasChild some 
+            (Person
+             and (hasChild some Person)))
+         and (hasSex value MaleSex)
+    
+    
+Individual: MaleSex
+
+    Types: 
+        Sex,
+        owl:Thing
+    
+    
+Individual: FemaleSex
+
+    Types: 
+        Sex,
+        owl:Thing
+    
+    

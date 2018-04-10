@@ -1,0 +1,4 @@
+//Game Settings
+Player_1_Name="P1";
+Player_2_Name="P2";
+Default_Difficulty="M"; // E = Easy, M = Medium, H = Hard

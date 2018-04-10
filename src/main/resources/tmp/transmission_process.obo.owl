@@ -1,0 +1,321 @@
+Prefix: : <http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/transmission_process.obo#>
+Prefix: go: <http://www.geneontology.org/go#>
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+
+
+Ontology: <http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/transmission_process.obo>
+
+
+Annotations: 
+    go:default-namespace "transmission_process",
+    go:format-version "1.0",
+    go:date "06:02:2008 14:52",
+    go:auto-generated-by "OBO-Edit 1.101",
+    go:saved-by "Lynn"
+
+AnnotationProperty: go:default-namespace
+
+    
+AnnotationProperty: go:date
+
+    
+AnnotationProperty: go:is_obsolete
+
+    
+AnnotationProperty: go:auto-generated-by
+
+    
+AnnotationProperty: go:format-version
+
+    
+AnnotationProperty: rdfs:label
+
+    
+AnnotationProperty: go:exact_synonym
+
+    
+AnnotationProperty: go:def
+
+    
+AnnotationProperty: go:saved-by
+
+    
+Datatype: rdf:PlainLiteral
+
+    
+Class: go:TRANS_0000017
+
+    Annotations: 
+        go:is_obsolete "true",
+        rdfs:label "not curated"
+    
+    
+Class: go:TRANS_0000016
+
+    Annotations: 
+        go:is_obsolete "true",
+        rdfs:label "undocumented"
+    
+    
+Class: go:TRANS_0000015
+
+    Annotations: 
+        go:def "\"Vector-borne gastro-intestinal transmission is an indirect vector-borne transmission process during which the pathogen is transported, from a reservoir, source or host to another host, within the vector and undergoes part of it's lifecycle in the intermediate host.\" [REF:lschriml \"Lynn Schriml <lschriml@som.umaryland.edu>\"]",
+        go:exact_synonym "\"biologic transmission\" []",
+        rdfs:label "vector-borne gastro-intestinal"
+    
+    SubClassOf: 
+        go:TRANS_0000005
+    
+    
+Class: go:TRANS_0000014
+
+    Annotations: 
+        rdfs:label "vector-borne bite",
+        go:def "\"Vector-borne bite transmission is an indirect vector-borne transmission during which the pathogen is indirectly transferred by insect bites from a reservoir, source or host via a vector to another host.\" [REF:lschriml \"Lynn Schriml <lschriml@som.umaryland.edu>\"]"
+    
+    SubClassOf: 
+        go:TRANS_0000005
+    
+    
+Class: go:TRANS_0000013
+
+    Annotations: 
+        rdfs:label "vehicle-borne medical",
+        go:def "\"Vehicle-borne medical transmission is an indirect vehicle-borne transmission process during which the pathogen is indirectly transferred from a reservoir, source or host to another host by biological products including: blood, serum, plasma, tissue, or organs.\" [REF:lschriml \"Lynn Schriml <lschriml@som.umaryland.edu>\"]"
+    
+    SubClassOf: 
+        go:TRANS_0000010
+    
+    
+Class: go:TRANS_0000012
+
+    Annotations: 
+        go:def "\"Vehicle-borne ingestion transmission is an indirect vehicle-borne transmission process during which the pathogen is indirectly transferred from a reservoir, source or host to another host by ingestion of fluids or foods or food products including: food, water, milk, or meat products.\" [REF:lschriml \"Lynn Schriml <lschriml@som.umaryland.edu>\"]",
+        rdfs:label "vehicle-borne ingestion"
+    
+    SubClassOf: 
+        go:TRANS_0000010
+    
+    
+Class: go:TRANS_0000011
+
+    Annotations: 
+        rdfs:label "vehicle-borne fomite",
+        go:def "\"Vehicle-borne fomite transmission is an indirect vehicle-borne transmission process during which the pathogen is indirectly transferred from a reservoir, source or host to another host by inanimate objects including: medical instruments, cloth, fur, metal or plastic utensils.\" [REF:lschriml \"Lynn Schriml <lschriml@som.umaryland.edu>\"]"
+    
+    SubClassOf: 
+        go:TRANS_0000010
+    
+    
+Class: go:TRANS_0000010
+
+    Annotations: 
+        rdfs:label "vehicle-borne",
+        go:def "\"Vehicle-borne transmission is an indirect transmission process during which the pathogen is indirectly transferred from a reservoir, source or host to another host by inanimate intermediary vehicle objects.\" [REF:lschriml \"Lynn Schriml <lschriml@som.umaryland.edu>\", URL:http\\://www2a.cdc.gov/phtn/catalog/pdf-file/Epi_Course.pdf]"
+    
+    SubClassOf: 
+        go:TRANS_0000002
+    
+    
+Class: go:TRANS_0000009
+
+    Annotations: 
+        rdfs:label "airborne",
+        go:def "\"Airborne transmission is an indirect transmission process during which the pathogen is indirectly transferred from a reservoir, source or host to another host while suspended in the air as dust.\" [REF:lschriml \"Lynn Schriml <lschriml@som.umaryland.edu>\"]"
+    
+    SubClassOf: 
+        go:TRANS_0000002
+    
+    
+Class: go:TRANS_0000008
+
+    Annotations: 
+        rdfs:label "droplet spread",
+        go:def "\"Droplet spread transmission is a direct transmission process during which the pathogen is transmitted from a reservoir, source or host to another host by spray of aerosols over a short distance, spray from sneezing, coughing or talking.\" [REF:lschriml \"Lynn Schriml <lschriml@som.umaryland.edu>\"]"
+    
+    SubClassOf: 
+        go:TRANS_0000001
+    
+    
+Class: go:TRANS_0000007
+
+    Annotations: 
+        go:def "\"Contact transmission is a direct transmission process during which the pathogen is transmitted   from a reservoir, source or host to another host by kissing, skin-to-skin contact, sexual intercourse, or by contact with soil or vegetation containing the pathogen.\" [REF:lschriml \"Lynn Schriml <lschriml@som.umaryland.edu>\"]",
+        rdfs:label "contact"
+    
+    SubClassOf: 
+        go:TRANS_0000001
+    
+    
+Class: go:TRANS_0000006
+
+    Annotations: 
+        go:def "\"Congenital transmission is a direct transmission process during which the pathogen is transmitted directly from mother to child at or around the time of birth.\" [Gemina:lschriml \"Lynn Schriml <lschriml@som.umaryland.edu>\", URL:http\\://www.m-w.com/dictionary/congenital]",
+        go:exact_synonym "\"mother-to-child transmission\" []",
+        rdfs:label "congenital"
+    
+    SubClassOf: 
+        go:TRANS_0000001
+    
+    
+Class: go:TRANS_0000005
+
+    Annotations: 
+        go:def "\"Vector-borne transmission is an indirect transmission process during which the pathogen is indirectly transferred from a reservoir, source or host via an animate intermediary vector to another host. Most vectors are arthropods such as mosquitoes, fleas, and ticks.\" [REF:lschriml \"Lynn Schriml <lschriml@som.umaryland.edu>\", URL:http\\://www2a.cdc.gov/phtn/catalog/pdf-file/Epi_Course.pdf]",
+        rdfs:label "vector-borne"
+    
+    SubClassOf: 
+        go:TRANS_0000002
+    
+    
+Class: go:TRANS_0000027
+
+    Annotations: 
+        go:def "\"Arachnid borne transmission is an arthropod vector-borne transmission process during which the pathogen is indirectly transferred from a reservoir, source or host via an intermediary arthropod vector such as a tick to another host.\" [Gemina:lschriml \"Lynn Schriml <lschriml@som.umaryland.edu>\", wiki:http\\://en.wikipedia.org/wiki/Vector_%28disease%29]",
+        rdfs:label "arachnid borne"
+    
+    SubClassOf: 
+        go:TRANS_0000019
+    
+    
+Class: go:TRANS_0000004
+
+    Annotations: 
+        rdfs:label "unknown",
+        go:is_obsolete "true"
+    
+    
+Class: go:TRANS_0000026
+
+    Annotations: 
+        go:exact_synonym "\"Guinea worm borne\" []",
+        go:def "\"Dracunculus medinensis borne transmission is a copepod borne transmission process during which the pathogen is indirectly transferred from a reservoir, source or host via an animate intermediary copepod vector of the species Dracunculus medinensis to another host.\" [Gemina:lschriml \"Lynn Schriml <lschriml@som.umaryland.edu>\", URL:http\\://www2a.cdc.gov/phtn/catalog/pdf-file/Epi_Course.pdf]",
+        rdfs:label "Dracunculus medinensis borne"
+    
+    SubClassOf: 
+        go:TRANS_0000025
+    
+    
+Class: go:TRANS_0000003
+
+    Annotations: 
+        go:def "\"Mechanical transmission is an indirect vector-borne transmission process during which the pathogen is indirectly transferred from a reservoir, source or host to another host by being transported on the external surface of the vector.\" [REF:lschriml \"Lynn Schriml <lschriml@som.umaryland.edu>\"]",
+        rdfs:label "mechanical"
+    
+    SubClassOf: 
+        go:TRANS_0000005
+    
+    
+Class: go:TRANS_0000025
+
+    Annotations: 
+        go:def "\"Copepod borne transmission is a vector-borne transmission process during which the pathogen is indirectly transferred from a reservoir, source or host via an animate intermediary copepod vector to another host.\" [Gemina:lschriml \"Lynn Schriml <lschriml@som.umaryland.edu>\", URL:http\\://www2a.cdc.gov/phtn/catalog/pdf-file/Epi_Course.pdf]",
+        rdfs:label "copepod borne"
+    
+    SubClassOf: 
+        go:TRANS_0000015
+    
+    
+Class: go:TRANS_0000002
+
+    Annotations: 
+        go:def "\"Indirect transmission is a transmission process during which the pathogen is indirectly transferred from a reservoir, source or host to another host by intermediary vehicles, vectors or as airborne dust particles.\" [Gemina:lschriml \"Lynn Schriml <lschriml@som.umaryland.edu>\", URL:http\\://www2a.cdc.gov/phtn/catalog/pdf-file/Epi_Course.pdf]",
+        rdfs:label "indirect"
+    
+    SubClassOf: 
+        go:TRANS_0000000
+    
+    
+Class: go:TRANS_0000024
+
+    Annotations: 
+        go:def "\"Tick borne transmission is an arachnid borne transmission process during which the pathogen is indirectly transferred from a reservoir, source or host via an intermediary tick vector to another host.\" [Gemina:lschriml \"Lynn Schriml <lschriml@som.umaryland.edu>\", wiki:http\\://en.wikipedia.org/wiki/Tick, wiki:http\\://en.wikipedia.org/wiki/Vector_%28disease%29]",
+        rdfs:label "tick borne"
+    
+    SubClassOf: 
+        go:TRANS_0000027
+    
+    
+Class: go:TRANS_0000001
+
+    Annotations: 
+        go:def "\"Direct transmission is a transmission process that is the means during which the pathogen is transmitted immediately from a reservoir, source or host to another host.\" [Gemina:lschriml \"Lynn Schriml <lschriml@som.umaryland.edu>\", URL:http\\://www2a.cdc.gov/phtn/catalog/pdf-file/Epi_Course.pdf]",
+        rdfs:label "direct"
+    
+    SubClassOf: 
+        go:TRANS_0000000
+    
+    
+Class: go:TRANS_0000023
+
+    Annotations: 
+        go:def "\"Flea borne transmission is an insect borne transmission process during which the pathogen is indirectly transferred from a reservoir, source or host via an intermediary flea vector to another host.\" [Gemina:lschriml \"Lynn Schriml <lschriml@som.umaryland.edu>\", wiki:http\\://en.wikipedia.org/wiki/Flea]",
+        rdfs:label "flea borne"
+    
+    SubClassOf: 
+        go:TRANS_0000020
+    
+    
+Class: go:TRANS_0000000
+
+    Annotations: 
+        rdfs:label "transmission process",
+        go:def "\"A process that is the means during which the pathogen is transmitted directly or indirectly from its natural reservoir, a susceptible host or source to a new host.\" [URL:http\\://www2a.cdc.gov/phtn/catalog/pdf-file/Epi_Course.pdf]"
+    
+    
+Class: go:TRANS_0000022
+
+    Annotations: 
+        rdfs:label "Anopheles gambiae borne",
+        go:def "\"Anopheles gambiae borne transmission is a mosquito borne transmission process during which the pathogen is indirectly transferred from a reservoir, source or host via an intermediary mosquito vector of the species Anopheles gambiae to another host.\" [Gemina:lschriml \"Lynn Schriml <lschriml@som.umaryland.edu>\", wiki:http\\://en.wikipedia.org/wiki/Mosquito]"
+    
+    SubClassOf: 
+        go:TRANS_0000021
+    
+    
+Class: go:TRANS_0000021
+
+    Annotations: 
+        rdfs:label "mosquito borne",
+        go:def "\"Mosquito borne transmission is an insect borne transmission process during which the pathogen is indirectly transferred from a reservoir, source or host via an intermediary mosquito vector to another host.\" [Gemina:lschriml \"Lynn Schriml <lschriml@som.umaryland.edu>\", wiki:http\\://en.wikipedia.org/wiki/Mosquito]"
+    
+    SubClassOf: 
+        go:TRANS_0000020
+    
+    
+Class: go:TRANS_0000020
+
+    Annotations: 
+        go:def "\"Insect borne transmission is an arthropod vector-borne transmission process during which the pathogen is indirectly transferred from a reservoir, source or host via an intermediary insect vector such as a flea or mosquito to another host.\" [Gemina:lschriml \"Lynn Schriml <lschriml@som.umaryland.edu>\", URL:http\\://www.cals.ncsu.edu/course/ent425/text18/humanvectors.html]",
+        rdfs:label "insect borne"
+    
+    SubClassOf: 
+        go:TRANS_0000019
+    
+    
+Class: go:TRANS_0000019
+
+    Annotations: 
+        rdfs:label "arthropod borne",
+        go:def "\"Arthropod borne transmission is a vector-borne transmission process during which the pathogen is indirectly transferred from a reservoir, source or host via an animate intermediary arthropod vector to another host.\" [Gemina:lschriml \"Lynn Schriml <lschriml@som.umaryland.edu>\", URL:http\\://www2a.cdc.gov/phtn/catalog/pdf-file/Epi_Course.pdf]"
+    
+    SubClassOf: 
+        go:TRANS_0000005
+    
+    
+Class: go:TRANS_0000018
+
+    Annotations: 
+        go:def "\"Placental transmission is a congenital transmission process during which the pathogen is transmitted directly from mother to child across the placental barrier.\" [REF:lschriml \"Lynn Schriml <lschriml@som.umaryland.edu>\", URL:http\\://www.nlm.nih.gov/medlineplus/mplusdictionary.html]",
+        rdfs:label "placental"
+    
+    SubClassOf: 
+        go:TRANS_0000006
+    
+    

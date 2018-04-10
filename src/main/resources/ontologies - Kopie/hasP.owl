@@ -1,0 +1,183 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY generation "http://www.semanticweb.org/ontologies/2014/3/generation.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/ontologies/2014/3/generation.owl#"
+     xml:base="http://www.semanticweb.org/ontologies/2014/3/generation.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:generation="http://www.semanticweb.org/ontologies/2014/3/generation.owl#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ontologies/2014/3/generation.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/generation.owl#gender -->
+
+    <owl:ObjectProperty rdf:about="&generation;gender"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/generation.owl#hasChild -->
+
+    <owl:ObjectProperty rdf:about="&generation;hasChild"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/generation.owl#hasParent -->
+
+    <owl:ObjectProperty rdf:about="&generation;hasParent"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/generation.owl#Female -->
+
+    <owl:Class rdf:about="&generation;Female"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/generation.owl#GrandMother -->
+
+    <owl:Class rdf:about="&generation;GrandMother">
+        <rdfs:subClassOf rdf:resource="&generation;GrandParent"/>
+        <rdfs:subClassOf rdf:resource="&generation;Woman"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/generation.owl#GrandParent -->
+
+    <owl:Class rdf:about="&generation;GrandParent">
+        <rdfs:subClassOf rdf:resource="&generation;Parent"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&generation;hasChild"/>
+                <owl:someValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&generation;hasChild"/>
+                        <owl:someValuesFrom rdf:resource="&generation;Person"/>
+                    </owl:Restriction>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/generation.owl#Mother -->
+
+    <owl:Class rdf:about="&generation;Mother">
+        <rdfs:subClassOf rdf:resource="&generation;Parent"/>
+        <rdfs:subClassOf rdf:resource="&generation;Woman"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/generation.owl#Parent -->
+
+    <owl:Class rdf:about="&generation;Parent">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&generation;Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&generation;hasChild"/>
+                        <owl:someValuesFrom rdf:resource="&generation;Person"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&generation;Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/generation.owl#Person -->
+
+    <owl:Class rdf:about="&generation;Person">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&generation;hasParent"/>
+                <owl:someValuesFrom rdf:resource="&generation;Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+        <owl:Class>
+	
+            <owl:intersectionOf rdf:parseType="Collection">
+				<owl:Restriction>
+					<owl:onProperty rdf:resource="&generation;hasParent"/>
+					<owl:someValuesFrom rdf:resource="&generation;Male"/>
+				</owl:Restriction>
+				<owl:Restriction>
+					<owl:onProperty rdf:resource="&generation;hasParent"/>
+					<owl:someValuesFrom rdf:resource="&generation;Female"/>
+				</owl:Restriction>
+			</owlintersectionOf>
+		<rdfs:subClassOf>
+			<owl:Description rdf:resource="&generation;Person"/>
+		</rdfs:subClassOf>
+		</owl:Class>
+		
+    <!-- http://www.semanticweb.org/ontologies/2014/3/generation.owl#Woman -->
+
+    <owl:Class rdf:about="&generation;Woman">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&generation;Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&generation;gender"/>
+                        <owl:someValuesFrom rdf:resource="&generation;Female"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

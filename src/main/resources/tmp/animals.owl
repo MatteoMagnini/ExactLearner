@@ -1,0 +1,115 @@
+Prefix: : <http://www.semanticweb.org/ontologies/2014/3/animals.owl#>
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: animals: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#>
+Prefix: owl2xml: <http://www.w3.org/2006/12/owl2-xml#>
+
+
+
+Ontology: <http://www.semanticweb.org/ontologies/2014/3/animals.owl>
+
+
+ObjectProperty: lays
+
+    
+ObjectProperty: eats
+
+    
+ObjectProperty: has_part
+
+    
+ObjectProperty: lives_in
+
+    
+Class: Egg
+
+    
+Class: Meat
+
+    
+Class: Carnivore
+
+    EquivalentTo: 
+        Animal
+         and (eats some Meat)
+    
+    
+Class: Water
+
+    
+Class: Animal
+
+    
+Class: Reptile
+
+    SubClassOf: 
+        Carnivore
+         and (lays some Egg)
+    
+    
+Class: Plant
+
+    
+Class: Vertebrate
+
+    EquivalentTo: 
+        Animal
+         and (has_part some Backbone)
+    
+    
+Class: Cat
+
+    SubClassOf: 
+        Carnivore
+         and Mammal
+    
+    
+Class: Fish
+
+    SubClassOf: 
+        Vertebrate,
+        Animal
+         and (lives_in some Water)
+    
+    
+Class: Mammal
+
+    SubClassOf: 
+        Vertebrate
+    
+    
+Class: Herbivore
+
+    EquivalentTo: 
+        Animal
+         and (eats some Plant)
+    
+    
+Class: Leg
+
+    
+Class: Elephant
+
+    SubClassOf: 
+        Herbivore
+         and Mammal
+    
+    
+Class: Bird
+
+    SubClassOf: 
+        Vertebrate,
+        lays some Egg,
+        (has_part some Leg)
+         and (has_part some Wing)
+    
+    
+Class: Backbone
+
+    
+Class: Wing
+
+    

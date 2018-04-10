@@ -1,0 +1,1250 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://ontology.dumontierlab.com/biological-measure-primitive#"
+     xml:base="http://ontology.dumontierlab.com/biological-measure-primitive"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:ontology="http://ontology.dumontierlab.com/"
+     xmlns:ontology2="http://ontology.dumontierlab.com/24">
+    <owl:Ontology rdf:about="http://ontology.dumontierlab.com/biological-measure-primitive">
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Michel Dumontier</dc:creator>
+        <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Qualitative and quantitative measures of biological entities and their components.</dc:description>
+        <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">biological measure ontology (primitive)</dc:title>
+        <dc:language rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</dc:language>
+        <dc:publisher rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://dumontierlab.com</dc:publisher>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#versionInfo"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/publisher"/>
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#backwardCompatibleWith"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/language"/>
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#comment"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontology.dumontierlab.com/hasValue -->
+
+    <owl:DatatypeProperty rdf:about="http://ontology.dumontierlab.com/hasValue"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontology.dumontierlab.com/24HourBloodPressure -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/24HourBloodPressure">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">24 hour blood pressure</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/BloodPressure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A study recording the blood pressure at intervals during a 24-hour period.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/ASAAConcentration -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/ASAAConcentration">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASAA Concentration</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/ASAAMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The concentration of a family of apolipoproteins associated with HDL in plasma</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/ASAAConcentrationDecrease -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/ASAAConcentrationDecrease">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASAA concentration decrease</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/ASAAConcentrationDifference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/ASAAConcentrationDifference -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/ASAAConcentrationDifference">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASAA concentration difference</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/ASAAMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The difference in ASAA concentration.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/ASAAConcentrationIncrease -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/ASAAConcentrationIncrease">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASAA concentration increase</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/ASAAConcentrationDifference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/ASAAMeasure -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/ASAAMeasure">
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/MolecularMeasure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/AirwayResponsivenessUsingMethacholine -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/AirwayResponsivenessUsingMethacholine">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">airway responsiveness using methacholine</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/PulmonaryFunctionMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A test measuring the dlnchial contractility of the airways after administration of Methacholine.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/AnxietyMeasure -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/AnxietyMeasure">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anxiety measure</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/CognitiveMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A measure of anxiety</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/AsthmaFrequency -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/AsthmaFrequency">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">asthma frequency</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/DiseaseFrequency"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The frequency of asthma during some time interval.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/BiologicalMeasure -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/BiologicalMeasure">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">biological measure</rdfs:label>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Measurements applied to biological entities and their components.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/BiophysicalMeasure -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/BiophysicalMeasure">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">physical measure</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/BiologicalMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Measurements of a physical nature on an individual.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/BloodPressure -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/BloodPressure">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">blood pressure</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/BiophysicalMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Measurement is divided into systolic (pressure during contraction of the heart) and diastolic (pressure during relaxation phase).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/BloodSerumProteinCount -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/BloodSerumProteinCount">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">blood serum protein count</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/TissueMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Measurements on proteins in blood serum.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/BodyMassIndex -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/BodyMassIndex">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">body mass index</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/BodyMassIndexMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Body weight in kilograms divided by the height in meters squared.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/BodyMassIndexDecrease -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/BodyMassIndexDecrease">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">body mass index decrease</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/BodyMassIndexDifference"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a measured decrease in body mass index.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/BodyMassIndexDifference -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/BodyMassIndexDifference">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">body mass index difference</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/BodyMassIndexMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a difference in body mass index.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/BodyMassIndexIncrease -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/BodyMassIndexIncrease">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">body mass index increase</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/BodyMassIndexDifference"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a measured increase in body mass index.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/BodyMassIndexMeasure -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/BodyMassIndexMeasure">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a measure of body mass index</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/BiophysicalMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A measure of body mass index.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/BoneMineralDensity -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/BoneMineralDensity">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bone mineral density</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/TissueMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A nuclear medicine test that estimates the mineralization of bone in a subject.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/CellCount -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/CellCount">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell count</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/TissueMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E.g., CD4 cell counts</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/ChildDepressionMeasure -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/ChildDepressionMeasure">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">child depression measure</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/DepressionMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A measure of the severity of depression in children.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/ChildDepressionScore -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/ChildDepressionScore">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">child depression score</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/ChildDepressionMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A score that indicates the severity of depression in children.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/ChildDepressionScoreDifference -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/ChildDepressionScoreDifference">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">child depression score difference</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/ChildDepressionMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The difference in scores for child depression.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/ClinicalOutcomeMeasure -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/ClinicalOutcomeMeasure">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">clinical outcome measure</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/BiologicalMeasure"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The outcome or outcome assessment of a patient at the end of patient care.</owl:versionInfo>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/CoagulationProfile -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/CoagulationProfile">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">coagulation profile</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/TissueMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Measures the speed of blood coagulation at different steps of the coagulation pathway.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/CognitiveMeasure -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/CognitiveMeasure">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cognitive measure</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/BiologicalMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Assessments of the mental status of a subject.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/DailyBloodPressure -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/DailyBloodPressure">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">daily blood pressure</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/BloodPressure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The blood pressure, measured daily.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/DecreasedGeneExpression -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/DecreasedGeneExpression">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased gene expression</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/GeneExpressionDifference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/DepressionMeasure -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/DepressionMeasure">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">depression measure</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/CognitiveMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A measure of depression.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/DiseaseFrequency -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/DiseaseFrequency">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">disease frequency</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/ClinicalOutcomeMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The occurence of disease during some time interval.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/DiseaseSusceptibilityOdds -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/DiseaseSusceptibilityOdds">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">disease susceptibility odds</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/ClinicalOutcomeMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The odds of developing a disease.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/Dose -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/Dose">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dose</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/PharmacokineticMeasure"/>
+        <rdfs:comment>The amount of a substance to which a person is exposed over some time period.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/DoseFrequency -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/DoseFrequency">
+        <rdfs:label>dose frequency</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/PharmacokineticMeasure"/>
+        <rdfs:comment>The frequency at which the dose is administered.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/DrugClearance -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/DrugClearance">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">drug clearance</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/PharmacokineticMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The rate of elimination of a drug, metabolite, or other substance from the body or organ of interest.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/DrugEfficacy -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/DrugEfficacy">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">drug efficacy</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/DrugEfficacyMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A measure of the drug to realize a  maximum therapeutic response.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/DrugEfficacyMeasure -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/DrugEfficacyMeasure">
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/PharmacodynamicMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A measure of drug efficacy</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/ERVisitFrequency -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/ERVisitFrequency">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ER visit frequency</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/ClinicalOutcomeMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The frequency of patient visits to the emergency room  during some time interval.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/ElectrocardiogramQTInterval -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/ElectrocardiogramQTInterval">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">electrocardiogram QT interval</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/BiophysicalMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An recording of the electrical activity of the heart contraction.Time from electrocardiogram Q wave to the end of the T wave corresponding to electrical systole.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/ErythromycinClearanceMeasure -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/ErythromycinClearanceMeasure">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">erythomycin clearance measure</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/MetabolicMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A metabolic measure of the clearance of Erythromycin.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/EventFreeSurvivalTime -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/EventFreeSurvivalTime">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">event free survival time</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/ClinicalOutcomeMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The length of time a subject lives without having one or more complications of a disease.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/ExerciseResponse -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/ExerciseResponse">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">exercise response</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/BiophysicalMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Physiological variations that occur when a subject partakes in a defined exercise activity.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/ForcedExperiatoryVolume -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/ForcedExperiatoryVolume">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">forced experiatory volume</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/PulmonaryFunctionMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Forced Expiratory Volume in 1 second.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/ForcedVitalCapacity -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/ForcedVitalCapacity">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">forced vital capacity</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/PulmonaryFunctionMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Forced Vital Capacity. This is the total amount of air a subject can blow out forcefully.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/Gender -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/Gender">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gender</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/TaxonomicMeasure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/GeneExpression -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/GeneExpression">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gene expression</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/GeneExpressionMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A measure of the levels of mRNA produced from a gene.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/GeneExpressionDifference -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/GeneExpressionDifference">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gene expression difference</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/GeneExpressionMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A measure of the change or difference in gene expression.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/GeneExpressionMeasure -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/GeneExpressionMeasure">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A measure of gene expression.</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/MolecularMeasure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/GenotypeMeasure -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/GenotypeMeasure">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">genotype measure</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/BiologicalMeasure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/HamiltonAnxietyScore -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/HamiltonAnxietyScore">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hamilton anxiety score</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/AnxietyMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A measure of the severity of anxiety</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/HamiltonAnxietyScoreDifference -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/HamiltonAnxietyScoreDifference">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hamilton anxiety score difference</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/AnxietyMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The difference in hamilton anxiety score.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/HamiltonDepressionMeasure -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/HamiltonDepressionMeasure">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hamilton depression measure</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/DepressionMeasure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/HamiltonDepressionScore -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/HamiltonDepressionScore">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hamilton depression score</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/HamiltonDepressionMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A measure the severity of depression.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/HamiltonDepressionScoreDifference -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/HamiltonDepressionScoreDifference">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hamilton depression score difference</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/HamiltonDepressionMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The difference in hamilton depression score.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/HighDrugEfficacy -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/HighDrugEfficacy">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">high drug efficacy</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/DrugEfficacy"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A measure of a drug to have great ability in realizing a therapeutic potential.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/HighHamiltonDepressionScore -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/HighHamiltonDepressionScore">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">high hamilton depression score</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/HamiltonDepressionScore"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/HighMontgomeryAsbergDepressionRating -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/HighMontgomeryAsbergDepressionRating">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">high montgomery asberg depression rating</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/MontgomeryAsbergDepressionRating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/HighReductionInChildDepressionScore -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/HighReductionInChildDepressionScore">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">high reduction in child depression score</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/ChildDepressionScoreDifference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/HighReductionInHamiltonAnxietyScore -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/HighReductionInHamiltonAnxietyScore">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">high reduction in hamilton anxiety score</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/HamiltonAnxietyScoreDifference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/HighReductionInHamiltonDepressionScore -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/HighReductionInHamiltonDepressionScore">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">high reduction in hamilton depression score</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/HamiltonDepressionScoreDifference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/HighReductionInMontgomeryAsbergDepressionRating -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/HighReductionInMontgomeryAsbergDepressionRating">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">high reduction in montgomery asberg depression rating</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/MontgomeryAsbergDepressionRatingDifference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/HighRemission -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/HighRemission">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">high remission</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/RemissionFrequency"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/HighRemissionOddsRatio -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/HighRemissionOddsRatio">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">high remission odds ratio</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/RemissionOddsRatio"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/HigherDiseaseSusceptibiltyOdds -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/HigherDiseaseSusceptibiltyOdds">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">higher disease susceptibility odds</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/DiseaseSusceptibilityOdds"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/HomocysteineLevel -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/HomocysteineLevel">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">homocysteine level</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/TissueMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The quantity or amount of homocysteine in the in plasma, CSF, or other fluids.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/IncreasedGeneExpression -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/IncreasedGeneExpression">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased gene expression</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/GeneExpressionDifference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/LipidProfile -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/LipidProfile">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lipid profile</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/TissueMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Includes total cholesterol, HDL-cholesterol (often called good cholesterol), LDL-cholesterol (often called bad cholesterol), and triglycerides, and associated computed parameters.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/LowDrugEfficacy -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/LowDrugEfficacy">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">low drug efficacy</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/DrugEfficacy"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A measure of a drug that is poor ability in realizing a therapeutic potential.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/LowHamiltonDepressionScore -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/LowHamiltonDepressionScore">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">low hamilton depression score</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/HamiltonDepressionScore"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/LowMontgomeryAsbergDepressionRating -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/LowMontgomeryAsbergDepressionRating">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">low montgomery asberg depression rating</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/MontgomeryAsbergDepressionRating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/LowReductionInChildDepressionScore -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/LowReductionInChildDepressionScore">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">low reduction in child depression score</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/ChildDepressionScoreDifference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/LowReductionInHamiltonAnxietyScore -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/LowReductionInHamiltonAnxietyScore">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">low reduction in hamilton anxiety score</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/HamiltonAnxietyScoreDifference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/LowReductionInHamiltonDepressionScore -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/LowReductionInHamiltonDepressionScore">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">low reduction in hamilton depression score</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/HamiltonDepressionScoreDifference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/LowReductionInMontgomeryAsbergDepressionRating -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/LowReductionInMontgomeryAsbergDepressionRating">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">low reduction in montgomery asberg depression rating</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/MontgomeryAsbergDepressionRatingDifference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/LowRemission -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/LowRemission">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">low remission</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/RemissionFrequency"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/LowRemissionOddsRatio -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/LowRemissionOddsRatio">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">low remission odds ratio</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/RemissionOddsRatio"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/LowerDiseaseSusceptibilityOdds -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/LowerDiseaseSusceptibilityOdds">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lower disease susceptibility odds</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/DiseaseSusceptibilityOdds"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/MetabolicMeasure -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/MetabolicMeasure">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">metabolic measure</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/BiologicalMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Measurement of the transformation of substances in the body.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/ModerateHamiltonDepressionScore -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/ModerateHamiltonDepressionScore">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">moderate hamilton depression score</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/HamiltonDepressionScore"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/ModerateMontgomeryAsbergDepressionRating -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/ModerateMontgomeryAsbergDepressionRating">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">moderate montgomery asberg depression rating</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/MontgomeryAsbergDepressionRating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/ModerateReductionInChildDepressionScore -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/ModerateReductionInChildDepressionScore">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">moderate reduction in child depression score</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/ChildDepressionScoreDifference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/ModerateReductionInHamiltonAnxietyScore -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/ModerateReductionInHamiltonAnxietyScore">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">moderate reduction in hamilton anxiety score</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/HamiltonAnxietyScoreDifference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/ModerateReductionInHamiltonDepressionScore -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/ModerateReductionInHamiltonDepressionScore">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">moderate reduction in hamilton depression score</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/HamiltonDepressionScoreDifference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/ModerateReductionInMontgomeryAsbergDepressionRating -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/ModerateReductionInMontgomeryAsbergDepressionRating">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">moderate reduction in montgomery asberg depression rating</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/MontgomeryAsbergDepressionRatingDifference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/ModerateRemission -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/ModerateRemission">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">moderate remission</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/RemissionFrequency"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/MolecularMeasure -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/MolecularMeasure">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">molecular measure</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/BiologicalMeasure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/MontgomeryAsbergDepressionMeasure -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/MontgomeryAsbergDepressionMeasure">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">montgomer asberg depression measure</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/DepressionMeasure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/MontgomeryAsbergDepressionRating -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/MontgomeryAsbergDepressionRating">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">montgomery asberg depression rating</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/MontgomeryAsbergDepressionMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A measure of antidepressant efficacy.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/MontgomeryAsbergDepressionRatingDifference -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/MontgomeryAsbergDepressionRatingDifference">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">montgomery asberg depression rating difference</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/MontgomeryAsbergDepressionMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The difference in montgomery asberg depression rating.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/MyocardialInfarctionFrequency -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/MyocardialInfarctionFrequency">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">myocardial infarction frequency</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/DiseaseFrequency"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The frequency of medical events or conditions subsequent to heart attacks.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/NeoplasmFrequency -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/NeoplasmFrequency">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neoplasm frequency</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/DiseaseFrequency"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The frequency of cancer development during some time interval.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/NormalGeneExpression -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/NormalGeneExpression">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">normal gene expression</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/GeneExpressionDifference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/PathogenCount -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/PathogenCount">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pathogen count</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/TissueMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E.g., viremia, fungemia, etc.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/PharmacodynamicMeasure -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/PharmacodynamicMeasure">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pharmacodynamic measure</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/BiologicalMeasure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/PharmacokineticMeasure -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/PharmacokineticMeasure">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pharmacokinetic measure</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/BiologicalMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The amount of chemical agent at their sites of biological effect.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/PlasmaDrugConcentration -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/PlasmaDrugConcentration">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">plasma drug concentration</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/PharmacokineticMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The quantity or amount of drug in the blood plasma.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/PopulationVariation -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/PopulationVariation">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">population variation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/GenotypeMeasure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/PulmonaryFunctionMeasure -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/PulmonaryFunctionMeasure">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pulmonary function measure</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/BiophysicalMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">These are laboratory tests related to lung function.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/QualityOfLife -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/QualityOfLife">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quality of life</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/ClinicalOutcomeMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The individuals&#8217; perceptions of their position in life, in the context of the cultural and value systems in which they live and in relation to their goals, expectations, standards and concerns.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/Race -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/Race">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">race</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/TaxonomicMeasure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/RemissionFrequency -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/RemissionFrequency">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">remission frequency</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/RemissionMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The occurence of abatement of symptoms during a time interval.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/RemissionMeasure -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/RemissionMeasure">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">remission measure</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/ClinicalOutcomeMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A measure of remission.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/RemissionOddsRatio -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/RemissionOddsRatio">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">remission odds ratio</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/RemissionMeasure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/ReninAngiotensinSystemMeasure -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/ReninAngiotensinSystemMeasure">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">renin/angiotensin system measure</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/TissueMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Measurements related to the renin/angiotensin system, such as Angiotensinogen, Angiotensin I/II, plasma renin, etc.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/Satiety -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/Satiety">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">satiety</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/SatietyMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The feeling of fullness and disappearance of appetite</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/SatietyDecrease -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/SatietyDecrease">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">satiety decrease</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/SatietyDifference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/SatietyDifference -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/SatietyDifference">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">satiety difference</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/SatietyMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The difference in satiety from one time to another.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/SatietyFrequency -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/SatietyFrequency">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">satiety frequency</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/SatietyMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The occurence of satiety during a time interval.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/SatietyIncrease -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/SatietyIncrease">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">satiety increase</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/SatietyDifference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/SatietyMeasure -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/SatietyMeasure">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">satiety measure</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/CognitiveMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A measure of the feeling of fullness and disappearance of appetite</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/SideEffectFrequency -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/SideEffectFrequency">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">side effect frequency</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/SideEffectMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The number of times a side effect occurs during some time interval.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/SideEffectMeasure -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/SideEffectMeasure">
+        <rdfs:label>side effect measure</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/ClinicalOutcomeMeasure"/>
+        <rdfs:comment>Measures of side effects.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/SideEffectRate -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/SideEffectRate">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">side effect rate</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/SideEffectMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The rate at which a side effect occurs when comparing one group (test) to another (control).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/SimilarDiseaseSusceptibilityOdds -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/SimilarDiseaseSusceptibilityOdds">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">similar disease susceptibility odds</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/DiseaseSusceptibilityOdds"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/SimilarRemissionOddsRatio -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/SimilarRemissionOddsRatio">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">similar remission odds ratio</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/RemissionOddsRatio"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/TaxonomicMeasure -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/TaxonomicMeasure">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">taxonomic measure</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/BiologicalMeasure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/TissueMeasure -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/TissueMeasure">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tissue measure</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/BiologicalMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Measurement of samples of blood or tissue from an individual.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/WeightLoss -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/WeightLoss">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">weight loss</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/WeigthDifference"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a measured decrease in weight.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/WeightMeasure -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/WeightMeasure">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">weigth measure</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/BiophysicalMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A measure of weight.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/Weigth -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/Weigth">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">weight</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/WeightMeasure"/>
+        <owl:backwardCompatibleWith rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The vertical force exerted by a mass as a result of gravity.</owl:backwardCompatibleWith>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/WeigthDifference -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/WeigthDifference">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">weight difference</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/WeightMeasure"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A measured difference in weight.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/WeigthGain -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/WeigthGain">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a measured increase in weight.</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">weigth gain</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/WeigthDifference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/ZeroDrugEfficacy -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/ZeroDrugEfficacy">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">zero drug efficacy</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/DrugEfficacy"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A measure of a drug that has zero ability in realizing a therapeutic potential.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/ZeroRemission -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/ZeroRemission">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">zero remission</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/RemissionFrequency"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.0.0.1450) http://owlapi.sourceforge.net -->

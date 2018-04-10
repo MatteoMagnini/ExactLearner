@@ -1,0 +1,1234 @@
+Prefix: : <http://ontology.dumontierlab.com/biological-measure-primitive#>
+Prefix: dc: <http://purl.org/dc/elements/1.1/>
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: ontology: <http://ontology.dumontierlab.com/>
+Prefix: ontology2: <http://ontology.dumontierlab.com/24>
+
+
+
+Ontology: <http://ontology.dumontierlab.com/biological-measure-primitive>
+
+
+Annotations: 
+    dc:title "biological measure ontology (primitive)"^^xsd:string,
+    dc:publisher "http://dumontierlab.com"^^xsd:string,
+    dc:description "Qualitative and quantitative measures of biological entities and their components."^^xsd:string,
+    dc:creator "Michel Dumontier"^^xsd:string,
+    dc:language "en"^^xsd:string
+
+AnnotationProperty: dc:publisher
+
+    
+AnnotationProperty: dc:description
+
+    
+AnnotationProperty: owl:versionInfo
+
+    
+AnnotationProperty: rdfs:label
+
+    
+AnnotationProperty: rdfs:comment
+
+    
+AnnotationProperty: dc:creator
+
+    
+AnnotationProperty: dc:language
+
+    
+AnnotationProperty: owl:backwardCompatibleWith
+
+    
+AnnotationProperty: dc:title
+
+    
+Datatype: xsd:string
+
+    
+Datatype: rdf:PlainLiteral
+
+    
+DataProperty: ontology:hasValue
+
+    
+Class: ontology:ChildDepressionScore
+
+    Annotations: 
+        rdfs:label "child depression score"^^xsd:string,
+        rdfs:comment "A score that indicates the severity of depression in children."^^xsd:string
+    
+    SubClassOf: 
+        ontology:ChildDepressionMeasure
+    
+    
+Class: ontology:MolecularMeasure
+
+    Annotations: 
+        rdfs:label "molecular measure"^^xsd:string
+    
+    SubClassOf: 
+        ontology:BiologicalMeasure
+    
+    
+Class: ontology:RemissionFrequency
+
+    Annotations: 
+        rdfs:comment "The occurence of abatement of symptoms during a time interval."^^xsd:string,
+        rdfs:label "remission frequency"^^xsd:string
+    
+    SubClassOf: 
+        ontology:RemissionMeasure
+    
+    
+Class: ontology:SatietyFrequency
+
+    Annotations: 
+        rdfs:comment "The occurence of satiety during a time interval."^^xsd:string,
+        rdfs:label "satiety frequency"^^xsd:string
+    
+    SubClassOf: 
+        ontology:SatietyMeasure
+    
+    
+Class: ontology:ModerateReductionInHamiltonAnxietyScore
+
+    Annotations: 
+        rdfs:label "moderate reduction in hamilton anxiety score"^^xsd:string
+    
+    SubClassOf: 
+        ontology:HamiltonAnxietyScoreDifference
+    
+    
+Class: ontology:ASAAConcentrationIncrease
+
+    Annotations: 
+        rdfs:label "ASAA concentration increase"^^xsd:string
+    
+    SubClassOf: 
+        ontology:ASAAConcentrationDifference
+    
+    
+Class: ontology:ERVisitFrequency
+
+    Annotations: 
+        rdfs:label "ER visit frequency"^^xsd:string,
+        rdfs:comment "The frequency of patient visits to the emergency room  during some time interval."^^xsd:string
+    
+    SubClassOf: 
+        ontology:ClinicalOutcomeMeasure
+    
+    
+Class: ontology:ForcedExperiatoryVolume
+
+    Annotations: 
+        rdfs:label "forced experiatory volume"^^xsd:string,
+        rdfs:comment "Forced Expiratory Volume in 1 second."^^xsd:string
+    
+    SubClassOf: 
+        ontology:PulmonaryFunctionMeasure
+    
+    
+Class: ontology:DailyBloodPressure
+
+    Annotations: 
+        rdfs:comment "The blood pressure, measured daily."^^xsd:string,
+        rdfs:label "daily blood pressure"^^xsd:string
+    
+    SubClassOf: 
+        ontology:BloodPressure
+    
+    
+Class: ontology:HighRemission
+
+    Annotations: 
+        rdfs:label "high remission"^^xsd:string
+    
+    SubClassOf: 
+        ontology:RemissionFrequency
+    
+    
+Class: ontology:WeigthDifference
+
+    Annotations: 
+        rdfs:comment "A measured difference in weight."^^xsd:string,
+        rdfs:label "weight difference"^^xsd:string
+    
+    SubClassOf: 
+        ontology:WeightMeasure
+    
+    
+Class: ontology:GeneExpressionDifference
+
+    Annotations: 
+        rdfs:label "gene expression difference"^^xsd:string,
+        rdfs:comment "A measure of the change or difference in gene expression."^^xsd:string
+    
+    SubClassOf: 
+        ontology:GeneExpressionMeasure
+    
+    
+Class: ontology:ExerciseResponse
+
+    Annotations: 
+        rdfs:label "exercise response"^^xsd:string,
+        rdfs:comment "Physiological variations that occur when a subject partakes in a defined exercise activity."^^xsd:string
+    
+    SubClassOf: 
+        ontology:BiophysicalMeasure
+    
+    
+Class: ontology:NeoplasmFrequency
+
+    Annotations: 
+        rdfs:comment "The frequency of cancer development during some time interval."^^xsd:string,
+        rdfs:label "neoplasm frequency"^^xsd:string
+    
+    SubClassOf: 
+        ontology:DiseaseFrequency
+    
+    
+Class: ontology:GenotypeMeasure
+
+    Annotations: 
+        rdfs:label "genotype measure"^^xsd:string
+    
+    SubClassOf: 
+        ontology:BiologicalMeasure
+    
+    
+Class: ontology:HighReductionInMontgomeryAsbergDepressionRating
+
+    Annotations: 
+        rdfs:label "high reduction in montgomery asberg depression rating"^^xsd:string
+    
+    SubClassOf: 
+        ontology:MontgomeryAsbergDepressionRatingDifference
+    
+    
+Class: ontology:QualityOfLife
+
+    Annotations: 
+        rdfs:label "quality of life"^^xsd:string,
+        rdfs:comment "The individuals’ perceptions of their position in life, in the context of the cultural and value systems in which they live and in relation to their goals, expectations, standards and concerns."^^xsd:string
+    
+    SubClassOf: 
+        ontology:ClinicalOutcomeMeasure
+    
+    
+Class: ontology:AirwayResponsivenessUsingMethacholine
+
+    Annotations: 
+        rdfs:label "airway responsiveness using methacholine"^^xsd:string,
+        rdfs:comment "A test measuring the dlnchial contractility of the airways after administration of Methacholine."^^xsd:string
+    
+    SubClassOf: 
+        ontology:PulmonaryFunctionMeasure
+    
+    
+Class: ontology:HighReductionInHamiltonAnxietyScore
+
+    Annotations: 
+        rdfs:label "high reduction in hamilton anxiety score"^^xsd:string
+    
+    SubClassOf: 
+        ontology:HamiltonAnxietyScoreDifference
+    
+    
+Class: ontology:ModerateHamiltonDepressionScore
+
+    Annotations: 
+        rdfs:label "moderate hamilton depression score"^^xsd:string
+    
+    SubClassOf: 
+        ontology:HamiltonDepressionScore
+    
+    
+Class: ontology:LowReductionInChildDepressionScore
+
+    Annotations: 
+        rdfs:label "low reduction in child depression score"^^xsd:string
+    
+    SubClassOf: 
+        ontology:ChildDepressionScoreDifference
+    
+    
+Class: ontology:BodyMassIndexDifference
+
+    Annotations: 
+        rdfs:label "body mass index difference"^^xsd:string,
+        rdfs:comment "a difference in body mass index."^^xsd:string
+    
+    SubClassOf: 
+        ontology:BodyMassIndexMeasure
+    
+    
+Class: ontology:HighHamiltonDepressionScore
+
+    Annotations: 
+        rdfs:label "high hamilton depression score"^^xsd:string
+    
+    SubClassOf: 
+        ontology:HamiltonDepressionScore
+    
+    
+Class: ontology:HigherDiseaseSusceptibiltyOdds
+
+    Annotations: 
+        rdfs:label "higher disease susceptibility odds"^^xsd:string
+    
+    SubClassOf: 
+        ontology:DiseaseSusceptibilityOdds
+    
+    
+Class: ontology:ForcedVitalCapacity
+
+    Annotations: 
+        rdfs:label "forced vital capacity"^^xsd:string,
+        rdfs:comment "Forced Vital Capacity. This is the total amount of air a subject can blow out forcefully."^^xsd:string
+    
+    SubClassOf: 
+        ontology:PulmonaryFunctionMeasure
+    
+    
+Class: ontology:HamiltonDepressionMeasure
+
+    Annotations: 
+        rdfs:label "hamilton depression measure"^^xsd:string
+    
+    SubClassOf: 
+        ontology:DepressionMeasure
+    
+    
+Class: ontology:PlasmaDrugConcentration
+
+    Annotations: 
+        rdfs:comment "The quantity or amount of drug in the blood plasma."^^xsd:string,
+        rdfs:label "plasma drug concentration"^^xsd:string
+    
+    SubClassOf: 
+        ontology:PharmacokineticMeasure
+    
+    
+Class: ontology:ElectrocardiogramQTInterval
+
+    Annotations: 
+        rdfs:label "electrocardiogram QT interval"^^xsd:string,
+        rdfs:comment "An recording of the electrical activity of the heart contraction.Time from electrocardiogram Q wave to the end of the T wave corresponding to electrical systole."^^xsd:string
+    
+    SubClassOf: 
+        ontology:BiophysicalMeasure
+    
+    
+Class: ontology:PharmacokineticMeasure
+
+    Annotations: 
+        rdfs:label "pharmacokinetic measure"^^xsd:string,
+        rdfs:comment "The amount of chemical agent at their sites of biological effect."^^xsd:string
+    
+    SubClassOf: 
+        ontology:BiologicalMeasure
+    
+    
+Class: ontology:LowMontgomeryAsbergDepressionRating
+
+    Annotations: 
+        rdfs:label "low montgomery asberg depression rating"^^xsd:string
+    
+    SubClassOf: 
+        ontology:MontgomeryAsbergDepressionRating
+    
+    
+Class: ontology:RemissionMeasure
+
+    Annotations: 
+        rdfs:comment "A measure of remission."^^xsd:string,
+        rdfs:label "remission measure"^^xsd:string
+    
+    SubClassOf: 
+        ontology:ClinicalOutcomeMeasure
+    
+    
+Class: ontology:BiologicalMeasure
+
+    Annotations: 
+        rdfs:label "biological measure"^^xsd:string,
+        rdfs:comment "Measurements applied to biological entities and their components."^^xsd:string
+    
+    
+Class: ontology:GeneExpressionMeasure
+
+    Annotations: 
+        rdfs:label "A measure of gene expression."^^xsd:string
+    
+    SubClassOf: 
+        ontology:MolecularMeasure
+    
+    
+Class: ontology:CellCount
+
+    Annotations: 
+        rdfs:comment "E.g., CD4 cell counts"^^xsd:string,
+        rdfs:label "cell count"^^xsd:string
+    
+    SubClassOf: 
+        ontology:TissueMeasure
+    
+    
+Class: ontology:ASAAMeasure
+
+    SubClassOf: 
+        ontology:MolecularMeasure
+    
+    
+Class: ontology:PopulationVariation
+
+    Annotations: 
+        rdfs:label "population variation"^^xsd:string
+    
+    SubClassOf: 
+        ontology:GenotypeMeasure
+    
+    
+Class: ontology:MetabolicMeasure
+
+    Annotations: 
+        rdfs:comment "Measurement of the transformation of substances in the body."^^xsd:string,
+        rdfs:label "metabolic measure"^^xsd:string
+    
+    SubClassOf: 
+        ontology:BiologicalMeasure
+    
+    
+Class: ontology:TaxonomicMeasure
+
+    Annotations: 
+        rdfs:label "taxonomic measure"^^xsd:string
+    
+    SubClassOf: 
+        ontology:BiologicalMeasure
+    
+    
+Class: ontology:LowRemission
+
+    Annotations: 
+        rdfs:label "low remission"^^xsd:string
+    
+    SubClassOf: 
+        ontology:RemissionFrequency
+    
+    
+Class: ontology:DrugClearance
+
+    Annotations: 
+        rdfs:label "drug clearance"^^xsd:string,
+        rdfs:comment "The rate of elimination of a drug, metabolite, or other substance from the body or organ of interest."^^xsd:string
+    
+    SubClassOf: 
+        ontology:PharmacokineticMeasure
+    
+    
+Class: ontology:ASAAConcentrationDifference
+
+    Annotations: 
+        rdfs:label "ASAA concentration difference"^^xsd:string,
+        rdfs:comment "The difference in ASAA concentration."^^xsd:string
+    
+    SubClassOf: 
+        ontology:ASAAMeasure
+    
+    
+Class: ontology:MontgomeryAsbergDepressionRatingDifference
+
+    Annotations: 
+        rdfs:comment "The difference in montgomery asberg depression rating."^^xsd:string,
+        rdfs:label "montgomery asberg depression rating difference"^^xsd:string
+    
+    SubClassOf: 
+        ontology:MontgomeryAsbergDepressionMeasure
+    
+    
+Class: ontology:ASAAConcentrationDecrease
+
+    Annotations: 
+        rdfs:label "ASAA concentration decrease"^^xsd:string
+    
+    SubClassOf: 
+        ontology:ASAAConcentrationDifference
+    
+    
+Class: ontology:ModerateMontgomeryAsbergDepressionRating
+
+    Annotations: 
+        rdfs:label "moderate montgomery asberg depression rating"^^xsd:string
+    
+    SubClassOf: 
+        ontology:MontgomeryAsbergDepressionRating
+    
+    
+Class: ontology:BodyMassIndexMeasure
+
+    Annotations: 
+        rdfs:label "a measure of body mass index"^^xsd:string,
+        rdfs:comment "A measure of body mass index."^^xsd:string
+    
+    SubClassOf: 
+        ontology:BiophysicalMeasure
+    
+    
+Class: ontology:IncreasedGeneExpression
+
+    Annotations: 
+        rdfs:label "increased gene expression"^^xsd:string
+    
+    SubClassOf: 
+        ontology:GeneExpressionDifference
+    
+    
+Class: ontology:PathogenCount
+
+    Annotations: 
+        rdfs:comment "E.g., viremia, fungemia, etc."^^xsd:string,
+        rdfs:label "pathogen count"^^xsd:string
+    
+    SubClassOf: 
+        ontology:TissueMeasure
+    
+    
+Class: ontology:SimilarDiseaseSusceptibilityOdds
+
+    Annotations: 
+        rdfs:label "similar disease susceptibility odds"^^xsd:string
+    
+    SubClassOf: 
+        ontology:DiseaseSusceptibilityOdds
+    
+    
+Class: ontology:SatietyDifference
+
+    Annotations: 
+        rdfs:comment "The difference in satiety from one time to another."^^xsd:string,
+        rdfs:label "satiety difference"^^xsd:string
+    
+    SubClassOf: 
+        ontology:SatietyMeasure
+    
+    
+Class: ontology:DiseaseFrequency
+
+    Annotations: 
+        rdfs:label "disease frequency"^^xsd:string,
+        rdfs:comment "The occurence of disease during some time interval."^^xsd:string
+    
+    SubClassOf: 
+        ontology:ClinicalOutcomeMeasure
+    
+    
+Class: ontology:MontgomeryAsbergDepressionMeasure
+
+    Annotations: 
+        rdfs:label "montgomer asberg depression measure"^^xsd:string
+    
+    SubClassOf: 
+        ontology:DepressionMeasure
+    
+    
+Class: ontology:CognitiveMeasure
+
+    Annotations: 
+        rdfs:label "cognitive measure"^^xsd:string,
+        rdfs:comment "Assessments of the mental status of a subject."^^xsd:string
+    
+    SubClassOf: 
+        ontology:BiologicalMeasure
+    
+    
+Class: ontology:ModerateReductionInMontgomeryAsbergDepressionRating
+
+    Annotations: 
+        rdfs:label "moderate reduction in montgomery asberg depression rating"^^xsd:string
+    
+    SubClassOf: 
+        ontology:MontgomeryAsbergDepressionRatingDifference
+    
+    
+Class: ontology:HighMontgomeryAsbergDepressionRating
+
+    Annotations: 
+        rdfs:label "high montgomery asberg depression rating"^^xsd:string
+    
+    SubClassOf: 
+        ontology:MontgomeryAsbergDepressionRating
+    
+    
+Class: ontology:WeightLoss
+
+    Annotations: 
+        rdfs:comment "a measured decrease in weight."^^xsd:string,
+        rdfs:label "weight loss"^^xsd:string
+    
+    SubClassOf: 
+        ontology:WeigthDifference
+    
+    
+Class: ontology:Gender
+
+    Annotations: 
+        rdfs:label "gender"^^xsd:string
+    
+    SubClassOf: 
+        ontology:TaxonomicMeasure
+    
+    
+Class: ontology:HamiltonAnxietyScore
+
+    Annotations: 
+        rdfs:label "hamilton anxiety score"^^xsd:string,
+        rdfs:comment "A measure of the severity of anxiety"^^xsd:string
+    
+    SubClassOf: 
+        ontology:AnxietyMeasure
+    
+    
+Class: ontology:SatietyDecrease
+
+    Annotations: 
+        rdfs:label "satiety decrease"^^xsd:string
+    
+    SubClassOf: 
+        ontology:SatietyDifference
+    
+    
+Class: ontology:Weigth
+
+    Annotations: 
+        rdfs:label "weight"^^xsd:string,
+        owl:backwardCompatibleWith "The vertical force exerted by a mass as a result of gravity."^^xsd:string
+    
+    SubClassOf: 
+        ontology:WeightMeasure
+    
+    
+Class: ontology:Race
+
+    Annotations: 
+        rdfs:label "race"^^xsd:string
+    
+    SubClassOf: 
+        ontology:TaxonomicMeasure
+    
+    
+Class: ontology:WeigthGain
+
+    Annotations: 
+        rdfs:label "a measured increase in weight."^^xsd:string,
+        rdfs:label "weigth gain"^^xsd:string
+    
+    SubClassOf: 
+        ontology:WeigthDifference
+    
+    
+Class: ontology:AsthmaFrequency
+
+    Annotations: 
+        rdfs:comment "The frequency of asthma during some time interval."^^xsd:string,
+        rdfs:label "asthma frequency"^^xsd:string
+    
+    SubClassOf: 
+        ontology:DiseaseFrequency
+    
+    
+Class: ontology:DecreasedGeneExpression
+
+    Annotations: 
+        rdfs:label "decreased gene expression"^^xsd:string
+    
+    SubClassOf: 
+        ontology:GeneExpressionDifference
+    
+    
+Class: ontology:PharmacodynamicMeasure
+
+    Annotations: 
+        rdfs:label "pharmacodynamic measure"^^xsd:string
+    
+    SubClassOf: 
+        ontology:BiologicalMeasure
+    
+    
+Class: ontology:ModerateRemission
+
+    Annotations: 
+        rdfs:label "moderate remission"^^xsd:string
+    
+    SubClassOf: 
+        ontology:RemissionFrequency
+    
+    
+Class: ontology:TissueMeasure
+
+    Annotations: 
+        rdfs:comment "Measurement of samples of blood or tissue from an individual."^^xsd:string,
+        rdfs:label "tissue measure"^^xsd:string
+    
+    SubClassOf: 
+        ontology:BiologicalMeasure
+    
+    
+Class: ontology:MontgomeryAsbergDepressionRating
+
+    Annotations: 
+        rdfs:comment "A measure of antidepressant efficacy."^^xsd:string,
+        rdfs:label "montgomery asberg depression rating"^^xsd:string
+    
+    SubClassOf: 
+        ontology:MontgomeryAsbergDepressionMeasure
+    
+    
+Class: ontology:HighReductionInChildDepressionScore
+
+    Annotations: 
+        rdfs:label "high reduction in child depression score"^^xsd:string
+    
+    SubClassOf: 
+        ontology:ChildDepressionScoreDifference
+    
+    
+Class: ontology:ZeroRemission
+
+    Annotations: 
+        rdfs:label "zero remission"^^xsd:string
+    
+    SubClassOf: 
+        ontology:RemissionFrequency
+    
+    
+Class: ontology:DoseFrequency
+
+    Annotations: 
+        rdfs:label "dose frequency",
+        rdfs:comment "The frequency at which the dose is administered."
+    
+    SubClassOf: 
+        ontology:PharmacokineticMeasure
+    
+    
+Class: ontology2:HourBloodPressure
+
+    Annotations: 
+        rdfs:label "24 hour blood pressure"^^xsd:string,
+        rdfs:comment "A study recording the blood pressure at intervals during a 24-hour period."^^xsd:string
+    
+    SubClassOf: 
+        ontology:BloodPressure
+    
+    
+Class: ontology:HamiltonAnxietyScoreDifference
+
+    Annotations: 
+        rdfs:comment "The difference in hamilton anxiety score."^^xsd:string,
+        rdfs:label "hamilton anxiety score difference"^^xsd:string
+    
+    SubClassOf: 
+        ontology:AnxietyMeasure
+    
+    
+Class: ontology:DrugEfficacy
+
+    Annotations: 
+        rdfs:label "drug efficacy"^^xsd:string,
+        rdfs:comment "A measure of the drug to realize a  maximum therapeutic response."^^xsd:string
+    
+    SubClassOf: 
+        ontology:DrugEfficacyMeasure
+    
+    
+Class: ontology:WeightMeasure
+
+    Annotations: 
+        rdfs:label "weigth measure"^^xsd:string,
+        rdfs:comment "A measure of weight."^^xsd:string
+    
+    SubClassOf: 
+        ontology:BiophysicalMeasure
+    
+    
+Class: ontology:CoagulationProfile
+
+    Annotations: 
+        rdfs:comment "Measures the speed of blood coagulation at different steps of the coagulation pathway."^^xsd:string,
+        rdfs:label "coagulation profile"^^xsd:string
+    
+    SubClassOf: 
+        ontology:TissueMeasure
+    
+    
+Class: ontology:LowReductionInHamiltonDepressionScore
+
+    Annotations: 
+        rdfs:label "low reduction in hamilton depression score"^^xsd:string
+    
+    SubClassOf: 
+        ontology:HamiltonDepressionScoreDifference
+    
+    
+Class: ontology:BloodPressure
+
+    Annotations: 
+        rdfs:label "blood pressure"^^xsd:string,
+        rdfs:comment "Measurement is divided into systolic (pressure during contraction of the heart) and diastolic (pressure during relaxation phase)."^^xsd:string
+    
+    SubClassOf: 
+        ontology:BiophysicalMeasure
+    
+    
+Class: ontology:PulmonaryFunctionMeasure
+
+    Annotations: 
+        rdfs:comment "These are laboratory tests related to lung function."^^xsd:string,
+        rdfs:label "pulmonary function measure"^^xsd:string
+    
+    SubClassOf: 
+        ontology:BiophysicalMeasure
+    
+    
+Class: ontology:SatietyIncrease
+
+    Annotations: 
+        rdfs:label "satiety increase"^^xsd:string
+    
+    SubClassOf: 
+        ontology:SatietyDifference
+    
+    
+Class: ontology:DiseaseSusceptibilityOdds
+
+    Annotations: 
+        rdfs:label "disease susceptibility odds"^^xsd:string,
+        rdfs:comment "The odds of developing a disease."^^xsd:string
+    
+    SubClassOf: 
+        ontology:ClinicalOutcomeMeasure
+    
+    
+Class: ontology:LowHamiltonDepressionScore
+
+    Annotations: 
+        rdfs:label "low hamilton depression score"^^xsd:string
+    
+    SubClassOf: 
+        ontology:HamiltonDepressionScore
+    
+    
+Class: ontology:BoneMineralDensity
+
+    Annotations: 
+        rdfs:label "bone mineral density"^^xsd:string,
+        rdfs:comment "A nuclear medicine test that estimates the mineralization of bone in a subject."^^xsd:string
+    
+    SubClassOf: 
+        ontology:TissueMeasure
+    
+    
+Class: ontology:NormalGeneExpression
+
+    Annotations: 
+        rdfs:label "normal gene expression"^^xsd:string
+    
+    SubClassOf: 
+        ontology:GeneExpressionDifference
+    
+    
+Class: ontology:ReninAngiotensinSystemMeasure
+
+    Annotations: 
+        rdfs:comment "Measurements related to the renin/angiotensin system, such as Angiotensinogen, Angiotensin I/II, plasma renin, etc."^^xsd:string,
+        rdfs:label "renin/angiotensin system measure"^^xsd:string
+    
+    SubClassOf: 
+        ontology:TissueMeasure
+    
+    
+Class: ontology:BloodSerumProteinCount
+
+    Annotations: 
+        rdfs:label "blood serum protein count"^^xsd:string,
+        rdfs:comment "Measurements on proteins in blood serum."^^xsd:string
+    
+    SubClassOf: 
+        ontology:TissueMeasure
+    
+    
+Class: ontology:AnxietyMeasure
+
+    Annotations: 
+        rdfs:comment "A measure of anxiety"^^xsd:string,
+        rdfs:label "anxiety measure"^^xsd:string
+    
+    SubClassOf: 
+        ontology:CognitiveMeasure
+    
+    
+Class: ontology:HamiltonDepressionScore
+
+    Annotations: 
+        rdfs:label "hamilton depression score"^^xsd:string,
+        rdfs:comment "A measure the severity of depression."^^xsd:string
+    
+    SubClassOf: 
+        ontology:HamiltonDepressionMeasure
+    
+    
+Class: ontology:SideEffectRate
+
+    Annotations: 
+        rdfs:comment "The rate at which a side effect occurs when comparing one group (test) to another (control)."^^xsd:string,
+        rdfs:label "side effect rate"^^xsd:string
+    
+    SubClassOf: 
+        ontology:SideEffectMeasure
+    
+    
+Class: ontology:DepressionMeasure
+
+    Annotations: 
+        rdfs:label "depression measure"^^xsd:string,
+        rdfs:comment "A measure of depression."^^xsd:string
+    
+    SubClassOf: 
+        ontology:CognitiveMeasure
+    
+    
+Class: ontology:GeneExpression
+
+    Annotations: 
+        rdfs:comment "A measure of the levels of mRNA produced from a gene."^^xsd:string,
+        rdfs:label "gene expression"^^xsd:string
+    
+    SubClassOf: 
+        ontology:GeneExpressionMeasure
+    
+    
+Class: ontology:Dose
+
+    Annotations: 
+        rdfs:label "dose"^^xsd:string,
+        rdfs:comment "The amount of a substance to which a person is exposed over some time period."
+    
+    SubClassOf: 
+        ontology:PharmacokineticMeasure
+    
+    
+Class: ontology:SatietyMeasure
+
+    Annotations: 
+        rdfs:label "satiety measure"^^xsd:string,
+        rdfs:comment "A measure of the feeling of fullness and disappearance of appetite"^^xsd:string
+    
+    SubClassOf: 
+        ontology:CognitiveMeasure
+    
+    
+Class: ontology:LowerDiseaseSusceptibilityOdds
+
+    Annotations: 
+        rdfs:label "lower disease susceptibility odds"^^xsd:string
+    
+    SubClassOf: 
+        ontology:DiseaseSusceptibilityOdds
+    
+    
+Class: ontology:SideEffectFrequency
+
+    Annotations: 
+        rdfs:comment "The number of times a side effect occurs during some time interval."^^xsd:string,
+        rdfs:label "side effect frequency"^^xsd:string
+    
+    SubClassOf: 
+        ontology:SideEffectMeasure
+    
+    
+Class: ontology:MyocardialInfarctionFrequency
+
+    Annotations: 
+        rdfs:comment "The frequency of medical events or conditions subsequent to heart attacks."^^xsd:string,
+        rdfs:label "myocardial infarction frequency"^^xsd:string
+    
+    SubClassOf: 
+        ontology:DiseaseFrequency
+    
+    
+Class: ontology:ZeroDrugEfficacy
+
+    Annotations: 
+        rdfs:comment "A measure of a drug that has zero ability in realizing a therapeutic potential."^^xsd:string,
+        rdfs:label "zero drug efficacy"^^xsd:string
+    
+    SubClassOf: 
+        ontology:DrugEfficacy
+    
+    
+Class: ontology:Satiety
+
+    Annotations: 
+        rdfs:comment "The feeling of fullness and disappearance of appetite"^^xsd:string,
+        rdfs:label "satiety"^^xsd:string
+    
+    SubClassOf: 
+        ontology:SatietyMeasure
+    
+    
+Class: ontology:ClinicalOutcomeMeasure
+
+    Annotations: 
+        owl:versionInfo "The outcome or outcome assessment of a patient at the end of patient care."^^xsd:string,
+        rdfs:label "clinical outcome measure"^^xsd:string
+    
+    SubClassOf: 
+        ontology:BiologicalMeasure
+    
+    
+Class: ontology:LipidProfile
+
+    Annotations: 
+        rdfs:label "lipid profile"^^xsd:string,
+        rdfs:comment "Includes total cholesterol, HDL-cholesterol (often called good cholesterol), LDL-cholesterol (often called bad cholesterol), and triglycerides, and associated computed parameters."^^xsd:string
+    
+    SubClassOf: 
+        ontology:TissueMeasure
+    
+    
+Class: ontology:BodyMassIndexDecrease
+
+    Annotations: 
+        rdfs:label "body mass index decrease"^^xsd:string,
+        rdfs:comment "a measured decrease in body mass index."^^xsd:string
+    
+    SubClassOf: 
+        ontology:BodyMassIndexDifference
+    
+    
+Class: ontology:HighDrugEfficacy
+
+    Annotations: 
+        rdfs:comment "A measure of a drug to have great ability in realizing a therapeutic potential."^^xsd:string,
+        rdfs:label "high drug efficacy"^^xsd:string
+    
+    SubClassOf: 
+        ontology:DrugEfficacy
+    
+    
+Class: ontology:BodyMassIndexIncrease
+
+    Annotations: 
+        rdfs:label "body mass index increase"^^xsd:string,
+        rdfs:comment "a measured increase in body mass index."^^xsd:string
+    
+    SubClassOf: 
+        ontology:BodyMassIndexDifference
+    
+    
+Class: ontology:HighReductionInHamiltonDepressionScore
+
+    Annotations: 
+        rdfs:label "high reduction in hamilton depression score"^^xsd:string
+    
+    SubClassOf: 
+        ontology:HamiltonDepressionScoreDifference
+    
+    
+Class: ontology:BodyMassIndex
+
+    Annotations: 
+        rdfs:label "body mass index"^^xsd:string,
+        rdfs:comment "Body weight in kilograms divided by the height in meters squared."^^xsd:string
+    
+    SubClassOf: 
+        ontology:BodyMassIndexMeasure
+    
+    
+Class: ontology:DrugEfficacyMeasure
+
+    Annotations: 
+        rdfs:comment "A measure of drug efficacy"^^xsd:string
+    
+    SubClassOf: 
+        ontology:PharmacodynamicMeasure
+    
+    
+Class: ontology:BiophysicalMeasure
+
+    Annotations: 
+        rdfs:comment "Measurements of a physical nature on an individual."^^xsd:string,
+        rdfs:label "physical measure"^^xsd:string
+    
+    SubClassOf: 
+        ontology:BiologicalMeasure
+    
+    
+Class: ontology:ChildDepressionScoreDifference
+
+    Annotations: 
+        rdfs:comment "The difference in scores for child depression."^^xsd:string,
+        rdfs:label "child depression score difference"^^xsd:string
+    
+    SubClassOf: 
+        ontology:ChildDepressionMeasure
+    
+    
+Class: ontology:LowReductionInHamiltonAnxietyScore
+
+    Annotations: 
+        rdfs:label "low reduction in hamilton anxiety score"^^xsd:string
+    
+    SubClassOf: 
+        ontology:HamiltonAnxietyScoreDifference
+    
+    
+Class: ontology:ChildDepressionMeasure
+
+    Annotations: 
+        rdfs:label "child depression measure"^^xsd:string,
+        rdfs:comment "A measure of the severity of depression in children."^^xsd:string
+    
+    SubClassOf: 
+        ontology:DepressionMeasure
+    
+    
+Class: ontology:HamiltonDepressionScoreDifference
+
+    Annotations: 
+        rdfs:comment "The difference in hamilton depression score."^^xsd:string,
+        rdfs:label "hamilton depression score difference"^^xsd:string
+    
+    SubClassOf: 
+        ontology:HamiltonDepressionMeasure
+    
+    
+Class: ontology:HighRemissionOddsRatio
+
+    Annotations: 
+        rdfs:label "high remission odds ratio"^^xsd:string
+    
+    SubClassOf: 
+        ontology:RemissionOddsRatio
+    
+    
+Class: ontology:LowDrugEfficacy
+
+    Annotations: 
+        rdfs:label "low drug efficacy"^^xsd:string,
+        rdfs:comment "A measure of a drug that is poor ability in realizing a therapeutic potential."^^xsd:string
+    
+    SubClassOf: 
+        ontology:DrugEfficacy
+    
+    
+Class: ontology:ErythromycinClearanceMeasure
+
+    Annotations: 
+        rdfs:comment "A metabolic measure of the clearance of Erythromycin."^^xsd:string,
+        rdfs:label "erythomycin clearance measure"^^xsd:string
+    
+    SubClassOf: 
+        ontology:MetabolicMeasure
+    
+    
+Class: ontology:LowReductionInMontgomeryAsbergDepressionRating
+
+    Annotations: 
+        rdfs:label "low reduction in montgomery asberg depression rating"^^xsd:string
+    
+    SubClassOf: 
+        ontology:MontgomeryAsbergDepressionRatingDifference
+    
+    
+Class: ontology:ModerateReductionInChildDepressionScore
+
+    Annotations: 
+        rdfs:label "moderate reduction in child depression score"^^xsd:string
+    
+    SubClassOf: 
+        ontology:ChildDepressionScoreDifference
+    
+    
+Class: ontology:ASAAConcentration
+
+    Annotations: 
+        rdfs:label "ASAA Concentration"^^xsd:string,
+        rdfs:comment "The concentration of a family of apolipoproteins associated with HDL in plasma"^^xsd:string
+    
+    SubClassOf: 
+        ontology:ASAAMeasure
+    
+    
+Class: ontology:ModerateReductionInHamiltonDepressionScore
+
+    Annotations: 
+        rdfs:label "moderate reduction in hamilton depression score"^^xsd:string
+    
+    SubClassOf: 
+        ontology:HamiltonDepressionScoreDifference
+    
+    
+Class: ontology:SimilarRemissionOddsRatio
+
+    Annotations: 
+        rdfs:label "similar remission odds ratio"^^xsd:string
+    
+    SubClassOf: 
+        ontology:RemissionOddsRatio
+    
+    
+Class: ontology:EventFreeSurvivalTime
+
+    Annotations: 
+        rdfs:comment "The length of time a subject lives without having one or more complications of a disease."^^xsd:string,
+        rdfs:label "event free survival time"^^xsd:string
+    
+    SubClassOf: 
+        ontology:ClinicalOutcomeMeasure
+    
+    
+Class: ontology:LowRemissionOddsRatio
+
+    Annotations: 
+        rdfs:label "low remission odds ratio"^^xsd:string
+    
+    SubClassOf: 
+        ontology:RemissionOddsRatio
+    
+    
+Class: ontology:HomocysteineLevel
+
+    Annotations: 
+        rdfs:label "homocysteine level"^^xsd:string,
+        rdfs:comment "The quantity or amount of homocysteine in the in plasma, CSF, or other fluids."^^xsd:string
+    
+    SubClassOf: 
+        ontology:TissueMeasure
+    
+    
+Class: ontology:SideEffectMeasure
+
+    Annotations: 
+        rdfs:comment "Measures of side effects.",
+        rdfs:label "side effect measure"
+    
+    SubClassOf: 
+        ontology:ClinicalOutcomeMeasure
+    
+    
+Class: ontology:RemissionOddsRatio
+
+    Annotations: 
+        rdfs:label "remission odds ratio"^^xsd:string
+    
+    SubClassOf: 
+        ontology:RemissionMeasure
+    
+    

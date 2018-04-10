@@ -1,0 +1,74 @@
+Prefix: : <http://www.semanticweb.org/ontologies/2014/3/generation.owl#>
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: owl2xml: <http://www.w3.org/2006/12/owl2-xml#>
+Prefix: generation: <http://www.semanticweb.org/ontologies/2014/3/generation.owl#>
+
+
+
+Ontology: <http://www.semanticweb.org/ontologies/2014/3/generation.owl>
+
+
+ObjectProperty: hasParent
+
+    
+ObjectProperty: hasChild
+
+    
+ObjectProperty: gender
+
+    
+Class: owl:Thing
+
+    
+Class: Female
+
+    
+Class: GrandMother
+
+    SubClassOf: 
+        GrandParent,
+        Woman
+    
+    
+Class: GrandParent
+
+    SubClassOf: 
+        hasChild some (hasChild some Person),
+        Parent
+    
+    
+Class: Woman
+
+    EquivalentTo: 
+        Person
+         and (gender some Female)
+    
+    
+Class: Mother
+
+    SubClassOf: 
+        Woman,
+        Parent
+    
+    
+Class: Parent
+
+    EquivalentTo: 
+        Person
+         and (hasChild some Person)
+    
+    SubClassOf: 
+        Person
+    
+    
+Class: Person
+
+    SubClassOf: 
+        owl:Thing,
+        hasParent some Person
+    
+    

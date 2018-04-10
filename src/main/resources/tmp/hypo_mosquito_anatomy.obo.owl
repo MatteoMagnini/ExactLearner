@@ -1,0 +1,1279 @@
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+
+
+Ontology: 
+
+ObjectProperty: <http://www.geneontology.org/go#part_of>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000923>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000009>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000005>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000921>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000809>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#TGMA_0000738>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000130>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#TGMA_0001816>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001586>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#TGMA_0001160>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000139>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000499>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000305>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000015>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000007>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000256>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000012>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000007>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000496>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000269>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001582>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000923>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000011>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#TGMA_0001835>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000937>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000934>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000934>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#TGMA_0001859>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001108>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001125>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000021>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000006>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000142>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000140>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000384>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#TGMA_0000578>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000141>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000140>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001235>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001238>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000700>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000027>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000003>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000269>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000145>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000140>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000387>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000385>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000024>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000003>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000385>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000829>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000701>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001121>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000030>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000003>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001366>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000271>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001247>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000711>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000712>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001005>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000957>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001125>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001482>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000594>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001362>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#TGMA_0001409>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001002>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#TGMA_0000995>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001123>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001121>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000275>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000246>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000396>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000271>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001242>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001363>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000717>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001185>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000838>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000141>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000957>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000956>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000955>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000955>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000712>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000164>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001132>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000042>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#TGMA_0001859>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000041>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#TGMA_0001830>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001256>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001296>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000281>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000246>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000964>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000600>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000720>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000711>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000841>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#TGMA_0001408>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001371>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#TGMA_0001366>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001015>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001250>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001296>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001492>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000658>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001136>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000167>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000164>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001013>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001133>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001146>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001253>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001296>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000728>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000607>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000606>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000635>,
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000634>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000968>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000726>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000847>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#TGMA_0001408>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000725>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000726>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000724>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000888>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001813>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#TGMA_0001835>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001816>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001819>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#TGMA_0001831>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000175>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001386>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#TGMA_0001362>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001143>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001389>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#TGMA_0001362>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001380>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001381>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000971>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001383>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#TGMA_0001362>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000970>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000968>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001146>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000178>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000175>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001145>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001143>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001385>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000738>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000976>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000964>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001824>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001825>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001828>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000184>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000175>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001152>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#TGMA_0001132>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001279>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#TGMA_0001835>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001830>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001710>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001503>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001831>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000623>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000645>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000743>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001270>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001238>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001271>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001333>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000987>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001713>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001503>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001835>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001716>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001503>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001839>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#TGMA_0001845>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001719>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001503>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001160>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001722>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001504>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001602>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001013>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000634>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000995>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001047>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000916>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001284>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001247>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000516>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000256>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000999>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000607>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000635>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001845>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001725>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001504>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001605>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001013>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001608>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001013>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001054>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000971>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001053>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000987>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001851>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001611>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001013>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001853>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#TGMA_0001851>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000645>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000886>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000883>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000883>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000882>,
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001136>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000882>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000881>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001296>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001247>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001057>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#TGMA_0001828>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000527>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000648>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#TGMA_0000593>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000888>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001614>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001013>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001859>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001617>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001013>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000890>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001235>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001185>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001502>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001242>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001503>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000897>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000895>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000896>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000895>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000894>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000896>,
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000897>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000772>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#TGMA_0000738>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000771>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000743>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000892>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000881>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000658>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001504>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001628>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000921>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001750>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000829>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001074>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000728>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001631>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000921>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001753>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000829>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001072>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001071>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001071>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000728>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001634>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000921>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001756>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000829>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000546>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001247>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000666>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000664>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000665>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000664>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000785>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001307>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000305>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001080>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001637>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000921>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001759>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000829>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001762>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000829>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001085>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001765>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000829>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001083>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001080>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001081>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000557>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000527>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000677>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000676>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000676>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000675>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000665>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000672>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000665>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000671>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#TGMA_0001825>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000438>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000139>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001768>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000829>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001408>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001409>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001097>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000881>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001094>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001093>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001414>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#TGMA_0001363>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001093>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001415>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000240>,
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000241>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000687>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000701>,
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000700>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001782>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001081>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001420>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001300>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000881>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001785>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001081>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001422>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#TGMA_0001414>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001423>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001424>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001788>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001081>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000578>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000218>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000459>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001307>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001430>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001424>,
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001423>,
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001015>,
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001311>,
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001383>,
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001085>,
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001271>,
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001380>,
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001310>,
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001420>,
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001385>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001431>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000600>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001310>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000581>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#TGMA_0001859>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000460>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000459>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001311>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001313>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#TGMA_0001381>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000227>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#TGMA_0000218>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000224>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#TGMA_0000218>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000465>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000246>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000343>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000305>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000221>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#TGMA_0000218>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000584>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000904>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#TGMA_0000901>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000901>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000351>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#TGMA_0000350>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000593>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000350>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001322>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001324>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#TGMA_0001322>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001447>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000584>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000358>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#TGMA_0001825>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000234>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000720>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000594>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000916>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000915>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001449>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000527>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000918>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#TGMA_0000915>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000241>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001694>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001502>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001452>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000895>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000362>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000240>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001333>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001697>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001502>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001457>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#TGMA_0001835>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0001458>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000895>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000007>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000006>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000127>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#TGMA_0001816>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000005>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000246>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0000003>
+
+    
+Class: <http://www.geneontology.org/go#TGMA_0001691>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0001502>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000365>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#part_of> some <http://www.geneontology.org/go#TGMA_0000362>
+    
+    
+Class: <http://www.geneontology.org/go#TGMA_0000000>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#TGMA_0001824>
+    
+    

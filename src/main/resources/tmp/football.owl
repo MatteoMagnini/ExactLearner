@@ -1,0 +1,82 @@
+Prefix: : <http://www.semanticweb.org/ontologies/2014/3/football.owl#>
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: owl2xml: <http://www.w3.org/2006/12/owl2-xml#>
+Prefix: football: <http://www.semanticweb.org/ontologies/2014/3/football.owl#>
+
+
+
+Ontology: <http://www.semanticweb.org/ontologies/2014/3/football.owl>
+
+
+ObjectProperty: plays_for
+
+    
+ObjectProperty: managed_by
+
+    
+ObjectProperty: plays
+
+    
+Class: owl:Thing
+
+    
+Class: Manager
+
+    SubClassOf: 
+        Person
+         and (managed_by some Manager)
+    
+    
+Class: Team
+
+    SubClassOf: 
+        managed_by some Manager
+    
+    
+Class: Player
+
+    SubClassOf: 
+        plays some Game,
+        Person
+         and (plays_for some Team)
+    
+    
+Class: FootballTeam
+
+    SubClassOf: 
+        Team
+    
+    
+Class: Game
+
+    SubClassOf: 
+        owl:Thing
+    
+    
+Class: FootballPlayer
+
+    SubClassOf: 
+        Player
+         and (plays some Football)
+         and (plays_for some FootballTeam)
+    
+    
+Class: Football
+
+    SubClassOf: 
+        BallGame
+    
+    
+Class: Person
+
+    
+Class: BallGame
+
+    SubClassOf: 
+        Game
+    
+    

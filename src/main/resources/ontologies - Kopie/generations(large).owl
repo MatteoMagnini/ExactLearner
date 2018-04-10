@@ -1,0 +1,485 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY generations "http://www.owl-ontologies.com/generations.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.owl-ontologies.com/generations.owl#"
+     xml:base="http://www.owl-ontologies.com/generations.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:generations="http://www.owl-ontologies.com/generations.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.owl-ontologies.com/generations.owl">
+        <owl:versionInfo rdf:datatype="&xsd;string">An example ontology created by Matthew Horridge</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.owl-ontologies.com/generations.owl#hasChild -->
+
+    <owl:ObjectProperty rdf:about="&generations;hasChild"/>
+    
+
+
+    <!-- http://www.owl-ontologies.com/generations.owl#hasParent -->
+
+    <owl:ObjectProperty rdf:about="&generations;hasParent">
+        <owl:inverseOf rdf:resource="&generations;hasChild"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/generations.owl#hasSex -->
+
+    <owl:ObjectProperty rdf:about="&generations;hasSex">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&generations;Sex"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/generations.owl#hasSibling -->
+
+    <owl:ObjectProperty rdf:about="&generations;hasSibling">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.owl-ontologies.com/generations.owl#Brother -->
+
+    <owl:Class rdf:about="&generations;Brother">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&generations;Person"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&generations;hasSibling"/>
+                                <owl:someValuesFrom rdf:resource="&generations;Person"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&generations;hasSex"/>
+                                <owl:hasValue rdf:resource="&generations;MaleSex"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/generations.owl#Child -->
+
+    <owl:Class rdf:about="&generations;Child">
+        <rdfs:subClassOf rdf:resource="&generations;Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/generations.owl#Daughter -->
+
+    <owl:Class rdf:about="&generations;Daughter">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&generations;Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&generations;hasParent"/>
+                        <owl:someValuesFrom rdf:resource="&generations;Person"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&generations;hasSex"/>
+                        <owl:hasValue rdf:resource="&generations;FemaleSex"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/generations.owl#Father -->
+
+    <owl:Class rdf:about="&generations;Father">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&generations;Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&generations;hasChild"/>
+                        <owl:someValuesFrom rdf:resource="&generations;Person"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&generations;hasSex"/>
+                        <owl:hasValue rdf:resource="&generations;MaleSex"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/generations.owl#Female -->
+
+    <owl:Class rdf:about="&generations;Female">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&generations;hasSex"/>
+                <owl:hasValue rdf:resource="&generations;FemaleSex"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/generations.owl#GrandFather -->
+
+    <owl:Class rdf:about="&generations;GrandFather">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&generations;Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&generations;hasChild"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&generations;Person"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&generations;hasChild"/>
+                                        <owl:someValuesFrom rdf:resource="&generations;Person"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&generations;hasSex"/>
+                        <owl:hasValue rdf:resource="&generations;MaleSex"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/generations.owl#GrandMother -->
+
+    <owl:Class rdf:about="&generations;GrandMother">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&generations;Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&generations;hasChild"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&generations;Person"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&generations;hasChild"/>
+                                        <owl:someValuesFrom rdf:resource="&generations;Person"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&generations;hasSex"/>
+                        <owl:hasValue rdf:resource="&generations;FemaleSex"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/generations.owl#GrandParent -->
+
+    <owl:Class rdf:about="&generations;GrandParent">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&generations;Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&generations;hasChild"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&generations;Person"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&generations;hasChild"/>
+                                        <owl:someValuesFrom rdf:resource="&generations;Person"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/generations.owl#Male -->
+
+    <owl:Class rdf:about="&generations;Male">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&generations;hasSex"/>
+                <owl:hasValue rdf:resource="&generations;MaleSex"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/generations.owl#Man -->
+
+    <owl:Class rdf:about="&generations;Man">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&generations;Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&generations;hasSex"/>
+                        <owl:hasValue rdf:resource="&generations;MaleSex"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/generations.owl#Mother -->
+
+    <owl:Class rdf:about="&generations;Mother">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&generations;Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&generations;hasChild"/>
+                        <owl:someValuesFrom rdf:resource="&generations;Person"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&generations;hasSex"/>
+                        <owl:hasValue rdf:resource="&generations;FemaleSex"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/generations.owl#OffSpring -->
+
+    <owl:Class rdf:about="&generations;OffSpring">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&generations;Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&generations;hasParent"/>
+                        <owl:someValuesFrom rdf:resource="&generations;Person"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/generations.owl#Parent -->
+
+    <owl:Class rdf:about="&generations;Parent">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&generations;Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&generations;hasChild"/>
+                        <owl:someValuesFrom rdf:resource="&generations;Person"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/generations.owl#Person -->
+
+    <owl:Class rdf:about="&generations;Person"/>
+    
+
+
+    <!-- http://www.owl-ontologies.com/generations.owl#Sex -->
+
+    <owl:Class rdf:about="&generations;Sex">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&generations;FemaleSex"/>
+                    <rdf:Description rdf:about="&generations;MaleSex"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/generations.owl#Sibling -->
+
+    <owl:Class rdf:about="&generations;Sibling">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&generations;Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&generations;hasSibling"/>
+                        <owl:someValuesFrom rdf:resource="&generations;Person"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/generations.owl#Sister -->
+
+    <owl:Class rdf:about="&generations;Sister">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&generations;Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&generations;hasSibling"/>
+                        <owl:someValuesFrom rdf:resource="&generations;Person"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&generations;hasSex"/>
+                        <owl:hasValue rdf:resource="&generations;FemaleSex"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/generations.owl#Son -->
+
+    <owl:Class rdf:about="&generations;Son">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&generations;Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&generations;hasParent"/>
+                        <owl:someValuesFrom rdf:resource="&generations;Person"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&generations;hasSex"/>
+                        <owl:hasValue rdf:resource="&generations;MaleSex"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/generations.owl#Woman -->
+
+    <owl:Class rdf:about="&generations;Woman">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&generations;Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&generations;hasSex"/>
+                        <owl:hasValue rdf:resource="&generations;FemaleSex"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.owl-ontologies.com/generations.owl#FemaleSex -->
+
+    <owl:Thing rdf:about="&generations;FemaleSex">
+        <rdf:type rdf:resource="&generations;Sex"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.owl-ontologies.com/generations.owl#MaleSex -->
+
+    <owl:Thing rdf:about="&generations;MaleSex">
+        <rdf:type rdf:resource="&generations;Sex"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

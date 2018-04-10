@@ -1,0 +1,154 @@
+Prefix: : <http://obo.sourceforge.net/cl.owl#>
+Prefix: cl: <http://obo.sourceforge.net/cl.owl#>
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+
+
+Ontology: <http://obo.sourceforge.net/cl.owl>
+
+
+AnnotationProperty: rdfs:comment
+
+    
+Datatype: xsd:string
+
+    
+Class: SclerenchymaCell
+
+    SubClassOf: 
+        MatureCell
+    
+    
+Class: LeafCell
+
+    SubClassOf: 
+        PhotosyntheticCell,
+        MatureCell
+    
+    
+Class: Erythrocyte
+
+    SubClassOf: 
+        CirculatingCell,
+        MatureCell
+    
+    
+Class: PhotosyntheticCell
+
+    SubClassOf: 
+        CellByClass
+    
+    
+Class: CirculatingCell
+
+    SubClassOf: 
+        CellByClass
+    
+    
+Class: PlantCell
+
+    SubClassOf: 
+        CellByOrganism
+    
+    
+Class: CellByClass
+
+    SubClassOf: 
+        Cell
+    
+    
+Class: MatureCell
+
+    SubClassOf: 
+        CellByDevelopmentStage
+    
+    
+Class: AnimalCell
+
+    SubClassOf: 
+        CellByOrganism
+    
+    
+Class: Cell
+
+    Annotations: 
+        rdfs:comment "Extract from OBO Cell Type Ontology"^^xsd:string
+    
+    
+Class: Miocyte
+
+    SubClassOf: 
+        MatureCell
+    
+    
+Class: InMatureCell
+
+    SubClassOf: 
+        CellByDevelopmentStage
+    
+    
+Class: Osteocyte
+
+    SubClassOf: 
+        MatureCell
+    
+    
+Class: ChondroBlast
+
+    SubClassOf: 
+        InMatureCell
+    
+    
+Class: MioBlast
+
+    SubClassOf: 
+        InMatureCell
+    
+    
+Class: CellByDevelopmentStage
+
+    SubClassOf: 
+        Cell
+    
+    
+Class: PhotoreceptorCell
+
+    SubClassOf: 
+        MatureCell
+    
+    
+Class: CellByOrganism
+
+    SubClassOf: 
+        Cell
+    
+    
+Class: ElectricallyActiveCell
+
+    SubClassOf: 
+        CellByClass
+    
+    
+Class: StructuralCell
+
+    SubClassOf: 
+        CellByClass
+    
+    
+Class: Neuron
+
+    SubClassOf: 
+        ElectricallyActiveCell,
+        MatureCell
+    
+    
+Class: ChondroCyte
+
+    SubClassOf: 
+        MatureCell
+    
+    

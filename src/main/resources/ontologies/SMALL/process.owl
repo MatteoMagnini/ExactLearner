@@ -1,0 +1,330 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/transmission_process.obo#"
+     xml:base="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/transmission_process.obo"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:go="http://www.geneontology.org/go#">
+    <owl:Ontology rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/transmission_process.obo">
+        <go:auto-generated-by>OBO-Edit 1.101</go:auto-generated-by>
+        <go:saved-by>Lynn</go:saved-by>
+        <go:format-version>1.0</go:format-version>
+        <go:default-namespace>transmission_process</go:default-namespace>
+        <go:date>06:02:2008 14:52</go:date>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/go#is_obsolete"/>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/go#auto-generated-by"/>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/go#format-version"/>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/go#default-namespace"/>
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/go#date"/>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/go#def"/>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/go#exact_synonym"/>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/go#saved-by"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.geneontology.org/go#TRANS_0000000 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#TRANS_0000000">
+        <rdfs:label>transmission process</rdfs:label>
+        <go:def>&quot;A process that is the means during which the pathogen is transmitted directly or indirectly from its natural reservoir, a susceptible host or source to a new host.&quot; [URL:http\://www2a.cdc.gov/phtn/catalog/pdf-file/Epi_Course.pdf]</go:def>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#TRANS_0000001 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#TRANS_0000001">
+        <rdfs:label>direct</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#TRANS_0000000"/>
+        <go:def>&quot;Direct transmission is a transmission process that is the means during which the pathogen is transmitted immediately from a reservoir, source or host to another host.&quot; [Gemina:lschriml &quot;Lynn Schriml &lt;lschriml@som.umaryland.edu&gt;&quot;, URL:http\://www2a.cdc.gov/phtn/catalog/pdf-file/Epi_Course.pdf]</go:def>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#TRANS_0000002 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#TRANS_0000002">
+        <rdfs:label>indirect</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#TRANS_0000000"/>
+        <go:def>&quot;Indirect transmission is a transmission process during which the pathogen is indirectly transferred from a reservoir, source or host to another host by intermediary vehicles, vectors or as airborne dust particles.&quot; [Gemina:lschriml &quot;Lynn Schriml &lt;lschriml@som.umaryland.edu&gt;&quot;, URL:http\://www2a.cdc.gov/phtn/catalog/pdf-file/Epi_Course.pdf]</go:def>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#TRANS_0000003 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#TRANS_0000003">
+        <rdfs:label>mechanical</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#TRANS_0000005"/>
+        <go:def>&quot;Mechanical transmission is an indirect vector-borne transmission process during which the pathogen is indirectly transferred from a reservoir, source or host to another host by being transported on the external surface of the vector.&quot; [REF:lschriml &quot;Lynn Schriml &lt;lschriml@som.umaryland.edu&gt;&quot;]</go:def>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#TRANS_0000004 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#TRANS_0000004">
+        <rdfs:label>unknown</rdfs:label>
+        <go:is_obsolete>true</go:is_obsolete>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#TRANS_0000005 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#TRANS_0000005">
+        <rdfs:label>vector-borne</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#TRANS_0000002"/>
+        <go:def>&quot;Vector-borne transmission is an indirect transmission process during which the pathogen is indirectly transferred from a reservoir, source or host via an animate intermediary vector to another host. Most vectors are arthropods such as mosquitoes, fleas, and ticks.&quot; [REF:lschriml &quot;Lynn Schriml &lt;lschriml@som.umaryland.edu&gt;&quot;, URL:http\://www2a.cdc.gov/phtn/catalog/pdf-file/Epi_Course.pdf]</go:def>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#TRANS_0000006 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#TRANS_0000006">
+        <rdfs:label>congenital</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#TRANS_0000001"/>
+        <go:exact_synonym>&quot;mother-to-child transmission&quot; []</go:exact_synonym>
+        <go:def>&quot;Congenital transmission is a direct transmission process during which the pathogen is transmitted directly from mother to child at or around the time of birth.&quot; [Gemina:lschriml &quot;Lynn Schriml &lt;lschriml@som.umaryland.edu&gt;&quot;, URL:http\://www.m-w.com/dictionary/congenital]</go:def>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#TRANS_0000007 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#TRANS_0000007">
+        <rdfs:label>contact</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#TRANS_0000001"/>
+        <go:def>&quot;Contact transmission is a direct transmission process during which the pathogen is transmitted   from a reservoir, source or host to another host by kissing, skin-to-skin contact, sexual intercourse, or by contact with soil or vegetation containing the pathogen.&quot; [REF:lschriml &quot;Lynn Schriml &lt;lschriml@som.umaryland.edu&gt;&quot;]</go:def>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#TRANS_0000008 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#TRANS_0000008">
+        <rdfs:label>droplet spread</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#TRANS_0000001"/>
+        <go:def>&quot;Droplet spread transmission is a direct transmission process during which the pathogen is transmitted from a reservoir, source or host to another host by spray of aerosols over a short distance, spray from sneezing, coughing or talking.&quot; [REF:lschriml &quot;Lynn Schriml &lt;lschriml@som.umaryland.edu&gt;&quot;]</go:def>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#TRANS_0000009 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#TRANS_0000009">
+        <rdfs:label>airborne</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#TRANS_0000002"/>
+        <go:def>&quot;Airborne transmission is an indirect transmission process during which the pathogen is indirectly transferred from a reservoir, source or host to another host while suspended in the air as dust.&quot; [REF:lschriml &quot;Lynn Schriml &lt;lschriml@som.umaryland.edu&gt;&quot;]</go:def>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#TRANS_0000010 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#TRANS_0000010">
+        <rdfs:label>vehicle-borne</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#TRANS_0000002"/>
+        <go:def>&quot;Vehicle-borne transmission is an indirect transmission process during which the pathogen is indirectly transferred from a reservoir, source or host to another host by inanimate intermediary vehicle objects.&quot; [REF:lschriml &quot;Lynn Schriml &lt;lschriml@som.umaryland.edu&gt;&quot;, URL:http\://www2a.cdc.gov/phtn/catalog/pdf-file/Epi_Course.pdf]</go:def>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#TRANS_0000011 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#TRANS_0000011">
+        <rdfs:label>vehicle-borne fomite</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#TRANS_0000010"/>
+        <go:def>&quot;Vehicle-borne fomite transmission is an indirect vehicle-borne transmission process during which the pathogen is indirectly transferred from a reservoir, source or host to another host by inanimate objects including: medical instruments, cloth, fur, metal or plastic utensils.&quot; [REF:lschriml &quot;Lynn Schriml &lt;lschriml@som.umaryland.edu&gt;&quot;]</go:def>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#TRANS_0000012 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#TRANS_0000012">
+        <rdfs:label>vehicle-borne ingestion</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#TRANS_0000010"/>
+        <go:def>&quot;Vehicle-borne ingestion transmission is an indirect vehicle-borne transmission process during which the pathogen is indirectly transferred from a reservoir, source or host to another host by ingestion of fluids or foods or food products including: food, water, milk, or meat products.&quot; [REF:lschriml &quot;Lynn Schriml &lt;lschriml@som.umaryland.edu&gt;&quot;]</go:def>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#TRANS_0000013 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#TRANS_0000013">
+        <rdfs:label>vehicle-borne medical</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#TRANS_0000010"/>
+        <go:def>&quot;Vehicle-borne medical transmission is an indirect vehicle-borne transmission process during which the pathogen is indirectly transferred from a reservoir, source or host to another host by biological products including: blood, serum, plasma, tissue, or organs.&quot; [REF:lschriml &quot;Lynn Schriml &lt;lschriml@som.umaryland.edu&gt;&quot;]</go:def>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#TRANS_0000014 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#TRANS_0000014">
+        <rdfs:label>vector-borne bite</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#TRANS_0000005"/>
+        <go:def>&quot;Vector-borne bite transmission is an indirect vector-borne transmission during which the pathogen is indirectly transferred by insect bites from a reservoir, source or host via a vector to another host.&quot; [REF:lschriml &quot;Lynn Schriml &lt;lschriml@som.umaryland.edu&gt;&quot;]</go:def>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#TRANS_0000015 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#TRANS_0000015">
+        <rdfs:label>vector-borne gastro-intestinal</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#TRANS_0000005"/>
+        <go:exact_synonym>&quot;biologic transmission&quot; []</go:exact_synonym>
+        <go:def>&quot;Vector-borne gastro-intestinal transmission is an indirect vector-borne transmission process during which the pathogen is transported, from a reservoir, source or host to another host, within the vector and undergoes part of it&#39;s lifecycle in the intermediate host.&quot; [REF:lschriml &quot;Lynn Schriml &lt;lschriml@som.umaryland.edu&gt;&quot;]</go:def>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#TRANS_0000016 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#TRANS_0000016">
+        <rdfs:label>undocumented</rdfs:label>
+        <go:is_obsolete>true</go:is_obsolete>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#TRANS_0000017 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#TRANS_0000017">
+        <rdfs:label>not curated</rdfs:label>
+        <go:is_obsolete>true</go:is_obsolete>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#TRANS_0000018 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#TRANS_0000018">
+        <rdfs:label>placental</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#TRANS_0000006"/>
+        <go:def>&quot;Placental transmission is a congenital transmission process during which the pathogen is transmitted directly from mother to child across the placental barrier.&quot; [REF:lschriml &quot;Lynn Schriml &lt;lschriml@som.umaryland.edu&gt;&quot;, URL:http\://www.nlm.nih.gov/medlineplus/mplusdictionary.html]</go:def>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#TRANS_0000019 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#TRANS_0000019">
+        <rdfs:label>arthropod borne</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#TRANS_0000005"/>
+        <go:def>&quot;Arthropod borne transmission is a vector-borne transmission process during which the pathogen is indirectly transferred from a reservoir, source or host via an animate intermediary arthropod vector to another host.&quot; [Gemina:lschriml &quot;Lynn Schriml &lt;lschriml@som.umaryland.edu&gt;&quot;, URL:http\://www2a.cdc.gov/phtn/catalog/pdf-file/Epi_Course.pdf]</go:def>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#TRANS_0000020 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#TRANS_0000020">
+        <rdfs:label>insect borne</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#TRANS_0000019"/>
+        <go:def>&quot;Insect borne transmission is an arthropod vector-borne transmission process during which the pathogen is indirectly transferred from a reservoir, source or host via an intermediary insect vector such as a flea or mosquito to another host.&quot; [Gemina:lschriml &quot;Lynn Schriml &lt;lschriml@som.umaryland.edu&gt;&quot;, URL:http\://www.cals.ncsu.edu/course/ent425/text18/humanvectors.html]</go:def>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#TRANS_0000021 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#TRANS_0000021">
+        <rdfs:label>mosquito borne</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#TRANS_0000020"/>
+        <go:def>&quot;Mosquito borne transmission is an insect borne transmission process during which the pathogen is indirectly transferred from a reservoir, source or host via an intermediary mosquito vector to another host.&quot; [Gemina:lschriml &quot;Lynn Schriml &lt;lschriml@som.umaryland.edu&gt;&quot;, wiki:http\://en.wikipedia.org/wiki/Mosquito]</go:def>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#TRANS_0000022 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#TRANS_0000022">
+        <rdfs:label>Anopheles gambiae borne</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#TRANS_0000021"/>
+        <go:def>&quot;Anopheles gambiae borne transmission is a mosquito borne transmission process during which the pathogen is indirectly transferred from a reservoir, source or host via an intermediary mosquito vector of the species Anopheles gambiae to another host.&quot; [Gemina:lschriml &quot;Lynn Schriml &lt;lschriml@som.umaryland.edu&gt;&quot;, wiki:http\://en.wikipedia.org/wiki/Mosquito]</go:def>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#TRANS_0000023 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#TRANS_0000023">
+        <rdfs:label>flea borne</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#TRANS_0000020"/>
+        <go:def>&quot;Flea borne transmission is an insect borne transmission process during which the pathogen is indirectly transferred from a reservoir, source or host via an intermediary flea vector to another host.&quot; [Gemina:lschriml &quot;Lynn Schriml &lt;lschriml@som.umaryland.edu&gt;&quot;, wiki:http\://en.wikipedia.org/wiki/Flea]</go:def>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#TRANS_0000024 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#TRANS_0000024">
+        <rdfs:label>tick borne</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#TRANS_0000027"/>
+        <go:def>&quot;Tick borne transmission is an arachnid borne transmission process during which the pathogen is indirectly transferred from a reservoir, source or host via an intermediary tick vector to another host.&quot; [Gemina:lschriml &quot;Lynn Schriml &lt;lschriml@som.umaryland.edu&gt;&quot;, wiki:http\://en.wikipedia.org/wiki/Tick, wiki:http\://en.wikipedia.org/wiki/Vector_%28disease%29]</go:def>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#TRANS_0000025 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#TRANS_0000025">
+        <rdfs:label>copepod borne</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#TRANS_0000015"/>
+        <go:def>&quot;Copepod borne transmission is a vector-borne transmission process during which the pathogen is indirectly transferred from a reservoir, source or host via an animate intermediary copepod vector to another host.&quot; [Gemina:lschriml &quot;Lynn Schriml &lt;lschriml@som.umaryland.edu&gt;&quot;, URL:http\://www2a.cdc.gov/phtn/catalog/pdf-file/Epi_Course.pdf]</go:def>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#TRANS_0000026 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#TRANS_0000026">
+        <rdfs:label>Dracunculus medinensis borne</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#TRANS_0000025"/>
+        <go:exact_synonym>&quot;Guinea worm borne&quot; []</go:exact_synonym>
+        <go:def>&quot;Dracunculus medinensis borne transmission is a copepod borne transmission process during which the pathogen is indirectly transferred from a reservoir, source or host via an animate intermediary copepod vector of the species Dracunculus medinensis to another host.&quot; [Gemina:lschriml &quot;Lynn Schriml &lt;lschriml@som.umaryland.edu&gt;&quot;, URL:http\://www2a.cdc.gov/phtn/catalog/pdf-file/Epi_Course.pdf]</go:def>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#TRANS_0000027 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#TRANS_0000027">
+        <rdfs:label>arachnid borne</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#TRANS_0000019"/>
+        <go:def>&quot;Arachnid borne transmission is an arthropod vector-borne transmission process during which the pathogen is indirectly transferred from a reservoir, source or host via an intermediary arthropod vector such as a tick to another host.&quot; [Gemina:lschriml &quot;Lynn Schriml &lt;lschriml@som.umaryland.edu&gt;&quot;, wiki:http\://en.wikipedia.org/wiki/Vector_%28disease%29]</go:def>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.0.0.1450) http://owlapi.sourceforge.net -->

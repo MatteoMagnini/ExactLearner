@@ -1,0 +1,577 @@
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+
+
+Ontology: 
+
+ObjectProperty: <http://purl.obolibrary.org/obo/RO_0000053>
+
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000008>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0030000>,
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000007>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0030000>,
+        <http://purl.obolibrary.org/obo/BFO_0000141>,
+        <http://purl.obolibrary.org/obo/CARO_0000000>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000009>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0030000>,
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000004>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0030000>,
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000048>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0030000>,
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/GO_0044464>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0030000>,
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000003>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0030000>,
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000006>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0030000>,
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000005>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0030000>,
+        <http://purl.obolibrary.org/obo/BFO_0000141>,
+        <http://purl.obolibrary.org/obo/CARO_0000000>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000049>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0030000>,
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/BFO_0000004>
+
+    
+Class: <http://purl.obolibrary.org/obo/PATO_0000125>
+
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0010010>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0030000>,
+        <http://purl.obolibrary.org/obo/CARO_0010000>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000081>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0030000>,
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000000>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0001013>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000007>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000043>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0001008>,
+        <http://purl.obolibrary.org/obo/CARO_0000003>,
+        <http://purl.obolibrary.org/obo/CARO_0000006>,
+        <http://purl.obolibrary.org/obo/CARO_0000000>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000046>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0002100>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0002101>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0030000>,
+        <http://purl.obolibrary.org/obo/CARO_0000000>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000045>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/GO_0005623>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000040>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000042>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0001008>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0001006>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000007>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0001007>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000007>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0001004>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000007>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0001005>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000007>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000071>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0010000>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000070>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0010000>
+    
+    
+Class: <http://purl.obolibrary.org/obo/BFO_0000001>
+
+    
+Class: <http://purl.obolibrary.org/obo/BFO_0000002>
+
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0001002>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000007>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000032>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0001003>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000007>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0001000>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0001001>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000073>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0010000>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000072>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000030>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000074>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000029>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000069>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0010000>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000028>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0002005>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000027>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/BFO_0000029>
+
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0030000>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000001>,
+        <http://purl.obolibrary.org/obo/BFO_0000002>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0030002>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/NCBITaxon_131567>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000066>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0010000>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0002003>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0002004>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000021>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000024>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000068>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0010000>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0002001>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0010000>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000067>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0010000>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0002002>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000062>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000007>,
+        <http://purl.obolibrary.org/obo/BFO_0000029>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0002000>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000066>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000064>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000063>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0020002>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000019>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0020001>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0020004>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0001501>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000014>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0020005>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0010000>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0001500>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0010001>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0010000>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0010005>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/BFO_0000141>
+
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0010004>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0010003>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0010002>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0010009>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0010000>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CL_0000003>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0010007>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0010006>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000011>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0001008>,
+        <http://purl.obolibrary.org/obo/CARO_0000003>,
+        <http://purl.obolibrary.org/obo/CARO_0000006>,
+        <http://purl.obolibrary.org/obo/CARO_0000000>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000055>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000010>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0030000>,
+        <http://purl.obolibrary.org/obo/BFO_0000141>,
+        <http://purl.obolibrary.org/obo/CARO_0000000>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000134>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0001008>,
+        <http://purl.obolibrary.org/obo/CARO_0000003>,
+        <http://purl.obolibrary.org/obo/CARO_0000006>,
+        <http://purl.obolibrary.org/obo/CARO_0000000>,
+        <http://purl.obolibrary.org/obo/CARO_0000032>,
+        <http://purl.obolibrary.org/obo/CARO_0010000>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000013>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000133>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000012>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000050>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0020000>
+
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    

@@ -1,0 +1,70 @@
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+
+
+Ontology: 
+
+Class: <http://ontology.dumontierlab.com/MontgomeryAsbergDepressionRatingDifference>
+
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/MontgomeryAsbergDepressionMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/BiologicalMeasure>
+
+    
+Class: <http://ontology.dumontierlab.com/ASAAConcentrationIncrease>
+
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/ASAAConcentrationDifference>
+    
+    
+Class: <http://ontology.dumontierlab.com/Race>
+
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/TaxonomicMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/BloodPressure>
+
+    
+Class: <http://ontology.dumontierlab.com/MyocardialInfarctionFrequency>
+
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/DiseaseFrequency>
+    
+    
+Class: <http://ontology.dumontierlab.com/DailyBloodPressure>
+
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/BloodPressure>
+    
+    
+Class: <http://ontology.dumontierlab.com/HighRemissionOddsRatio>
+
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/RemissionOddsRatio>
+    
+    
+Class: <http://ontology.dumontierlab.com/DiseaseFrequency>
+
+    
+Class: <http://ontology.dumontierlab.com/MontgomeryAsbergDepressionMeasure>
+
+    
+Class: <http://ontology.dumontierlab.com/TaxonomicMeasure>
+
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/BiologicalMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/ASAAConcentrationDifference>
+
+    
+Class: <http://ontology.dumontierlab.com/RemissionOddsRatio>
+
+    

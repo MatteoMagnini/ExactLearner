@@ -1,0 +1,772 @@
+Prefix: : <http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#>
+Prefix: go: <http://www.geneontology.org/go#>
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+
+
+Ontology: <http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo>
+
+
+Annotations: 
+    go:saved-by "gwg",
+    go:remark "This DAG flat files is created for Lifestage system used in WormBase",
+    go:format-version "1.0",
+    go:remark "Version: 1.04",
+    go:date "01:30:2008 16:09",
+    go:auto-generated-by "DAG-Edit 1.419 rev 3",
+    go:default-namespace "worm_development",
+    go:remark "Date: 01/25/08",
+    go:remark "Editors: Wen J. Chen, WormBase, Caltech"
+
+AnnotationProperty: go:default-namespace
+
+    
+AnnotationProperty: go:date
+
+    
+AnnotationProperty: go:remark
+
+    
+AnnotationProperty: go:auto-generated-by
+
+    
+AnnotationProperty: go:format-version
+
+    
+AnnotationProperty: rdfs:label
+
+    
+AnnotationProperty: go:def
+
+    
+AnnotationProperty: go:saved-by
+
+    
+Datatype: rdf:PlainLiteral
+
+    
+ObjectProperty: go:is_a
+
+    Annotations: 
+        rdfs:label "is a"
+    
+    
+Class: go:WBls_0000015
+
+    Annotations: 
+        go:def "\"350-620min after first cleavage at 20 Centigrade. Cell number remains at ~560 cells\\, with some new cells generated and some cells go through programmed cell death. The stage that embryo starts elongation till elongation is over.\" [wb:wjc]",
+        rdfs:label "elongating embryo"
+    
+    SubClassOf: 
+        go:WBls_0000003
+    
+    
+Class: go:WBls_0000014
+
+    Annotations: 
+        rdfs:label "late cleavage stage embryo",
+        go:def "\"210-350min after first cleavage at 20 Centigrade. Proliferate from 421 cells to 560 cells. The stage before the fast cleavage of cells finishes. \" [wb:wjc]"
+    
+    SubClassOf: 
+        go:WBls_0000004
+    
+    
+Class: go:WBls_0000058
+
+    Annotations: 
+        go:def "\"Very young adult hermaphrodites that do not have eggs in the uterus yet. At 20 Centigrade\\: 0 - 13 hours after L4-adult molt. 3 days after first cleaveage.\" [wb:wjc]",
+        rdfs:label "pre-reproductive stage adult hermaphrodite"
+    
+    SubClassOf: 
+        go:WBls_0000057
+    
+    
+Class: go:WBls_0000013
+
+    Annotations: 
+        go:def "\"290-350min after first cleavage at 20 Centigrade. Proliferate from 421 cells to 560 cells. The stage when embryo just finished gastulation and is enclosing.\" [wb:wjc]",
+        rdfs:label "enclosing embryo"
+    
+    SubClassOf: 
+        go:WBls_0000004
+    
+    
+Class: go:WBls_0000057
+
+    Annotations: 
+        go:def "\"The stage after an hermaphrodite animal is fully-developed and reaches maturity.\" [wb:wjc]",
+        rdfs:label "adult hermaphrodite"
+    
+    SubClassOf: 
+        go:WBls_0000041
+    
+    
+Class: go:WBls_0000012
+
+    Annotations: 
+        rdfs:label "88-cell embryo",
+        go:def "\"145-150min after first cleavage at 20 Centigrade. Contains 88 cells.\" [wb:wjc]"
+    
+    SubClassOf: 
+        go:WBls_0000010
+    
+    
+Class: go:WBls_0000056
+
+    Annotations: 
+        go:def "\"The stage after an male animal is fully-developed and reaches maturity.\" [wb:wjc]",
+        rdfs:label "adult male"
+    
+    SubClassOf: 
+        go:WBls_0000041
+    
+    
+Class: go:WBls_0000011
+
+    Annotations: 
+        rdfs:label "51-cell embryo",
+        go:def "\"120-135min after first cleavage at 20 Centigrade. Contains 51 cells.\" [wb:wjc]"
+    
+    SubClassOf: 
+        go:WBls_0000010
+    
+    
+Class: go:WBls_0000055
+
+    Annotations: 
+        go:def "\"The stage during L2d-L3 molt\\, after the brief lethargus period\\, when an animal sheds off old cuticle.\" [wb:wjc]",
+        rdfs:label "L2d-L3 ecdysis"
+    
+    SubClassOf: 
+        go:WBls_0000053
+    
+    
+Class: go:WBls_0000010
+
+    Annotations: 
+        rdfs:label "gastrulating embryo",
+        go:def "\"100-290min after first cleavage at 20 Centigrade. Proliferate from 28 cells to 421  cells. Referring to the whole period of gastrulation.\" [wb:wjc]"
+    
+    SubClassOf: 
+        go:WBls_0000004
+    
+    
+Class: go:WBls_0000054
+
+    Annotations: 
+        rdfs:label "L2d-L3 lethargus",
+        go:def "\"The stage during L2d-L3 molt when an animal becomes lethargic\\, ceases pharyngeal pumping and synthesizes new cuticle under the old.  \" [wb:wjc]"
+    
+    SubClassOf: 
+        go:WBls_0000053
+    
+    
+Class: go:WBls_0000053
+
+    Annotations: 
+        go:def "\"The stage when an animal shifts from L2d larva to L3 larva. It includes the synthesis of new cuticle\\, cease of phrayngeal pumping during a lethargus stage\\, and the shed off of old cuticle.\" [wb:wjc]",
+        rdfs:label "L2d-L3 molt"
+    
+    SubClassOf: 
+        go:WBls_0000046
+    
+    
+Class: go:WBls_0000052
+
+    Annotations: 
+        go:def "\"The stage right after an animal recovered from dauer but has not started transformation to L4 larva yet. \" [wb:wjc]",
+        rdfs:label "post dauer stage"
+    
+    SubClassOf: 
+        go:WBls_0000023
+    
+    
+Class: go:WBls_0000019
+
+    Annotations: 
+        go:def "\"460-520min after first cleavage at 20 Centigrade. Cell number remains at ~560 cells\\, with some new cells generated and some cells go through programmed cell death. The shape of embryo is elongated and double fold. A stage between 1.5-fold embryo and 3-fold embryo.\" [wb:wjc]",
+        rdfs:label "2-fold embryo"
+    
+    SubClassOf: 
+        go:WBls_0000015
+    
+    
+Class: go:WBls_0000018
+
+    Annotations: 
+        go:def "\"420-460min after first cleavage at 20 Centigrade. Cell number remains at ~560 cells\\, with some new cells generated and some cells go through programmed cell death. The shape of embryo is elongated and fold back 50%. A stage between comma embryo and 2-fold embryo.\" [wb:wjc]",
+        rdfs:label "1.5-fold embryo"
+    
+    SubClassOf: 
+        go:WBls_0000015
+    
+    
+Class: go:WBls_0000017
+
+    Annotations: 
+        rdfs:label "comma embryo",
+        go:def "\"390-420min after first cleavage at 20 Centigrade. Cell number remains at ~560 cells\\, with some new cells generated and some cells go through programmed cell death. The shape of embryo looks like a comma. A stage between bean embryo and 1.5-fold embryo. \" [wb:wjc]"
+    
+    SubClassOf: 
+        go:WBls_0000015
+    
+    
+Class: go:WBls_0000016
+
+    Annotations: 
+        go:def "\"350-390min after first cleavage at 20 Centigrade.  Cell number remains at ~560 cells\\, with some new cells generated and some cells go through programmed cell death. Emrbyo elongation started but have not formed comma shape yet. The shape of embryo looks like a lima bean. A stage right before comma embryo. Also called lima embryo or lima bean stage.\" [wb:wjc]",
+        rdfs:label "bean embryo"
+    
+    SubClassOf: 
+        go:WBls_0000015
+    
+    
+Class: go:WBls_00000071
+
+    Annotations: 
+        rdfs:label "8-cell embryo",
+        go:def "\"~50 min after first cleavage at 20 Centigrade.  Contains 8 cells.\" [wb:wjc]"
+    
+    SubClassOf: 
+        go:WBls_0000005
+    
+    
+Class: go:WBls_0000062
+
+    Annotations: 
+        rdfs:label "post-reproductive stage adult hermaphrodite",
+        go:def "\"Adult hermaphrodites that contain no more sperm\\, thus stop egg-laying\\, but still alive. At 20 Centigrade\\: 5.4 days after L4-adult molt until the death. 8.4 - 13.2 (average wild type life span) days after first cleavage.\" [wb:wjc]"
+    
+    SubClassOf: 
+        go:WBls_0000057
+    
+    
+Class: go:WBls_0000061
+
+    Annotations: 
+        go:def "\"When egg-laying is still going on but intermittent and during which a significant number of oocytes are laid. Included in reproductive stage adult hermaphrodite.\" [wb:wjc]",
+        rdfs:label "oocyte-laying stage adult hermaphrodite"
+    
+    SubClassOf: 
+        go:WBls_0000057
+    
+    
+Class: go:WBls_0000060
+
+    Annotations: 
+        go:def "\"Adult hermaphrodites continuously laying fertilized eggs. hermaphrodite in egg laying stages--ususally up to 4/5 days after L4-adult molt at Centigrade. From the first fertilized egg is laid\\, til all sperms are used. At 20 Centigrade\\: 13 hours after L4-adult molt until about 5.4 days after the L4-adult molt. 3-8.4 days after first cleavage.\" [wb:wjc]",
+        rdfs:label "reproductive stage adult hermaphrodite"
+    
+    SubClassOf: 
+        go:WBls_0000057
+    
+    
+Class: go:WBls_00000072
+
+    Annotations: 
+        go:def "\"~55 min after first cleavage at 20 Centigrade.  Contains 12 cells.\" [wb:wjc]",
+        rdfs:label "12-cell embryo"
+    
+    SubClassOf: 
+        go:WBls_0000005
+    
+    
+Class: go:WBls_0000004
+
+    Annotations: 
+        rdfs:label "proliferating embryo",
+        go:def "\"0-350min after first cleavage at 20 Centigrade. Proliferate from 1 cell to 560 cells. From start of first cleavage till cleavage is over.\" [wb:wjc]"
+    
+    SubClassOf: 
+        go:WBls_0000003
+    
+    
+Class: go:WBls_0000048
+
+    Annotations: 
+        go:def "\"The stage during L2d-dauer molt\\, after the brief lethargus period\\, when an animal sheds off old cuticle.\" [wb:wjc]",
+        rdfs:label "L2d-dauer ecdysis"
+    
+    SubClassOf: 
+        go:WBls_0000031
+    
+    
+Class: go:WBls_0000003
+
+    Annotations: 
+        go:def "\"The whole period of embryogenesis\\, from the formation of an egg till its hatch. \" [wb:wjc]",
+        rdfs:label "embryo"
+    
+    SubClassOf: 
+        go:WBls_0000002
+    
+    
+Class: go:WBls_0000047
+
+    Annotations: 
+        go:def "\"The stage during L2-L3 molt\\, after the brief lethargus period\\, when an animal sheds off old cuticle.\" [wb:wjc]",
+        rdfs:label "L2-L3 ecdysis"
+    
+    SubClassOf: 
+        go:WBls_0000029
+    
+    
+Class: go:WBls_0000002
+
+    Annotations: 
+        go:def "\"All C. elegans development stages\\, including embryo\\, larva and adult stage.\" [wb:wjc]",
+        rdfs:label "all stages"
+    
+    SubClassOf: 
+        go:WBls_0000001
+    
+    
+Class: go:WBls_0000046
+
+    Annotations: 
+        go:def "\"A special second stage larva with altered physiology and developmental potential that leads to formation of dauer larva. At 25 Centigrade\\, it ranges 25.5-32.5 hours after fertilization\\, 11.5-18.5 hours after hatch.\" [ISBN:0-87969-433-5]",
+        rdfs:label "L2d larva"
+    
+    SubClassOf: 
+        go:WBls_0000023
+    
+    
+Class: go:WBls_0000001
+
+    Annotations: 
+        rdfs:label "C. elegans Development DAG"
+    
+    
+Class: go:WBls_0000045
+
+    Annotations: 
+        go:def "\"The stage during L1-L2d molt\\, after the brief lethargus period\\, when an animal sheds off old cuticle.\" [wb:wjc]",
+        rdfs:label "L1-L2d ecdysis"
+    
+    SubClassOf: 
+        go:WBls_0000043
+    
+    
+Class: go:WBls_0000044
+
+    Annotations: 
+        go:def "\"The stage during L1-L2d molt when an animal becomes lethargic\\, ceases pharyngeal pumping and synthesizes new cuticle under the old. \" [wb:wjc]",
+        rdfs:label "L1-L2d lethargus"
+    
+    SubClassOf: 
+        go:WBls_0000043
+    
+    
+Class: go:WBls_0000043
+
+    Annotations: 
+        rdfs:label "L1-L2d molt",
+        go:def "\"The stage when an animal shifts from L1 larva to L2d larva. It includes the synthesis of new cuticle\\, cease of phrayngeal pumping during a lethargus stage\\, and the shed off of old cuticle.\" [wb:wjc]"
+    
+    SubClassOf: 
+        go:WBls_0000024
+    
+    
+Class: go:WBls_0000042
+
+    Annotations: 
+        go:def "\"The stage during L1-L2 molt\\, after the brief lethargus period\\, when an animal sheds off old cuticle.\" [wb:wjc]",
+        rdfs:label "L1-L2 ecdysis"
+    
+    SubClassOf: 
+        go:WBls_0000026
+    
+    
+Class: go:WBls_0000041
+
+    Annotations: 
+        rdfs:label "adult"
+    
+    SubClassOf: 
+        go:WBls_0000022
+    
+    
+Class: go:WBls_0000009
+
+    Annotations: 
+        go:def "\"100-105min after first cleaveage at 20 Centigrade. Contains 28 cells.\" [wb:wjc]",
+        rdfs:label "28-cell embryo"
+    
+    SubClassOf: 
+        go:WBls_0000005
+    
+    
+Class: go:WBls_0000008
+
+    Annotations: 
+        go:def "\"20-40min after first cleavage at 20 Centigrade.  Contains 4 cells.\" [wb:wjc]",
+        rdfs:label "4-cell embryo"
+    
+    SubClassOf: 
+        go:WBls_0000005
+    
+    
+Class: go:WBls_0000007
+
+    Annotations: 
+        go:def "\"0-20min after first cleavage at 20 Centigrade.  Contains 2 cells.\" [wb:wjc]",
+        rdfs:label "2-cell embryo"
+    
+    SubClassOf: 
+        go:WBls_0000005
+    
+    
+Class: go:WBls_0000006
+
+    Annotations: 
+        go:def "\"Also called zygote. -50min till 0min of first cleavage at 20 Centigrade. Contains 1 cell.\" [wb:wjc]",
+        rdfs:label "1-cell embryo"
+    
+    SubClassOf: 
+        go:WBls_0000005
+    
+    
+Class: go:WBls_0000005
+
+    Annotations: 
+        go:def "\"0-100min after first cleavage at 20 Centigrade. Proliferate from 1 cell to 28 cells. From first cleavage till the start of gastrulation.\" [wb:wjc]",
+        rdfs:label "blastula embryo"
+    
+    SubClassOf: 
+        go:WBls_0000004
+    
+    
+Class: go:WBls_0000049
+
+    Annotations: 
+        rdfs:label "L3-L4 ecdysis",
+        go:def "\"The stage during L3-L4 molt\\, after the brief lethargus period\\, when an animal sheds off old cuticle. \" [wb:wjc]"
+    
+    SubClassOf: 
+        go:WBls_0000037
+    
+    
+Class: go:WBls_0000051
+
+    Annotations: 
+        rdfs:label "postdauer-L4 ecdysis",
+        go:def "\"The stage during postdauer-L4 molt\\, after the brief lethargus period\\, when an animal sheds off old cuticle.\" [wb:wjc]"
+    
+    SubClassOf: 
+        go:WBls_0000034
+    
+    
+Class: go:WBls_0000050
+
+    Annotations: 
+        go:def "\"The stage during L4-adult molt\\, after the brief lethargus period\\, when an animal shed off old cuticle. \" [wb:wjc]",
+        rdfs:label "L4-adult ecdysis"
+    
+    SubClassOf: 
+        go:WBls_0000040
+    
+    
+Class: go:WBls_0000037
+
+    Annotations: 
+        rdfs:label "L3-L4 molt",
+        go:def "\"The stage when an animal shifts from L3 larva to L4 larva. It includes the synthesis of new cuticle\\, cease of phrayngeal pumping during a lethargus stage\\, and the shed off of old cuticle.\" [wb:wjc]"
+    
+    SubClassOf: 
+        go:WBls_0000035
+    
+    
+Class: go:WBls_0000036
+
+    Annotations: 
+        go:def "\"The stage during L3-L4 molt when an animal becomes lethargic\\, ceases pharyngeal pumping and synthesizes new cuticle under the old. \" [wb:wjc]",
+        rdfs:label "L3-L4 lethargus"
+    
+    SubClassOf: 
+        go:WBls_0000037
+    
+    
+Class: go:WBls_0000035
+
+    Annotations: 
+        go:def "\"The third stage larva. At 25 Centigrade\\, it ranges 32.5-40 hours after fertilization\\, 18.5-26 hours after hatch.\" [wb:wjc]",
+        rdfs:label "L3 larva"
+    
+    SubClassOf: 
+        go:WBls_0000023
+    
+    
+Class: go:WBls_0000034
+
+    Annotations: 
+        rdfs:label "postdauer-L4 molt",
+        go:def "\"The stage when an animal shifts from post dauer stage to L4 larva. It includes the synthesis of new cuticle\\, cease of phrayngeal pumping during a lethargus stage\\, and the shed off of old cuticle.\" [wb:wjc]"
+    
+    SubClassOf: 
+        go:WBls_0000052
+    
+    
+Class: go:WBls_0000033
+
+    Annotations: 
+        rdfs:label "postdauer-L4 lethargus",
+        go:def "\"The stage during postdauer-L4 molt when an animal becomes lethargic\\, ceases pharyngeal pumping and synthesizes new cuticle under the old.  \" [wb:wjc]"
+    
+    SubClassOf: 
+        go:WBls_0000034
+    
+    
+Class: go:WBls_0000032
+
+    Annotations: 
+        rdfs:label "dauer larva",
+        go:def "\"A third stage larva specialized for dispersal and long term survival.  \" [ISBN:0-87969-433-5]"
+    
+    SubClassOf: 
+        go:WBls_0000023
+    
+    
+Class: go:WBls_0000031
+
+    Annotations: 
+        go:def "\"The stage when an animal shifts from L2d larva to dauer larva. It includes the synthesis of new cuticle\\, cease of phrayngeal pumping during a lethargus stage\\, and the shed off of old cuticle. \" [wb:wjc]",
+        rdfs:label "L2d-dauer molt"
+    
+    SubClassOf: 
+        go:WBls_0000046
+    
+    
+Class: go:WBls_0000030
+
+    Annotations: 
+        rdfs:label "L2d-dauer lethargus",
+        go:def "\"The stage during L2d-dauer molt when an animal becomes lethargic\\, ceases pharyngeal pumping and synthesizes new cuticle under the old. \" [wb:wjc]"
+    
+    SubClassOf: 
+        go:WBls_0000031
+    
+    
+Class: go:WBls_0000039
+
+    Annotations: 
+        rdfs:label "L4-adult lethargus",
+        go:def "\"The stage during L4-adult molt when an animal becomes lethargic\\, ceases pharyngeal pumping and synthesizes new cuticle under the old.  \" [wb:wjc]"
+    
+    SubClassOf: 
+        go:WBls_0000040
+    
+    
+Class: go:WBls_0000038
+
+    Annotations: 
+        go:def "\"The fourth stage larva. At 25 Centigrade\\, it ranges 40-49.5 hours after fertilization\\, 26-35.5 hours after hatch.\" [wb:wjc]",
+        rdfs:label "L4 larva"
+    
+    SubClassOf: 
+        go:WBls_0000023
+    
+    
+Class: go:WBls_0000040
+
+    Annotations: 
+        rdfs:label "L4-adult molt",
+        go:def "\"The stage when an animal shifts from L4 larva to adult. It includes the synthesis of new cuticle\\, cease of phrayngeal pumping during a lethargus stage\\, and the shed off of old cuticle.\" [wb:wjc]"
+    
+    SubClassOf: 
+        go:WBls_0000038
+    
+    
+Class: go:WBls_0000026
+
+    Annotations: 
+        rdfs:label "L1-L2 molt",
+        go:def "\"The stage when an animal shifts from L1 larva to L2 larva. It includes the synthesis of new cuticle\\, cease of phrayngeal pumping during a lethargus stage\\, and the shed off of old cuticle.\" [wb:wjc]"
+    
+    SubClassOf: 
+        go:WBls_0000024
+    
+    
+Class: go:WBls_0000025
+
+    Annotations: 
+        go:def "\"The stage during L1-L2 molt when an animal becomes lethargic\\, ceases pharyngeal pumping and synthesizes new cuticle under the old. \" [wb:wjc]",
+        rdfs:label "L1-L2 lethargus"
+    
+    SubClassOf: 
+        go:WBls_0000026
+    
+    
+Class: go:WBls_0000069
+
+    Annotations: 
+        rdfs:label "4-7 days post-L4 adult hermaphrodite",
+        go:def "\"At 20 Centigrade\\: 4-7 days after L4-adult molt. 7-10 days after first cleavage.\" [wb:wjc]"
+    
+    SubClassOf: 
+        go:WBls_0000057
+    
+    
+Class: go:WBls_0000024
+
+    Annotations: 
+        go:def "\"The first stage larva. At 25 Centigrade\\, it ranges 14-25.5 hours after fertilization\\, 0-11.5 hours after hatch.\" [wb:wjc]",
+        rdfs:label "L1 larva"
+    
+    SubClassOf: 
+        go:WBls_0000023
+    
+    
+Class: go:WBls_0000068
+
+    Annotations: 
+        rdfs:label "5-days post-L4 adult hermaphrodite",
+        go:def "\"At 20 Centigrade\\: 5-6 days after L4-adult molt. 8-9 days after first cleavage.\" [wb:wjc]"
+    
+    SubClassOf: 
+        go:WBls_0000057
+    
+    
+Class: go:WBls_0000023
+
+    Annotations: 
+        rdfs:label "larva",
+        go:def "\"From the time after hatch till becomes adult.\" [wb:wjc]"
+    
+    SubClassOf: 
+        go:WBls_0000022
+    
+    
+Class: go:WBls_0000067
+
+    Annotations: 
+        go:def "\"At 20 Centigrade\\: 96-120 hours after L4-adult molt. 7-8 days after first cleavage.\" [wb:wjc]",
+        rdfs:label "4-days post-L4 adult hermaphrodite"
+    
+    SubClassOf: 
+        go:WBls_0000057
+    
+    
+Class: go:WBls_0000022
+
+    Annotations: 
+        rdfs:label "postembryonic",
+        go:def "\"The stage after hatch till death.\" [wb:wjc]"
+    
+    SubClassOf: 
+        go:WBls_0000002
+    
+    
+Class: go:WBls_0000066
+
+    Annotations: 
+        rdfs:label "3-days post-L4 adult hermaphrodite",
+        go:def "\"At 20 Centigrade\\: 72-96 hours after L4-adult molt. 6-7 days after first cleavage.\" [wb:wjc]"
+    
+    SubClassOf: 
+        go:WBls_0000057
+    
+    
+Class: go:WBls_0000021
+
+    Annotations: 
+        go:def "\"620-800min(hatch) after first cleavage at 20 Centigrade. Cell number remains at ~560 cells\\, with some new cells generated and some cells go through programmed cell death. A stage after elongation is over. The last stage of embryogenesis. Also called pre-hatched embryo\\, late embryo or morphogenetic embryo.\" [wb:wjc]",
+        rdfs:label "fully-elongated embryo"
+    
+    SubClassOf: 
+        go:WBls_0000003
+    
+    
+Class: go:WBls_0000065
+
+    Annotations: 
+        go:def "\"At 20 Centigrade\\: 48-72 hours after L4-adult molt. 5-6 days after first cleavage.\" [wb:wjc]",
+        rdfs:label "2-days post-L4 adult hermaphrodite"
+    
+    SubClassOf: 
+        go:WBls_0000057
+    
+    
+Class: go:WBls_0000020
+
+    Annotations: 
+        go:def "\"520-620min after first cleavage at 20 Centigrade. Cell number remains at ~560 cells\\, with some new cells generated and some cells go through programmed cell death. The shape of embryo is elongated and tripple fold. A stage between 2-fold embryo and fully-elongated embryo. Also called pretzel embryo or pretzel stage.\" [wb:wjc]",
+        rdfs:label "3-fold embryo"
+    
+    SubClassOf: 
+        go:WBls_0000015
+    
+    
+Class: go:WBls_0000064
+
+    Annotations: 
+        go:def "\"At 20 Centigrade\\: 24-48 hours after L4-adult molt. 4-5 days after first cleavage.\" [wb:wjc]",
+        rdfs:label "1-day post-L4 adult hermaphrodite"
+    
+    SubClassOf: 
+        go:WBls_0000057
+    
+    
+Class: go:WBls_0000063
+
+    Annotations: 
+        rdfs:label "newly molted young adult hermaphrodite",
+        go:def "\"At 20 Centigrade\\: 0-24 hours after L4-adult molt.\" [wb:wjc]"
+    
+    SubClassOf: 
+        go:WBls_0000057
+    
+    
+Class: go:WBls_0000029
+
+    Annotations: 
+        rdfs:label "L2-L3 molt",
+        go:def "\"The stage when an animal shifts from L2 larva to L3 larva. It includes the synthesis of new cuticle\\, cease of phrayngeal pumping during a lethargus stage\\, and the shed off of old cuticle.\" [wb:wjc]"
+    
+    SubClassOf: 
+        go:WBls_0000027
+    
+    
+Class: go:WBls_0000028
+
+    Annotations: 
+        go:def "\"The stage during L2-L3 molt when an animal becomes lethargic\\, ceases pharyngeal pumping and synthesizes new cuticle under the old. \" [wb:wjc]",
+        rdfs:label "L2-L3 lethargus"
+    
+    SubClassOf: 
+        go:WBls_0000029
+    
+    
+Class: go:WBls_0000027
+
+    Annotations: 
+        go:def "\"The second stage larva. At 25 Centigrade\\, it ranges 25.5-32.5 hours after fertilization\\, 11.5-18.5 hours after hatch.\" [wb:wjc]",
+        rdfs:label "L2 larva"
+    
+    SubClassOf: 
+        go:WBls_0000023
+    
+    
+Class: go:WBls_0000073
+
+    Annotations: 
+        rdfs:label "L4 larva male",
+        go:def "\"The fourth stage larva male. At 25 Centigrade\\, it ranges 40-49.5 hours after fertilization\\, 26-35.5 hours after hatch.\" [wb:wjc]"
+    
+    SubClassOf: 
+        go:WBls_0000038
+    
+    
+Class: go:WBls_0000070
+
+    Annotations: 
+        go:def "\"At 20 Centigrade\\: 7-10 days after L4-adult molt. 10-13 days after first cleavage. Usually this is the end of wild type C. elegans life span.\" [wb:wjc]",
+        rdfs:label "7-10 days post-L4 adult hermaphrodite"
+    
+    SubClassOf: 
+        go:WBls_0000057
+    
+    

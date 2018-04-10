@@ -1,0 +1,1591 @@
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+
+
+Ontology: <http://purl.obolibrary.org/obo/caro/caro.owl>
+<http://purl.obolibrary.org/obo/caro/2.0/beta/caro.owl>
+Import: <http://purl.obolibrary.org/obo/ro/core.owl>
+Import: <http://purl.obolibrary.org/obo/caro/imports/bfo_classes_only.owl>
+Import: <http://purl.obolibrary.org/obo/caro/imports/pco_import.owl>
+Import: <http://purl.obolibrary.org/obo/caro/imports/chebi_import.owl>
+Import: <http://purl.obolibrary.org/obo/caro/imports/ro_import.owl>
+Import: <http://purl.obolibrary.org/obo/caro/imports/pato_import.owl>
+Import: <http://purl.obolibrary.org/obo/caro/caro_bridge.owl>
+Import: <http://purl.obolibrary.org/obo/caro/imports/go_import.owl>
+
+Annotations: 
+    rdfs:comment "Based on CARO 1.0, with modifications and additions by David Osumi-Sutherland, Chris Mungall, Ramona Walls and Melissa Haendal."
+
+AnnotationProperty: <http://purl.obolibrary.org/obo/IAO_0000424>
+
+    Annotations: 
+        rdfs:label "expand expression to"^^xsd:string
+    
+    Annotations: 
+        rdfs:label "expand expression to"^^xsd:string
+    
+    
+AnnotationProperty: <http://purl.obolibrary.org/obo/IAO_0000600>
+
+    
+AnnotationProperty: <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym>
+
+    Annotations: 
+        rdfs:label "has_related_synonym"^^xsd:string
+    
+    Annotations: 
+        rdfs:label "has_related_synonym"^^xsd:string
+    
+    
+AnnotationProperty: <http://purl.obolibrary.org/obo/caro#core>
+
+    Annotations: 
+        rdfs:comment "CARO2 core class"^^xsd:string
+    
+    Annotations: 
+        rdfs:comment "CARO2 core class"^^xsd:string
+    
+    SubPropertyOf: 
+        <http://www.geneontology.org/formats/oboInOwl#SubsetProperty>
+    
+    
+AnnotationProperty: rdfs:comment
+
+    
+AnnotationProperty: <http://purl.obolibrary.org/obo/IAO_synonym_typedef>
+
+    
+AnnotationProperty: <http://www.geneontology.org/formats/oboInOwl#SubsetProperty>
+
+    
+AnnotationProperty: <http://www.geneontology.org/formats/oboInOwl#created_by>
+
+    
+AnnotationProperty: <http://purl.obolibrary.org/obo/IAO_creation_date>
+
+    
+AnnotationProperty: <http://www.geneontology.org/formats/oboInOwl#creation_date>
+
+    
+AnnotationProperty: <http://purl.obolibrary.org/obo/REO_0000000>
+
+    
+AnnotationProperty: <http://www.geneontology.org/formats/oboInOwl#hasAlternativeId>
+
+    Annotations: 
+        rdfs:label "has_alternative_id"^^xsd:string
+    
+    Annotations: 
+        rdfs:label "has_alternative_id"^^xsd:string
+    
+    
+AnnotationProperty: <http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym>
+
+    Annotations: 
+        rdfs:label "has_narrow_synonym"^^xsd:string
+    
+    Annotations: 
+        rdfs:label "has_narrow_synonym"^^xsd:string
+    
+    
+AnnotationProperty: <http://www.geneontology.org/formats/oboInOwl#inSubset>
+
+    Annotations: 
+        rdfs:label "in_subset"^^xsd:string
+    
+    Annotations: 
+        rdfs:label "in_subset"^^xsd:string
+    
+    
+AnnotationProperty: <http://www.geneontology.org/formats/oboInOwl#SynonymTypeProperty>
+
+    Annotations: 
+        rdfs:label "synonym_type_property"^^xsd:string
+    
+    Annotations: 
+        rdfs:label "synonym_type_property"^^xsd:string
+    
+    
+AnnotationProperty: <http://www.geneontology.org/formats/oboInOwl#default-namespace>
+
+    
+AnnotationProperty: <http://www.geneontology.org/formats/oboInOwl#hasOBOFormatVersion>
+
+    Annotations: 
+        rdfs:label "has_obo_format_version"^^xsd:string
+    
+    Annotations: 
+        rdfs:label "has_obo_format_version"^^xsd:string
+    
+    
+AnnotationProperty: <http://purl.obolibrary.org/obo/IAO_0000118>
+
+    
+AnnotationProperty: <http://purl.obolibrary.org/obo/IAO_0000117>
+
+    
+AnnotationProperty: <http://www.geneontology.org/formats/oboInOwl#hasSynonymType>
+
+    Annotations: 
+        rdfs:label "has_synonym_type"^^xsd:string
+    
+    Annotations: 
+        rdfs:label "has_synonym_type"^^xsd:string
+    
+    
+AnnotationProperty: <http://purl.obolibrary.org/obo/IAO_0100001>
+
+    Annotations: 
+        rdfs:label "term replaced by"^^xsd:string
+    
+    Annotations: 
+        rdfs:label "term replaced by"^^xsd:string
+    
+    
+AnnotationProperty: <http://purl.obolibrary.org/obo/IAO_scope>
+
+    
+AnnotationProperty: <http://purl.obolibrary.org/obo/IAO_0000116>
+
+    
+AnnotationProperty: <http://purl.obolibrary.org/obo/IAO_0000115>
+
+    
+AnnotationProperty: <http://www.geneontology.org/formats/oboInOwl#hasDbXref>
+
+    Annotations: 
+        rdfs:label "database_cross_reference"^^xsd:string
+    
+    Annotations: 
+        rdfs:label "database_cross_reference"^^xsd:string
+    
+    
+AnnotationProperty: <http://purl.obolibrary.org/obo/caro#plus>
+
+    Annotations: 
+        rdfs:comment "CARO2 plus class"^^xsd:string
+    
+    Annotations: 
+        rdfs:comment "CARO2 plus class"^^xsd:string
+    
+    SubPropertyOf: 
+        <http://www.geneontology.org/formats/oboInOwl#SubsetProperty>
+    
+    
+AnnotationProperty: <http://purl.obolibrary.org/obo/IAO_0000112>
+
+    
+AnnotationProperty: <http://www.geneontology.org/formats/oboInOwl#id>
+
+    
+AnnotationProperty: <http://purl.obolibrary.org/obo/fbbt#InChIKey>
+
+    SubPropertyOf: 
+        <http://www.geneontology.org/formats/oboInOwl#SynonymTypeProperty>
+    
+    
+AnnotationProperty: <http://purl.obolibrary.org/obo/fbbt#olfactory_system_draft>
+
+    Annotations: 
+        rdfs:comment "adult olfactory system model"^^xsd:string
+    
+    Annotations: 
+        rdfs:comment "adult olfactory system model"^^xsd:string
+    
+    SubPropertyOf: 
+        <http://www.geneontology.org/formats/oboInOwl#SubsetProperty>
+    
+    
+AnnotationProperty: <http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym>
+
+    Annotations: 
+        rdfs:label "has_broad_synonym"^^xsd:string
+    
+    Annotations: 
+        rdfs:label "has_broad_synonym"^^xsd:string
+    
+    
+AnnotationProperty: <http://www.geneontology.org/formats/oboInOwl#consider>
+
+    Annotations: 
+        rdfs:label "consider"^^xsd:string
+    
+    Annotations: 
+        rdfs:label "consider"^^xsd:string
+    
+    
+AnnotationProperty: <http://purl.obolibrary.org/obo/fbbt#systematic_synonym>
+
+    Annotations: 
+        <http://www.geneontology.org/formats/oboInOwl#hasScope> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>
+    
+    Annotations: 
+        <http://www.geneontology.org/formats/oboInOwl#hasScope> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>
+    
+    SubPropertyOf: 
+        <http://www.geneontology.org/formats/oboInOwl#SynonymTypeProperty>
+    
+    
+AnnotationProperty: <http://www.geneontology.org/formats/oboInOwl#hasScope>
+
+    
+AnnotationProperty: <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace>
+
+    Annotations: 
+        rdfs:label "has_obo_namespace"^^xsd:string
+    
+    Annotations: 
+        rdfs:label "has_obo_namespace"^^xsd:string
+    
+    
+AnnotationProperty: owl:deprecated
+
+    
+AnnotationProperty: <http://www.geneontology.org/formats/oboInOwl#data-version>
+
+    
+AnnotationProperty: <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>
+
+    Annotations: 
+        rdfs:label "has_exact_synonym"^^xsd:string
+    
+    Annotations: 
+        rdfs:label "has_exact_synonym"^^xsd:string
+    
+    
+AnnotationProperty: rdfs:label
+
+    
+Datatype: xsd:boolean
+
+    
+Datatype: xsd:string
+
+    
+Datatype: rdf:PlainLiteral
+
+    
+ObjectProperty: <http://purl.obolibrary.org/obo/RO_0002002>
+
+    Annotations: 
+        rdfs:label "has_boundary"@en
+    
+    Domain: 
+        <http://purl.obolibrary.org/obo/CARO_0000003>
+    
+    Range: 
+        <http://purl.obolibrary.org/obo/CARO_0000010>
+    
+    
+ObjectProperty: <http://purl.obolibrary.org/obo/RO_0000053>
+
+    
+ObjectProperty: <http://purl.obolibrary.org/obo/RO_0002180>
+
+    
+ObjectProperty: <http://purl.obolibrary.org/obo/BFO_0000050>
+
+    
+ObjectProperty: <http://purl.obolibrary.org/obo/BFO_0000051>
+
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000048>
+
+    Annotations: 
+        rdfs:label "gonochoristic organism"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "Multi-cellular organism that has male and female sexes."^^xsd:string,
+        
+            Annotations: <http://purl.obolibrary.org/obo/IAO_scope> "RELATED"^^xsd:string
+        <http://purl.obolibrary.org/obo/IAO_0000118> "monoecious organism"^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000048"^^xsd:string
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000012>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000049>
+
+    Annotations: 
+        <http://purl.obolibrary.org/obo/IAO_0000115> "Sequential hermaphroditic organism that produces\\ngametes first of the male sex, and then later of the\\nfemale sex."^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000049"^^xsd:string,
+        rdfs:label "protandrous hermaphroditic organism"^^xsd:string
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000045>
+    
+    
+Class: <http://purl.obolibrary.org/obo/PATO_0002309>
+
+    
+Class: <http://purl.obolibrary.org/obo/BFO_0000004>
+
+    
+Class: <http://purl.obolibrary.org/obo/PATO_0000125>
+
+    Annotations: 
+        <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0000125"^^xsd:string,
+        rdfs:label "mass"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "A physical quality that inheres in a bearer by virtue of the proportion of the bearer's amount of matter."^^xsd:string
+    
+    
+Class: <http://purl.obolibrary.org/obo/BFO_0000009>
+
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0010010>
+
+    Annotations: 
+        <http://purl.obolibrary.org/obo/IAO_0000117> "djs93"^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0010010"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_creation_date> "Wed Mar 09 08:02:50 GMT 2011"^^xsd:string,
+        rdfs:label "epithelial sac"^^xsd:string
+    
+    EquivalentTo: 
+        <http://purl.obolibrary.org/obo/CARO_0000066>
+         and (<http://purl.obolibrary.org/obo/RO_0000053> some <http://purl.obolibrary.org/obo/PATO_0001987>)
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0001013>
+
+    Annotations: 
+        rdfs:label "anatomical plane"^^xsd:string,
+        rdfs:comment "All anatomical planes are fiat anatomical boundaries - no morphological boundary could ever be a perfect plane."
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0001003>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000043>
+
+    Annotations: 
+        <http://purl.obolibrary.org/obo/IAO_0000116> "relabel 'tissue'?"^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000043"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000118> "portion of tissue"^^xsd:string,
+        rdfs:label "tissue"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "Multicellular anatomical structure that consists of many cells of one or a few types, arranged in an extracellular matrix such that their long-range organisation is at least partly a repetition of their short-range organisation."^^xsd:string
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0010000>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000046>
+
+    Annotations: 
+        
+            Annotations: <http://purl.obolibrary.org/obo/IAO_scope> "RELATED"^^xsd:string
+        <http://purl.obolibrary.org/obo/IAO_0000118> "serially hermaphroditic organism"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "Hermaphroditic organism that produces both male and female gametes at the same time."^^xsd:string,
+        rdfs:label "synchronous hermaphroditic organism"^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000046"^^xsd:string
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000029>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0002100>
+
+    Annotations: 
+        <http://purl.obolibrary.org/obo/IAO_0000115> "An anatomical structure consisting of multiple cells, organs, tissues, distributed throught an organism, that act together to perform some physiological function.",
+        rdfs:label "anatomical system",
+        
+            Annotations: <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "GOC:dos"
+        rdfs:comment "Examples include connected systems such as the circulatory system - whose elements function together to perform the function or blood circulation - and disconected systems such as the immune system."
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000000>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000045>
+
+    Annotations: 
+        
+            Annotations: <http://purl.obolibrary.org/obo/IAO_scope> "RELATED"^^xsd:string
+        <http://purl.obolibrary.org/obo/IAO_0000118> "consecutive hermaphroditic organism"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "Hermaphroditic organism that produces gametes first of one sex, and then later of the other sex."^^xsd:string,
+        rdfs:label "sequential hermaphroditic organism"^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000045"^^xsd:string
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000029>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0002101>
+
+    Annotations: 
+        rdfs:label "disconnected anatomical system",
+        rdfs:comment "Examples include the immune system and the endocrine system.",
+        
+            Annotations: <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "GOC:dos"
+        <http://purl.obolibrary.org/obo/IAO_0000115> "An anatomical system consisting of multiple disconnected parts."
+    
+    EquivalentTo: 
+        <http://purl.obolibrary.org/obo/CARO_0002100>
+         and (<http://purl.obolibrary.org/obo/RO_0000053> some <http://purl.obolibrary.org/obo/PATO_0010001>)
+         and (<http://purl.obolibrary.org/obo/RO_0002180> min 2 <http://purl.obolibrary.org/obo/CARO_0000003>)
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0002100>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000040>
+
+    Annotations: 
+        rdfs:comment "Example.  Insect cuticle, eggshell, hair."^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000040"^^xsd:string,
+        rdfs:label "acellular anatomical structure"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "An anatomical structure that has no cells or cell parts as a part."^^xsd:string
+    
+    EquivalentTo: 
+        <http://purl.obolibrary.org/obo/CARO_0000003>
+         and (<http://purl.obolibrary.org/obo/RO_0002180> exactly 0 <http://purl.obolibrary.org/obo/CARO_0000013>)
+         and (<http://purl.obolibrary.org/obo/RO_0002180> exactly 0 <http://purl.obolibrary.org/obo/CARO_0000014>)
+    
+    DisjointWith: 
+        <http://purl.obolibrary.org/obo/CARO_0000014>, <http://purl.obolibrary.org/obo/CARO_0000013>, <http://purl.obolibrary.org/obo/CARO_0001000>, <http://purl.obolibrary.org/obo/CARO_0010000>, <http://purl.obolibrary.org/obo/CARO_0000042>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0001010>
+
+    Annotations: 
+        <http://purl.obolibrary.org/obo/IAO_0000115> "Material anatomical entity that is a member of an individual species or is a viral or viroid particle."^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_creation_date> "9/18/11"^^xsd:string,
+        rdfs:label "organism or virus or viroid"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000117> "Melissa Haendel"^^xsd:string
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000040>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000042>
+
+    Annotations: 
+        rdfs:label "extraembryonic structure"^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000042"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "A multicellular anatomical structure that is associated with an embryo and derived from the zygote from which it develops, but which does not contribute to the embryo proper or to structures that are part of the same organism after embryogenesis."^^xsd:string,
+        rdfs:comment "MH: define as not part of embryo, or will not develop into embryo? MH: changed def to exclude cells so this class could be included in gross anatomical part. DOS: Changed to something that I think works for both vertebrates and invertebrates and that keeps the restriction to multicellular structures.  Old def: \"Anatomical structure that is contiguous with the embryo and is comprised of portions of tissue that will not contribute to the embryo.\".  One remaining question - perhaps zygote is too restrictive given that some organisms have parthenogenesis e.g. aphids?
+"^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/caro#plus>
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000003>
+    
+    DisjointWith: 
+        <http://purl.obolibrary.org/obo/CARO_0000014>, <http://purl.obolibrary.org/obo/CARO_0001000>, <http://purl.obolibrary.org/obo/CARO_0000013>, <http://purl.obolibrary.org/obo/CARO_0000040>, <http://purl.obolibrary.org/obo/CARO_0010000>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000041>
+
+    Annotations: 
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000041"^^xsd:string,
+        rdfs:label "anatomical cluster"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0100001> <http://purl.obolibrary.org/obo/CARO_0020001>,
+        
+            Annotations: <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "CARO:MAH"^^xsd:string, 
+                         <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "FMA:49443"^^xsd:string
+        <http://purl.obolibrary.org/obo/IAO_0000115> "Anatomical group that has its parts adjacent to one another."^^xsd:string,
+        owl:deprecated true,
+        <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/caro#plus>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0001008>
+
+    Annotations: 
+        <http://purl.obolibrary.org/obo/IAO_creation_date> "10.7.2011"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "Anatomical structure that is part of a multicellular organism and is at the gross anatomical level, e.g. above the level of a cell.  Included are portions of organism substances such as blood, multi-cell-part structures such as axon tracts, acellular anatomical structures such as hair, and organism subdivisions such as head. Excluded is the whole organism and more granular parts of the organism, such as atoms, molecules, macromolecular complexes and cells. "^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/caro#plus>,
+        rdfs:label "gross anatomical part"@en,
+        <http://purl.obolibrary.org/obo/IAO_0000117> "mah"^^xsd:string
+    
+    EquivalentTo: 
+        (<http://purl.obolibrary.org/obo/CARO_0000004> or <http://purl.obolibrary.org/obo/CARO_0000032> or <http://purl.obolibrary.org/obo/CARO_0000040> or <http://purl.obolibrary.org/obo/CARO_0000042> or <http://purl.obolibrary.org/obo/CARO_0001000> or <http://purl.obolibrary.org/obo/CARO_0010000>)
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000050> some <http://purl.obolibrary.org/obo/CARO_0000012>,
+        <http://purl.obolibrary.org/obo/CARO_0000006>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0001009>
+
+    Annotations: 
+        rdfs:label "obsolete anatomical chamber"^^xsd:string,
+        owl:deprecated true,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "Anatomical structure that surrounds an immaterial anatomical entity."^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/caro#plus>,
+        <http://purl.obolibrary.org/obo/IAO_creation_date> "10.10.2011"^^xsd:string,
+        rdfs:comment "See CARO tracker #6, but essentially Chamber has connotations of space, rather than wall: see http://en.wiktionary.org/wiki/chamber
+
+This term is extremely abstract as a genus - it specifies no granularity at all. It could refer to a chamber in a protein complex in a membrane as easily as some big multi-tissue structure like a segment of gut.",
+        <http://purl.obolibrary.org/obo/IAO_0000117> "mah"^^xsd:string
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0001006>
+
+    Annotations: 
+        rdfs:label "developmental compartment boundary"@en,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "A two dimensional anatomical entity that is not a morphological boundary and that cells do not cross during development."@en
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0001004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0001007>
+
+    Annotations: 
+        rdfs:label "morphological boundary"@en,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "A two dimensional anatomical structure that corresponds to some structural discontinuity."@en
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0001004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0001004>
+
+    Annotations: 
+        <http://purl.obolibrary.org/obo/IAO_0000115> "An anatomical boundary that corresponds to some physical discontinuity."@en,
+        rdfs:label "bona-fide anatomical boundary"@en,
+        rdfs:comment "One might argue that all boundaries are actually fiat in the sense that there must be some fiat element at a fine enough scale of granularity.  This ontology choses to ignore this issue as below the level of granularity relevant to anatomy. (DOS121102)"
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000010>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0001005>
+
+    Annotations: 
+        <http://purl.obolibrary.org/obo/IAO_0000115> "A two dimensional anatomical entity that is the boundary of a domain of  expression of some gene."@en,
+        rdfs:label "gene expression boundary"@en
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0001004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/PATO_0001987>
+
+    Annotations: 
+        <http://purl.obolibrary.org/obo/IAO_0000115> "A structural quality inhering in a bearer by virtue of the bearer's having a three dimensional cavity with a narrow or no opening, and often containing an anatomical substance."^^xsd:string,
+        rdfs:label "saccular"^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001987"^^xsd:string,
+        
+            Annotations: <http://purl.obolibrary.org/obo/IAO_scope> "EXACT"^^xsd:string
+        <http://purl.obolibrary.org/obo/IAO_0000118> "sacular"^^xsd:string
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0001002>
+
+    Annotations: 
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000010"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "A two dimensional anatomical structure that is the boundary between an anatomical structure and an anatomical substance, an anatomical space or the organism's environment.  Examples include the surface of your skin, the surface of the lining of your gut; the surface of the endothelium of you aorta that is in contact with blood.
+"@en,
+        rdfs:label "anatomical surface"^^xsd:string,
+        rdfs:comment "Old definition: \"Non-material anatomical entity of two dimensions, that is demarcated by anatomical lines or points on the external or internal surfaces of anatomical structures.\"  Note, in the new definition, the space referred to is not necessarily an anatomical space.  It may be the outside of an organism."@en
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0001007>
+    
+    DisjointWith: 
+        <http://purl.obolibrary.org/obo/CARO_0000008>, <http://purl.obolibrary.org/obo/CARO_0000009>, <http://purl.obolibrary.org/obo/CARO_0000005>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000032>
+
+    Annotations: 
+        <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/caro#core>,
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000032"^^xsd:string,
+        rdfs:label "organism subdivision"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "Anatomical structure which is a subdivision of a whole organism, consisting of components of multiple anatomical systems, largely surrounded by a contiguous region of integument."@en,
+        <http://purl.obolibrary.org/obo/IAO_0000116> "Old definition: Anatomical structure which is a primary subdivision of whole organism. The mereological sum of these is the whole organism."^^xsd:string
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0010000>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0001003>
+
+    Annotations: 
+        <http://purl.obolibrary.org/obo/IAO_0000115> "A  two dimensional anatomical entity that does not correspond to any physical discontinuity."@en,
+        rdfs:comment "Fiat anatomical boundaries are generally defined using external physical criteria as landmarks.  One might argue that all boundaries are actually fiat in the sense that there must be some fiat element at a fine enough scale of granularity.  This ontology choses to ignore this issue as below the level of granularity relevant to anatomy. (DOS121102)",
+        rdfs:label "fiat anatomical boundary"@en
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000010>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0001000>
+
+    Annotations: 
+        rdfs:label "multi-cell-part structure"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "A structure consisting of multiple cell components but which is not itself a cell and does not have (complete) cells as a part."^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/caro#core>,
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0001000"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000118> "multi-cell-component structure"^^xsd:string,
+        rdfs:comment "Examples: a bundle of neuron projections in the brain; a region neuropil in an arthropod central nervous system; a region of cortex (preikaryal rind) in an arthropod brain."^^xsd:string
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000003>
+         and (<http://purl.obolibrary.org/obo/BFO_0000051> only (not (<http://purl.obolibrary.org/obo/CARO_0000013>)))
+         and (<http://purl.obolibrary.org/obo/RO_0002180> min 2 <http://purl.obolibrary.org/obo/CARO_0000014>)
+    
+    DisjointWith: 
+        <http://purl.obolibrary.org/obo/CARO_0000014>, <http://purl.obolibrary.org/obo/CARO_0000013>, <http://purl.obolibrary.org/obo/CARO_0000040>, <http://purl.obolibrary.org/obo/CARO_0010000>, <http://purl.obolibrary.org/obo/CARO_0000042>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0001001>
+
+    Annotations: 
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0001001"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "A fasciculated bundle of neuron projections (GO:0043005), largely or completely lacking synapses."^^xsd:string,
+        rdfs:label "neuron projection bundle"^^xsd:string,
+        
+            Annotations: <http://purl.obolibrary.org/obo/IAO_scope> "EXACT"^^xsd:string
+        <http://purl.obolibrary.org/obo/IAO_0000118> "nerve fiber bundle"^^xsd:string
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/RO_0000053> some <http://purl.obolibrary.org/obo/PATO_0002309>,
+        <http://purl.obolibrary.org/obo/CARO_0001000>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000030>
+
+    Annotations: 
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000030"^^xsd:string,
+        rdfs:label "asexual multi-cellular organism"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "Multi-cellular organism that does not produce gametes."^^xsd:string
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000012>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000069>
+
+    Annotations: 
+        <http://purl.obolibrary.org/obo/IAO_0000115> "Epithelium that consists of more than one layer of epithelial cells."^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000069"^^xsd:string,
+        rdfs:label "multilaminar epithelium"^^xsd:string
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000066>
+    
+    DisjointWith: 
+        <http://purl.obolibrary.org/obo/CARO_0000071>, <http://purl.obolibrary.org/obo/CARO_0000073>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0002005>
+
+    Annotations: 
+        rdfs:label "appendage subdivision"@en,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "A subdivision of an appendage along its proximal-distal axis, consisting consisting of components of multiple anatomical systems, largely surrounded by a contiguous region of integument."
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000032>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0002006>
+
+    Annotations: 
+        rdfs:label "obsolete body cavity"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "A major anatomical space of an organism in which major organs are located.",
+        owl:deprecated true,
+        <http://purl.obolibrary.org/obo/IAO_0000112> "Ceolom, cranial cavity, mammalian thoracic and abdominal body cavities, arthropod hemoceol."
+    
+    
+Class: <http://purl.obolibrary.org/obo/BFO_0000026>
+
+    
+Class: <http://purl.obolibrary.org/obo/BFO_0000029>
+
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0030000>
+
+    Annotations: 
+        <http://purl.obolibrary.org/obo/IAO_0000115> "Entity that is, is part of, or derived from an organism, virus, or viroid or a collection of them.",
+        rdfs:label "biological entity",
+        rdfs:comment "Important for alignment with Darwin Core class \"Organism\"."
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0030002>
+
+    Annotations: 
+        <http://purl.obolibrary.org/obo/IAO_0000115> "The mereological sum of all cells in a single organism in which expression of some specified gene occurs.",
+        rdfs:label "expression pattern"
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000006>,
+        <http://purl.obolibrary.org/obo/BFO_0000051> some <http://purl.obolibrary.org/obo/CARO_0000013>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000066>
+
+    Annotations: 
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000066"^^xsd:string,
+        rdfs:label "epithelium"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "Portion of tissue, that consists of one or more layers of epithelial cells connected to each other by cell junctions and which is underlain by a basal lamina."^^xsd:string
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/RO_0000053> some <http://purl.obolibrary.org/obo/PATO_0002124>,
+        <http://purl.obolibrary.org/obo/CARO_0000043>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0002003>
+
+    Annotations: 
+        rdfs:comment "Not to be confused with anatomical cluster, in the FMA sense.  FMA anatomical structures are connected structures made up of heterologous parts.  For example, joints are anatomical clusters in the FMA.  The FMA definition on anatomical cluster, and the CARO1 definition that was based on it, are defined largely by exclusion.",
+        rdfs:label "clustered anatomical group"@en,
+        
+            Annotations: <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "FBC:DOS"
+        <http://purl.obolibrary.org/obo/IAO_0000115> "Anatomical group whose parts are close together, forming a cluster."
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0020000>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000065>
+
+    Annotations: 
+        <http://purl.obolibrary.org/obo/IAO_0000115> "Acellular anatomical structure that consists of a thin sheet of fibrous proteins that underlie and support the cells of an epithelium. It separates the cells of an epithelium from any underlying tissue."^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000065"^^xsd:string,
+        rdfs:label "basal lamina"^^xsd:string,
+        owl:deprecated true
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0002004>
+
+    Annotations: 
+        <http://purl.obolibrary.org/obo/IAO_0000115> "One of a set of semi-repetitive organism subdivisions serially arranged along the anterior-posterior axis of an organism and excluding appendages if present.",
+        rdfs:label "segment body"
+    
+    SubClassOf: 
+        not (<http://purl.obolibrary.org/obo/BFO_0000051> some <http://purl.obolibrary.org/obo/CARO_0010003>),
+        <http://purl.obolibrary.org/obo/CARO_0000032>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000068>
+
+    Annotations: 
+        rdfs:label "simple columnar epithlium"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "Unilaminar epithelium that consists of a single layer of columnar cells."^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000068"^^xsd:string
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000073>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0002001>
+
+    Annotations: 
+        rdfs:label "integumentary system",
+        <http://purl.obolibrary.org/obo/IAO_0000115> "Connected anatomical system that forms a barrier between an animal and its environment - generally consisting of an epidermis, which may be covered by some acellular structure."
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000011>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000067>
+
+    Annotations: 
+        <http://purl.obolibrary.org/obo/IAO_0000115> "Unilaminar epithelium that consists of a single layer of cuboidal cells."^^xsd:string,
+        rdfs:label "simple cuboidal epithelium"^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000067"^^xsd:string
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000073>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0002002>
+
+    Annotations: 
+        rdfs:label "aligned anatomical group",
+        rdfs:comment "Examples include the rows of sense organs commonly found in the cuticles of insects.",
+        <http://purl.obolibrary.org/obo/IAO_0000115> "An anatomical group whose members are arranged in a line."
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0020000>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000062>
+
+    Annotations: 
+        rdfs:label "cell space"^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000062"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "Anatomical space that is part of a cell."^^xsd:string
+    
+    EquivalentTo: 
+        <http://purl.obolibrary.org/obo/CARO_0000005>
+         and (<http://purl.obolibrary.org/obo/BFO_0000050> some <http://purl.obolibrary.org/obo/CARO_0000013>)
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0002000>
+
+    Annotations: 
+        <http://purl.obolibrary.org/obo/IAO_0000115> "Epithelium of the integumentary system.",
+        rdfs:label "epidermis"
+    
+    EquivalentTo: 
+        <http://purl.obolibrary.org/obo/CARO_0000066>
+         and (<http://purl.obolibrary.org/obo/BFO_0000050> some <http://purl.obolibrary.org/obo/CARO_0002001>)
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000064>
+
+    Annotations: 
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000064"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "Organism that consists of a single cell for all of its life-cycle."^^xsd:string,
+        rdfs:label "unicellular organism"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000118> "single-cell organism"^^xsd:string
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0010004>,
+        <http://purl.obolibrary.org/obo/RO_0002180> only <http://purl.obolibrary.org/obo/CARO_0000013>,
+        <http://purl.obolibrary.org/obo/RO_0002180> exactly 1 <http://purl.obolibrary.org/obo/CARO_0000013>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000063>
+
+    Annotations: 
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000063"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "Portion of organism substance located within a cell."^^xsd:string,
+        rdfs:label "portion of cell substance"^^xsd:string,
+        rdfs:comment "Deprecate this as better to leave it up to GO to define?"
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0010001>
+
+    Annotations: 
+        rdfs:label "cell cluster organ"^^xsd:string,
+        rdfs:comment "Examples include arthropod sensilla."^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000117> "djs93"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_creation_date> "Sun Feb 27 11:00:35 GMT 2011"^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0010001"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "A small cluster of cells of various types which form a discrete structure, largely delimited by a morphological boundary and whose components work together to make the whole structure capable of a specific function."^^xsd:string
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0020002>,
+        <http://purl.obolibrary.org/obo/CARO_0020004>
+    
+    DisjointWith: 
+        <http://purl.obolibrary.org/obo/CARO_0010002>, <http://purl.obolibrary.org/obo/CARO_0000024>, <http://purl.obolibrary.org/obo/CARO_0000012>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0010000>
+
+    Annotations: 
+        <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/caro#core>,
+        <http://purl.obolibrary.org/obo/IAO_0000117> "djs93"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_creation_date> "Sun Feb 27 10:53:00 GMT 2011"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "An anatomical structure that has more than one cell as a part."^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0010000"^^xsd:string,
+        rdfs:label "multicellular anatomical structure"^^xsd:string
+    
+    EquivalentTo: 
+        
+            Annotations: rdfs:comment "There is a cost to burying this in PATO.  We lose that we could relax the cardinality assertion to subClassOf has_part some cell.  I'm sure having this axiom inherited would come in handy.  DOS"
+        <http://purl.obolibrary.org/obo/CARO_0000003>
+         and (<http://purl.obolibrary.org/obo/RO_0000053> some <http://purl.obolibrary.org/obo/PATO_0001993>)
+    
+    DisjointWith: 
+        <http://purl.obolibrary.org/obo/CARO_0000014>, <http://purl.obolibrary.org/obo/CARO_0001000>, <http://purl.obolibrary.org/obo/CARO_0000013>, <http://purl.obolibrary.org/obo/CARO_0000040>, <http://purl.obolibrary.org/obo/CARO_0000042>
+    
+    
+Class: <http://purl.obolibrary.org/obo/BFO_0000018>
+
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0010005>
+
+    Annotations: 
+        <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "metamere",
+        <http://purl.obolibrary.org/obo/IAO_0000117> "djs93"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_creation_date> "Fri Mar 04 07:13:46 GMT 2011"^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0010005"^^xsd:string,
+        
+            Annotations: <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "FBC:DOS"
+        <http://purl.obolibrary.org/obo/IAO_0000115> "One of a set of semi-repetitive organism subdivisions serially arranged along the anterior-posterior axis of an organism, including appendages if present."^^xsd:string,
+        rdfs:label "segment"^^xsd:string
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000032>,
+        <http://purl.obolibrary.org/obo/BFO_0000051> some <http://purl.obolibrary.org/obo/CARO_0010006>
+    
+    DisjointWith: 
+        <http://purl.obolibrary.org/obo/CARO_0010003>, <http://purl.obolibrary.org/obo/CARO_0010007>, <http://purl.obolibrary.org/obo/CARO_0010006>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0010004>
+
+    Annotations: 
+        rdfs:label "cellular organism"^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0010004"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_creation_date> "7.16.2011"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "An individual member of a clade of cellular organisms."^^xsd:string,
+        rdfs:comment "A general term for organism that is agnostic about single cell vs multi-cellular.  Note that this is a subclass of 'anatomical structure', meaning that an organism must be a connected structure. For example, if I take one plant and make a rooted cutting from a it, I now have two (clonally related) organisms. "^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000117> "mah"^^xsd:string
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000003>,
+        <http://purl.obolibrary.org/obo/CARO_0001010>
+    
+    
+Class: <http://purl.obolibrary.org/obo/PATO_0002266>
+
+    
+Class: <http://purl.obolibrary.org/obo/BFO_0000141>
+
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0010003>
+
+    Annotations: 
+        <http://purl.obolibrary.org/obo/IAO_0000117> "djs93"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_creation_date> "Fri Mar 04 07:09:17 GMT 2011"^^xsd:string,
+        rdfs:label "appendage"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "An organism subdivision that protrudes from the body."@en,
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0010003"^^xsd:string
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000032>
+    
+    DisjointWith: 
+        <http://purl.obolibrary.org/obo/CARO_0010005>, <http://purl.obolibrary.org/obo/CARO_0010007>, <http://purl.obolibrary.org/obo/CARO_0010006>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0010002>
+
+    Annotations: 
+        rdfs:comment "Examples: compound eye; Johnston's organ.",
+        <http://purl.obolibrary.org/obo/IAO_0000117> "djs93"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "An anatomical structure consisting of multiple cell cluster organs, largely delimited by a morphological boundary and whose components work together to make the whole structure capable of a specific function."^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_creation_date> "Sun Feb 27 11:13:17 GMT 2011"^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0010002"^^xsd:string,
+        rdfs:label "compound cell cluster organ"^^xsd:string
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0020004>,
+        <http://purl.obolibrary.org/obo/RO_0002180> min 2 <http://purl.obolibrary.org/obo/CARO_0010001>
+    
+    DisjointWith: 
+        <http://purl.obolibrary.org/obo/CARO_0000024>, <http://purl.obolibrary.org/obo/CARO_0000012>, <http://purl.obolibrary.org/obo/CARO_0010001>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0010009>
+
+    Annotations: 
+        <http://purl.obolibrary.org/obo/IAO_creation_date> "Wed Mar 09 06:22:07 GMT 2011"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000117> "djs93"^^xsd:string,
+        rdfs:label "epithelial tube"^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0010009"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "An epithelium that is rolled into a tube."^^xsd:string
+    
+    EquivalentTo: 
+        <http://purl.obolibrary.org/obo/CARO_0000066>
+         and (<http://purl.obolibrary.org/obo/RO_0000053> some <http://purl.obolibrary.org/obo/PATO_0001873>)
+         and (<http://purl.obolibrary.org/obo/RO_0000053> some <http://purl.obolibrary.org/obo/PATO_0002078>)
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0010007>
+
+    Annotations: 
+        <http://purl.obolibrary.org/obo/IAO_creation_date> "Fri Mar 04 07:16:21 GMT 2011"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000117> "djs93"^^xsd:string,
+        rdfs:label "appendage segment"^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0010007"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "One of a set of semi-repetitive organism subdivisions serially arranged along the proximal-distal axis of an appendage"^^xsd:string
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0002005>,
+        <http://purl.obolibrary.org/obo/BFO_0000050> some <http://purl.obolibrary.org/obo/CARO_0010003>
+    
+    DisjointWith: 
+        <http://purl.obolibrary.org/obo/CARO_0010005>, <http://purl.obolibrary.org/obo/CARO_0010003>, <http://purl.obolibrary.org/obo/CARO_0010006>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0010006>
+
+    Annotations: 
+        rdfs:label "tagma"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000117> "djs93"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_creation_date> "Fri Mar 04 07:14:57 GMT 2011"^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0010006"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "A subdivision of the organism along the anterior-posterior axis that consists of multiple adjacent segments that are either fused, and/or share more structure with each other than with segments in adjacent tagmata."^^xsd:string
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000032>
+    
+    DisjointWith: 
+        <http://purl.obolibrary.org/obo/CARO_0010005>, <http://purl.obolibrary.org/obo/CARO_0010003>, <http://purl.obolibrary.org/obo/CARO_0010007>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000055>
+
+    Annotations: 
+        rdfs:label "multi-tissue structure"^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000055"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "Anatomical structure that has as its parts two or more portions of tissue of at least two different types and which through specific morphogenetic processes forms a single distinct structural unit demarcated by bona-fide boundaries from other distinct structural units of different types."^^xsd:string
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/RO_0002180> min 2 <http://purl.obolibrary.org/obo/CARO_0000043>,
+        <http://purl.obolibrary.org/obo/CARO_0010000>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000054>
+
+    Annotations: 
+        <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/caro#core>,
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000054"^^xsd:string,
+        rdfs:comment "Obsoleted because the definition is too opaque.  Also because this class was a subclass of 'anatomical structure' (CARO_0000003), but a similarly named class in the refactored caro (CARO_0020000) is a sibling of 'anatomical structure'."^^xsd:string,
+        owl:deprecated true,
+        <http://www.geneontology.org/formats/oboInOwl#consider> <http://purl.obolibrary.org/obo/CARO_0020000>,
+        
+            Annotations: <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "CARO:MAH"
+        <http://purl.obolibrary.org/obo/IAO_0000115> "Anatomical structure consisting of at least two non-overlapping organs, multi-tissue aggregates or portion of tissues or cells of different types that does not constitute an organism, organ, multi-tissue aggregate, or portion of tissue.
+"^^xsd:string,
+        rdfs:label "anatomical group"^^xsd:string
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000050>
+
+    Annotations: 
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000050"^^xsd:string,
+        rdfs:label "protogynous hermaphroditic organism"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "Sequential hermaphroditic organism that produces\\ngametes first of the female sex, and then later of the\\nmale sex."^^xsd:string
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000045>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000008>
+
+    Annotations: 
+        <http://purl.obolibrary.org/obo/IAO_0000115> "A one dimensional, immaterial anatomical entity."^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000112> "A line between two points where these are typically used to measure some aspect of morphology, such as the distance between the eyes or the length of a leg. ",
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000008"^^xsd:string,
+        rdfs:label "anatomical line"^^xsd:string
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000007>,
+        <http://purl.obolibrary.org/obo/BFO_0000026>
+    
+    DisjointWith: 
+        <http://purl.obolibrary.org/obo/CARO_0000009>, <http://purl.obolibrary.org/obo/CARO_0000005>, <http://purl.obolibrary.org/obo/CARO_0001002>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000007>
+
+    Annotations: 
+        <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/caro#core>,
+        rdfs:label "immaterial anatomical entity"^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000007"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "Anatomical entity that has no mass."^^xsd:string
+    
+    EquivalentTo: 
+        <http://purl.obolibrary.org/obo/CARO_0000000>
+         and (not (<http://purl.obolibrary.org/obo/RO_0000053> some <http://purl.obolibrary.org/obo/PATO_0000125>))
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000141>,
+        <http://purl.obolibrary.org/obo/CARO_0000000>
+    
+    DisjointWith: 
+        <http://purl.obolibrary.org/obo/CARO_0000006>, <http://purl.obolibrary.org/obo/BFO_0000051> some <http://purl.obolibrary.org/obo/CARO_0000006>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000009>
+
+    Annotations: 
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000009"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "Non-material anatomical entity of zero dimension, which forms a boundary of an anatomical line or surface."^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000112> "The tip of the nose or other material anatomical entity, or the end of an anatomical line. ",
+        rdfs:label "anatomical point"^^xsd:string
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000007>,
+        <http://purl.obolibrary.org/obo/BFO_0000018>
+    
+    DisjointWith: 
+        <http://purl.obolibrary.org/obo/CARO_0000008>, <http://purl.obolibrary.org/obo/CARO_0000005>, <http://purl.obolibrary.org/obo/CARO_0001002>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000004>
+
+    Annotations: 
+        <http://purl.obolibrary.org/obo/IAO_0000112> "Examples include feces, urine, blood, blood plasma, lymph, hemolymph, cerbro-spinal fluid.  This class does not encompass anatomical entities with inherent 3D structure such as dentine and arthropod cuticle."^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "portion of organism substance"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "Material anatomical entity in a gaseous, liquid, semisolid or solid state; produced by anatomical structures or derived from inhaled and ingested substances that have been modified by anatomical structures as they pass through the body and that does not have inherent 3D shape generated by coordinated expression of the organism's own genome."^^xsd:string,
+        rdfs:label "organism substance"^^xsd:string,
+        rdfs:comment "Note - CARO explicitly declares organisms substances to be part of (some) organism."^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000004"^^xsd:string
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000006>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000003>
+
+    Annotations: 
+        rdfs:comment "Note that the definition does not say 'generated exclusively by the co-ordinated expression of the organism's own genome', so this is still valid for cases where normal morphogenesis requires the actions of a facultative symbiont, or some looser dependency such as the a requirement for the presence of gut flora for normal gut development."^^xsd:string,
+        rdfs:label "connected anatomical structure"^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/caro#core>,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "Material anatomical entity that is a single connected structure with inherent 3D shape generated by coordinated expression of the organism's own genome."^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000003"^^xsd:string
+    
+    EquivalentTo: 
+        <http://purl.obolibrary.org/obo/CARO_0000006>
+         and (<http://purl.obolibrary.org/obo/RO_0000053> some <http://purl.obolibrary.org/obo/PATO_0002266>)
+         and (<http://purl.obolibrary.org/obo/RO_0000053> some <http://purl.obolibrary.org/obo/PATO_0010000>)
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000006>
+
+    Annotations: 
+        <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/caro#core>,
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000006"^^xsd:string,
+        rdfs:label "material anatomical entity"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "An anatomical entity that has mass."^^xsd:string
+    
+    EquivalentTo: 
+        <http://purl.obolibrary.org/obo/CARO_0000000>
+         and (<http://purl.obolibrary.org/obo/RO_0000053> some <http://purl.obolibrary.org/obo/PATO_0000125>)
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000000>
+    
+    DisjointWith: 
+        <http://purl.obolibrary.org/obo/CARO_0000007>, <http://purl.obolibrary.org/obo/BFO_0000050> some <http://purl.obolibrary.org/obo/CARO_0000007>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000005>
+
+    Annotations: 
+        rdfs:comment "Original definition: \"Non-material anatomical entity of three dimensions, that is generated by morphogenetic or other physiologic processes; is surrounded by one or more anatomical structures; contains one or more organism substances or anatomical structures.\"  The last clause. \"contains one or more organism substances or anatomical structures\" was dropped from the definition because it was an unnecessary restriction."^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "An Immaterial anatomical entity of three dimensions, that is generated by morphogenetic or other physiologic processes and that is bounded by an anatomical surface."^^xsd:string,
+        rdfs:label "anatomical space"^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000005"^^xsd:string
+    
+    EquivalentTo: 
+        <http://purl.obolibrary.org/obo/BFO_0000029>
+         and (<http://purl.obolibrary.org/obo/BFO_0000050> some <http://purl.obolibrary.org/obo/CARO_0001010>)
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000007>,
+        <http://purl.obolibrary.org/obo/BFO_0000029>
+    
+    DisjointWith: 
+        <http://purl.obolibrary.org/obo/CARO_0000008>, <http://purl.obolibrary.org/obo/CARO_0000009>, <http://purl.obolibrary.org/obo/CARO_0001002>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000081>
+
+    Annotations: 
+        rdfs:label "circulating fluid",
+        <http://purl.obolibrary.org/obo/IAO_0000115> "A fluid that is circulated around a multicellular organism carrying nutrients and carrying away waste products.",
+        rdfs:comment "Examples: blood, lymph, hemolymph"
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/PATO_0002078>
+
+    Annotations: 
+        <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0002078"^^xsd:string,
+        rdfs:label "hollow"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "A quality inhering in a bearer by virtue of the bearer's having an empty space or cavity within."^^xsd:string
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000000>
+
+    Annotations: 
+        rdfs:comment "Following BFO, material anatomical entities may have immaterial parts (the lumen of your stomach is part of your stomach).  The granularity limit follows the limits set by the Gene Ontology on the granularity limit for GO:cellular_component. Note that substances produced by an organism (sweat, feaces, urine) do not need to be part of an organism to qualify as an anatomical structure.",
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000000"^^xsd:string,
+        
+            Annotations: <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "CAROC:Brownsville2014"
+        <http://purl.obolibrary.org/obo/IAO_0000115> "A part of a multicellular organism that is either an immaterial entity or a material entity with granularity above the level of a protein complex.  Or, a substance produced by a multicellular organism with granularity above the level of a protein complex."^^xsd:string,
+        rdfs:label "anatomical entity"^^xsd:string
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0030000>
+    
+    DisjointUnionOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000006>, <http://purl.obolibrary.org/obo/CARO_0000007>
+    
+    
+Class: <http://purl.obolibrary.org/obo/PATO_0010001>
+
+    
+Class: <http://purl.obolibrary.org/obo/PATO_0002124>
+
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000071>
+
+    Annotations: 
+        rdfs:label "atypical epithelium"^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000071"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "Epithelium that consists of epithelial cells not arranged in one ore more layers."^^xsd:string
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000066>
+    
+    DisjointWith: 
+        <http://purl.obolibrary.org/obo/CARO_0000069>, <http://purl.obolibrary.org/obo/CARO_0000073>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000070>
+
+    Annotations: 
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000070"^^xsd:string,
+        rdfs:label "simple squamous epithelium"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "Unilaminar epithelium that consists of a single layer of squamous cells."^^xsd:string
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000073>
+    
+    
+Class: <http://purl.obolibrary.org/obo/BFO_0000040>
+
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000077>
+
+    Annotations: 
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000077"^^xsd:string,
+        owl:deprecated true,
+        rdfs:label "epithelial cell"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "Cell which has as its part a cytoskeleton that allows for tight cell to cell contact and which has apical-basal cell polarity."^^xsd:string
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000073>
+
+    Annotations: 
+        rdfs:label "unilaminar epithelium"^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000073"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "Epithelium that consists of a single layer of epithelial cells."^^xsd:string
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000066>
+    
+    DisjointWith: 
+        <http://purl.obolibrary.org/obo/CARO_0000071>, <http://purl.obolibrary.org/obo/CARO_0000069>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000072>
+
+    Annotations: 
+        <http://purl.obolibrary.org/obo/IAO_0000115> "Compound organ that contains one or more macroscopic anatomical spaces."^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000072"^^xsd:string,
+        rdfs:label "cavitated compound organ"^^xsd:string
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000024>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000074>
+
+    Annotations: 
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000074"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "Compound organ that does not contain macroscopic anatomical spaces."^^xsd:string,
+        rdfs:label "solid compound organ"^^xsd:string
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000024>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000029>
+
+    Annotations: 
+        
+            Annotations: <http://purl.obolibrary.org/obo/IAO_scope> "RELATED"^^xsd:string
+        <http://purl.obolibrary.org/obo/IAO_0000118> "dioecious organism"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "Multi-cellular organism that can produce both male and female gametes."^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000029"^^xsd:string,
+        rdfs:label "hermaphroditic organism"^^xsd:string
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000012>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000028>
+
+    Annotations: 
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000028"^^xsd:string,
+        rdfs:label "female organism"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "Gonochoristic organism that can produce female gametes."^^xsd:string
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000048>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000027>
+
+    Annotations: 
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000027"^^xsd:string,
+        rdfs:label "male organism"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "Gonochoristic organism that can produce male gametes."^^xsd:string
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000048>
+    
+    
+Class: <http://purl.obolibrary.org/obo/PATO_0001993>
+
+    
+Class: <http://purl.obolibrary.org/obo/PATO_0001873>
+
+    Annotations: 
+        <http://purl.obolibrary.org/obo/IAO_0000115> "A convex 3-D shape quality inhering in a bearer by virtue of the bearer's exhibiting a consistently-sized round cross section."^^xsd:string,
+        rdfs:label "cylindrical"^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001873"^^xsd:string
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000021>
+
+    Annotations: 
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000021"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "An organ that consists of a single multi-tissue structure."^^xsd:string,
+        rdfs:label "simple organ"^^xsd:string
+    
+    EquivalentTo: 
+        <http://purl.obolibrary.org/obo/CARO_0020004>
+         and (<http://purl.obolibrary.org/obo/RO_0002180> exactly 1 <http://purl.obolibrary.org/obo/CARO_0000055>)
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0020004>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000024>
+
+    Annotations: 
+        rdfs:label "compound organ"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "An organ consisting of multiple, distinct multi-tissue structures."^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000024"^^xsd:string
+    
+    EquivalentTo: 
+        <http://purl.obolibrary.org/obo/CARO_0020004>
+         and (<http://purl.obolibrary.org/obo/RO_0002180> min 2 <http://purl.obolibrary.org/obo/CARO_0000055>)
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0020004>,
+        <http://purl.obolibrary.org/obo/CARO_0000055>
+    
+    DisjointWith: 
+        <http://purl.obolibrary.org/obo/CARO_0010002>, <http://purl.obolibrary.org/obo/CARO_0000012>, <http://purl.obolibrary.org/obo/CARO_0010001>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000019>
+
+    Annotations: 
+        rdfs:label "compound organ component"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "Multi-tissue structure that is part of a compound organ."^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000019"^^xsd:string
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000050> some <http://purl.obolibrary.org/obo/CARO_0000024>,
+        <http://purl.obolibrary.org/obo/CARO_0000055>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0020002>
+
+    Annotations: 
+        rdfs:label "cell cluster",
+        
+            Annotations: rdfs:comment "GOC:dos"
+        <http://purl.obolibrary.org/obo/IAO_0000115> "A cluster of cells, largely surrounded by a morphological boundary."
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0010000>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0020001>
+
+    Annotations: 
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000041"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "A multicellular anatomical structure that has subparts of
+multiple organs as a part."^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> "anatomical cluster"^^xsd:string,
+        rdfs:label "multi organ part structure",
+        rdfs:comment "Examples include joints of the vertebrate musculoskeletal system (each has (fiat) parts of multiple bone organs as a part).",
+        <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/caro#plus>
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0010000>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0020004>
+
+    Annotations: 
+        <http://purl.obolibrary.org/obo/IAO_0000115> "A multicellular anatomical structure largely delimited by a morphological boundary whose components work together to make the whole structure capable of a specific function."^^xsd:string,
+        rdfs:label "organ"
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0010000>
+    
+    
+Class: <http://purl.obolibrary.org/obo/PATO_0010000>
+
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0001501>
+
+    Annotations: 
+        
+            Annotations: <http://purl.obolibrary.org/obo/IAO_0000117> "DOS"
+        <http://purl.obolibrary.org/obo/IAO_0000115> "A subdivision of a neuron projection along its long axis that is as long as it is wide (and so does not qualify as fiber-shaped)."@en,
+        rdfs:label "neuron projection bundle subsegment"@en,
+        rdfs:comment "This term was added in order to define fasciculation relations.  It seems unlikely that it will be used directly in curation."
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/BFO_0000050> some <http://purl.obolibrary.org/obo/CARO_0001001>,
+        <http://purl.obolibrary.org/obo/CARO_0001000>,
+        not (<http://purl.obolibrary.org/obo/RO_0000053> some <http://purl.obolibrary.org/obo/PATO_0002309>)
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000014>
+
+    Annotations: 
+        <http://purl.obolibrary.org/obo/IAO_0000115> "Anatomical structure that is part of a cell and that has a granularity level equal to that of a protein complex or higher."^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000118> "cell component"^^xsd:string,
+        rdfs:comment "This is declared equivalent with GO:0044464. The definition should be co-ordinated with GO. We could obsolete the CARO class and just use the GO class."^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000014"^^xsd:string,
+        rdfs:label "cell part"@en
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000003>,
+        <http://purl.obolibrary.org/obo/BFO_0000050> some <http://purl.obolibrary.org/obo/CARO_0000013>
+    
+    DisjointWith: 
+        <http://purl.obolibrary.org/obo/CARO_0000013>, <http://purl.obolibrary.org/obo/CARO_0001000>, <http://purl.obolibrary.org/obo/CARO_0000040>, <http://purl.obolibrary.org/obo/CARO_0010000>, <http://purl.obolibrary.org/obo/CARO_0000042>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0020005>
+
+    Annotations: 
+        <http://purl.obolibrary.org/obo/IAO_0000115> "An single tissue, largely surrounded by a morpholigical boundary, whose cells work together to make the whole structure capable of a specific function."^^xsd:string,
+        rdfs:label "single tissue organ"
+    
+    EquivalentTo: 
+        <http://purl.obolibrary.org/obo/CARO_0020004>
+         and (<http://purl.obolibrary.org/obo/RO_0002180> exactly 1 <http://purl.obolibrary.org/obo/CARO_0000043>)
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0020004>,
+        <http://purl.obolibrary.org/obo/CARO_0000043>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0001500>
+
+    Annotations: 
+        rdfs:label "neuron projection bundle segment"@en,
+        
+            Annotations: <http://purl.obolibrary.org/obo/IAO_0000117> "DOS"
+        <http://purl.obolibrary.org/obo/IAO_0000115> "A fiber-shaped subdivision of a neuron projection along its long axis."@en
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/RO_0000053> some <http://purl.obolibrary.org/obo/PATO_0002309>,
+        <http://purl.obolibrary.org/obo/BFO_0000050> some <http://purl.obolibrary.org/obo/CARO_0001001>,
+        <http://purl.obolibrary.org/obo/CARO_0001000>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000011>
+
+    Annotations: 
+        <http://purl.obolibrary.org/obo/IAO_0000115> "Multicellular, connected anatomical structure that has multiple organs as parts and whose parts work together to achieve some shared function."^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000011"^^xsd:string,
+        rdfs:label "connected anatomical system"^^xsd:string
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0010000>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000010>
+
+    Annotations: 
+        <http://purl.obolibrary.org/obo/IAO_0000115> "A non-material anatomical entity of two dimensions. Anatomical boundaries are contiguous structures."^^xsd:string,
+        rdfs:comment "Except in the case of abstracted fiat boundaries such as the midline plane of an organism, all 2D anatomical entities have a 3 dimensional projection.  For example, the surface of the shell of a muscle has a distinct shape that projects into the third dimension.  Note that boundaries are 2D structures.  They have no thickness - and so can not be sites of gene expression or gene product localisation.  For this, use boundary region terms.",
+        rdfs:label "anatomical boundary"^^xsd:string
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000007>,
+        <http://purl.obolibrary.org/obo/BFO_0000009>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000013>
+
+    Annotations: 
+        rdfs:comment "deprecate and replace with CL or GO term?"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "An anatomical structure that has as its parts a maximally connected cell compartment surrounded by a plasma membrane."^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "CL:0000000"^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "GO:0005623"^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000013"^^xsd:string,
+        rdfs:label "cell"^^xsd:string
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0000003>
+    
+    DisjointWith: 
+        <http://purl.obolibrary.org/obo/CARO_0000014>, <http://purl.obolibrary.org/obo/CARO_0001000>, <http://purl.obolibrary.org/obo/CARO_0000040>, <http://purl.obolibrary.org/obo/CARO_0010000>, <http://purl.obolibrary.org/obo/CARO_0000042>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000134>
+
+    Annotations: 
+        rdfs:label "unpaired appendage"@en
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0010003>
+    
+    DisjointWith: 
+        <http://purl.obolibrary.org/obo/CARO_0000133>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000012>
+
+    Annotations: 
+        rdfs:comment "MH: Can't define this class based on 2 or more cells because most multi cellular organisms (if not all) have only a single cell at some point in life history. 
+
+MH: sexual subtypes should probably be logically defined based on sexual processes or sex qualities."^^xsd:string,
+        rdfs:label "multicellular organism"^^xsd:string,
+        <http://purl.obolibrary.org/obo/IAO_0000115> "Anatomical structure that is an individual member of a clade and, at some point in its life-cycle, consists of more than one cell."^^xsd:string,
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000012"^^xsd:string
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0010004>
+    
+    DisjointWith: 
+        <http://purl.obolibrary.org/obo/CARO_0010002>, <http://purl.obolibrary.org/obo/CARO_0000024>, <http://purl.obolibrary.org/obo/CARO_0010001>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0000133>
+
+    Annotations: 
+        <http://purl.obolibrary.org/obo/IAO_0000115> "An appendage that is one of a bilateral pair."@en,
+        rdfs:label "paired appendage"@en
+    
+    SubClassOf: 
+        <http://purl.obolibrary.org/obo/CARO_0010003>
+    
+    DisjointWith: 
+        <http://purl.obolibrary.org/obo/CARO_0000134>
+    
+    
+Class: <http://purl.obolibrary.org/obo/CARO_0020000>
+
+    Annotations: 
+        <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/caro#core>,
+        <http://www.geneontology.org/formats/oboInOwl#id> "CARO:0000054"^^xsd:string,
+        rdfs:label "disconnected anatomical group",
+        <http://purl.obolibrary.org/obo/IAO_0000115> "Material anatomical entity consisting of multiple anatomical structures that are not connected to each other."^^xsd:string
+    
+    EquivalentTo: 
+        <http://purl.obolibrary.org/obo/CARO_0000006>
+         and (<http://purl.obolibrary.org/obo/RO_0000053> some <http://purl.obolibrary.org/obo/PATO_0010001>)
+         and (<http://purl.obolibrary.org/obo/RO_0002180> min 2 <http://purl.obolibrary.org/obo/CARO_0000003>)
+    
+    
+DisjointClasses: 
+    <http://purl.obolibrary.org/obo/CARO_0000011>,<http://purl.obolibrary.org/obo/CARO_0000032>,<http://purl.obolibrary.org/obo/CARO_0000043>,<http://purl.obolibrary.org/obo/CARO_0000055>,<http://purl.obolibrary.org/obo/CARO_0020001>,<http://purl.obolibrary.org/obo/CARO_0020002>
+
+DisjointClasses: 
+    <http://purl.obolibrary.org/obo/CARO_0000003>,<http://purl.obolibrary.org/obo/CARO_0000004>,<http://purl.obolibrary.org/obo/CARO_0020000>
+
