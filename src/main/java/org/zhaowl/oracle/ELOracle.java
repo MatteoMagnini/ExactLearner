@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
-import org.semanticweb.HermiT.Reasoner;
+import org.semanticweb.elk.owlapi.ElkReasonerFactory;
 import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLClassExpression;
@@ -41,7 +41,8 @@ public class ELOracle {
 	}
 
 	public OWLReasoner createReasoner(final OWLOntology rootOntology) {
-		return new Reasoner.ReasonerFactory().createReasoner(rootOntology);
+		ElkReasonerFactory reasoningFactory = new ElkReasonerFactory();
+		return reasoningFactory.createReasoner(rootOntology);
 	}
 
 	public OWLClassExpression oracleSiblingMerge(OWLClassExpression left, OWLClassExpression right) throws Exception {

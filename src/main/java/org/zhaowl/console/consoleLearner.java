@@ -1,7 +1,7 @@
 package org.zhaowl.console;
 
+import org.semanticweb.elk.owlapi.ElkReasonerFactory;
 import org.zhaowl.userInterface.ELEngine;
-import org.zhaowl.userInterface.ELInterface;
 import org.zhaowl.utils.SimpleClass;
 
 import uk.ac.manchester.cs.owl.owlapi.mansyntaxrenderer.ManchesterOWLSyntaxOWLObjectRendererImpl;
@@ -13,14 +13,9 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-import javax.swing.JCheckBox;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JScrollPane;
-import javax.swing.JTextField;
 
 import org.coode.owlapi.manchesterowlsyntax.ManchesterOWLSyntaxOntologyFormat;
-import org.semanticweb.HermiT.Reasoner;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.AddAxiom;
 import org.semanticweb.owlapi.model.AxiomType;
@@ -41,7 +36,7 @@ import org.semanticweb.owlapi.util.ShortFormProvider;
 import org.semanticweb.owlapi.util.SimpleShortFormProvider;
 import org.zhaowl.learner.ELLearner;
 import org.zhaowl.oracle.ELOracle;
-import org.zhaowl.settings.*;
+import org.apache.log4j.*;
 
 public class consoleLearner {
 
@@ -136,7 +131,7 @@ public class consoleLearner {
 		 * program
 		 * 
 		 */
-
+		Logger.getRootLogger().setLevel(Level.ALL);
 		consoleLearner maker = new consoleLearner();
 		// maker.setValues(args);
 		maker.doIt(args);
@@ -188,6 +183,7 @@ public class consoleLearner {
 				new SimpleClass(rendering).showCIT(ontologyH.getAxioms(),false);
 
 			} catch (Throwable e) {
+				e.printStackTrace();
 				System.out.println("error in learner call ----- " + e);
 			}
 
@@ -592,7 +588,8 @@ public class consoleLearner {
 	}
 
 	public OWLReasoner createReasoner(OWLOntology ontology) {
-		return new Reasoner.ReasonerFactory().createReasoner(ontology);
+		ElkReasonerFactory reasoningFactory = new ElkReasonerFactory();
+		return reasoningFactory.createReasoner(ontology);
 	}
 
 	public String getCounterExample() throws Exception {

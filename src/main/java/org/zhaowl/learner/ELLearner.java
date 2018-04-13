@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
-import org.semanticweb.HermiT.Reasoner;
+import org.semanticweb.elk.owlapi.ElkReasonerFactory;
 import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLClassExpression;
@@ -20,7 +20,6 @@ import org.zhaowl.tree.ELEdge;
 import org.zhaowl.tree.ELNode;
 import org.zhaowl.tree.ELTree;
 import org.zhaowl.userInterface.ELEngine;
-import org.zhaowl.userInterface.ELInterface;
 import org.zhaowl.utils.SimpleClass;
 
 import uk.ac.manchester.cs.owl.owlapi.mansyntaxrenderer.ManchesterOWLSyntaxOWLObjectRendererImpl;
@@ -48,7 +47,8 @@ public class ELLearner {
 
 	public OWLReasoner createReasoner(final OWLOntology rootOntology) {
 
-		return new Reasoner.ReasonerFactory().createReasoner(rootOntology);
+		ElkReasonerFactory reasoningFactory = new ElkReasonerFactory();
+		return reasoningFactory.createReasoner(rootOntology);
 	}
 
 	public OWLClassExpression unsaturateLeft(OWLAxiom ax) throws Exception {
