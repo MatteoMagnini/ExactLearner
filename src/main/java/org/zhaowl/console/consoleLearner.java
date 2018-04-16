@@ -49,7 +49,7 @@ public class consoleLearner {
 	public boolean autoBox = true;
 	public String filePath;
 
-	// ############# Game variables Start ######################
+	// ############# Game variables End ######################
 	
 	// #########################################################
 	
