@@ -15,6 +15,8 @@ import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLSubClassOfAxiom;
 import org.semanticweb.owlapi.reasoner.OWLReasoner;
 import org.semanticweb.owlapi.util.ShortFormProvider;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.zhaowl.console.consoleLearner;
 import org.zhaowl.tree.ELEdge;
 import org.zhaowl.tree.ELNode;
@@ -29,6 +31,8 @@ public class ELOracle {
 	public OWLOntology ontology;
 	public ELEngine engineForT;
 	public consoleLearner console;
+	private static final Logger LOGGER_ = LoggerFactory
+			.getLogger(ELOracle.class);
 
 	public ELOracle(OWLReasoner reasoner, ShortFormProvider shortForm, OWLOntology ontology, OWLOntology ontologyH,
 			ELEngine engineT, consoleLearner console) {
@@ -41,8 +45,18 @@ public class ELOracle {
 	}
 
 	public OWLReasoner createReasoner(final OWLOntology rootOntology) {
+		LOGGER_.info("ELOracle Reasoner created");
+ 		//Thread.dumpStack();
+		System.out.flush();
 		ElkReasonerFactory reasoningFactory = new ElkReasonerFactory();
 		return reasoningFactory.createReasoner(rootOntology);
+	}
+
+	private static void disposeOfReasoner(OWLReasoner owlReasoner, String reasonerName) {
+		LOGGER_.info("ELOracle: Reasoner " + reasonerName + " disposed of");
+		//Thread.dumpStack();
+		System.out.flush();
+		owlReasoner.dispose();
 	}
 
 	public OWLClassExpression oracleSiblingMerge(OWLClassExpression left, OWLClassExpression right) throws Exception {
@@ -95,6 +109,7 @@ public class ELOracle {
 		nodes = null;
 		left = null;
 		right = null;
+		disposeOfReasoner(reasonerForH, "reasonerForH");
 		System.out.flush();
 		return engineForT.parseClassExpression(tree.toDescriptionString());
 	}
@@ -165,9 +180,12 @@ public class ELOracle {
 		System.out.flush();
 		tree = null;
 
-		reasonerForH.dispose();
+		disposeOfReasoner(reasonerForH, "reasonerForH");
+		reasonerForH = null;
 		return engineForT.getSubClassAxiom(sub, sup);
 	}
+
+
 
 	public OWLClassExpression unsaturateRight(OWLAxiom ax) throws Exception {
 		OWLClassExpression left = ((OWLSubClassOfAxiom) ax).getSubClass();
@@ -256,7 +274,8 @@ public class ELOracle {
 		System.out.flush();
 		OWLClassExpression ex = engineForT.parseClassExpression(tree.toDescriptionString());
 		engineForT = null;
-		reasonerForH.dispose();
+		disposeOfReasoner(reasonerForH, "reasonerForH");
+		reasonerForH = null;
 		left = null;
 		right = null;
 		tree = null;
@@ -326,7 +345,9 @@ public class ELOracle {
 			OWLClassExpression ex = engineForT.parseClassExpression(treeR.toDescriptionString());
 			treeR = null;
 			engineForT = null;
-			reasonerForH.dispose();
+			disposeOfReasoner(reasonerForH, "reasonerForH");
+			reasonerForH = null;
+
 			return ex;
 		} catch (Exception e) {
 			System.out.println("Error in branchNode: " + e);
@@ -335,7 +356,8 @@ public class ELOracle {
 		left = null;
 		right = null;
 		engineForT = null;
-		reasonerForH.dispose();
+		disposeOfReasoner(reasonerForH, "reasonerForH");
+		reasonerForH = null;
 		return null;
 	}
 

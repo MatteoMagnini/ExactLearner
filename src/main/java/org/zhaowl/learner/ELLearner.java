@@ -15,6 +15,8 @@ import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLSubClassOfAxiom;
 import org.semanticweb.owlapi.reasoner.OWLReasoner;
 import org.semanticweb.owlapi.util.ShortFormProvider;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.zhaowl.console.consoleLearner;
 import org.zhaowl.tree.ELEdge;
 import org.zhaowl.tree.ELNode;
@@ -33,6 +35,8 @@ public class ELLearner {
 	public ELEngine engineForT; 
 	public ManchesterOWLSyntaxOWLObjectRendererImpl rendering;
 	public consoleLearner console;
+	private static final Logger LOGGER_ = LoggerFactory
+			.getLogger(ELLearner.class);
 
 	public ELLearner(OWLReasoner reasoner, ShortFormProvider shortForm, OWLOntology ontology, OWLOntology ontologyH,
 			ELEngine engineT, consoleLearner console, ManchesterOWLSyntaxOWLObjectRendererImpl rendering) {
@@ -45,10 +49,19 @@ public class ELLearner {
 		this.rendering = rendering;
 	}
 
-	public OWLReasoner createReasoner(final OWLOntology rootOntology) {
-
+	public OWLReasoner createReasoner(final OWLOntology rootOntology, String reasonerName) {
+		LOGGER_.info("ELLearner: Reasoner "+ reasonerName + " created");
+		//Thread.dumpStack();
+		System.out.flush();
 		ElkReasonerFactory reasoningFactory = new ElkReasonerFactory();
 		return reasoningFactory.createReasoner(rootOntology);
+	}
+
+	private static void disposeOfReasoner(OWLReasoner owlReasoner, String reasonerName) {
+		LOGGER_.info("ELLearner: Reasoner " + reasonerName + " disposed of");
+		//Thread.dumpStack();
+		System.out.flush();
+		owlReasoner.dispose();
 	}
 
 	public OWLClassExpression unsaturateLeft(OWLAxiom ax) throws Exception {
@@ -67,7 +80,7 @@ public class ELLearner {
 
 		boolean foundSomething = false;
 
-		reasonerForT = createReasoner(ontology);
+		reasonerForT = createReasoner(ontology, "reasonerForT");
 		engineForT = new ELEngine(reasonerForT, shortFormProvider);
 		for (int i = 0; i < tree.getMaxLevel(); i++) {
 			nodes = tree.getNodesOnLevel(i + 1);
@@ -144,13 +157,16 @@ public class ELLearner {
 		System.out.flush();
 		OWLClassExpression ex = engineForT.parseClassExpression(tree.toDescriptionString());
 		engineForT = null;
-		reasonerForT.dispose();
+		disposeOfReasoner(reasonerForT, "reasonerForT");
+		reasonerForT = null;
 		left = null;
 		right = null;
 		tree = null;
 		nodes = null; 
 		return ex;
 	}
+
+
 
 	public void decompose(OWLClassExpression left, OWLClassExpression right) {
 
@@ -176,7 +192,7 @@ public class ELLearner {
 			ELTree treeL = null;
 			boolean leftSide = false;
 
-			reasonerForT = createReasoner(ontology);
+			reasonerForT = createReasoner(ontology, "reasonerForT");
 			engineForT = new ELEngine(reasonerForT, shortFormProvider);
 			treeL = new ELTree(left);
 			if (treeL.nodes.size() == 1) {
@@ -187,7 +203,8 @@ public class ELLearner {
 				treeL = null;
 				left = null;
 				right = null;
-				reasonerForT.dispose();
+				disposeOfReasoner(reasonerForT, "reasonerForT");
+				reasonerForT = null;
 				engineForT = null;
 				return;
 			} else
@@ -202,7 +219,8 @@ public class ELLearner {
 				treeL = null;
 				left = null;
 				right = null;
-				reasonerForT.dispose();
+				disposeOfReasoner(reasonerForT, "reasonerForT");
+				reasonerForT = null;
 				engineForT = null;
 				return;
 			}
@@ -242,7 +260,8 @@ public class ELLearner {
 								right = null;
 								engineForT = null;
 								nodes = null;
-								reasonerForT.dispose();
+								disposeOfReasoner(reasonerForT, "reasonerForT");
+								reasonerForT = null;
 								System.out.flush();
 								return;
 							} else {
@@ -264,7 +283,8 @@ public class ELLearner {
 										right = null;
 										nodes = null;
 										engineForT = null;
-										reasonerForT.dispose();
+										disposeOfReasoner(reasonerForT, "reasonerForT");
+										reasonerForT = null;
 										System.out.flush();
 										return;
 									}
@@ -275,6 +295,7 @@ public class ELLearner {
 						}
 					}
 				}
+				System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 			}
 		} catch (Exception e) {
 			System.out.println("Error in decompose: " + e);
@@ -282,7 +303,8 @@ public class ELLearner {
 			left = null;
 			right = null;
 			engineForT = null;
-			reasonerForT.dispose();
+			disposeOfReasoner(reasonerForT, "reasonerForT");
+			reasonerForT = null;
 			System.out.flush();
 			return;
 		}
@@ -290,7 +312,8 @@ public class ELLearner {
 		left = null;
 		right = null;
 		engineForT = null;
-		reasonerForT.dispose();
+		disposeOfReasoner(reasonerForT, "reasonerForT");
+		reasonerForT = null;
 		System.out.flush();
 		return;
 	}
@@ -305,7 +328,7 @@ public class ELLearner {
 		Set<ELNode> nodes = null;
 		count = 0;
 		ELTree tree = new ELTree(sup);
-		reasonerForT = createReasoner(ontology);
+		reasonerForT = createReasoner(ontology, "reasonerForT");
 		engineForT = new ELEngine(reasonerForT, shortFormProvider);
 		OWLAxiom newAx = null;
 		for (int i = 0; i < tree.getMaxLevel(); i++) {
@@ -383,7 +406,8 @@ public class ELLearner {
 		newAx = null;
 		cIo = null;
 		nodes = null;
-		reasonerForT.dispose();
+		disposeOfReasoner(reasonerForT, "reasonerForT");
+		reasonerForT = null;
 		OWLAxiom ax = engineForT.getSubClassAxiom(sub, sup);
 		engineForT = null;
 		System.out.flush();
@@ -399,7 +423,7 @@ public class ELLearner {
 			ELTree tree = new ELTree(right);
 			Set<ELNode> nodes = null;
 			// System.out.println(tree.toDescriptionString());
-			reasonerForT = createReasoner(ontology);
+			reasonerForT = createReasoner(ontology, "reasonerForT");
 			engineForT = new ELEngine(reasonerForT, shortFormProvider);
 			OWLClassExpression oldTree = engineForT.parseClassExpression(tree.toDescriptionString());
 			// System.out.println(tree.getRootNode());
@@ -448,7 +472,8 @@ public class ELLearner {
 			nodes = null;
 			oldTree = null;
 			System.out.flush();
-			reasonerForT.dispose();
+			disposeOfReasoner(reasonerForT, "reasonerForT");
+			reasonerForT = null;
 			OWLClassExpression ex = engineForT.parseClassExpression(tree.toDescriptionString());
 			tree = null;
 			engineForT = null;
@@ -465,7 +490,7 @@ public class ELLearner {
 			ELTree treeL = new ELTree(left);
 			Set<ELNode> nodes = null;
 			List<ELEdge> auxEdges = null;
-			reasonerForT = createReasoner(ontology);
+			reasonerForT = createReasoner(ontology, "reasonerForT");
 			engineForT = new ELEngine(reasonerForT, shortFormProvider);
 			// System.out.println("we branch this one: \n" + treeL.rootNode);
 			// OWLClassExpression auxTree =
@@ -526,7 +551,8 @@ public class ELLearner {
 			nodes = null;
 			OWLClassExpression ex = engineForT.parseClassExpression(treeL.toDescriptionString());
 			engineForT = null;
-			reasonerForT.dispose();
+			disposeOfReasoner(reasonerForT, "reasonerForT");
+			reasonerForT = null;
 			treeL = null;
 			return ex;
 		} catch (Exception e) {

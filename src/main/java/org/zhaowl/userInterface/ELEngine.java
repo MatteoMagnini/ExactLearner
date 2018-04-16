@@ -55,6 +55,7 @@ public class ELEngine {
         OWLClassExpression right = subclassAxiom.getSuperClass();
 
         Boolean workaround = false;
+        reasoner.flush();
         OWLOntologyManager man = OWLManager.createOWLOntologyManager();
         OWLDataFactory dataFactory = man.getOWLDataFactory();
 

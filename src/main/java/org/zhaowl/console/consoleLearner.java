@@ -1,6 +1,7 @@
 package org.zhaowl.console;
 
 import org.semanticweb.elk.owlapi.ElkReasonerFactory;
+import org.slf4j.LoggerFactory;
 import org.zhaowl.userInterface.ELEngine;
 import org.zhaowl.utils.SimpleClass;
 
@@ -105,6 +106,9 @@ public class consoleLearner {
 	public boolean learnerBranch;
 	public boolean learnerDecompR;
 
+	private static final org.slf4j.Logger LOGGER_ = LoggerFactory
+			.getLogger(consoleLearner.class);
+
 	// ############# Oracle and Learner skills END ######################
 
 	public static void main(String[] args) {
@@ -131,7 +135,7 @@ public class consoleLearner {
 		 * program
 		 * 
 		 */
-		Logger.getRootLogger().setLevel(Level.ALL);
+		Logger.getRootLogger().setLevel(Level.TRACE);
 		consoleLearner maker = new consoleLearner();
 		// maker.setValues(args);
 		maker.doIt(args);
@@ -431,7 +435,7 @@ public class consoleLearner {
 			ontology = manager.loadOntologyFromOntologyDocument(new File(filePath));
 			rendering = new ManchesterOWLSyntaxOWLObjectRendererImpl();
  
-			reasonerForT = createReasoner(ontology);
+			reasonerForT = createReasoner(ontology, "reasonerForT");
 			shortFormProvider = new SimpleShortFormProvider();
 			axiomsT = new HashSet<OWLAxiom>();
 			for (OWLAxiom axe : ontology.getAxioms())
@@ -580,20 +584,31 @@ public class consoleLearner {
 
 	public Boolean equivalenceQuery() {
 
-		reasonerForH = createReasoner(ontologyH);
+		reasonerForH = createReasoner(ontologyH, "reasonerForH");
 		ELEngine ELQueryEngineForH = new ELEngine(reasonerForH, shortFormProvider);
 		Boolean queryAns = ELQueryEngineForH.entailed(axiomsT);
-		reasonerForH.dispose();
+		disposeOfReasoner(reasonerForH, "reasonerForH");
+		reasonerForH = null;
 		return queryAns;
 	}
 
-	public OWLReasoner createReasoner(OWLOntology ontology) {
+	private static void disposeOfReasoner(OWLReasoner owlReasoner, String reasonerName) {
+		LOGGER_.info("consoleLearner: Reasoner " + reasonerName + " disposed of");
+		//Thread.dumpStack();
+		System.out.flush();
+		owlReasoner.dispose();
+	}
+
+	public OWLReasoner createReasoner(OWLOntology ontology, String reasonerName) {
+		LOGGER_.info("consoleLearner: Reasoner " + reasonerName + " created");
+		//Thread.dumpStack();
+		System.out.flush();
 		ElkReasonerFactory reasoningFactory = new ElkReasonerFactory();
 		return reasoningFactory.createReasoner(ontology);
 	}
 
 	public String getCounterExample() throws Exception {
-		reasonerForH = createReasoner(ontologyH);
+		reasonerForH = createReasoner(ontologyH, "reasonerForH");
 		ELEngine ELQueryEngineForH = new ELEngine(reasonerForH, shortFormProvider);
 
 		ELOracle oracle = new ELOracle(reasonerForH, shortFormProvider, ontology, ontologyH, ELQueryEngineForT, this);
@@ -910,7 +925,7 @@ public class consoleLearner {
 	}
 
 	private OWLAxiom getCounterExamplefromSubClassAxiom(OWLClassExpression subclass, OWLClassExpression superclass) {
-		reasonerForH = createReasoner(ontologyH);
+		reasonerForH = createReasoner(ontologyH, "reasonerForH");
 		ELEngine ELQueryEngineForH = new ELEngine(reasonerForH, shortFormProvider);
 		Set<OWLClass> superclasses = ELQueryEngineForT.getSuperClasses(superclass, false);
 		Set<OWLClass> subclasses = ELQueryEngineForT.getSubClasses(subclass, false);
@@ -929,7 +944,8 @@ public class consoleLearner {
 					iteratorSubClass = null;
 					ELQueryEngineForH = null;
 
-					reasonerForH.dispose();
+					disposeOfReasoner(reasonerForH, "reasonerForH");
+					reasonerForH = null;
 					return newCounterexampleAxiom;
 				}
 			}
@@ -950,7 +966,8 @@ public class consoleLearner {
 					iteratorSuperClass = null;
 					ELQueryEngineForH = null;
 
-					reasonerForH.dispose();
+					disposeOfReasoner(reasonerForH, "reasonerForH");
+					reasonerForH = null;
 					return newCounterexampleAxiom;
 				}
 			}
@@ -959,21 +976,25 @@ public class consoleLearner {
 		ELQueryEngineForH = null;
 		superclass = null;
 		subclass = null;
-		reasonerForH.dispose();
+		disposeOfReasoner(reasonerForH, "reasonerForH");
+		reasonerForH = null;
 		return null;
 	}
 
 	public String addHypothesis(OWLAxiom addedAxiom) throws Exception {
 		String StringAxiom = rendering.render(addedAxiom);
 
-		AddAxiom newAxiomInH = new AddAxiom(ontologyH, addedAxiom);
-		manager.applyChange(newAxiomInH);
+		//AddAxiom newAxiomInH = new AddAxiom(ontologyH, addedAxiom);
+		//manager.applyChange(newAxiomInH);
+
+		manager.addAxiom(ontologyH, addedAxiom);
+
 		saveOWLFile(ontologyH, hypoFile);
 
 		// minimize hypothesis
 		ontologyH = MinHypothesis(ontologyH, addedAxiom);
 		saveOWLFile(ontologyH, hypoFile);
-		newAxiomInH = null;
+		//newAxiomInH = null;
 		addedAxiom = null;
 		return StringAxiom;
 	}
@@ -1006,10 +1027,11 @@ public class consoleLearner {
 					RemoveAxiom removedAxiom = new RemoveAxiom(tmpOntologyH, checkedAxiom);
 					manager.applyChange(removedAxiom);
 
-					OWLReasoner tmpreasoner = createReasoner(tmpOntologyH);
+					OWLReasoner tmpreasoner = createReasoner(tmpOntologyH, "tmpreasoner");
 					ELEngine tmpELQueryEngine = new ELEngine(tmpreasoner, shortFormProvider);
 					Boolean queryAns = tmpELQueryEngine.entailed(checkedAxiom);
-					tmpreasoner.dispose();
+					disposeOfReasoner(tmpreasoner, "tmpreasoner");
+					tmpreasoner = null;
 
 					if (queryAns) {
 						RemoveAxiom removedAxiomFromH = new RemoveAxiom(hypoOntology, checkedAxiom);
