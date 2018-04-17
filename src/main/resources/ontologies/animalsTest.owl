@@ -63,37 +63,6 @@
     
 
 
-    <!-- temp001 -->
-
-    <owl:Class rdf:about="temp001">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/animals.owl#eats"/>
-                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/animals.owl#Living_Being"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-    </owl:Class>
-    
-
-
-    <!-- temp002 -->
-
-    <owl:Class rdf:about="temp002">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/animals.owl#is_alive"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/ontologies/2014/3/temp001 -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/temp001">

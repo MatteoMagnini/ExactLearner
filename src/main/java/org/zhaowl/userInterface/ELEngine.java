@@ -2,14 +2,31 @@ package org.zhaowl.userInterface;
 
 import java.util.Set;
 
+<<<<<<< HEAD
 import org.semanticweb.elk.owlapi.ElkReasonerFactory;
 import org.semanticweb.owlapi.model.*;
+=======
+import org.semanticweb.owlapi.apibinding.OWLManager;
+import org.semanticweb.owlapi.model.AxiomType;
+import org.semanticweb.owlapi.model.IRI;
+import org.semanticweb.owlapi.model.OWLAxiom;
+import org.semanticweb.owlapi.model.OWLClass;
+import org.semanticweb.owlapi.model.OWLClassExpression;
+import org.semanticweb.owlapi.model.OWLDataFactory;
+import org.semanticweb.owlapi.model.OWLEquivalentClassesAxiom;
+import org.semanticweb.owlapi.model.OWLOntology;
+import org.semanticweb.owlapi.model.OWLOntologyManager;
+import org.semanticweb.owlapi.model.OWLSubClassOfAxiom;
+>>>>>>> test
 import org.semanticweb.owlapi.reasoner.InferenceType;
-import org.semanticweb.owlapi.reasoner.NodeSet;
 import org.semanticweb.owlapi.reasoner.Node;
+import org.semanticweb.owlapi.reasoner.NodeSet;
 import org.semanticweb.owlapi.reasoner.OWLReasoner;
 import org.semanticweb.owlapi.util.ShortFormProvider;
+<<<<<<< HEAD
 import org.semanticweb.owlapi.util.SimpleShortFormProvider;
+=======
+>>>>>>> test
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -52,7 +69,11 @@ public class ELEngine {
 		return myParser.parseSubClassOfAxiom(concept1, concept2);
     }
 
+<<<<<<< HEAD
     private Boolean entailedEQ(OWLSubClassOfAxiom subclassAxiom) {
+=======
+/*    public Boolean entailedEQ(OWLSubClassOfAxiom subclassAxiom) {
+>>>>>>> test
         OWLClassExpression left  = subclassAxiom.getSubClass();
         OWLClassExpression right = subclassAxiom.getSuperClass();
 
@@ -61,8 +82,8 @@ public class ELEngine {
 
         OWLDataFactory dataFactory = myManager.getOWLDataFactory();
 
-        OWLClass leftName  = dataFactory.getOWLClass(IRI.create("#temp001"));
-        OWLClass rightName = dataFactory.getOWLClass(IRI.create("#temp002"));
+        OWLClass leftName  = dataFactory.getOWLClass(IRI.create("temp001"));
+        OWLClass rightName = dataFactory.getOWLClass(IRI.create("temp002"));
 
         OWLAxiom leftDefinition  = dataFactory.getOWLEquivalentClassesAxiom(leftName,  left);
         OWLAxiom rightDefinition = dataFactory.getOWLEquivalentClassesAxiom(rightName, right);
@@ -111,8 +132,90 @@ public class ELEngine {
         LOGGER_.trace("");
 
         return workaround;
-    }
+    }*/
+	   public Boolean entailed(OWLClassExpression left,OWLClassExpression right) {
+	      
 
+	        Boolean workaround = false;
+	        reasoner.flush();
+	        OWLOntologyManager man = OWLManager.createOWLOntologyManager();
+	        OWLDataFactory dataFactory = man.getOWLDataFactory();
+
+	        OWLClass leftName  = dataFactory.getOWLClass(IRI.create("temp001"));
+	        OWLClass rightName = dataFactory.getOWLClass(IRI.create("temp002"));
+
+	        OWLAxiom leftDefinition  = dataFactory.getOWLEquivalentClassesAxiom(leftName,  left);
+	        OWLAxiom rightDefinition = dataFactory.getOWLEquivalentClassesAxiom(rightName, right);
+	        man.addAxiom(reasoner.getRootOntology(), leftDefinition);
+	        man.addAxiom(reasoner.getRootOntology(), rightDefinition);
+
+	 
+	        reasoner.flush();
+	        //reasoner.precomputeInferences(InferenceType.CLASS_HIERARCHY);
+
+	        NodeSet<OWLClass> superClasses = reasoner.getSuperClasses(leftName, false);
+	        
+	        System.out.println("Left Name "+ leftName.toString());
+	        System.out.println("Here "+ rightName.toString());
+	        System.out.println("Here "+ superClasses.toString());
+	        System.out.println("Left "+ left.toString());
+	        System.out.println("Here "+ right.toString());
+	        if (!superClasses.isEmpty() && superClasses.containsEntity(rightName))
+	            workaround = true;
+
+	       
+
+	        man.removeAxiom(reasoner.getRootOntology(), leftDefinition);
+	        man.removeAxiom(reasoner.getRootOntology(), rightDefinition);
+	        reasoner.flush();
+	        LOGGER_.info("returning " + workaround);
+	        LOGGER_.info("");
+	         
+
+	        return workaround;
+	    }
+    public Boolean entailedEQ(OWLSubClassOfAxiom subclassAxiom) {
+        OWLClassExpression left  = subclassAxiom.getSubClass();
+        OWLClassExpression right = subclassAxiom.getSuperClass();
+
+        Boolean workaround = false;
+        reasoner.flush();
+        OWLOntologyManager man = OWLManager.createOWLOntologyManager();
+        OWLDataFactory dataFactory = man.getOWLDataFactory();
+
+        OWLClass leftName  = dataFactory.getOWLClass(IRI.create("temp001"));
+        OWLClass rightName = dataFactory.getOWLClass(IRI.create("temp002"));
+
+        OWLAxiom leftDefinition  = dataFactory.getOWLEquivalentClassesAxiom(leftName,  left);
+        OWLAxiom rightDefinition = dataFactory.getOWLEquivalentClassesAxiom(rightName, right);
+        man.addAxiom(reasoner.getRootOntology(), leftDefinition);
+        man.addAxiom(reasoner.getRootOntology(), rightDefinition);
+
+ 
+        reasoner.flush();
+        //reasoner.precomputeInferences(InferenceType.CLASS_HIERARCHY);
+
+        NodeSet<OWLClass> superClasses = reasoner.getSuperClasses(leftName, false);
+        
+        System.out.println("Left Name "+ leftName.toString());
+        System.out.println("Here "+ rightName.toString());
+        System.out.println("Here "+ superClasses.toString());
+        System.out.println("Left "+ left.toString());
+        System.out.println("Here "+ right.toString());
+        if (!superClasses.isEmpty() && superClasses.containsEntity(rightName))
+            workaround = true;
+
+       
+
+        man.removeAxiom(reasoner.getRootOntology(), leftDefinition);
+        man.removeAxiom(reasoner.getRootOntology(), rightDefinition);
+        reasoner.flush();
+        LOGGER_.info("returning " + workaround);
+        LOGGER_.info("");
+         
+
+        return workaround;
+    }
 	public Boolean entailed(OWLAxiom ax) {
         LOGGER_.trace("InputAx: {}", ax.toString());
         if(ax.isOfType(AxiomType.EQUIVALENT_CLASSES)) {
