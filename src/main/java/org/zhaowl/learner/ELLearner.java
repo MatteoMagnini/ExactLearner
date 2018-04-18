@@ -52,12 +52,6 @@ public class ELLearner {
 	}
 
 
-	private static void disposeOfReasoner(OWLReasoner owlReasoner, String reasonerName) {
-		LOGGER_.info("ELLearner: Reasoner " + reasonerName + " disposed of");
-		//Thread.dumpStack();
-		System.out.flush();
-		owlReasoner.dispose();
-	}
 
 	public OWLClassExpression unsaturateLeft(OWLAxiom ax) throws Exception {
 		OWLClassExpression left = ((OWLSubClassOfAxiom) ax).getSubClass();
@@ -152,7 +146,7 @@ public class ELLearner {
 		System.out.flush();
 		OWLClassExpression ex = engineForT.parseClassExpression(tree.toDescriptionString());
 		engineForT = null;
-		disposeOfReasoner(reasonerForT, "reasonerForT");
+		//disposeOfReasoner(reasonerForT, "reasonerForT");
 		reasonerForT = null;
 		left = null;
 		right = null;
@@ -198,7 +192,7 @@ public class ELLearner {
 				treeL = null;
 				left = null;
 				right = null;
-				disposeOfReasoner(reasonerForT, "reasonerForT");
+				//disposeOfReasoner(reasonerForT, "reasonerForT");
 				reasonerForT = null;
 				engineForT = null;
 				return;
@@ -214,7 +208,7 @@ public class ELLearner {
 				treeL = null;
 				left = null;
 				right = null;
-				disposeOfReasoner(reasonerForT, "reasonerForT");
+				//disposeOfReasoner(reasonerForT, "reasonerForT");
 				reasonerForT = null;
 				engineForT = null;
 				return;
@@ -255,7 +249,7 @@ public class ELLearner {
 								right = null;
 								engineForT = null;
 								nodes = null;
-								disposeOfReasoner(reasonerForT, "reasonerForT");
+								//disposeOfReasoner(reasonerForT, "reasonerForT");
 								reasonerForT = null;
 								System.out.flush();
 								return;
@@ -278,7 +272,7 @@ public class ELLearner {
 										right = null;
 										nodes = null;
 										engineForT = null;
-										disposeOfReasoner(reasonerForT, "reasonerForT");
+										//disposeOfReasoner(reasonerForT, "reasonerForT");
 										reasonerForT = null;
 										System.out.flush();
 										return;
@@ -298,7 +292,7 @@ public class ELLearner {
 			left = null;
 			right = null;
 			engineForT = null;
-			disposeOfReasoner(reasonerForT, "reasonerForT");
+			//disposeOfReasoner(reasonerForT, "reasonerForT");
 			reasonerForT = null;
 			System.out.flush();
 			return;
@@ -307,7 +301,7 @@ public class ELLearner {
 		left = null;
 		right = null;
 		engineForT = null;
-		disposeOfReasoner(reasonerForT, "reasonerForT");
+		//disposeOfReasoner(reasonerForT, "reasonerForT");
 		reasonerForT = null;
 		System.out.flush();
 		return;
@@ -401,7 +395,7 @@ public class ELLearner {
 		newAx = null;
 		cIo = null;
 		nodes = null;
-		disposeOfReasoner(reasonerForT, "reasonerForT");
+		//disposeOfReasoner(reasonerForT, "reasonerForT");
 		reasonerForT = null;
 		OWLAxiom ax = engineForT.getSubClassAxiom(sub, sup);
 		engineForT = null;
@@ -467,7 +461,7 @@ public class ELLearner {
 			nodes = null;
 			oldTree = null;
 			System.out.flush();
-			disposeOfReasoner(reasonerForT, "reasonerForT");
+			//disposeOfReasoner(reasonerForT, "reasonerForT");
 			reasonerForT = null;
 			OWLClassExpression ex = engineForT.parseClassExpression(tree.toDescriptionString());
 			tree = null;
@@ -546,7 +540,7 @@ public class ELLearner {
 			nodes = null;
 			OWLClassExpression ex = engineForT.parseClassExpression(treeL.toDescriptionString());
 			engineForT = null;
-			disposeOfReasoner(reasonerForT, "reasonerForT");
+			//disposeOfReasoner(reasonerForT, "reasonerForT");
 			reasonerForT = null;
 			treeL = null;
 			return ex;
