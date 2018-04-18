@@ -11,6 +11,16 @@ Ontology:
 ObjectProperty: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#eats>
 
     
+ObjectProperty: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#has_part>
+
+    
+Class: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Vertebrate>
+
+    EquivalentTo: 
+        <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Animal>
+         and (<http://www.semanticweb.org/ontologies/2014/3/animals.owl#has_part> some <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Backbone>)
+    
+    
 Class: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Meat>
 
     
@@ -22,5 +32,8 @@ Class: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Carnivore>
     
     
 Class: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Animal>
+
+    
+Class: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Backbone>
 
     

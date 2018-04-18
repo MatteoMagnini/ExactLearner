@@ -10,10 +10,13 @@ import java.util.NavigableSet;
 import java.util.Set;
 import java.util.TreeSet;
 
+import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.OWLClass;
+import org.semanticweb.owlapi.model.OWLClassExpression;
 import org.semanticweb.owlapi.model.OWLDataFactory;
 import org.semanticweb.owlapi.model.OWLDataProperty;
 import org.semanticweb.owlapi.model.OWLDataRange;
+import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.model.OWLProperty;
 
 import uk.ac.manchester.cs.owl.owlapi.OWLDataFactoryImpl;
@@ -486,5 +489,43 @@ public class ELNode {
 	public ELTree getTree() {
 		return tree;
 	}
+	
+	 public OWLClassExpression transformToDescription() {
+	    	OWLOntologyManager man = OWLManager.createOWLOntologyManager();
+	        OWLDataFactory dataFactory = man.getOWLDataFactory();
+			int nrOfElements = label.size() + edges.size();
+			if(nrOfElements == 0) {
+				return df.getOWLThing();
+			
+			} else if(nrOfElements == 1) {
+				if(label.size()==1) {
+					return label.first();
+				} else {
+					ELEdge edge = edges.get(0);
+					if(edge.isObjectProperty()){
+						OWLClassExpression child = edge.getNode().transformToDescription();
+						return df.getOWLObjectSomeValuesFrom(edge.getLabel().asOWLObjectProperty(), child);
+					}  
+					
+				}
+			// return an intersection of labels and edges
+			} else {
+				Set<OWLClassExpression> operands = new TreeSet<>();
+				for(OWLClass nc : label) {
+					operands.add(nc);
+				}
+				
+				for(ELEdge edge : edges) {
+					if(edge.isObjectProperty()){
+						OWLClassExpression child = edge.getNode().transformToDescription();
+						OWLClassExpression osr = dataFactory.getOWLObjectSomeValuesFrom(edge.getLabel().asOWLObjectProperty(), child);
+						operands.add(osr);
+					}  
+				}
+				OWLClassExpression is = df.getOWLObjectIntersectionOf(operands);
+				return is;
+			}
+			return null;
+		}
 }
 
