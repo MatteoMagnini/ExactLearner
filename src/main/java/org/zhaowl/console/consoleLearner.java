@@ -1,6 +1,5 @@
 package org.zhaowl.console;
 
-import org.semanticweb.elk.owlapi.ElkReasonerFactory;
 import org.slf4j.LoggerFactory;
 import org.zhaowl.userInterface.ELEngine;
 import org.zhaowl.utils.SimpleClass;
@@ -14,7 +13,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-import javax.swing.JOptionPane;
+//import javax.swing.JOptionPane;
 
 import org.coode.owlapi.manchesterowlsyntax.ManchesterOWLSyntaxOntologyFormat;
 import org.semanticweb.owlapi.apibinding.OWLManager;
@@ -47,7 +46,7 @@ public class consoleLearner {
 	public int equivCount = 0;
 	public long timeStart = 0;
 	public long timeEnd = 0;
-	public boolean win;
+	//public boolean win;
 	public boolean wePlayin;
 	public boolean ezBox;
 	public boolean autoBox = true;
@@ -63,10 +62,17 @@ public class consoleLearner {
 	public OWLOntologyManager manager = null;
 	public ManchesterOWLSyntaxOWLObjectRendererImpl rendering = null;
 
+	public OWLOntology ontology = null;
 	public OWLReasoner reasonerForT = null;
+	public ELEngine ELQueryEngineForT = null;
+
+	public OWLOntology ontologyH = null;
+	public OWLReasoner reasonerForH;
+	public ELEngine ELQueryEngineForH;
+
 	public Set<OWLAxiom> axiomsT = null;
 	public Set<OWLAxiom> axiomsTCheck = null;
-	public ELEngine ELQueryEngineForT = null;
+
 	public String ontologyFolder = null;
 	public String ontologyName = null;
 	public File hypoFile = null;
@@ -77,12 +83,10 @@ public class consoleLearner {
 
 	public Set<OWLClass> cIo = null;
 
-	public OWLReasoner reasonerForH = null;
 	public ShortFormProvider shortFormProvider = null;
 	public Set<OWLAxiom> axiomsH = null;
 	public String ontologyFolderH = null;
-	public OWLOntology ontology = null;
-	public OWLOntology ontologyH = null;
+
 	public OWLAxiom lastCE = null;
 
 	public OWLAxiom smallestOne = null;
@@ -122,7 +126,7 @@ public class consoleLearner {
 		 * 
 		 * [1] = mode, if "on" then ez if "off" then normal mode AND allows for oracle
 		 * 
-		 * args[2:7] = learner skills [2] = decompose left [3] = branch left [4] =
+		 * args[2:7] = runLearner skills [2] = decompose left [3] = branch left [4] =
 		 * unsaturate left [5] = decompose right [6] = merge right [7] = saturate right
 		 * 
 		 * [8] = saturate left [9] = merge left [10] = branch right [11] = unsaturate
@@ -171,10 +175,10 @@ public class consoleLearner {
 			// load ontology
 
 			try {
-				loadOntology();
+				setupOntologies();
 				timeStart = System.currentTimeMillis();
  
-				learner();
+				runLearner();
 				System.out.println("Total membership queries: " + membCount);
 				System.out.println("Total equivalence queries: " + equivCount);
 				System.out.println("Target TBox logical axioms: " + axiomsT.size());
@@ -188,7 +192,7 @@ public class consoleLearner {
 
 			} catch (Throwable e) {
 				e.printStackTrace();
-				System.out.println("error in learner call ----- " + e);
+				System.out.println("error in runLearner call ----- " + e);
 			}
 
 		} catch (Throwable e) {
@@ -254,8 +258,8 @@ public class consoleLearner {
 
 	}
 
-	public void learner() throws Throwable {
-		ELLearner learner = new ELLearner(reasonerForH, shortFormProvider, ontology, ontologyH, ELQueryEngineForT, this,
+	public void runLearner() throws Throwable {
+		ELLearner elLearner = new ELLearner(reasonerForH, shortFormProvider, ontology, ontologyH, ELQueryEngineForT, this,
 				rendering);
 
 		
@@ -266,7 +270,7 @@ public class consoleLearner {
 				timeEnd = System.currentTimeMillis();
 				System.out.println("Total time (ms): " + (timeEnd - timeStart));
 				lastCE = null;
-				learner = null;
+				elLearner = null;
 				return;
 			} else if (ezBox) {
 				equivCount++;
@@ -285,8 +289,8 @@ public class consoleLearner {
 				right = ((OWLSubClassOfAxiom) lastCE).getSuperClass();
 			} else {
 
-				learner = null;
-				learner();
+				elLearner = null;
+				runLearner();
 
 				return;
 
@@ -304,13 +308,13 @@ public class consoleLearner {
 				 */
 				if (learnerDecompL) {
 					// System.out.println("lhs decomp");
-					learner.decompose(left, right);
+					elLearner.decompose(left, right);
 				}
 				// branch edges on left side of the inclusion (if possible) to make it logically
 				// stronger (more general)
 				if (learnerBranch) {
 					// System.out.println("lhs branch");
-					left = learner.branchLeft(left, right);
+					left = elLearner.branchLeft(left, right);
 				}
 				lastCE = ELQueryEngineForT.getSubClassAxiom(left, right);
 
@@ -318,7 +322,7 @@ public class consoleLearner {
 				if (learnerUnsat) {
 					// System.out.println("lhs unsaturate");
 
-					left = learner.unsaturateLeft(lastCE);
+					left = elLearner.unsaturateLeft(lastCE);
 				}
 				lastCE = ELQueryEngineForT.getSubClassAxiom(left, right);
 				try {
@@ -332,30 +336,30 @@ public class consoleLearner {
 				// hypothesis
 				if (learnerDecompR) {
 					// System.out.println("rhs decomp");
-					learner.decompose(left, right);
+					elLearner.decompose(left, right);
 				}
 				// merge edges on right side of the inclusion (if possible) to make it logically
 				// stronger (more general)
 				if (learnerMerge) {
 					// System.out.println("rhs merge");
-					right = learner.learnerSiblingMerge(left, right);
+					right = elLearner.learnerSiblingMerge(left, right);
 				}
 				// rebuild inclusion for final step
 				lastCE = ELQueryEngineForT.getSubClassAxiom(left, right);
 				if (learnerSat) {
 					// System.out.println("rhs saturate");
-					lastCE = learner.saturateWithTreeRight(lastCE);
+					lastCE = elLearner.saturateWithTreeRight(lastCE);
 				}
 				left = ((OWLSubClassOfAxiom) lastCE).getSubClass();
 				right = ((OWLSubClassOfAxiom) lastCE).getSuperClass();
 				try {
 					addHypothesis(lastCE);
-					learner = null;
+					elLearner = null;
 				} catch (Exception e2) {
 					e2.printStackTrace();
 				}
 			}
-			learner();
+			runLearner();
 		}
 
 	}
@@ -363,9 +367,9 @@ public class consoleLearner {
 	public void equivalenceCheck() {
 
 		int x = 0;
-		if (!wePlayin)
-			JOptionPane.showMessageDialog(null, "No Ontology loaded yet, please load an Ontology to start playing!",
-					"Alert", JOptionPane.INFORMATION_MESSAGE);
+		if (!wePlayin) {}
+			//JOptionPane.showMessageDialog(null, "No Ontology loaded yet, please load an Ontology to start playing!",
+					//"Alert", JOptionPane.INFORMATION_MESSAGE);
 		else {
 			if (autoBox) {
 				System.gc();
@@ -413,7 +417,7 @@ public class consoleLearner {
 	}
 
 	public void victory() {
-		win = true;
+		//win = true;
 		System.out.println("Ontology learned successfully!");
 		System.out.println("You dun did it!!!");
 		
@@ -424,8 +428,8 @@ public class consoleLearner {
 				axiomsT.add(axe);
 	}
 
-	public void loadOntology() throws InterruptedException {
-		win = false;
+	public void setupOntologies() throws InterruptedException {
+		//win = false;
 
 		try {
 			equivCount = 0;
@@ -435,8 +439,10 @@ public class consoleLearner {
 			ontology = manager.loadOntologyFromOntologyDocument(new File(filePath));
 			rendering = new ManchesterOWLSyntaxOWLObjectRendererImpl();
  
-			reasonerForT = createReasoner(ontology, "reasonerForT");
+			reasonerForT = ELEngine.createReasoner(ontology, "reasonerForT");
 			shortFormProvider = new SimpleShortFormProvider();
+			ELQueryEngineForT = new ELEngine(reasonerForT, shortFormProvider);
+
 			axiomsT = new HashSet<OWLAxiom>();
 			for (OWLAxiom axe : ontology.getAxioms())
 				if (!axe.toString().contains("Thing") && axe.isOfType(AxiomType.SUBCLASS_OF)
@@ -450,8 +456,7 @@ public class consoleLearner {
 
 			lastCE = null;
 
-			ELQueryEngineForT = new ELEngine(reasonerForT, shortFormProvider);
-			
+
 			// transfer Origin ontology to ManchesterOWLSyntaxOntologyFormat
 			OWLOntologyFormat format = manager.getOntologyFormat(ontology);
 			ManchesterOWLSyntaxOntologyFormat manSyntaxFormat = new ManchesterOWLSyntaxOntologyFormat();
@@ -487,7 +492,11 @@ public class consoleLearner {
 
 			shortFormProvider = new SimpleShortFormProvider();
 			axiomsH = ontologyH.getAxioms();
-			wePlayin = true; 
+			wePlayin = true;
+			reasonerForH = ELEngine.createReasoner(ontology, "reasonerForH");
+			shortFormProvider = new SimpleShortFormProvider();
+			ELQueryEngineForH = new ELEngine(reasonerForH, shortFormProvider);
+
 
 			System.out.println(ontology);
 			System.out.println("Loaded successfully.");
@@ -584,32 +593,19 @@ public class consoleLearner {
 
 	public Boolean equivalenceQuery() {
 
-		reasonerForH = createReasoner(ontologyH, "reasonerForH");
-		ELEngine ELQueryEngineForH = new ELEngine(reasonerForH, shortFormProvider);
+		//reasonerForH = createReasoner(ontologyH, "reasonerForH");
+		//ELEngine ELQueryEngineForH = new ELEngine(reasonerForH, shortFormProvider);
 		Boolean queryAns = ELQueryEngineForH.entailed(axiomsT);
-		disposeOfReasoner(reasonerForH, "reasonerForH");
+		//disposeOfReasoner(reasonerForH, "reasonerForH");
 		reasonerForH = null;
 		return queryAns;
 	}
 
-	private static void disposeOfReasoner(OWLReasoner owlReasoner, String reasonerName) {
-		LOGGER_.info("consoleLearner: Reasoner " + reasonerName + " disposed of");
-		//Thread.dumpStack();
-		System.out.flush();
-		owlReasoner.dispose();
-	}
 
-	public OWLReasoner createReasoner(OWLOntology ontology, String reasonerName) {
-		LOGGER_.info("consoleLearner: Reasoner " + reasonerName + " created");
-		//Thread.dumpStack();
-		System.out.flush();
-		ElkReasonerFactory reasoningFactory = new ElkReasonerFactory();
-		return reasoningFactory.createReasoner(ontology);
-	}
 
 	public String getCounterExample() throws Exception {
-		reasonerForH = createReasoner(ontologyH, "reasonerForH");
-		ELEngine ELQueryEngineForH = new ELEngine(reasonerForH, shortFormProvider);
+		//reasonerForH = createReasoner(ontologyH, "reasonerForH");
+		//ELEngine ELQueryEngineForH = new ELEngine(reasonerForH, shortFormProvider);
 
 		ELOracle oracle = new ELOracle(reasonerForH, shortFormProvider, ontology, ontologyH, ELQueryEngineForT, this);
 		// reasonerForH.dispose();
@@ -925,8 +921,8 @@ public class consoleLearner {
 	}
 
 	private OWLAxiom getCounterExamplefromSubClassAxiom(OWLClassExpression subclass, OWLClassExpression superclass) {
-		reasonerForH = createReasoner(ontologyH, "reasonerForH");
-		ELEngine ELQueryEngineForH = new ELEngine(reasonerForH, shortFormProvider);
+		//reasonerForH = createReasoner(ontologyH, "reasonerForH");
+		//ELEngine ELQueryEngineForH = new ELEngine(reasonerForH, shortFormProvider);
 		Set<OWLClass> superclasses = ELQueryEngineForT.getSuperClasses(superclass, false);
 		Set<OWLClass> subclasses = ELQueryEngineForT.getSubClasses(subclass, false);
 
@@ -944,7 +940,7 @@ public class consoleLearner {
 					iteratorSubClass = null;
 					ELQueryEngineForH = null;
 
-					disposeOfReasoner(reasonerForH, "reasonerForH");
+					//disposeOfReasoner(reasonerForH, "reasonerForH");
 					reasonerForH = null;
 					return newCounterexampleAxiom;
 				}
@@ -966,7 +962,7 @@ public class consoleLearner {
 					iteratorSuperClass = null;
 					ELQueryEngineForH = null;
 
-					disposeOfReasoner(reasonerForH, "reasonerForH");
+					//disposeOfReasoner(reasonerForH, "reasonerForH");
 					reasonerForH = null;
 					return newCounterexampleAxiom;
 				}
@@ -976,7 +972,7 @@ public class consoleLearner {
 		ELQueryEngineForH = null;
 		superclass = null;
 		subclass = null;
-		disposeOfReasoner(reasonerForH, "reasonerForH");
+		//disposeOfReasoner(reasonerForH, "reasonerForH");
 		reasonerForH = null;
 		return null;
 	}
@@ -1027,10 +1023,10 @@ public class consoleLearner {
 					RemoveAxiom removedAxiom = new RemoveAxiom(tmpOntologyH, checkedAxiom);
 					manager.applyChange(removedAxiom);
 
-					OWLReasoner tmpreasoner = createReasoner(tmpOntologyH, "tmpreasoner");
+					OWLReasoner tmpreasoner = ELEngine.createReasoner(tmpOntologyH, "tmpreasoner");
 					ELEngine tmpELQueryEngine = new ELEngine(tmpreasoner, shortFormProvider);
 					Boolean queryAns = tmpELQueryEngine.entailed(checkedAxiom);
-					disposeOfReasoner(tmpreasoner, "tmpreasoner");
+					ELEngine.disposeOfReasoner(tmpreasoner, "tmpreasoner");
 					tmpreasoner = null;
 
 					if (queryAns) {

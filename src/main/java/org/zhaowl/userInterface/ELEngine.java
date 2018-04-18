@@ -172,4 +172,19 @@ public class ELEngine {
         NodeSet<OWLClass> subClasses = reasoner.getSubClasses(classExpression, direct);
         return subClasses.getFlattened();
     }
+
+    public static OWLReasoner createReasoner(final OWLOntology rootOntology, String reasonerName) {
+        LOGGER_.info("Reasoner "+ reasonerName + " created");
+        //Thread.dumpStack();
+        System.out.flush();
+        ElkReasonerFactory reasoningFactory = new ElkReasonerFactory();
+        return reasoningFactory.createReasoner(rootOntology);
+    }
+    public static void disposeOfReasoner(OWLReasoner owlReasoner, String reasonerName) {
+        LOGGER_.info("Reasoner " + reasonerName + " disposed of");
+        //Thread.dumpStack();
+        System.out.flush();
+        owlReasoner.dispose();
+    }
+
 }
