@@ -247,7 +247,7 @@ public class ELLearner {
 						}
 					}
 				}
-				System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+				//System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 			}
 		} catch (Exception e) {
 			System.out.println("Error in decompose: " + e);
