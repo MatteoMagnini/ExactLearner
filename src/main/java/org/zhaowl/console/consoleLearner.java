@@ -31,9 +31,6 @@ import org.semanticweb.owlapi.model.OWLOntologyFormat;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.model.OWLSubClassOfAxiom;
 import org.semanticweb.owlapi.model.RemoveAxiom;
-import org.semanticweb.owlapi.reasoner.OWLReasoner;
-import org.semanticweb.owlapi.util.ShortFormProvider;
-import org.semanticweb.owlapi.util.SimpleShortFormProvider;
 import org.zhaowl.learner.ELLearner;
 import org.zhaowl.oracle.ELOracle;
 import org.apache.log4j.*;
@@ -58,39 +55,40 @@ public class consoleLearner {
 	
 	// ############# OWL variables Start ######################
 
-	public String ontologyPath = null;
-	public OWLOntologyManager manager = null;
-	public ManchesterOWLSyntaxOWLObjectRendererImpl rendering = null;
+	private String ontologyPath = null;
+	private OWLOntologyManager myManager = null;
+	private ManchesterOWLSyntaxOWLObjectRendererImpl myRenderer = null;
 
-	public OWLOntology ontology = null;
-	public OWLReasoner reasonerForT = null;
-	public ELEngine ELQueryEngineForT = null;
 
-	public OWLOntology ontologyH = null;
-	public OWLReasoner reasonerForH;
-	public ELEngine ELQueryEngineForH;
+	private Set<OWLAxiom> axiomsT = null;
+	private Set<OWLAxiom> axiomsTCheck = null;
 
-	public Set<OWLAxiom> axiomsT = null;
-	public Set<OWLAxiom> axiomsTCheck = null;
-
-	public String ontologyFolder = null;
-	public String ontologyName = null;
-	public File hypoFile = null;
-	public File newFile = null;
+	private String ontologyFolder = null;
+	private String ontologyName = null;
+	private File hypoFile = null;
+	private File newFile = null;
 
 	public ArrayList<String> concepts = new ArrayList<String>();
-	public ArrayList<String> roles = new ArrayList<String>();
+	private ArrayList<String> roles = new ArrayList<String>();
 
-	public Set<OWLClass> cIo = null;
+	private Set<OWLClass> cIo = null;
 
-	public ShortFormProvider shortFormProvider = null;
-	public Set<OWLAxiom> axiomsH = null;
-	public String ontologyFolderH = null;
+	private Set<OWLAxiom> axiomsH = null;
+	private String ontologyFolderH = null;
 
-	public OWLAxiom lastCE = null;
+	private OWLAxiom lastCE = null;
 
-	public OWLAxiom smallestOne = null;
-	public int smallestSize = 0;
+	private OWLAxiom smallestOne = null;
+	private int smallestSize = 0;
+
+	private OWLOntology targetOntology = null;
+	private OWLOntology hypothesisOntology = null;
+
+	private ELEngine elQueryEngineForT = null;
+	private ELEngine elQueryEngineForH = null;
+
+	private ELLearner elLearner = null;
+	private ELOracle elOracle = null;
 
 	// ############# OWL variables Start ######################
 
@@ -116,66 +114,41 @@ public class consoleLearner {
 	// ############# Oracle and Learner skills END ######################
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-		/*
-		 * ----- [0] ontology path if jar file is in project folder [ZhaOWL] then you
-		 * specify the small ontology for animals as
-		 * 
-		 * src/main/resources/ontologies/SMALL/animals.owl
-		 * 
-		 * [1] = mode, if "on" then ez if "off" then normal mode AND allows for oracle
-		 * 
-		 * args[2:7] = runLearner skills [2] = decompose left [3] = branch left [4] =
-		 * unsaturate left [5] = decompose right [6] = merge right [7] = saturate right
-		 * 
-		 * [8] = saturate left [9] = merge left [10] = branch right [11] = unsaturate
-		 * right
-		 * 
-		 * 
-		 * ----- OUTPUT aside from some console metrics (number of equivalence queries
-		 * and some other info) a new ontology file will be created in the folder of
-		 * ontology input this new ontology will be the hypothesis learned by the
-		 * program
-		 * 
-		 */
-		Logger.getRootLogger().setLevel(Level.TRACE);
+		Logger.getRootLogger().setLevel(Level.OFF);
 		consoleLearner maker = new consoleLearner();
-		// maker.setValues(args);
 		maker.doIt(args);
 
 	}
 
 	public void doIt(String[] args) {
-		/*
-		// FOR TESTING 
-		args = new String[12];
-		args[0] = "src/main/resources/ontologies/university.owl";
-		args[1] = "on";
-		for(int i = 2; i < 8; i++)
-			args[i] = "t";
-		for(int i = 8; i < 12; i++)
-			args[i] = "f";
-		*/
+
 		try {
-			// ontology from parameters
+			// targetOntology from parameters
 			filePath = args[0];
 
-			// normal mode allows for oracle skills
+			// normal mode allows for elOracle skills
 			if (args[1].equals("on"))
-				ezBox = true; // oracle skills not allowed
+				ezBox = true; // elOracle skills not allowed
 			else
-				ezBox = false; // oracle skills allowed
+				ezBox = false; // elOracle skills allowed
 
 			// setLearnerSkills
 			setLearnerSkills(args);
 
 			// setLearnerSkills
 			setOracleSkills(args);
-			// load ontology
+			// load targetOntology
 
 			try {
 				setupOntologies();
+
+				elQueryEngineForT = new ELEngine(targetOntology);
+				elQueryEngineForH = new ELEngine(hypothesisOntology);
+
+				elLearner = new ELLearner(elQueryEngineForT, elQueryEngineForH, this);
+				elOracle = new ELOracle(elQueryEngineForT, elQueryEngineForH, this);
+
+
 				timeStart = System.currentTimeMillis();
  
 				runLearner();
@@ -185,10 +158,10 @@ public class consoleLearner {
 				
 				
 				
-				new SimpleClass(rendering).showCIT(axiomsT,true);
+				new SimpleClass(myRenderer).showCIT(axiomsT,true);
 				
-				System.out.println("Hypothesis TBox logical axioms: " + ontologyH.getAxioms().size());
-				new SimpleClass(rendering).showCIT(ontologyH.getAxioms(),false);
+				System.out.println("Hypothesis TBox logical axioms: " + hypothesisOntology.getAxioms().size());
+				new SimpleClass(myRenderer).showCIT(hypothesisOntology.getAxioms(),false);
 
 			} catch (Throwable e) {
 				e.printStackTrace();
@@ -259,8 +232,6 @@ public class consoleLearner {
 	}
 
 	public void runLearner() throws Throwable {
-		ELLearner elLearner = new ELLearner(reasonerForH, shortFormProvider, ontology, ontologyH, ELQueryEngineForT, this,
-				rendering);
 
 		
 		if (autoBox) {  
@@ -270,7 +241,6 @@ public class consoleLearner {
 				timeEnd = System.currentTimeMillis();
 				System.out.println("Total time (ms): " + (timeEnd - timeStart));
 				lastCE = null;
-				elLearner = null;
 				return;
 			} else if (ezBox) {
 				equivCount++;
@@ -279,23 +249,22 @@ public class consoleLearner {
 				equivCount++;
 				doCE();
 			}
-			// System.out.println(rendering.render(lastCE));
+			// System.out.println(myRenderer.render(lastCE));
 
 			OWLClassExpression left = null;
 			OWLClassExpression right = null;
-			// lastCE is last counter example provided by oracle, unsaturate and saturate
+			// lastCE is last counter example provided by elOracle, unsaturate and saturate
 			if (lastCE.isOfType(AxiomType.SUBCLASS_OF)) {
 				left = ((OWLSubClassOfAxiom) lastCE).getSubClass();
 				right = ((OWLSubClassOfAxiom) lastCE).getSuperClass();
 			} else {
 
-				elLearner = null;
 				runLearner();
 
 				return;
 
 			}
-			lastCE = ELQueryEngineForT.getSubClassAxiom(left, right);
+			lastCE = elQueryEngineForT.getSubClassAxiom(left, right);
 			// check if complex side is left
 			if (checkLeft(lastCE)) {
 
@@ -303,8 +272,8 @@ public class consoleLearner {
 				// by recursively breaking the left expression and adding new inclusions to the
 				// hypothesis
 				/*
-				 * if(oracleMerge.isSelected()) oracle.oracleSiblingMerge(left, right);
-				 * if(oracleSaturate.isSelected()) oracle.saturateWithTreeLeft(lastCE);
+				 * if(oracleMerge.isSelected()) elOracle.oracleSiblingMerge(left, right);
+				 * if(oracleSaturate.isSelected()) elOracle.saturateWithTreeLeft(lastCE);
 				 */
 				if (learnerDecompL) {
 					// System.out.println("lhs decomp");
@@ -316,7 +285,7 @@ public class consoleLearner {
 					// System.out.println("lhs branch");
 					left = elLearner.branchLeft(left, right);
 				}
-				lastCE = ELQueryEngineForT.getSubClassAxiom(left, right);
+				lastCE = elQueryEngineForT.getSubClassAxiom(left, right);
 
 				// unsaturate removes useless concepts from nodes in the inclusion
 				if (learnerUnsat) {
@@ -324,7 +293,7 @@ public class consoleLearner {
 
 					left = elLearner.unsaturateLeft(lastCE);
 				}
-				lastCE = ELQueryEngineForT.getSubClassAxiom(left, right);
+				lastCE = elQueryEngineForT.getSubClassAxiom(left, right);
 				try {
 					addHypothesis(lastCE); 
 				} catch (Exception e2) {
@@ -345,7 +314,7 @@ public class consoleLearner {
 					right = elLearner.learnerSiblingMerge(left, right);
 				}
 				// rebuild inclusion for final step
-				lastCE = ELQueryEngineForT.getSubClassAxiom(left, right);
+				lastCE = elQueryEngineForT.getSubClassAxiom(left, right);
 				if (learnerSat) {
 					// System.out.println("rhs saturate");
 					lastCE = elLearner.saturateWithTreeRight(lastCE);
@@ -354,7 +323,6 @@ public class consoleLearner {
 				right = ((OWLSubClassOfAxiom) lastCE).getSuperClass();
 				try {
 					addHypothesis(lastCE);
-					elLearner = null;
 				} catch (Exception e2) {
 					e2.printStackTrace();
 				}
@@ -422,7 +390,7 @@ public class consoleLearner {
 		System.out.println("You dun did it!!!");
 		
 		axiomsT = new HashSet<OWLAxiom>();
-		for (OWLAxiom axe : ontology.getAxioms())
+		for (OWLAxiom axe : targetOntology.getAxioms())
 			if (!axe.toString().contains("Thing") && axe.isOfType(AxiomType.SUBCLASS_OF)
 					|| axe.isOfType(AxiomType.EQUIVALENT_CLASSES))
 				axiomsT.add(axe);
@@ -432,24 +400,18 @@ public class consoleLearner {
 		//win = false;
 
 		try {
-			equivCount = 0;
-			membCount = 0;
-			manager = OWLManager.createOWLOntologyManager();
-			System.out.println("Trying to load ontology");
-			ontology = manager.loadOntologyFromOntologyDocument(new File(filePath));
-			rendering = new ManchesterOWLSyntaxOWLObjectRendererImpl();
- 
-			reasonerForT = ELEngine.createReasoner(ontology, "reasonerForT");
-			shortFormProvider = new SimpleShortFormProvider();
-			ELQueryEngineForT = new ELEngine(reasonerForT, shortFormProvider);
+			myManager = OWLManager.createOWLOntologyManager();
+			System.out.println("Trying to load targetOntology");
+			targetOntology = myManager.loadOntologyFromOntologyDocument(new File(filePath));
+			myRenderer = new ManchesterOWLSyntaxOWLObjectRendererImpl();
 
 			axiomsT = new HashSet<OWLAxiom>();
-			for (OWLAxiom axe : ontology.getAxioms())
+			for (OWLAxiom axe : targetOntology.getAxioms())
 				if (!axe.toString().contains("Thing") && axe.isOfType(AxiomType.SUBCLASS_OF)
 						|| axe.isOfType(AxiomType.EQUIVALENT_CLASSES))
 					axiomsT.add(axe);
 			axiomsTCheck = new HashSet<OWLAxiom>();
-			for (OWLAxiom axe : ontology.getAxioms())
+			for (OWLAxiom axe : targetOntology.getAxioms())
 				if (!axe.toString().contains("Thing") && axe.isOfType(AxiomType.SUBCLASS_OF)
 						|| axe.isOfType(AxiomType.EQUIVALENT_CLASSES))
 					axiomsTCheck.add(axe);
@@ -457,15 +419,15 @@ public class consoleLearner {
 			lastCE = null;
 
 
-			// transfer Origin ontology to ManchesterOWLSyntaxOntologyFormat
-			OWLOntologyFormat format = manager.getOntologyFormat(ontology);
+			// transfer Origin targetOntology to ManchesterOWLSyntaxOntologyFormat
+			OWLOntologyFormat format = myManager.getOntologyFormat(targetOntology);
 			ManchesterOWLSyntaxOntologyFormat manSyntaxFormat = new ManchesterOWLSyntaxOntologyFormat();
 			if (format.isPrefixOWLOntologyFormat()) {
 				manSyntaxFormat.copyPrefixesFrom(format.asPrefixOWLOntologyFormat());
 			}
 			format = null;
 			
-			// create personalized names for ontology
+			// create personalized names for targetOntology
 			ontologyFolderH = "src/main/resources/tmp/";
 			ontologyFolder = "src/main/resources/tmp/";
 			ontologyName = "";
@@ -479,7 +441,7 @@ public class consoleLearner {
 					newFile.delete();
 				}
 				newFile.createNewFile();
-				manager.saveOntology(ontology, manSyntaxFormat, IRI.create(newFile.toURI()));
+				myManager.saveOntology(targetOntology, manSyntaxFormat, IRI.create(newFile.toURI()));
 
 				// Create OWL Ontology Manager for hypothesis and load hypothesis file
 				if (hypoFile.exists()) {
@@ -487,23 +449,21 @@ public class consoleLearner {
 				}
 				hypoFile.createNewFile();
 
-				ontologyH = manager.loadOntologyFromOntologyDocument(hypoFile);
+				hypothesisOntology = myManager.loadOntologyFromOntologyDocument(hypoFile);
 			}
 
-			shortFormProvider = new SimpleShortFormProvider();
-			axiomsH = ontologyH.getAxioms();
+
+			axiomsH = hypothesisOntology.getAxioms();
 			wePlayin = true;
-			reasonerForH = ELEngine.createReasoner(ontology, "reasonerForH");
-			shortFormProvider = new SimpleShortFormProvider();
-			ELQueryEngineForH = new ELEngine(reasonerForH, shortFormProvider);
 
 
-			System.out.println(ontology);
+
+			System.out.println(targetOntology);
 			System.out.println("Loaded successfully.");
 			System.out.println();
 
-			concepts = new SimpleClass(rendering).getSuggestionNames("concept", newFile);
-			roles = new SimpleClass(rendering).getSuggestionNames("role", newFile);
+			concepts = new SimpleClass(myRenderer).getSuggestionNames("concept", newFile);
+			roles = new SimpleClass(myRenderer).getSuggestionNames("role", newFile);
 
 			System.out.println("Total number of concepts is: " + concepts.size());
 
@@ -511,7 +471,7 @@ public class consoleLearner {
 			
 			System.out.flush();
 		} catch (OWLOntologyCreationException e) {
-			System.out.println("Could not load ontology: " + e.getMessage());
+			System.out.println("Could not load targetOntology: " + e.getMessage());
 		} catch (OWLException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -541,18 +501,18 @@ public class consoleLearner {
 					e1.printStackTrace();
 				}
 			}else
-				System.out.println("Won't add " + rendering.render(ax));
+				System.out.println("Won't add " + myRenderer.render(ax));
 		} 
 	}
 	
 	public void getOntologyName() {
 
 		int con = 0;
-		for (int i = 0; i < ontology.getOntologyID().toString().length(); i++)
-			if (ontology.getOntologyID().toString().charAt(i) == '/')
+		for (int i = 0; i < targetOntology.getOntologyID().toString().length(); i++)
+			if (targetOntology.getOntologyID().toString().charAt(i) == '/')
 				con = i;
-		ontologyName = ontology.getOntologyID().toString().substring(con + 1,
-				ontology.getOntologyID().toString().length());
+		ontologyName = targetOntology.getOntologyID().toString().substring(con + 1,
+				targetOntology.getOntologyID().toString().length());
 		ontologyName = ontologyName.substring(0, ontologyName.length() - 3);
 		if (!ontologyName.contains(".owl"))
 			ontologyName = ontologyName + ".owl";
@@ -562,13 +522,12 @@ public class consoleLearner {
 
 	public void resetVariables() {
 		ontologyPath = null;
-		manager = null;
-		rendering = null;
+		myManager = null;
+		myRenderer = null;
 
-		reasonerForT = null;
 		axiomsT = null;
 		axiomsTCheck = null;
-		ELQueryEngineForT = null;
+		elQueryEngineForT = null;
 		ontologyFolder = null;
 		ontologyName = null;
 		hypoFile = null;
@@ -579,12 +538,11 @@ public class consoleLearner {
 
 		cIo = null;
 
-		reasonerForH = null;
-		shortFormProvider = null;
+
 		axiomsH = null;
 		ontologyFolderH = null;
-		ontology = null;
-		ontologyH = null;
+		targetOntology = null;
+		hypothesisOntology = null;
 		lastCE = null;
 
 		smallestOne = null;
@@ -593,23 +551,13 @@ public class consoleLearner {
 
 	public Boolean equivalenceQuery() {
 
-		//reasonerForH = createReasoner(ontologyH, "reasonerForH");
-		//ELEngine ELQueryEngineForH = new ELEngine(reasonerForH, shortFormProvider);
-		Boolean queryAns = ELQueryEngineForH.entailed(axiomsT);
-		//disposeOfReasoner(reasonerForH, "reasonerForH");
-		reasonerForH = null;
+		Boolean queryAns = elQueryEngineForH.entailed(axiomsT);
 		return queryAns;
 	}
 
 
 
 	public String getCounterExample() throws Exception {
-		//reasonerForH = createReasoner(ontologyH, "reasonerForH");
-		//ELEngine ELQueryEngineForH = new ELEngine(reasonerForH, shortFormProvider);
-
-		ELOracle oracle = new ELOracle(reasonerForH, shortFormProvider, ontology, ontologyH, ELQueryEngineForT, this);
-		// reasonerForH.dispose();
-
 		Iterator<OWLAxiom> iteratorT = axiomsT.iterator();
 		while (iteratorT.hasNext()) {
 			OWLAxiom selectedAxiom = iteratorT.next();
@@ -617,10 +565,10 @@ public class consoleLearner {
 
 			// first get CounterExample from an axiom with the type SUBCLASS_OF
 			if (selectedAxiom.isOfType(AxiomType.SUBCLASS_OF)) {
-				Boolean queryAns = ELQueryEngineForH.entailed(selectedAxiom);
+				Boolean queryAns = elQueryEngineForH.entailed(selectedAxiom);
 				// if hypothesis does NOT entail the CI
 				if (!queryAns) {
-					// System.out.println("Chosen CE:" + rendering.render(selectedAxiom));
+					// System.out.println("Chosen CE:" + myRenderer.render(selectedAxiom));
 					OWLSubClassOfAxiom counterexample = (OWLSubClassOfAxiom) selectedAxiom;
 					OWLClassExpression subclass = counterexample.getSubClass();
 					OWLClassExpression superclass = counterexample.getSuperClass();
@@ -641,47 +589,45 @@ public class consoleLearner {
 								ex = null;
 								// System.out.println(newCounterexampleAxiom);
 								// if (checkLeft(newCounterexampleAxiom)) {
-								ex = oracle.oracleSiblingMerge(
+								ex = elOracle.oracleSiblingMerge(
 										((OWLSubClassOfAxiom) newCounterexampleAxiom).getSubClass(),
 										((OWLSubClassOfAxiom) newCounterexampleAxiom).getSuperClass());
-								newCounterexampleAxiom = ELQueryEngineForT.getSubClassAxiom(ex, superclass);
+								newCounterexampleAxiom = elQueryEngineForT.getSubClassAxiom(ex, superclass);
 								ex = null;
 							}
 							if (oracleSaturate)
-								newCounterexampleAxiom = oracle
+								newCounterexampleAxiom = elOracle
 										.saturateWithTreeLeft((OWLSubClassOfAxiom) newCounterexampleAxiom);
 						} else {
 
 							if (oracleBranch) {
 								ex = null;
 								OWLSubClassOfAxiom auxAx = (OWLSubClassOfAxiom) newCounterexampleAxiom;
-								ex = oracle.branchRight(auxAx.getSubClass(), auxAx.getSuperClass());
-								newCounterexampleAxiom = ELQueryEngineForT.getSubClassAxiom(auxAx.getSubClass(), ex);
+								ex = elOracle.branchRight(auxAx.getSubClass(), auxAx.getSuperClass());
+								newCounterexampleAxiom = elQueryEngineForT.getSubClassAxiom(auxAx.getSubClass(), ex);
 								auxAx = null;
 								ex = null;
 							}
 							if (oracleUnsaturate) {
 								ex = null;
-								ex = oracle.unsaturateRight(newCounterexampleAxiom);
-								newCounterexampleAxiom = ELQueryEngineForT.getSubClassAxiom(subclass, ex);
+								ex = elOracle.unsaturateRight(newCounterexampleAxiom);
+								newCounterexampleAxiom = elQueryEngineForT.getSubClassAxiom(subclass, ex);
 								ex = null;
 							}
 						}
 						/*
 						 * } else { ex = siblingMerge(((OWLSubClassOfAxiom)
 						 * newCounterexampleAxiom).getSuperClass()); newCounterexampleAxiom =
-						 * saturateWithTreeRight( ELQueryEngineForT.getSubClassAxiom(subclass, ex)); }
+						 * saturateWithTreeRight( elQueryEngineForT.getSubClassAxiom(subclass, ex)); }
 						 */
 
 						// *-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*
 						lastCE = newCounterexampleAxiom;
 						subclass = null;
 						superclass = null;
-						oracle = null;
 						counterexample = null;
 						selectedAxiom = null;
 						iteratorT = null;
-						oracle = null;
 						return addHypothesis(newCounterexampleAxiom);
 					}
 				}
@@ -699,15 +645,15 @@ public class consoleLearner {
 
 					OWLClassExpression subclass = subClassAxiom.getSubClass();
 
-					Set<OWLClass> superclasses = ELQueryEngineForT.getSuperClasses(subclass, true);
+					Set<OWLClass> superclasses = elQueryEngineForT.getSuperClasses(subclass, true);
 					if (!superclasses.isEmpty()) {
 						Iterator<OWLClass> iteratorSuperClass = superclasses.iterator();
 						while (iteratorSuperClass.hasNext()) {
 							OWLClassExpression SuperclassInSet = iteratorSuperClass.next();
-							OWLAxiom newCounterexampleAxiom = ELQueryEngineForT.getSubClassAxiom(subclass,
+							OWLAxiom newCounterexampleAxiom = elQueryEngineForT.getSubClassAxiom(subclass,
 									SuperclassInSet);
-							Boolean querySubClass = ELQueryEngineForH.entailed(newCounterexampleAxiom);
-							Boolean querySubClassforT = ELQueryEngineForT.entailed(newCounterexampleAxiom);
+							Boolean querySubClass = elQueryEngineForH.entailed(newCounterexampleAxiom);
+							Boolean querySubClassforT = elQueryEngineForT.entailed(newCounterexampleAxiom);
 							if (!querySubClass && querySubClassforT) {
 
 								// System.out.println("eq 1");
@@ -720,38 +666,36 @@ public class consoleLearner {
 										ex = null;
 										// System.out.println(newCounterexampleAxiom);
 										// if (checkLeft(newCounterexampleAxiom)) {
-										ex = oracle.oracleSiblingMerge(
+										ex = elOracle.oracleSiblingMerge(
 												((OWLSubClassOfAxiom) newCounterexampleAxiom).getSubClass(),
 												((OWLSubClassOfAxiom) newCounterexampleAxiom).getSuperClass());
-										newCounterexampleAxiom = ELQueryEngineForT.getSubClassAxiom(ex,
+										newCounterexampleAxiom = elQueryEngineForT.getSubClassAxiom(ex,
 												((OWLSubClassOfAxiom) newCounterexampleAxiom).getSuperClass());
 										ex = null;
 									}
 									if (oracleSaturate)
-										newCounterexampleAxiom = oracle
+										newCounterexampleAxiom = elOracle
 												.saturateWithTreeLeft((OWLSubClassOfAxiom) newCounterexampleAxiom);
 								} else {
 									if (oracleBranch) {
 										ex = null;
 										OWLSubClassOfAxiom auxAx = (OWLSubClassOfAxiom) newCounterexampleAxiom;
-										ex = oracle.branchRight(auxAx.getSubClass(), auxAx.getSuperClass());
-										newCounterexampleAxiom = ELQueryEngineForT.getSubClassAxiom(auxAx.getSubClass(),
+										ex = elOracle.branchRight(auxAx.getSubClass(), auxAx.getSuperClass());
+										newCounterexampleAxiom = elQueryEngineForT.getSubClassAxiom(auxAx.getSubClass(),
 												ex);
 										auxAx = null;
 										ex = null;
 									}
 									if (oracleUnsaturate) {
 										ex = null;
-										ex = oracle.unsaturateRight(newCounterexampleAxiom);
-										newCounterexampleAxiom = ELQueryEngineForT.getSubClassAxiom(
+										ex = elOracle.unsaturateRight(newCounterexampleAxiom);
+										newCounterexampleAxiom = elQueryEngineForT.getSubClassAxiom(
 												((OWLSubClassOfAxiom) newCounterexampleAxiom).getSubClass(), ex);
 										ex = null;
 									}
 								}
 								// *-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*
 								lastCE = newCounterexampleAxiom;
-								oracle = null;
-								oracle = null;
 								subclass = null;
 								SuperclassInSet = null;
 								superclasses = null;
@@ -780,7 +724,7 @@ public class consoleLearner {
 				Axiom.getAxiomType();
 				if (Axiom.isOfType(AxiomType.SUBCLASS_OF)) {
 					OWLSubClassOfAxiom selectedAxiom = (OWLSubClassOfAxiom) Axiom;
-					Boolean queryAns = ELQueryEngineForH.entailed(selectedAxiom);
+					Boolean queryAns = elQueryEngineForH.entailed(selectedAxiom);
 
 					if (!queryAns) {
 						lastCE = selectedAxiom;
@@ -793,30 +737,30 @@ public class consoleLearner {
 								ex = null;
 								// System.out.println(newCounterexampleAxiom);
 								// if (checkLeft(newCounterexampleAxiom)) {
-								ex = oracle.oracleSiblingMerge(((OWLSubClassOfAxiom) selectedAxiom).getSubClass(),
+								ex = elOracle.oracleSiblingMerge(((OWLSubClassOfAxiom) selectedAxiom).getSubClass(),
 										((OWLSubClassOfAxiom) selectedAxiom).getSuperClass());
-								selectedAxiom = (OWLSubClassOfAxiom) ELQueryEngineForT.getSubClassAxiom(ex,
+								selectedAxiom = (OWLSubClassOfAxiom) elQueryEngineForT.getSubClassAxiom(ex,
 										((OWLSubClassOfAxiom) selectedAxiom).getSuperClass());
 								ex = null;
 							}
 							if (oracleSaturate)
-								selectedAxiom = (OWLSubClassOfAxiom) oracle
+								selectedAxiom = (OWLSubClassOfAxiom) elOracle
 										.saturateWithTreeLeft((OWLSubClassOfAxiom) selectedAxiom);
 						} else {
 
 							if (oracleBranch) {
 								ex = null;
 								OWLSubClassOfAxiom auxAx = (OWLSubClassOfAxiom) selectedAxiom;
-								ex = oracle.branchRight(auxAx.getSubClass(), auxAx.getSuperClass());
-								selectedAxiom = (OWLSubClassOfAxiom) ELQueryEngineForT
+								ex = elOracle.branchRight(auxAx.getSubClass(), auxAx.getSuperClass());
+								selectedAxiom = (OWLSubClassOfAxiom) elQueryEngineForT
 										.getSubClassAxiom(auxAx.getSubClass(), ex);
 								auxAx = null;
 								ex = null;
 							}
 							if (oracleUnsaturate) {
 								ex = null;
-								ex = oracle.unsaturateRight((OWLSubClassOfAxiom) selectedAxiom);
-								selectedAxiom = (OWLSubClassOfAxiom) ELQueryEngineForT
+								ex = elOracle.unsaturateRight((OWLSubClassOfAxiom) selectedAxiom);
+								selectedAxiom = (OWLSubClassOfAxiom) elQueryEngineForT
 										.getSubClassAxiom(((OWLSubClassOfAxiom) selectedAxiom).getSubClass(), ex);
 								ex = null;
 							}
@@ -825,11 +769,9 @@ public class consoleLearner {
 						// *-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*
 						lastCE = selectedAxiom;
 
-						oracle = null;
 						Axiom = null;
 						iterator = null;
 						iteratorT = null;
-						oracle = null;
 						System.out.flush();
 						return addHypothesis((OWLSubClassOfAxiom) selectedAxiom);
 					}
@@ -842,7 +784,7 @@ public class consoleLearner {
 					Iterator<OWLSubClassOfAxiom> iteratorAsSub = eqsubclassaxioms.iterator();
 					while (iteratorAsSub.hasNext()) {
 						OWLSubClassOfAxiom subClassAxiom = iteratorAsSub.next();
-						Boolean queryAns = ELQueryEngineForH.entailed(subClassAxiom);
+						Boolean queryAns = elQueryEngineForH.entailed(subClassAxiom);
 						if (!queryAns) {
 							lastCE = subClassAxiom;
 							// System.out.println("eqcl 2");
@@ -855,40 +797,38 @@ public class consoleLearner {
 									ex = null;
 									// System.out.println(newCounterexampleAxiom);
 									// if (checkLeft(newCounterexampleAxiom)) {
-									ex = oracle.oracleSiblingMerge(((OWLSubClassOfAxiom) subClassAxiom).getSubClass(),
+									ex = elOracle.oracleSiblingMerge(((OWLSubClassOfAxiom) subClassAxiom).getSubClass(),
 											((OWLSubClassOfAxiom) subClassAxiom).getSuperClass());
-									subClassAxiom = (OWLSubClassOfAxiom) ELQueryEngineForT.getSubClassAxiom(ex,
+									subClassAxiom = (OWLSubClassOfAxiom) elQueryEngineForT.getSubClassAxiom(ex,
 											((OWLSubClassOfAxiom) subClassAxiom).getSuperClass());
 									ex = null;
 								}
 								if (oracleSaturate)
-									subClassAxiom = (OWLSubClassOfAxiom) oracle
+									subClassAxiom = (OWLSubClassOfAxiom) elOracle
 											.saturateWithTreeLeft((OWLSubClassOfAxiom) subClassAxiom);
 							} else {
 								if (oracleBranch) {
 									ex = null;
 									OWLSubClassOfAxiom auxAx = (OWLSubClassOfAxiom) subClassAxiom;
-									ex = oracle.branchRight(auxAx.getSubClass(), auxAx.getSuperClass());
-									subClassAxiom = (OWLSubClassOfAxiom) ELQueryEngineForT
+									ex = elOracle.branchRight(auxAx.getSubClass(), auxAx.getSuperClass());
+									subClassAxiom = (OWLSubClassOfAxiom) elQueryEngineForT
 											.getSubClassAxiom(auxAx.getSubClass(), ex);
 									auxAx = null;
 									ex = null;
 								}
 								if (oracleUnsaturate) {
 									ex = null;
-									ex = oracle.unsaturateRight((OWLSubClassOfAxiom) subClassAxiom);
-									subClassAxiom = (OWLSubClassOfAxiom) ELQueryEngineForT
+									ex = elOracle.unsaturateRight((OWLSubClassOfAxiom) subClassAxiom);
+									subClassAxiom = (OWLSubClassOfAxiom) elQueryEngineForT
 											.getSubClassAxiom(((OWLSubClassOfAxiom) subClassAxiom).getSubClass(), ex);
 									ex = null;
 								}
 							}
 							// *-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*?*-*-*-*-*-*-*-*
 							lastCE = subClassAxiom;
-							oracle = null;
 							Axiom = null;
 							iterator = null;
 							iteratorAsSub = null;
-							oracle = null;
 							iteratorT = null;
 							System.out.flush();
 							return addHypothesis(subClassAxiom);
@@ -898,7 +838,6 @@ public class consoleLearner {
 			}
 		}
 		System.out.println("no more CIs");
-		oracle = null;
 		iterator = null;
 		iteratorT = null;
 		System.out.flush();
@@ -907,8 +846,8 @@ public class consoleLearner {
 
 	public boolean checkLeft(OWLAxiom axiom) {
 
-		String left = rendering.render(((OWLSubClassOfAxiom) axiom).getSubClass());
-		String right = rendering.render(((OWLSubClassOfAxiom) axiom).getSuperClass());
+		String left = myRenderer.render(((OWLSubClassOfAxiom) axiom).getSubClass());
+		String right = myRenderer.render(((OWLSubClassOfAxiom) axiom).getSuperClass());
 		for (String rol : roles) {
 			if (left.contains(rol)) {
 				return true;
@@ -921,27 +860,23 @@ public class consoleLearner {
 	}
 
 	private OWLAxiom getCounterExamplefromSubClassAxiom(OWLClassExpression subclass, OWLClassExpression superclass) {
-		//reasonerForH = createReasoner(ontologyH, "reasonerForH");
-		//ELEngine ELQueryEngineForH = new ELEngine(reasonerForH, shortFormProvider);
-		Set<OWLClass> superclasses = ELQueryEngineForT.getSuperClasses(superclass, false);
-		Set<OWLClass> subclasses = ELQueryEngineForT.getSubClasses(subclass, false);
+		Set<OWLClass> superclasses = elQueryEngineForT.getSuperClasses(superclass, false);
+		Set<OWLClass> subclasses = elQueryEngineForT.getSubClasses(subclass, false);
 
 		if (!subclasses.isEmpty()) {
 
 			Iterator<OWLClass> iteratorSubClass = subclasses.iterator();
 			while (iteratorSubClass.hasNext()) {
 				OWLClassExpression SubclassInSet = iteratorSubClass.next();
-				OWLAxiom newCounterexampleAxiom = ELQueryEngineForT.getSubClassAxiom(SubclassInSet, superclass);
-				Boolean querySubClass = ELQueryEngineForH.entailed(newCounterexampleAxiom);
-				Boolean querySubClassforT = ELQueryEngineForT.entailed(newCounterexampleAxiom);
+				OWLAxiom newCounterexampleAxiom = elQueryEngineForT.getSubClassAxiom(SubclassInSet, superclass);
+				Boolean querySubClass = elQueryEngineForH.entailed(newCounterexampleAxiom);
+				Boolean querySubClassforT = elQueryEngineForT.entailed(newCounterexampleAxiom);
 				if (!querySubClass && querySubClassforT) {
 					SubclassInSet = null;
 					superclass = null;
 					iteratorSubClass = null;
-					ELQueryEngineForH = null;
+					elQueryEngineForH = null;
 
-					//disposeOfReasoner(reasonerForH, "reasonerForH");
-					reasonerForH = null;
 					return newCounterexampleAxiom;
 				}
 			}
@@ -951,45 +886,41 @@ public class consoleLearner {
 			Iterator<OWLClass> iteratorSuperClass = superclasses.iterator();
 			while (iteratorSuperClass.hasNext()) {
 				OWLClassExpression SuperclassInSet = iteratorSuperClass.next();
-				OWLAxiom newCounterexampleAxiom = ELQueryEngineForT.getSubClassAxiom(subclass, SuperclassInSet);
-				Boolean querySubClass = ELQueryEngineForH.entailed(newCounterexampleAxiom);
-				Boolean querySubClassforT = ELQueryEngineForT.entailed(newCounterexampleAxiom);
+				OWLAxiom newCounterexampleAxiom = elQueryEngineForT.getSubClassAxiom(subclass, SuperclassInSet);
+				Boolean querySubClass = elQueryEngineForH.entailed(newCounterexampleAxiom);
+				Boolean querySubClassforT = elQueryEngineForT.entailed(newCounterexampleAxiom);
 				if (!querySubClass && querySubClassforT) {
 
 					SuperclassInSet = null;
 					superclass = null;
 					subclass = null;
 					iteratorSuperClass = null;
-					ELQueryEngineForH = null;
+					elQueryEngineForH = null;
 
-					//disposeOfReasoner(reasonerForH, "reasonerForH");
-					reasonerForH = null;
 					return newCounterexampleAxiom;
 				}
 			}
 		}
 
-		ELQueryEngineForH = null;
+		elQueryEngineForH = null;
 		superclass = null;
 		subclass = null;
-		//disposeOfReasoner(reasonerForH, "reasonerForH");
-		reasonerForH = null;
 		return null;
 	}
 
 	public String addHypothesis(OWLAxiom addedAxiom) throws Exception {
-		String StringAxiom = rendering.render(addedAxiom);
+		String StringAxiom = myRenderer.render(addedAxiom);
 
-		//AddAxiom newAxiomInH = new AddAxiom(ontologyH, addedAxiom);
-		//manager.applyChange(newAxiomInH);
+		//AddAxiom newAxiomInH = new AddAxiom(hypothesisOntology, addedAxiom);
+		//myManager.applyChange(newAxiomInH);
 
-		manager.addAxiom(ontologyH, addedAxiom);
+		myManager.addAxiom(hypothesisOntology, addedAxiom);
 
-		saveOWLFile(ontologyH, hypoFile);
+		saveOWLFile(hypothesisOntology, hypoFile);
 
 		// minimize hypothesis
-		ontologyH = MinHypothesis(ontologyH, addedAxiom);
-		saveOWLFile(ontologyH, hypoFile);
+		hypothesisOntology = MinHypothesis(hypothesisOntology, addedAxiom);
+		saveOWLFile(hypothesisOntology, hypoFile);
 		//newAxiomInH = null;
 		addedAxiom = null;
 		return StringAxiom;
@@ -997,14 +928,14 @@ public class consoleLearner {
 
 	private void saveOWLFile(OWLOntology ontology, File file) throws Exception {
 
-		OWLOntologyFormat format = manager.getOntologyFormat(ontology);
+		OWLOntologyFormat format = myManager.getOntologyFormat(ontology);
 		ManchesterOWLSyntaxOntologyFormat manSyntaxFormat = new ManchesterOWLSyntaxOntologyFormat();
 		if (format.isPrefixOWLOntologyFormat()) {
 			// need to remove prefixes
 			manSyntaxFormat.clearPrefixes();
 		}
 		format = null;
-		manager.saveOntology(ontology, manSyntaxFormat, IRI.create(file.toURI()));
+		myManager.saveOntology(ontology, manSyntaxFormat, IRI.create(file.toURI()));
 	}
 
 	private OWLOntology MinHypothesis(OWLOntology hypoOntology, OWLAxiom addedAxiom) {
@@ -1021,24 +952,22 @@ public class consoleLearner {
 
 					OWLOntology tmpOntologyH = hypoOntology;
 					RemoveAxiom removedAxiom = new RemoveAxiom(tmpOntologyH, checkedAxiom);
-					manager.applyChange(removedAxiom);
+					myManager.applyChange(removedAxiom);
 
-					OWLReasoner tmpreasoner = ELEngine.createReasoner(tmpOntologyH, "tmpreasoner");
-					ELEngine tmpELQueryEngine = new ELEngine(tmpreasoner, shortFormProvider);
+					ELEngine tmpELQueryEngine = new ELEngine(tmpOntologyH);
 					Boolean queryAns = tmpELQueryEngine.entailed(checkedAxiom);
-					ELEngine.disposeOfReasoner(tmpreasoner, "tmpreasoner");
-					tmpreasoner = null;
+					tmpELQueryEngine.disposeOfReasoner();
 
 					if (queryAns) {
 						RemoveAxiom removedAxiomFromH = new RemoveAxiom(hypoOntology, checkedAxiom);
-						manager.applyChange(removedAxiomFromH);
-						removedstring = "\t[" + rendering.render(checkedAxiom) + "]\n";
+						myManager.applyChange(removedAxiomFromH);
+						removedstring = "\t[" + myRenderer.render(checkedAxiom) + "]\n";
 						if (checkedAxiom.equals(addedAxiom)) {
 							flag = true;
 						}
 					} else {
 						AddAxiom addAxiomtoH = new AddAxiom(hypoOntology, checkedAxiom);
-						manager.applyChange(addAxiomtoH);
+						myManager.applyChange(addAxiomtoH);
 						addAxiomtoH = null;
 					}
 				}
@@ -1046,11 +975,11 @@ public class consoleLearner {
 			if (!removedstring.equals("")) {
 				String message;
 				if (flag) {
-					message = "The axiom [" + rendering.render(addedAxiom) + "] will not be added to the hypothesis\n"
+					message = "The axiom [" + myRenderer.render(addedAxiom) + "] will not be added to the hypothesis\n"
 							+ "since it can be replaced by some axiom(s) that already exist in the hypothesis.";
 				} else {
 					message = "The axiom [" + removedstring + "]" + "will be removed after adding: \n["
-							+ rendering.render(addedAxiom) + "]";
+							+ myRenderer.render(addedAxiom) + "]";
 				}
 				// System.out.println(message);
 				// JOptionPane.showMessageDialog(null, message, "Alert",

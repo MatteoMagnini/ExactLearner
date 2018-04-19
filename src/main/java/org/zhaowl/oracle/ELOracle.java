@@ -14,7 +14,6 @@ import org.semanticweb.owlapi.model.OWLClassExpression;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLSubClassOfAxiom;
 import org.semanticweb.owlapi.reasoner.OWLReasoner;
-import org.semanticweb.owlapi.util.ShortFormProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.zhaowl.console.consoleLearner;
@@ -25,23 +24,17 @@ import org.zhaowl.userInterface.ELEngine;
 import org.zhaowl.utils.SimpleClass;
 
 public class ELOracle {
-	public OWLReasoner reasonerForH;
-	public ShortFormProvider shortFormProvider;
-	public OWLOntology ontologyH;
-	public OWLOntology ontology;
-	public ELEngine engineForT;
-	public consoleLearner console;
+
+	private final ELEngine myEngineForT;
+	private final ELEngine myEngineForH;
+	private final consoleLearner myConsole;
 	private static final Logger LOGGER_ = LoggerFactory
 			.getLogger(ELOracle.class);
 
-	public ELOracle(OWLReasoner reasoner, ShortFormProvider shortForm, OWLOntology ontology, OWLOntology ontologyH,
-			ELEngine engineT, consoleLearner console) {
-		this.reasonerForH = reasoner;
-		this.shortFormProvider = shortForm;
-		this.ontology = ontology;
-		this.ontologyH = ontologyH;
-		this.engineForT = engineT;
-		this.console = console;
+	public ELOracle(ELEngine elEngineforT, ELEngine elEngineForH, consoleLearner console) {
+		myEngineForT = elEngineforT;
+		myEngineForH = elEngineForH;
+		myConsole = console;
 	}
 
 	public OWLReasoner createReasoner(final OWLOntology rootOntology) {
@@ -66,10 +59,7 @@ public class ELOracle {
 		Set<ELNode> nodes = null;
 		// System.out.println(tree.toDescriptionString());
 
-		reasonerForH = createReasoner(ontology);
-		engineForT = new ELEngine(reasonerForH, shortFormProvider);
-
-		OWLClassExpression oldTree = engineForT.parseClassExpression(tree.toDescriptionString());
+		OWLClassExpression oldTree = myEngineForT.parseClassExpression(tree.toDescriptionString());
 		for (int i = 0; i < tree.getMaxLevel(); i++) {
 			nodes = tree.getNodesOnLevel(i + 1);
 			if (!nodes.isEmpty())
@@ -91,9 +81,9 @@ public class ELOracle {
 									if (!nod.edges.get(k).node.edges.isEmpty())
 										nod.edges.get(j).node.edges.addAll(nod.edges.get(k).node.edges);
 									nod.edges.remove(nod.edges.get(k));
-									if (engineForT.entailed(engineForT.getSubClassAxiom(left,
-											engineForT.parseClassExpression(tree.toDescriptionString())))) {
-										oldTree = engineForT.parseClassExpression(tree.toDescriptionString());
+									if (myEngineForT.entailed(myEngineForT.getSubClassAxiom(left,
+											myEngineForT.parseClassExpression(tree.toDescriptionString())))) {
+										oldTree = myEngineForT.parseClassExpression(tree.toDescriptionString());
 									} else {
 										tree = new ELTree(oldTree);
 									}
@@ -109,9 +99,9 @@ public class ELOracle {
 		nodes = null;
 		left = null;
 		right = null;
-		disposeOfReasoner(reasonerForH, "reasonerForH");
+
 		System.out.flush();
-		return engineForT.parseClassExpression(tree.toDescriptionString());
+		return myEngineForT.parseClassExpression(tree.toDescriptionString());
 	}
 
 	public Set<Set<OWLClass>> powerSetBySize(Set<OWLClass> originalSet, int size) {
@@ -140,9 +130,8 @@ public class ELOracle {
 		OWLClassExpression sub = ((OWLSubClassOfAxiom) axiom).getSubClass();
 		OWLClassExpression sup = ((OWLSubClassOfAxiom) axiom).getSuperClass();
 
-		reasonerForH = createReasoner(ontology);
-		engineForT = new ELEngine(reasonerForH, shortFormProvider);
-		Set<OWLClass> cIo = ontology.getClassesInSignature();
+
+		Set<OWLClass> cIo = myEngineForT.getClassesInSignature();
 		Set<ELNode> nodes = null;
 
 		ELTree tree = new ELTree(sub);
@@ -157,14 +146,14 @@ public class ELOracle {
 							nod.label.add(cl);
 						}
 						// System.out.println("Node after: " + nod);
-						OWLClassExpression newEx = engineForT.parseClassExpression(tree.toDescriptionString());
+						OWLClassExpression newEx = myEngineForT.parseClassExpression(tree.toDescriptionString());
 						// System.out.println("After saturation step: " + tree.toDescriptionString());
-						OWLAxiom newAx = engineForT.getSubClassAxiom(newEx, sup);
-						console.membCount++;
-						if (engineForT.entailed(newAx)) {
+						OWLAxiom newAx = myEngineForT.getSubClassAxiom(newEx, sup);
+						myConsole.membCount++;
+						if (myEngineForT.entailed(newAx)) {
 							tree = new ELTree(sub);
 						} else {
-							sub = engineForT.parseClassExpression(tree.toDescriptionString());
+							sub = myEngineForT.parseClassExpression(tree.toDescriptionString());
 						}
 
 					}
@@ -180,9 +169,8 @@ public class ELOracle {
 		System.out.flush();
 		tree = null;
 
-		disposeOfReasoner(reasonerForH, "reasonerForH");
-		reasonerForH = null;
-		return engineForT.getSubClassAxiom(sub, sup);
+
+		return myEngineForT.getSubClassAxiom(sub, sup);
 	}
 
 
@@ -203,8 +191,7 @@ public class ELOracle {
 
 		boolean foundSomething = false;
 
-		reasonerForH = createReasoner(ontology);
-		engineForT = new ELEngine(reasonerForH, shortFormProvider);
+
 
 		for (int i = 0; i < tree.getMaxLevel(); i++) {
 			nodes = tree.getNodesOnLevel(i + 1);
@@ -243,10 +230,10 @@ public class ELOracle {
 						for (OWLClass cl : clSet)
 							nod.label.add(cl);
 
-						console.membCount++;
+						myConsole.membCount++;
 
 						// System.out.println(tree.toDescriptionString());
-						if (engineForT.entailed(engineForT.parseToOWLSubClassOfAxiom(
+						if (myEngineForT.entailed(myEngineForT.parseToOWLSubClassOfAxiom(
 								(new ELTree(left)).toDescriptionString(), tree.toDescriptionString())))
 
 						{
@@ -272,10 +259,8 @@ public class ELOracle {
 			}
 		}
 		System.out.flush();
-		OWLClassExpression ex = engineForT.parseClassExpression(tree.toDescriptionString());
-		engineForT = null;
-		disposeOfReasoner(reasonerForH, "reasonerForH");
-		reasonerForH = null;
+		OWLClassExpression ex = myEngineForT.parseClassExpression(tree.toDescriptionString());
+
 		left = null;
 		right = null;
 		tree = null;
@@ -291,8 +276,6 @@ public class ELOracle {
 			List<ELEdge> auxEdges = null;
 			ELTree auxTree = new ELTree(right);
 
-			reasonerForH = createReasoner(ontology);
-			engineForT = new ELEngine(reasonerForH, shortFormProvider);
 
 			for (int i = 0; i < treeR.maxLevel; i++) {
 				nodes = treeR.getNodesOnLevel(i + 1);
@@ -312,7 +295,7 @@ public class ELOracle {
 						for (int k = 0; k < classAux.size(); k++) {
 
 							nod.edges.add(new ELEdge(auxEdges.get(j).label, new ELNode(new ELTree(
-									engineForT.parseClassExpression(new SimpleClass().fixAxioms(classAux.get(k)))))));
+									myEngineForT.parseClassExpression(new SimpleClass().fixAxioms(classAux.get(k)))))));
 
 							// add class to new node
 							nod.edges.get(nod.edges.size() - 1).node.label.add(classAux.get(k));
@@ -323,8 +306,8 @@ public class ELOracle {
 							// check target for entailment of new tree
 
 							/*
-							 * if (engineForT.entailed(engineForT.getSubClassAxiom(left,
-							 * engineForT.parseClassExpression(treeR.toDescriptionString())))) { continue;
+							 * if (myEngineForT.entailed(myEngineForT.getSubClassAxiom(left,
+							 * myEngineForT.parseClassExpression(treeR.toDescriptionString())))) { continue;
 							 * 
 							 * } else { // tree is invalid, rollback nod.edges.remove(nod.edges.size() - 1);
 							 * nod.edges.get(j).node.label.add(classAux.get(k)); // }
@@ -342,11 +325,9 @@ public class ELOracle {
 			right = null;
 			auxEdges = null;
 			nodes = null;
-			OWLClassExpression ex = engineForT.parseClassExpression(treeR.toDescriptionString());
+			OWLClassExpression ex = myEngineForT.parseClassExpression(treeR.toDescriptionString());
 			treeR = null;
-			engineForT = null;
-			disposeOfReasoner(reasonerForH, "reasonerForH");
-			reasonerForH = null;
+
 
 			return ex;
 		} catch (Exception e) {
@@ -355,9 +336,7 @@ public class ELOracle {
 		System.out.flush();
 		left = null;
 		right = null;
-		engineForT = null;
-		disposeOfReasoner(reasonerForH, "reasonerForH");
-		reasonerForH = null;
+
 		return null;
 	}
 
