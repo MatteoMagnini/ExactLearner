@@ -17,10 +17,10 @@ import org.semanticweb.owlapi.reasoner.OWLReasoner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.zhaowl.console.consoleLearner;
+import org.zhaowl.engine.ELEngine;
 import org.zhaowl.tree.ELEdge;
 import org.zhaowl.tree.ELNode;
 import org.zhaowl.tree.ELTree;
-import org.zhaowl.userInterface.ELEngine;
 import org.zhaowl.utils.SimpleClass;
 
 public class ELOracle {
@@ -37,20 +37,7 @@ public class ELOracle {
 		myConsole = console;
 	}
 
-	public OWLReasoner createReasoner(final OWLOntology rootOntology) {
-		LOGGER_.info("ELOracle Reasoner created");
- 		//Thread.dumpStack();
-		System.out.flush();
-		ElkReasonerFactory reasoningFactory = new ElkReasonerFactory();
-		return reasoningFactory.createReasoner(rootOntology);
-	}
-
-	private static void disposeOfReasoner(OWLReasoner owlReasoner, String reasonerName) {
-		LOGGER_.info("ELOracle: Reasoner " + reasonerName + " disposed of");
-		//Thread.dumpStack();
-		System.out.flush();
-		owlReasoner.dispose();
-	}
+ 
 
 	public OWLClassExpression oracleSiblingMerge(OWLClassExpression left, OWLClassExpression right) throws Exception {
 		// the oracle must do sibling merging (if possible)

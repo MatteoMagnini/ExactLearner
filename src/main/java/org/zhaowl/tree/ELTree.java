@@ -23,6 +23,7 @@ import org.semanticweb.owlapi.model.OWLObjectSomeValuesFrom;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.model.OWLProperty;
+import org.zhaowl.engine.Reasoner;
 
 import uk.ac.manchester.cs.owl.owlapi.OWLDataFactoryImpl;
 

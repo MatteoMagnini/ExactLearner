@@ -489,7 +489,7 @@ public class ELNode {
 	public ELTree getTree() {
 		return tree;
 	}
-	
+	// Reference: DL-Learner
 	 public OWLClassExpression transformToDescription() {
 	    	OWLOntologyManager man = OWLManager.createOWLOntologyManager();
 	        OWLDataFactory dataFactory = man.getOWLDataFactory();
