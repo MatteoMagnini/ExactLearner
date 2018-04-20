@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="ZhaOWL_ELLearner_NoUI" target="1.5" />
+      <module name="ZhaOWL_ELLearner_NoUI" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

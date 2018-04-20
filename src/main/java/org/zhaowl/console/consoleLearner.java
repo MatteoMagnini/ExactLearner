@@ -915,14 +915,9 @@ public class consoleLearner {
 		//myManager.applyChange(newAxiomInH);
 
 		myManager.addAxiom(hypothesisOntology, addedAxiom);
-
+		minimiseHypothesis();
 		saveOWLFile(hypothesisOntology, hypoFile);
 
-		// minimize hypothesis
-		hypothesisOntology = MinHypothesis(hypothesisOntology, addedAxiom);
-		saveOWLFile(hypothesisOntology, hypoFile);
-		//newAxiomInH = null;
-		addedAxiom = null;
 		return StringAxiom;
 	}
 
@@ -938,11 +933,11 @@ public class consoleLearner {
 		myManager.saveOntology(ontology, manSyntaxFormat, IRI.create(file.toURI()));
 	}
 
-	private OWLOntology MinHypothesis(OWLOntology hypoOntology, OWLAxiom addedAxiom) {
-		Set<OWLAxiom> tmpaxiomsH = hypoOntology.getAxioms();
+	private void minimiseHypothesis() {
+		Set<OWLAxiom> tmpaxiomsH = hypothesisOntology.getAxioms();
 		Iterator<OWLAxiom> ineratorMinH = tmpaxiomsH.iterator();
 		Set<OWLAxiom> checkedAxiomsSet = new HashSet<OWLAxiom>();
-		String removedstring = "";
+		//String removedstring = "";
 		Boolean flag = false;
 		if (tmpaxiomsH.size() > 1) {
 			while (ineratorMinH.hasNext()) {
@@ -950,47 +945,19 @@ public class consoleLearner {
 				if (!checkedAxiomsSet.contains(checkedAxiom)) {
 					checkedAxiomsSet.add(checkedAxiom);
 
-					OWLOntology tmpOntologyH = hypoOntology;
-					RemoveAxiom removedAxiom = new RemoveAxiom(tmpOntologyH, checkedAxiom);
+					RemoveAxiom removedAxiom = new RemoveAxiom(hypothesisOntology, checkedAxiom);
 					myManager.applyChange(removedAxiom);
 
-					ELEngine tmpELQueryEngine = new ELEngine(tmpOntologyH);
-					Boolean queryAns = tmpELQueryEngine.entailed(checkedAxiom);
-					tmpELQueryEngine.disposeOfReasoner();
+					Boolean queryAns = elQueryEngineForH.entailed(checkedAxiom);
 
-					if (queryAns) {
-						RemoveAxiom removedAxiomFromH = new RemoveAxiom(hypoOntology, checkedAxiom);
-						myManager.applyChange(removedAxiomFromH);
-						removedstring = "\t[" + myRenderer.render(checkedAxiom) + "]\n";
-						if (checkedAxiom.equals(addedAxiom)) {
-							flag = true;
-						}
-					} else {
-						AddAxiom addAxiomtoH = new AddAxiom(hypoOntology, checkedAxiom);
+					if (!queryAns) {
+						//put it back
+						AddAxiom addAxiomtoH = new AddAxiom(hypothesisOntology, checkedAxiom);
 						myManager.applyChange(addAxiomtoH);
-						addAxiomtoH = null;
 					}
 				}
 			}
-			if (!removedstring.equals("")) {
-				String message;
-				if (flag) {
-					message = "The axiom [" + myRenderer.render(addedAxiom) + "] will not be added to the hypothesis\n"
-							+ "since it can be replaced by some axiom(s) that already exist in the hypothesis.";
-				} else {
-					message = "The axiom [" + removedstring + "]" + "will be removed after adding: \n["
-							+ myRenderer.render(addedAxiom) + "]";
-				}
-				// System.out.println(message);
-				// JOptionPane.showMessageDialog(null, message, "Alert",
-				// JOptionPane.INFORMATION_MESSAGE);
-			}
 		}
-		tmpaxiomsH = null;
-		ineratorMinH = null;
-		checkedAxiomsSet = null;
 
-		return hypoOntology;
 	}
-
 }
