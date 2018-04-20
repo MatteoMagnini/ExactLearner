@@ -17,6 +17,9 @@ ObjectProperty: <http://www.geneontology.org/go#has_axis>
 ObjectProperty: <http://www.geneontology.org/go#opposite_to>
 
     
+ObjectProperty: <http://www.geneontology.org/go#orthogonal_to>
+
+    
 Class: <http://www.geneontology.org/go#BSPO_0000094>
 
     SubClassOf: 
@@ -138,6 +141,7 @@ Class: <http://www.geneontology.org/go#BSPO_0000089>
 Class: <http://www.geneontology.org/go#BSPO_0000002>
 
     SubClassOf: 
+        <http://www.geneontology.org/go#has_axis> some <http://www.geneontology.org/go#BSPO_0000011>,
         <http://www.geneontology.org/go#BSPO_0000054>
     
     
@@ -202,8 +206,9 @@ Class: <http://www.geneontology.org/go#BSPO_0000014>
     
 Class: <http://www.geneontology.org/go#BSPO_0000377>
 
-    SubClassOf: 
+    EquivalentTo: 
         <http://www.geneontology.org/go#BSPO_0000005>
+         and (<http://www.geneontology.org/go#has_position> some <http://www.geneontology.org/go#BSPO_0000061>)
     
     
 Class: <http://www.geneontology.org/go#BSPO_0000015>
@@ -234,8 +239,9 @@ Class: <http://www.geneontology.org/go#BSPO_0000379>
     
 Class: <http://www.geneontology.org/go#BSPO_0000017>
 
-    SubClassOf: 
+    EquivalentTo: 
         <http://www.geneontology.org/go#BSPO_0000010>
+         and (<http://www.geneontology.org/go#orthogonal_to> some <http://www.geneontology.org/go#BSPO_0000417>)
     
     
 Class: <http://www.geneontology.org/go#BSPO_0000010>
@@ -250,6 +256,9 @@ Class: <http://www.geneontology.org/go#BSPO_0000373>
     
 Class: <http://www.geneontology.org/go#BSPO_0000011>
 
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000010>
+    
     
 Class: <http://www.geneontology.org/go#BSPO_0000374>
 
@@ -500,6 +509,13 @@ Class: <http://www.geneontology.org/go#BSPO_0000683>
          and (<http://www.geneontology.org/go#has_position> some <http://www.geneontology.org/go#BSPO_0000067>)
     
     
+Class: <http://www.geneontology.org/go#BSPO_0000684>
+
+    EquivalentTo: 
+        <http://www.geneontology.org/go#BSPO_0000006>
+         and (<http://www.geneontology.org/go#has_position> some <http://www.geneontology.org/go#BSPO_0000068>)
+    
+    
 Class: <http://www.geneontology.org/go#BSPO_0000061>
 
     SubClassOf: 
@@ -518,6 +534,7 @@ Class: <http://www.geneontology.org/go#BSPO_0000062>
 Class: <http://www.geneontology.org/go#BSPO_0000063>
 
     SubClassOf: 
+        <http://www.geneontology.org/go#opposite_to> some <http://www.geneontology.org/go#BSPO_0000068>,
         <http://www.geneontology.org/go#BSPO_0000054>,
         <http://www.geneontology.org/go#has_axis> some <http://www.geneontology.org/go#BSPO_0000016>
     
@@ -548,6 +565,7 @@ Class: <http://www.geneontology.org/go#BSPO_0000055>
 
     SubClassOf: 
         <http://www.geneontology.org/go#opposite_to> some <http://www.geneontology.org/go#BSPO_0000056>,
+        <http://www.geneontology.org/go#BSPO_0000054>,
         <http://www.geneontology.org/go#has_axis> some <http://www.geneontology.org/go#BSPO_0000013>
     
     
@@ -644,8 +662,9 @@ Class: <http://www.geneontology.org/go#BSPO_0000679>
     
 Class: <http://www.geneontology.org/go#BSPO_0000674>
 
-    SubClassOf: 
+    EquivalentTo: 
         <http://www.geneontology.org/go#BSPO_0000006>
+         and (<http://www.geneontology.org/go#has_position> some <http://www.geneontology.org/go#BSPO_0000058>)
     
     
 Class: <http://www.geneontology.org/go#BSPO_0000677>
