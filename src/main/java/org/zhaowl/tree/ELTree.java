@@ -44,7 +44,7 @@ public class ELTree implements Cloneable {
 	// the background knowledge (we need to have it explicitly here,
 	// since we store simulation information in the tree and simulation
 	// updates depend on background knowledge)
-	public ClassHierarchyT subsumptionHierarchy;
+	public ClassHierarchy subsumptionHierarchy;
 	//public ObjectPropertyHierarchyT roleHierarchy;
 	public OWLDataFactory df = new OWLDataFactoryImpl();
 	public Reasoner rs;

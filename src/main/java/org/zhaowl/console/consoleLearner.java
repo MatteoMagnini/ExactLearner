@@ -1,7 +1,7 @@
 package org.zhaowl.console;
 
 import org.slf4j.LoggerFactory;
-import org.zhaowl.utils.SimpleClass;
+import org.zhaowl.utils.Metrics;
 
 import uk.ac.manchester.cs.owl.owlapi.mansyntaxrenderer.ManchesterOWLSyntaxOWLObjectRendererImpl;
 
@@ -158,10 +158,10 @@ public class consoleLearner {
 				
 				
 				
-				new SimpleClass(myRenderer).showCIT(axiomsT,true);
+				new Metrics(myRenderer).showCIT(axiomsT,true);
 				
 				System.out.println("Hypothesis TBox logical axioms: " + hypothesisOntology.getAxioms().size());
-				new SimpleClass(myRenderer).showCIT(hypothesisOntology.getAxioms(),false);
+				new Metrics(myRenderer).showCIT(hypothesisOntology.getAxioms(),false);
 
 			} catch (Throwable e) {
 				e.printStackTrace();
@@ -462,8 +462,8 @@ public class consoleLearner {
 			System.out.println("Loaded successfully.");
 			System.out.println();
 
-			concepts = new SimpleClass(myRenderer).getSuggestionNames("concept", newFile);
-			roles = new SimpleClass(myRenderer).getSuggestionNames("role", newFile);
+			concepts = new Metrics(myRenderer).getSuggestionNames("concept", newFile);
+			roles = new Metrics(myRenderer).getSuggestionNames("role", newFile);
 
 			System.out.println("Total number of concepts is: " + concepts.size());
 

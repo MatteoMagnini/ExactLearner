@@ -16,7 +16,7 @@ import org.semanticweb.owlapi.vocab.OWLRDFVocabulary;
 import uk.ac.manchester.cs.owl.owlapi.OWLClassImpl;
 import uk.ac.manchester.cs.owl.owlapi.OWLDataFactoryImpl;
 
-public class ClassHierarchyT extends AbstractH<OWLClassExpression>{
+public class ClassHierarchy extends AbstractH<OWLClassExpression>{
 	private static final OWLClass OWL_THING = new OWLClassImpl(
             OWLRDFVocabulary.OWL_THING.getIRI());
     private static final OWLClass OWL_NOTHING = new OWLClassImpl(
@@ -30,7 +30,7 @@ public class ClassHierarchyT extends AbstractH<OWLClassExpression>{
 	 * @param subsumptionHierarchyUp Contains super classes for each class.
 	 * @param subsumptionHierarchyDown Contains sub classes for each class.
 	 */
-	public ClassHierarchyT(
+	public ClassHierarchy(
 			SortedMap<OWLClassExpression, SortedSet<OWLClassExpression>> subsumptionHierarchyUp,
 			SortedMap<OWLClassExpression, SortedSet<OWLClassExpression>> subsumptionHierarchyDown) {
 		super(subsumptionHierarchyUp, subsumptionHierarchyDown);
@@ -93,8 +93,8 @@ public class ClassHierarchyT extends AbstractH<OWLClassExpression>{
 	}
 	
 	@Override
-	public ClassHierarchyT clone() {
-		return new ClassHierarchyT(getHierarchyUp(), getHierarchyDown());		
+	public ClassHierarchy clone() {
+		return new ClassHierarchy(getHierarchyUp(), getHierarchyDown());		
 	}
 	
 	public Set<OWLAxiom> toOWLAxioms(){

@@ -9,13 +9,13 @@ import org.semanticweb.owlapi.vocab.OWLRDFVocabulary;
 
 import uk.ac.manchester.cs.owl.owlapi.OWLObjectPropertyImpl;
 
-public class ObjectPropertyHierarchyT extends AbstractH<OWLObjectProperty> {
+public class ObjectPropertyHierarchy extends AbstractH<OWLObjectProperty> {
 	private static final OWLObjectProperty OWL_TOP_OBJECT_PROPERTY = new OWLObjectPropertyImpl(
 			OWLRDFVocabulary.OWL_TOP_OBJECT_PROPERTY.getIRI());
 	private static final OWLObjectProperty OWL_BOTTOM_OBJECT_PROPERTY = new OWLObjectPropertyImpl(
 			OWLRDFVocabulary.OWL_BOTTOM_OBJECT_PROPERTY.getIRI());
 
-	public ObjectPropertyHierarchyT(
+	public ObjectPropertyHierarchy(
 			SortedMap<OWLObjectProperty, SortedSet<OWLObjectProperty>> roleHierarchyUp,
 			SortedMap<OWLObjectProperty, SortedSet<OWLObjectProperty>> roleHierarchyDown) {
 		super(roleHierarchyUp, roleHierarchyDown);

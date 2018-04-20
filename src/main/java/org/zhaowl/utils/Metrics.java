@@ -14,15 +14,15 @@ import org.semanticweb.owlapi.model.OWLClassExpression;
 
 import uk.ac.manchester.cs.owl.owlapi.mansyntaxrenderer.ManchesterOWLSyntaxOWLObjectRendererImpl;
 
-public class SimpleClass {
+public class Metrics {
 	public ManchesterOWLSyntaxOWLObjectRendererImpl rendering;
 
  
-	public SimpleClass(ManchesterOWLSyntaxOWLObjectRendererImpl rendering)
+	public Metrics(ManchesterOWLSyntaxOWLObjectRendererImpl rendering)
 	{
 		this.rendering = rendering;
 	}
-	public SimpleClass()
+	public Metrics()
 	{
 		
 	}

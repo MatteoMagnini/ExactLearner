@@ -23,8 +23,8 @@ import org.semanticweb.owlapi.model.OWLProperty;
 import org.semanticweb.owlapi.reasoner.NodeSet;
 import org.semanticweb.owlapi.reasoner.OWLReasoner;
 import org.zhaowl.exception.ReasoningMethodUnsupportedException;
-import org.zhaowl.tree.ClassHierarchyT;
-import org.zhaowl.tree.ObjectPropertyHierarchyT;
+import org.zhaowl.tree.ClassHierarchy;
+import org.zhaowl.tree.ObjectPropertyHierarchy;
 
 import uk.ac.manchester.cs.owl.owlapi.OWLDataFactoryImpl;
 
@@ -63,8 +63,8 @@ public    class Reasoner  {
 	// hierarchies (they are computed the first time they are needed)
 	 
 	public OWLReasoner reasoner;
-	public ClassHierarchyT subsumptionHierarchy = null; 
-	public ObjectPropertyHierarchyT roleHierarchy = null; 
+	public ClassHierarchy subsumptionHierarchy = null; 
+	public ObjectPropertyHierarchy roleHierarchy = null; 
 	 
  
 	public boolean precomputeClassHierarchy = true; 
@@ -332,7 +332,7 @@ public    class Reasoner  {
 	 * @throws ReasoningMethodUnsupportedException If any method needed to
 	 * create the hierarchy is not supported by the underlying reasoner.
 	 */
-	public ClassHierarchyT prepareSubsumptionHierarchy() throws ReasoningMethodUnsupportedException {
+	public ClassHierarchy prepareSubsumptionHierarchy() throws ReasoningMethodUnsupportedException {
 		TreeMap<OWLClassExpression, SortedSet<OWLClassExpression>> subsumptionHierarchyUp = new TreeMap<OWLClassExpression, SortedSet<OWLClassExpression>>(
 		);
 		TreeMap<OWLClassExpression, SortedSet<OWLClassExpression>> subsumptionHierarchyDown = new TreeMap<OWLClassExpression, SortedSet<OWLClassExpression>>(
@@ -384,10 +384,10 @@ public    class Reasoner  {
 			subsumptionHierarchyUp.put(atom, tmp2);
 		}		
 
-		 return new ClassHierarchyT(subsumptionHierarchyUp, subsumptionHierarchyDown);
+		 return new ClassHierarchy(subsumptionHierarchyUp, subsumptionHierarchyDown);
 	}
  
-	public   ClassHierarchyT getClassHierarchy() {
+	public   ClassHierarchy getClassHierarchy() {
 		// class hierarchy is created on first invocation
 		if (subsumptionHierarchy == null) {
 			try {
@@ -408,7 +408,7 @@ public    class Reasoner  {
 	 *             Thrown if a reasoning method for object property 
 	 *             hierarchy creation is not supported by the reasoner.
 	 */
-	public ObjectPropertyHierarchyT prepareObjectPropertyHierarchy()
+	public ObjectPropertyHierarchy prepareObjectPropertyHierarchy()
 			throws ReasoningMethodUnsupportedException {
 		
 		TreeMap<OWLObjectProperty, SortedSet<OWLObjectProperty>> roleHierarchyUp = new TreeMap<OWLObjectProperty, SortedSet<OWLObjectProperty>>(
@@ -421,11 +421,11 @@ public    class Reasoner  {
 			roleHierarchyDown.put(role, getSubPropertiesImpl(role));
 			roleHierarchyUp.put(role, getSuperPropertiesImpl(role));
 		}
-		roleHierarchy = new ObjectPropertyHierarchyT(roleHierarchyUp, roleHierarchyDown);
+		roleHierarchy = new ObjectPropertyHierarchy(roleHierarchyUp, roleHierarchyDown);
 		return roleHierarchy;		
 	}
 
-	public ObjectPropertyHierarchyT getObjectPropertyHierarchy() {
+	public ObjectPropertyHierarchy getObjectPropertyHierarchy() {
 		try {
 			if (roleHierarchy == null) {
 				roleHierarchy = prepareObjectPropertyHierarchy();
@@ -444,7 +444,7 @@ public    class Reasoner  {
 		return false;
 	}
  
-	public void setSubsumptionHierarchy(ClassHierarchyT subsumptionHierarchy) {
+	public void setSubsumptionHierarchy(ClassHierarchy subsumptionHierarchy) {
 		this.subsumptionHierarchy = subsumptionHierarchy;
 	}
 
