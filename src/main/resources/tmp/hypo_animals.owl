@@ -33,8 +33,13 @@ Class: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Carnivore>
          and (<http://www.semanticweb.org/ontologies/2014/3/animals.owl#eats> some <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Meat>)
     
     
-Class: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Water>
+ 
+Class: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Mammal>
 
+    SubClassOf: 
+        <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Vertebrate>
+    
+ 
     
 Class: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Animal>
 

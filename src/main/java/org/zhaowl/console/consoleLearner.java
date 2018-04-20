@@ -90,7 +90,7 @@ public class consoleLearner {
 	private ELLearner elLearner = null;
 	private ELOracle elOracle = null;
 
-	// ############# OWL variables Start ######################
+	// ############# OWL variables End ######################
 
 	// #########################################################
 	
@@ -111,7 +111,7 @@ public class consoleLearner {
 	private static final org.slf4j.Logger LOGGER_ = LoggerFactory
 			.getLogger(consoleLearner.class);
 
-	// ############# Oracle and Learner skills END ######################
+	// ############# Oracle and Learner skills End ######################
 
 	public static void main(String[] args) {
 		Logger.getRootLogger().setLevel(Level.OFF);
