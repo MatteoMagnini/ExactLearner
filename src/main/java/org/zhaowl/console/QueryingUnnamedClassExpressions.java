@@ -63,8 +63,6 @@ public class QueryingUnnamedClassExpressions {
 
         reasoner2.dispose();
 
-
-
         // Make the query equivalent to the fresh class
         OWLAxiom definition = dataFactory.getOWLEquivalentClassesAxiom(newName, query);
         man.addAxiom(ont2, definition);

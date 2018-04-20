@@ -17,25 +17,459 @@ ObjectProperty: <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus>
 ObjectProperty: <http://www.co-ode.org/ontologies/galen#IsCausallyLinkedTo>
 
     
-Class: <http://www.co-ode.org/ontologies/galen#Drug>
+Class: <http://www.co-ode.org/ontologies/galen#Status>
 
     
-Class: <http://www.co-ode.org/ontologies/galen#AnatomicalSystem>
+Class: <http://www.co-ode.org/ontologies/galen#EssentialHypertension>
 
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#GeneralSurgery>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Surgery>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Chronicity>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#TemporalFeature>
+    
     
 Class: <http://www.co-ode.org/ontologies/galen#BodyStructure>
 
     
-Class: <http://www.co-ode.org/ontologies/galen#GenitoUrinarySystem>
+Class: <http://www.co-ode.org/ontologies/galen#MalignantHypertension>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Gynaecology>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Surgery>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#ModifierConcept>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#ProcessFeature>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#System>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#BacterialInfection>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#IntrinsicallyAbnormalBodyStructure>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#RenalInfection>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#abnormal>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#AbstractStructure>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#AbnormalBodyStructure>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#NonNormalCondition>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#FemaleGenitoUrinarySystem>
 
     SubClassOf: 
         <http://www.co-ode.org/ontologies/galen#AnatomicalSystem>
     
     
-Class: <http://www.co-ode.org/ontologies/galen#VascularSurgery>
+Class: <http://www.co-ode.org/ontologies/galen#Opthalmology>
 
     SubClassOf: 
         <http://www.co-ode.org/ontologies/galen#Surgery>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#SubendocardialIschaemia>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Feature>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#GastricHemorrhage>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#BrittleDiabetes>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Infection>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#StructuralStatus>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Cheyne-StokesRepiration>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#NonNormalBreathing>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#SecondaryHypertension>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Diverticulum>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#AcuteInfarctionOfPapillaryMuscle>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#NormalOrNonNormalStatus>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Dyspnoea>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Apnoea>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#HuntingtonsChorea>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Ischaemia>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#ChronsDisease>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#State>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#PrimaryPulmonaryHypertension>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#OtoLaryngology>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Surgery>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#ProcessPattern>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#TemporalFeature>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Surgery>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#FinishTime>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#ModifierConcept>,
+        <http://www.co-ode.org/ontologies/galen#ProcessFeature>,
+        <http://www.co-ode.org/ontologies/galen#Feature>,
+        <http://www.co-ode.org/ontologies/galen#TopCategory>,
+        <http://www.co-ode.org/ontologies/galen#DomainCategory>,
+        <http://www.co-ode.org/ontologies/galen#TemporalFeature>,
+        <http://www.co-ode.org/ontologies/galen#Aspect>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#OldMyocardialInfarctionProcess>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#ViralInfection>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#HemorrhagicBlood>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#IntrinsicallyNonNormalBodyStructure>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Urology>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Surgery>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#MyocardialInfarctionProcess>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#SystemicDisease>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#NonNormalBodyStructure>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Frequency>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#TemporalFeature>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#VascularSurgery>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#ModifierConcept>,
+        <http://www.co-ode.org/ontologies/galen#Surgery>,
+        <http://www.co-ode.org/ontologies/galen#TopCategory>,
+        <http://www.co-ode.org/ontologies/galen#ClinicalSpecialityState>,
+        <http://www.co-ode.org/ontologies/galen#OrganismState>,
+        <http://www.co-ode.org/ontologies/galen#State>,
+        <http://www.co-ode.org/ontologies/galen#DomainCategory>,
+        <http://www.co-ode.org/ontologies/galen#Aspect>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#LogicalStructure>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Diabetes>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#RaisedBloodSugarConcentration>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#HemorrhageFromDuodenum>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#nonNormal>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Status>,
+        <http://www.co-ode.org/ontologies/galen#ModifierConcept>,
+        <http://www.co-ode.org/ontologies/galen#StructuralStatus>,
+        <http://www.co-ode.org/ontologies/galen#TopCategory>,
+        <http://www.co-ode.org/ontologies/galen#MedicalStatus>,
+        <http://www.co-ode.org/ontologies/galen#NormalOrNonNormalStatus>,
+        <http://www.co-ode.org/ontologies/galen#DomainCategory>,
+        <http://www.co-ode.org/ontologies/galen#Aspect>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#SolidStructure>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#InsulinDependantDiabetes>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Tachypnoea>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#ClinicalSpecialityState>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Discharge>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#DomainCategory>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#MaleGenitoUrinarySystem>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#AnatomicalSystem>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#variant>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#GeneralisedStructure>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#OrganismState>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Polyp>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#UnusualBodyStructure>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#NonInsulinDependantDiabetes>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Orthopaedics>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Surgery>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#PaediatricSurgery>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Surgery>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#PhysicalStructure>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#IntrinsicallyUnusualBodyStructure>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#BacterialNephritis>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#AnatomicalSystem>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#HemorrhageFromStomach>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#IntrinsicallyVariantBodyStructure>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#RenalTuberculosis>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#HemorrhageProcess>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#DurationOfDiabetes>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#TemporalFeature>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#unusual>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#nonNormal>
     
     
 Class: <http://www.co-ode.org/ontologies/galen#DiabetogenicDrug>
@@ -45,21 +479,120 @@ Class: <http://www.co-ode.org/ontologies/galen#DiabetogenicDrug>
          and (<http://www.co-ode.org/ontologies/galen#IsCausallyLinkedTo> some <http://www.co-ode.org/ontologies/galen#Diabetes>)
     
     
-Class: <http://www.co-ode.org/ontologies/galen#Diabetes>
+Class: <http://www.co-ode.org/ontologies/galen#UlcerativeColitis>
 
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Drug>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Hypertension>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#TopCategory>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#InfarctionProcess>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#StartTime>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#TemporalFeature>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#GenitoUrinarySystem>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#System>,
+        <http://www.co-ode.org/ontologies/galen#TopCategory>,
+        <http://www.co-ode.org/ontologies/galen#AnatomicalSystem>,
+        <http://www.co-ode.org/ontologies/galen#AbstractStructure>,
+        <http://www.co-ode.org/ontologies/galen#GeneralisedStructure>,
+        <http://www.co-ode.org/ontologies/galen#LogicalStructure>,
+        <http://www.co-ode.org/ontologies/galen#DomainCategory>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Vomiting>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Kussmaul-KienRespiration>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#NAMEDPathologicalProcess>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
     
 Class: <http://www.co-ode.org/ontologies/galen#TemporalFeature>
 
     
-Class: <http://www.co-ode.org/ontologies/galen#nonNormal>
+Class: <http://www.co-ode.org/ontologies/galen#BenignHypertension>
 
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
     
-Class: <http://www.co-ode.org/ontologies/galen#Surgery>
-
     
-Class: <http://www.co-ode.org/ontologies/galen#FinishTime>
+Class: <http://www.co-ode.org/ontologies/galen#Duration>
 
     SubClassOf: 
         <http://www.co-ode.org/ontologies/galen#TemporalFeature>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#MedicalStatus>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#VariantBodyStructure>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#MyocardialIschaemiaProcess>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#DigestiveSystem>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#AnatomicalSystem>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#NAMEDNonNormalProcess>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#TimeOfOccurrence>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#TemporalFeature>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Aspect>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Neurosurgery>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Surgery>
     
     

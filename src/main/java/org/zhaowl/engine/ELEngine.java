@@ -3,7 +3,12 @@ package org.zhaowl.engine;
 import java.util.List;
 import java.util.Set;
 
+import javax.swing.JOptionPane;
+
+import org.coode.owlapi.manchesterowlsyntax.ManchesterOWLSyntaxEditorParser;
 import org.semanticweb.elk.owlapi.ElkReasonerFactory;
+import org.semanticweb.owlapi.expression.OWLEntityChecker;
+import org.semanticweb.owlapi.expression.ShortFormEntityChecker;
 import org.semanticweb.owlapi.model.*;
 import org.semanticweb.owlapi.reasoner.InferenceType;
 import org.semanticweb.owlapi.reasoner.NodeSet;
@@ -13,6 +18,7 @@ import org.semanticweb.owlapi.util.ShortFormProvider;
 import org.semanticweb.owlapi.util.SimpleShortFormProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+ 
 
 public class ELEngine {
 	private final OWLReasoner myReasoner;
@@ -198,5 +204,26 @@ public class ELEngine {
 //		  
 //		 
 //	}
-
+     
+//    public OWLClassExpression parseClassExpression(String classExpressionString) {
+//    	// Set up the real parser
+//    	OWLDataFactory dataFactory = myManager.getOWLDataFactory();
+//        ManchesterOWLSyntaxEditorParser parser = new ManchesterOWLSyntaxEditorParser(
+//                dataFactory, classExpressionString);
+//        parser.setDefaultOntology(myOntology);
+//        // Specify an entity checker that wil be used to check a class
+//        // expression contains the correct names.
+//        OWLEntityChecker entityChecker = new ShortFormEntityChecker(bidiShortFormProvider);
+//        parser.setOWLEntityChecker(entityChecker);
+//        // Do the actual parsing
+//        try {
+//			return parser.parseClassExpression();
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			System.out.println("The concept " + classExpressionString + " is not in this Ontology.");
+//			JOptionPane.showMessageDialog(null, "The concept " + classExpressionString + "  is not in this Ontology!", "Alert", JOptionPane.INFORMATION_MESSAGE);
+//			
+//		}
+//		return null;
+//    }
 }
