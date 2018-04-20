@@ -1,7 +1,8 @@
-package org.zhaowl.userInterface;
+package org.zhaowl.engine;
 
 import java.util.Set;
 
+import org.semanticweb.HermiT.Reasoner;
 import org.semanticweb.elk.owlapi.ElkReasonerFactory;
 import org.semanticweb.owlapi.model.*;
 import org.semanticweb.owlapi.reasoner.InferenceType;
@@ -52,67 +53,84 @@ public class ELEngine {
 		return myParser.parseSubClassOfAxiom(concept1, concept2);
     }
 
-    private Boolean entailedEQ(OWLSubClassOfAxiom subclassAxiom) {
-        OWLClassExpression left  = subclassAxiom.getSubClass();
-        OWLClassExpression right = subclassAxiom.getSuperClass();
+//    private Boolean entailedEQ(OWLSubClassOfAxiom subclassAxiom) {
+//        OWLClassExpression left  = subclassAxiom.getSubClass();
+//        OWLClassExpression right = subclassAxiom.getSuperClass();
+//
+//        Boolean workaround = false;
+//        myReasoner.flush();
+//
+//        OWLDataFactory dataFactory = myManager.getOWLDataFactory();
+//
+//        OWLClass leftName  = dataFactory.getOWLClass(IRI.create("#temp001"));
+//        OWLClass rightName = dataFactory.getOWLClass(IRI.create("#temp002"));
+//
+//        OWLAxiom leftDefinition  = dataFactory.getOWLEquivalentClassesAxiom(leftName,  left);
+//        OWLAxiom rightDefinition = dataFactory.getOWLEquivalentClassesAxiom(rightName, right);
+//        myManager.addAxiom(myReasoner.getRootOntology(), leftDefinition);
+//        myManager.addAxiom(myReasoner.getRootOntology(), rightDefinition);
+//
+//        /*
+//        LOGGER_.trace("ontology: ");
+//        for(OWLAxiom ax : myReasoner.getRootOntology().getAxioms())
+//            LOGGER_.trace(ax.toString());
+//         */
+//        //System.out.println("SubclassAx: " + subclassAxiom.toString());
+//
+//        myReasoner.flush();
+//        myReasoner.precomputeInferences(InferenceType.CLASS_HIERARCHY);
+//
+//        NodeSet<OWLClass> superClasses = myReasoner.getSuperClasses(leftName, false);
+//        Node<OWLClass> equivClassess = myReasoner.getEquivalentClasses(leftName);
+//
+//        /*
+//        LOGGER_.trace("(Strict) superClasses of " + leftName + " ");
+//        for(OWLClass c : superClasses.getFlattened()) {
+//            LOGGER_.trace(c.toString());
+//        }
+//        LOGGER_.trace("");
+//        */
+//        if (!superClasses.isEmpty() && superClasses.containsEntity(rightName))
+//            workaround = true;
+//
+//        /*
+//        LOGGER_.trace("equivalentClasses of " + leftName + " ");
+//        for(OWLClass c : equivClassess.getEntities()) {
+//            LOGGER_.trace(c.toString());
+//        }
+//        LOGGER_.trace("");
+//        */
+//        if (!equivClassess.getEntities().isEmpty() && equivClassess.getEntities().contains(rightName))
+//            workaround = true;
+//
+//
+//        myManager.removeAxiom(myReasoner.getRootOntology(), leftDefinition);
+//        myManager.removeAxiom(myReasoner.getRootOntology(), rightDefinition);
+//        myReasoner.flush();
+//        LOGGER_.trace("returning " + workaround);
+//        LOGGER_.trace("");
+//        LOGGER_.trace("");
+//
+//        return workaround;
+//    }
 
-        Boolean workaround = false;
-        myReasoner.flush();
-
-        OWLDataFactory dataFactory = myManager.getOWLDataFactory();
-
-        OWLClass leftName  = dataFactory.getOWLClass(IRI.create("#temp001"));
-        OWLClass rightName = dataFactory.getOWLClass(IRI.create("#temp002"));
-
-        OWLAxiom leftDefinition  = dataFactory.getOWLEquivalentClassesAxiom(leftName,  left);
-        OWLAxiom rightDefinition = dataFactory.getOWLEquivalentClassesAxiom(rightName, right);
-        myManager.addAxiom(myReasoner.getRootOntology(), leftDefinition);
-        myManager.addAxiom(myReasoner.getRootOntology(), rightDefinition);
-
-        /*
-        LOGGER_.trace("ontology: ");
-        for(OWLAxiom ax : myReasoner.getRootOntology().getAxioms())
-            LOGGER_.trace(ax.toString());
-         */
-        //System.out.println("SubclassAx: " + subclassAxiom.toString());
-
-        myReasoner.flush();
-        myReasoner.precomputeInferences(InferenceType.CLASS_HIERARCHY);
-
-        NodeSet<OWLClass> superClasses = myReasoner.getSuperClasses(leftName, false);
-        Node<OWLClass> equivClassess = myReasoner.getEquivalentClasses(leftName);
-
-        /*
-        LOGGER_.trace("(Strict) superClasses of " + leftName + " ");
-        for(OWLClass c : superClasses.getFlattened()) {
-            LOGGER_.trace(c.toString());
-        }
-        LOGGER_.trace("");
-        */
-        if (!superClasses.isEmpty() && superClasses.containsEntity(rightName))
-            workaround = true;
-
-        /*
-        LOGGER_.trace("equivalentClasses of " + leftName + " ");
-        for(OWLClass c : equivClassess.getEntities()) {
-            LOGGER_.trace(c.toString());
-        }
-        LOGGER_.trace("");
-        */
-        if (!equivClassess.getEntities().isEmpty() && equivClassess.getEntities().contains(rightName))
-            workaround = true;
-
-
-        myManager.removeAxiom(myReasoner.getRootOntology(), leftDefinition);
-        myManager.removeAxiom(myReasoner.getRootOntology(), rightDefinition);
-        myReasoner.flush();
-        LOGGER_.trace("returning " + workaround);
-        LOGGER_.trace("");
-        LOGGER_.trace("");
-
-        return workaround;
-    }
-
+//	public Boolean entailed(OWLClassExpression  left,OWLClassExpression  right){
+//	
+//	
+//	OWLOntologyManager man = OWLManager.createOWLOntologyManager();
+//    OWLDataFactory dataFactory = man.getOWLDataFactory();
+//    OWLSubClassOfAxiom subclassAxiom=dataFactory.getOWLSubClassOfAxiom(left, right);
+//	return reasoner.isEntailed(subclassAxiom);
+//}
+    
+	public Boolean entailedEQ(OWLSubClassOfAxiom subclassAxiom){
+	
+	
+	//OWLOntologyManager man = OWLManager.createOWLOntologyManager();
+    //OWLDataFactory dataFactory = man.getOWLDataFactory();
+   // OWLSubClassOfAxiom subclassAxiom=dataFactory.getOWLSubClassOfAxiom(left, right);
+	return myReasoner.isEntailed(subclassAxiom);
+}    
 	public Boolean entailed(OWLAxiom ax) {
         LOGGER_.trace("InputAx: {}", ax.toString());
         if(ax.isOfType(AxiomType.EQUIVALENT_CLASSES)) {
@@ -181,8 +199,9 @@ public class ELEngine {
         LOGGER_.trace("Reasoner "+ reasonerName + " created");
         //Thread.dumpStack();
         System.out.flush();
-        ElkReasonerFactory reasoningFactory = new ElkReasonerFactory();
-        return reasoningFactory.createReasoner(rootOntology);
+        return new Reasoner.ReasonerFactory().createReasoner(rootOntology);
+        //ElkReasonerFactory reasoningFactory = new ElkReasonerFactory();
+        //return reasoningFactory.createReasoner(rootOntology);
     }
     public void disposeOfReasoner() {
         LOGGER_.trace("Reasoner "  + " disposed of");

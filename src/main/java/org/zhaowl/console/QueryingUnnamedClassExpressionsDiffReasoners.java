@@ -24,8 +24,8 @@ import org.semanticweb.owlapi.reasoner.OWLReasoner;
         import org.semanticweb.owlapi.util.DefaultPrefixManager;
 import org.semanticweb.owlapi.util.ShortFormProvider;
 import org.semanticweb.owlapi.util.SimpleShortFormProvider;
+import org.zhaowl.engine.ELEngine;
 import org.zhaowl.tree.ELTree;
-import org.zhaowl.userInterface.ELEngine;
 
 import java.io.File;
 
@@ -108,7 +108,7 @@ public class QueryingUnnamedClassExpressionsDiffReasoners {
         if (hermitReasoner.isEntailed( axiom))
         	System.out.println("Is entailed");
         ShortFormProvider shortFormProvider =new SimpleShortFormProvider();
-        ELEngine engineForT=new ELEngine(hermitReasoner, shortFormProvider);
+        ELEngine engineForT=new ELEngine(ont );
         ELTree treeRight = null;
         ELTree treeLeft = null;
 		try {
