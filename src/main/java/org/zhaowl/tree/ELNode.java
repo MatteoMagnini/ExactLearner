@@ -506,11 +506,11 @@ public class ELNode {
 						OWLClassExpression child = edge.getNode().transformToDescription();
 						return df.getOWLObjectSomeValuesFrom(edge.getLabel().asOWLObjectProperty(), child);
 					}  
-					
+					throw new RuntimeException("Description   not supported.");
 				}
 			// return an intersection of labels and edges
 			} else {
-				Set<OWLClassExpression> operands = new TreeSet<>();
+				Set<OWLClassExpression> operands = new TreeSet<OWLClassExpression>();
 				for(OWLClass nc : label) {
 					operands.add(nc);
 				}
@@ -525,7 +525,7 @@ public class ELNode {
 				OWLClassExpression is = df.getOWLObjectIntersectionOf(operands);
 				return is;
 			}
-			return null;
+			 
 		}
 }
 

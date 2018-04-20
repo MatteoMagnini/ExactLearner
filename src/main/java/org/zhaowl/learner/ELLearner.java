@@ -59,7 +59,7 @@ public class ELLearner {
 					// size of power set
 					sizeToCheck++;
 					// set to be used when building a power set of concepts
-					Set<OWLClass> toBuildPS = new HashSet<>();
+					Set<OWLClass> toBuildPS = new HashSet<OWLClass>();
 
 					// populate set
 					for (OWLClass cl : nod.label)
