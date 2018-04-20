@@ -489,7 +489,7 @@ public class ELNode {
 	public ELTree getTree() {
 		return tree;
 	}
-	
+	//Reference: DL-Learner
 	 public OWLClassExpression transformToDescription() {
 	    	OWLOntologyManager man = OWLManager.createOWLOntologyManager();
 	        OWLDataFactory dataFactory = man.getOWLDataFactory();
@@ -506,7 +506,7 @@ public class ELNode {
 						OWLClassExpression child = edge.getNode().transformToDescription();
 						return df.getOWLObjectSomeValuesFrom(edge.getLabel().asOWLObjectProperty(), child);
 					}  
-					
+					throw new RuntimeException("Description   not supported.");
 				}
 			// return an intersection of labels and edges
 			} else {
@@ -525,7 +525,7 @@ public class ELNode {
 				OWLClassExpression is = df.getOWLObjectIntersectionOf(operands);
 				return is;
 			}
-			return null;
+			 
 		}
 }
 

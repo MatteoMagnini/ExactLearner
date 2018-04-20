@@ -144,21 +144,7 @@ public class ClassHierarchyT extends AbstractH<OWLClassExpression>{
 	}
 
  
-
-	public Node<OWLClassExpression> getUnsatisfiables() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public String getWarning() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public boolean hasWarning() {
-		// TODO Auto-generated method stub
-		return false;
-	}
+ 
 
  
 }

@@ -18,7 +18,7 @@ import org.zhaowl.engine.ELEngine;
 import org.zhaowl.tree.ELEdge;
 import org.zhaowl.tree.ELNode;
 import org.zhaowl.tree.ELTree;
-import org.zhaowl.utils.SimpleClass;
+import org.zhaowl.utils.Metrics;
 
 public class ELLearner {
 
@@ -458,7 +458,7 @@ public class ELLearner {
 						for (int k = 0; k < classAux.size(); k++) {
 
 							nod.edges.add(new ELEdge(auxEdges.get(j).label, new ELNode(new ELTree(
-									myEngineForT.parseClassExpression(new SimpleClass().fixAxioms(classAux.get(k)))))));
+									myEngineForT.parseClassExpression(new Metrics().fixAxioms(classAux.get(k)))))));
 
 							// add class to new node
 							nod.edges.get(nod.edges.size() - 1).node.label.add(classAux.get(k));
