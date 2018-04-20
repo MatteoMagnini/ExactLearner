@@ -22,7 +22,7 @@ import org.zhaowl.learner.ELLearner;
 public class ELParser {
 	private final OWLOntology rootOntology;
     private final BidirectionalShortFormProvider bidiShortFormProvider;
-    public final OWLDataFactory dataFactory;
+    private final OWLDataFactory dataFactory;
     private static final Logger LOGGER_ = LoggerFactory
 			.getLogger(ELParser.class);
     /** Constructs a ELQueryParser using the specified ontology and short form
