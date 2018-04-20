@@ -11,12 +11,6 @@ import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLClassExpression;
 import org.semanticweb.owlapi.model.OWLSubClassOfAxiom;
-<<<<<<< HEAD
-=======
-import org.semanticweb.owlapi.reasoner.OWLReasoner;
-import org.semanticweb.owlapi.reasoner.OWLReasonerFactory;
-import org.semanticweb.owlapi.util.ShortFormProvider;
->>>>>>> test
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.zhaowl.console.consoleLearner;
@@ -34,38 +28,10 @@ public class ELLearner {
 	private static final Logger LOGGER_ = LoggerFactory
 			.getLogger(ELLearner.class);
 
-<<<<<<< HEAD
 	public ELLearner(ELEngine elEngineForT, ELEngine elEngineForH, consoleLearner console) {
 		myEngineForH = elEngineForH;
 		myEngineForT = elEngineForT;
 		myConsole = console;
-=======
-	public ELLearner(OWLReasoner reasoner, ShortFormProvider shortForm, OWLOntology ontology, OWLOntology ontologyH,
-			ELEngine engineT, consoleLearner console, ManchesterOWLSyntaxOWLObjectRendererImpl rendering) {
-		this.reasonerForT = reasoner;
-		this.shortFormProvider = shortForm;
-		this.ontology = ontology;
-		this.ontologyH = ontologyH;
-		this.engineForT = engineT;
-		this.console= console;
-		this.rendering = rendering;
-	}
-
-	public OWLReasoner createReasoner(final OWLOntology rootOntology, String reasonerName) {
-		LOGGER_.info("ELLearner: Reasoner "+ reasonerName + " created");
-		//Thread.dumpStack();
-		System.out.flush();
-		
-		OWLReasonerFactory reasoningFactory = new ElkReasonerFactory();
-		return reasoningFactory.createReasoner(rootOntology);
-	}
-
-	private static void disposeOfReasoner(OWLReasoner owlReasoner, String reasonerName) {
-		LOGGER_.info("ELLearner: Reasoner " + reasonerName + " disposed of");
-		//Thread.dumpStack();
-		System.out.flush();
-		owlReasoner.dispose();
->>>>>>> test
 	}
 
 	public OWLClassExpression unsaturateLeft(OWLAxiom ax) throws Exception {
@@ -124,21 +90,10 @@ public class ELLearner {
 						myConsole.membCount++;
 
 						// System.out.println(tree.toDescriptionString());
-<<<<<<< HEAD
 						if (myEngineForT.entailed(
 								myEngineForT.parseToOWLSubClassOfAxiom(tree.toDescriptionString(), (new ELTree(right))
 										.toDescriptionString())))/*
 																	 * && !engineForH.entailed(elQueryEngineForT.
-=======
-						//if (engineForT.entailed(
-						//		engineForT.parseToOWLSubClassOfAxiom(tree.toDescriptionString(), (new ELTree(right))
-						//				.toDescriptionString())))
-							if (engineForT.entailed( 
-									engineForT.parseToOWLSubClassOfAxiom(tree.toDescriptionString(), (new ELTree(right))
-											.toDescriptionString())))
-							/*
-																	 * && !engineForH.entailed(ELQueryEngineForT.
->>>>>>> test
 																	 * parseToOWLSubClassOfAxiom(
 																	 * tree.toDescriptionString(), (new
 																	 * ELTree(right)).toDescriptionString())))
@@ -292,7 +247,7 @@ public class ELLearner {
 						}
 					}
 				}
-				//System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+				System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 			}
 		} catch (Exception e) {
 			System.out.println("Error in decompose: " + e);
