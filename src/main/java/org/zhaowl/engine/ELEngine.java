@@ -1,5 +1,6 @@
 package org.zhaowl.engine;
 
+import java.util.List;
 import java.util.Set;
 
 import org.semanticweb.elk.owlapi.ElkReasonerFactory;
@@ -38,15 +39,15 @@ public class ELEngine {
         return myOntology.getClassesInSignature();
     }
 
-    public OWLClassExpression parseClassExpression(String s){
-    	return myParser.parseClassExpression(s);
-	}
+//    public OWLClassExpression parseClassExpression(String s){
+//    	return myParser.parseClassExpression(s);
+//	}
     
-	public OWLAxiom parseToOWLSubClassOfAxiom(String concept1String, String concept2String){
-    	OWLClassExpression concept1 = myParser.parseClassExpression(concept1String);
-		OWLClassExpression concept2 = myParser.parseClassExpression(concept2String);
-		return getSubClassAxiom(concept1, concept2);
-	}
+//	public OWLAxiom parseToOWLSubClassOfAxiom(String concept1String, String concept2String){
+//    	OWLClassExpression concept1 = myParser.parseClassExpression(concept1String);
+//		OWLClassExpression concept2 = myParser.parseClassExpression(concept2String);
+//		return getSubClassAxiom(concept1, concept2);
+//	}
 	
 	public OWLAxiom getSubClassAxiom(OWLClassExpression concept1, OWLClassExpression concept2){
 		return myParser.parseSubClassOfAxiom(concept1, concept2);
@@ -190,5 +191,12 @@ public class ELEngine {
         System.out.flush();
         myReasoner.dispose();
     }
+
+//	public Reasoner getOWLObjectIntersectionOf(List<OWLClass> classAux) {
+//		OWLDataFactory dataFactory = myManager.getOWLDataFactory();
+//		return dataFactory.getOWLObjectIntersectionOf(classAux);
+//		  
+//		 
+//	}
 
 }

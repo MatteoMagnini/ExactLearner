@@ -59,7 +59,7 @@ public class ELOracle {
 		Set<ELNode> nodes = null;
 		// System.out.println(tree.toDescriptionString());
 
-		OWLClassExpression oldTree = myEngineForT.parseClassExpression(tree.toDescriptionString());
+		OWLClassExpression oldTree = tree.transformToClassExpression();
 		for (int i = 0; i < tree.getMaxLevel(); i++) {
 			nodes = tree.getNodesOnLevel(i + 1);
 			if (!nodes.isEmpty())
@@ -82,8 +82,8 @@ public class ELOracle {
 										nod.edges.get(j).node.edges.addAll(nod.edges.get(k).node.edges);
 									nod.edges.remove(nod.edges.get(k));
 									if (myEngineForT.entailed(myEngineForT.getSubClassAxiom(left,
-											myEngineForT.parseClassExpression(tree.toDescriptionString())))) {
-										oldTree = myEngineForT.parseClassExpression(tree.toDescriptionString());
+											tree.transformToClassExpression()))) {
+										oldTree =  tree.transformToClassExpression();
 									} else {
 										tree = new ELTree(oldTree);
 									}
@@ -101,7 +101,7 @@ public class ELOracle {
 		right = null;
 
 		System.out.flush();
-		return myEngineForT.parseClassExpression(tree.toDescriptionString());
+		return tree.transformToClassExpression();
 	}
 
 	public Set<Set<OWLClass>> powerSetBySize(Set<OWLClass> originalSet, int size) {
@@ -146,14 +146,14 @@ public class ELOracle {
 							nod.label.add(cl);
 						}
 						// System.out.println("Node after: " + nod);
-						OWLClassExpression newEx = myEngineForT.parseClassExpression(tree.toDescriptionString());
+						OWLClassExpression newEx = tree.transformToClassExpression();
 						// System.out.println("After saturation step: " + tree.toDescriptionString());
 						OWLAxiom newAx = myEngineForT.getSubClassAxiom(newEx, sup);
 						myConsole.membCount++;
 						if (myEngineForT.entailed(newAx)) {
 							tree = new ELTree(sub);
 						} else {
-							sub = myEngineForT.parseClassExpression(tree.toDescriptionString());
+							sub = tree.transformToClassExpression();
 						}
 
 					}
@@ -233,8 +233,9 @@ public class ELOracle {
 						myConsole.membCount++;
 
 						// System.out.println(tree.toDescriptionString());
-						if (myEngineForT.entailed(myEngineForT.parseToOWLSubClassOfAxiom(
-								(new ELTree(left)).toDescriptionString(), tree.toDescriptionString())))
+						if (myEngineForT.entailed(
+								myEngineForT.getSubClassAxiom(left, tree.transformToClassExpression())
+								))
 
 						{
 
@@ -259,7 +260,7 @@ public class ELOracle {
 			}
 		}
 		System.out.flush();
-		OWLClassExpression ex = myEngineForT.parseClassExpression(tree.toDescriptionString());
+		OWLClassExpression ex =  tree.transformToClassExpression();
 
 		left = null;
 		right = null;
@@ -269,75 +270,76 @@ public class ELOracle {
 	}
 
 	public OWLClassExpression branchRight(OWLClassExpression left, OWLClassExpression right) {
-		try {
+//		try {
+//
+//			ELTree treeR = new ELTree(right);
+//			Set<ELNode> nodes = null;
+//			List<ELEdge> auxEdges = null;
+//			ELTree auxTree = new ELTree(right);
+//
+//
+//			for (int i = 0; i < treeR.maxLevel; i++) {
+//				nodes = treeR.getNodesOnLevel(i + 1);
+//				for (ELNode nod : nodes) {
+//					if (nod.edges.isEmpty())
+//						continue;
+//					auxEdges = new LinkedList<ELEdge>(nod.edges);
+//					for (int j = 0; j < auxEdges.size(); j++) {
+//						if (auxEdges.get(j).node.label.size() == 1)
+//							continue;
+//						// create list of classes in target node
+//						List<OWLClass> classAux = new ArrayList<OWLClass>();
+//						// fill list with classes
+//						for (OWLClass cl : auxEdges.get(j).node.label)
+//							classAux.add(cl);
+//						// for each class, create a node and add class to target node
+//						for (int k = 0; k < classAux.size(); k++) {
+//
+//							nod.edges.add(new ELEdge(auxEdges.get(j).label, new ELNode(
+//									new ELTree( myEngineForT.getOWLObjectIntersectionOf(classAux)));
+////									 (new Metrics().fixAxioms(classAux.get(k)))))));
+//
+//							// add class to new node
+//							nod.edges.get(nod.edges.size() - 1).node.label.add(classAux.get(k));
+//
+//							// remove class from old node
+//							auxEdges.get(j).node.label.remove(classAux.get(k));
+//
+//							// check target for entailment of new tree
+//
+//							/*
+//							 * if (myEngineForT.entailed(myEngineForT.getSubClassAxiom(left,
+//							 * myEngineForT.parseClassExpression(treeR.toDescriptionString())))) { continue;
+//							 * 
+//							 * } else { // tree is invalid, rollback nod.edges.remove(nod.edges.size() - 1);
+//							 * nod.edges.get(j).node.label.add(classAux.get(k)); // }
+//							 */
+//						}
+//					}
+//				}
+//			}
+//
+//			// System.out.println("branched tree : \n" + treeL.rootNode);
+//			// System.out.println(treeL.toDescriptionString());
+//
+//			System.out.flush();
+//			left = null;
+//			right = null;
+//			auxEdges = null;
+//			nodes = null;
+//			OWLClassExpression ex =  treeR.transformToClassExpression();
+//			treeR = null;
+//
+//
+//			return ex;
+//		} catch (Exception e) {
+//			System.out.println("Error in branchNode: " + e);
+//		}
+//		System.out.flush();
+//		left = null;
+//		right = null;
 
-			ELTree treeR = new ELTree(right);
-			Set<ELNode> nodes = null;
-			List<ELEdge> auxEdges = null;
-			ELTree auxTree = new ELTree(right);
-
-
-			for (int i = 0; i < treeR.maxLevel; i++) {
-				nodes = treeR.getNodesOnLevel(i + 1);
-				for (ELNode nod : nodes) {
-					if (nod.edges.isEmpty())
-						continue;
-					auxEdges = new LinkedList<ELEdge>(nod.edges);
-					for (int j = 0; j < auxEdges.size(); j++) {
-						if (auxEdges.get(j).node.label.size() == 1)
-							continue;
-						// create list of classes in target node
-						List<OWLClass> classAux = new ArrayList<OWLClass>();
-						// fill list with classes
-						for (OWLClass cl : auxEdges.get(j).node.label)
-							classAux.add(cl);
-						// for each class, create a node and add class to target node
-						for (int k = 0; k < classAux.size(); k++) {
-
-							nod.edges.add(new ELEdge(auxEdges.get(j).label, new ELNode(new ELTree(
-									myEngineForT.parseClassExpression(new Metrics().fixAxioms(classAux.get(k)))))));
-
-							// add class to new node
-							nod.edges.get(nod.edges.size() - 1).node.label.add(classAux.get(k));
-
-							// remove class from old node
-							auxEdges.get(j).node.label.remove(classAux.get(k));
-
-							// check target for entailment of new tree
-
-							/*
-							 * if (myEngineForT.entailed(myEngineForT.getSubClassAxiom(left,
-							 * myEngineForT.parseClassExpression(treeR.toDescriptionString())))) { continue;
-							 * 
-							 * } else { // tree is invalid, rollback nod.edges.remove(nod.edges.size() - 1);
-							 * nod.edges.get(j).node.label.add(classAux.get(k)); // }
-							 */
-						}
-					}
-				}
-			}
-
-			// System.out.println("branched tree : \n" + treeL.rootNode);
-			// System.out.println(treeL.toDescriptionString());
-
-			System.out.flush();
-			left = null;
-			right = null;
-			auxEdges = null;
-			nodes = null;
-			OWLClassExpression ex = myEngineForT.parseClassExpression(treeR.toDescriptionString());
-			treeR = null;
-
-
-			return ex;
-		} catch (Exception e) {
-			System.out.println("Error in branchNode: " + e);
-		}
-		System.out.flush();
-		left = null;
-		right = null;
-
-		return null;
+		return right;
 	}
 
 }
