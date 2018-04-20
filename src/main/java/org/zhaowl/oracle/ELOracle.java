@@ -17,10 +17,10 @@ import org.semanticweb.owlapi.reasoner.OWLReasoner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.zhaowl.console.consoleLearner;
+import org.zhaowl.engine.ELEngine;
 import org.zhaowl.tree.ELEdge;
 import org.zhaowl.tree.ELNode;
 import org.zhaowl.tree.ELTree;
-import org.zhaowl.userInterface.ELEngine;
 import org.zhaowl.utils.SimpleClass;
 
 public class ELOracle {

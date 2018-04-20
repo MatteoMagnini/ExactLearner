@@ -1,4 +1,4 @@
-package org.zhaowl.tree;
+package org.zhaowl.engine;
 
 import java.text.NumberFormat;
 import java.util.HashMap;
@@ -22,6 +22,9 @@ import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLProperty;
 import org.semanticweb.owlapi.reasoner.NodeSet;
 import org.semanticweb.owlapi.reasoner.OWLReasoner;
+import org.zhaowl.tree.ClassHierarchyT;
+import org.zhaowl.tree.ObjectPropertyHierarchyT;
+ 
 
 import uk.ac.manchester.cs.owl.owlapi.OWLDataFactoryImpl;
 
@@ -62,7 +65,7 @@ public    class Reasoner  {
 	public OWLReasoner reasoner;
 	public ClassHierarchyT subsumptionHierarchy = null; 
 	public ObjectPropertyHierarchyT roleHierarchy = null; 
-	public DatatypePropertyHierarchy datatypePropertyHierarchy = null;
+	 
  
 	public boolean precomputeClassHierarchy = true; 
 	public boolean precomputeObjectPropertyHierarchy = true; 
@@ -444,50 +447,7 @@ public    class Reasoner  {
 		return false;
 	}
 
-	/**
-	 * Creates the data property hierarchy. Invoking this method is optional (if
-	 * not called explicitly, it is called the first time, it is needed).
-	 * 
-	 * @return The data property hierarchy.
-	 * @throws ReasoningMethodUnsupportedException
-	 *             Thrown if data property hierarchy creation is not supported
-	 *             by the reasoner.
-	 */
-	public DatatypePropertyHierarchy prepareDatatypePropertyHierarchy()
-			throws ReasoningMethodUnsupportedException {
-	
-		TreeMap<OWLDataProperty, SortedSet<OWLDataProperty>> datatypePropertyHierarchyUp = new TreeMap<OWLDataProperty, SortedSet<OWLDataProperty>>(
-		);
-		TreeMap<OWLDataProperty, SortedSet<OWLDataProperty>> datatypePropertyHierarchyDown = new TreeMap<OWLDataProperty, SortedSet<OWLDataProperty>>(
-		);
  
-		Set<OWLDataProperty> datatypeProperties = ontology.getDataPropertiesInSignature();
-		for (OWLDataProperty role : datatypeProperties) {
-			datatypePropertyHierarchyDown.put(role, getSubPropertiesImpl(role));
-			datatypePropertyHierarchyUp.put(role, getSuperPropertiesImpl(role));
-		}
-
-		return new DatatypePropertyHierarchy(datatypePropertyHierarchyUp, datatypePropertyHierarchyDown);		
-	}
- 
-	public final DatatypePropertyHierarchy getDatatypePropertyHierarchy() {
-	
-		try {
-			if (datatypePropertyHierarchy == null) {
-				datatypePropertyHierarchy = prepareDatatypePropertyHierarchy();
-			}
-		} catch (ReasoningMethodUnsupportedException e) {
-			handleExceptions(e);
-		}
-
-		return datatypePropertyHierarchy;
-	}
-
-//	public List<OWLClass> getAtomicConceptsList() {
-//		if (atomicConceptsList == null)
-//			atomicConceptsList = new LinkedList<OWLClass>(getClasses());
-//		return atomicConceptsList;
-//	}
 
  
 	public void setSubsumptionHierarchy(ClassHierarchyT subsumptionHierarchy) {

@@ -1,7 +1,6 @@
 package org.zhaowl.console;
 
 import org.slf4j.LoggerFactory;
-import org.zhaowl.userInterface.ELEngine;
 import org.zhaowl.utils.SimpleClass;
 
 import uk.ac.manchester.cs.owl.owlapi.mansyntaxrenderer.ManchesterOWLSyntaxOWLObjectRendererImpl;
@@ -31,6 +30,7 @@ import org.semanticweb.owlapi.model.OWLOntologyFormat;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.model.OWLSubClassOfAxiom;
 import org.semanticweb.owlapi.model.RemoveAxiom;
+import org.zhaowl.engine.ELEngine;
 import org.zhaowl.learner.ELLearner;
 import org.zhaowl.oracle.ELOracle;
 import org.apache.log4j.*;

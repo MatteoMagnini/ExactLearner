@@ -1,5 +1,4 @@
-package org.zhaowl.userInterface;
-
+package org.zhaowl.engine;
 import java.util.Set;
 
 import javax.swing.JOptionPane;
@@ -15,11 +14,10 @@ import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.util.BidirectionalShortFormProvider;
 import org.semanticweb.owlapi.util.BidirectionalShortFormProviderAdapter;
 import org.semanticweb.owlapi.util.ShortFormProvider;
-
-public class ELParser {
-	private final OWLOntology rootOntology;
+public class ELQueryParse {
+    private final OWLOntology rootOntology;
     private final BidirectionalShortFormProvider bidiShortFormProvider;
-    public final OWLDataFactory dataFactory;
+    private final OWLDataFactory dataFactory;
     /** Constructs a ELQueryParser using the specified ontology and short form
      * provider to map entity IRIs to short names.
      * 
@@ -29,7 +27,7 @@ public class ELParser {
      * @param shortFormProvider
      *            A short form provider to be used for mapping back and forth
      *            between entities and their short names (renderings). */
-    public ELParser(OWLOntology rootOntology, ShortFormProvider shortFormProvider) {
+    public ELQueryParse(OWLOntology rootOntology, ShortFormProvider shortFormProvider) {
         this.rootOntology = rootOntology;
         OWLOntologyManager manager = rootOntology.getOWLOntologyManager();
         Set<OWLOntology> importsClosure = rootOntology.getImportsClosure();
@@ -62,8 +60,8 @@ public class ELParser {
 			return parser.parseClassExpression();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println("The concept " + classExpressionString + " is not in this Ontology.");
-			JOptionPane.showMessageDialog(null, "The concept " + classExpressionString + "  is not in this Ontology!", "Alert", JOptionPane.INFORMATION_MESSAGE);
+				System.out.println("The concept " + classExpressionString + " is not in this Ontology.");
+				JOptionPane.showMessageDialog(null, "The concept " + classExpressionString + "  is not in this Ontology!", "Alert", JOptionPane.INFORMATION_MESSAGE);
 			
 		}
 		return null;
