@@ -14,7 +14,7 @@ import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.util.BidirectionalShortFormProvider;
 import org.semanticweb.owlapi.util.BidirectionalShortFormProviderAdapter;
 import org.semanticweb.owlapi.util.ShortFormProvider;
-public class ELQueryParse {
+public class ELQueryParser {
     private final OWLOntology rootOntology;
     private final BidirectionalShortFormProvider bidiShortFormProvider;
     private final OWLDataFactory dataFactory;
@@ -27,7 +27,7 @@ public class ELQueryParse {
      * @param shortFormProvider
      *            A short form provider to be used for mapping back and forth
      *            between entities and their short names (renderings). */
-    public ELQueryParse(OWLOntology rootOntology, ShortFormProvider shortFormProvider) {
+    public ELQueryParser(OWLOntology rootOntology, ShortFormProvider shortFormProvider) {
         this.rootOntology = rootOntology;
         OWLOntologyManager manager = rootOntology.getOWLOntologyManager();
         Set<OWLOntology> importsClosure = rootOntology.getImportsClosure();

@@ -1,4 +1,4 @@
-package org.zhaowl.tree;
+package org.zhaowl.exception;
 
 public class ReasoningMethodUnsupportedException extends Exception {
 

@@ -22,9 +22,9 @@ import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLProperty;
 import org.semanticweb.owlapi.reasoner.NodeSet;
 import org.semanticweb.owlapi.reasoner.OWLReasoner;
+import org.zhaowl.exception.ReasoningMethodUnsupportedException;
 import org.zhaowl.tree.ClassHierarchyT;
 import org.zhaowl.tree.ObjectPropertyHierarchyT;
-import org.zhaowl.tree.ReasoningMethodUnsupportedException;
 
 import uk.ac.manchester.cs.owl.owlapi.OWLDataFactoryImpl;
 
@@ -437,25 +437,12 @@ public    class Reasoner  {
 		return roleHierarchy;
 	}
 	
-	public boolean isSubPropertyOf(OWLProperty subProperty, OWLProperty superProperty){
+	public boolean isSubPropertyOf(OWLProperty<?, ?> subProperty, OWLProperty<?, ?> superProperty){
 		if(subProperty.isOWLObjectProperty() && superProperty.isOWLObjectProperty()){
 			return getObjectPropertyHierarchy().isSubpropertyOf((OWLObjectProperty)subProperty, (OWLObjectProperty)superProperty);
 		} 
-		//else if(subProperty.isOWLDataProperty() && superProperty.isOWLDataProperty()){
-		//	return getDatatypePropertyHierarchy().isSubpropertyOf((OWLDataProperty)subProperty, (OWLDataProperty)superProperty);
-		//}
 		return false;
 	}
- 
- 
- 
-
-//	public List<OWLClass> getAtomicConceptsList() {
-//		if (atomicConceptsList == null)
-//			atomicConceptsList = new LinkedList<OWLClass>(getClasses());
-//		return atomicConceptsList;
-//	}
-
  
 	public void setSubsumptionHierarchy(ClassHierarchyT subsumptionHierarchy) {
 		this.subsumptionHierarchy = subsumptionHierarchy;
