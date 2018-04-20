@@ -2,6 +2,7 @@ package org.zhaowl.learner;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
@@ -193,8 +194,9 @@ public class ELLearner {
 						continue;
 					if (nod.label.size() < 1)
 						continue;
-					for (OWLClass cl: myEngineForT.getClassesInSignature()) {
-						if (!cl.isTopEntity()) {
+					while( myEngineForT.getClassesInSignature().iterator().hasNext()) {
+						OWLClass cl= myEngineForT.getClassesInSignature().iterator().next();
+						if (! cl.isTopEntity()  ) {
 							// System.out.println("Class: " + rendering.render(cl));
 							OWLAxiom axiom = myEngineForT.getSubClassAxiom(
 								 nod.transformToDescription(),
