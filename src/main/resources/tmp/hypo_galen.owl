@@ -17,15 +17,6 @@ ObjectProperty: <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus>
 ObjectProperty: <http://www.co-ode.org/ontologies/galen#IsCausallyLinkedTo>
 
     
-Class: <http://www.co-ode.org/ontologies/galen#Status>
-
-    
-Class: <http://www.co-ode.org/ontologies/galen#EssentialHypertension>
-
-    SubClassOf: 
-        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
-    
-    
 Class: <http://www.co-ode.org/ontologies/galen#GeneralSurgery>
 
     SubClassOf: 
@@ -38,13 +29,22 @@ Class: <http://www.co-ode.org/ontologies/galen#Chronicity>
         <http://www.co-ode.org/ontologies/galen#TemporalFeature>
     
     
-Class: <http://www.co-ode.org/ontologies/galen#BodyStructure>
-
-    
-Class: <http://www.co-ode.org/ontologies/galen#MalignantHypertension>
+Class: <http://www.co-ode.org/ontologies/galen#Glipizide>
 
     SubClassOf: 
-        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Minocycline>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Metoprolol>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
     
     
 Class: <http://www.co-ode.org/ontologies/galen#Gynaecology>
@@ -53,13 +53,7 @@ Class: <http://www.co-ode.org/ontologies/galen#Gynaecology>
         <http://www.co-ode.org/ontologies/galen#Surgery>
     
     
-Class: <http://www.co-ode.org/ontologies/galen#ModifierConcept>
-
-    
 Class: <http://www.co-ode.org/ontologies/galen#ProcessFeature>
-
-    
-Class: <http://www.co-ode.org/ontologies/galen#System>
 
     
 Class: <http://www.co-ode.org/ontologies/galen#BacterialInfection>
@@ -68,26 +62,11 @@ Class: <http://www.co-ode.org/ontologies/galen#BacterialInfection>
         <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
     
     
-Class: <http://www.co-ode.org/ontologies/galen#IntrinsicallyAbnormalBodyStructure>
+Class: <http://www.co-ode.org/ontologies/galen#Antibiotic>
 
     SubClassOf: 
-        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+        <http://www.co-ode.org/ontologies/galen#Drug>
     
-    
-Class: <http://www.co-ode.org/ontologies/galen#RenalInfection>
-
-    SubClassOf: 
-        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
-    
-    
-Class: <http://www.co-ode.org/ontologies/galen#abnormal>
-
-    SubClassOf: 
-        <http://www.co-ode.org/ontologies/galen#nonNormal>
-    
-    
-Class: <http://www.co-ode.org/ontologies/galen#AbstractStructure>
-
     
 Class: <http://www.co-ode.org/ontologies/galen#AbnormalBodyStructure>
 
@@ -95,16 +74,16 @@ Class: <http://www.co-ode.org/ontologies/galen#AbnormalBodyStructure>
         <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
     
     
-Class: <http://www.co-ode.org/ontologies/galen#NonNormalCondition>
+Class: <http://www.co-ode.org/ontologies/galen#Aminoglycoside>
 
     SubClassOf: 
-        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+        <http://www.co-ode.org/ontologies/galen#Drug>
     
     
-Class: <http://www.co-ode.org/ontologies/galen#FemaleGenitoUrinarySystem>
+Class: <http://www.co-ode.org/ontologies/galen#Tinidazole>
 
     SubClassOf: 
-        <http://www.co-ode.org/ontologies/galen#AnatomicalSystem>
+        <http://www.co-ode.org/ontologies/galen#Drug>
     
     
 Class: <http://www.co-ode.org/ontologies/galen#Opthalmology>
@@ -119,13 +98,28 @@ Class: <http://www.co-ode.org/ontologies/galen#SubendocardialIschaemia>
         <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
     
     
-Class: <http://www.co-ode.org/ontologies/galen#Feature>
-
-    
-Class: <http://www.co-ode.org/ontologies/galen#GastricHemorrhage>
+Class: <http://www.co-ode.org/ontologies/galen#Metronidazole>
 
     SubClassOf: 
-        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Flucloxacillin>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Isoniazid>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Rifampicin>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
     
     
 Class: <http://www.co-ode.org/ontologies/galen#BrittleDiabetes>
@@ -134,31 +128,10 @@ Class: <http://www.co-ode.org/ontologies/galen#BrittleDiabetes>
         <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
     
     
-Class: <http://www.co-ode.org/ontologies/galen#Infection>
+Class: <http://www.co-ode.org/ontologies/galen#Tetracycline>
 
     SubClassOf: 
-        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
-    
-    
-Class: <http://www.co-ode.org/ontologies/galen#StructuralStatus>
-
-    
-Class: <http://www.co-ode.org/ontologies/galen#Cheyne-StokesRepiration>
-
-    SubClassOf: 
-        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
-    
-    
-Class: <http://www.co-ode.org/ontologies/galen#NonNormalBreathing>
-
-    SubClassOf: 
-        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
-    
-    
-Class: <http://www.co-ode.org/ontologies/galen#SecondaryHypertension>
-
-    SubClassOf: 
-        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+        <http://www.co-ode.org/ontologies/galen#Drug>
     
     
 Class: <http://www.co-ode.org/ontologies/galen#Diverticulum>
@@ -167,64 +140,49 @@ Class: <http://www.co-ode.org/ontologies/galen#Diverticulum>
         <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
     
     
+Class: <http://www.co-ode.org/ontologies/galen#NSAID>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
 Class: <http://www.co-ode.org/ontologies/galen#AcuteInfarctionOfPapillaryMuscle>
 
     SubClassOf: 
         <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
     
     
-Class: <http://www.co-ode.org/ontologies/galen#NormalOrNonNormalStatus>
+Class: <http://www.co-ode.org/ontologies/galen#DiabetogenicSubstance>
 
     
-Class: <http://www.co-ode.org/ontologies/galen#Dyspnoea>
-
-    SubClassOf: 
-        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
-    
-    
-Class: <http://www.co-ode.org/ontologies/galen#Apnoea>
+Class: <http://www.co-ode.org/ontologies/galen#Norfloxacin>
 
     SubClassOf: 
-        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+        <http://www.co-ode.org/ontologies/galen#Drug>
     
     
-Class: <http://www.co-ode.org/ontologies/galen#HuntingtonsChorea>
+Class: <http://www.co-ode.org/ontologies/galen#NalidixicAcid>
 
     SubClassOf: 
-        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+        <http://www.co-ode.org/ontologies/galen#Drug>
     
     
-Class: <http://www.co-ode.org/ontologies/galen#Ischaemia>
+Class: <http://www.co-ode.org/ontologies/galen#Quinolone>
 
     SubClassOf: 
-        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+        <http://www.co-ode.org/ontologies/galen#Drug>
     
     
-Class: <http://www.co-ode.org/ontologies/galen#ChronsDisease>
+Class: <http://www.co-ode.org/ontologies/galen#Amoxycillin>
 
     SubClassOf: 
-        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+        <http://www.co-ode.org/ontologies/galen#Drug>
     
-    
-Class: <http://www.co-ode.org/ontologies/galen#State>
-
     
 Class: <http://www.co-ode.org/ontologies/galen#PrimaryPulmonaryHypertension>
 
     SubClassOf: 
         <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
-    
-    
-Class: <http://www.co-ode.org/ontologies/galen#OtoLaryngology>
-
-    SubClassOf: 
-        <http://www.co-ode.org/ontologies/galen#Surgery>
-    
-    
-Class: <http://www.co-ode.org/ontologies/galen#ProcessPattern>
-
-    SubClassOf: 
-        <http://www.co-ode.org/ontologies/galen#TemporalFeature>
     
     
 Class: <http://www.co-ode.org/ontologies/galen#Surgery>
@@ -248,16 +206,10 @@ Class: <http://www.co-ode.org/ontologies/galen#OldMyocardialInfarctionProcess>
         <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
     
     
-Class: <http://www.co-ode.org/ontologies/galen#ViralInfection>
+Class: <http://www.co-ode.org/ontologies/galen#Ticarcillin>
 
     SubClassOf: 
-        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
-    
-    
-Class: <http://www.co-ode.org/ontologies/galen#HemorrhagicBlood>
-
-    SubClassOf: 
-        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+        <http://www.co-ode.org/ontologies/galen#Drug>
     
     
 Class: <http://www.co-ode.org/ontologies/galen#IntrinsicallyNonNormalBodyStructure>
@@ -270,30 +222,6 @@ Class: <http://www.co-ode.org/ontologies/galen#Urology>
 
     SubClassOf: 
         <http://www.co-ode.org/ontologies/galen#Surgery>
-    
-    
-Class: <http://www.co-ode.org/ontologies/galen#MyocardialInfarctionProcess>
-
-    SubClassOf: 
-        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
-    
-    
-Class: <http://www.co-ode.org/ontologies/galen#SystemicDisease>
-
-    SubClassOf: 
-        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
-    
-    
-Class: <http://www.co-ode.org/ontologies/galen#NonNormalBodyStructure>
-
-    SubClassOf: 
-        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
-    
-    
-Class: <http://www.co-ode.org/ontologies/galen#Frequency>
-
-    SubClassOf: 
-        <http://www.co-ode.org/ontologies/galen#TemporalFeature>
     
     
 Class: <http://www.co-ode.org/ontologies/galen#VascularSurgery>
@@ -309,19 +237,41 @@ Class: <http://www.co-ode.org/ontologies/galen#VascularSurgery>
         <http://www.co-ode.org/ontologies/galen#Aspect>
     
     
+Class: <http://www.co-ode.org/ontologies/galen#Carbenicllin>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Clarithromycin>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
 Class: <http://www.co-ode.org/ontologies/galen#LogicalStructure>
 
     
 Class: <http://www.co-ode.org/ontologies/galen#Diabetes>
 
     SubClassOf: 
-        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+        <http://www.co-ode.org/ontologies/galen#BodyProcess>,
+        <http://www.co-ode.org/ontologies/galen#NonNormalCondition>,
+        <http://www.co-ode.org/ontologies/galen#NAMEDNonNormalProcess>,
+        <http://www.co-ode.org/ontologies/galen#IntrinsicallyPathologicalBodyProcess>,
+        <http://www.co-ode.org/ontologies/galen#PathologicalCondition>,
+        <http://www.co-ode.org/ontologies/galen#Process>,
+        <http://www.co-ode.org/ontologies/galen#SystemicDisease>,
+        <http://www.co-ode.org/ontologies/galen#PathologicalBodyProcess>,
+        <http://www.co-ode.org/ontologies/galen#TopCategory>,
+        <http://www.co-ode.org/ontologies/galen#NAMEDPathologicalProcess>,
+        <http://www.co-ode.org/ontologies/galen#DomainCategory>
     
     
-Class: <http://www.co-ode.org/ontologies/galen#RaisedBloodSugarConcentration>
+Class: <http://www.co-ode.org/ontologies/galen#Oxytetracycline>
 
     SubClassOf: 
-        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+        <http://www.co-ode.org/ontologies/galen#Drug>
     
     
 Class: <http://www.co-ode.org/ontologies/galen#HemorrhageFromDuodenum>
@@ -330,41 +280,16 @@ Class: <http://www.co-ode.org/ontologies/galen#HemorrhageFromDuodenum>
         <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
     
     
-Class: <http://www.co-ode.org/ontologies/galen#nonNormal>
-
-    SubClassOf: 
-        <http://www.co-ode.org/ontologies/galen#Status>,
-        <http://www.co-ode.org/ontologies/galen#ModifierConcept>,
-        <http://www.co-ode.org/ontologies/galen#StructuralStatus>,
-        <http://www.co-ode.org/ontologies/galen#TopCategory>,
-        <http://www.co-ode.org/ontologies/galen#MedicalStatus>,
-        <http://www.co-ode.org/ontologies/galen#NormalOrNonNormalStatus>,
-        <http://www.co-ode.org/ontologies/galen#DomainCategory>,
-        <http://www.co-ode.org/ontologies/galen#Aspect>
-    
-    
-Class: <http://www.co-ode.org/ontologies/galen#SolidStructure>
-
-    
-Class: <http://www.co-ode.org/ontologies/galen#InsulinDependantDiabetes>
-
-    SubClassOf: 
-        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
-    
-    
-Class: <http://www.co-ode.org/ontologies/galen#Tachypnoea>
-
-    SubClassOf: 
-        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
-    
-    
-Class: <http://www.co-ode.org/ontologies/galen#ClinicalSpecialityState>
-
-    
 Class: <http://www.co-ode.org/ontologies/galen#Discharge>
 
     SubClassOf: 
         <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Clindamycin>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
     
     
 Class: <http://www.co-ode.org/ontologies/galen#DomainCategory>
@@ -376,14 +301,14 @@ Class: <http://www.co-ode.org/ontologies/galen#MaleGenitoUrinarySystem>
         <http://www.co-ode.org/ontologies/galen#AnatomicalSystem>
     
     
+Class: <http://www.co-ode.org/ontologies/galen#GeneralisedSubstance>
+
+    
 Class: <http://www.co-ode.org/ontologies/galen#variant>
 
     SubClassOf: 
         <http://www.co-ode.org/ontologies/galen#nonNormal>
     
-    
-Class: <http://www.co-ode.org/ontologies/galen#GeneralisedStructure>
-
     
 Class: <http://www.co-ode.org/ontologies/galen#OrganismState>
 
@@ -394,22 +319,34 @@ Class: <http://www.co-ode.org/ontologies/galen#Polyp>
         <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
     
     
-Class: <http://www.co-ode.org/ontologies/galen#UnusualBodyStructure>
+Class: <http://www.co-ode.org/ontologies/galen#Gliquidone>
 
     SubClassOf: 
-        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+        <http://www.co-ode.org/ontologies/galen#Drug>
     
     
-Class: <http://www.co-ode.org/ontologies/galen#NonInsulinDependantDiabetes>
+Class: <http://www.co-ode.org/ontologies/galen#Pindolol>
 
     SubClassOf: 
-        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+        <http://www.co-ode.org/ontologies/galen#Drug>
     
     
 Class: <http://www.co-ode.org/ontologies/galen#Orthopaedics>
 
     SubClassOf: 
         <http://www.co-ode.org/ontologies/galen#Surgery>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Sulphadimidine>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#BenzylPenicillin>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
     
     
 Class: <http://www.co-ode.org/ontologies/galen#PaediatricSurgery>
@@ -421,11 +358,14 @@ Class: <http://www.co-ode.org/ontologies/galen#PaediatricSurgery>
 Class: <http://www.co-ode.org/ontologies/galen#PhysicalStructure>
 
     
-Class: <http://www.co-ode.org/ontologies/galen#IntrinsicallyUnusualBodyStructure>
+Class: <http://www.co-ode.org/ontologies/galen#Sulphonylurea>
 
     SubClassOf: 
-        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+        <http://www.co-ode.org/ontologies/galen#Drug>
     
+    
+Class: <http://www.co-ode.org/ontologies/galen#PathologicalCondition>
+
     
 Class: <http://www.co-ode.org/ontologies/galen#BacterialNephritis>
 
@@ -433,8 +373,17 @@ Class: <http://www.co-ode.org/ontologies/galen#BacterialNephritis>
         <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
     
     
-Class: <http://www.co-ode.org/ontologies/galen#AnatomicalSystem>
+Class: <http://www.co-ode.org/ontologies/galen#Metformin>
 
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Trimethoprim>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
     
 Class: <http://www.co-ode.org/ontologies/galen#HemorrhageFromStomach>
 
@@ -442,19 +391,7 @@ Class: <http://www.co-ode.org/ontologies/galen#HemorrhageFromStomach>
         <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
     
     
-Class: <http://www.co-ode.org/ontologies/galen#IntrinsicallyVariantBodyStructure>
-
-    SubClassOf: 
-        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
-    
-    
 Class: <http://www.co-ode.org/ontologies/galen#RenalTuberculosis>
-
-    SubClassOf: 
-        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
-    
-    
-Class: <http://www.co-ode.org/ontologies/galen#HemorrhageProcess>
 
     SubClassOf: 
         <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
@@ -474,19 +411,39 @@ Class: <http://www.co-ode.org/ontologies/galen#unusual>
     
 Class: <http://www.co-ode.org/ontologies/galen#DiabetogenicDrug>
 
-    EquivalentTo: 
-        <http://www.co-ode.org/ontologies/galen#Drug>
-         and (<http://www.co-ode.org/ontologies/galen#IsCausallyLinkedTo> some <http://www.co-ode.org/ontologies/galen#Diabetes>)
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>,
+        <http://www.co-ode.org/ontologies/galen#ChemicalSubstance>,
+        <http://www.co-ode.org/ontologies/galen#TopCategory>,
+        <http://www.co-ode.org/ontologies/galen#GeneralisedSubstance>,
+        <http://www.co-ode.org/ontologies/galen#Substance>,
+        <http://www.co-ode.org/ontologies/galen#DomainCategory>,
+        <http://www.co-ode.org/ontologies/galen#DiabetogenicSubstance>
     
     
-Class: <http://www.co-ode.org/ontologies/galen#UlcerativeColitis>
+Class: <http://www.co-ode.org/ontologies/galen#Cephalosporin>
 
     SubClassOf: 
-        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+        <http://www.co-ode.org/ontologies/galen#Drug>
     
     
-Class: <http://www.co-ode.org/ontologies/galen#Drug>
+Class: <http://www.co-ode.org/ontologies/galen#Penicillin>
 
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Spectinomycin>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Chlopropamide>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
     
 Class: <http://www.co-ode.org/ontologies/galen#Hypertension>
 
@@ -494,14 +451,14 @@ Class: <http://www.co-ode.org/ontologies/galen#Hypertension>
         <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
     
     
-Class: <http://www.co-ode.org/ontologies/galen#TopCategory>
-
-    
-Class: <http://www.co-ode.org/ontologies/galen#InfarctionProcess>
+Class: <http://www.co-ode.org/ontologies/galen#AntiTuberculousAntimicrobial>
 
     SubClassOf: 
-        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+        <http://www.co-ode.org/ontologies/galen#Drug>
     
+    
+Class: <http://www.co-ode.org/ontologies/galen#TopCategory>
+
     
 Class: <http://www.co-ode.org/ontologies/galen#StartTime>
 
@@ -512,25 +469,13 @@ Class: <http://www.co-ode.org/ontologies/galen#StartTime>
 Class: <http://www.co-ode.org/ontologies/galen#GenitoUrinarySystem>
 
     SubClassOf: 
-        <http://www.co-ode.org/ontologies/galen#System>,
-        <http://www.co-ode.org/ontologies/galen#TopCategory>,
-        <http://www.co-ode.org/ontologies/galen#AnatomicalSystem>,
-        <http://www.co-ode.org/ontologies/galen#AbstractStructure>,
-        <http://www.co-ode.org/ontologies/galen#GeneralisedStructure>,
-        <http://www.co-ode.org/ontologies/galen#LogicalStructure>,
-        <http://www.co-ode.org/ontologies/galen#DomainCategory>
+        <http://www.co-ode.org/ontologies/galen#AnatomicalSystem>
     
     
-Class: <http://www.co-ode.org/ontologies/galen#Vomiting>
+Class: <http://www.co-ode.org/ontologies/galen#BetaBlocker>
 
     SubClassOf: 
-        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
-    
-    
-Class: <http://www.co-ode.org/ontologies/galen#Kussmaul-KienRespiration>
-
-    SubClassOf: 
-        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+        <http://www.co-ode.org/ontologies/galen#Drug>
     
     
 Class: <http://www.co-ode.org/ontologies/galen#NAMEDPathologicalProcess>
@@ -554,8 +499,20 @@ Class: <http://www.co-ode.org/ontologies/galen#Duration>
         <http://www.co-ode.org/ontologies/galen#TemporalFeature>
     
     
-Class: <http://www.co-ode.org/ontologies/galen#MedicalStatus>
+Class: <http://www.co-ode.org/ontologies/galen#Process>
 
+    
+Class: <http://www.co-ode.org/ontologies/galen#Erythromycin>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Bisoprolol>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
     
 Class: <http://www.co-ode.org/ontologies/galen#VariantBodyStructure>
 
@@ -563,10 +520,16 @@ Class: <http://www.co-ode.org/ontologies/galen#VariantBodyStructure>
         <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
     
     
-Class: <http://www.co-ode.org/ontologies/galen#MyocardialIschaemiaProcess>
+Class: <http://www.co-ode.org/ontologies/galen#Labetolol>
 
     SubClassOf: 
-        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Betaxolol>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
     
     
 Class: <http://www.co-ode.org/ontologies/galen#DigestiveSystem>
@@ -575,16 +538,653 @@ Class: <http://www.co-ode.org/ontologies/galen#DigestiveSystem>
         <http://www.co-ode.org/ontologies/galen#AnatomicalSystem>
     
     
+Class: <http://www.co-ode.org/ontologies/galen#Ethambutol>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Celiprolol>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
 Class: <http://www.co-ode.org/ontologies/galen#NAMEDNonNormalProcess>
 
     SubClassOf: 
         <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
     
     
+Class: <http://www.co-ode.org/ontologies/galen#Doxycycline>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Propranolol>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
 Class: <http://www.co-ode.org/ontologies/galen#TimeOfOccurrence>
 
     SubClassOf: 
         <http://www.co-ode.org/ontologies/galen#TemporalFeature>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#AntimicrobialResistantToBetaLactamase>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Status>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#EssentialHypertension>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#PathologicalBodyProcess>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#BodyStructure>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Ceftazidime>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Nystatin>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#MalignantHypertension>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#ModifierConcept>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#System>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Oxprenolol>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#IntrinsicallyAbnormalBodyStructure>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#RenalInfection>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#abnormal>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#AbstractStructure>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#AntiAnaerobicAntimicrobial>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Bacitracin>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#BetaLactamAntimicrobial>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#NonNormalCondition>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#FemaleGenitoUrinarySystem>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#System>,
+        <http://www.co-ode.org/ontologies/galen#TopCategory>,
+        <http://www.co-ode.org/ontologies/galen#AbstractStructure>,
+        <http://www.co-ode.org/ontologies/galen#GeneralisedStructure>,
+        <http://www.co-ode.org/ontologies/galen#GenitoUrinarySystem>,
+        <http://www.co-ode.org/ontologies/galen#LogicalStructure>,
+        <http://www.co-ode.org/ontologies/galen#DomainCategory>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Feature>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#IntrinsicallyPathologicalBodyProcess>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Sulphonamide>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Netilmicin>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#GastricHemorrhage>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Infection>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Cefaclor>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#StructuralStatus>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Neomycin>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Cheyne-StokesRepiration>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Ampicillin>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#NonNormalBreathing>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#SecondaryHypertension>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#NormalOrNonNormalStatus>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Dyspnoea>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Antifungal>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#BactericidalAntimicrobial>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#PhenoxymethylPenicillin>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Sotalol>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Apnoea>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Macrolide>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#HuntingtonsChorea>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Amphotericin>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Ischaemia>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Chloramphenicol>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#ChronsDisease>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#State>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Nitrofurantoin>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#OtoLaryngology>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Surgery>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#ProcessPattern>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#TemporalFeature>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#ViralInfection>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#AntimicrobialSensitiveToBetaLactamase>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#HemorrhagicBlood>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Terbinafine>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Cefixime>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#MyocardialInfarctionProcess>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#SystemicDisease>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Vancomycin>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#NonNormalBodyStructure>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Frequency>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#TemporalFeature>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Substance>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Gentamicin>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Ciprofloxacin>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#RaisedBloodSugarConcentration>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#nonNormal>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Status>,
+        <http://www.co-ode.org/ontologies/galen#ModifierConcept>,
+        <http://www.co-ode.org/ontologies/galen#StructuralStatus>,
+        <http://www.co-ode.org/ontologies/galen#TopCategory>,
+        <http://www.co-ode.org/ontologies/galen#MedicalStatus>,
+        <http://www.co-ode.org/ontologies/galen#NormalOrNonNormalStatus>,
+        <http://www.co-ode.org/ontologies/galen#DomainCategory>,
+        <http://www.co-ode.org/ontologies/galen#Aspect>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Penbutolol>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#SolidStructure>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#InsulinDependantDiabetes>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Tachypnoea>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Griseofulvin>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#ClinicalSpecialityState>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Fluconazole>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#GeneralisedStructure>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#FusidicAcid>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#UnusualBodyStructure>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#NonInsulinDependantDiabetes>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Tolazamide>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Acebutolol>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Glibenclamide>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#IntrinsicallyUnusualBodyStructure>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#AnatomicalSystem>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#IntrinsicallyVariantBodyStructure>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#HemorrhageProcess>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Miconazole>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#NAMEDDrug>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Methicillin>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Cephalexin>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#ChemicalSubstance>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Sulfametopyrazine>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#UlcerativeColitis>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Drug>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Atenolol>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#InfarctionProcess>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Tolbutamide>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Vomiting>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Kussmaul-KienRespiration>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Cefuroxime>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Biguanide>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#BodyProcess>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Sulphadiazine>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Tobramycin>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#MedicalStatus>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Antimicrobial>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#BacteristaticAntimicrobial>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#MyocardialIschaemiaProcess>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Cefotaxime>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Gliclazide>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Timolol>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Sulphamethoxazole>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Ofloxacin>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Drug>
     
     
 Class: <http://www.co-ode.org/ontologies/galen#Aspect>
