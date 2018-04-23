@@ -41,6 +41,9 @@ public class ELEngine {
         myParser = new ELParser(myOntology, myShortFormProvider);
     }
 
+    public OWLOntology getOntology(){
+    	return myOntology;
+    } 
     public Set<OWLClass> getClassesInSignature() {
         return myOntology.getClassesInSignature();
     }
@@ -197,8 +200,11 @@ public class ELEngine {
         System.out.flush();
         myReasoner.dispose();
     }
-
-//	public Reasoner getOWLObjectIntersectionOf(List<OWLClass> classAux) {
+    public void applyChange(OWLOntologyChange change) {
+    	myManager.applyChange(change);
+    }	
+    	//	public Reasoner getOWLObjectIntersectionOf(List<OWLClass> classAux) {
+    
 //		OWLDataFactory dataFactory = myManager.getOWLDataFactory();
 //		return dataFactory.getOWLObjectIntersectionOf(classAux);
 //		  

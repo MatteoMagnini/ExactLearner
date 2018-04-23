@@ -233,37 +233,33 @@ public class consoleLearner {
 
 	public void runLearner() throws Throwable {
 
-		
-		if (autoBox) {  
-
-			if (equivalenceQuery()) {
-				victory();
-				timeEnd = System.currentTimeMillis();
-				System.out.println("Total time (ms): " + (timeEnd - timeStart));
-				lastCE = null;
-				return;
-			} else if (ezBox) {
-				equivCount++;
+		while (!equivalenceQuery()) {
+			equivCount++;
+			if (ezBox) {
 				ezEq();
-			} else {
-				equivCount++;
-				doCE();
+			} else {	
+				lastCE=getCounterExample();
 			}
-			// System.out.println(myRenderer.render(lastCE));
-
+			 
 			OWLClassExpression left = null;
 			OWLClassExpression right = null;
 			// lastCE is last counter example provided by elOracle, unsaturate and saturate
 			if (lastCE.isOfType(AxiomType.SUBCLASS_OF)) {
 				left = ((OWLSubClassOfAxiom) lastCE).getSubClass();
 				right = ((OWLSubClassOfAxiom) lastCE).getSuperClass();
-			} else {
-
-				runLearner();
-
-				return;
-
-			}
+//			}
+//			else 
+//				if (lastCE.isOfType(AxiomType.EQUIVALENT_CLASSES)) {
+//				left =  lastCE.
+//				right = ((OWLSubClassOfAxiom) lastCE).getSuperClass();
+//				if(!elLearner.isCounterExample(left,right)) {
+//					right = ((OWLSubClassOfAxiom) lastCE).getSubClass();
+//					left = ((OWLSubClassOfAxiom) lastCE).getSuperClass();
+//				} if(!elLearner.isCounterExample(left,right)) {
+//					throw new RuntimeException("Wrong counterexample format. Not a counterexample.");
+//				}
+			} else	
+				throw new RuntimeException("Wrong counterexample format.");
 			lastCE = elQueryEngineForT.getSubClassAxiom(left, right);
 			// check if complex side is left
 			if (checkLeft(lastCE)) {
@@ -327,9 +323,13 @@ public class consoleLearner {
 					e2.printStackTrace();
 				}
 			}
-			runLearner();
+			 
 		}
-
+	victory();
+	timeEnd = System.currentTimeMillis();
+	System.out.println("Total time (ms): " + (timeEnd - timeStart));
+	lastCE = null;
+	return;
 	}
 
 	public void equivalenceCheck() {
@@ -350,11 +350,7 @@ public class consoleLearner {
 						victory();
 						System.out.println("It took: " + x);
 						System.out.flush();
-					} else {
-						// generate counter example
-						System.out.flush();
-						doCE();
-					}
+					}  
 				} while (!equivalenceQuery());
 			} else {
 				boolean check = equivalenceQuery();
@@ -362,27 +358,13 @@ public class consoleLearner {
 				if (check) {
 					// victory
 					victory();
-				} else {
-					// generate counter example
-					doCE();
-				}
+				}  
 			}
 		}
 
 	}
 
-	public void doCE() {
-		String counterEx = "";
-		System.out.println("Generating counterexample... ");
-		try {
-			counterEx = getCounterExample();
-
-		} catch (Exception e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		System.out.println(counterEx);
-	}
+	 
 
 	public void victory() {
 		//win = true;
@@ -557,7 +539,7 @@ public class consoleLearner {
 
 
 
-	public String getCounterExample() throws Exception {
+	public OWLAxiom getCounterExample() throws Exception {
 		Iterator<OWLAxiom> iteratorT = axiomsT.iterator();
 		while (iteratorT.hasNext()) {
 			OWLAxiom selectedAxiom = iteratorT.next();
@@ -628,7 +610,7 @@ public class consoleLearner {
 						counterexample = null;
 						selectedAxiom = null;
 						iteratorT = null;
-						return addHypothesis(newCounterexampleAxiom);
+						return newCounterexampleAxiom;
 					}
 				}
 			}
@@ -652,6 +634,8 @@ public class consoleLearner {
 							OWLClassExpression SuperclassInSet = iteratorSuperClass.next();
 							OWLAxiom newCounterexampleAxiom = elQueryEngineForT.getSubClassAxiom(subclass,
 									SuperclassInSet);
+							if(newCounterexampleAxiom==null)
+								System.out.println("NULL");
 							Boolean querySubClass = elQueryEngineForH.entailed(newCounterexampleAxiom);
 							Boolean querySubClassforT = elQueryEngineForT.entailed(newCounterexampleAxiom);
 							if (!querySubClass && querySubClassforT) {
@@ -704,7 +688,7 @@ public class consoleLearner {
 								selectedAxiom = null;
 								iteratorT = null;
 								System.out.flush();
-								return addHypothesis(newCounterexampleAxiom);
+								return newCounterexampleAxiom;
 							}
 						}
 					}
@@ -773,7 +757,7 @@ public class consoleLearner {
 						iterator = null;
 						iteratorT = null;
 						System.out.flush();
-						return addHypothesis((OWLSubClassOfAxiom) selectedAxiom);
+						return  selectedAxiom;
 					}
 				}
 
@@ -831,7 +815,7 @@ public class consoleLearner {
 							iteratorAsSub = null;
 							iteratorT = null;
 							System.out.flush();
-							return addHypothesis(subClassAxiom);
+							return subClassAxiom;
 						}
 					}
 				}
@@ -913,7 +897,7 @@ public class consoleLearner {
 
 		//AddAxiom newAxiomInH = new AddAxiom(hypothesisOntology, addedAxiom);
 		//myManager.applyChange(newAxiomInH);
-
+        System.out.println(addedAxiom.toString());
 		myManager.addAxiom(hypothesisOntology, addedAxiom);
 		minimiseHypothesis();
 		saveOWLFile(hypothesisOntology, hypoFile);
@@ -933,27 +917,31 @@ public class consoleLearner {
 		myManager.saveOntology(ontology, manSyntaxFormat, IRI.create(file.toURI()));
 	}
 
-	private void minimiseHypothesis() {
-		Set<OWLAxiom> tmpaxiomsH = hypothesisOntology.getAxioms();
+	private void minimiseHypothesis() throws Exception {
+		//TODO Change here
+		if(elQueryEngineForH==null||elQueryEngineForH.getOntology()==null)
+			elQueryEngineForH=new ELEngine(hypothesisOntology);
+			
+		Set<OWLAxiom> tmpaxiomsH = elQueryEngineForH.getOntology().getAxioms();
 		Iterator<OWLAxiom> ineratorMinH = tmpaxiomsH.iterator();
 		Set<OWLAxiom> checkedAxiomsSet = new HashSet<OWLAxiom>();
 		//String removedstring = "";
-		Boolean flag = false;
+		 
 		if (tmpaxiomsH.size() > 1) {
 			while (ineratorMinH.hasNext()) {
 				OWLAxiom checkedAxiom = ineratorMinH.next();
 				if (!checkedAxiomsSet.contains(checkedAxiom)) {
 					checkedAxiomsSet.add(checkedAxiom);
 
-					RemoveAxiom removedAxiom = new RemoveAxiom(hypothesisOntology, checkedAxiom);
-					myManager.applyChange(removedAxiom);
-
+					RemoveAxiom removedAxiom = new RemoveAxiom(elQueryEngineForH.getOntology(), checkedAxiom);
+					elQueryEngineForH.applyChange(removedAxiom);
+					
 					Boolean queryAns = elQueryEngineForH.entailed(checkedAxiom);
-
+						
 					if (!queryAns) {
 						//put it back
 						AddAxiom addAxiomtoH = new AddAxiom(hypothesisOntology, checkedAxiom);
-						myManager.applyChange(addAxiomtoH);
+						elQueryEngineForH.applyChange(addAxiomtoH);
 					}
 				}
 			}
