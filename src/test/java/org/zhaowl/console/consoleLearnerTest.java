@@ -14,14 +14,13 @@ public class consoleLearnerTest {
         Logger.getRootLogger().setLevel(Level.OFF);
         String path = "src/main/resources/ontologies/small/";
 
-        String[] ontologies = {"animals.owl", "football.owl",  "cell.owl",
-                "generations.owl", "university.owl"};
-        for (String fn : ontologies) {
-            System.out.println("running on " + path + fn);
-            String[] args = {path + fn, "on", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t"};
-            consoleLearner cl = new consoleLearner();
-            cl.doIt(args);
-        }
+        String[] ontologies = {
+                "animals.owl",
+                "football.owl",
+                "cell.owl",
+                "generations.owl",
+                "university.owl"};
+        runDoIt(path, ontologies);
     }
 
     @Test
@@ -29,10 +28,16 @@ public class consoleLearnerTest {
         Logger.getRootLogger().setLevel(Level.OFF);
         String path = "src/main/resources/ontologies/medium/";
 
-        String[] ontologies = {"fungal_anatomy.owl",
+        String[] ontologies = {
+                "fungal_anatomy.owl",
                 "infectious_disease.owl",
-                "/space.owl",
+                "space.owl",
                 "worm_development.owl"};
+        runDoIt(path, ontologies);
+    }
+
+
+    private void runDoIt(String path, String[] ontologies) {
         for (String fn : ontologies) {
             System.out.println("running on " + path + fn);
             String[] args = {path + fn, "on", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t"};
@@ -40,7 +45,6 @@ public class consoleLearnerTest {
             cl.doIt(args);
         }
     }
-
     public void smallOntologies() {
         Logger.getRootLogger().setLevel(Level.OFF);
         File dir = new File("src/main/resources/ontologies/small");
