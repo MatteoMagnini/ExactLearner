@@ -14,22 +14,24 @@ Class: <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#Policy>
 Class: <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#Retry-Until-SucceedUsernamePolicy>
 
     SubClassOf: 
-        <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#GeneralReliabilityKerberosPolicy>
+        <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#X509>,
+        <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#UsernameToken>
     
     
 Class: <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#IncoherentPolicy>
 
     SubClassOf: 
-        <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#GeneralReliabilityKerberosPolicy>
+        <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#UsernameToken>,
+        <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#X509>
     
-    
-Class: <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#GeneralReliabilityKerberosPolicy>
-
     
 Class: <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#UsernameToken>
 
     
 Class: <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#X509>
+
+    
+Class: <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#GeneralReliabilityKerberosPolicy>
 
     
 Class: <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#SecurityTokenType>
@@ -38,13 +40,14 @@ Class: <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#Securit
 Class: <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#GeneralReliabilityUsernamePolicy>
 
     SubClassOf: 
-        <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#GeneralReliabilityKerberosPolicy>
+        <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#X509>,
+        <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#UsernameToken>
     
     
 Class: <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#Retry-On-FailureUsernamePolicy>
 
     SubClassOf: 
-        <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#UsernameToken>,
+        <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#GeneralReliabilityUsernamePolicy>,
         <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#Messaging>,
         <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#ExactlyOneExamplePolicy>,
         <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#Retry-On-Failure>,

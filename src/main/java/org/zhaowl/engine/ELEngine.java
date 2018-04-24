@@ -1,14 +1,8 @@
 package org.zhaowl.engine;
 
-import java.util.List;
 import java.util.Set;
 
-import javax.swing.JOptionPane;
-
-import org.coode.owlapi.manchesterowlsyntax.ManchesterOWLSyntaxEditorParser;
 import org.semanticweb.elk.owlapi.ElkReasonerFactory;
-import org.semanticweb.owlapi.expression.OWLEntityChecker;
-import org.semanticweb.owlapi.expression.ShortFormEntityChecker;
 import org.semanticweb.owlapi.model.*;
 import org.semanticweb.owlapi.reasoner.InferenceType;
 import org.semanticweb.owlapi.reasoner.NodeSet;
@@ -25,19 +19,18 @@ public class ELEngine {
 	private final OWLOntology myOntology;
 	private final OWLOntologyManager myManager;
     private final ELParser myParser;
-    private ShortFormProvider myShortFormProvider;
     private static final Logger LOGGER_ = LoggerFactory
             .getLogger(ELEngine.class);
     /** Constructs a ELQueryEngine. This will answer "DL queries" using the
      * specified myReasoner. A short form provider specifies how entities are
      * rendered.
      *
-     * @param ontology*/
+     * @param ontology reasoning engine for the given ontology*/
     public ELEngine(OWLOntology ontology) {
         myOntology = ontology;
         myManager = myOntology.getOWLOntologyManager();
-        myReasoner = createReasoner(ontology, "");
-        myShortFormProvider = new SimpleShortFormProvider();
+        myReasoner = createReasoner(ontology);
+        ShortFormProvider myShortFormProvider = new SimpleShortFormProvider();
         myParser = new ELParser(myOntology, myShortFormProvider);
     }
 
@@ -90,7 +83,7 @@ public class ELEngine {
         myReasoner.precomputeInferences(InferenceType.CLASS_HIERARCHY);
 
         NodeSet<OWLClass> superClasses = myReasoner.getSuperClasses(leftName, false);
-        Node<OWLClass> equivClassess = myReasoner.getEquivalentClasses(leftName);
+        Node<OWLClass> equivClasses = myReasoner.getEquivalentClasses(leftName);
 
         /*
         LOGGER_.trace("(Strict) superClasses of " + leftName + " ");
@@ -104,12 +97,12 @@ public class ELEngine {
 
         /*
         LOGGER_.trace("equivalentClasses of " + leftName + " ");
-        for(OWLClass c : equivClassess.getEntities()) {
+        for(OWLClass c : equivClasses.getEntities()) {
             LOGGER_.trace(c.toString());
         }
         LOGGER_.trace("");
         */
-        if (!equivClassess.getEntities().isEmpty() && equivClassess.getEntities().contains(rightName))
+        if (!equivClasses.getEntities().isEmpty() && equivClasses.getEntities().contains(rightName))
             workaround = true;
 
 
@@ -187,8 +180,8 @@ public class ELEngine {
         return subClasses.getFlattened();
     }
 
-    private OWLReasoner createReasoner(final OWLOntology rootOntology, String reasonerName) {
-        LOGGER_.trace("Reasoner "+ reasonerName + " created");
+    private OWLReasoner createReasoner(final OWLOntology rootOntology) {
+        LOGGER_.trace("Reasoner created");
         //Thread.dumpStack();
         System.out.flush();
         ElkReasonerFactory reasoningFactory = new ElkReasonerFactory();
