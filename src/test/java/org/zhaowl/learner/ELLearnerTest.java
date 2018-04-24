@@ -16,8 +16,8 @@ import static org.junit.Assert.*;
 
 public class ELLearnerTest {
 
-    private consoleLearner cl = new consoleLearner();
-    private OWLOntologyManager man = OWLManager.createOWLOntologyManager();
+    private final consoleLearner cl = new consoleLearner();
+    private final OWLOntologyManager man = OWLManager.createOWLOntologyManager();
     private OWLOntology targetOntology = null;
     private OWLOntology hypothesisOntology = null;
     private ELEngine elQueryEngineForT = null;

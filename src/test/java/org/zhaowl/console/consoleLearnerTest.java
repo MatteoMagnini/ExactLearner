@@ -57,12 +57,7 @@ public class consoleLearnerTest {
     }
     private void runInFolder(File dir) {
         System.out.println("Running in " + dir.toString());
-        File[] directoryListing = dir.listFiles(new FileFilter() {
-            @Override
-            public boolean accept(File pathname) {
-                return pathname.getName().endsWith(".owl");
-            }
-        });
+        File[] directoryListing = dir.listFiles(pathname -> pathname.getName().endsWith(".owl"));
 
         if(directoryListing != null) {
             for(File ont : directoryListing) {

@@ -1,5 +1,5 @@
 package org.zhaowl.engine;
 
-public class ReasoningMethodUnsupportedException extends Exception {
+class ReasoningMethodUnsupportedException extends Exception {
 
 }

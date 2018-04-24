@@ -216,8 +216,7 @@ public class consoleLearner {
 		}
 		victory();		
 		lastCE = null;
-		return;
-	}	
+    }
 
 	private OWLAxiom computeEssentialLeftCounterexample() throws Exception {
 		OWLAxiom axiom=null;
@@ -446,132 +445,130 @@ public class consoleLearner {
 
 
 	private OWLAxiom getCounterExample(ELEngine elQueryEngineForT, ELEngine elQueryEngineForH) throws Exception {
-		Iterator<OWLAxiom> iteratorT = axiomsT.iterator();
-		while (iteratorT.hasNext()) {
-			OWLAxiom selectedAxiom = iteratorT.next();
-			selectedAxiom.getAxiomType();
+        for (OWLAxiom selectedAxiom : axiomsT) {
+            selectedAxiom.getAxiomType();
 
-			// first get CounterExample from an axiom with the type SUBCLASS_OF
-			if (selectedAxiom.isOfType(AxiomType.SUBCLASS_OF)) {
-				Boolean queryAns = elQueryEngineForH.entailed(selectedAxiom);
-				// if hypothesis does NOT entail the CI
-				if (!queryAns) {
-					// System.out.println("Chosen CE:" + myRenderer.render(selectedAxiom));
-					OWLSubClassOfAxiom counterexample = (OWLSubClassOfAxiom) selectedAxiom;
-					OWLClassExpression subclass = counterexample.getSubClass();
-					OWLClassExpression superclass = counterexample.getSuperClass();
+            // first get CounterExample from an axiom with the type SUBCLASS_OF
+            if (selectedAxiom.isOfType(AxiomType.SUBCLASS_OF)) {
+                Boolean queryAns = elQueryEngineForH.entailed(selectedAxiom);
+                // if hypothesis does NOT entail the CI
+                if (!queryAns) {
+                    // System.out.println("Chosen CE:" + myRenderer.render(selectedAxiom));
+                    OWLSubClassOfAxiom counterexample = (OWLSubClassOfAxiom) selectedAxiom;
+                    OWLClassExpression subclass = counterexample.getSubClass();
+                    OWLClassExpression superclass = counterexample.getSuperClass();
 
-					// create new counter example from the subclass and superclass
-					// of axiom NOT entailed by H
+                    // create new counter example from the subclass and superclass
+                    // of axiom NOT entailed by H
 
-					OWLAxiom newCounterexampleAxiom = getCounterExamplefromSubClassAxiom(subclass, superclass,elQueryEngineForT,elQueryEngineForH);
-					if (newCounterexampleAxiom != null) {
-						// if we actually got something, we use it as new counter example
+                    OWLAxiom newCounterexampleAxiom = getCounterExamplefromSubClassAxiom(subclass, superclass, elQueryEngineForT, elQueryEngineForH);
+                    if (newCounterexampleAxiom != null) {
+                        // if we actually got something, we use it as new counter example
 
-						// System.out.println("subclass 1");
-						// *-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*
-						// ADD SATURATION FOR newCounterexampleAxiom HERE
-						OWLClassExpression ex = null;
-						if (checkLeft(newCounterexampleAxiom)) {
-							if (oracleMerge) {
-								// ex = null;
-								// System.out.println(newCounterexampleAxiom);
-								// if (checkLeft(newCounterexampleAxiom)) {
-								ex = elOracle.oracleSiblingMerge(
-										((OWLSubClassOfAxiom) newCounterexampleAxiom).getSubClass(),
-										((OWLSubClassOfAxiom) newCounterexampleAxiom).getSuperClass());
-								newCounterexampleAxiom = elQueryEngineForT.getSubClassAxiom(ex, superclass);
-								// ex = null;
-							}
-							if (oracleSaturate)
-								newCounterexampleAxiom = elOracle
-										.saturateWithTreeLeft((OWLSubClassOfAxiom) newCounterexampleAxiom);
-						} else {
+                        // System.out.println("subclass 1");
+                        // *-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*
+                        // ADD SATURATION FOR newCounterexampleAxiom HERE
+                        OWLClassExpression ex = null;
+                        if (checkLeft(newCounterexampleAxiom)) {
+                            if (oracleMerge) {
+                                // ex = null;
+                                // System.out.println(newCounterexampleAxiom);
+                                // if (checkLeft(newCounterexampleAxiom)) {
+                                ex = elOracle.oracleSiblingMerge(
+                                        ((OWLSubClassOfAxiom) newCounterexampleAxiom).getSubClass(),
+                                        ((OWLSubClassOfAxiom) newCounterexampleAxiom).getSuperClass());
+                                newCounterexampleAxiom = elQueryEngineForT.getSubClassAxiom(ex, superclass);
+                                // ex = null;
+                            }
+                            if (oracleSaturate)
+                                newCounterexampleAxiom = elOracle
+                                        .saturateWithTreeLeft((OWLSubClassOfAxiom) newCounterexampleAxiom);
+                        } else {
 
-							if (oracleBranch) {
-								// ex = null;
-								OWLSubClassOfAxiom auxAx = (OWLSubClassOfAxiom) newCounterexampleAxiom;
-								ex = elOracle.branchRight(auxAx.getSubClass(), auxAx.getSuperClass());
-								newCounterexampleAxiom = elQueryEngineForT.getSubClassAxiom(auxAx.getSubClass(), ex);
-							}
-							if (oracleUnsaturate) {
-								// ex = null;
-								ex = elOracle.unsaturateRight(newCounterexampleAxiom);
-								newCounterexampleAxiom = elQueryEngineForT.getSubClassAxiom(subclass, ex);
-							}
-						}
-						/*
-						 * } else { ex = siblingMerge(((OWLSubClassOfAxiom)
-						 * newCounterexampleAxiom).getSuperClass()); newCounterexampleAxiom =
-						 * saturateWithTreeRight( elQueryEngineForT.getSubClassAxiom(subclass, ex)); }
-						 */
+                            if (oracleBranch) {
+                                // ex = null;
+                                OWLSubClassOfAxiom auxAx = (OWLSubClassOfAxiom) newCounterexampleAxiom;
+                                ex = elOracle.branchRight(auxAx.getSubClass(), auxAx.getSuperClass());
+                                newCounterexampleAxiom = elQueryEngineForT.getSubClassAxiom(auxAx.getSubClass(), ex);
+                            }
+                            if (oracleUnsaturate) {
+                                // ex = null;
+                                ex = elOracle.unsaturateRight(newCounterexampleAxiom);
+                                newCounterexampleAxiom = elQueryEngineForT.getSubClassAxiom(subclass, ex);
+                            }
+                        }
+                        /*
+                         * } else { ex = siblingMerge(((OWLSubClassOfAxiom)
+                         * newCounterexampleAxiom).getSuperClass()); newCounterexampleAxiom =
+                         * saturateWithTreeRight( elQueryEngineForT.getSubClassAxiom(subclass, ex)); }
+                         */
 
-						// *-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*
-						lastCE = newCounterexampleAxiom;
-						return newCounterexampleAxiom;
-					}
-				}
-			}
+                        // *-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*
+                        lastCE = newCounterexampleAxiom;
+                        return newCounterexampleAxiom;
+                    }
+                }
+            }
 
-			// get CounterExample from an axiom with the type EQUIVALENT_CLASSES
-			if (selectedAxiom.isOfType(AxiomType.EQUIVALENT_CLASSES)) {
+            // get CounterExample from an axiom with the type EQUIVALENT_CLASSES
+            if (selectedAxiom.isOfType(AxiomType.EQUIVALENT_CLASSES)) {
 
-				OWLEquivalentClassesAxiom counterexample = (OWLEquivalentClassesAxiom) selectedAxiom;
-				Set<OWLSubClassOfAxiom> eqsubclassaxioms = counterexample.asOWLSubClassOfAxioms();
+                OWLEquivalentClassesAxiom counterexample = (OWLEquivalentClassesAxiom) selectedAxiom;
+                Set<OWLSubClassOfAxiom> eqsubclassaxioms = counterexample.asOWLSubClassOfAxioms();
 
-				for (OWLSubClassOfAxiom subClassAxiom : eqsubclassaxioms) {
-					OWLClassExpression subclass = subClassAxiom.getSubClass();
+                for (OWLSubClassOfAxiom subClassAxiom : eqsubclassaxioms) {
+                    OWLClassExpression subclass = subClassAxiom.getSubClass();
 
-					Set<OWLClass> superclasses = elQueryEngineForT.getSuperClasses(subclass, true);
-					if (!superclasses.isEmpty()) {
-						for (OWLClass SuperclassInSet : superclasses) {
-							OWLAxiom newCounterexampleAxiom = elQueryEngineForT.getSubClassAxiom(subclass,
-									SuperclassInSet);
+                    Set<OWLClass> superclasses = elQueryEngineForT.getSuperClasses(subclass, true);
+                    if (!superclasses.isEmpty()) {
+                        for (OWLClass SuperclassInSet : superclasses) {
+                            OWLAxiom newCounterexampleAxiom = elQueryEngineForT.getSubClassAxiom(subclass,
+                                    SuperclassInSet);
 
-							Boolean querySubClass = elQueryEngineForH.entailed(newCounterexampleAxiom);
-							Boolean querySubClassforT = elQueryEngineForT.entailed(newCounterexampleAxiom);
-							if (!querySubClass && querySubClassforT) {
+                            Boolean querySubClass = elQueryEngineForH.entailed(newCounterexampleAxiom);
+                            Boolean querySubClassforT = elQueryEngineForT.entailed(newCounterexampleAxiom);
+                            if (!querySubClass && querySubClassforT) {
 
-								// System.out.println("eq 1");
-								// *-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*
-								// ADD SATURATION FOR newCounterexampleAxiom HERE
-								OWLClassExpression ex = null;
-								if (checkLeft(newCounterexampleAxiom)) {
-									if (oracleMerge) {
+                                // System.out.println("eq 1");
+                                // *-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*
+                                // ADD SATURATION FOR newCounterexampleAxiom HERE
+                                OWLClassExpression ex = null;
+                                if (checkLeft(newCounterexampleAxiom)) {
+                                    if (oracleMerge) {
 
-										// ex = null;
-										// System.out.println(newCounterexampleAxiom);
-										// if (checkLeft(newCounterexampleAxiom)) {
-										ex = elOracle.oracleSiblingMerge(
-												((OWLSubClassOfAxiom) newCounterexampleAxiom).getSubClass(),
-												((OWLSubClassOfAxiom) newCounterexampleAxiom).getSuperClass());
-										newCounterexampleAxiom = elQueryEngineForT.getSubClassAxiom(ex,
-												((OWLSubClassOfAxiom) newCounterexampleAxiom).getSuperClass());
-										// ex = null;
-									}
-									if (oracleSaturate)
-										newCounterexampleAxiom = elOracle
-												.saturateWithTreeLeft((OWLSubClassOfAxiom) newCounterexampleAxiom);
-								} else {
-									if (oracleBranch) {
-										// ex = null;
-										OWLSubClassOfAxiom auxAx = (OWLSubClassOfAxiom) newCounterexampleAxiom;
-										ex = elOracle.branchRight(auxAx.getSubClass(), auxAx.getSuperClass());
-										newCounterexampleAxiom = elQueryEngineForT.getSubClassAxiom(auxAx.getSubClass(),
-												ex);
-										// auxAx = null;
-										// ex = null;
-									}
-									if (oracleUnsaturate) {
-										// ex = null;
-										ex = elOracle.unsaturateRight(newCounterexampleAxiom);
-										newCounterexampleAxiom = elQueryEngineForT.getSubClassAxiom(
-												((OWLSubClassOfAxiom) newCounterexampleAxiom).getSubClass(), ex);
-										// ex = null;
-									}
-								}
-								// *-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*
-								lastCE = newCounterexampleAxiom;
+                                        // ex = null;
+                                        // System.out.println(newCounterexampleAxiom);
+                                        // if (checkLeft(newCounterexampleAxiom)) {
+                                        ex = elOracle.oracleSiblingMerge(
+                                                ((OWLSubClassOfAxiom) newCounterexampleAxiom).getSubClass(),
+                                                ((OWLSubClassOfAxiom) newCounterexampleAxiom).getSuperClass());
+                                        newCounterexampleAxiom = elQueryEngineForT.getSubClassAxiom(ex,
+                                                ((OWLSubClassOfAxiom) newCounterexampleAxiom).getSuperClass());
+                                        // ex = null;
+                                    }
+                                    if (oracleSaturate)
+                                        newCounterexampleAxiom = elOracle
+                                                .saturateWithTreeLeft((OWLSubClassOfAxiom) newCounterexampleAxiom);
+                                } else {
+                                    if (oracleBranch) {
+                                        // ex = null;
+                                        OWLSubClassOfAxiom auxAx = (OWLSubClassOfAxiom) newCounterexampleAxiom;
+                                        ex = elOracle.branchRight(auxAx.getSubClass(), auxAx.getSuperClass());
+                                        newCounterexampleAxiom = elQueryEngineForT.getSubClassAxiom(auxAx.getSubClass(),
+                                                ex);
+                                        // auxAx = null;
+                                        // ex = null;
+                                    }
+                                    if (oracleUnsaturate) {
+                                        // ex = null;
+                                        ex = elOracle.unsaturateRight(newCounterexampleAxiom);
+                                        newCounterexampleAxiom = elQueryEngineForT.getSubClassAxiom(
+                                                ((OWLSubClassOfAxiom) newCounterexampleAxiom).getSubClass(), ex);
+                                        // ex = null;
+                                    }
+                                }
+                                // *-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*
+                                lastCE = newCounterexampleAxiom;
 //								subclass = null;
 //								SuperclassInSet = null;
 //								superclasses = null;
@@ -579,135 +576,129 @@ public class consoleLearner {
 //								subClassAxiom = null;
 //								selectedAxiom = null;
 //								iteratorT = null;
-								System.out.flush();
-								return newCounterexampleAxiom;
-							}
-						}
-					}
+                                System.out.flush();
+                                return newCounterexampleAxiom;
+                            }
+                        }
+                    }
 
-				}
-			}
-		}
+                }
+            }
+        }
 
-		Iterator<OWLAxiom> iterator = axiomsT.iterator();
+        for (OWLAxiom Axiom : axiomsT) {
+            Axiom.getAxiomType();
+            if ((Axiom.isOfType(AxiomType.SUBCLASS_OF)) || (Axiom.isOfType(AxiomType.EQUIVALENT_CLASSES))) {
 
-		while (iterator.hasNext()) {
-			OWLAxiom Axiom = iterator.next();
+                Axiom.getAxiomType();
+                if (Axiom.isOfType(AxiomType.SUBCLASS_OF)) {
+                    OWLSubClassOfAxiom selectedAxiom = (OWLSubClassOfAxiom) Axiom;
+                    Boolean queryAns = elQueryEngineForH.entailed(selectedAxiom);
 
-			Axiom.getAxiomType();
-			if ((Axiom.isOfType(AxiomType.SUBCLASS_OF)) || (Axiom.isOfType(AxiomType.EQUIVALENT_CLASSES))) {
+                    if (!queryAns) {
+                        lastCE = selectedAxiom;
+                        // System.out.println("subclass 2");
+                        // *-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*
+                        // ADD SATURATION FOR Axiom HERE
+                        OWLClassExpression ex = null;
+                        if (checkLeft(selectedAxiom)) {
+                            if (oracleMerge) {
+                                // ex = null;
+                                // System.out.println(newCounterexampleAxiom);
+                                // if (checkLeft(newCounterexampleAxiom)) {
+                                ex = elOracle.oracleSiblingMerge(selectedAxiom.getSubClass(),
+                                        selectedAxiom.getSuperClass());
+                                selectedAxiom = (OWLSubClassOfAxiom) elQueryEngineForT.getSubClassAxiom(ex,
+                                        selectedAxiom.getSuperClass());
+                                // ex = null;
+                            }
+                            if (oracleSaturate)
+                                selectedAxiom = (OWLSubClassOfAxiom) elOracle
+                                        .saturateWithTreeLeft(selectedAxiom);
+                        } else {
 
-				Axiom.getAxiomType();
-				if (Axiom.isOfType(AxiomType.SUBCLASS_OF)) {
-					OWLSubClassOfAxiom selectedAxiom = (OWLSubClassOfAxiom) Axiom;
-					Boolean queryAns = elQueryEngineForH.entailed(selectedAxiom);
-
-					if (!queryAns) {
-						lastCE = selectedAxiom;
-						// System.out.println("subclass 2");
-						// *-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*
-						// ADD SATURATION FOR Axiom HERE
-						OWLClassExpression ex = null;
-						if (checkLeft(selectedAxiom)) {
-							if (oracleMerge) {
-								// ex = null;
-								// System.out.println(newCounterexampleAxiom);
-								// if (checkLeft(newCounterexampleAxiom)) {
-								ex = elOracle.oracleSiblingMerge(selectedAxiom.getSubClass(),
-										selectedAxiom.getSuperClass());
-								selectedAxiom = (OWLSubClassOfAxiom) elQueryEngineForT.getSubClassAxiom(ex,
-										selectedAxiom.getSuperClass());
-								// ex = null;
-							}
-							if (oracleSaturate)
-								selectedAxiom = (OWLSubClassOfAxiom) elOracle
-										.saturateWithTreeLeft(selectedAxiom);
-						} else {
-
-							if (oracleBranch) {
-								OWLSubClassOfAxiom auxAx = selectedAxiom;
-								ex = elOracle.branchRight(auxAx.getSubClass(), auxAx.getSuperClass());
-								selectedAxiom = (OWLSubClassOfAxiom) elQueryEngineForT
-										.getSubClassAxiom(auxAx.getSubClass(), ex);
+                            if (oracleBranch) {
+                                OWLSubClassOfAxiom auxAx = selectedAxiom;
+                                ex = elOracle.branchRight(auxAx.getSubClass(), auxAx.getSuperClass());
+                                selectedAxiom = (OWLSubClassOfAxiom) elQueryEngineForT
+                                        .getSubClassAxiom(auxAx.getSubClass(), ex);
 //								auxAx = null;
 //								ex = null;
-							}
-							if (oracleUnsaturate) {
-								ex = elOracle.unsaturateRight(selectedAxiom);
-								selectedAxiom = (OWLSubClassOfAxiom) elQueryEngineForT
-										.getSubClassAxiom(selectedAxiom.getSubClass(), ex);
-								// ex = null;
-							}
+                            }
+                            if (oracleUnsaturate) {
+                                ex = elOracle.unsaturateRight(selectedAxiom);
+                                selectedAxiom = (OWLSubClassOfAxiom) elQueryEngineForT
+                                        .getSubClassAxiom(selectedAxiom.getSubClass(), ex);
+                                // ex = null;
+                            }
 
-						}
-						// *-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*
-						lastCE = selectedAxiom;
+                        }
+                        // *-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*
+                        lastCE = selectedAxiom;
 
 //						Axiom = null;
 //						iterator = null;
 //						iteratorT = null;
 //						System.out.flush();
-						return  selectedAxiom;
-					}
-				}
+                        return selectedAxiom;
+                    }
+                }
 
-				if (Axiom.isOfType(AxiomType.EQUIVALENT_CLASSES)) {
-					OWLEquivalentClassesAxiom counterexample = (OWLEquivalentClassesAxiom) Axiom;
+                if (Axiom.isOfType(AxiomType.EQUIVALENT_CLASSES)) {
+                    OWLEquivalentClassesAxiom counterexample = (OWLEquivalentClassesAxiom) Axiom;
 
-					Set<OWLSubClassOfAxiom> eqsubclassaxioms = counterexample.asOWLSubClassOfAxioms();
-					Iterator<OWLSubClassOfAxiom> iteratorAsSub = eqsubclassaxioms.iterator();
-					while (iteratorAsSub.hasNext()) {
-						OWLSubClassOfAxiom subClassAxiom = iteratorAsSub.next();
-						Boolean queryAns = elQueryEngineForH.entailed(subClassAxiom);
-						if (!queryAns) {
-							lastCE = subClassAxiom;
-							// System.out.println("eqcl 2");
-							// *-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*
-							// ADD SATURATION FOR subClassAxiom HERE
-							OWLClassExpression ex = null;
+                    Set<OWLSubClassOfAxiom> eqsubclassaxioms = counterexample.asOWLSubClassOfAxioms();
+                    for (OWLSubClassOfAxiom subClassAxiom : eqsubclassaxioms) {
+                        Boolean queryAns = elQueryEngineForH.entailed(subClassAxiom);
+                        if (!queryAns) {
+                            lastCE = subClassAxiom;
+                            // System.out.println("eqcl 2");
+                            // *-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*
+                            // ADD SATURATION FOR subClassAxiom HERE
+                            OWLClassExpression ex = null;
 
-							if (checkLeft(subClassAxiom)) {
-								if (oracleMerge) {
-									// System.out.println(newCounterexampleAxiom);
-									// if (checkLeft(newCounterexampleAxiom)) {
-									ex = elOracle.oracleSiblingMerge(subClassAxiom.getSubClass(),
-											subClassAxiom.getSuperClass());
-									subClassAxiom = (OWLSubClassOfAxiom) elQueryEngineForT.getSubClassAxiom(ex,
-											subClassAxiom.getSuperClass());
-									// ex = null;
-								}
-								if (oracleSaturate)
-									subClassAxiom = (OWLSubClassOfAxiom) elOracle
-											.saturateWithTreeLeft(subClassAxiom);
-							} else {
-								if (oracleBranch) {
-									OWLSubClassOfAxiom auxAx = subClassAxiom;
-									ex = elOracle.branchRight(auxAx.getSubClass(), auxAx.getSuperClass());
-									subClassAxiom = (OWLSubClassOfAxiom) elQueryEngineForT
-											.getSubClassAxiom(auxAx.getSubClass(), ex);
+                            if (checkLeft(subClassAxiom)) {
+                                if (oracleMerge) {
+                                    // System.out.println(newCounterexampleAxiom);
+                                    // if (checkLeft(newCounterexampleAxiom)) {
+                                    ex = elOracle.oracleSiblingMerge(subClassAxiom.getSubClass(),
+                                            subClassAxiom.getSuperClass());
+                                    subClassAxiom = (OWLSubClassOfAxiom) elQueryEngineForT.getSubClassAxiom(ex,
+                                            subClassAxiom.getSuperClass());
+                                    // ex = null;
+                                }
+                                if (oracleSaturate)
+                                    subClassAxiom = (OWLSubClassOfAxiom) elOracle
+                                            .saturateWithTreeLeft(subClassAxiom);
+                            } else {
+                                if (oracleBranch) {
+                                    OWLSubClassOfAxiom auxAx = subClassAxiom;
+                                    ex = elOracle.branchRight(auxAx.getSubClass(), auxAx.getSuperClass());
+                                    subClassAxiom = (OWLSubClassOfAxiom) elQueryEngineForT
+                                            .getSubClassAxiom(auxAx.getSubClass(), ex);
 //									auxAx = null;
 //									ex = null;
-								}
-								if (oracleUnsaturate) {
-									ex = elOracle.unsaturateRight(subClassAxiom);
-									subClassAxiom = (OWLSubClassOfAxiom) elQueryEngineForT
-											.getSubClassAxiom(subClassAxiom.getSubClass(), ex);
-									// ex = null;
-								}
-							}
-							// *-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*?*-*-*-*-*-*-*-*
-							lastCE = subClassAxiom;
+                                }
+                                if (oracleUnsaturate) {
+                                    ex = elOracle.unsaturateRight(subClassAxiom);
+                                    subClassAxiom = (OWLSubClassOfAxiom) elQueryEngineForT
+                                            .getSubClassAxiom(subClassAxiom.getSubClass(), ex);
+                                    // ex = null;
+                                }
+                            }
+                            // *-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*?*-*-*-*-*-*-*-*
+                            lastCE = subClassAxiom;
 //							Axiom = null;
 //							iterator = null;
 //							iteratorAsSub = null;
 //							iteratorT = null;
 //							System.out.flush();
-							return subClassAxiom;
-						}
-					}
-				}
-			}
-		}
+                            return subClassAxiom;
+                        }
+                    }
+                }
+            }
+        }
 		System.out.println("no more CIs");
 //		iterator = null;
 //		iteratorT = null;
@@ -716,72 +707,70 @@ public class consoleLearner {
 	}
 
 	private OWLAxiom getEasyCounterExample(ELEngine elQueryEngineForT, ELEngine elQueryEngineForH) {
-		Iterator<OWLAxiom> iteratorT = axiomsT.iterator();
-		while (iteratorT.hasNext()) {
-			OWLAxiom selectedAxiom = iteratorT.next();
-			selectedAxiom.getAxiomType();
+        for (OWLAxiom selectedAxiom : axiomsT) {
+            selectedAxiom.getAxiomType();
 
-			// first get CounterExample from an axiom with the type SUBCLASS_OF
-			if (selectedAxiom.isOfType(AxiomType.SUBCLASS_OF)) {
-				Boolean queryAns = elQueryEngineForH.entailed(selectedAxiom);
-				// if hypothesis does NOT entail the CI
-				if (!queryAns) {
-					// System.out.println("Chosen CE:" + myRenderer.render(selectedAxiom));
-					OWLSubClassOfAxiom counterexample = (OWLSubClassOfAxiom) selectedAxiom;
-					OWLClassExpression subclass = counterexample.getSubClass();
-					OWLClassExpression superclass = counterexample.getSuperClass();
+            // first get CounterExample from an axiom with the type SUBCLASS_OF
+            if (selectedAxiom.isOfType(AxiomType.SUBCLASS_OF)) {
+                Boolean queryAns = elQueryEngineForH.entailed(selectedAxiom);
+                // if hypothesis does NOT entail the CI
+                if (!queryAns) {
+                    // System.out.println("Chosen CE:" + myRenderer.render(selectedAxiom));
+                    OWLSubClassOfAxiom counterexample = (OWLSubClassOfAxiom) selectedAxiom;
+                    OWLClassExpression subclass = counterexample.getSubClass();
+                    OWLClassExpression superclass = counterexample.getSuperClass();
 
-					// create new counter example from the subclass and superclass
-					// of axiom NOT entailed by H
+                    // create new counter example from the subclass and superclass
+                    // of axiom NOT entailed by H
 
-					OWLAxiom newCounterexampleAxiom = getCounterExamplefromSubClassAxiom(subclass, superclass,elQueryEngineForT,elQueryEngineForH);
-					if (newCounterexampleAxiom != null) {
-						// if we actually got something, we use it as new counter example
+                    OWLAxiom newCounterexampleAxiom = getCounterExamplefromSubClassAxiom(subclass, superclass, elQueryEngineForT, elQueryEngineForH);
+                    if (newCounterexampleAxiom != null) {
+                        // if we actually got something, we use it as new counter example
 
-						// System.out.println("subclass 1");
-						// *-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*
-						// ADD SATURATION FOR newCounterexampleAxiom HERE
-						OWLClassExpression ex = null;
-						 
+                        // System.out.println("subclass 1");
+                        // *-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*
+                        // ADD SATURATION FOR newCounterexampleAxiom HERE
+                        OWLClassExpression ex = null;
 
-						// *-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*
-						lastCE = newCounterexampleAxiom;
+
+                        // *-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*
+                        lastCE = newCounterexampleAxiom;
 //						subclass = null;
 //						superclass = null;
 //						counterexample = null;
 //						selectedAxiom = null;
 //						iteratorT = null;
-						return newCounterexampleAxiom;
-					}
-				}
-			}
+                        return newCounterexampleAxiom;
+                    }
+                }
+            }
 
-			// get CounterExample from an axiom with the type EQUIVALENT_CLASSES
-			if (selectedAxiom.isOfType(AxiomType.EQUIVALENT_CLASSES)) {
+            // get CounterExample from an axiom with the type EQUIVALENT_CLASSES
+            if (selectedAxiom.isOfType(AxiomType.EQUIVALENT_CLASSES)) {
 
-				OWLEquivalentClassesAxiom counterexample = (OWLEquivalentClassesAxiom) selectedAxiom;
-				Set<OWLSubClassOfAxiom> eqsubclassaxioms = counterexample.asOWLSubClassOfAxioms();
+                OWLEquivalentClassesAxiom counterexample = (OWLEquivalentClassesAxiom) selectedAxiom;
+                Set<OWLSubClassOfAxiom> eqsubclassaxioms = counterexample.asOWLSubClassOfAxioms();
 
-				for (OWLSubClassOfAxiom subClassAxiom : eqsubclassaxioms) {
-					OWLClassExpression subclass = subClassAxiom.getSubClass();
+                for (OWLSubClassOfAxiom subClassAxiom : eqsubclassaxioms) {
+                    OWLClassExpression subclass = subClassAxiom.getSubClass();
 
-					Set<OWLClass> superclasses = elQueryEngineForT.getSuperClasses(subclass, true);
-					if (!superclasses.isEmpty()) {
-						for (OWLClass SuperclassInSet : superclasses) {
-							OWLAxiom newCounterexampleAxiom = elQueryEngineForT.getSubClassAxiom(subclass,
-									SuperclassInSet);
+                    Set<OWLClass> superclasses = elQueryEngineForT.getSuperClasses(subclass, true);
+                    if (!superclasses.isEmpty()) {
+                        for (OWLClass SuperclassInSet : superclasses) {
+                            OWLAxiom newCounterexampleAxiom = elQueryEngineForT.getSubClassAxiom(subclass,
+                                    SuperclassInSet);
 
-							Boolean querySubClass = elQueryEngineForH.entailed(newCounterexampleAxiom);
-							Boolean querySubClassforT = elQueryEngineForT.entailed(newCounterexampleAxiom);
-							if (!querySubClass && querySubClassforT) {
+                            Boolean querySubClass = elQueryEngineForH.entailed(newCounterexampleAxiom);
+                            Boolean querySubClassforT = elQueryEngineForT.entailed(newCounterexampleAxiom);
+                            if (!querySubClass && querySubClassforT) {
 
-								// System.out.println("eq 1");
-								// *-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*
-								// ADD SATURATION FOR newCounterexampleAxiom HERE
-								OWLClassExpression ex = null;
+                                // System.out.println("eq 1");
+                                // *-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*
+                                // ADD SATURATION FOR newCounterexampleAxiom HERE
+                                OWLClassExpression ex = null;
 
-								// *-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*
-								lastCE = newCounterexampleAxiom;
+                                // *-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*
+                                lastCE = newCounterexampleAxiom;
 //								subclass = null;
 //								SuperclassInSet = null;
 //								superclasses = null;
@@ -790,73 +779,67 @@ public class consoleLearner {
 //								selectedAxiom = null;
 //								iteratorT = null;
 //								System.out.flush();
-								return newCounterexampleAxiom;
-							}
-						}
-					}
+                                return newCounterexampleAxiom;
+                            }
+                        }
+                    }
 
-				}
-			}
-		}
+                }
+            }
+        }
 
-		Iterator<OWLAxiom> iterator = axiomsT.iterator();
+        for (OWLAxiom Axiom : axiomsT) {
+            Axiom.getAxiomType();
+            if ((Axiom.isOfType(AxiomType.SUBCLASS_OF)) || (Axiom.isOfType(AxiomType.EQUIVALENT_CLASSES))) {
 
-		while (iterator.hasNext()) {
-			OWLAxiom Axiom = iterator.next();
+                Axiom.getAxiomType();
+                if (Axiom.isOfType(AxiomType.SUBCLASS_OF)) {
+                    OWLSubClassOfAxiom selectedAxiom = (OWLSubClassOfAxiom) Axiom;
+                    Boolean queryAns = elQueryEngineForH.entailed(selectedAxiom);
 
-			Axiom.getAxiomType();
-			if ((Axiom.isOfType(AxiomType.SUBCLASS_OF)) || (Axiom.isOfType(AxiomType.EQUIVALENT_CLASSES))) {
+                    if (!queryAns) {
+                        lastCE = selectedAxiom;
+                        // System.out.println("subclass 2");
+                        // *-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*
+                        // ADD SATURATION FOR Axiom HERE
+                        OWLClassExpression ex = null;
 
-				Axiom.getAxiomType();
-				if (Axiom.isOfType(AxiomType.SUBCLASS_OF)) {
-					OWLSubClassOfAxiom selectedAxiom = (OWLSubClassOfAxiom) Axiom;
-					Boolean queryAns = elQueryEngineForH.entailed(selectedAxiom);
-
-					if (!queryAns) {
-						lastCE = selectedAxiom;
-						// System.out.println("subclass 2");
-						// *-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*
-						// ADD SATURATION FOR Axiom HERE
-						OWLClassExpression ex = null;
-						 
-						// *-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*
+                        // *-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*
 
 //						Axiom = null;
 //						iterator = null;
 //						iteratorT = null;
 //						System.out.flush();
-						return  selectedAxiom;
-					}
-				}
+                        return selectedAxiom;
+                    }
+                }
 
-				if (Axiom.isOfType(AxiomType.EQUIVALENT_CLASSES)) {
-					OWLEquivalentClassesAxiom counterexample = (OWLEquivalentClassesAxiom) Axiom;
+                if (Axiom.isOfType(AxiomType.EQUIVALENT_CLASSES)) {
+                    OWLEquivalentClassesAxiom counterexample = (OWLEquivalentClassesAxiom) Axiom;
 
-					Set<OWLSubClassOfAxiom> eqsubclassaxioms = counterexample.asOWLSubClassOfAxioms();
-					Iterator<OWLSubClassOfAxiom> iteratorAsSub = eqsubclassaxioms.iterator();
-					while (iteratorAsSub.hasNext()) {
-						OWLSubClassOfAxiom subClassAxiom = iteratorAsSub.next();
-						Boolean queryAns = elQueryEngineForH.entailed(subClassAxiom);
-						if (!queryAns) {
-							lastCE = subClassAxiom;
-							// System.out.println("eqcl 2");
-							// *-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*
-							// ADD SATURATION FOR subClassAxiom HERE
-							OWLClassExpression ex = null;
+                    Set<OWLSubClassOfAxiom> eqsubclassaxioms = counterexample.asOWLSubClassOfAxioms();
+                    for (OWLSubClassOfAxiom subClassAxiom : eqsubclassaxioms) {
+                        Boolean queryAns = elQueryEngineForH.entailed(subClassAxiom);
+                        if (!queryAns) {
+                            lastCE = subClassAxiom;
+                            // System.out.println("eqcl 2");
+                            // *-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*
+                            // ADD SATURATION FOR subClassAxiom HERE
+                            OWLClassExpression ex = null;
 
-							 
-							// *-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*?*-*-*-*-*-*-*-*
+
+                            // *-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*?*-*-*-*-*-*-*-*
 //							Axiom = null;
 //							iterator = null;
 //							iteratorAsSub = null;
 //							iteratorT = null;
 //							System.out.flush();
-							return subClassAxiom;
-						}
-					}
-				}
-			}
-		}
+                            return subClassAxiom;
+                        }
+                    }
+                }
+            }
+        }
 		System.out.println("no more CIs");
 //		iterator = null;
 //		iteratorT = null;
@@ -884,31 +867,27 @@ public class consoleLearner {
 
 		if (!subclasses.isEmpty()) {
 
-			Iterator<OWLClass> iteratorSubClass = subclasses.iterator();
-			while (iteratorSubClass.hasNext()) {
-				OWLClassExpression SubclassInSet = iteratorSubClass.next();
-				OWLAxiom newCounterexampleAxiom = elQueryEngineForT.getSubClassAxiom(SubclassInSet, superclass);
-				Boolean querySubClass = elQueryEngineForH.entailed(newCounterexampleAxiom);
-				Boolean querySubClassforT = elQueryEngineForT.entailed(newCounterexampleAxiom);
-				if (!querySubClass && querySubClassforT) {
+            for (OWLClass SubclassInSet : subclasses) {
+                OWLAxiom newCounterexampleAxiom = elQueryEngineForT.getSubClassAxiom(SubclassInSet, superclass);
+                Boolean querySubClass = elQueryEngineForH.entailed(newCounterexampleAxiom);
+                Boolean querySubClassforT = elQueryEngineForT.entailed(newCounterexampleAxiom);
+                if (!querySubClass && querySubClassforT) {
 //					SubclassInSet = null;
 //					superclass = null;
 //					iteratorSubClass = null;
 //					elQueryEngineForH = null;
 
-					return newCounterexampleAxiom;
-				}
-			}
+                    return newCounterexampleAxiom;
+                }
+            }
 		}
 		if (!superclasses.isEmpty()) {
 
-			Iterator<OWLClass> iteratorSuperClass = superclasses.iterator();
-			while (iteratorSuperClass.hasNext()) {
-				OWLClassExpression SuperclassInSet = iteratorSuperClass.next();
-				OWLAxiom newCounterexampleAxiom = elQueryEngineForT.getSubClassAxiom(subclass, SuperclassInSet);
-				Boolean querySubClass = elQueryEngineForH.entailed(newCounterexampleAxiom);
-				Boolean querySubClassforT = elQueryEngineForT.entailed(newCounterexampleAxiom);
-				if (!querySubClass && querySubClassforT) {
+            for (OWLClass SuperclassInSet : superclasses) {
+                OWLAxiom newCounterexampleAxiom = elQueryEngineForT.getSubClassAxiom(subclass, SuperclassInSet);
+                Boolean querySubClass = elQueryEngineForH.entailed(newCounterexampleAxiom);
+                Boolean querySubClassforT = elQueryEngineForT.entailed(newCounterexampleAxiom);
+                if (!querySubClass && querySubClassforT) {
 
 //					SuperclassInSet = null;
 //					superclass = null;
@@ -916,9 +895,9 @@ public class consoleLearner {
 //					iteratorSuperClass = null;
 //					elQueryEngineForH = null;
 
-					return newCounterexampleAxiom;
-				}
-			}
+                    return newCounterexampleAxiom;
+                }
+            }
 		}
 
 //		elQueryEngineForH = null;

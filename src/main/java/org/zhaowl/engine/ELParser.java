@@ -13,7 +13,7 @@ import org.semanticweb.owlapi.util.ShortFormProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class ELParser {
+class ELParser {
 	private final OWLOntology rootOntology;
     private final BidirectionalShortFormProvider bidiShortFormProvider;
     private final OWLDataFactory dataFactory;

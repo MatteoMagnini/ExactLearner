@@ -12,7 +12,6 @@ import org.semanticweb.owlapi.model.OWLClassExpression;
 import org.semanticweb.owlapi.model.OWLSubClassOfAxiom;
 import org.zhaowl.console.consoleLearner;
 import org.zhaowl.engine.ELEngine;
-import org.zhaowl.learner.ELLearner;
 import org.zhaowl.tree.ELNode;
 import org.zhaowl.tree.ELTree;
 
@@ -209,7 +208,6 @@ public class ELOracle {
 						} else {
 							// System.out.println("This one is useless: " + cl);
 							// nod.label = new TreeSet<OWLClass>();
-							continue;
 
 						}
 
