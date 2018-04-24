@@ -2,66 +2,41 @@ package org.zhaowl.oracle;
 
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
-import org.semanticweb.elk.owlapi.ElkReasonerFactory;
 import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLClassExpression;
-import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLSubClassOfAxiom;
-import org.semanticweb.owlapi.reasoner.OWLReasoner;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.zhaowl.console.consoleLearner;
 import org.zhaowl.engine.ELEngine;
-import org.zhaowl.tree.ELEdge;
 import org.zhaowl.tree.ELNode;
 import org.zhaowl.tree.ELTree;
-import org.zhaowl.utils.Metrics;
 
 public class ELOracle {
 
 	private final ELEngine myEngineForT;
 	private final ELEngine myEngineForH;
 	private final consoleLearner myConsole;
-	private static final Logger LOGGER_ = LoggerFactory
-			.getLogger(ELOracle.class);
 
-	public ELOracle(ELEngine elEngineforT, ELEngine elEngineForH, consoleLearner console) {
-		myEngineForT = elEngineforT;
+	public ELOracle(ELEngine elEngineForT, ELEngine elEngineForH, consoleLearner console) {
+		myEngineForT = elEngineForT;
 		myEngineForH = elEngineForH;
 		myConsole = console;
-	}
-
-	public OWLReasoner createReasoner(final OWLOntology rootOntology) {
-		LOGGER_.info("ELOracle Reasoner created");
- 		//Thread.dumpStack();
-		System.out.flush();
-		ElkReasonerFactory reasoningFactory = new ElkReasonerFactory();
-		return reasoningFactory.createReasoner(rootOntology);
-	}
-
-	private static void disposeOfReasoner(OWLReasoner owlReasoner, String reasonerName) {
-		LOGGER_.info("ELOracle: Reasoner " + reasonerName + " disposed of");
-		//Thread.dumpStack();
-		System.out.flush();
-		owlReasoner.dispose();
 	}
 
 	public OWLClassExpression oracleSiblingMerge(OWLClassExpression left, OWLClassExpression right) throws Exception {
 		// the oracle must do sibling merging (if possible)
 		// on the left hand side
 		ELTree tree = new ELTree(left);
-		Set<ELNode> nodes = null;
+		// Set<ELNode> nodes = null;
 		// System.out.println(tree.toDescriptionString());
 
 		OWLClassExpression oldTree = tree.transformToClassExpression();
 		for (int i = 0; i < tree.getMaxLevel(); i++) {
-			nodes = tree.getNodesOnLevel(i + 1);
+			Set<ELNode> nodes = tree.getNodesOnLevel(i + 1);
 			if (!nodes.isEmpty())
 				for (ELNode nod : nodes) {
 					// nod.label.addAll(nod.label);
@@ -95,29 +70,25 @@ public class ELOracle {
 				}
 		}
 		// System.out.println(tree.getRootNode());
-		oldTree = null;
-		nodes = null;
-		left = null;
-		right = null;
 
 		System.out.flush();
 		return tree.transformToClassExpression();
 	}
 
-	public Set<Set<OWLClass>> powerSetBySize(Set<OWLClass> originalSet, int size) {
-		Set<Set<OWLClass>> sets = new HashSet<Set<OWLClass>>();
+	private Set<Set<OWLClass>> powerSetBySize(Set<OWLClass> originalSet, int size) {
+		Set<Set<OWLClass>> sets = new HashSet<>();
 		if (size == 0) {
-			sets.add(new HashSet<OWLClass>());
+			sets.add(new HashSet<>());
 			return sets;
 		}
-		List<OWLClass> list = new ArrayList<OWLClass>(originalSet);
+		List<OWLClass> list = new ArrayList<>(originalSet);
 
 		for (int i = 0; i < list.size(); i++) {
 			OWLClass head = list.get(i);
 			List<OWLClass> rest = list.subList(i + 1, list.size());
-			Set<Set<OWLClass>> powerRest = powerSetBySize(new HashSet<OWLClass>(rest), size - 1);
+			Set<Set<OWLClass>> powerRest = powerSetBySize(new HashSet<>(rest), size - 1);
 			for (Set<OWLClass> p : powerRest) {
-				HashSet<OWLClass> appendedSet = new HashSet<OWLClass>();
+				HashSet<OWLClass> appendedSet = new HashSet<>();
 				appendedSet.add(head);
 				appendedSet.addAll(p);
 				sets.add(appendedSet);
@@ -127,17 +98,17 @@ public class ELOracle {
 	}
 
 	public OWLAxiom saturateWithTreeLeft(OWLSubClassOfAxiom axiom) throws Exception {
-		OWLClassExpression sub = ((OWLSubClassOfAxiom) axiom).getSubClass();
-		OWLClassExpression sup = ((OWLSubClassOfAxiom) axiom).getSuperClass();
+		OWLClassExpression sub = axiom.getSubClass();
+		OWLClassExpression sup = axiom.getSuperClass();
 
 
 		Set<OWLClass> cIo = myEngineForT.getClassesInSignature();
-		Set<ELNode> nodes = null;
+		// Set<ELNode> nodes = null;
 
 		ELTree tree = new ELTree(sub);
 
 		for (int i = 0; i < tree.getMaxLevel(); i++) {
-			nodes = tree.getNodesOnLevel(i + 1);
+			Set<ELNode> nodes = tree.getNodesOnLevel(i + 1);
 			if (!nodes.isEmpty())
 				for (ELNode nod : nodes) {
 					for (OWLClass cl : cIo) {
@@ -164,10 +135,6 @@ public class ELOracle {
 		// System.out.println("Aux Tree: " + auxTree.getRootNode());
 		// System.out.println("Final after saturation: " + sub);
 
-		cIo = null;
-		nodes = null;
-		System.out.flush();
-		tree = null;
 
 
 		return myEngineForT.getSubClassAxiom(sub, sup);
@@ -178,9 +145,8 @@ public class ELOracle {
 	public OWLClassExpression unsaturateRight(OWLAxiom ax) throws Exception {
 		OWLClassExpression left = ((OWLSubClassOfAxiom) ax).getSubClass();
 		OWLClassExpression right = ((OWLSubClassOfAxiom) ax).getSuperClass();
-		ELTree tree = null;
-		tree = new ELTree(right);
-		Set<ELNode> nodes = null;
+		ELTree tree = new ELTree(right);
+		// Set<ELNode> nodes = null;
 
 		int sizeToCheck = 0;
 
@@ -194,7 +160,7 @@ public class ELOracle {
 
 
 		for (int i = 0; i < tree.getMaxLevel(); i++) {
-			nodes = tree.getNodesOnLevel(i + 1);
+			Set<ELNode> nodes = tree.getNodesOnLevel(i + 1);
 			for (ELNode nod : nodes) {
 				if (nod.label.size() < 2)
 					continue;
@@ -202,14 +168,12 @@ public class ELOracle {
 					// size of power set
 					sizeToCheck++;
 					// set to be used when building a power set of concepts
-					Set<OWLClass> toBuildPS = new HashSet<OWLClass>();
 
 					// populate set
-					for (OWLClass cl : nod.label)
-						toBuildPS.add(cl);
+					Set<OWLClass> toBuildPS = new HashSet<>(nod.label);
 
 					// set of sets of concepts as power set
-					Set<Set<OWLClass>> conceptSet = new HashSet<Set<OWLClass>>();
+					// Set<Set<OWLClass>> conceptSet = new HashSet<>();
 
 					// populate set of sets of concepts
 					// @sizeToCheck is the number of concepts in the set
@@ -220,15 +184,14 @@ public class ELOracle {
 					// this is done in order to check which is the minimal concept(s) set required
 					// to satisfy the node
 					// and at the same time, the CI
-					conceptSet = powerSetBySize(toBuildPS, sizeToCheck);
+					Set<Set<OWLClass>> conceptSet = powerSetBySize(toBuildPS, sizeToCheck);
 					System.out.println("stuck here !!!!");
 					// loop through concept set
 					for (Set<OWLClass> clSet : conceptSet) {
 
-						nod.label = new TreeSet<OWLClass>();
+						nod.label = new TreeSet<>();
 
-						for (OWLClass cl : clSet)
-							nod.label.add(cl);
+						nod.label.addAll(clSet);
 
 						myConsole.membCount++;
 
@@ -250,9 +213,6 @@ public class ELOracle {
 						}
 
 					}
-					toBuildPS = null;
-					conceptSet = null;
-
 				}
 				// reset power set size to check
 				foundSomething = false;
@@ -260,13 +220,9 @@ public class ELOracle {
 			}
 		}
 		System.out.flush();
-		OWLClassExpression ex =  tree.transformToClassExpression();
 
-		left = null;
-		right = null;
-		tree = null;
-		nodes = null;
-		return ex;
+
+		return tree.transformToClassExpression();
 	}
 
 	public OWLClassExpression branchRight(OWLClassExpression left, OWLClassExpression right) {
