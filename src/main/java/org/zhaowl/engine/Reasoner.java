@@ -2,7 +2,6 @@ package org.zhaowl.engine;
 
 import java.text.NumberFormat;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -35,26 +34,26 @@ public    class Reasoner  {
 	public boolean useInstanceChecks = false;
 
 	// statistical data for particular reasoning operations
-	public long instanceCheckReasoningTimeNs = 0;
-	public int nrOfInstanceChecks = 0;
+	private final long instanceCheckReasoningTimeNs = 0;
+	private final int nrOfInstanceChecks = 0;
 	public int nrOfMultiInstanceChecks = 0;
-	public long retrievalReasoningTimeNs = 0;
-	public int nrOfRetrievals = 0;
-	public long subsumptionReasoningTimeNs = 0;
-	public int nrOfSubsumptionChecks = 0;
+	private final long retrievalReasoningTimeNs = 0;
+	private final int nrOfRetrievals = 0;
+	private long subsumptionReasoningTimeNs = 0;
+	private int nrOfSubsumptionChecks = 0;
 	public int nrOfMultiSubsumptionChecks = 0;
-	public int nrOfSubsumptionHierarchyQueries = 0;
+	private final int nrOfSubsumptionHierarchyQueries = 0;
 
 	// rest of reasoning time
 	public long otherReasoningTimeNs = 0;
 
 	// time for all reasoning requests (usually longer than the sum of all
 	// above)
-	public long overallReasoningTimeNs = 0;
+	private long overallReasoningTimeNs = 0;
 
 	// temporary variables (moved here for performance reasons)
-	public long reasoningStartTimeTmp;
-	public long reasoningDurationTmp;
+	private long reasoningStartTimeTmp;
+	private long reasoningDurationTmp;
 
 	// list view
 	public List<OWLClass> atomicConceptsList;
@@ -62,26 +61,26 @@ public    class Reasoner  {
 
 	// hierarchies (they are computed the first time they are needed)
 	 
-	public OWLReasoner reasoner;
-	public ClassHierarchyT subsumptionHierarchy = null; 
-	public ObjectPropertyHierarchyT roleHierarchy = null; 
+	private OWLReasoner reasoner;
+	private ClassHierarchyT subsumptionHierarchy = null;
+	private ObjectPropertyHierarchyT roleHierarchy = null;
 	 
  
-	public boolean precomputeClassHierarchy = true; 
+	private final boolean precomputeClassHierarchy = true;
 	public boolean precomputeObjectPropertyHierarchy = true; 
 	public boolean precomputeDataPropertyHierarchy = true;
 	
-	public OWLDataFactory df = new OWLDataFactoryImpl();
-	public OWLOntology ontology;
+	private OWLDataFactory df = new OWLDataFactoryImpl();
+	private OWLOntology ontology;
 	//public Multimap<OWLDatatype, OWLDataProperty> datatype2Properties = HashMultimap.create();
-	public Map<OWLDataProperty, OWLDatatype> dataproperty2datatype = new HashMap<OWLDataProperty, OWLDatatype>();
+	public Map<OWLDataProperty, OWLDatatype> dataproperty2datatype = new HashMap<>();
 
 	public boolean precomputePropertyDomains = true;
-	public Map<OWLProperty, OWLClassExpression> propertyDomains = new HashMap<OWLProperty, OWLClassExpression>();
+	public Map<OWLProperty, OWLClassExpression> propertyDomains = new HashMap<>();
 
 	 
 	public boolean precomputeObjectPropertyRanges = true;
-	public Map<OWLObjectProperty, OWLClassExpression> objectPropertyRanges = new HashMap<OWLObjectProperty, OWLClassExpression>();
+	public Map<OWLObjectProperty, OWLClassExpression> objectPropertyRanges = new HashMap<>();
 
 	 
 
@@ -125,7 +124,7 @@ public    class Reasoner  {
 	// should not require callers to build catch clauses each time they make
 	// a reasoner request => for this reasoner, we throw a runtime exception
 	// here
-	public void handleExceptions(ReasoningMethodUnsupportedException e) {
+	private void handleExceptions(ReasoningMethodUnsupportedException e) {
 		e.printStackTrace();
 		throw new RuntimeException("Reasoning method not supported.", e);
 	}
@@ -160,7 +159,7 @@ public    class Reasoner  {
 		return result;
 	}
 
-	public boolean isSuperClassOfImpl(OWLClassExpression superConcept, OWLClassExpression subConcept)
+	private boolean isSuperClassOfImpl(OWLClassExpression superConcept, OWLClassExpression subConcept)
 			throws ReasoningMethodUnsupportedException {
 		throw new ReasoningMethodUnsupportedException();
 	}
@@ -181,7 +180,7 @@ public    class Reasoner  {
 		return result;
 	}
 
-	public boolean isEquivalentClassImpl(OWLClassExpression class1, OWLClassExpression class2) throws ReasoningMethodUnsupportedException {
+	private boolean isEquivalentClassImpl(OWLClassExpression class1, OWLClassExpression class2) throws ReasoningMethodUnsupportedException {
 		return isSuperClassOfImpl(class1,class2) && isSuperClassOfImpl(class2,class1);
 	}	
 	
@@ -261,7 +260,7 @@ public    class Reasoner  {
 		}
 	}
 
-	public Set<OWLObjectProperty> getObjectPropertiesImpl()
+	private Set<OWLObjectProperty> getObjectPropertiesImpl()
 			throws ReasoningMethodUnsupportedException {
 		throw new ReasoningMethodUnsupportedException();
 	}
@@ -275,7 +274,7 @@ public    class Reasoner  {
 		}
 	}
 
-	public Set<OWLDataProperty> getDatatypePropertiesImpl()
+	private Set<OWLDataProperty> getDatatypePropertiesImpl()
 			throws ReasoningMethodUnsupportedException {
 		throw new ReasoningMethodUnsupportedException();
 	}
@@ -305,8 +304,9 @@ public    class Reasoner  {
 		
 	}
  
-	public <T extends OWLProperty<?, ?>> SortedSet<T> getSuperPropertiesImpl(T role) throws ReasoningMethodUnsupportedException {
+	private <T extends OWLProperty<?, ?>> SortedSet<T> getSuperPropertiesImpl(T role) throws ReasoningMethodUnsupportedException {
 		if(OWLObjectProperty.class.isInstance(role)) {
+			// WARNING: unchecked cast!
 			return (SortedSet<T>) getSuperPropertiesImpl((OWLObjectProperty) role);
 		} 
 		//else 
@@ -317,8 +317,9 @@ public    class Reasoner  {
 	}
  
 	 
-	public <T extends OWLProperty> SortedSet<T> getSubPropertiesImpl(T role) throws ReasoningMethodUnsupportedException {
+	private <T extends OWLProperty> SortedSet<T> getSubPropertiesImpl(T role) throws ReasoningMethodUnsupportedException {
 		if(OWLObjectProperty.class.isInstance(role)) {
+			// WARNING: unchecked cast!
 			return (SortedSet<T>) getSubPropertiesImpl((OWLObjectProperty) role);
 		}  
 		throw new ReasoningMethodUnsupportedException();
@@ -332,25 +333,23 @@ public    class Reasoner  {
 	 * @throws ReasoningMethodUnsupportedException If any method needed to
 	 * create the hierarchy is not supported by the underlying reasoner.
 	 */
-	public ClassHierarchyT prepareSubsumptionHierarchy() throws ReasoningMethodUnsupportedException {
-		TreeMap<OWLClassExpression, SortedSet<OWLClassExpression>> subsumptionHierarchyUp = new TreeMap<OWLClassExpression, SortedSet<OWLClassExpression>>(
+	private ClassHierarchyT prepareSubsumptionHierarchy() {
+		TreeMap<OWLClassExpression, SortedSet<OWLClassExpression>> subsumptionHierarchyUp = new TreeMap<>(
 		);
-		TreeMap<OWLClassExpression, SortedSet<OWLClassExpression>> subsumptionHierarchyDown = new TreeMap<OWLClassExpression, SortedSet<OWLClassExpression>>(
+		TreeMap<OWLClassExpression, SortedSet<OWLClassExpression>> subsumptionHierarchyDown = new TreeMap<>(
 		);
 
 		// parents/children of top ...
 		Set<OWLClass> tmp = reasoner.getSubClasses(df.getOWLThing(),true).getFlattened();
 		System.out.println("The subs are: " + tmp);
-		Iterator<OWLClass> it = tmp.iterator();
-		while(it.hasNext())
-			System.out.println("Inside loop: " + it.next());
+		for (OWLClass aTmp : tmp) System.out.println("Inside loop: " + aTmp);
 			
 		SortedSet<OWLClassExpression> tmp2 = null;
 		tmp2.addAll(tmp);
 		
 		System.out.println("Sorted: " + tmp2);
 		
-		subsumptionHierarchyUp.put(df.getOWLThing(), new TreeSet<OWLClassExpression>());
+		subsumptionHierarchyUp.put(df.getOWLThing(), new TreeSet<>());
 		subsumptionHierarchyDown.put(df.getOWLThing(), tmp2);
 		
 		
@@ -359,7 +358,7 @@ public    class Reasoner  {
 		tmp2 = null;
 		tmp2.addAll(tmp);
 		subsumptionHierarchyUp.put(df.getOWLNothing(), tmp2);
-		subsumptionHierarchyDown.put(df.getOWLNothing(), new TreeSet<OWLClassExpression>());
+		subsumptionHierarchyDown.put(df.getOWLNothing(), new TreeSet<>());
 		
 		// ... and named classes
 		Set<OWLClass> atomicConcepts = ontology.getClassesInSignature();
@@ -390,11 +389,7 @@ public    class Reasoner  {
 	public   ClassHierarchyT getClassHierarchy() {
 		// class hierarchy is created on first invocation
 		if (subsumptionHierarchy == null) {
-			try {
 				subsumptionHierarchy = prepareSubsumptionHierarchy();
-			} catch (ReasoningMethodUnsupportedException e) {
-				handleExceptions(e);
-			}
 		}
 		return subsumptionHierarchy;
 	}
@@ -408,12 +403,12 @@ public    class Reasoner  {
 	 *             Thrown if a reasoning method for object property 
 	 *             hierarchy creation is not supported by the reasoner.
 	 */
-	public ObjectPropertyHierarchyT prepareObjectPropertyHierarchy()
+	private ObjectPropertyHierarchyT prepareObjectPropertyHierarchy()
 			throws ReasoningMethodUnsupportedException {
 		
-		TreeMap<OWLObjectProperty, SortedSet<OWLObjectProperty>> roleHierarchyUp = new TreeMap<OWLObjectProperty, SortedSet<OWLObjectProperty>>(
+		TreeMap<OWLObjectProperty, SortedSet<OWLObjectProperty>> roleHierarchyUp = new TreeMap<>(
 		);
-		TreeMap<OWLObjectProperty, SortedSet<OWLObjectProperty>> roleHierarchyDown = new TreeMap<OWLObjectProperty, SortedSet<OWLObjectProperty>>(
+		TreeMap<OWLObjectProperty, SortedSet<OWLObjectProperty>> roleHierarchyDown = new TreeMap<>(
 		);
  
 		Set<OWLObjectProperty> atomicRoles = ontology.getObjectPropertiesInSignature();
@@ -425,7 +420,7 @@ public    class Reasoner  {
 		return roleHierarchy;		
 	}
 
-	public ObjectPropertyHierarchyT getObjectPropertyHierarchy() {
+	private ObjectPropertyHierarchyT getObjectPropertyHierarchy() {
 		try {
 			if (roleHierarchy == null) {
 				roleHierarchy = prepareObjectPropertyHierarchy();

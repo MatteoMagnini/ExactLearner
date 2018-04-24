@@ -12,8 +12,7 @@ import org.semanticweb.owlapi.util.ShortFormProvider;
 import org.semanticweb.owlapi.util.SimpleShortFormProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.zhaowl.learner.ELLearner;
- 
+
 
 public class ELEngine {
 	private final OWLReasoner myReasoner;

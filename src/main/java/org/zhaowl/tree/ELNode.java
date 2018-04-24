@@ -18,28 +18,27 @@ import org.semanticweb.owlapi.model.OWLDataProperty;
 import org.semanticweb.owlapi.model.OWLDataRange;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.model.OWLProperty;
-
 import uk.ac.manchester.cs.owl.owlapi.OWLDataFactoryImpl;
 
 public class ELNode {
 	public ELTree tree;
 	
-	public TreeSet<OWLClass> label = new TreeSet<OWLClass>();
+	public TreeSet<OWLClass> label = new TreeSet<>();
 	
-	public List<ELEdge> edges = new LinkedList<ELEdge>();
+	public List<ELEdge> edges = new LinkedList<>();
 	public int level; 
-	public Set<ELNode> in = new HashSet<ELNode>();
-	public Set<ELNode> inSC1 = new HashSet<ELNode>();
-	public Set<ELNode> inSC2 = new HashSet<ELNode>();
-	public Set<ELNode> out = new HashSet<ELNode>();
-	public Set<ELNode> outSC1 = new HashSet<ELNode>();
-	public Set<ELNode> outSC2 = new HashSet<ELNode>();
+	public final Set<ELNode> in = new HashSet<>();
+	public final Set<ELNode> inSC1 = new HashSet<>();
+	public final Set<ELNode> inSC2 = new HashSet<>();
+	public final Set<ELNode> out = new HashSet<>();
+	public final Set<ELNode> outSC1 = new HashSet<>();
+	public final Set<ELNode> outSC2 = new HashSet<>();
 	// parent node in the tree;
 	// null indicates that this node is a root node
 	public ELNode parent = null;
 	public boolean isClassNode;
 	public OWLDataRange dataRange;
-	public OWLDataFactory df = new OWLDataFactoryImpl();
+	private OWLDataFactory df = new OWLDataFactoryImpl();
 	
 	
 	
@@ -50,7 +49,7 @@ public class ELNode {
 		this.df = daf;
 	}
 	public ELNode(ELTree tree) {
-		this(tree, new TreeSet<OWLClass>());
+		this(tree, new TreeSet<>());
 	} 
 	
 	/**
@@ -59,7 +58,7 @@ public class ELNode {
 	 */
 	public ELNode(ELTree tree, TreeSet<OWLClass> label) {
 		this.label = label;
-		this.edges = new LinkedList<ELEdge>();
+		this.edges = new LinkedList<>();
 		this.tree = tree;
 		level = 1;
 		parent = null;
@@ -78,7 +77,7 @@ public class ELNode {
 	 */
 	public ELNode(ELTree tree, OWLDataRange dataRange) {
 		this.dataRange = dataRange;
-		this.edges = new LinkedList<ELEdge>();
+		this.edges = new LinkedList<>();
 		this.tree = tree;
 		level = 1;
 		parent = null;
@@ -93,7 +92,7 @@ public class ELNode {
 	public ELNode(ELNode parentNode, OWLDataProperty parentProperty, OWLDataRange dataRange) {
 		this.dataRange = dataRange; 
 		
-		this.edges = new LinkedList<ELEdge>();
+		this.edges = new LinkedList<>();
 		parent = parentNode;
 		// the reference tree is the same as for the parent tree
 		tree = parentNode.tree;
@@ -105,7 +104,7 @@ public class ELNode {
 		// we need to update the set of nodes on a particular level
 		tree.addNodeToLevel(this, level);		
 		 
-		Set<ELNode> update = new HashSet<ELNode>();
+		Set<ELNode> update = new HashSet<>();
 		
 		// loop over all nodes on the same level, which are not in the in set
 		Set<ELNode> nodes = tree.getNodesOnLevel(level);
@@ -148,7 +147,7 @@ public class ELNode {
 	{
 		if(this.isRoot())
 			return this.tree.toDescriptionString();
-		List<ELEdge> edge = new ArrayList<ELEdge>(this.parent.edges);
+		List<ELEdge> edge = new ArrayList<>(this.parent.edges);
 		for(ELEdge edg : edge)
 		{
 			if(edg.node.equals(this))
@@ -158,24 +157,24 @@ public class ELNode {
 		}
 		return "FAIL";
 	}
-	public String getLabels(TreeSet<OWLClass> labs)
+	private String getLabels(TreeSet<OWLClass> labs)
 	{
 		if(labs.size() < 1)
 			return "";
-		String str = "";
+		StringBuilder str = new StringBuilder();
 		for(OWLClass cl : labs)
 		{
-			str += cl.toString().substring(cl.toString().indexOf("#") + 1);
-			str = str.substring(0, str.length() - 1) + " and ";
+			str.append(cl.toString().substring(cl.toString().indexOf("#") + 1));
+			str = new StringBuilder(str.substring(0, str.length() - 1) + " and ");
 		}
-		str = str.substring(0, str.length() - 4);
-		return str;
+		str = new StringBuilder(str.substring(0, str.length() - 4));
+		return str.toString();
 	}
 	public ELNode(ELNode parentNode, OWLProperty parentProperty, Set<OWLClass> label) {
 //		this.label = label;
 		// we first need to add the edge and update the simulation and then add
 		// all classes iteratively to the label (each time updating the simulation again)
-		this.edges = new LinkedList<ELEdge>();
+		this.edges = new LinkedList<>();
 		parent = parentNode;
 		// the reference tree is the same as for the parent tree
 		tree = parentNode.tree;
@@ -190,7 +189,7 @@ public class ELNode {
 		// simulation update
 		// Monitor mon = MonitorFactory.start("simulation update");
 		// the nodes, which need to be updated
-		Set<ELNode> update = new HashSet<ELNode>();
+		Set<ELNode> update = new HashSet<>();
 		
 		// loop over all nodes on the same level, which are not in the in set
 		Set<ELNode> nodes = tree.getNodesOnLevel(level);
@@ -240,11 +239,11 @@ public class ELNode {
 	public ELNode getRoot() {
 		ELNode root = this;
 		while(root.parent != null) {
-			root = parent;
+			root = root.parent; // BORIS: I hope this is correct (new root is old root's parent)
 		}
 		return root;
 	}
-	public boolean isRoot() {
+	private boolean isRoot() {
 		return parent == null;
 	}
 	public int computeLevel() {
@@ -265,7 +264,7 @@ public class ELNode {
 		}
 		return position;
 	}
-	public int getChildNumber() {
+	private int getChildNumber() {
 		int count = 0;
 		for(ELEdge edge : parent.edges) {
 			if(edge.getNode() == this) {
@@ -297,8 +296,8 @@ public class ELNode {
 //		System.out.println(tree);
 //		System.out.println(tree.size);
 	}
-	public void labelSimulationUpdate() { 
-		Set<ELNode> update = new HashSet<ELNode>();
+	private void labelSimulationUpdate() {
+		Set<ELNode> update = new HashSet<>();
 		
 		Set<ELNode> tmp = tree.getNodesOnLevel(level);
 		for(ELNode w : tmp) {
@@ -330,7 +329,7 @@ public class ELNode {
 	}
 	public void refineEdge(int edgeNumber, OWLProperty op) {
 		edges.get(edgeNumber).setLabel(op); 
-		Set<ELNode> update = new HashSet<ELNode>();
+		Set<ELNode> update = new HashSet<>();
 		update.add(this); 
 		tree.updateSimulation(update);	
 //		mon.stop();
@@ -348,60 +347,60 @@ public class ELNode {
 	}
 	
 	private String toString(int indent) {
-		String indentString = "";
+		StringBuilder indentString = new StringBuilder();
 		for(int i=0; i<indent; i++)
-			indentString += "  ";
+			indentString.append("  ");
 		
-		String str = indentString + label.toString() + "\n";
+		StringBuilder str = new StringBuilder(indentString + label.toString() + "\n");
 		for(ELEdge edge : edges) {
-			str += indentString + "-- " + edge.getLabel() + " -->\n";
-			str += edge.getNode().toString(indent + 2);
+			str.append(indentString).append("-- ").append(edge.getLabel()).append(" -->\n");
+			str.append(edge.getNode().toString(indent + 2));
 		}
-		return str;
+		return str.toString();
 	}
-	public boolean isClassNode() {
+	private boolean isClassNode() {
 		return isClassNode;
 	}
 	public String toDescriptionString() {
-		String str = "";
+		StringBuilder str = new StringBuilder();
 		if(isClassNode()){
 			if(label.isEmpty()) {
-				str = "";
+				str = new StringBuilder();
 			} else {
 				Iterator<OWLClass> it = label.iterator();
 				while(it.hasNext()) {
 					OWLClass nc = it.next();
 					if(it.hasNext()) {
-						str += toMan(nc.toString()) + " and ";
+						str.append(toMan(nc.toString())).append(" and ");
 					} else {
-						str += toMan(nc.toString());
+						str.append(toMan(nc.toString()));
 					}
 				}
 			}
 		} else {
-			str += dataRange;
+			str.append(dataRange);
 		}
 		
 		int current = 1;
 		for(ELEdge edge : edges) {
 			if(current> 1) {
-				str += " and " + toMan(edge.getLabel().toString()) + " some (";
-				str += toMan(edge.getNode().toDescriptionString()) + ")";
+				str.append(" and ").append(toMan(edge.getLabel().toString())).append(" some (");
+				str.append(toMan(edge.getNode().toDescriptionString())).append(")");
 				continue;
 			} 
 			if(!label.isEmpty()) {
-				str += " and " + toMan(edge.getLabel().toString()) + " some (";
-				str += toMan(edge.getNode().toDescriptionString()) + ")";
+				str.append(" and ").append(toMan(edge.getLabel().toString())).append(" some (");
+				str.append(toMan(edge.getNode().toDescriptionString())).append(")");
 			}else {
-				str += "  " + toMan(edge.getLabel().toString()) + " some (";
-				str += toMan(edge.getNode().toDescriptionString()) + ") ";
+				str.append("  ").append(toMan(edge.getLabel().toString())).append(" some (");
+				str.append(toMan(edge.getNode().toDescriptionString())).append(") ");
 			}
 			
 			current++;
 		}
-		return str;		
+		return str.toString();
 	}
-	public String toMan(String str)
+	private String toMan(String str)
 	{
 		String mod = "";
 		mod = str.substring(str.indexOf("#")+1); 
@@ -410,16 +409,16 @@ public class ELNode {
 	}
 	
 	private String toDescriptionString(Set<ELNode> nodes) {
-		String str = "";
+		StringBuilder str = new StringBuilder();
 		// comma separated list of descriptions
 		for(ELNode node : nodes) {
-			str += node.toDescriptionString() + ",";
+			str.append(node.toDescriptionString()).append(",");
 		}
 		// remove last comma
 		if(str.length() > 0) {
-			str = str.substring(0, str.length()-1);
+			str = new StringBuilder(str.substring(0, str.length() - 1));
 		}
-		return str;
+		return str.toString();
 	}
 	
 	public String toSimulationString() {
@@ -432,17 +431,17 @@ public class ELNode {
 		str += "outSC2: " + toDescriptionString(outSC2) + "\n";		
 		return str;
 	}
-	public static String toString(Set<ELNode> nodes, Map<ELNode,String> nodeNames) {
-		String str = "";
+	private static String toString(Set<ELNode> nodes, Map<ELNode, String> nodeNames) {
+		StringBuilder str = new StringBuilder();
 		// comma separated list of expressions
 		for(ELNode node : nodes) {
-			str += nodeNames.get(node) + ",";
+			str.append(nodeNames.get(node)).append(",");
 		}
 		// remove last comma
 		if(str.length() > 0) {
-			str = str.substring(0, str.length()-1);
+			str = new StringBuilder(str.substring(0, str.length() - 1));
 		}
-		return str;
+		return str.toString();
 	}
 	
 	public String toSimulationString(Map<ELNode,String> nodeNames) {
@@ -513,10 +512,7 @@ public class ELNode {
 				}
 			// return an intersection of labels and edges
 			} else {
-				Set<OWLClassExpression> operands = new TreeSet<>();
-				for(OWLClass nc : label) {
-					operands.add(nc);
-				}
+				Set<OWLClassExpression> operands = new TreeSet<OWLClassExpression>(label);
 				
 				for(ELEdge edge : edges) {
 					if(edge.isObjectProperty()){
@@ -525,8 +521,7 @@ public class ELNode {
 						operands.add(osr);
 					}  
 				}
-				OWLClassExpression is = df.getOWLObjectIntersectionOf(operands);
-				return is;
+				return df.getOWLObjectIntersectionOf(operands);
 			}
 			 
 		}

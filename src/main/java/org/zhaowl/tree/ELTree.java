@@ -33,24 +33,24 @@ public class ELTree implements Cloneable {
 	public ELNode rootNode;
 
 	// the set of all nodes in the tree
-	public Collection<ELNode> nodes = new LinkedList<ELNode>();
+    private Collection<ELNode> nodes = new LinkedList<>();
 
 	// nodes on a given level of the tree
-	public Map<Integer, Set<ELNode>> levelNodeMapping = new HashMap<Integer, Set<ELNode>>();
+    private final Map<Integer, Set<ELNode>> levelNodeMapping = new HashMap<>();
 
 	// the background knowledge (we need to have it explicitly here,
 	// since we store simulation information in the tree and simulation
 	// updates depend on background knowledge)
-	public ClassHierarchyT subsumptionHierarchy;
+    private ClassHierarchyT subsumptionHierarchy;
 	//public ObjectPropertyHierarchyT roleHierarchy;
 	public OWLDataFactory df = new OWLDataFactoryImpl();
-	public Reasoner rs;
-	public OWLOntology ontology;
+	private Reasoner rs;
+	private OWLOntology ontology;
 
 	public void checkTree() {
 	}
 
-	public ELTree(Reasoner rs, OWLOntology ontology) {
+	private ELTree(Reasoner rs, OWLOntology ontology) {
 		this.rs = rs;
 		this.ontology = ontology;
 		subsumptionHierarchy = rs.getClassHierarchy();
@@ -80,14 +80,14 @@ public class ELTree implements Cloneable {
 	 
 
 	//Reference: DL Learner
-	public void constructTree(OWLClassExpression description, ELNode node) throws Exception {
+    private void constructTree(OWLClassExpression description, ELNode node) throws Exception {
 		if (description.isOWLThing()) {
 			// nothing needs to be done as an empty set is owl:Thing
 		} else if (!description.isAnonymous()) {
 			node.extendLabel(description.asOWLClass());
 		} else if (description instanceof OWLObjectSomeValuesFrom) {
 			OWLObjectProperty op = ((OWLObjectSomeValuesFrom) description).getProperty().asOWLObjectProperty();
-			ELNode newNode = new ELNode(node, op, new TreeSet<OWLClass>());
+			ELNode newNode = new ELNode(node, op, new TreeSet<>());
 			constructTree(((OWLObjectSomeValuesFrom) description).getFiller(), newNode);
 		} else if (description instanceof OWLDataSomeValuesFrom) {
 		} else if (description instanceof OWLObjectIntersectionOf) {
@@ -97,7 +97,7 @@ public class ELTree implements Cloneable {
 					node.extendLabel(child.asOWLClass());
 				} else if (child instanceof OWLObjectSomeValuesFrom) {
 					OWLObjectProperty op = ((OWLObjectSomeValuesFrom) child).getProperty().asOWLObjectProperty();
-					ELNode newNode = new ELNode(node, op, new TreeSet<OWLClass>());
+					ELNode newNode = new ELNode(node, op, new TreeSet<>());
 					constructTree(((OWLObjectSomeValuesFrom) child).getFiller(), newNode);
 				} else {
 					throw new Exception(description + " specifically " + child);
@@ -176,7 +176,7 @@ public class ELTree implements Cloneable {
 		if (level <= maxLevel) {
 			levelNodeMapping.get(level).add(node);
 		} else if (level == maxLevel + 1) {
-			Set<ELNode> set = new HashSet<ELNode>();
+			Set<ELNode> set = new HashSet<>();
 			set.add(node);
 			levelNodeMapping.put(level, set);
 			maxLevel++;
@@ -218,9 +218,9 @@ public class ELTree implements Cloneable {
 		return currentNode;
 	}
 
-	protected void updateSimulation(Set<ELNode> nUpdate) {
+	void updateSimulation(Set<ELNode> nUpdate) {
 		// create a stack and initialize it with the nodes to be updated
-		LinkedList<ELNode> list = new LinkedList<ELNode>();
+		LinkedList<ELNode> list = new LinkedList<>();
 		list.addAll(nUpdate);
 
 		while (list.size() != 0) {
@@ -310,7 +310,7 @@ public class ELTree implements Cloneable {
 	}
 
 	// tests simulation condition 2 (SC2)
-	public boolean checkSC2(ELNode node1, ELNode node2) {
+    private boolean checkSC2(ELNode node1, ELNode node2) {
 		List<ELEdge> edges1 = node1.getEdges();
 		List<ELEdge> edges2 = node2.getEdges();
 
@@ -396,7 +396,7 @@ public class ELTree implements Cloneable {
 		node2.outSC1.remove(node1);
 	}
 
-	public void shrinkSimulationSC2(ELNode node1, ELNode node2) {
+	private void shrinkSimulationSC2(ELNode node1, ELNode node2) {
 		// System.out.println(node2.outSC2);
 		node1.inSC2.remove(node2);
 		node2.outSC2.remove(node1);
@@ -409,22 +409,22 @@ public class ELTree implements Cloneable {
 	}
 
 	public String toSimulationString() {
-		String str = "";
+		StringBuilder str = new StringBuilder();
 		for (ELNode node : nodes) {
-			str += node.toSimulationString() + "\n";
+			str.append(node.toSimulationString()).append("\n");
 		}
-		return str;
+		return str.toString();
 	}
 
 	public String toSimulationString(Map<ELNode, String> nodeNames) {
-		String str = "";
+		StringBuilder str = new StringBuilder();
 		for (Entry<ELNode, String> entry : nodeNames.entrySet()) {
 			String nodeName = entry.getValue();
 			ELNode node = entry.getKey();
-			str += nodeName + ":\n";
-			str += node.toSimulationString(nodeNames) + "\n";
+			str.append(nodeName).append(":\n");
+			str.append(node.toSimulationString(nodeNames)).append("\n");
 		}
-		return str;
+		return str.toString();
 	}
 
 	@Override
@@ -437,7 +437,7 @@ public class ELTree implements Cloneable {
 		// a mapping between "old" and "new" nodes
 		// (hash map should be fast here, but one could also
 		// experiment with TreeMap)
-		Map<ELNode, ELNode> cloneMap = new HashMap<ELNode, ELNode>();
+		Map<ELNode, ELNode> cloneMap = new HashMap<>();
 
 		// create a new (empty) node for each node in the tree
 		// (we loop through the level mapping, because it is cheaper
@@ -510,7 +510,7 @@ public class ELTree implements Cloneable {
 		// level node mapping
 		for (int i = 1; i <= maxLevel; i++) {
 			Set<ELNode> oldNodes = levelNodeMapping.get(i);
-			Set<ELNode> newNodes = new HashSet<ELNode>();
+			Set<ELNode> newNodes = new HashSet<>();
 			for (ELNode oldNode : oldNodes) {
 				newNodes.add(cloneMap.get(oldNode));
 			}
@@ -525,7 +525,7 @@ public class ELTree implements Cloneable {
 		// create a new reference tree
 		ELTree treeClone = new ELTree(rs, ontology);
 		// create a root node attached to this reference tree
-		ELNode rootNodeClone = new ELNode(treeClone, new TreeSet<OWLClass>(rootNode.getLabel()));
+		ELNode rootNodeClone = new ELNode(treeClone, new TreeSet<>(rootNode.getLabel()));
 		cloneRecursively(rootNode, rootNodeClone);
 		return treeClone;
 	}
@@ -534,7 +534,7 @@ public class ELTree implements Cloneable {
 	private void cloneRecursively(ELNode node, ELNode nodeClone) {
 		// loop through all edges and clone the subtrees
 		for (ELEdge edge : node.getEdges()) {
-			ELNode tmp = new ELNode(nodeClone, edge.getLabel(), new TreeSet<OWLClass>(edge.getNode().getLabel()));
+			ELNode tmp = new ELNode(nodeClone, edge.getLabel(), new TreeSet<>(edge.getNode().getLabel()));
 			cloneRecursively(edge.getNode(), tmp);
 		}
 	}

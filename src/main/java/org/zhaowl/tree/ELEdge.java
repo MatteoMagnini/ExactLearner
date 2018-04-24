@@ -3,9 +3,9 @@ package org.zhaowl.tree;
 import org.semanticweb.owlapi.model.OWLProperty;
 
 public class ELEdge {
-	public OWLProperty label;
+	private OWLProperty label;
 	public String strLabel;
-	public ELNode node;
+	public final ELNode node;
 
 	/**
 	 * Constructs an edge given a label and an EL OWLClassExpression tree.
@@ -21,7 +21,7 @@ public class ELEdge {
 	/**
 	 * @param label the label to set
 	 */
-	public String toMan(String str)
+    private String toMan(String str)
 	{
 		String modStr = "";
 		modStr = str.substring(str.indexOf("#") + 1);

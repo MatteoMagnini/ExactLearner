@@ -3,9 +3,7 @@ package org.zhaowl.learner;
  
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
-import java.util.NavigableSet;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -19,9 +17,9 @@ import org.zhaowl.tree.ELNode;
 import org.zhaowl.tree.ELTree;
 
 public class ELLearner {
-    public int unsaturationCounter=0;
-	public final ELEngine myEngineForT;
-	public final ELEngine myEngineForH;
+    private int unsaturationCounter=0;
+	private final ELEngine myEngineForT;
+	private final ELEngine myEngineForH;
 	private final consoleLearner myConsole;
 	private OWLClassExpression myExpression; 
 	private OWLClass myClass;
@@ -128,7 +126,7 @@ public class ELLearner {
         return myEngineForT.getSubClassAxiom( myExpression,myClass);	 
 	}
     
-	public Boolean unsaturating(OWLClassExpression expression, OWLClass cl) throws Exception {
+	private Boolean unsaturating(OWLClassExpression expression, OWLClass cl) throws Exception {
 		OWLClassExpression cls=null;		 
 		boolean flag=false;
 		ELTree tree = new ELTree(expression);	 
@@ -428,7 +426,7 @@ public class ELLearner {
 		return sets;
 	}
 	//at the moment duplicated
-		public Boolean isCounterExample(OWLClassExpression left, OWLClassExpression right){
+	private Boolean isCounterExample(OWLClassExpression left, OWLClassExpression right){
 			return  myEngineForT.entailed(myEngineForT.getSubClassAxiom(left, right))
 					&&
 					!myEngineForH.entailed(myEngineForH.getSubClassAxiom(left, right));

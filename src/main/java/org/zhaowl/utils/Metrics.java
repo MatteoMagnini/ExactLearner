@@ -9,13 +9,12 @@ import java.util.ArrayList;
 import java.util.Set;
 
 import org.semanticweb.owlapi.model.OWLAxiom;
-import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLClassExpression;
 
 import uk.ac.manchester.cs.owl.owlapi.mansyntaxrenderer.ManchesterOWLSyntaxOWLObjectRendererImpl;
 
 public class Metrics {
-	public ManchesterOWLSyntaxOWLObjectRendererImpl rendering;
+	private ManchesterOWLSyntaxOWLObjectRendererImpl rendering;
 
  
 	public Metrics(ManchesterOWLSyntaxOWLObjectRendererImpl rendering)
@@ -49,8 +48,8 @@ public class Metrics {
 			// ==System.out.println(inclusion);
 			String[] arrIncl = inclusion.split(" ");
 			totalSize = 0;
-			for (int i = 0; i < arrIncl.length; i++)
-				if (arrIncl[i].length() > 1)
+			for (String anArrIncl : arrIncl)
+				if (anArrIncl.length() > 1)
 					totalSize++;
 			
 			if (smallestOne == null) {
@@ -93,8 +92,8 @@ public class Metrics {
 			// ==System.out.println(inclusion);
 			String[] arrIncl = inclusion.split(" ");
 			totalSize = 0;
-			for (int i = 0; i < arrIncl.length; i++)
-				if (arrIncl[i].length() > 1)
+			for (String anArrIncl : arrIncl)
+				if (anArrIncl.length() > 1)
 					totalSize++;
 			
 			if (smallestOne == null) {
@@ -131,7 +130,7 @@ public class Metrics {
 	
 	public ArrayList<String> getSuggestionNames(String s, File newFile) throws IOException {
 
-		ArrayList<String> names = new ArrayList<String>();
+		ArrayList<String> names = new ArrayList<>();
 		FileInputStream in = new FileInputStream(newFile);
 		BufferedReader reader = new BufferedReader(new InputStreamReader(in));
 
@@ -182,9 +181,9 @@ public class Metrics {
 			//System.out.println(inclusion);
 			String[] arrIncl = inclusion.split(" ");
 			totalSize = 0;
-			
-			for(int i = 0; i < arrIncl.length; i++)
-				if(arrIncl[i].length() > 0 &&  !arrIncl[i].equals("some"))
+
+			for (String anArrIncl : arrIncl)
+				if (anArrIncl.length() > 0 && !anArrIncl.equals("some"))
 					totalSize++;
 			
 			//for(int i = 0; i < arrIncl.length; i++)

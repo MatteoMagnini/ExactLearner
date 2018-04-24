@@ -30,7 +30,7 @@ public class ObjectPropertyHierarchyT extends AbstractH<OWLObjectProperty> {
 	/**
 	 * @return The most general roles.
 	 */
-	public SortedSet<OWLObjectProperty> getMostGeneralRoles() {
+    private SortedSet<OWLObjectProperty> getMostGeneralRoles() {
 		return getMostGeneralEntities();
 	}
 
@@ -53,12 +53,12 @@ public class ObjectPropertyHierarchyT extends AbstractH<OWLObjectProperty> {
 	/* (non-Javadoc)
 	 * @see org.dllearner.core.owl.AbstractHierarchy#toString(java.util.SortedMap, org.semanticweb.owlapi.model.OWLObject, int)
 	 */
-	protected String toString(SortedMap<OWLObjectProperty, SortedSet<OWLObjectProperty>> hierarchy,
-			OWLObjectProperty prop, int depth) {
-		String str = "";
+	String toString(SortedMap<OWLObjectProperty, SortedSet<OWLObjectProperty>> hierarchy,
+					OWLObjectProperty prop, int depth) {
+		StringBuilder str = new StringBuilder();
 		for (int i = 0; i < depth; i++)
-			str += "  ";
-		str += prop.toString() + "\n";
+			str.append("  ");
+		str.append(prop.toString()).append("\n");
 		Set<OWLObjectProperty> tmp;
 		if(prop.isTopEntity()) {
 			tmp = getMostGeneralRoles();
@@ -68,9 +68,9 @@ public class ObjectPropertyHierarchyT extends AbstractH<OWLObjectProperty> {
 		
 		if (tmp != null) {
 			for (OWLObjectProperty c : tmp)
-				str += toString(hierarchy, c, depth + 1);
+				str.append(toString(hierarchy, c, depth + 1));
 		}
-		return str;
+		return str.toString();
 	}
 	
  

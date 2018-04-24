@@ -10,7 +10,6 @@ import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLClassExpression;
 import org.semanticweb.owlapi.model.OWLDataFactory;
-import org.semanticweb.owlapi.reasoner.Node;
 import org.semanticweb.owlapi.vocab.OWLRDFVocabulary;
 
 import uk.ac.manchester.cs.owl.owlapi.OWLClassImpl;
@@ -22,7 +21,7 @@ public class ClassHierarchyT extends AbstractH<OWLClassExpression>{
     private static final OWLClass OWL_NOTHING = new OWLClassImpl(
             OWLRDFVocabulary.OWL_NOTHING.getIRI());
     
-    private OWLDataFactory df = new OWLDataFactoryImpl();
+    private final OWLDataFactory df = new OWLDataFactoryImpl();
     
 	/**
 	 * The arguments specify the superclasses and subclasses of each class. This
@@ -51,9 +50,9 @@ public class ClassHierarchyT extends AbstractH<OWLClassExpression>{
 	 * @param direct whether to return only direct superclasses or not
 	 * @return all superclasses
 	 */
-	public SortedSet<OWLClassExpression> getSuperClasses(OWLClassExpression concept, boolean direct) {
+    private SortedSet<OWLClassExpression> getSuperClasses(OWLClassExpression concept, boolean direct) {
 		if(concept.isOWLThing()) {
-			return new TreeSet<OWLClassExpression>();
+			return new TreeSet<>();
 		}
 		return getParents(concept, direct);
 	}
@@ -73,9 +72,9 @@ public class ClassHierarchyT extends AbstractH<OWLClassExpression>{
 	 * @param direct whether to return only direct subclasses or not
 	 * @return all subclasses
 	 */
-	public SortedSet<OWLClassExpression> getSubClasses(OWLClassExpression concept, boolean direct) {
+    private SortedSet<OWLClassExpression> getSubClasses(OWLClassExpression concept, boolean direct) {
 		if(concept.isOWLNothing()) {
-			return new TreeSet<OWLClassExpression>();
+			return new TreeSet<>();
 		}
 		return getChildren(concept, direct);
 	}
@@ -101,8 +100,8 @@ public class ClassHierarchyT extends AbstractH<OWLClassExpression>{
 		return toOWLAxioms(OWL_THING);
 	}
 	
-	public Set<OWLAxiom> toOWLAxioms(OWLClassExpression concept){
-		Set<OWLAxiom> axioms = new HashSet<OWLAxiom>();
+	private Set<OWLAxiom> toOWLAxioms(OWLClassExpression concept){
+		Set<OWLAxiom> axioms = new HashSet<>();
 		Set<OWLClassExpression> subConcepts = getChildren(concept);
 		if (subConcepts != null) {
 			for (OWLClassExpression sub : subConcepts){
@@ -113,7 +112,7 @@ public class ClassHierarchyT extends AbstractH<OWLClassExpression>{
 		return axioms;
 	}
 	
-	public int getDepth2Root(OWLClassExpression concept){
+	private int getDepth2Root(OWLClassExpression concept){
 		SortedSet<OWLClassExpression> superClasses = getParents(concept);
 		int depth = 0;
 		if(superClasses != null){
