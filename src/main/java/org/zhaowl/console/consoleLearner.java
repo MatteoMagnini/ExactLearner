@@ -151,7 +151,7 @@ public class consoleLearner {
 
 				timeStart = System.currentTimeMillis();
  
-				runLearner();
+				runLearner(elQueryEngineForT, elQueryEngineForH);
 				System.out.println("Total membership queries: " + membCount);
 				System.out.println("Total equivalence queries: " + equivCount);
 				System.out.println("Target TBox logical axioms: " + axiomsT.size());
@@ -231,14 +231,14 @@ public class consoleLearner {
 
 	}
 
-	public void runLearner() throws Throwable {
+	public void runLearner(ELEngine elQueryEngineForT,ELEngine elQueryEngineForH) throws Throwable {
 
 		while (!equivalenceQuery()) {
 			equivCount++;
 			if (ezBox) {
 				ezEq();
 			} else {	
-				lastCE=getCounterExample();
+				lastCE=getCounterExample(elQueryEngineForT,elQueryEngineForH);
 			}
 			 
 			OWLClassExpression left = null;
@@ -539,7 +539,7 @@ public class consoleLearner {
 
 
 
-	public OWLAxiom getCounterExample() throws Exception {
+	public OWLAxiom getCounterExample(ELEngine elQueryEngineForT,ELEngine elQueryEngineForH) throws Exception {
 		Iterator<OWLAxiom> iteratorT = axiomsT.iterator();
 		while (iteratorT.hasNext()) {
 			OWLAxiom selectedAxiom = iteratorT.next();
@@ -558,7 +558,7 @@ public class consoleLearner {
 					// create new counter example from the subclass and superclass
 					// of axiom NOT entailed by H
 
-					OWLAxiom newCounterexampleAxiom = getCounterExamplefromSubClassAxiom(subclass, superclass);
+					OWLAxiom newCounterexampleAxiom = getCounterExamplefromSubClassAxiom(subclass, superclass,elQueryEngineForT,elQueryEngineForH);
 					if (newCounterexampleAxiom != null) {
 						// if we actually got something, we use it as new counter example
 
@@ -843,7 +843,8 @@ public class consoleLearner {
 		return true;
 	}
 
-	private OWLAxiom getCounterExamplefromSubClassAxiom(OWLClassExpression subclass, OWLClassExpression superclass) {
+	private OWLAxiom getCounterExamplefromSubClassAxiom(OWLClassExpression subclass, OWLClassExpression superclass, 
+			ELEngine elQueryEngineForT,ELEngine elQueryEngineForH) {
 		Set<OWLClass> superclasses = elQueryEngineForT.getSuperClasses(superclass, false);
 		Set<OWLClass> subclasses = elQueryEngineForT.getSubClasses(subclass, false);
 

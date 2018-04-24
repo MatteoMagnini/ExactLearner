@@ -36,6 +36,7 @@ public class ELLearner {
 		myConsole = console;
 	}
 
+	
 	public OWLClassExpression unsaturateLeft(OWLAxiom ax) throws Exception {
 		OWLClassExpression left = ((OWLSubClassOfAxiom) ax).getSubClass();
 		OWLClassExpression right = ((OWLSubClassOfAxiom) ax).getSuperClass();
