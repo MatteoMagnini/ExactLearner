@@ -17,8 +17,8 @@ public class consoleLearnerTest {
     }
 
     private void runInFolder(File dir) {
+        System.out.println("Running in " + dir.toString());
         File[] directoryListing = dir.listFiles();
-        System.out.println("Running in " + directoryListing.toString());
         if(directoryListing != null) {
             for(File ont : directoryListing) {
                 System.out.println(ont.toString());
