@@ -1,0 +1,2039 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/anatomy/caro/spatial.obo#"
+     xml:base="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/anatomy/caro/spatial.obo"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:go="http://www.geneontology.org/go#">
+    <owl:Ontology rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/anatomy/caro/spatial.obo">
+        <go:remark>based on FBql</go:remark>
+        <go:date>18:03:2008 14:49</go:date>
+        <go:auto-generated-by>OBO-Edit 1.101</go:auto-generated-by>
+        <go:saved-by>Melissa  Haendel</go:saved-by>
+        <go:default-namespace>spatial</go:default-namespace>
+        <go:format-version>1.2</go:format-version>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/go#xref"/>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/go#inverse_of"/>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/go#format-version"/>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/go#default-namespace"/>
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/go#def"/>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/go#saved-by"/>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/go#remark"/>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/go#auto-generated-by"/>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/go#synonym"/>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/go#alt_id"/>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/go#comment"/>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/go#date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000095 -->
+
+    <owl:ObjectProperty rdf:about="http://www.geneontology.org/go#BSPO_0000095">
+        <rdfs:label>anatomical_relation</rdfs:label>
+        <go:xref>FBql:00005860</go:xref>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000096 -->
+
+    <owl:ObjectProperty rdf:about="http://www.geneontology.org/go#BSPO_0000096">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:label>anterior_to</rdfs:label>
+        <go:synonym>&quot;rostral_to&quot; EXACT []</go:synonym>
+        <go:inverse_of>BSPO:0000099</go:inverse_of>
+        <go:xref>FBql:00005863</go:xref>
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/go#BSPO_0000095"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000097 -->
+
+    <owl:ObjectProperty rdf:about="http://www.geneontology.org/go#BSPO_0000097">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:label>distal_to</rdfs:label>
+        <go:inverse_of>BSPO:0000100</go:inverse_of>
+        <go:xref>FBql:00005867</go:xref>
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/go#BSPO_0000095"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000098 -->
+
+    <owl:ObjectProperty rdf:about="http://www.geneontology.org/go#BSPO_0000098">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:label>dorsal_to</rdfs:label>
+        <go:xref>FBql:00005865</go:xref>
+        <go:synonym>&quot;superior_to&quot; EXACT []</go:synonym>
+        <go:inverse_of>BSPO:0000102</go:inverse_of>
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/go#BSPO_0000095"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000099 -->
+
+    <owl:ObjectProperty rdf:about="http://www.geneontology.org/go#BSPO_0000099">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:label>posterior_to</rdfs:label>
+        <go:xref>FBql:00005864</go:xref>
+        <go:inverse_of>BSPO:0000096</go:inverse_of>
+        <go:synonym>&quot;caudal_to&quot; EXACT []</go:synonym>
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/go#BSPO_0000095"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000100 -->
+
+    <owl:ObjectProperty rdf:about="http://www.geneontology.org/go#BSPO_0000100">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:label>proximal_to</rdfs:label>
+        <go:inverse_of>BSPO:0000097</go:inverse_of>
+        <go:xref>FBql:00005868</go:xref>
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/go#BSPO_0000095"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000101 -->
+
+    <owl:ObjectProperty rdf:about="http://www.geneontology.org/go#BSPO_0000101">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:label>surrounding</rdfs:label>
+        <go:xref>FBql:00005861</go:xref>
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/go#BSPO_0000095"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000102 -->
+
+    <owl:ObjectProperty rdf:about="http://www.geneontology.org/go#BSPO_0000102">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:label>ventral_to</rdfs:label>
+        <go:synonym>&quot;inferior_to&quot; EXACT []</go:synonym>
+        <go:inverse_of>BSPO:0000098</go:inverse_of>
+        <go:xref>FBql:00005866</go:xref>
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/go#BSPO_0000095"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000103 -->
+
+    <owl:ObjectProperty rdf:about="http://www.geneontology.org/go#BSPO_0000103">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:label>vicinity_of</rdfs:label>
+        <go:xref>FBql:00005862</go:xref>
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/go#BSPO_0000095"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.geneontology.org/go#has_axis -->
+
+    <owl:ObjectProperty rdf:about="http://www.geneontology.org/go#has_axis">
+        <rdfs:label>has_axis</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.geneontology.org/go#has_position -->
+
+    <owl:ObjectProperty rdf:about="http://www.geneontology.org/go#has_position">
+        <rdfs:label>has_position</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.geneontology.org/go#opposite_to -->
+
+    <owl:ObjectProperty rdf:about="http://www.geneontology.org/go#opposite_to">
+        <rdfs:label>opposite_to</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.geneontology.org/go#orthogonal_to -->
+
+    <owl:ObjectProperty rdf:about="http://www.geneontology.org/go#orthogonal_to">
+        <rdfs:label>orthogonal_to</rdfs:label>
+        <go:def>&quot;crossing at right angles&quot; [BSPO:cjm]</go:def>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000000 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000000">
+        <rdfs:label>left</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000054"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_axis"/>
+                <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000017"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000001 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000001">
+        <rdfs:label>upper</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000054"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_axis"/>
+                <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000011"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000002 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000002">
+        <rdfs:label>lower</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000054"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_axis"/>
+                <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000011"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_00000021 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_00000021">
+        <rdfs:label>deep-superficial gradient</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000051"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_axis"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000012"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000051"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000003 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000003">
+        <rdfs:label>deep</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000054"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_axis"/>
+                <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000012"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000004 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000004">
+        <rdfs:label>superficial</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000054"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_axis"/>
+                <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000012"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000005 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000005">
+        <rdfs:label>anatomical surface</rdfs:label>
+        <go:comment>to be merged into CARO</go:comment>
+        <go:synonym>&quot;surface&quot; EXACT []</go:synonym>
+        <go:def>&quot;A 2D surface of an anatomical continuant&quot; [BSPO:cjm]</go:def>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000006 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000006">
+        <rdfs:label>anatomical margin</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000070"/>
+        <go:synonym>&quot;edge&quot; EXACT []</go:synonym>
+        <go:synonym>&quot;margin&quot; EXACT []</go:synonym>
+        <go:def>&quot;fiat region extending a short distance from the boundary of an object inwards&quot; [BSPO:cjm]</go:def>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000007 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000007">
+        <rdfs:label>right</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000054"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_axis"/>
+                <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000017"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000008 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000008">
+        <rdfs:label>parasagittal section</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000417"/>
+        <go:def>&quot;Sagittal section that divides bilateral body into unequal equal left and right sections.&quot; [BSPO:mah]</go:def>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000009 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000009">
+        <rdfs:label>midsaggital section</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000417"/>
+        <go:def>&quot;Sagittal section that divides bilateral body into equal left and right sections.&quot; [BSPO:mah]</go:def>
+        <go:synonym>&quot;median sagittal plane&quot; EXACT []</go:synonym>
+        <go:xref>FMA:74563</go:xref>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000010 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000010">
+        <rdfs:label>anatomical axis</rdfs:label>
+        <go:comment>axis directions are defined in terms of axes</go:comment>
+        <go:def>&quot;A straight line through space, intersecting an anatomical entity, around which it can be rotated.&quot; [BSPO:cjm]</go:def>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000011 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000011">
+        <rdfs:label>upper/lower axis</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000010"/>
+        <go:def>&quot;An anatomical axis determined by gravity.&quot; [BSPO:cjm]</go:def>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000012 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000012">
+        <rdfs:label>deep/superficial axis</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000010"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000013 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000013">
+        <rdfs:label>anterior/posterior axis</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000010"/>
+        <go:synonym>&quot;rostral/caudal&quot; EXACT []</go:synonym>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000014 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000014">
+        <rdfs:label>apical/basal axis</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000010"/>
+        <go:synonym>&quot;apical/basal&quot; EXACT []</go:synonym>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000015 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000015">
+        <rdfs:label>proximal/distal axis</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000010"/>
+        <go:synonym>&quot;proximal/distal&quot; EXACT []</go:synonym>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000016 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000016">
+        <rdfs:label>dorsal/ventral axis</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000010"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000017 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000017">
+        <rdfs:label>left/right axis</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000010"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#orthogonal_to"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000417"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000010"/>
+        <go:comment>we need planes too. l/r axis is orthogonal to sagittal plane</go:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000018 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000018">
+        <rdfs:label>transverse section</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000400"/>
+        <go:def>&quot;Anatomical section that divides body into anterior and posterior sections.&quot; [BSPO:mah]</go:def>
+        <go:synonym>&quot;cross-section&quot; RELATED []</go:synonym>
+        <go:synonym>&quot;axial section&quot; EXACT []</go:synonym>
+        <go:xref>FMA:12247</go:xref>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000019 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000019">
+        <rdfs:label>horizontal section</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000400"/>
+        <go:def>&quot;Anatomical section that divides bilateral body into dorsal and ventral sections.&quot; [BSPO:mah]</go:def>
+        <go:synonym>&quot;frontal section&quot; RELATED []</go:synonym>
+        <go:synonym>&quot;coronal section&quot; RELATED []</go:synonym>
+        <go:xref>FMA:52810</go:xref>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000020 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000020">
+        <rdfs:label>upper-lower gradient</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000051"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_axis"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000011"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000051"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000022 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000022">
+        <rdfs:label>superior</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000054"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000023 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000023">
+        <rdfs:label>apical-basal gradient</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000051"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_axis"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000014"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000051"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000024 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000024">
+        <rdfs:label>proximal-distal gradient</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000051"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_axis"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000015"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000051"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000025 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000025">
+        <rdfs:label>inferior</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000054"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000031 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000031">
+        <rdfs:label>upper region</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000070"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000001"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000070"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000032 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000032">
+        <rdfs:label>lower region</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000070"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000002"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000070"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000033 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000033">
+        <rdfs:label>deep region</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000070"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000003"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000070"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000034 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000034">
+        <rdfs:label>superficial region</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000070"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000004"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000070"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000040 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000040">
+        <rdfs:label>upper/lower compartment boundary</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000092"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_axis"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000011"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000092"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000041 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000041">
+        <rdfs:label>deep/superficial compartment boundary</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000092"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_axis"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000012"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000092"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000043 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000043">
+        <rdfs:label>apical/basal compartment boundary</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000092"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_axis"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000014"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000092"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000044 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000044">
+        <rdfs:label>proximal/distal compartment boundary</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000092"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_axis"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000015"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000092"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000051 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000051">
+        <rdfs:label>anatomical gradient</rdfs:label>
+        <go:xref>FBql:00005254</go:xref>
+        <go:def>&quot;A region defined by change in the value of some quantity per unit of distance across some spatial axis.&quot; [BSPO:cjm]</go:def>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000052 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000052">
+        <rdfs:label>anterior-posterior gradient</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000051"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_axis"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000013"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000051"/>
+        <go:xref>FBql:00005256</go:xref>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000053 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000053">
+        <rdfs:label>dorsal-ventral gradient</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000051"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_axis"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000016"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000051"/>
+        <go:xref>FBql:00005255</go:xref>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000054 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000054">
+        <rdfs:label>anatomical axis direction</rdfs:label>
+        <go:comment>axis directions are defined in terms of axes. Note: perhaps this class should be axis position?</go:comment>
+        <go:xref>FBql:00005841</go:xref>
+        <go:def>&quot;A direction along an anatomical axis&quot; [BSPO:cjm]</go:def>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000055 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000055">
+        <rdfs:label>anterior</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000054"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_axis"/>
+                <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000013"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geneontology.org/go#opposite_to"/>
+                <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000056"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <go:xref>FBql:00005848</go:xref>
+        <go:synonym>&quot;rostral&quot; EXACT []</go:synonym>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000056 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000056">
+        <rdfs:label>posterior</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000054"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_axis"/>
+                <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000013"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <go:xref>FBql:00005849</go:xref>
+        <go:synonym>&quot;caudal&quot; EXACT []</go:synonym>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000057 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000057">
+        <rdfs:label>apical</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000054"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geneontology.org/go#opposite_to"/>
+                <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000058"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_axis"/>
+                <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000014"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <go:xref>FBql:00005854</go:xref>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000058 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000058">
+        <rdfs:label>basal</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000054"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_axis"/>
+                <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000014"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <go:xref>FBql:00005855</go:xref>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000059 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000059">
+        <rdfs:label>central</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000054"/>
+        <go:comment>central is not an axis direction</go:comment>
+        <go:xref>FBql:00015851</go:xref>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000060 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000060">
+        <rdfs:label>contralateral</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000054"/>
+        <go:comment>inherited from flybase cv. not clear how this would be used</go:comment>
+        <go:xref>FBql:00005851</go:xref>
+        <go:def>&quot;On the opposite side&quot; [BSPO:cjm]</go:def>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000061 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000061">
+        <rdfs:label>proximal</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000054"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geneontology.org/go#opposite_to"/>
+                <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000062"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_axis"/>
+                <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000015"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <go:xref>FBql:00005852</go:xref>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000062 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000062">
+        <rdfs:label>distal</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000054"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_axis"/>
+                <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000015"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <go:xref>FBql:00005853</go:xref>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000063 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000063">
+        <rdfs:label>dorsal</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000054"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_axis"/>
+                <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000016"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geneontology.org/go#opposite_to"/>
+                <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000068"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <go:xref>FBql:00005842</go:xref>
+        <go:comment>rename to &#39;dorsally located&#39;?</go:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000065 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000065">
+        <rdfs:label>ipsilateral</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000054"/>
+        <go:comment>inherited from flybase cv. not clear how this would be used</go:comment>
+        <go:xref>FBql:00005850</go:xref>
+        <go:def>&quot;On the same side&quot; [BSPO:cjm]</go:def>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000066 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000066">
+        <rdfs:label>lateral</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000054"/>
+        <go:xref>FBql:00005844</go:xref>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000067 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000067">
+        <rdfs:label>medial</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000054"/>
+        <go:xref>FBql:00005847</go:xref>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000068 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000068">
+        <rdfs:label>ventral</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000054"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_axis"/>
+                <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000016"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <go:xref>FBql:00005843</go:xref>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000070 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000070">
+        <rdfs:label>anatomical region</rdfs:label>
+        <go:xref>FBql:00005841</go:xref>
+        <go:def>&quot;A 3D region in space without well-defined compartmental boundaries; for example, the dorsal region of an ectoderm.&quot; [BSPO:cjm]</go:def>
+        <go:comment>to be merged into CARO</go:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000071 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000071">
+        <rdfs:label>anterior region</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000070"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000055"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000070"/>
+        <go:xref>FBql:00005848</go:xref>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000072 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000072">
+        <rdfs:label>posterior region</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000070"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000056"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000070"/>
+        <go:xref>FBql:00005849</go:xref>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000073 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000073">
+        <rdfs:label>apical region</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000070"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000057"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000070"/>
+        <go:xref>FBql:00005854</go:xref>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000074 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000074">
+        <rdfs:label>basal region</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000070"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000058"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000070"/>
+        <go:xref>FBql:00005855</go:xref>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000075 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000075">
+        <rdfs:label>central region</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000070"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000059"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000070"/>
+        <go:xref>FBql:00015851</go:xref>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000076 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000076">
+        <rdfs:label>contralateral region</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000070"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000060"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000070"/>
+        <go:xref>FBql:00005851</go:xref>
+        <go:comment>inherited from flybase cv. not clear how this would be used</go:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000077 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000077">
+        <rdfs:label>proximal region</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000070"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000061"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000070"/>
+        <go:xref>FBql:00005852</go:xref>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000078 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000078">
+        <rdfs:label>distal region</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000070"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000062"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000070"/>
+        <go:xref>FBql:00005853</go:xref>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000079 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000079">
+        <rdfs:label>dorsal region</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000070"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000063"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000070"/>
+        <go:xref>FBql:00005842</go:xref>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000080 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000080">
+        <rdfs:label>dorso-lateral region</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000070"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000063"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000066"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000070"/>
+        <go:xref>FBql:00005845</go:xref>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000081 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000081">
+        <rdfs:label>ipsilateral region</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000070"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000065"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000070"/>
+        <go:xref>FBql:00005850</go:xref>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000082 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000082">
+        <rdfs:label>lateral region</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000070"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000066"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000070"/>
+        <go:xref>FBql:00005844</go:xref>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000083 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000083">
+        <rdfs:label>medial region</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000070"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000067"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000070"/>
+        <go:xref>FBql:00005847</go:xref>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000084 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000084">
+        <rdfs:label>ventral region</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000070"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000068"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000070"/>
+        <go:xref>FBql:00005843</go:xref>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000085 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000085">
+        <rdfs:label>ventro-lateral region</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000070"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000066"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000068"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000070"/>
+        <go:comment>This is an example of a composition of two axis positions</go:comment>
+        <go:xref>FBql:00005846</go:xref>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000086 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000086">
+        <rdfs:label>anatomical compartment</rdfs:label>
+        <go:xref>FBql:00005873</go:xref>
+        <go:comment>to be merged into CARO</go:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000087 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000087">
+        <rdfs:label>anterior compartment</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000086"/>
+        <go:xref>FBql:00005874</go:xref>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000088 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000088">
+        <rdfs:label>compartment boundary</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000086"/>
+        <go:xref>FBql:00005878</go:xref>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000089 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000089">
+        <rdfs:label>dorsal compartment</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000086"/>
+        <go:xref>FBql:00005876</go:xref>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000090 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000090">
+        <rdfs:label>posterior compartment</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000086"/>
+        <go:xref>FBql:00005875</go:xref>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000091 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000091">
+        <rdfs:label>ventral compartment</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000086"/>
+        <go:xref>FBql:00005877</go:xref>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000092 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000092">
+        <rdfs:label>anatomical compartment boundary</rdfs:label>
+        <go:xref>FBql:00005881</go:xref>
+        <go:comment>to be merged into CARO</go:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000093 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000093">
+        <rdfs:label>anterior/posterior compartment boundary</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000092"/>
+        <go:xref>FBql:00005880</go:xref>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000094 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000094">
+        <rdfs:label>dorsal/ventral compartment boundary</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000092"/>
+        <go:xref>FBql:00005879</go:xref>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000371 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000371">
+        <rdfs:label>anterior surface</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000005"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000055"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000005"/>
+        <go:xref>FBql:00005848</go:xref>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000372 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000372">
+        <rdfs:label>posterior surface</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000005"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000056"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000005"/>
+        <go:xref>FBql:00005849</go:xref>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000373 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000373">
+        <rdfs:label>apical surface</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000005"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000057"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000005"/>
+        <go:xref>FBql:00005854</go:xref>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000374 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000374">
+        <rdfs:label>basal surface</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000005"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000058"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000005"/>
+        <go:xref>FBql:00005855</go:xref>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000376 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000376">
+        <rdfs:label>contralateral surface</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000005"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000060"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000005"/>
+        <go:xref>FBql:00005851</go:xref>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000377 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000377">
+        <rdfs:label>proximal surface</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000005"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000061"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000005"/>
+        <go:xref>FBql:00005852</go:xref>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000378 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000378">
+        <rdfs:label>distal surface</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000005"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000062"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000005"/>
+        <go:xref>FBql:00005853</go:xref>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000379 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000379">
+        <rdfs:label>dorsal surface</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000005"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000063"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000005"/>
+        <go:xref>FBql:00005842</go:xref>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000381 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000381">
+        <rdfs:label>ipsilateral surface</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000005"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000065"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000005"/>
+        <go:xref>FBql:00005850</go:xref>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000382 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000382">
+        <rdfs:label>lateral surface</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000005"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000066"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000005"/>
+        <go:xref>FBql:00005844</go:xref>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000383 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000383">
+        <rdfs:label>medial surface</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000005"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000067"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000005"/>
+        <go:xref>FBql:00005847</go:xref>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000384 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000384">
+        <rdfs:label>ventral surface</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000005"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000068"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000005"/>
+        <go:xref>FBql:00005843</go:xref>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000400 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000400">
+        <rdfs:label>anatomical section</rdfs:label>
+        <go:synonym>&quot;cross-section&quot; RELATED []</go:synonym>
+        <go:comment>These anatomical sections are applicable to most bilaterally symmetrical animals, but bipedal animals such as humans have more complex usage of these terms. For example, in post-embryonic humans a coronal plane is vertical and a transverse plane is horizontal, but for embryos and quadrupeds a coronal plane is horizontal and a transverse plane is vertical.</go:comment>
+        <go:synonym>&quot;section&quot; EXACT []</go:synonym>
+        <go:def>&quot;A flat 2D plane intersection an anatomical continuant.&quot; [bspo:cjm]</go:def>
+        <go:synonym>&quot;plane&quot; EXACT []</go:synonym>
+        <go:xref>FMA:242982</go:xref>
+        <go:synonym>&quot;anatomical cross-section&quot; EXACT []</go:synonym>
+        <go:alt_id>BSPO:0000200</go:alt_id>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000417 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000417">
+        <rdfs:label>sagittal section</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000400"/>
+        <go:def>&quot;Anatomical section that divides bilateral body into left and right sections.&quot; [BSPO:mah]</go:def>
+        <go:xref>FMA:11361</go:xref>
+        <go:synonym>&quot;left/right plane&quot; EXACT []</go:synonym>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000671 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000671">
+        <rdfs:label>anterior margin</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000006"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000055"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000006"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000672 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000672">
+        <rdfs:label>posterior margin</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000006"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000056"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000006"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000673 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000673">
+        <rdfs:label>apical margin</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000006"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000057"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000006"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000674 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000674">
+        <rdfs:label>basal margin</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000006"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000058"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000006"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000677 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000677">
+        <rdfs:label>proximal margin</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000006"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000061"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000006"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000678 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000678">
+        <rdfs:label>distal margin</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000006"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000062"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000006"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000679 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000679">
+        <rdfs:label>dorsal margin</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000006"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000063"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000006"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000680 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000680">
+        <rdfs:label>dorso-lateral margin</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000006"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000063"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000066"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000006"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000682 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000682">
+        <rdfs:label>lateral margin</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000006"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000066"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000006"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000683 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000683">
+        <rdfs:label>medial margin</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000006"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000067"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000006"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000684 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000684">
+        <rdfs:label>ventral margin</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000006"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000068"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000006"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000685 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000685">
+        <rdfs:label>ventro-lateral margin</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000006"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000066"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000068"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000006"/>
+        <go:comment>This is an example of a composition of two axis positions</go:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000686 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000686">
+        <rdfs:label>antero-dorsal margin</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000006"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000055"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000063"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000006"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000687 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000687">
+        <rdfs:label>postero-dorsal margin</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000006"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000056"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000063"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000006"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000688 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000688">
+        <rdfs:label>antero-ventral margin</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000006"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000055"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000068"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000006"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#BSPO_0000689 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#BSPO_0000689">
+        <rdfs:label>postero-ventral margin</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.geneontology.org/go#BSPO_0000006"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000056"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.geneontology.org/go#has_position"/>
+                        <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#BSPO_0000068"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#BSPO_0000006"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.0.0.1450) http://owlapi.sourceforge.net -->

@@ -1,0 +1,17 @@
+animals.owl
+src/main/resources/tmp/hypo_animals.owl
+src/main/resources/tmp/animals.owl
+Ontology(OntologyID(OntologyIRI(<http://www.semanticweb.org/ontologies/2014/3/animals.owl>))) [Axioms: 33 Logical Axioms: 12]
+Loaded successfully.
+
+Total number of concepts is: 17
+Smallest logical axiom: Fish SubClassOf Vertebrate
+Size is: 2
+You dun did it!!!
+Total time (ms): 959
+Total membership queries: 9
+Total equivalence queries: 12
+Target TBox logical axioms: 12
+Size of T: 40
+Hypothesis TBox logical axioms: 12
+Size of H: 40

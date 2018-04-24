@@ -1,0 +1,739 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://sweet.jpl.nasa.gov/1.1/biosphere.owl#"
+     xml:base="http://sweet.jpl.nasa.gov/1.1/biosphere.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:biosphere="http://sweet.jpl.nasa.gov/1.1/biosphere.owl#">
+    <owl:Ontology rdf:about="http://sweet.jpl.nasa.gov/1.1/biosphere.owl">
+        <owl:versionInfo>1.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#versionInfo -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#versionInfo"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Algae -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Algae">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Plant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Amoebae -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Amoebae">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#MicrobiotaTaxonomy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Amphibian -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Amphibian">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Animal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Anemone -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Anemone">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Animal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Animal -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Animal">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#LivingThing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Arachnid -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Arachnid">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Animal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Arthropod -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Arthropod">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Animal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Bacteria -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Bacteria">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#MicrobiotaTaxonomy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Bird -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Bird">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Animal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#BlueGreenAlgae -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#BlueGreenAlgae">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#MicrobiotaTaxonomy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Canopy -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Canopy">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Vegetation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Centipede -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Centipede">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Animal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Chlorophyll -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Chlorophyll">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Microbiota"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Ciliate -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Ciliate">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#MicrobiotaTaxonomy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Coccolithophore -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Coccolithophore">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#MicrobiotaTaxonomy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Conifer -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Conifer">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Plant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Coral -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Coral">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Animal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Crop -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Crop">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Plant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Crown -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Crown">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Vegetation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Crustacean -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Crustacean">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Animal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Dairy -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Dairy">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Animal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#DeciduousVegetation -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#DeciduousVegetation">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Vegetation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Diatom -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Diatom">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#MicrobiotaTaxonomy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#DominantSpecies -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#DominantSpecies">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Vegetation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Echinoderm -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Echinoderm">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Animal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#EvergreenVegetation -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#EvergreenVegetation">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Vegetation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#ExoticSpecies -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#ExoticSpecies">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Animal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#ExoticVegetation -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#ExoticVegetation">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Vegetation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Fern -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Fern">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Plant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Fish -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Fish">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Animal"/>
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#MarineAnimal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Flagellate -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Flagellate">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#MicrobiotaTaxonomy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Flatworm -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Flatworm">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Animal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#FloweringPlant -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#FloweringPlant">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Plant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Foraminifer -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Foraminifer">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#MicrobiotaTaxonomy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Fungi -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Fungi">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Plant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#FungiTaxonomy -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#FungiTaxonomy">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Fungi"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Human -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Human">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Mammal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#IndigenousSpecies -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#IndigenousSpecies">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Animal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#IndigenousVegetation -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#IndigenousVegetation">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Vegetation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Insect -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Insect">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Animal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Invertebrate -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Invertebrate">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Animal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Jellyfish -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Jellyfish">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#MarineAnimal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Leaf -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Leaf">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Plant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Lichen -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Lichen">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Plant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Litter -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Litter">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Vegetation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Liverwort -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Liverwort">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Plant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Livestock -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Livestock">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Animal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#LivingThing -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#LivingThing"/>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Macroalgae -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Macroalgae">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Plant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Macrophyte -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Macrophyte">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Vegetation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Mammal -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Mammal">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Animal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#MarineAnimal -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#MarineAnimal"/>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#MarineBird -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#MarineBird">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#MarineAnimal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#MarineInvertebrate -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#MarineInvertebrate">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#MarineAnimal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#MarineMammal -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#MarineMammal">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#MarineAnimal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#MarineMicrobiota -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#MarineMicrobiota">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#MarinePlant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#MarinePlant -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#MarinePlant">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Plant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Microalgae -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Microalgae">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#MicrobiotaTaxonomy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Microbiota -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Microbiota">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Plant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#MicrobiotaTaxonomy -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#MicrobiotaTaxonomy">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Microbiota"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Microphyte -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Microphyte">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Plant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Millipede -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Millipede">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Animal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Mold -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Mold">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#FungiTaxonomy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Mollusk -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Mollusk">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Animal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Moss -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Moss">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Plant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Mushroom -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Mushroom">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#FungiTaxonomy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Nutrient -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Nutrient">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Vegetation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Phytoplankton -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Phytoplankton">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#MicrobiotaTaxonomy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Plankton -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Plankton">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#MicrobiotaTaxonomy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Plant -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Plant">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#LivingThing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Pollen -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Pollen">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Vegetation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Poultry -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Poultry">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Animal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Protist -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Protist">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#MicrobiotaTaxonomy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Radiolarian -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Radiolarian">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#MicrobiotaTaxonomy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Reptile -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Reptile">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Animal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Roundworm -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Roundworm">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Animal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#SegmentedWorm -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#SegmentedWorm">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Animal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#SlimeMold -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#SlimeMold">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#FungiTaxonomy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Sponge -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Sponge">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Animal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Sporozoan -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Sporozoan">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#FungiTaxonomy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#TreeRing -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#TreeRing">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Vegetation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Vegetation -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Vegetation">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Plant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#VegetationCover -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#VegetationCover">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Vegetation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#VegetationSpecies -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#VegetationSpecies">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Vegetation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Vertebrate -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Vertebrate">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Animal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Yeast -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Yeast">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#FungiTaxonomy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Zooplankton -->
+
+    <owl:Class rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Zooplankton">
+        <rdfs:subClassOf rdf:resource="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo#Animal"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

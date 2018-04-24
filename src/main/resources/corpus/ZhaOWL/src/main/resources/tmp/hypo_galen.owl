@@ -1,0 +1,1322 @@
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+
+
+Ontology: 
+
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#isActedOnSpecificallyBy>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#hasBranch>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#hasUniqueAssociatedDisplacement>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#actsOn>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#playsPhysiologicalRole>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#hasAlphaPartitiveConnection>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#isStructuralComponentOf>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#hasTemporalPattern>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#isBetaConnectionOf>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#playsConsultationRole>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#hasQuantity>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#isNotParallelTo>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#hasAbsoluteState>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#hasSpecificProximity>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#hasLinearDivision>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#hasSuperficialDeepSelector>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#hasMetastaticStatus>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#actsSpecificallyOn>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#isToDetermine>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#isSpaceBoundedBy>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#hasContextOfUse>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#hasPathologicalStatus>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#hasSpecificSolidDivision>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#isSpecificLocationOf>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#isConsequenceOf>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#isDisplacementFrom>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#specificallyNonPartitivelyContains>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#hasLeftRightSelector>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#hasChemicalSubgroup>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#hasShape>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#LocativeAttribute>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#isSpecificFunctionOf>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#hasSurfaceVisibility>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#hasSyndromeElement>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#hasMagnitude>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#hasUniqueAssociatedProcess>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#hasSpecificImmediateConsequence>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#isSpecificConsequenceOf>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#hasAnteriorPosteriorSelector>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#playsClinicalRole>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#isSpecificLinearDivisionOf>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#isSpecificSolidDivisionOf>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#isPhysicalMeansOf>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#hasStructuralComponent>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#IsDivisionOf>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#isMadeOf>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#hasEffectiveness>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#hasSpecificLocation>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#HasDivision>
+
+    
+ObjectProperty: <http://www.co-ode.org/ontologies/galen#hasInstructionStatus>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#VaginalWall>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Rhipicephalus>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#BNFChapter5Section>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#NAMEDNerve>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#AnklePain>
+
+    EquivalentTo: 
+        <http://www.co-ode.org/ontologies/galen#ExternalStimulusSensation>
+         and (<http://www.co-ode.org/ontologies/galen#actsOn> some 
+            (<http://www.co-ode.org/ontologies/galen#PainSignal>
+             and (<http://www.co-ode.org/ontologies/galen#isConsequenceOf> some 
+                (<http://www.co-ode.org/ontologies/galen#NerveConduction>
+                 and (<http://www.co-ode.org/ontologies/galen#hasUniqueAssociatedDisplacement> some 
+                    (<http://www.co-ode.org/ontologies/galen#Displacement>
+                     and (<http://www.co-ode.org/ontologies/galen#isDisplacementFrom> some <http://www.co-ode.org/ontologies/galen#Ankle>)))))))
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Encephalopathy>
+
+    EquivalentTo: 
+        <http://www.co-ode.org/ontologies/galen#PathologicalPhenomenon>
+         and (<http://www.co-ode.org/ontologies/galen#LocativeAttribute> some <http://www.co-ode.org/ontologies/galen#Brain>)
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#OsteocartilaginousExostosis>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasUniqueAssociatedProcess> some 
+            (<http://www.co-ode.org/ontologies/galen#BenignNeoplasticProcess>
+             and (<http://www.co-ode.org/ontologies/galen#actsSpecificallyOn> some <http://www.co-ode.org/ontologies/galen#Bone>))
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#AnteriorVaginalWall>
+
+    EquivalentTo: 
+        <http://www.co-ode.org/ontologies/galen#InternalRegion>
+         and (<http://www.co-ode.org/ontologies/galen#hasAnteriorPosteriorSelector> some <http://www.co-ode.org/ontologies/galen#anteriorSelection>)
+         and (<http://www.co-ode.org/ontologies/galen#isSpecificSolidDivisionOf> some <http://www.co-ode.org/ontologies/galen#VaginalWall>)
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Cholelithiasis>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#NAMEDDisorder>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Brain>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#greenStickFracture>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#LongBoneFractureTypeState>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#SmoothMuscleOfUreter>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Level>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Shape>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#InguinalPlexus>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#NAMEDLymphaticPlexus>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#OrganicRole>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#BNFSection9_2_1>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Inflating>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#StateChangeProcess>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#ProximalPartOfFemur>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#internal>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#BellShapedDevice>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#NAMEDActiveDrugIngredient>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Pharmacy>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Mannitol>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#NAMEDActiveDrugIngredient>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#LowerRespiratoryTract>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasStructuralComponent> some <http://www.co-ode.org/ontologies/galen#Bronchiole>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Graphium>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Dematiacea>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#BNFChapter9_2_1Section>
+
+    EquivalentTo: 
+        <http://www.co-ode.org/ontologies/galen#PrintedChapterSection>
+         and (<http://www.co-ode.org/ontologies/galen#IsDivisionOf> some <http://www.co-ode.org/ontologies/galen#BNFSection9_2_1>)
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#SoftTissue>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#BNFSection11_7>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#BNFChapter11Section>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#UlnarNerve>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#LongBoneFractureTypeState>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#PenileInfection>
+
+    EquivalentTo: 
+        <http://www.co-ode.org/ontologies/galen#InfectionLesion>
+         and (<http://www.co-ode.org/ontologies/galen#hasSpecificLocation> some <http://www.co-ode.org/ontologies/galen#Penis>)
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#TransitionMetal>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Thiabendazole>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#NAMEDActiveDrugIngredient>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Potassium>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#PlatinumCompound>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#ActiveDrugAdditiveRole>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#HipJoint>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Contracting>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#SurgicalBending>
+
+    EquivalentTo: 
+        <http://www.co-ode.org/ontologies/galen#Bending>
+         and (<http://www.co-ode.org/ontologies/galen#playsClinicalRole> some <http://www.co-ode.org/ontologies/galen#SurgicalRole>)
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Device>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Liver>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#DimensionIncreasingProcess>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#BNFSection5_1_10>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#BNFChapter5Section>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#NAMEDSystemicArtery>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#BileDuct>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#PleuralMembrane>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#isStructuralComponentOf> some <http://www.co-ode.org/ontologies/galen#RespiratorySystem>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#SympatheticNervousSystem>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#isStructuralComponentOf> some <http://www.co-ode.org/ontologies/galen#NervousSystem>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Penis>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Symptom>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#LacrimalGland>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasSurfaceVisibility> some <http://www.co-ode.org/ontologies/galen#internal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#BasketForcep>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#SurgicalRole>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Signal>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Staining>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Discolouring>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#AlcoholDependentPatientsWhoContinueToDrink>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#NAMEDDrugClinicalFeature>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#NAMEDFemaleGenitalTractBodyPart>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Zygnematales>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Alga>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Haemophilus>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasShape> some 
+            (<http://www.co-ode.org/ontologies/galen#Shape>
+             and (<http://www.co-ode.org/ontologies/galen#hasAbsoluteState> some <http://www.co-ode.org/ontologies/galen#cylindrical>))
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Myeloma>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#UpperUrinaryTract>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Displacement>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#PrintedChapterSection>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#NAMEDLymphaticPlexus>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#BNFSection10_3_2>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#NAMEDSyndrome>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#DentalCaries>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#DefectiveGene>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#BNFSection10_3_1>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Ureter>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#PlastibellDevice>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#BellShapedDevice>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#prohibitInstructionStatus>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#StateChangeProcess>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#SurgicalExcising>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#IntercostalSpace>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#specificallyNonPartitivelyContains> some <http://www.co-ode.org/ontologies/galen#IntercostalLymphnode>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#NAMEDOrganicSubstance>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#playsPhysiologicalRole> some <http://www.co-ode.org/ontologies/galen#OrganicRole>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#VisualAxis>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#MaxillaryDivisionOfTrigeminalNerve>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#NAMEDNerve>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#InvestigationAct>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Esophagus>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasLinearDivision> some <http://www.co-ode.org/ontologies/galen#ParsCervicalisEsophagi>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Wire>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#BindingDevice>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#PoplitealFascia>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#CervixUteri>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#isBetaConnectionOf> some <http://www.co-ode.org/ontologies/galen#PubocervicalLigament>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#VerySevereSeverity>
+
+    EquivalentTo: 
+        <http://www.co-ode.org/ontologies/galen#Severity>
+         and (<http://www.co-ode.org/ontologies/galen#hasQuantity> some 
+            (<http://www.co-ode.org/ontologies/galen#Level>
+             and (<http://www.co-ode.org/ontologies/galen#hasMagnitude> some <http://www.co-ode.org/ontologies/galen#veryHighLevel>)))
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#MuscleContractionProcess>
+
+    EquivalentTo: 
+        <http://www.co-ode.org/ontologies/galen#Contracting>
+         and (<http://www.co-ode.org/ontologies/galen#isSpecificFunctionOf> some <http://www.co-ode.org/ontologies/galen#Muscle>)
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#AsthmaticEpisode>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#NAMEDSystemicDisease>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#NAMEDSystemicDisease>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#ClinicalSpeciality>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#AdductorHallucis>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#PosteriorLateralNasalArtery>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#NAMEDSystemicArtery>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#leftSelection>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Pentostatin>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#NAMEDActiveDrugIngredient>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#BodyMass>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Diflunisal>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#NAMEDActiveDrugIngredient>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Stomach>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasAlphaPartitiveConnection> some <http://www.co-ode.org/ontologies/galen#LowerEsophagealSphincter>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#nonMetastatic>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#DorsalCerebellomedullaryCistern>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#NAMEDCisterna>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#RespiratorySystem>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Severity>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#NAMEDCisterna>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#InternalExternalSelector>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#MorquioSyndrome>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#isConsequenceOf> some 
+            (<http://www.co-ode.org/ontologies/galen#DefectiveGene>
+             and (<http://www.co-ode.org/ontologies/galen#isActedOnSpecificallyBy> some 
+                (<http://www.co-ode.org/ontologies/galen#GeneTranscription>
+                 and (<http://www.co-ode.org/ontologies/galen#hasSpecificImmediateConsequence> some <http://www.co-ode.org/ontologies/galen#GalactoseOneSulphatase>))))
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#UpperUrinaryTractPathology>
+
+    EquivalentTo: 
+        <http://www.co-ode.org/ontologies/galen#PathologicalPhenomenon>
+         and (<http://www.co-ode.org/ontologies/galen#LocativeAttribute> some <http://www.co-ode.org/ontologies/galen#UpperUrinaryTract>)
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#PoplitealFossa>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#isSpaceBoundedBy> some <http://www.co-ode.org/ontologies/galen#PoplitealFascia>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Foramen>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#GeneTranscription>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#PotassiumBromide>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#isMadeOf> some <http://www.co-ode.org/ontologies/galen#Potassium>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#externalSelection>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#InternalExternalSelector>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#PelvicPartOfTrunk>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#CheyneStokesRespiration>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#BreathingWithAbnormalPattern>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#TemporalPattern>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#BindingDevice>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Bone>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#SensationOfColdLeg>
+
+    EquivalentTo: 
+        <http://www.co-ode.org/ontologies/galen#ExternalStimulusSensation>
+         and (<http://www.co-ode.org/ontologies/galen#actsSpecificallyOn> some 
+            (<http://www.co-ode.org/ontologies/galen#Signal>
+             and (<http://www.co-ode.org/ontologies/galen#isConsequenceOf> some 
+                (<http://www.co-ode.org/ontologies/galen#NerveConduction>
+                 and (<http://www.co-ode.org/ontologies/galen#hasUniqueAssociatedDisplacement> some 
+                    (<http://www.co-ode.org/ontologies/galen#Displacement>
+                     and (<http://www.co-ode.org/ontologies/galen#isDisplacementFrom> some <http://www.co-ode.org/ontologies/galen#Leg>)))))
+             and (<http://www.co-ode.org/ontologies/galen#isSpecificConsequenceOf> some 
+                (<http://www.co-ode.org/ontologies/galen#TransducingProcess>
+                 and (<http://www.co-ode.org/ontologies/galen#actsOn> some <http://www.co-ode.org/ontologies/galen#ThermalEnergy>)
+                 and (<http://www.co-ode.org/ontologies/galen#isSpecificFunctionOf> some <http://www.co-ode.org/ontologies/galen#ColdThermoreceptorCell>)))))
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#NeckOfFemur>
+
+    EquivalentTo: 
+        <http://www.co-ode.org/ontologies/galen#BonyNeck>
+         and (<http://www.co-ode.org/ontologies/galen#isSpecificSolidDivisionOf> some <http://www.co-ode.org/ontologies/galen#ProximalPartOfFemur>)
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#HepaticSurveillance>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#NAMEDHepaticDiseaseProcess>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Squint>
+
+    EquivalentTo: 
+        <http://www.co-ode.org/ontologies/galen#VisualAxis>
+         and (<http://www.co-ode.org/ontologies/galen#isNotParallelTo> some <http://www.co-ode.org/ontologies/galen#VisualAxis>)
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#BNFSection2_1_1>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#BNFChapter2Section>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#AngledBasketForcep>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#BasketForcep>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#BloodCarbonDioxideConcentration>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#ProximalPhalanxOfHallux>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#isBetaConnectionOf> some <http://www.co-ode.org/ontologies/galen#AdductorHallucis>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Dematiacea>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#ColourLightening>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Discolouring>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#LesionCausedByBodyProcess>
+
+    EquivalentTo: 
+        <http://www.co-ode.org/ontologies/galen#GeneralisedStructure>
+         and (<http://www.co-ode.org/ontologies/galen#hasPathologicalStatus> some <http://www.co-ode.org/ontologies/galen#pathological>)
+         and (<http://www.co-ode.org/ontologies/galen#isConsequenceOf> some <http://www.co-ode.org/ontologies/galen#BodyProcess>)
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#PortalVein>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#BodyStructure>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#RhipicephalusEvertsi>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Rhipicephalus>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Ankle>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#NAMEDHepaticDiseaseProcess>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#DeepLingualArtery>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasSuperficialDeepSelector> some <http://www.co-ode.org/ontologies/galen#deepSelection>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Claustrum>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#NAMEDNervousSystemPart>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#PathologicalProcess>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#ColdThermoreceptorCell>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Gonadorelin>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#NAMEDActiveDrugIngredient>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#moreThanNine>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Cefalexin>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#NAMEDActiveDrugIngredient>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#CarbinoxamineMaleate>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#NAMEDActiveDrugIngredient>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#LowerEsophagealSphincter>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Trombicula>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Acarina>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Diarrhoea>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#NAMEDInfectivePathology>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#PathologicalProcess>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#InflammatorySkinDisorder>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#NAMEDSkinDiseaseProcess>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#InternalRegion>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Infertility>
+
+    EquivalentTo: 
+        <http://www.co-ode.org/ontologies/galen#ReproductiveFunction>
+         and (<http://www.co-ode.org/ontologies/galen#hasEffectiveness> some 
+            (<http://www.co-ode.org/ontologies/galen#Effectiveness>
+             and (<http://www.co-ode.org/ontologies/galen#hasAbsoluteState> some <http://www.co-ode.org/ontologies/galen#ineffective>)))
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#ReceptorBinding>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#NAMEDMolecularMovementProcess>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#BNFChapter2Section>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#SmoothSurfaceCaries>
+
+    EquivalentTo: 
+        <http://www.co-ode.org/ontologies/galen#DentalCaries>
+         and (<http://www.co-ode.org/ontologies/galen#hasSpecificLocation> some <http://www.co-ode.org/ontologies/galen#NonOcclusalSurfaceOfTooth>)
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Discolouring>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Anonymous-848>
+
+    EquivalentTo: 
+        <http://www.co-ode.org/ontologies/galen#OutwardRotation>
+         and (<http://www.co-ode.org/ontologies/galen#actsSpecificallyOn> some <http://www.co-ode.org/ontologies/galen#HipJoint>)
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#OvarianPolycystism>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#NAMEDDisorder>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#IspaghulaHuskAsDrug>
+
+    EquivalentTo: 
+        <http://www.co-ode.org/ontologies/galen#IspaghulaHusk>
+         and (<http://www.co-ode.org/ontologies/galen#playsPhysiologicalRole> some <http://www.co-ode.org/ontologies/galen#ActiveDrugAdditiveRole>)
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#NonMetastaticNeoplasticLesion>
+
+    EquivalentTo: 
+        <http://www.co-ode.org/ontologies/galen#NeoplasticLesion>
+         and (<http://www.co-ode.org/ontologies/galen#hasMetastaticStatus> some <http://www.co-ode.org/ontologies/galen#nonMetastatic>)
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#PolyCysticOvary>
+
+    EquivalentTo: 
+        <http://www.co-ode.org/ontologies/galen#Ovary>
+         and (<http://www.co-ode.org/ontologies/galen#isSpecificLocationOf> some <http://www.co-ode.org/ontologies/galen#OvarianPolycystism>)
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Craniorrhachischisis>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasSyndromeElement> some <http://www.co-ode.org/ontologies/galen#SpinaBifida>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Chloramphenicol>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#NAMEDActiveDrugIngredient>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#MarginOfTooth>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#BreathingWithAbnormalPattern>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Effectiveness>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#TransducingProcess>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#RecurrentAphthousUlceration>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#NAMEDSkinDiseaseProcess>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Fenchone>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#NAMEDActiveDrugIngredient>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#NAMEDBodySpace>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#ThermalEnergy>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#PalatineForamen>
+
+    EquivalentTo: 
+        <http://www.co-ode.org/ontologies/galen#Foramen>
+         and (<http://www.co-ode.org/ontologies/galen#IsDivisionOf> some <http://www.co-ode.org/ontologies/galen#PalatineBone>)
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#SupraventricularConduction>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#NAMEDGenitoUrinarySystemDiseaseProcess>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Alga>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#SpinaBifida>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#DiarrhoeaSign>
+
+    EquivalentTo: 
+        <http://www.co-ode.org/ontologies/galen#Diarrhoea>
+         and (<http://www.co-ode.org/ontologies/galen#playsConsultationRole> some <http://www.co-ode.org/ontologies/galen#SignRole>)
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#SignRole>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#BNFChapter11Section>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#IntraHepaticPortalVein>
+
+    EquivalentTo: 
+        <http://www.co-ode.org/ontologies/galen#InternalLinearSegment>
+         and (<http://www.co-ode.org/ontologies/galen#hasSpecificProximity> some <http://www.co-ode.org/ontologies/galen#Liver>)
+         and (<http://www.co-ode.org/ontologies/galen#isSpecificLinearDivisionOf> some <http://www.co-ode.org/ontologies/galen#PortalVein>)
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#DeviceUnit>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Device>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#NAMEDSkinDiseaseProcess>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#nonNormal>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#ExternalStimulusSensation>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#InternalLinearSegment>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#BloodCarbonDioxideMeasuring>
+
+    EquivalentTo: 
+        <http://www.co-ode.org/ontologies/galen#InvestigationAct>
+         and (<http://www.co-ode.org/ontologies/galen#isToDetermine> some <http://www.co-ode.org/ontologies/galen#BloodCarbonDioxideConcentration>)
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#MuscleTissue>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#SoftTissue>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#GalactoseOneSulphatase>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#SubarachnoidSpace>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#pathological>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#CarbapenemGroup>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#PuboVaginalis>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#NAMEDFemaleGenitalTractBodyPart>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#LinearSegmentOfUreter>
+
+    EquivalentTo: 
+        <http://www.co-ode.org/ontologies/galen#InternalLinearSegment>
+         and (<http://www.co-ode.org/ontologies/galen#isSpecificLinearDivisionOf> some <http://www.co-ode.org/ontologies/galen#Ureter>)
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#GeneralisedStructure>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#PeritonealFibrosis>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#NAMEDSyndrome>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Myelomatosis>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Myeloma>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#veryHighLevel>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#NAMEDNervousSystemPart>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Ovary>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#LobeOfPituitaryGland>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Molybdenum>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#TransitionMetal>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#PelvicSymptom>
+
+    EquivalentTo: 
+        <http://www.co-ode.org/ontologies/galen#Symptom>
+         and (<http://www.co-ode.org/ontologies/galen#LocativeAttribute> some <http://www.co-ode.org/ontologies/galen#PelvicPartOfTrunk>)
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#LeftLowerSecondPremolar>
+
+    EquivalentTo: 
+        <http://www.co-ode.org/ontologies/galen#LowerSecondPremolar>
+         and (<http://www.co-ode.org/ontologies/galen#hasLeftRightSelector> some <http://www.co-ode.org/ontologies/galen#leftSelection>)
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#SurgicalAblatingDevice>
+
+    EquivalentTo: 
+        <http://www.co-ode.org/ontologies/galen#Device>
+         and (<http://www.co-ode.org/ontologies/galen#isPhysicalMeansOf> some <http://www.co-ode.org/ontologies/galen#SurgicalExcising>)
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#ParsCervicalisEsophagi>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#UretericSpasm>
+
+    EquivalentTo: 
+        <http://www.co-ode.org/ontologies/galen#Contracting>
+         and (<http://www.co-ode.org/ontologies/galen#hasTemporalPattern> some 
+            (<http://www.co-ode.org/ontologies/galen#TemporalPattern>
+             and (<http://www.co-ode.org/ontologies/galen#hasAbsoluteState> some <http://www.co-ode.org/ontologies/galen#continuous>)))
+         and (<http://www.co-ode.org/ontologies/galen#isSpecificFunctionOf> some <http://www.co-ode.org/ontologies/galen#SmoothMuscleOfUreter>)
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#CommonBileDuct>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#BileDuct>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#InfectionLesion>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#IspaghulaHusk>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Muscle>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#NAMEDMolecularMovementProcess>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#MedialCordOfBrachialPlexus>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasBranch> some <http://www.co-ode.org/ontologies/galen#UlnarNerve>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#ProhibitInstruction>
+
+    EquivalentTo: 
+        <http://www.co-ode.org/ontologies/galen#Instruction>
+         and (<http://www.co-ode.org/ontologies/galen#hasInstructionStatus> some <http://www.co-ode.org/ontologies/galen#prohibitInstructionStatus>)
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#ChemicalSubstance>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#WeightGain>
+
+    EquivalentTo: 
+        <http://www.co-ode.org/ontologies/galen#BodyMass>
+         and (<http://www.co-ode.org/ontologies/galen#isActedOnSpecificallyBy> some <http://www.co-ode.org/ontologies/galen#DimensionIncreasingProcess>)
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#continuous>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#IntercostalLymphnode>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#PlatinumDrugCompound>
+
+    EquivalentTo: 
+        <http://www.co-ode.org/ontologies/galen#PlatinumCompound>
+         and (<http://www.co-ode.org/ontologies/galen#playsPhysiologicalRole> some <http://www.co-ode.org/ontologies/galen#ActiveDrugAdditiveRole>)
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#PathologicalPhenomenon>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#PillCounter>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasContextOfUse> some 
+            (<http://www.co-ode.org/ontologies/galen#ClinicalSpeciality>
+             and (<http://www.co-ode.org/ontologies/galen#hasAbsoluteState> some <http://www.co-ode.org/ontologies/galen#Pharmacy>))
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#NerveConduction>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#BenignNeoplasticProcess>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#CisternaAmbiens>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#isSpecificSolidDivisionOf> some <http://www.co-ode.org/ontologies/galen#SubarachnoidSpace>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Acarina>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#SupraventricularConductionAbnormality>
+
+    EquivalentTo: 
+        <http://www.co-ode.org/ontologies/galen#SupraventricularConduction>
+         and (<http://www.co-ode.org/ontologies/galen#hasAbnormalityStatus> some <http://www.co-ode.org/ontologies/galen#nonNormal>)
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#NervousSystem>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#moreThanTen>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#moreThanNine>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#BonyNeck>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#AdultEnuresis>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#NAMEDGenitoUrinarySystemDiseaseProcess>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#BodyProcess>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Instruction>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#PalatineBone>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Remifentanil>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#NAMEDActiveDrugIngredient>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#LowerSecondPremolar>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#deepSelection>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#ReproductiveFunction>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#BuccalMarginOfTooth>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#MarginOfTooth>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#anteriorSelection>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Bronchiole>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#PainSignal>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#NonOcclusalSurfaceOfTooth>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Anonymous-346>
+
+    EquivalentTo: 
+        <http://www.co-ode.org/ontologies/galen#BodyStructure>
+         and (<http://www.co-ode.org/ontologies/galen#hasUniqueAssociatedProcess> some 
+            (<http://www.co-ode.org/ontologies/galen#BenignNeoplasticProcess>
+             and (<http://www.co-ode.org/ontologies/galen#LocativeAttribute> some <http://www.co-ode.org/ontologies/galen#Bone>)))
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Sibutramine>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#NAMEDActiveDrugIngredient>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Bending>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#OutwardRotation>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#cylindrical>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#PubocervicalLigament>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#Torulopsis>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#Blastomycete>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Leg>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#CervicalDivisionOfFacialNerve>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#NAMEDNerve>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#PituitaryGland>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#hasSpecificSolidDivision> some <http://www.co-ode.org/ontologies/galen#LobeOfPituitaryGland>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#HyoscineButylbromide>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#NAMEDActiveDrugIngredient>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#SupraClavicularSpace>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#NAMEDBodySpace>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#CarbapenemChemical>
+
+    EquivalentTo: 
+        <http://www.co-ode.org/ontologies/galen#ChemicalSubstance>
+         and (<http://www.co-ode.org/ontologies/galen#hasChemicalSubgroup> some <http://www.co-ode.org/ontologies/galen#CarbapenemGroup>)
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#Blastomycete>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#ineffective>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#NAMEDDrugClinicalFeature>
+
+    
+Class: <http://www.co-ode.org/ontologies/galen#BNFSection10_3>
+
+    SubClassOf: 
+        <http://www.co-ode.org/ontologies/galen#HasDivision> some <http://www.co-ode.org/ontologies/galen#BNFSection10_3_2>,
+        <http://www.co-ode.org/ontologies/galen#HasDivision> some <http://www.co-ode.org/ontologies/galen#BNFSection10_3_1>
+    
+    
+Class: <http://www.co-ode.org/ontologies/galen#NeoplasticLesion>
+
+    

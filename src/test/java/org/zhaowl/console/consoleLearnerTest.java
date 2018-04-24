@@ -47,7 +47,7 @@ public class consoleLearnerTest {
     }
     public void smallOntologies() {
         Logger.getRootLogger().setLevel(Level.OFF);
-        File dir = new File("src/main/resources/ontologies/small");
+        File dir = new File("src/main/resources/corpus/small");
         runInFolder(dir);
     }
 

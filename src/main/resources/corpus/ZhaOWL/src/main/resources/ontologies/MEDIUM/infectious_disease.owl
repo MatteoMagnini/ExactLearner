@@ -1,0 +1,1593 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/infectious_disease.obo#"
+     xml:base="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/infectious_disease.obo"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:go="http://www.geneontology.org/go#">
+    <owl:Ontology rdf:about="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/infectious_disease.obo">
+        <go:auto-generated-by>OBO-Edit 1.101</go:auto-generated-by>
+        <go:default-namespace>default_namespace</go:default-namespace>
+        <go:date>08:10:2007 20:55</go:date>
+        <go:format-version>1.0</go:format-version>
+        <go:saved-by>Administrator</go:saved-by>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/go#is_obsolete"/>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/go#auto-generated-by"/>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/go#format-version"/>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/go#default-namespace"/>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/go#comment"/>
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/go#date"/>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/go#related_synonym"/>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/go#saved-by"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.geneontology.org/go#has_participant -->
+
+    <owl:ObjectProperty rdf:about="http://www.geneontology.org/go#has_participant">
+        <rdfs:label>has_participant</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.geneontology.org/go#has_quality -->
+
+    <owl:ObjectProperty rdf:about="http://www.geneontology.org/go#has_quality">
+        <rdfs:label>has_quality</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.geneontology.org/go#has_role -->
+
+    <owl:ObjectProperty rdf:about="http://www.geneontology.org/go#has_role">
+        <rdfs:label>has_role</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.geneontology.org/go#part_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.geneontology.org/go#part_of">
+        <rdfs:label>part_of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.geneontology.org/go#preceded_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.geneontology.org/go#preceded_by">
+        <rdfs:label>preceded_by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.geneontology.org/go#GO_0000000 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#GO_0000000">
+        <rdfs:label>mode of transmission</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000001"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#GO_0000001 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#GO_0000001">
+        <rdfs:label>end reservoir</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000059"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#GO_0000004 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#GO_0000004">
+        <rdfs:label>factor</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000001"/>
+        <go:comment>Role played by portion of physical substance in a biological process</go:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#GO_0000005 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#GO_0000005">
+        <rdfs:label>colonization</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000000"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geneontology.org/go#part_of"/>
+                <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#GO_0000021"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <go:comment>the process by which a biotic entity establishes multiple copies of itself in a new environment (including an organismal environment).\n\nfix id\n&quot;native&quot; environment term</go:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#GO_0000006 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#GO_0000006">
+        <rdfs:label>biotic</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000003"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#GO_0000007 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#GO_0000007">
+        <rdfs:label>adhesin</rdfs:label>
+        <go:is_obsolete>true</go:is_obsolete>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#GO_0000008 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#GO_0000008">
+        <rdfs:label>seroprevalence</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000019"/>
+        <go:comment>prevalence as measured by antibody</go:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#GO_0000009 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#GO_0000009">
+        <rdfs:label>dormancy</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#GO_0000011"/>
+        <go:comment>quality [state] of an organism that during its life cycle in which its growth. development, metabolism, etc is temporarily suspended \n\n\nsuspended state, non-replicative state, resting state</go:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#GO_0000010 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#GO_0000010">
+        <rdfs:label>quality of host</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000002"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#GO_0000011 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#GO_0000011">
+        <rdfs:label>quality of pathogen</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000002"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#GO_0000012 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#GO_0000012">
+        <rdfs:label>susceptibility</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#GO_0000010"/>
+        <go:comment>can change depending on environment\n\nwhere should susceptibility factors go?</go:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#GO_0000013 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#GO_0000013">
+        <rdfs:label>resistance</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#GO_0000010"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#GO_0000014 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#GO_0000014">
+        <rdfs:label>refractoriness</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#GO_0000010"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#GO_0000015 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#GO_0000015">
+        <rdfs:label>quality of host population</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000002"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#GO_0000016 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#GO_0000016">
+        <rdfs:label>herd immunity</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#GO_0000015"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#GO_0000017 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#GO_0000017">
+        <rdfs:label>quality of infectious disease</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000002"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#GO_0000018 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#GO_0000018">
+        <rdfs:label>case of infectious disease</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#GO_0000010"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#GO_0000019 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#GO_0000019">
+        <rdfs:label>incubation period</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geneontology.org/go#part_of"/>
+                <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#GO_0000021"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <go:comment>agent is incubated?\ndisease is incubated?</go:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#GO_0000020 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#GO_0000020">
+        <rdfs:label>infectivity period</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geneontology.org/go#part_of"/>
+                <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#GO_0000021"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#GO_0000021 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#GO_0000021">
+        <rdfs:label>infectious disease progression</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000000"/>
+        <go:comment>the unfolding or course of infectious disease\n\nwhat do we say about infectious disease that always remain latent \nwhat about when a pathogen continues its progression \n\nwe need to think about whether we need a term called stage\nlife cycle?\nprogression?\ndevelopment?</go:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#GO_0000022 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#GO_0000022">
+        <rdfs:label>infectious disease course</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000000"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#GO_0000023 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#GO_0000023">
+        <rdfs:label>host recovery period</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000000"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#GO_0000024 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#GO_0000024">
+        <rdfs:label>intrinsic incubation period</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#GO_0000019"/>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000000"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#GO_0000025 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#GO_0000025">
+        <rdfs:label>extrinsic incubation period</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geneontology.org/go#part_of"/>
+                <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#GO_0000026"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#GO_0000026 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#GO_0000026">
+        <rdfs:label>pathogen life cycle</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000000"/>
+        <go:comment>is this just the part of the life cycle of the biotic entity that has role pathogen for the period of time while it has role pathogen?\n\ncan include phases in the existence of the entity before it becomes a pathogen</go:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#GO_0000027 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#GO_0000027">
+        <rdfs:label>dormancy period</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000000"/>
+        <go:comment>is a period a process?</go:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#GO_0000028 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#GO_0000028">
+        <rdfs:label>pathogen outbreak</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000000"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#GO_0000029 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#GO_0000029">
+        <rdfs:label>oral-fecal transmission</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000083"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#GO_0000030 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#GO_0000030">
+        <rdfs:label>vertical transmission</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000083"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#GO_0000031 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#GO_0000031">
+        <rdfs:label>horizontal transmission</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000083"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#GO_0000032 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#GO_0000032">
+        <rdfs:label>pathogen life cycle stage</rdfs:label>
+        <go:is_obsolete>true</go:is_obsolete>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#GO_0000033 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#GO_0000033">
+        <rdfs:label>infectious disease progression stage</rdfs:label>
+        <go:is_obsolete>true</go:is_obsolete>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000000 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000000">
+        <rdfs:label>process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000001 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000001">
+        <rdfs:label>role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000002 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000002">
+        <rdfs:label>quality</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000003 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000003">
+        <rdfs:label>object</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000004 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000004">
+        <rdfs:label>virulence</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#GO_0000011"/>
+        <go:comment>the degree of pathogenicity\n\npathogenicity and virulence are used in some communities as synonyms.</go:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000005 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000005">
+        <rdfs:label>swollen</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#GO_0000010"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000006 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000006">
+        <rdfs:label>toxicity</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000002"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000007 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000007">
+        <rdfs:label>active</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000002"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000008 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000008">
+        <rdfs:label>contagious</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#GO_0000011"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000009 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000009">
+        <rdfs:label>latency</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#GO_0000011"/>
+        <go:comment>infection has occurred, but it might not have manifested itself\nquality of being in a non replicative state\ntime to manifest itself \na pathogen when it is in a non replicative state</go:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000010 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000010">
+        <rdfs:label>immunosuppressed</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#GO_0000010"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000011 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000011">
+        <rdfs:label>exogenous</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#GO_0000011"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000012 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000012">
+        <rdfs:label>immunity</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#GO_0000010"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000013 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000013">
+        <rdfs:label>protective</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000002"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000015 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000015">
+        <rdfs:label>temperature</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#GO_0000010"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000016 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000016">
+        <rdfs:label>inactivated</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000002"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000017 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000017">
+        <rdfs:label>mortality</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000002"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000018 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000018">
+        <rdfs:label>pandemic</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000029"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000019 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000019">
+        <rdfs:label>prevalence</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#GO_0000015"/>
+        <go:comment>total number of cases of a particular disease at a given time in a particular population divided by the number of individuals in that particular population\n\nthe burden of a disease in a population</go:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000020 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000020">
+        <rdfs:label>epidemic</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000029"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000021 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000021">
+        <rdfs:label>infected</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#GO_0000010"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000022 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000022">
+        <rdfs:label>live</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000002"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000023 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000023">
+        <rdfs:label>zoonotic</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#GO_0000011"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000024 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000024">
+        <rdfs:label>immunocompromised</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#GO_0000010"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000025 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000025">
+        <rdfs:label>pathogenicity</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#GO_0000011"/>
+        <go:comment>the ability of the biotic entity to cause disease in a host of a given type\n\ndo we need to say damage instead of disease?\n\npathogenicity and virulence are used as synonyms in some communities</go:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000026 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000026">
+        <rdfs:label>tropism</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000002"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000027 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000027">
+        <rdfs:label>drug resistance</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#GO_0000011"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000028 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000028">
+        <rdfs:label>antibiotic resistance</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000027"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000029 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000029">
+        <rdfs:label>incidence</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#GO_0000017"/>
+        <go:comment>number of new cases in a given period of time</go:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000030 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000030">
+        <rdfs:label>invasive</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#GO_0000011"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000031 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000031">
+        <rdfs:label>endogenous</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#GO_0000011"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000032 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000032">
+        <rdfs:label>attenuated</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000002"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000033 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000033">
+        <rdfs:label>morbidity</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000002"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000034 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000034">
+        <rdfs:label>endemic</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#GO_0000017"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000035 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000035">
+        <rdfs:label>fusion protein</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000001"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000036 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000036">
+        <rdfs:label>colonizer</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000001"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000037 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000037">
+        <rdfs:label>commensal</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000036"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000038 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000038">
+        <rdfs:label>parasite</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000036"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000039 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000039">
+        <rdfs:label>symbiant</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000036"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000040 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000040">
+        <rdfs:label>virulence factor</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#GO_0000004"/>
+        <go:comment>role played by a portion of substance to promote virulence\n\nmagnitude\ndegree of pathogenesis</go:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000041 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000041">
+        <rdfs:label>route of entry</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000001"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000042 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000042">
+        <rdfs:label>invasin</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000040"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000043 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000043">
+        <rdfs:label>toxin</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000040"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000044 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000044">
+        <rdfs:label>endotoxin</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000043"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000045 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000045">
+        <rdfs:label>exotoxin</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000043"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000046 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000046">
+        <rdfs:label>sign</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000001"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000047 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000047">
+        <rdfs:label>treatment</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000001"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000048 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000048">
+        <rdfs:label>symptom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000001"/>
+        <go:comment>look at mathias&#39;s ontology of cancer to get all the subterms...its under quality there</go:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000049 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000049">
+        <rdfs:label>antimicrobial</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000047"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000050 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000050">
+        <rdfs:label>medicine</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000047"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000051 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000051">
+        <rdfs:label>therapeutic</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000047"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000052 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000052">
+        <rdfs:label>vaccine</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000047"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000053 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000053">
+        <rdfs:label>antibiotic</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000049"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000054 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000054">
+        <rdfs:label>colonization factor</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#GO_0000004"/>
+        <go:comment>role played by portion of physical substance which promotes colonization</go:comment>
+        <go:related_synonym>&quot;&lt;new synonym&gt;&quot; []</go:related_synonym>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000055 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000055">
+        <rdfs:label>adhesion factor</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#GO_0000004"/>
+        <go:related_synonym>&quot;adhesin&quot; []</go:related_synonym>
+        <go:related_synonym>&quot;adhesin factor&quot; []</go:related_synonym>
+        <go:comment>role played by portion of physical substance utilized by an organism in order to establish adherence to a surface in a host</go:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000056 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000056">
+        <rdfs:label>host</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000001"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000057 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000057">
+        <rdfs:label>carrier</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000056"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000058 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000058">
+        <rdfs:label>chronic carrier</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000057"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000059 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000059">
+        <rdfs:label>reservoir</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000001"/>
+        <go:comment>holding place for a potential pathogen...animate or inanimate</go:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000060 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000060">
+        <rdfs:label>fomite</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000059"/>
+        <go:comment>inanimate holder, is water a fomite or only a reservoir?</go:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000061 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000061">
+        <rdfs:label>mobile genetic element</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000001"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000062 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000062">
+        <rdfs:label>pathogenicity island</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000001"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000063 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000063">
+        <rdfs:label>vector</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000001"/>
+        <go:comment>holder and a carrier (actively transmits) and living: potentially make a cross product.  every vector comes into contact with the target. (from one host to another?)</go:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000064 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000064">
+        <rdfs:label>pathogen</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000001"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000065 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000065">
+        <rdfs:label>dependovirus</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000064"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000066 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000066">
+        <rdfs:label>infectious agent</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000064"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000067 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000067">
+        <rdfs:label>opportunistic pathogen</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000064"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000068 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000068">
+        <rdfs:label>emerging pathogen</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000066"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000069 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000069">
+        <rdfs:label>primary pathogen</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000066"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000070 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000070">
+        <rdfs:label>prion</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000066"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000071 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000071">
+        <rdfs:label>initiation of infection</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000000"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000072 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000072">
+        <rdfs:label>disruption of body surface</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000071"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000073 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000073">
+        <rdfs:label>disruption of normal microbioflora</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000071"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000074 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000074">
+        <rdfs:label>pathogen adherence to host cell</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000000"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geneontology.org/go#part_of"/>
+                <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#GO_0000021"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <go:comment>create cross products for &quot;host&quot; and &quot;pathogen&quot; that will be part of this process.</go:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000075 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000075">
+        <rdfs:label>nonspecific adherence</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000074"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000076 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000076">
+        <rdfs:label>specific adherence</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000074"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000077 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000077">
+        <rdfs:label>afimbrial specific adherence</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000076"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000078 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000078">
+        <rdfs:label>fimbrial specific adherence</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000076"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000079 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000079">
+        <rdfs:label>penetration of epithelial barrier</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000000"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000080 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000080">
+        <rdfs:label>penetration via injury of epithelial barrier</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000079"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000081 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000081">
+        <rdfs:label>transcytosis</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000079"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000082 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000082">
+        <rdfs:label>utilization of membranous cell gateway</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000079"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000083 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000083">
+        <rdfs:label>transmission</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000000"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geneontology.org/go#part_of"/>
+                <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#GO_0000021"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <go:comment>the process by which an infectious agent passes from one organism to another organism</go:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000084 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000084">
+        <rdfs:label>pathogenesis</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000000"/>
+        <go:comment>GO:\nthe specific processes that generate the ability of an organism to cause disease in another\n\n\nThis is defined in GO so import.</go:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000085 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000085">
+        <rdfs:label>penetration of host cell</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000000"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000086 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000086">
+        <rdfs:label>engulfment</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000085"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000087 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000087">
+        <rdfs:label>fusion with host cell membrane</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000085"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000088 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000088">
+        <rdfs:label>membrane invagination</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000085"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000089 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000089">
+        <rdfs:label>passage through cell membrane</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000085"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000090 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000090">
+        <rdfs:label>engulfment by nonphagocyte</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000086"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000091 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000091">
+        <rdfs:label>engulfment by phagocyte</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000086"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000092 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000092">
+        <rdfs:label>damaging host cells and tissues in subepithelial space</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000000"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geneontology.org/go#part_of"/>
+                <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#GO_0000021"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000093 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000093">
+        <rdfs:label>induction of damaging host immune response</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000092"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000094 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000094">
+        <rdfs:label>pathogen-induced apoptosis</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000092"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000095 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000095">
+        <rdfs:label>pathogen-induced necrosis</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000092"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000096 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000096">
+        <rdfs:label>virus-induced cytopathogenesis</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000092"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000097 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000097">
+        <rdfs:label>pathogen spread through host</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000000"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geneontology.org/go#part_of"/>
+                <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#GO_0000021"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000098 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000098">
+        <rdfs:label>infectious disease</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#GO_0000015"/>
+        <go:comment>comment about the instances:\n\ncollections of etiologically connected cases of infectious disease in a given population</go:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000100 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000100">
+        <rdfs:label>pathogen evasion of host immune response</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000000"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geneontology.org/go#part_of"/>
+                <owl:someValuesFrom rdf:resource="http://www.geneontology.org/go#GO_0000021"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000101 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000101">
+        <rdfs:label>emergence</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000000"/>
+        <go:comment>the process by which an infectious disease establishes itself in a new population (or at a sufficiently higher rate? higher prevalence and/or higher incidence)</go:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000102 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000102">
+        <rdfs:label>epidemiological spread of disease</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000000"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000103 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000103">
+        <rdfs:label>outbreak</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000000"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000104 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000104">
+        <rdfs:label>infection</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000000"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000105 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000105">
+        <rdfs:label>infection treatment process</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000000"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000106 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000106">
+        <rdfs:label>immunization</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000000"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000107 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000107">
+        <rdfs:label>prevention of infection</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000000"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000108 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000108">
+        <rdfs:label>transport by blood</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000097"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000109 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000109">
+        <rdfs:label>transport by lymph</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000097"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000110 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000110">
+        <rdfs:label>modulation of inflammatory response</rdfs:label>
+        <go:is_obsolete>true</go:is_obsolete>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000111 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000111">
+        <rdfs:label>antigenic variation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000100"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000112 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000112">
+        <rdfs:label>resist phagocytosis in subepithelial space</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000100"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000113 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000113">
+        <rdfs:label>serum resistance</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000100"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000114 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000114">
+        <rdfs:label>phase variation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000111"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000115 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000115">
+        <rdfs:label>genetic diversification</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000111"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000116 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000116">
+        <rdfs:label>complement resistance</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000113"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000117 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000117">
+        <rdfs:label>epidemic spread of disease</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000102"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000118 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000118">
+        <rdfs:label>pandemic spread of disease</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000102"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#ID_0000119 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#ID_0000119">
+        <rdfs:label>vaccination</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000106"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#TB_0000000 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#TB_0000000">
+        <rdfs:label>progression rate</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000002"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#TB_0000001 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#TB_0000001">
+        <rdfs:label>rapid progression</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#TB_0000000"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#TB_0000002 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#TB_0000002">
+        <rdfs:label>long-term non-progression</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#TB_0000000"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#TB_0000003 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#TB_0000003">
+        <rdfs:label>highly exposed persistently seronegative</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#TB_0000000"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#TB_0000004 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#TB_0000004">
+        <rdfs:label>&lt;new term&gt;</rdfs:label>
+        <go:is_obsolete>true</go:is_obsolete>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#TB_0000005 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#TB_0000005">
+        <rdfs:label>co-infected</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#GO_0000010"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geneontology.org/go#TB_0000006 -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/go#TB_0000006">
+        <rdfs:label>fitness</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/go#ID_0000002"/>
+        <go:comment>is a quality relating to both bacteria and host</go:comment>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.0.0.1450) http://owlapi.sourceforge.net -->

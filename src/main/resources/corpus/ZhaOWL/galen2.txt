@@ -1,0 +1,9 @@
+galen.owl
+src/main/resources/tmp/hypo_galen.owl
+src/main/resources/tmp/galen.owl
+Ontology(OntologyID(OntologyIRI(<http://www.co-ode.org/ontologies/galen>))) [Axioms: 60633 Logical Axioms: 36547]
+Loaded successfully.
+
+Total number of concepts is: 23136
+Smallest logical axiom: Thiabendazole SubClassOf NAMEDActiveDrugIngredient
+Size is: 2

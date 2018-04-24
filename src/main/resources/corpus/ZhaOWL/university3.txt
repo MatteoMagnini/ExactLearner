@@ -1,0 +1,17 @@
+university.owl
+src/main/resources/tmp/hypo_university.owl
+src/main/resources/tmp/university.owl
+Ontology(OntologyID(OntologyIRI(<http://www.semanticweb.org/ontologies/2014/3/university.owl>))) [Axioms: 14 Logical Axioms: 4]
+Loaded successfully.
+
+Total number of concepts is: 7
+Smallest logical axiom: Professor SubClassOf Researcher and Teacher
+Size is: 3
+You dun did it!!!
+Total time (ms): 154
+Total membership queries: 0
+Total equivalence queries: 4
+Target TBox logical axioms: 4
+Size of T: 16
+Hypothesis TBox logical axioms: 4
+Size of H: 16
