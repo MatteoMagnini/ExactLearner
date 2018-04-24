@@ -197,8 +197,7 @@ public class ELLearner {
 					}
 
 					OWLClassExpression newEx = tree.transformToClassExpression();
-					if (newEx.equals(null))
-						System.out.println("is null");
+					 
 					newAx = myEngineForT.getSubClassAxiom(sub, newEx);
 					
 					// check if hypothesis entails new saturated CI

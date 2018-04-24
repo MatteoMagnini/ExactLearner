@@ -71,15 +71,10 @@ public class consoleLearner {
 	public ArrayList<String> concepts = new ArrayList<String>();
 	private ArrayList<String> roles = new ArrayList<String>();
 
-	private Set<OWLClass> cIo = null;
-
 	private Set<OWLAxiom> axiomsH = null;
 	private String ontologyFolderH = null;
 
 	private OWLAxiom lastCE = null;
-
-	private OWLAxiom smallestOne = null;
-	private int smallestSize = 0;
 
 	private OWLOntology targetOntology = null;
 	private OWLOntology hypothesisOntology = null;
@@ -518,17 +513,11 @@ public class consoleLearner {
 		concepts = new ArrayList<String>();
 		roles = new ArrayList<String>();
 
-		cIo = null;
-
-
 		axiomsH = null;
 		ontologyFolderH = null;
 		targetOntology = null;
 		hypothesisOntology = null;
 		lastCE = null;
-
-		smallestOne = null;
-		smallestSize = 0;
 	}
 
 	public Boolean equivalenceQuery() {
@@ -634,8 +623,7 @@ public class consoleLearner {
 							OWLClassExpression SuperclassInSet = iteratorSuperClass.next();
 							OWLAxiom newCounterexampleAxiom = elQueryEngineForT.getSubClassAxiom(subclass,
 									SuperclassInSet);
-							if(newCounterexampleAxiom==null)
-								System.out.println("NULL");
+							 
 							Boolean querySubClass = elQueryEngineForH.entailed(newCounterexampleAxiom);
 							Boolean querySubClassforT = elQueryEngineForT.entailed(newCounterexampleAxiom);
 							if (!querySubClass && querySubClassforT) {
@@ -888,8 +876,7 @@ public class consoleLearner {
 							OWLClassExpression SuperclassInSet = iteratorSuperClass.next();
 							OWLAxiom newCounterexampleAxiom = elQueryEngineForT.getSubClassAxiom(subclass,
 									SuperclassInSet);
-							if(newCounterexampleAxiom==null)
-								System.out.println("NULL");
+							 
 							Boolean querySubClass = elQueryEngineForH.entailed(newCounterexampleAxiom);
 							Boolean querySubClassforT = elQueryEngineForT.entailed(newCounterexampleAxiom);
 							if (!querySubClass && querySubClassforT) {
@@ -1075,14 +1062,12 @@ public class consoleLearner {
 	}
 
 	private void minimiseHypothesis() throws Exception {
-		//TODO Change here
-		if(elQueryEngineForH==null||elQueryEngineForH.getOntology()==null)
-			elQueryEngineForH=new ELEngine(hypothesisOntology);
+		 
 			
 		Set<OWLAxiom> tmpaxiomsH = elQueryEngineForH.getOntology().getAxioms();
 		Iterator<OWLAxiom> ineratorMinH = tmpaxiomsH.iterator();
 		Set<OWLAxiom> checkedAxiomsSet = new HashSet<OWLAxiom>();
-		//String removedstring = "";
+		 
 		 
 		if (tmpaxiomsH.size() > 1) {
 			while (ineratorMinH.hasNext()) {
