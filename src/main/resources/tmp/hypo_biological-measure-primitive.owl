@@ -14,16 +14,16 @@ Class: <http://ontology.dumontierlab.com/ChildDepressionScore>
         <http://ontology.dumontierlab.com/ChildDepressionMeasure>
     
     
-Class: <http://ontology.dumontierlab.com/RemissionFrequency>
-
-    SubClassOf: 
-        <http://ontology.dumontierlab.com/RemissionMeasure>
-    
-    
 Class: <http://ontology.dumontierlab.com/MolecularMeasure>
 
     SubClassOf: 
         <http://ontology.dumontierlab.com/BiologicalMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/RemissionFrequency>
+
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/RemissionMeasure>
     
     
 Class: <http://ontology.dumontierlab.com/SatietyFrequency>
