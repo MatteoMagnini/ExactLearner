@@ -10,6 +10,37 @@ import static org.junit.Assert.*;
 public class consoleLearnerTest {
 
     @Test
+    public void smallOntologiesCorpus() {
+        Logger.getRootLogger().setLevel(Level.OFF);
+        String path = "src/main/resources/ontologies/small/";
+
+        String[] ontologies = {"animals.owl", "football.owl",  "cell.owl",
+                "generations.owl", "university.owl"};
+        for (String fn : ontologies) {
+            System.out.println("running on " + path + fn);
+            String[] args = {path + fn, "on", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t"};
+            consoleLearner cl = new consoleLearner();
+            cl.doIt(args);
+        }
+    }
+
+    @Test
+    public void mediumOntologiesCorpus() {
+        Logger.getRootLogger().setLevel(Level.OFF);
+        String path = "src/main/resources/ontologies/medium/";
+
+        String[] ontologies = {"fungal_anatomy.owl",
+                "infectious_disease.owl",
+                "/space.owl",
+                "worm_development.owl"};
+        for (String fn : ontologies) {
+            System.out.println("running on " + path + fn);
+            String[] args = {path + fn, "on", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t"};
+            consoleLearner cl = new consoleLearner();
+            cl.doIt(args);
+        }
+    }
+
     public void smallOntologies() {
         Logger.getRootLogger().setLevel(Level.OFF);
         File dir = new File("src/main/resources/ontologies/small");
