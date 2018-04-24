@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 public class consoleLearnerTest {
 
     @Test
-    public void smallOntologiesCorpus() {
+    public void smallOntologiesNamed() {
         Logger.getRootLogger().setLevel(Level.OFF);
         String path = "src/main/resources/ontologies/small/";
 
@@ -24,7 +24,7 @@ public class consoleLearnerTest {
     }
 
     @Test
-    public void mediumOntologiesCorpus() {
+    public void mediumOntologiesNamed() {
         Logger.getRootLogger().setLevel(Level.OFF);
         String path = "src/main/resources/ontologies/medium/";
 
@@ -37,6 +37,14 @@ public class consoleLearnerTest {
     }
 
 
+    @Test
+    public void smallOntologiesCorpus() {
+        Logger.getRootLogger().setLevel(Level.OFF);
+        File dir = new File("src/main/resources/corpus/small");
+        runInFolder(dir);
+    }
+
+
     private void runDoIt(String path, String[] ontologies) {
         for (String fn : ontologies) {
             System.out.println("running on " + path + fn);
@@ -45,12 +53,6 @@ public class consoleLearnerTest {
             cl.doIt(args);
         }
     }
-    public void smallOntologies() {
-        Logger.getRootLogger().setLevel(Level.OFF);
-        File dir = new File("src/main/resources/corpus/small");
-        runInFolder(dir);
-    }
-
     private void runInFolder(File dir) {
         System.out.println("Running in " + dir.toString());
         File[] directoryListing = dir.listFiles();

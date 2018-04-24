@@ -164,16 +164,16 @@ Class: <http://www.geneontology.org/go#WBls_0000047>
         <http://www.geneontology.org/go#WBls_0000029>
     
     
-Class: <http://www.geneontology.org/go#WBls_0000046>
-
-    SubClassOf: 
-        <http://www.geneontology.org/go#WBls_0000023>
-    
-    
 Class: <http://www.geneontology.org/go#WBls_0000002>
 
     SubClassOf: 
         <http://www.geneontology.org/go#WBls_0000001>
+    
+    
+Class: <http://www.geneontology.org/go#WBls_0000046>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#WBls_0000023>
     
     
 Class: <http://www.geneontology.org/go#WBls_0000045>
