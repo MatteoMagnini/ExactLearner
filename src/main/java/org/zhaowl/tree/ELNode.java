@@ -282,7 +282,10 @@ public class ELNode {
 	}
 	
 	
-	
+	public void remove(OWLClass cl) {
+		label.remove(cl);
+		labelSimulationUpdate();
+	}
 	/**
 	 * Adds an entry to the node label.
 	 * @param newClass Class to add to label.

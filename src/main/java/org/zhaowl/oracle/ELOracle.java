@@ -12,6 +12,7 @@ import org.semanticweb.owlapi.model.OWLClassExpression;
 import org.semanticweb.owlapi.model.OWLSubClassOfAxiom;
 import org.zhaowl.console.consoleLearner;
 import org.zhaowl.engine.ELEngine;
+import org.zhaowl.learner.ELLearner;
 import org.zhaowl.tree.ELNode;
 import org.zhaowl.tree.ELTree;
 
@@ -297,6 +298,11 @@ public class ELOracle {
 
 		return right;
 	}
-
 	
+//at the moment duplicated
+	public Boolean isCounterExample(OWLClassExpression left, OWLClassExpression right){
+		return  myEngineForT.entailed(myEngineForT.getSubClassAxiom(left, right))
+				&&
+				!myEngineForH.entailed(myEngineForH.getSubClassAxiom(left, right));
+	}
 }

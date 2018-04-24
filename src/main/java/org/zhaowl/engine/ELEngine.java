@@ -12,6 +12,7 @@ import org.semanticweb.owlapi.util.ShortFormProvider;
 import org.semanticweb.owlapi.util.SimpleShortFormProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.zhaowl.learner.ELLearner;
  
 
 public class ELEngine {
@@ -197,32 +198,8 @@ public class ELEngine {
     	myManager.applyChange(change);
     }	
     	//	public Reasoner getOWLObjectIntersectionOf(List<OWLClass> classAux) {
+
+
     
-//		OWLDataFactory dataFactory = myManager.getOWLDataFactory();
-//		return dataFactory.getOWLObjectIntersectionOf(classAux);
-//		  
-//		 
-//	}
-     
-//    public OWLClassExpression parseClassExpression(String classExpressionString) {
-//    	// Set up the real parser
-//    	OWLDataFactory dataFactory = myManager.getOWLDataFactory();
-//        ManchesterOWLSyntaxEditorParser parser = new ManchesterOWLSyntaxEditorParser(
-//                dataFactory, classExpressionString);
-//        parser.setDefaultOntology(myOntology);
-//        // Specify an entity checker that wil be used to check a class
-//        // expression contains the correct names.
-//        OWLEntityChecker entityChecker = new ShortFormEntityChecker(bidiShortFormProvider);
-//        parser.setOWLEntityChecker(entityChecker);
-//        // Do the actual parsing
-//        try {
-//			return parser.parseClassExpression();
-//		} catch (Exception e) {
-//			// TODO Auto-generated catch block
-//			System.out.println("The concept " + classExpressionString + " is not in this Ontology.");
-//			JOptionPane.showMessageDialog(null, "The concept " + classExpressionString + "  is not in this Ontology!", "Alert", JOptionPane.INFORMATION_MESSAGE);
-//			
-//		}
-//		return null;
-//    }
+ 
 }

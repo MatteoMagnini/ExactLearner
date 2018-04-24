@@ -74,7 +74,8 @@ public class consoleLearner {
 	private String ontologyFolderH = null;
 
 	private OWLAxiom lastCE = null;
-
+	private OWLClassExpression lastExpression = null;
+	private OWLClass lastName = null;
 	private OWLOntology targetOntology = null;
 	private OWLOntology hypothesisOntology = null;
 
@@ -143,8 +144,9 @@ public class consoleLearner {
 
 
 				timeStart = System.currentTimeMillis();
- 
 				runLearner(elQueryEngineForT, elQueryEngineForH);
+				timeEnd = System.currentTimeMillis();
+				System.out.println("Total time (ms): " + (timeEnd - timeStart));
 				System.out.println("Total membership queries: " + membCount);
 				System.out.println("Total equivalence queries: " + equivCount);
 				System.out.println("Target TBox logical axioms: " + axiomsT.size());
@@ -201,127 +203,85 @@ public class consoleLearner {
 	}
 
 	public void runLearner(ELEngine elQueryEngineForT,ELEngine elQueryEngineForH) throws Throwable {
-
-		while (!equivalenceQuery()) {
-			
+		OWLAxiom essentialCE=null;
+		while (!equivalenceQuery()) {			
 			equivCount++;
 			if (ezBox) {
 				lastCE=getEasyCounterExample(elQueryEngineForT,elQueryEngineForH);
 			} else {	
 				lastCE=getCounterExample(elQueryEngineForT,elQueryEngineForH);
 			}
-			System.out.println("New counterexample "+lastCE.toString()); 
-			OWLClassExpression left = null;
-			OWLClassExpression right = null;
-			// lastCE is last counter example provided by elOracle, unsaturate and saturate
-			if (lastCE.isOfType(AxiomType.SUBCLASS_OF)) {
-				left = ((OWLSubClassOfAxiom) lastCE).getSubClass();
-				right = ((OWLSubClassOfAxiom) lastCE).getSuperClass();
-			} else	
-				throw new RuntimeException("Wrong counterexample format.");
-			lastCE = elQueryEngineForT.getSubClassAxiom(left, right);
-			// check if complex side is left
-			if (checkLeft(lastCE)) {
+			if(isLeftSideComplex()) {
+				essentialCE=computeEssentialLeftCounterexample();
+			} else if(isRightSideComplex()) {
+				essentialCE=computeEssentialRightCounterexample();
+			} else throw  new RuntimeException("Wrong counterexample format.");		
+			addHypothesis(essentialCE);  
+		}
+		victory();		
+		lastCE = null;
+		return;
+	}	
 
-				// decompose tries to find underlying inclusions inside the left hand side
-				// by recursively breaking the left expression and adding new inclusions to the
-				// hypothesis
-				/*
-				 * if(oracleMerge.isSelected()) elOracle.oracleSiblingMerge(left, right);
-				 * if(oracleSaturate.isSelected()) elOracle.saturateWithTreeLeft(lastCE);
-				 */
-				if (learnerDecompL) {
-					// System.out.println("lhs decomp");
-					elLearner.decompose(left, right);
-				}
-				// branch edges on left side of the inclusion (if possible) to make it logically
-				// stronger (more general)
-				if (learnerBranch) {
-					// System.out.println("lhs branch");
-					left = elLearner.branchLeft(left, right);
-				}
-				lastCE = elQueryEngineForT.getSubClassAxiom(left, right);
-
-				// unsaturate removes useless concepts from nodes in the inclusion
-				if (learnerUnsat) {
-					// System.out.println("lhs unsaturate");
-
-					left = elLearner.unsaturateLeft(lastCE);
-				}
-				lastCE = elQueryEngineForT.getSubClassAxiom(left, right);
-				try {
-					addHypothesis(lastCE); 
-				} catch (Exception e2) {
-					e2.printStackTrace();
-				}
-			} else {
-				// decompose tries to find underlying inclusions inside the right hand side
-				// by recursively breaking the left expression and adding new inclusions to the
-				// hypothesis
-				if (learnerDecompR) {
-					// System.out.println("rhs decomp");
-					elLearner.decompose(left, right);
-				}
-				// merge edges on right side of the inclusion (if possible) to make it logically
-				// stronger (more general)
-				if (learnerMerge) {
-					// System.out.println("rhs merge");
-					right = elLearner.learnerSiblingMerge(left, right);
-				}
-				// rebuild inclusion for final step
-				lastCE = elQueryEngineForT.getSubClassAxiom(left, right);
-				if (learnerSat) {
-					// System.out.println("rhs saturate");
-					lastCE = elLearner.saturateWithTreeRight(lastCE);
-				}
-				left = ((OWLSubClassOfAxiom) lastCE).getSubClass();
-				right = ((OWLSubClassOfAxiom) lastCE).getSuperClass();
-				try {
-					addHypothesis(lastCE);
-				} catch (Exception e2) {
-					e2.printStackTrace();
-				}
-			}
+	public OWLAxiom computeEssentialLeftCounterexample() throws Exception {
+		OWLAxiom axiom=null;
+		OWLClassExpression left=null;
+		OWLClass  right=null;
+		OWLSubClassOfAxiom counterexample =null;
+		 
+						if (learnerDecompL) {
+							axiom =elLearner.decompose(lastExpression, lastName);
+							counterexample = (OWLSubClassOfAxiom) axiom;
+							left=counterexample.getSubClass();
+							right=(OWLClass) counterexample.getSuperClass();
+						}
+						 
+						if (learnerBranch) {				 
+							axiom =elLearner.branchLeft(left, right);
+							counterexample = (OWLSubClassOfAxiom) axiom;
+							left=counterexample.getSubClass();
+							right=(OWLClass) counterexample.getSuperClass();
+						}
+						 
+						if (learnerUnsat) {
+							axiom = elLearner.unsaturateLeft(left, right);						 
+						}
+						 
+		return axiom;
+	}
+	public OWLAxiom computeEssentialRightCounterexample() throws Exception {
+		OWLAxiom axiom=null;
+		OWLClass  left=null;
+		OWLClassExpression  right=null;
+		OWLSubClassOfAxiom counterexample =null;
+		 
+						if (learnerDecompR) {
+							axiom = elLearner.decompose(lastExpression, lastName);
+							counterexample = (OWLSubClassOfAxiom) axiom;
+							left= (OWLClass)counterexample.getSubClass();
+							right=  counterexample.getSuperClass();
+						}
+						 
+						if (learnerMerge) {				 
+							axiom = elLearner.learnerSiblingMerge(left, right);
+							counterexample = (OWLSubClassOfAxiom) axiom;
+							left= (OWLClass)counterexample.getSubClass();
+							right= counterexample.getSuperClass();
+						}
+						 
+						if (learnerSat) {
+							axiom = elLearner.saturateWithTreeRight(left, right);
+						}	 
+		return axiom;
+	}
+			
 			 
-		}
-	victory();
-	timeEnd = System.currentTimeMillis();
-	System.out.println("Total time (ms): " + (timeEnd - timeStart));
-	lastCE = null;
-	return;
-	}
+				
 
-	public void equivalenceCheck() {
 
-		int x = 0;
-		if (!wePlayin) {}
-			//JOptionPane.showMessageDialog(null, "No Ontology loaded yet, please load an Ontology to start playing!",
-					//"Alert", JOptionPane.INFORMATION_MESSAGE);
-		else {
-			if (autoBox) {
-				System.gc();
-				boolean check = equivalenceQuery();
-				do {
-					equivCount++;
-					x++;
-					if (check) {
-						// victory
-						victory();
-						System.out.println("It took: " + x);
-						System.out.flush();
-					}  
-				} while (!equivalenceQuery());
-			} else {
-				boolean check = equivalenceQuery();
-				equivCount++;
-				if (check) {
-					// victory
-					victory();
-				}  
-			}
-		}
+	 
 
-	}
+	 
 
 	 
 
@@ -1052,5 +1012,34 @@ public class consoleLearner {
 			}
 		}
 
+	}
+	private Boolean isLeftSideComplex() {
+		
+		OWLSubClassOfAxiom counterexample = (OWLSubClassOfAxiom) lastCE;
+		OWLClassExpression left=counterexample.getSuperClass();
+		OWLClassExpression right=counterexample.getSubClass();
+		for(OWLClass cl1 : left.getClassesInSignature()) {
+			if(elOracle.isCounterExample(cl1, right)) {
+				lastCE=elQueryEngineForT.getSubClassAxiom(cl1, right);
+				lastExpression=right;
+				lastName=cl1;
+				return true;
+			}		
+		}
+		return false;
+	}
+	private Boolean isRightSideComplex() {
+		OWLSubClassOfAxiom counterexample = (OWLSubClassOfAxiom) lastCE;
+		OWLClassExpression left=counterexample.getSuperClass();
+		OWLClassExpression right=counterexample.getSubClass();
+		for(OWLClass cl1 : right.getClassesInSignature()) {
+			if(elOracle.isCounterExample(left,cl1)) {
+				lastCE=elQueryEngineForT.getSubClassAxiom(left,cl1);
+				lastExpression=left;
+				lastName=cl1;
+				return true;
+			}		
+		}
+		return false;
 	}
 }

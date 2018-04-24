@@ -45,9 +45,9 @@ public class ELLearnerTest {
 
         OWLClass right = df.getOWLClass(IRI.create("right"));
 
-        OWLAxiom ax = df.getOWLSubClassOfAxiom(left,right);
+        
         try {
-            elLearner.unsaturateLeft(ax);
+            elLearner.unsaturateLeft(left,right);
         } catch (Exception e) {
             e.printStackTrace();
         }
