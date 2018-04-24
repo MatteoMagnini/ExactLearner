@@ -3,6 +3,8 @@ package org.zhaowl.console;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import java.io.File;
+import java.io.FileFilter;
+
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -55,7 +57,13 @@ public class consoleLearnerTest {
     }
     private void runInFolder(File dir) {
         System.out.println("Running in " + dir.toString());
-        File[] directoryListing = dir.listFiles();
+        File[] directoryListing = dir.listFiles(new FileFilter() {
+            @Override
+            public boolean accept(File pathname) {
+                return pathname.getName().endsWith(".owl");
+            }
+        });
+
         if(directoryListing != null) {
             for(File ont : directoryListing) {
                 System.out.println(ont.toString());
