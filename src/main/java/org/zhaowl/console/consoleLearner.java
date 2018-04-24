@@ -55,7 +55,6 @@ public class consoleLearner {
 	
 	// ############# OWL variables Start ######################
 
-	private String ontologyPath = null;
 	private OWLOntologyManager myManager = null;
 	private ManchesterOWLSyntaxOWLObjectRendererImpl myRenderer = null;
 
@@ -204,30 +203,20 @@ public class consoleLearner {
 	public void runLearner(ELEngine elQueryEngineForT,ELEngine elQueryEngineForH) throws Throwable {
 
 		while (!equivalenceQuery()) {
+			
 			equivCount++;
 			if (ezBox) {
 				lastCE=getEasyCounterExample(elQueryEngineForT,elQueryEngineForH);
 			} else {	
 				lastCE=getCounterExample(elQueryEngineForT,elQueryEngineForH);
 			}
-			 
+			System.out.println("New counterexample "+lastCE.toString()); 
 			OWLClassExpression left = null;
 			OWLClassExpression right = null;
 			// lastCE is last counter example provided by elOracle, unsaturate and saturate
 			if (lastCE.isOfType(AxiomType.SUBCLASS_OF)) {
 				left = ((OWLSubClassOfAxiom) lastCE).getSubClass();
 				right = ((OWLSubClassOfAxiom) lastCE).getSuperClass();
-//			}
-//			else 
-//				if (lastCE.isOfType(AxiomType.EQUIVALENT_CLASSES)) {
-//				left =  lastCE.
-//				right = ((OWLSubClassOfAxiom) lastCE).getSuperClass();
-//				if(!elLearner.isCounterExample(left,right)) {
-//					right = ((OWLSubClassOfAxiom) lastCE).getSubClass();
-//					left = ((OWLSubClassOfAxiom) lastCE).getSuperClass();
-//				} if(!elLearner.isCounterExample(left,right)) {
-//					throw new RuntimeException("Wrong counterexample format. Not a counterexample.");
-//				}
 			} else	
 				throw new RuntimeException("Wrong counterexample format.");
 			lastCE = elQueryEngineForT.getSubClassAxiom(left, right);
@@ -473,7 +462,6 @@ public class consoleLearner {
 	}
 
 	public void resetVariables() {
-		ontologyPath = null;
 		myManager = null;
 		myRenderer = null;
 
