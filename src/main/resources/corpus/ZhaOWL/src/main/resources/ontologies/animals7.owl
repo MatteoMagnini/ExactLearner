@@ -1,0 +1,268 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/ontologies/2014/3/animals.owl#"
+     xml:base="http://www.semanticweb.org/ontologies/2014/3/animals.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:animals="http://www.semanticweb.org/ontologies/2014/3/animals.owl#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ontologies/2014/3/animals.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontology.dumontierlab.com/biological-measure-primitive#eats -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.dumontierlab.com/biological-measure-primitive#eats"/>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/biological-measure-primitive#has_part -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.dumontierlab.com/biological-measure-primitive#has_part"/>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/biological-measure-primitive#lays -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.dumontierlab.com/biological-measure-primitive#lays"/>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/biological-measure-primitive#lives_in -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.dumontierlab.com/biological-measure-primitive#lives_in"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontology.dumontierlab.com/biological-measure-primitive#Animal -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/biological-measure-primitive#Animal"/>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/biological-measure-primitive#Backbone -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/biological-measure-primitive#Backbone"/>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/biological-measure-primitive#Bird -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/biological-measure-primitive#Bird">
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/biological-measure-primitive#Vertebrate"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontology.dumontierlab.com/biological-measure-primitive#has_part"/>
+                        <owl:someValuesFrom rdf:resource="http://ontology.dumontierlab.com/biological-measure-primitive#Leg"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontology.dumontierlab.com/biological-measure-primitive#has_part"/>
+                        <owl:someValuesFrom rdf:resource="http://ontology.dumontierlab.com/biological-measure-primitive#Wing"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology.dumontierlab.com/biological-measure-primitive#lays"/>
+                <owl:someValuesFrom rdf:resource="http://ontology.dumontierlab.com/biological-measure-primitive#Egg"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/biological-measure-primitive#Carnivore -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/biological-measure-primitive#Carnivore">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://ontology.dumontierlab.com/biological-measure-primitive#Animal"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontology.dumontierlab.com/biological-measure-primitive#eats"/>
+                        <owl:someValuesFrom rdf:resource="http://ontology.dumontierlab.com/biological-measure-primitive#Meat"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/biological-measure-primitive#Cat -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/biological-measure-primitive#Cat">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://ontology.dumontierlab.com/biological-measure-primitive#Carnivore"/>
+                    <rdf:Description rdf:about="http://ontology.dumontierlab.com/biological-measure-primitive#Mammal"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/biological-measure-primitive#Egg -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/biological-measure-primitive#Egg"/>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/biological-measure-primitive#Elephant -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/biological-measure-primitive#Elephant">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://ontology.dumontierlab.com/biological-measure-primitive#Herbivore"/>
+                    <rdf:Description rdf:about="http://ontology.dumontierlab.com/biological-measure-primitive#Mammal"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/biological-measure-primitive#Fish -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/biological-measure-primitive#Fish">
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/biological-measure-primitive#Vertebrate"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://ontology.dumontierlab.com/biological-measure-primitive#Animal"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontology.dumontierlab.com/biological-measure-primitive#lives_in"/>
+                        <owl:someValuesFrom rdf:resource="http://ontology.dumontierlab.com/biological-measure-primitive#Water"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/biological-measure-primitive#Herbivore -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/biological-measure-primitive#Herbivore">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://ontology.dumontierlab.com/biological-measure-primitive#Animal"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontology.dumontierlab.com/biological-measure-primitive#eats"/>
+                        <owl:someValuesFrom rdf:resource="http://ontology.dumontierlab.com/biological-measure-primitive#Plant"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/biological-measure-primitive#Leg -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/biological-measure-primitive#Leg"/>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/biological-measure-primitive#Mammal -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/biological-measure-primitive#Mammal">
+        <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/biological-measure-primitive#Vertebrate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/biological-measure-primitive#Meat -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/biological-measure-primitive#Meat"/>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/biological-measure-primitive#Plant -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/biological-measure-primitive#Plant"/>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/biological-measure-primitive#Reptile -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/biological-measure-primitive#Reptile">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://ontology.dumontierlab.com/biological-measure-primitive#Carnivore"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontology.dumontierlab.com/biological-measure-primitive#lays"/>
+                        <owl:someValuesFrom rdf:resource="http://ontology.dumontierlab.com/biological-measure-primitive#Egg"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/biological-measure-primitive#Vertebrate -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/biological-measure-primitive#Vertebrate">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://ontology.dumontierlab.com/biological-measure-primitive#Animal"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ontology.dumontierlab.com/biological-measure-primitive#has_part"/>
+                        <owl:someValuesFrom rdf:resource="http://ontology.dumontierlab.com/biological-measure-primitive#Backbone"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/biological-measure-primitive#Water -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/biological-measure-primitive#Water"/>
+    
+
+
+    <!-- http://ontology.dumontierlab.com/biological-measure-primitive#Wing -->
+
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/biological-measure-primitive#Wing"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

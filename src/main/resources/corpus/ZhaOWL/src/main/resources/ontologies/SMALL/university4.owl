@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/ontologies/2014/3/university.owl#"
+     xml:base="http://www.semanticweb.org/ontologies/2014/3/university.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:university="http://www.semanticweb.org/ontologies/2014/3/university.owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ontologies/2014/3/university.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://aims.fao.org/aos/geopolitical.owl#employed_by -->
+
+    <owl:ObjectProperty rdf:about="http://aims.fao.org/aos/geopolitical.owl#employed_by"/>
+    
+
+
+    <!-- http://aims.fao.org/aos/geopolitical.owl#manages -->
+
+    <owl:ObjectProperty rdf:about="http://aims.fao.org/aos/geopolitical.owl#manages"/>
+    
+
+
+    <!-- http://aims.fao.org/aos/geopolitical.owl#teaches -->
+
+    <owl:ObjectProperty rdf:about="http://aims.fao.org/aos/geopolitical.owl#teaches"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://aims.fao.org/aos/geopolitical.owl#Module -->
+
+    <owl:Class rdf:about="http://aims.fao.org/aos/geopolitical.owl#Module"/>
+    
+
+
+    <!-- http://aims.fao.org/aos/geopolitical.owl#Person -->
+
+    <owl:Class rdf:about="http://aims.fao.org/aos/geopolitical.owl#Person"/>
+    
+
+
+    <!-- http://aims.fao.org/aos/geopolitical.owl#Professor -->
+
+    <owl:Class rdf:about="http://aims.fao.org/aos/geopolitical.owl#Professor">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://aims.fao.org/aos/geopolitical.owl#Researcher"/>
+                    <rdf:Description rdf:about="http://aims.fao.org/aos/geopolitical.owl#Teacher"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://aims.fao.org/aos/geopolitical.owl#Project -->
+
+    <owl:Class rdf:about="http://aims.fao.org/aos/geopolitical.owl#Project"/>
+    
+
+
+    <!-- http://aims.fao.org/aos/geopolitical.owl#Researcher -->
+
+    <owl:Class rdf:about="http://aims.fao.org/aos/geopolitical.owl#Researcher">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://aims.fao.org/aos/geopolitical.owl#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://aims.fao.org/aos/geopolitical.owl#employed_by"/>
+                        <owl:someValuesFrom rdf:resource="http://aims.fao.org/aos/geopolitical.owl#University"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://aims.fao.org/aos/geopolitical.owl#manages"/>
+                <owl:someValuesFrom rdf:resource="http://aims.fao.org/aos/geopolitical.owl#Project"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://aims.fao.org/aos/geopolitical.owl#Teacher -->
+
+    <owl:Class rdf:about="http://aims.fao.org/aos/geopolitical.owl#Teacher">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://aims.fao.org/aos/geopolitical.owl#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://aims.fao.org/aos/geopolitical.owl#employed_by"/>
+                        <owl:someValuesFrom rdf:resource="http://aims.fao.org/aos/geopolitical.owl#University"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://aims.fao.org/aos/geopolitical.owl#teaches"/>
+                        <owl:someValuesFrom rdf:resource="http://aims.fao.org/aos/geopolitical.owl#Module"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://aims.fao.org/aos/geopolitical.owl#University -->
+
+    <owl:Class rdf:about="http://aims.fao.org/aos/geopolitical.owl#University"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

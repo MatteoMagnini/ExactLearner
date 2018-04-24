@@ -1,0 +1,212 @@
+Fungal Anatomy
+
+http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/anatomy/gross_anatomy/microbial_gross_anatomy/fungi/fungal_anatomy.obo
+
+Axiom: 315
+Logical axiom count: 88
+Declaration axioms count: 78
+Class count: 65
+Object property count: 3
+Data property count: 0
+Individual count: 0
+Annotation Property count: 10
+DL expressivity: ALE
+SubClassOf: 88
+EquivalentClasses: 0
+DisjointClasses: 0
+GCI count: 0
+Hidden GCI Count: 0
+SubObjectPropertyOf: 0
+EquivalentObjectProperties: 0
+InverseObjectProperties: 0
+DisjointObjectProperties: 0
+FunctionalObjectProperty: 0
+InverseFunctionalObjectProperty: 0
+TransitiveObjectProperty: 0
+SymmetricObjectProperty: 0
+AsymmetricObjectProperty: 0
+ReflexiveObjectProperty: 0
+IrrefexiveObjectProperty: 0
+ObjectPropertyDomain: 0
+ObjectPropertyRange: 0
+SubPropertyChainOf: 0
+SubDataPropertyOf: 0
+EquivalentDataProperties: 0
+DisjointDataProperties: 0
+FunctionalDataProperty: 0
+DataPropertyDomain: 0
+DataPropertyRange: 0
+ClassAssertion: 0
+ObjectPropertyAssertion: 0
+DataPropertyAssertion: 0
+NegativeObjectPropertyAssertion: 0
+NegativeDataPropertyAssertion: 0
+SameIndividual: 0
+DifferentIndividuals: 0
+AnnotationAssertion: 149
+AnnotationPropertyDomain: 0
+AnnotationPropertyRangeOf: 0
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Worm development
+
+http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo
+
+Axiom: 295
+Logical axiom count: 71
+Declaration axioms count: 81
+Class count: 72
+Object property count: 1
+Data property count: 0
+Individual count: 0
+Annotation Property count: 8
+DL expressivity: AL
+SubClassOf: 71
+EquivalentClasses: 0
+DisjointClasses: 0
+GCI count: 0
+Hidden GCI Count: 0
+SubObjectPropertyOf: 0
+EquivalentObjectProperties: 0
+InverseObjectProperties: 0
+DisjointObjectProperties: 0
+FunctionalObjectProperty: 0
+InverseFunctionalObjectProperty: 0
+TransitiveObjectProperty: 0
+SymmetricObjectProperty: 0
+AsymmetricObjectProperty: 0
+ReflexiveObjectProperty: 0
+IrrefexiveObjectProperty: 0
+ObjectPropertyDomain: 0
+ObjectPropertyRange: 0
+SubPropertyChainOf: 0
+SubDataPropertyOf: 0
+EquivalentDataProperties: 0
+DisjointDataProperties: 0
+FunctionalDataProperty: 0
+DataPropertyDomain: 0
+DataPropertyRange: 0
+ClassAssertion: 0
+ObjectPropertyAssertion: 0
+DataPropertyAssertion: 0
+NegativeObjectPropertyAssertion: 0
+NegativeDataPropertyAssertion: 0
+SameIndividual: 0
+DifferentIndividuals: 0
+AnnotationAssertion: 143
+AnnotationPropertyDomain: 0
+AnnotationPropertyRangeOf: 0
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Spacial
+
+Axiom: 569
+Logical axiom count: 190
+Declaration axioms count: 132
+Class count: 106
+Object property count: 13
+Data property count: 0
+Individual count: 0
+Annotation Property count: 13
+DL expressivity: ALEH+
+SubClassOf: 116
+EquivalentClasses: 58
+DisjointClasses: 0
+GCI count: 0
+Hidden GCI Count: 58
+SubObjectPropertyOf: 8
+EquivalentObjectProperties: 0
+InverseObjectProperties: 0
+DisjointObjectProperties: 0
+FunctionalObjectProperty: 0
+InverseFunctionalObjectProperty: 0
+TransitiveObjectProperty: 8
+SymmetricObjectProperty: 0
+AsymmetricObjectProperty: 0
+ReflexiveObjectProperty: 0
+IrrefexiveObjectProperty: 0
+ObjectPropertyDomain: 0
+ObjectPropertyRange: 0
+SubPropertyChainOf: 0
+SubDataPropertyOf: 0
+EquivalentDataProperties: 0
+DisjointDataProperties: 0
+FunctionalDataProperty: 0
+DataPropertyDomain: 0
+DataPropertyRange: 0
+ClassAssertion: 0
+ObjectPropertyAssertion: 0
+DataPropertyAssertion: 0
+NegativeObjectPropertyAssertion: 0
+NegativeDataPropertyAssertion: 0
+SameIndividual: 0
+DifferentIndividuals: 0
+AnnotationAssertion: 247
+AnnotationPropertyDomain: 0
+AnnotationPropertyRangeOf: 0
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Infectious disease 
+
+Total time (ms): 2748920
+
+Total membership 155
+Total equivalence 155
+
+Size is: 2
+Total size: 319
+Avg: 2
+
+
+Size is: 2
+Total size: 319
+Avg: 2
+
+Axiom: 523
+Logical axiom count: 155
+Declaration axioms count: 171
+Class count: 157
+Object property count: 5
+Data property count: 0
+Individual count: 0
+Annotation Property count: 9
+DL expressivity: ALE
+SubClassOf: 155
+EquivalentClasses: 0
+DisjointClasses: 0
+GCI count: 0
+Hidden GCI Count: 0
+SubObjectPropertyOf: 0
+EquivalentObjectProperties: 0
+InverseObjectProperties: 0
+DisjointObjectProperties: 0
+FunctionalObjectProperty: 0
+InverseFunctionalObjectProperty: 0
+TransitiveObjectProperty: 0
+SymmetricObjectProperty: 0
+AsymmetricObjectProperty: 0
+ReflexiveObjectProperty: 0
+IrrefexiveObjectProperty: 0
+ObjectPropertyDomain: 0
+ObjectPropertyRange: 0
+SubPropertyChainOf: 0
+SubDataPropertyOf: 0
+EquivalentDataProperties: 0
+DisjointDataProperties: 0
+FunctionalDataProperty: 0
+DataPropertyDomain: 0
+DataPropertyRange: 0
+ClassAssertion: 0
+ObjectPropertyAssertion: 0
+DataPropertyAssertion: 0
+NegativeObjectPropertyAssertion: 0
+NegativeDataPropertyAssertion: 0
+SameIndividual: 0
+DifferentIndividuals: 0
+AnnotationAssertion: 197
+AnnotationPropertyDomain: 0
+AnnotationPropertyRangeOf: 0
+
