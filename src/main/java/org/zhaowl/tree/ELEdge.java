@@ -19,7 +19,7 @@ public class ELEdge {
 	}
 	
 	/**
-	 * @param label the label to set
+	 * @param str the label to set
 	 */
     private String toMan(String str)
 	{
