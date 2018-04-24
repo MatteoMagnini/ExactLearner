@@ -14,15 +14,13 @@ Class: <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#Policy>
 Class: <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#Retry-Until-SucceedUsernamePolicy>
 
     SubClassOf: 
-        <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#X509>,
         <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#GeneralReliabilityKerberosPolicy>
     
     
 Class: <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#IncoherentPolicy>
 
     SubClassOf: 
-        <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#GeneralReliabilityKerberosPolicy>,
-        <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#X509>
+        <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#GeneralReliabilityKerberosPolicy>
     
     
 Class: <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#GeneralReliabilityKerberosPolicy>
@@ -40,7 +38,6 @@ Class: <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#Securit
 Class: <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#GeneralReliabilityUsernamePolicy>
 
     SubClassOf: 
-        <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#X509>,
         <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#GeneralReliabilityKerberosPolicy>
     
     
