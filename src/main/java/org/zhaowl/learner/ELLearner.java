@@ -3,8 +3,6 @@ package org.zhaowl.learner;
  
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
@@ -13,22 +11,20 @@ import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLClassExpression;
 import org.semanticweb.owlapi.model.OWLSubClassOfAxiom;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.zhaowl.console.consoleLearner;
 import org.zhaowl.engine.ELEngine;
-import org.zhaowl.tree.ELEdge;
 import org.zhaowl.tree.ELNode;
 import org.zhaowl.tree.ELTree;
-import org.zhaowl.utils.Metrics;
 
 public class ELLearner {
 
 	private final ELEngine myEngineForT;
 	private final ELEngine myEngineForH;
 	private final consoleLearner myConsole;
-	private static final Logger LOGGER_ = LoggerFactory
-			.getLogger(ELLearner.class);
+// --Commented out by Inspection START (24/04/2018, 15:49):
+//	private static final Logger LOGGER_ = LoggerFactory
+//			.getLogger(ELLearner.class);
+// --Commented out by Inspection STOP (24/04/2018, 15:49)
 
 	public ELLearner(ELEngine elEngineForT, ELEngine elEngineForH, consoleLearner console) {
 		myEngineForH = elEngineForH;
@@ -41,7 +37,7 @@ public class ELLearner {
 		OWLClassExpression left = ((OWLSubClassOfAxiom) ax).getSubClass();
 		OWLClassExpression right = ((OWLSubClassOfAxiom) ax).getSuperClass();
 		ELTree tree = new ELTree(left);
-		Set<ELNode> nodes = null;
+		//Set<ELNode> nodes = null;
 
 		int sizeToCheck = 0;
 
@@ -55,21 +51,19 @@ public class ELLearner {
 		//reasonerForT = createReasoner(ontology, "reasonerForT");
 		//myEngineForT = new ELEngine(reasonerForT, shortFormProvider);
 		for (int i = 0; i < tree.getMaxLevel(); i++) {
-			nodes = tree.getNodesOnLevel(i + 1);
+			Set<ELNode> nodes = tree.getNodesOnLevel(i + 1);
 			for (ELNode nod : nodes) {
 
 				while (!foundSomething) {
 					// size of power set
 					sizeToCheck++;
 					// set to be used when building a power set of concepts
-					Set<OWLClass> toBuildPS = new HashSet<>();
 
 					// populate set
-					for (OWLClass cl : nod.label)
-						toBuildPS.add(cl);
+					Set<OWLClass> toBuildPS = new HashSet<>(nod.label);
 
 					// set of sets of concepts as power set
-					Set<Set<OWLClass>> conceptSet = new HashSet<Set<OWLClass>>();
+					Set<Set<OWLClass>> conceptSet;
 
 					// populate set of sets of concepts
 					// @sizeToCheck is the number of concepts in the set
@@ -85,10 +79,9 @@ public class ELLearner {
 					// loop through concept set
 					for (Set<OWLClass> clSet : conceptSet) {
 
-						nod.label = new TreeSet<OWLClass>();
+						nod.label = new TreeSet<>();
 
-						for (OWLClass cl : clSet)
-							nod.label.add(cl);
+						nod.label.addAll(clSet);
 
 						myConsole.membCount++;
 
@@ -111,12 +104,9 @@ public class ELLearner {
 							}
 							// System.out.println("this one is good: " + cl);
 
-						} else {
-							// System.out.println("This one is useless: " + cl);
-							// nod.label = new TreeSet<OWLClass>();
-							continue;
+						}  // System.out.println("This one is useless: " + cl);
+						// nod.label = new TreeSet<OWLClass>();
 
-						}
 
 					}
 
@@ -127,8 +117,7 @@ public class ELLearner {
 			}
 		}
 		System.out.flush();
-		OWLClassExpression ex =  tree.transformToClassExpression();
-		return ex;
+		return tree.transformToClassExpression();
 	}
 
 
@@ -139,10 +128,10 @@ public class ELLearner {
 		// adds to hypo all counterexamples
 
 		 
-			ELTree treeR = null;
-			ELTree treeL = null;
+			ELTree treeR = new ELTree(right);
+			ELTree treeL = new ELTree(left);
 			 
-			treeL = new ELTree(left);
+
 			for (int i = 0; i < treeL.maxLevel; i++) {
 				 
 				for (ELNode nod : treeL.getNodesOnLevel(i + 1)) {
@@ -153,7 +142,7 @@ public class ELLearner {
 					}
 				}
 			}
-			treeR = new ELTree(right);
+
 			for (int i = 0; i < treeR.maxLevel; i++) {
 				 
 				for (ELNode nod : treeR.getNodesOnLevel(i + 1)) {
@@ -164,27 +153,22 @@ public class ELLearner {
 					}
 				}
 			}
-			return;
-		 
- 
-		
-	}
 
-	public int count = 0;
+
+	}
 
 	public OWLAxiom saturateWithTreeRight(OWLAxiom axiom) throws Exception {
 		OWLClassExpression sub = ((OWLSubClassOfAxiom) axiom).getSubClass();
 		OWLClassExpression sup = ((OWLSubClassOfAxiom) axiom).getSuperClass();
 
 		Set<OWLClass> cIo = myEngineForT.getClassesInSignature();
-		Set<ELNode> nodes = null;
-		count = 0;
+		//Set<ELNode> nodes = null;
 		ELTree tree = new ELTree(sup);
 		//reasonerForT = createReasoner(ontology, "reasonerForT");
 		//myEngineForT = new ELEngine(reasonerForT, shortFormProvider);
-		OWLAxiom newAx = null;
+		//OWLAxiom newAx = null;
 		for (int i = 0; i < tree.getMaxLevel(); i++) {
-			nodes = tree.getNodesOnLevel(i + 1);
+			Set<ELNode> nodes = tree.getNodesOnLevel(i + 1);
 			// if (!nodes.isEmpty())
 			for (ELNode nod : nodes) {
 				// maxSaturate = 3;
@@ -197,8 +181,8 @@ public class ELLearner {
 					}
 
 					OWLClassExpression newEx = tree.transformToClassExpression();
-					 
-					newAx = myEngineForT.getSubClassAxiom(sub, newEx);
+
+					OWLAxiom  newAx = myEngineForT.getSubClassAxiom(sub, newEx);
 					
 					// check if hypothesis entails new saturated CI
 					myConsole.membCount++;
@@ -217,12 +201,8 @@ public class ELLearner {
 				// node post processing
 				ELTree treeOnLeft;
 				ELTree treeOnRight;
-				List<OWLClass> nodeLeft = new ArrayList<OWLClass>();
-				List<OWLClass> nodeRight = new ArrayList<OWLClass>();
-				for(OWLClass cl : nod.label)
-					nodeLeft.add(cl);
-				for(OWLClass cl : nod.label)
-					nodeRight.add(cl);
+				List<OWLClass> nodeLeft = new ArrayList<>(nod.label);
+				List<OWLClass> nodeRight = new ArrayList<>(nod.label);
 				
 				
 				for(int j = 0; j < nod.label.size(); j ++)
@@ -240,10 +220,6 @@ public class ELLearner {
 						}
 						
 					}
-				treeOnLeft = null;
-				treeOnRight = null;
-				nodeLeft = null;
-				nodeRight = null;
 			}
 		}
 		// System.out.println("Tree: " + tree.getRootNode());
@@ -255,24 +231,21 @@ public class ELLearner {
 		} catch (Exception e2) {
 			e2.printStackTrace();
 		}
-		 tree = null;
-		newAx = null;
-		cIo = null;
-		nodes = null;
+
 		//disposeOfReasoner(reasonerForT, "reasonerForT");
 		OWLAxiom ax = myEngineForT.getSubClassAxiom(sub, sup);
 		System.out.flush();
 		return ax;
 	}
 
-	public OWLClassExpression learnerSiblingMerge(OWLClassExpression left, OWLClassExpression right) throws Exception {
+	public OWLClassExpression learnerSiblingMerge(OWLClassExpression left, OWLClassExpression right) {
 
 		/*
 		 * the runLearner must do sibling merging (if possible) on the right hand side
 		 */
 		try {
 			ELTree tree = new ELTree(right);
-			Set<ELNode> nodes = null;
+			// Set<ELNode> nodes = null;
 			// System.out.println(tree.toDescriptionString());
 			//reasonerForT = createReasoner(ontology, "reasonerForT");
 			//myEngineForT = new ELEngine(reasonerForT, shortFormProvider);
@@ -281,7 +254,7 @@ public class ELLearner {
 			// System.out.println(tree.toDescriptionString());
 			for (int i = 0; i < tree.getMaxLevel(); i++) {
 
-				nodes = tree.getNodesOnLevel(i + 1);
+				Set<ELNode>  nodes = tree.getNodesOnLevel(i + 1);
 				if (!nodes.isEmpty())
 					for (ELNode nod : nodes) {
 						// nod.label.addAll(nod.label);
@@ -318,15 +291,8 @@ public class ELLearner {
 			// System.out.println(tree.getRootNode());
 
 			System.out.flush();
-			left = null;
-			right = null;
-			nodes = null;
-			oldTree = null;
-			System.out.flush();
 			//disposeOfReasoner(reasonerForT, "reasonerForT");
-			OWLClassExpression ex = tree.transformToClassExpression();
-			tree = null;
-			return ex;
+			return tree.transformToClassExpression();
 		} catch (Exception e) {
 			System.out.println("error in merge " + e);
 		}
@@ -408,20 +374,20 @@ public class ELLearner {
 		return left;
 	}
 
-	public Set<Set<OWLClass>> powerSetBySize(Set<OWLClass> originalSet, int size) {
-		Set<Set<OWLClass>> sets = new HashSet<Set<OWLClass>>();
+	private Set<Set<OWLClass>> powerSetBySize(Set<OWLClass> originalSet, int size) {
+		Set<Set<OWLClass>> sets = new HashSet<>();
 		if (size == 0) {
-			sets.add(new HashSet<OWLClass>());
+			sets.add(new HashSet<>());
 			return sets;
 		}
-		List<OWLClass> list = new ArrayList<OWLClass>(originalSet);
+		List<OWLClass> list = new ArrayList<>(originalSet);
 
 		for (int i = 0; i < list.size(); i++) {
 			OWLClass head = list.get(i);
 			List<OWLClass> rest = list.subList(i + 1, list.size());
-			Set<Set<OWLClass>> powerRest = powerSetBySize(new HashSet<OWLClass>(rest), size - 1);
+			Set<Set<OWLClass>> powerRest = powerSetBySize(new HashSet<>(rest), size - 1);
 			for (Set<OWLClass> p : powerRest) {
-				HashSet<OWLClass> appendedSet = new HashSet<OWLClass>();
+				HashSet<OWLClass> appendedSet = new HashSet<>();
 				appendedSet.add(head);
 				appendedSet.addAll(p);
 				sets.add(appendedSet);
@@ -429,12 +395,10 @@ public class ELLearner {
 		}
 		return sets;
 	}
-    public Boolean isCounterExample(OWLClassExpression left, OWLClassExpression right){
-		if(myEngineForT.entailed(myEngineForT.getSubClassAxiom(left, right))
-				&& 
-				! myEngineForH.entailed(myEngineForT.getSubClassAxiom(left, right)))
-				return true;
-    	return false;   	
-    }
+    private Boolean isCounterExample(OWLClassExpression left, OWLClassExpression right){
+		return myEngineForT.entailed(myEngineForT.getSubClassAxiom(left, right))
+				&&
+				!myEngineForH.entailed(myEngineForT.getSubClassAxiom(left, right));
+	}
     
 }
