@@ -198,34 +198,45 @@ public class consoleLearner {
 
 	}
 
-	private void runLearner(ELEngine elQueryEngineForT, ELEngine elQueryEngineForH) throws Throwable {
-		OWLAxiom essentialCE=null;
+ 
+	private void runLearner(ELEngine elQueryEngineForT,ELEngine elQueryEngineForH) throws Throwable {
+		 
+		OWLSubClassOfAxiom counterexample=null;
+		OWLClassExpression left=null;
+		OWLClassExpression right=null;
+ 
 		while (!equivalenceQuery()) {			
 			equivCount++;
 			if (ezBox) {
 				lastCE=getEasyCounterExample(elQueryEngineForT,elQueryEngineForH);
 			} else {	
 				lastCE=getCounterExample(elQueryEngineForT,elQueryEngineForH);
-			}
-			if(isLeftSideComplex()) {
-				essentialCE=computeEssentialLeftCounterexample();
-			} else if(isRightSideComplex()) {
-				essentialCE=computeEssentialRightCounterexample();
-			} else throw  new RuntimeException("Wrong counterexample format.");		
-			addHypothesis(essentialCE);  
+			}		
+			counterexample = (OWLSubClassOfAxiom) lastCE;
+			left=counterexample.getSubClass();
+			right=counterexample.getSuperClass();
+			lastCE=elLearner.decompose(left, right);			
+			if(canTransformELrhs()) {
+				lastCE=computeEssentialRightCounterexample();
+			} else if(canTransformELlhs()) {
+				lastCE=computeEssentialLeftCounterexample();
+			} 
+			addHypothesis(lastCE);  
 		}
 		victory();		
 		lastCE = null;
     }
 
+ 
 	private OWLAxiom computeEssentialLeftCounterexample() throws Exception {
-		OWLAxiom axiom=null;
-		OWLClassExpression left=null;
-		OWLClass  right=null;
-		OWLSubClassOfAxiom counterexample =null;
+		OWLAxiom axiom=lastCE;	
+		OWLSubClassOfAxiom counterexample =(OWLSubClassOfAxiom) axiom;
+		OWLClassExpression left=counterexample.getSubClass();
+		OWLClass  right= (OWLClass) counterexample.getSuperClass();
+ 
 		 
 						if (learnerDecompL) {
-							axiom =elLearner.decompose(lastExpression, lastName);
+							axiom =elLearner.decomposeLeft(lastExpression, lastName);
 							counterexample = (OWLSubClassOfAxiom) axiom;
 							left=counterexample.getSubClass();
 							right=(OWLClass) counterexample.getSuperClass();
@@ -244,14 +255,16 @@ public class consoleLearner {
 						 
 		return axiom;
 	}
+ 
 	private OWLAxiom computeEssentialRightCounterexample() throws Exception {
-		OWLAxiom axiom=null;
-		OWLClass  left=null;
-		OWLClassExpression  right=null;
-		OWLSubClassOfAxiom counterexample =null;
+		OWLAxiom axiom=lastCE;	
+		OWLSubClassOfAxiom counterexample =(OWLSubClassOfAxiom) axiom;
+		OWLClass left= (OWLClass)  counterexample.getSubClass();
+		OWLClassExpression right=counterexample.getSuperClass();
+ 
 		 
 						if (learnerDecompR) {
-							axiom = elLearner.decompose(lastExpression, lastName);
+							axiom = elLearner.decomposeRight(lastExpression, lastName);
 							counterexample = (OWLSubClassOfAxiom) axiom;
 							left= (OWLClass)counterexample.getSubClass();
 							right=  counterexample.getSuperClass();
@@ -269,16 +282,7 @@ public class consoleLearner {
 						}	 
 		return axiom;
 	}
-			
-			 
-				
-
-
-	 
-
-	 
-
-	 
+				 
 
 	private void victory() {
 		//win = true;
@@ -960,7 +964,7 @@ public class consoleLearner {
 		}
 
 	}
-	private Boolean isLeftSideComplex() {
+	private Boolean canTransformELrhs() {
 		
 		OWLSubClassOfAxiom counterexample = (OWLSubClassOfAxiom) lastCE;
 		OWLClassExpression left=counterexample.getSuperClass();
@@ -975,7 +979,7 @@ public class consoleLearner {
 		}
 		return false;
 	}
-	private Boolean isRightSideComplex() {
+	private Boolean canTransformELlhs() {
 		OWLSubClassOfAxiom counterexample = (OWLSubClassOfAxiom) lastCE;
 		OWLClassExpression left=counterexample.getSuperClass();
 		OWLClassExpression right=counterexample.getSubClass();

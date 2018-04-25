@@ -1,11 +1,9 @@
 package org.zhaowl.learner;
 
- 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.TreeSet;
 
 import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLClass;
@@ -23,100 +21,14 @@ public class ELLearner {
 	private final consoleLearner myConsole;
 	private OWLClassExpression myExpression; 
 	private OWLClass myClass;
-// --Commented out by Inspection START (24/04/2018, 15:49):
-//	private static final Logger LOGGER_ = LoggerFactory
-//			.getLogger(ELLearner.class);
-// --Commented out by Inspection STOP (24/04/2018, 15:49)
+ 
 
 	public ELLearner(ELEngine elEngineForT, ELEngine elEngineForH, consoleLearner console) {
 		myEngineForH = elEngineForH;
 		myEngineForT = elEngineForT;
 		myConsole = console;
 	}
-
 	
-	public OWLClassExpression unsaturateLeft(OWLAxiom ax) throws Exception {
-		OWLClassExpression left = ((OWLSubClassOfAxiom) ax).getSubClass();
-		OWLClassExpression right = ((OWLSubClassOfAxiom) ax).getSuperClass();
-		ELTree tree = new ELTree(left);
-		//Set<ELNode> nodes = null;
-
-		int sizeToCheck = 0;
-
-		 
-
-		//reasonerForT = createReasoner(ontology, "reasonerForT");
-		//myEngineForT = new ELEngine(reasonerForT, shortFormProvider);
-		for (int i = 0; i < tree.getMaxLevel(); i++) {
-			Set<ELNode> nodes = tree.getNodesOnLevel(i + 1);
-			for (ELNode nod : nodes) {
-
-				 
-					// size of power set
-					sizeToCheck++;
-					// set to be used when building a power set of concepts
-
-					// populate set
-					Set<OWLClass> toBuildPS = new HashSet<>(nod.label);
-
-					// set of sets of concepts as power set
-					Set<Set<OWLClass>> conceptSet;
-
-					// populate set of sets of concepts
-					// @sizeToCheck is the number of concepts in the set
-					// @sizeToCheck = 1, returns single concepts in power set (ps) [A,B,C,D]
-					// @sizeToCheck = 2, returns ps size 2 of concepts [(A,B), (A,C), (A,D), (B,C),
-					// (B,D), (C,D)]
-					// and so on ...
-					// this is done in order to check which is the minimal concept(s) set required
-					// to satisfy the node
-					// and at the same time, the CI
-					conceptSet = powerSetBySize(toBuildPS, sizeToCheck);
-
-					// loop through concept set
-					for (Set<OWLClass> clSet : conceptSet) {
-
-						nod.label = new TreeSet<>();
-
-						nod.label.addAll(clSet);
-
-						myConsole.membCount++;
-
-						// System.out.println(tree.toDescriptionString());
-						if (myEngineForT.entailed(
-								myEngineForT.getSubClassAxiom(tree.transformToClassExpression(), right
-										 )))/*
-																	 * && !engineForH.entailed(elQueryEngineForT.
-																	 * parseToOWLSubClassOfAxiom(
-																	 * tree.toDescriptionString(), (new
-																	 * ELTree(right)).toDescriptionString())))
-																	 */ {
-							 
-							try {
-								myConsole.addHypothesis(myEngineForT.getSubClassAxiom(
-										 tree.transformToClassExpression(), right));
-								 
-							} catch (Exception e2) {
-								e2.printStackTrace();
-							}
-							// System.out.println("this one is good: " + cl);
-
-						}  // System.out.println("This one is useless: " + cl);
-						// nod.label = new TreeSet<OWLClass>();
-
-
-					 
-
-				}
-				// reset power set size to check
-				 
-				sizeToCheck = 0;
-			}
-		}
-		 
-		return tree.transformToClassExpression();
-	}
-
 	public OWLAxiom unsaturateLeft(OWLClassExpression expression, OWLClass cl) throws Exception {
 		myClass=cl;
 		myExpression=expression;
@@ -151,7 +63,45 @@ public class ELLearner {
         return flag;	 
 	}
 	
+	 /** 
+	 * @author anaozaki 
+	 * Naive algorithm to return a counterexample where one of the sides is a concept name 
+     * 
+     * @param left
+     *            class expression on the left of an inclusion
+     * @param right
+     *            class expression on the right of an inclusion*/
 	public OWLAxiom decompose(OWLClassExpression left, OWLClassExpression right) throws Exception {
+
+			ELTree treeR = new ELTree(right);
+			ELTree treeL = new ELTree(left);
+			 
+			for (int i = 0; i < treeL.maxLevel; i++) {
+				 
+				for (ELNode nod : treeL.getNodesOnLevel(i + 1)) {
+
+					for (OWLClass cl  : myEngineForT.getClassesInSignature()) {
+						if( isCounterExample(nod.transformToDescription(),cl))
+						 return myEngineForT.getSubClassAxiom( nod.transformToDescription(),cl);
+					}
+				}
+			}
+
+			for (int i = 0; i < treeR.maxLevel; i++) {
+				 
+				for (ELNode nod : treeR.getNodesOnLevel(i + 1)) {
+
+					for (OWLClass cl  : myEngineForT.getClassesInSignature()) {
+						if( isCounterExample(cl,nod.transformToDescription()))
+							return myEngineForT.getSubClassAxiom(cl, nod.transformToDescription());
+					}
+				}
+			}
+			
+			throw new Exception("Error creating counterexample. Not an EL Terminology");				 
+	}
+
+	public OWLAxiom decomposeLeft(OWLClassExpression left, OWLClassExpression right) throws Exception {
 
 		 //TODO!!
 		OWLAxiom axiom=null;
@@ -184,7 +134,41 @@ public class ELLearner {
 			 
 			return axiom;
 	}
+	
+	public OWLAxiom decomposeRight(OWLClassExpression left, OWLClassExpression right) throws Exception {
 
+		 //TODO!!
+		OWLAxiom axiom=null;
+		 
+			ELTree treeR = new ELTree(right);
+			ELTree treeL = new ELTree(left);
+			 
+
+			for (int i = 0; i < treeL.maxLevel; i++) {
+				 
+				for (ELNode nod : treeL.getNodesOnLevel(i + 1)) {
+
+					for (OWLClass cl  : myEngineForT.getClassesInSignature()) {
+						if( isCounterExample(  nod.transformToDescription(),cl))
+						 myConsole.addHypothesis(myEngineForT.getSubClassAxiom( nod.transformToDescription(),cl));
+					}
+				}
+			}
+
+			for (int i = 0; i < treeR.maxLevel; i++) {
+				 
+				for (ELNode nod : treeR.getNodesOnLevel(i + 1)) {
+
+					for (OWLClass cl  : myEngineForT.getClassesInSignature()) {
+						if( isCounterExample( cl,nod.transformToDescription()))
+						 myConsole.addHypothesis(myEngineForT.getSubClassAxiom(cl, nod.transformToDescription()));
+					}
+				}
+			}
+			 
+			return axiom;
+	}
+	
 	public OWLAxiom saturateWithTreeRight(OWLClass  left, OWLClassExpression right) throws Exception {
 		OWLAxiom axiom=null;
 		OWLClassExpression sub = ((OWLSubClassOfAxiom) axiom).getSubClass();
