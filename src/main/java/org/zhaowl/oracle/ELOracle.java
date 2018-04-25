@@ -1,11 +1,5 @@
 package org.zhaowl.oracle;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
-import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLClassExpression;
 import org.semanticweb.owlapi.model.OWLSubClassOfAxiom;
@@ -13,6 +7,11 @@ import org.zhaowl.engine.ELEngine;
 import org.zhaowl.tree.ELNode;
 import org.zhaowl.tree.ELTree;
 import org.zhaowl.utils.Metrics;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class ELOracle {
 
@@ -118,7 +117,7 @@ public class ELOracle {
 						// System.out.println("Node after: " + nod);
 						OWLClassExpression newEx = tree.transformToClassExpression();
 						// System.out.println("After saturation step: " + tree.toDescriptionString());
-						OWLAxiom newAx = myEngineForT.getSubClassAxiom(newEx, sup);
+						OWLSubClassOfAxiom newAx = myEngineForT.getSubClassAxiom(newEx, sup);
 						myMetrics.setMembCount(myMetrics.getMembCount() + 1);
 						if (myEngineForT.entailed(newAx)) {
 							tree = new ELTree(sub);
@@ -141,9 +140,9 @@ public class ELOracle {
 
 
 
-	public OWLClassExpression unsaturateRight(OWLAxiom ax) throws Exception {
-		OWLClassExpression left = ((OWLSubClassOfAxiom) ax).getSubClass();
-		OWLClassExpression right = ((OWLSubClassOfAxiom) ax).getSuperClass();
+	public OWLClassExpression unsaturateRight(OWLSubClassOfAxiom ax) throws Exception {
+		OWLClassExpression left = ax.getSubClass();
+		OWLClassExpression right = ax.getSuperClass();
 		ELTree tree = new ELTree(right);
 		// Set<ELNode> nodes = null;
 

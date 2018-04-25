@@ -559,10 +559,9 @@ public class consoleLearner {
         return newCounterexampleAxiom;
     }
 
-    private boolean checkLeft(OWLAxiom axiom) {
-
-        String left = myRenderer.render(((OWLSubClassOfAxiom) axiom).getSubClass());
-        String right = myRenderer.render(((OWLSubClassOfAxiom) axiom).getSuperClass());
+    private boolean checkLeft(OWLSubClassOfAxiom axiom) {
+        String left = myRenderer.render(axiom.getSubClass());
+        String right = myRenderer.render(axiom.getSuperClass());
         for (String rol : roles) {
             if (left.contains(rol)) {
                 return true;
