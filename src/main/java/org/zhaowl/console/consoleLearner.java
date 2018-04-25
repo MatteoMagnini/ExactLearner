@@ -460,40 +460,7 @@ public class consoleLearner {
                                 // *-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*
                                 // ADD SATURATION FOR newCounterexampleAxiom HERE
 //                                OWLClassExpression ex = null;
-                                if (checkLeft(newCounterexampleAxiom)) {
-                                    if (oracleMerge) {
-
-                                        // ex = null;
-                                        // System.out.println(newCounterexampleAxiom);
-                                        // if (checkLeft(newCounterexampleAxiom)) {
-                                        OWLClassExpression ex = elOracle.oracleSiblingMerge(
-                                                newCounterexampleAxiom.getSubClass()
-                                        );
-                                        newCounterexampleAxiom = elQueryEngineForT.getSubClassAxiom(ex,
-                                                newCounterexampleAxiom.getSuperClass());
-                                        // ex = null;
-                                    }
-                                    if (oracleSaturate)
-                                        newCounterexampleAxiom = elOracle
-                                                .saturateWithTreeLeft(newCounterexampleAxiom);
-                                } else {
-                                    if (oracleBranch) {
-                                        // ex = null;
-                                        OWLSubClassOfAxiom auxAx = newCounterexampleAxiom;
-                                        OWLClassExpression ex = elOracle.branchRight(auxAx.getSuperClass());
-                                        newCounterexampleAxiom = elQueryEngineForT.getSubClassAxiom(auxAx.getSubClass(),
-                                                ex);
-                                        // auxAx = null;
-                                        // ex = null;
-                                    }
-                                    if (oracleUnsaturate) {
-                                        // ex = null;
-                                        OWLClassExpression ex = elOracle.unsaturateRight(newCounterexampleAxiom);
-                                        newCounterexampleAxiom = elQueryEngineForT.getSubClassAxiom(
-                                                newCounterexampleAxiom.getSubClass(), ex);
-                                        // ex = null;
-                                    }
-                                }
+                                newCounterexampleAxiom = processAxiom(newCounterexampleAxiom);
                                 // *-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*
                                 lastCE = newCounterexampleAxiom;
 //								subclass = null;
@@ -551,39 +518,45 @@ public class consoleLearner {
         return null;
     }
 
-    private OWLSubClassOfAxiom processAxiom(OWLSubClassOfAxiom owlSubClassOfAxiom) throws Exception {
+
+    private OWLSubClassOfAxiom processAxiom(OWLSubClassOfAxiom newCounterexampleAxiom) throws Exception {
 
 
-
-        if (checkLeft(owlSubClassOfAxiom)) {
+        if (checkLeft(newCounterexampleAxiom)) {
             if (oracleMerge) {
-                OWLClassExpression ex = elOracle.oracleSiblingMerge(owlSubClassOfAxiom.getSubClass()
+
+                // ex = null;
+                // System.out.println(newCounterexampleAxiom);
+                // if (checkLeft(newCounterexampleAxiom)) {
+                OWLClassExpression ex = elOracle.oracleSiblingMerge(
+                        newCounterexampleAxiom.getSubClass()
                 );
-                owlSubClassOfAxiom = elQueryEngineForT.getSubClassAxiom(ex,
-                        owlSubClassOfAxiom.getSuperClass());
+                newCounterexampleAxiom = elQueryEngineForT.getSubClassAxiom(ex,
+                        newCounterexampleAxiom.getSuperClass());
                 // ex = null;
             }
             if (oracleSaturate)
-                owlSubClassOfAxiom = elOracle
-                        .saturateWithTreeLeft(owlSubClassOfAxiom);
+                newCounterexampleAxiom = elOracle
+                        .saturateWithTreeLeft(newCounterexampleAxiom);
         } else {
             if (oracleBranch) {
-                OWLSubClassOfAxiom auxAx = owlSubClassOfAxiom;
+                // ex = null;
+                OWLSubClassOfAxiom auxAx = newCounterexampleAxiom;
                 OWLClassExpression ex = elOracle.branchRight(auxAx.getSuperClass());
-                owlSubClassOfAxiom = elQueryEngineForT
-                        .getSubClassAxiom(auxAx.getSubClass(), ex);
-//								auxAx = null;
-//								ex = null;
+                newCounterexampleAxiom = elQueryEngineForT.getSubClassAxiom(auxAx.getSubClass(),
+                        ex);
+                // auxAx = null;
+                // ex = null;
             }
             if (oracleUnsaturate) {
-                OWLClassExpression ex = elOracle.unsaturateRight(owlSubClassOfAxiom);
-                owlSubClassOfAxiom = elQueryEngineForT
-                        .getSubClassAxiom(owlSubClassOfAxiom.getSubClass(), ex);
+                // ex = null;
+                OWLClassExpression ex = elOracle.unsaturateRight(newCounterexampleAxiom);
+                newCounterexampleAxiom = elQueryEngineForT.getSubClassAxiom(
+                        newCounterexampleAxiom.getSubClass(), ex);
                 // ex = null;
             }
         }
-        // *-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*
-        return owlSubClassOfAxiom;
+        return newCounterexampleAxiom;
     }
 
     private boolean checkLeft(OWLAxiom axiom) {
