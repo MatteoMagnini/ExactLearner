@@ -8,7 +8,6 @@ import java.util.Set;
 import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLClassExpression;
-import org.semanticweb.owlapi.model.OWLSubClassOfAxiom;
 import org.zhaowl.console.consoleLearner;
 import org.zhaowl.engine.ELEngine;
 import org.zhaowl.tree.ELNode;
@@ -43,7 +42,7 @@ public class ELLearner {
 		OWLClassExpression cls=null;		 
 		boolean flag=false;
 		ELTree tree = new ELTree(expression);	 
-		for (int i = 0; i < tree.maxLevel; i++) {	 
+		for (int i = 0; i < tree.getMaxLevel(); i++) {
 			for (ELNode nod : tree.getNodesOnLevel(i + 1)) {           
 				cls = nod.transformToDescription();
                 for(OWLClass cl1 : cls.getClassesInSignature()) {
@@ -78,7 +77,7 @@ public class ELLearner {
 			ELTree treeR = new ELTree(right);
 			ELTree treeL = new ELTree(left);
 			 
-			for (int i = 0; i < treeL.maxLevel; i++) {
+			for (int i = 0; i < treeL.getMaxLevel(); i++) {
 				 
 				for (ELNode nod : treeL.getNodesOnLevel(i + 1)) {
 
@@ -90,7 +89,7 @@ public class ELLearner {
 				}
 			}
 
-			for (int i = 0; i < treeR.maxLevel; i++) {
+			for (int i = 0; i < treeR.getMaxLevel(); i++) {
 				 
 				for (ELNode nod : treeR.getNodesOnLevel(i + 1)) {
 
@@ -114,7 +113,7 @@ public class ELLearner {
 			ELTree treeL = new ELTree(left);
 			 
 
-			for (int i = 0; i < treeL.maxLevel; i++) {
+			for (int i = 0; i < treeL.getMaxLevel(); i++) {
 				 
 				for (ELNode nod : treeL.getNodesOnLevel(i + 1)) {
 
@@ -125,7 +124,7 @@ public class ELLearner {
 				}
 			}
 
-			for (int i = 0; i < treeR.maxLevel; i++) {
+			for (int i = 0; i < treeR.getMaxLevel(); i++) {
 				 
 				for (ELNode nod : treeR.getNodesOnLevel(i + 1)) {
 
@@ -148,7 +147,7 @@ public class ELLearner {
 			ELTree treeL = new ELTree(left);
 			 
 
-			for (int i = 0; i < treeL.maxLevel; i++) {
+			for (int i = 0; i < treeL.getMaxLevel(); i++) {
 				 
 				for (ELNode nod : treeL.getNodesOnLevel(i + 1)) {
 
@@ -159,7 +158,7 @@ public class ELLearner {
 				}
 			}
 
-			for (int i = 0; i < treeR.maxLevel; i++) {
+			for (int i = 0; i < treeR.getMaxLevel(); i++) {
 				 
 				for (ELNode nod : treeR.getNodesOnLevel(i + 1)) {
 
@@ -186,7 +185,7 @@ public class ELLearner {
 		 		 
 		boolean flag=false;
 		ELTree tree = new ELTree(expression);	 
-		for (int i = 0; i < tree.maxLevel; i++) {	 
+		for (int i = 0; i < tree.getMaxLevel(); i++) {
 			for (ELNode nod : tree.getNodesOnLevel(i + 1)) {           		 
                 for(OWLClass cl1 : myEngineForT.getClassesInSignature()) {
                 	if(!nod.getLabel().contains(cl1)) {
@@ -302,22 +301,22 @@ public class ELLearner {
 				if (!nodes.isEmpty())
 					for (ELNode nod : nodes) {
 						// nod.label.addAll(nod.label);
-						if (!nod.edges.isEmpty() && nod.edges.size() > 1) {
+						if (!nod.getEdges().isEmpty() && nod.getEdges().size() > 1) {
 
-							for (int j = 0; j < nod.edges.size(); j++) {
-								for (int k = 0; k < nod.edges.size(); k++) {
+							for (int j = 0; j < nod.getEdges().size(); j++) {
+								for (int k = 0; k < nod.getEdges().size(); k++) {
 									if (j == k) {
 										continue;
 									}
-									if (nod.edges.get(j).strLabel.equals(nod.edges.get(k).strLabel)) {
+									if (nod.getEdges().get(j).getStrLabel().equals(nod.getEdges().get(k).getStrLabel())) {
 
 										// System.out.println("they are equal: " +
 										// nod.edges.get(j).node.toDescriptionString() + " AND " +
 										// nod.edges.get(k).node.toDescriptionString());
-										nod.edges.get(j).node.label.addAll(nod.edges.get(k).node.label);
-										if (!nod.edges.get(k).node.edges.isEmpty())
-											nod.edges.get(j).node.edges.addAll(nod.edges.get(k).node.edges);
-										nod.edges.remove(nod.edges.get(k));
+										nod.getEdges().get(j).getNode().getLabel().addAll(nod.getEdges().get(k).getNode().getLabel());
+										if (!nod.getEdges().get(k).getNode().getEdges().isEmpty())
+											nod.getEdges().get(j).getNode().getEdges().addAll(nod.getEdges().get(k).getNode().getEdges());
+										nod.getEdges().remove(nod.getEdges().get(k));
 										// check if new merged tree is entailed by T
 										if (myEngineForT.entailed(myEngineForT.getSubClassAxiom(left,
 												tree.transformToClassExpression()))) {

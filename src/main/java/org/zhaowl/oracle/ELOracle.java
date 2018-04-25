@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.TreeSet;
 
 import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLClass;
@@ -40,22 +39,22 @@ public class ELOracle {
 			if (!nodes.isEmpty())
 				for (ELNode nod : nodes) {
 					// nod.label.addAll(nod.label);
-					if (!nod.edges.isEmpty() && nod.edges.size() > 1) {
+					if (!nod.getEdges().isEmpty() && nod.getEdges().size() > 1) {
 
-						for (int j = 0; j < nod.edges.size(); j++) {
-							for (int k = 0; k < nod.edges.size(); k++) {
+						for (int j = 0; j < nod.getEdges().size(); j++) {
+							for (int k = 0; k < nod.getEdges().size(); k++) {
 								if (j == k) {
 									continue;
 								}
-								if (nod.edges.get(j).strLabel.equals(nod.edges.get(k).strLabel)) {
+								if (nod.getEdges().get(j).getStrLabel().equals(nod.getEdges().get(k).getStrLabel())) {
 
 									// System.out.println("they are equal: " +
 									// nod.edges.get(j).node.toDescriptionString() + " AND " +
 									// nod.edges.get(k).node.toDescriptionString());
-									nod.edges.get(j).node.label.addAll(nod.edges.get(k).node.label);
-									if (!nod.edges.get(k).node.edges.isEmpty())
-										nod.edges.get(j).node.edges.addAll(nod.edges.get(k).node.edges);
-									nod.edges.remove(nod.edges.get(k));
+									nod.getEdges().get(j).getNode().getLabel().addAll(nod.getEdges().get(k).getNode().getLabel());
+									if (!nod.getEdges().get(k).getNode().getEdges().isEmpty())
+										nod.getEdges().get(j).getNode().getEdges().addAll(nod.getEdges().get(k).getNode().getEdges());
+									nod.getEdges().remove(nod.getEdges().get(k));
 									if (myEngineForT.entailed(myEngineForT.getSubClassAxiom(left,
 											tree.transformToClassExpression()))) {
 										oldTree =  tree.transformToClassExpression();
@@ -113,8 +112,8 @@ public class ELOracle {
 				for (ELNode nod : nodes) {
 					for (OWLClass cl : cIo) {
 						// System.out.println("Node before: " + nod);
-						if (!nod.label.contains(cl) && !cl.toString().contains(":Thing")) {
-							nod.label.add(cl);
+						if (!nod.getLabel().contains(cl) && !cl.toString().contains(":Thing")) {
+							nod.getLabel().add(cl);
 						}
 						// System.out.println("Node after: " + nod);
 						OWLClassExpression newEx = tree.transformToClassExpression();
@@ -162,7 +161,7 @@ public class ELOracle {
 		for (int i = 0; i < tree.getMaxLevel(); i++) {
 			Set<ELNode> nodes = tree.getNodesOnLevel(i + 1);
 			for (ELNode nod : nodes) {
-				if (nod.label.size() < 2)
+				if (nod.getLabel().size() < 2)
 					continue;
 				while (!foundSomething) {
 					// size of power set
@@ -170,7 +169,7 @@ public class ELOracle {
 					// set to be used when building a power set of concepts
 
 					// populate set
-					Set<OWLClass> toBuildPS = new HashSet<>(nod.label);
+					Set<OWLClass> toBuildPS = new HashSet<>(nod.getLabel());
 
 					// set of sets of concepts as power set
 					// Set<Set<OWLClass>> conceptSet = new HashSet<>();
@@ -189,9 +188,9 @@ public class ELOracle {
 					// loop through concept set
 					for (Set<OWLClass> clSet : conceptSet) {
 
-						nod.label = new TreeSet<>();
+						nod.getLabel().clear();
 
-						nod.label.addAll(clSet);
+						nod.getLabel().addAll(clSet);
 
 						myConsole.membCount++;
 
