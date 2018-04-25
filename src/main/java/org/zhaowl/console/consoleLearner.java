@@ -272,7 +272,7 @@ public class consoleLearner {
 						}
 						 
 						if (learnerMerge) {				 
-							axiom = elLearner.learnerSiblingMerge(left, right);
+							axiom = elLearner.mergeRight(left, right);
 							counterexample = (OWLSubClassOfAxiom) axiom;
 							left= (OWLClass)counterexample.getSubClass();
 							right= counterexample.getSuperClass();
