@@ -278,7 +278,7 @@ public class consoleLearner {
 						}
 						 
 						if (learnerSat) {
-							axiom = elLearner.saturateWithTreeRight(left, right);
+							axiom = elLearner.saturateRight(left, right);
 						}	 
 		return axiom;
 	}
