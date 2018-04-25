@@ -73,14 +73,12 @@ public class ELLearner {
 	public OWLSubClassOfAxiom decomposeLeft(OWLClassExpression expression, OWLClass cl) throws Exception {
 		myClass = cl;
 		myExpression = expression;
-		while (decomposingLeft(myExpression, myClass)) {
-			continue;
-		}
+		while (decomposingLeft(myExpression)) {
+        }
 		return myEngineForT.getSubClassAxiom(myExpression, myClass);
 	}
 
-	private Boolean decomposingLeft(OWLClassExpression expression, OWLClass cl) throws Exception {
-		ELTree oldTree = null;
+	private Boolean decomposingLeft(OWLClassExpression expression) throws Exception {
 		ELTree tree = new ELTree(expression);
 		for (int i = 0; i < tree.getMaxLevel(); i++) {
 			for (ELNode nod : tree.getNodesOnLevel(i + 1)) {
@@ -96,7 +94,7 @@ public class ELLearner {
 					}
 				}
 				for (int j = 0; j < nod.getEdges().size(); j++) {
-					oldTree = new ELTree(tree.transformToClassExpression());
+                    ELTree oldTree = new ELTree(tree.transformToClassExpression());
 					nod.getEdges().remove(j);
 					for (OWLClass cls : myEngineForT.getClassesInSignature()) {
 						myMetrics.setMembCount(myMetrics.getMembCount() + 1);
@@ -119,15 +117,12 @@ public class ELLearner {
 		myClass = cl;
 		myExpression = expression;
 		while (decomposingRight(myClass, myExpression)) {
-			continue;
-		}
+        }
 		return myEngineForT.getSubClassAxiom(myClass, myExpression);
 	}
 
 	private Boolean decomposingRight(OWLClass cl, OWLClassExpression expression) throws Exception {
-		ELTree oldTree = null;
-		ELEdge newEdge = null;
-		ELTree newSubtree = null;
+
 		ELTree tree = new ELTree(expression);
 		for (int i = 0; i < tree.getMaxLevel(); i++) {
 			for (ELNode nod : tree.getNodesOnLevel(i + 1)) {
@@ -144,7 +139,7 @@ public class ELLearner {
 				}
 				for (int j = 0; j < nod.getEdges().size(); j++) {
 
-					oldTree = new ELTree(tree.transformToClassExpression());
+                    ELTree oldTree = new ELTree(tree.transformToClassExpression());
 
 					// going over all class names because concept saturation is later
 					// another option is do concept saturation first and then go over the concepts
@@ -165,8 +160,8 @@ public class ELLearner {
 						}
 
 						if (nod.isRoot()) {
-							newSubtree = new ELTree(nod.getEdges().get(j).getNode().transformToDescription());
-							newEdge = new ELEdge(nod.getEdges().get(j).getLabel(), newSubtree.getRootNode());
+                            ELTree newSubtree = new ELTree(nod.getEdges().get(j).getNode().transformToDescription());
+							ELEdge newEdge = new ELEdge(nod.getEdges().get(j).getLabel(), newSubtree.getRootNode());
 							for(int k=0;k<nod.getEdges().size();k++)
 								nod.getEdges().remove(k);					
 							nod.getEdges().add(newEdge);
@@ -193,18 +188,16 @@ public class ELLearner {
 		myClass = cl;
 		myExpression = expression;
 		while (unsaturating(myExpression, myClass)) {
-			continue;
-		}
+        }
 		return myEngineForT.getSubClassAxiom(myExpression, myClass);
 	}
 
 	private Boolean unsaturating(OWLClassExpression expression, OWLClass cl) throws Exception {
-		OWLClassExpression cls = null;
 		boolean flag = false;
 		ELTree tree = new ELTree(expression);
 		for (int i = 0; i < tree.getMaxLevel(); i++) {
 			for (ELNode nod : tree.getNodesOnLevel(i + 1)) {
-				cls = nod.transformToDescription();
+                OWLClassExpression cls = nod.transformToDescription();
 				for (OWLClass cl1 : cls.getClassesInSignature()) {
 					if (nod.getLabel().contains(cl1)) {
 						nod.remove(cl1);
@@ -229,8 +222,7 @@ public class ELLearner {
 		myClass = cl;
 		myExpression = expression;
 		while (saturating(myClass, myExpression)) {
-			continue;
-		}
+        }
 		return myEngineForT.getSubClassAxiom(myClass, myExpression);
 	}
 
@@ -264,13 +256,11 @@ public class ELLearner {
 		myClass = cl;
 		myExpression = expression;
 		while (merging(myClass, myExpression)) {
-			continue;
-		}
+        }
 		return myEngineForT.getSubClassAxiom(myClass, myExpression);
 	}
 
 	private Boolean merging(OWLClass cl, OWLClassExpression expression) throws Exception {
-		ELTree oldTree = null;
 		boolean flag = false;
 		ELTree tree = new ELTree(expression);
 		for (int i = 0; i < tree.getMaxLevel(); i++) {
@@ -281,7 +271,7 @@ public class ELLearner {
 					for (int j = 0; j < nod.getEdges().size(); j++) {
 
 						for (int k = 0; k < nod.getEdges().size(); k++) {
-							oldTree = new ELTree(tree.transformToClassExpression());
+                            ELTree oldTree = new ELTree(tree.transformToClassExpression());
 							if (j != k && nod.getEdges().get(j).getStrLabel()
 									.equals(nod.getEdges().get(k).getStrLabel())) {
 								nod.getEdges().get(j).getNode().getLabel()
@@ -317,18 +307,14 @@ public class ELLearner {
 		myClass = cl;
 		myExpression = expression;
 		while (branching(myExpression, myClass)) {
-			continue;
-		}
+        }
 		return myEngineForT.getSubClassAxiom(myExpression, myClass);
 	}
 
 	private Boolean branching(OWLClassExpression expression, OWLClass cl) throws Exception {
 
 		boolean flag = false;
-		ELTree oldTree = null;
-		ELTree newSubtree = null;
 		ELTree tree = new ELTree(expression);
-		ELEdge newEdge = null;
 		for (int i = 0; i < tree.getMaxLevel(); i++) {
 			for (ELNode nod : tree.getNodesOnLevel(i + 1)) {
 				if (!nod.getEdges().isEmpty()) {
@@ -336,12 +322,12 @@ public class ELLearner {
 					for (int j = 0; j < nod.getEdges().size(); j++) {
 						if (nod.getEdges().get(j).getNode().getLabel().size() > 1)
 							for (OWLClass lab : nod.getEdges().get(j).getNode().getLabel()) {
-								oldTree = new ELTree(tree.transformToClassExpression());
-								newSubtree = new ELTree(nod.getEdges().get(j).getNode().transformToDescription());
+                                ELTree oldTree = new ELTree(tree.transformToClassExpression());
+                                ELTree newSubtree = new ELTree(nod.getEdges().get(j).getNode().transformToDescription());
 								for (OWLClass l : newSubtree.getRootNode().getLabel())
 									newSubtree.getRootNode().remove(l);
 								newSubtree.getRootNode().extendLabel(lab);
-								newEdge = new ELEdge(nod.getEdges().get(j).getLabel(), newSubtree.getRootNode());
+                                ELEdge newEdge = new ELEdge(nod.getEdges().get(j).getLabel(), newSubtree.getRootNode());
 								nod.getEdges().add(newEdge);
 								nod.getEdges().get(j).getNode().remove(lab);
 								myMetrics.setMembCount(myMetrics.getMembCount() + 1);

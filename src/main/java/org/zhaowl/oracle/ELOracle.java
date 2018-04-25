@@ -26,7 +26,7 @@ public class ELOracle {
 		myMetrics = metrics;
 	}
 
-	public OWLClassExpression oracleSiblingMerge(OWLClassExpression left, OWLClassExpression right) throws Exception {
+	public OWLClassExpression oracleSiblingMerge(OWLClassExpression left) throws Exception {
 		// the oracle must do sibling merging (if possible)
 		// on the left hand side
 		ELTree tree = new ELTree(left);
@@ -223,7 +223,7 @@ public class ELOracle {
 		return tree.transformToClassExpression();
 	}
 
-	public OWLClassExpression branchRight(OWLClassExpression left, OWLClassExpression right) {
+	public OWLClassExpression branchRight(OWLClassExpression right) {
 //		try {
 //
 //			ELTree treeR = new ELTree(right);

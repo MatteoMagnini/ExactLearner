@@ -8,8 +8,6 @@ import org.semanticweb.owlapi.reasoner.InferenceType;
 import org.semanticweb.owlapi.reasoner.NodeSet;
 import org.semanticweb.owlapi.reasoner.Node;
 import org.semanticweb.owlapi.reasoner.OWLReasoner;
-import org.semanticweb.owlapi.util.ShortFormProvider;
-import org.semanticweb.owlapi.util.SimpleShortFormProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,7 +16,6 @@ public class ELEngine {
 	private final OWLReasoner myReasoner;
 	private final OWLOntology myOntology;
 	private final OWLOntologyManager myManager;
-    private final ELParser myParser;
     private static final Logger LOGGER_ = LoggerFactory
             .getLogger(ELEngine.class);
     /** Constructs a ELQueryEngine. This will answer "DL queries" using the
@@ -30,8 +27,6 @@ public class ELEngine {
         myOntology = ontology;
         myManager = myOntology.getOWLOntologyManager();
         myReasoner = createReasoner(ontology);
-        ShortFormProvider myShortFormProvider = new SimpleShortFormProvider();
-        myParser = new ELParser(myOntology, myShortFormProvider);
     }
 
     public OWLOntology getOntology(){
@@ -52,7 +47,7 @@ public class ELEngine {
 //	}
 	
 	public OWLSubClassOfAxiom getSubClassAxiom(OWLClassExpression concept1, OWLClassExpression concept2){
-		return myParser.parseSubClassOfAxiom(concept1, concept2);
+		return myManager.getOWLDataFactory().getOWLSubClassOfAxiom(concept1, concept2);
     }
 
     private Boolean entailedEQ(OWLSubClassOfAxiom subclassAxiom) {

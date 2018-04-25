@@ -38,7 +38,7 @@ public class Metrics {
 		int smallestSize = 0;
 		OWLAxiom smallestOne = null;
 		int ontSize = 0;
-		int totalSize = 0;
+//		int totalSize = 0;
 		for (OWLAxiom axe : axSet) {
 
 			if (axe.toString().contains("Thing"))
@@ -53,7 +53,7 @@ public class Metrics {
 			inclusion = inclusion.replaceAll(" and ", "");
 			// ==System.out.println(inclusion);
 			String[] arrIncl = inclusion.split(" ");
-			totalSize = 0;
+			int totalSize = 0;
 			for (String anArrIncl : arrIncl)
 				if (anArrIncl.length() > 1)
 					totalSize++;
@@ -139,7 +139,6 @@ public class Metrics {
 		
 		OWLAxiom smallestOne = null;
 		int smallestSize = 0;
-		int totalSize = 0;
 		for (OWLAxiom axe : axSet) {
 			String inclusion = myRenderer.render(axe);
 			inclusion = inclusion.replaceAll(" and ", " ");
@@ -151,7 +150,7 @@ public class Metrics {
 				inclusion = inclusion.replaceAll("EquivalentTo", ""); 
 			//System.out.println(inclusion);
 			String[] arrIncl = inclusion.split(" ");
-			totalSize = 0;
+            int totalSize = 0;
 
 			for (String anArrIncl : arrIncl)
 				if (anArrIncl.length() > 0 && !anArrIncl.equals("some"))
