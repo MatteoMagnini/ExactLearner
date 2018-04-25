@@ -101,7 +101,7 @@ public class ELLearner {
 			throw new Exception("Error creating counterexample. Not an EL Terminology");				 
 	}
 
-	public OWLAxiom decomposeLeft(OWLClassExpression left, OWLClassExpression right) throws Exception {
+	public OWLAxiom decomposeLeft(OWLClassExpression left, OWLClass  right) throws Exception {
 
 		 //TODO!!
 		OWLAxiom axiom=null;
@@ -135,7 +135,7 @@ public class ELLearner {
 			return axiom;
 	}
 	
-	public OWLAxiom decomposeRight(OWLClassExpression left, OWLClassExpression right) throws Exception {
+	public OWLAxiom decomposeRight(OWLClass left, OWLClassExpression right) throws Exception {
 
 		 //TODO!!
 		OWLAxiom axiom=null;

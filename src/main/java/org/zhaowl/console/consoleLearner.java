@@ -119,7 +119,7 @@ public class consoleLearner {
 
 			// normal mode allows for elOracle skills
 			// elOracle skills not allowed
-// elOracle skills allowed
+			// elOracle skills allowed
 			ezBox = args[1].equals("on");
 
 			// setLearnerSkills
@@ -264,7 +264,7 @@ public class consoleLearner {
  
 		 
 						if (learnerDecompR) {
-							axiom = elLearner.decomposeRight(lastExpression, lastName);
+							axiom = elLearner.decomposeRight(lastName,lastExpression);
 							counterexample = (OWLSubClassOfAxiom) axiom;
 							left= (OWLClass)counterexample.getSubClass();
 							right=  counterexample.getSuperClass();
