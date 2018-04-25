@@ -1,18 +1,12 @@
 package org.zhaowl.tree;
 
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
-
-import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLClassExpression;
 import org.semanticweb.owlapi.model.OWLDataFactory;
-import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.model.OWLProperty;
 import uk.ac.manchester.cs.owl.owlapi.OWLDataFactoryImpl;
+
+import java.util.*;
 
 public class ELNode {
 	private final ELTree tree;
@@ -21,7 +15,7 @@ public class ELNode {
 	private final int level;
 	private final ELNode  parent;
 	private final boolean isClassNode;
-	private final OWLDataFactory df = new OWLDataFactoryImpl();
+	private static final OWLDataFactory df = new OWLDataFactoryImpl();
 
 
     public ELNode(ELTree tree) {
@@ -161,8 +155,6 @@ public class ELNode {
 
     //Reference: DL-Learner
 	 public OWLClassExpression transformToDescription() {
-	    	OWLOntologyManager man = OWLManager.createOWLOntologyManager();
-	        OWLDataFactory dataFactory = man.getOWLDataFactory();
 			int nrOfElements = getLabel().size() + getEdges().size();
 			if(nrOfElements == 0) {
 				return df.getOWLThing();
@@ -185,7 +177,7 @@ public class ELNode {
 				for(ELEdge edge : getEdges()) {
 					if(edge.isObjectProperty()){
 						OWLClassExpression child = edge.getNode().transformToDescription();
-						OWLClassExpression osr = dataFactory.getOWLObjectSomeValuesFrom(edge.getLabel().asOWLObjectProperty(), child);
+						OWLClassExpression osr = df.getOWLObjectSomeValuesFrom(edge.getLabel().asOWLObjectProperty(), child);
 						operands.add(osr);
 					}  
 				}
