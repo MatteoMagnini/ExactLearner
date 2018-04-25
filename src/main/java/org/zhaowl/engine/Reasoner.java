@@ -29,35 +29,35 @@ import uk.ac.manchester.cs.owl.owlapi.OWLDataFactoryImpl;
 
 public    class Reasoner  {
 	
-	public static final NumberFormat numberFormat = NumberFormat.getInstance();
+	// public static final NumberFormat numberFormat = NumberFormat.getInstance();
 	 
-	public boolean useInstanceChecks = false;
+	// public boolean useInstanceChecks = false;
 
 	// statistical data for particular reasoning operations
-	private final long instanceCheckReasoningTimeNs = 0;
-	private final int nrOfInstanceChecks = 0;
-	public int nrOfMultiInstanceChecks = 0;
-	private final long retrievalReasoningTimeNs = 0;
-	private final int nrOfRetrievals = 0;
-	private long subsumptionReasoningTimeNs = 0;
-	private int nrOfSubsumptionChecks = 0;
-	public int nrOfMultiSubsumptionChecks = 0;
-	private final int nrOfSubsumptionHierarchyQueries = 0;
+//	private final long instanceCheckReasoningTimeNs = 0;
+//	private final int nrOfInstanceChecks = 0;
+//	public int nrOfMultiInstanceChecks = 0;
+//	private final long retrievalReasoningTimeNs = 0;
+//	private final int nrOfRetrievals = 0;
+//	private long subsumptionReasoningTimeNs = 0;
+//	private int nrOfSubsumptionChecks = 0;
+//	public int nrOfMultiSubsumptionChecks = 0;
+//	private final int nrOfSubsumptionHierarchyQueries = 0;
 
 	// rest of reasoning time
-	public long otherReasoningTimeNs = 0;
+//	public long otherReasoningTimeNs = 0;
 
 	// time for all reasoning requests (usually longer than the sum of all
 	// above)
-	private long overallReasoningTimeNs = 0;
+//	private long overallReasoningTimeNs = 0;
 
 	// temporary variables (moved here for performance reasons)
-	private long reasoningStartTimeTmp;
+//	private long reasoningStartTimeTmp;
 	private long reasoningDurationTmp;
-
+//
 	// list view
-	public List<OWLClass> atomicConceptsList;
-	public List<OWLObjectProperty> atomicRolesList;
+//	public List<OWLClass> atomicConceptsList;
+//	public List<OWLObjectProperty> atomicRolesList;
 
 	// hierarchies (they are computed the first time they are needed)
 	 
@@ -66,9 +66,9 @@ public    class Reasoner  {
 	private ObjectPropertyHierarchyT roleHierarchy = null;
 	 
  
-	private final boolean precomputeClassHierarchy = true;
-	public boolean precomputeObjectPropertyHierarchy = true; 
-	public boolean precomputeDataPropertyHierarchy = true;
+//	private final boolean precomputeClassHierarchy = true;
+//	public boolean precomputeObjectPropertyHierarchy = true;
+//	public boolean precomputeDataPropertyHierarchy = true;
 	
 	private OWLDataFactory df = new OWLDataFactoryImpl();
 	private OWLOntology ontology;
@@ -84,14 +84,14 @@ public    class Reasoner  {
 
 	 
 
-    public Reasoner(){
-
-    }
-    public Reasoner(OWLDataFactory df, OWLOntology onto, OWLReasoner reasoner){
-    	this.df = df;  
-    	this.ontology = onto;
-    	this.reasoner = reasoner;
-    }
+//    public Reasoner(){
+//
+//    }
+//    public Reasoner(OWLDataFactory df, OWLOntology onto, OWLReasoner reasoner){
+//    	this.df = df;
+//    	this.ontology = onto;
+//    	this.reasoner = reasoner;
+//    }
  
 
 	/**
@@ -109,10 +109,10 @@ public    class Reasoner  {
 	 * should be invalidaded. TODO Currently, nothing is done to behave
 	 * correctly after updates.
 	 */
-	 public void setUpdated() {
-		// TODO currently, nothing is done to behave correctly after updates
-	}
-
+//	 public void setUpdated() {
+//		// TODO currently, nothing is done to behave correctly after updates
+//	}
+//
 	/**
 	 * Call this method to release the knowledge base. Not calling the method
 	 * may (depending on the underlying reasoner) result in resources for this
@@ -131,105 +131,105 @@ public    class Reasoner  {
 
  
 
-	public final boolean isSuperClassOf(OWLClassExpression superClass, OWLClassExpression subClass) {
-		reasoningStartTimeTmp = System.nanoTime();
-		boolean result = false;
-		if(precomputeClassHierarchy) {
-			if(superClass.isAnonymous() || subClass.isAnonymous()) {
-				try {
-					result = isSuperClassOfImpl(superClass, subClass);
-				} catch (ReasoningMethodUnsupportedException e) {
-					e.printStackTrace();
-				}
-			} else {
-				return getClassHierarchy().isSubclassOf(subClass, superClass);
-			}
-		} else {
-			try {
-				result = isSuperClassOfImpl(superClass, subClass);
-			} catch (ReasoningMethodUnsupportedException e) {
-				e.printStackTrace();
-			}
-		}
-		nrOfSubsumptionChecks++;
-		reasoningDurationTmp = System.nanoTime() - reasoningStartTimeTmp;
-		subsumptionReasoningTimeNs += reasoningDurationTmp;
-		overallReasoningTimeNs += reasoningDurationTmp;
-		
-		return result;
-	}
+//	public final boolean isSuperClassOf(OWLClassExpression superClass, OWLClassExpression subClass) {
+//		reasoningStartTimeTmp = System.nanoTime();
+//		boolean result = false;
+//		if(precomputeClassHierarchy) {
+//			if(superClass.isAnonymous() || subClass.isAnonymous()) {
+//				try {
+//					result = isSuperClassOfImpl(superClass, subClass);
+//				} catch (ReasoningMethodUnsupportedException e) {
+//					e.printStackTrace();
+//				}
+//			} else {
+//				return getClassHierarchy().isSubclassOf(subClass, superClass);
+//			}
+//		} else {
+//			try {
+//				result = isSuperClassOfImpl(superClass, subClass);
+//			} catch (ReasoningMethodUnsupportedException e) {
+//				e.printStackTrace();
+//			}
+//		}
+//		nrOfSubsumptionChecks++;
+//		reasoningDurationTmp = System.nanoTime() - reasoningStartTimeTmp;
+//		subsumptionReasoningTimeNs += reasoningDurationTmp;
+//		overallReasoningTimeNs += reasoningDurationTmp;
+//
+//		return result;
+//	}
 
-	private boolean isSuperClassOfImpl(OWLClassExpression superConcept, OWLClassExpression subConcept)
-			throws ReasoningMethodUnsupportedException {
-		throw new ReasoningMethodUnsupportedException();
-	}
+//	private boolean isSuperClassOfImpl(OWLClassExpression superConcept, OWLClassExpression subConcept)
+//			throws ReasoningMethodUnsupportedException {
+//		throw new ReasoningMethodUnsupportedException();
+//	}
 
-	public final boolean isEquivalentClass(OWLClassExpression class1, OWLClassExpression class2) {
-		reasoningStartTimeTmp = System.nanoTime();
-		boolean result = false;
-		try {
-			result = isEquivalentClassImpl(class1, class2);
-		} catch (ReasoningMethodUnsupportedException e) {
-			handleExceptions(e);
-		}
-		nrOfSubsumptionChecks+=2;
-		reasoningDurationTmp = System.nanoTime() - reasoningStartTimeTmp;
-		subsumptionReasoningTimeNs += reasoningDurationTmp;
-		overallReasoningTimeNs += reasoningDurationTmp;
-		
-		return result;
-	}
+//	public final boolean isEquivalentClass(OWLClassExpression class1, OWLClassExpression class2) {
+//		reasoningStartTimeTmp = System.nanoTime();
+//		boolean result = false;
+//		try {
+//			result = isEquivalentClassImpl(class1, class2);
+//		} catch (ReasoningMethodUnsupportedException e) {
+//			handleExceptions(e);
+//		}
+//		nrOfSubsumptionChecks+=2;
+//		reasoningDurationTmp = System.nanoTime() - reasoningStartTimeTmp;
+//		subsumptionReasoningTimeNs += reasoningDurationTmp;
+//		overallReasoningTimeNs += reasoningDurationTmp;
+//
+//		return result;
+//	}
 
-	private boolean isEquivalentClassImpl(OWLClassExpression class1, OWLClassExpression class2) throws ReasoningMethodUnsupportedException {
-		return isSuperClassOfImpl(class1,class2) && isSuperClassOfImpl(class2,class1);
-	}	
-	
- 
-	public boolean isDisjointImpl(OWLClass superConcept, OWLClass subConcept)
-			throws ReasoningMethodUnsupportedException {
-		throw new ReasoningMethodUnsupportedException();
-	}
-	
- 
-	
-	public Set<OWLClassExpression> getAssertedDefinitionsImpl(OWLClass namedClass)
-		throws ReasoningMethodUnsupportedException {
-		throw new ReasoningMethodUnsupportedException();
-	}	
-	
- 
-	public SortedSet<OWLIndividual> getIndividualsImpl(OWLClassExpression concept)
-			throws ReasoningMethodUnsupportedException {
-		throw new ReasoningMethodUnsupportedException();
-	}
-	
-	 
-
- 
-
-	public boolean hasTypeImpl(OWLClassExpression concept, OWLIndividual individual)
-			throws ReasoningMethodUnsupportedException {
-		throw new ReasoningMethodUnsupportedException();
-	}
-
- 
-
-	public Set<OWLClass> getInconsistentClassesImpl()
-			throws ReasoningMethodUnsupportedException {
-		throw new ReasoningMethodUnsupportedException();
-	}
-
- 
-
-	public boolean remainsSatisfiableImpl(OWLAxiom axiom) throws ReasoningMethodUnsupportedException {
-		throw new ReasoningMethodUnsupportedException();
-	}	
-	
- 
-	
-	public Map<OWLObjectProperty,Set<OWLIndividual>> getObjectPropertyRelationshipsImpl(OWLIndividual individual) throws ReasoningMethodUnsupportedException {
-		throw new ReasoningMethodUnsupportedException();
-	}
+//	private boolean isEquivalentClassImpl(OWLClassExpression class1, OWLClassExpression class2) throws ReasoningMethodUnsupportedException {
+//		return isSuperClassOfImpl(class1,class2) && isSuperClassOfImpl(class2,class1);
+//	}
+//
+//
+//	public boolean isDisjointImpl(OWLClass superConcept, OWLClass subConcept)
+//			throws ReasoningMethodUnsupportedException {
+//		throw new ReasoningMethodUnsupportedException();
+//	}
+//
+//
+//
+//	public Set<OWLClassExpression> getAssertedDefinitionsImpl(OWLClass namedClass)
+//		throws ReasoningMethodUnsupportedException {
+//		throw new ReasoningMethodUnsupportedException();
+//	}
+//
+//
+//	public SortedSet<OWLIndividual> getIndividualsImpl(OWLClassExpression concept)
+//			throws ReasoningMethodUnsupportedException {
+//		throw new ReasoningMethodUnsupportedException();
+//	}
+//
+//
+//
+//
+//
+//	public boolean hasTypeImpl(OWLClassExpression concept, OWLIndividual individual)
+//			throws ReasoningMethodUnsupportedException {
+//		throw new ReasoningMethodUnsupportedException();
+//	}
+//
+//
+//
+//	public Set<OWLClass> getInconsistentClassesImpl()
+//			throws ReasoningMethodUnsupportedException {
+//		throw new ReasoningMethodUnsupportedException();
+//	}
+//
+//
+//
+//	public boolean remainsSatisfiableImpl(OWLAxiom axiom) throws ReasoningMethodUnsupportedException {
+//		throw new ReasoningMethodUnsupportedException();
+//	}
+//
+//
+//
+//	public Map<OWLObjectProperty,Set<OWLIndividual>> getObjectPropertyRelationshipsImpl(OWLIndividual individual) throws ReasoningMethodUnsupportedException {
+//		throw new ReasoningMethodUnsupportedException();
+//	}
 	
  
  
@@ -241,89 +241,89 @@ public    class Reasoner  {
  
  
 
- 
-
-	public Map<OWLIndividual, SortedSet<OWLIndividual>> getPropertyMembersImpl(
-			OWLObjectProperty atomicRole) throws ReasoningMethodUnsupportedException {
-		throw new ReasoningMethodUnsupportedException();
-	}
-
- 
- 
-	
-	public final Set<OWLObjectProperty> getObjectProperties() {
-		try {
-			return getObjectPropertiesImpl();
-		} catch (ReasoningMethodUnsupportedException e) {
-			handleExceptions(e);
-			return null;
-		}
-	}
-
-	private Set<OWLObjectProperty> getObjectPropertiesImpl()
-			throws ReasoningMethodUnsupportedException {
-		throw new ReasoningMethodUnsupportedException();
-	}
-	
-	public final Set<OWLDataProperty> getDatatypeProperties() {
-		try {
-			return getDatatypePropertiesImpl();
-		} catch (ReasoningMethodUnsupportedException e) {
-			handleExceptions(e);
-			return null;
-		}
-	}
-
-	private Set<OWLDataProperty> getDatatypePropertiesImpl()
-			throws ReasoningMethodUnsupportedException {
-		throw new ReasoningMethodUnsupportedException();
-	}
-
- 
-
-	// TODO Even if there is a small performance penalty, we could implement
-	// the method right here by iterating over all data properties and
-	// querying their ranges. At least, this should be done once we have a
-	// reasoner independent of OWL API with datatype support.
-	public Set<OWLDataProperty> getBooleanDatatypePropertiesImpl()
-			throws ReasoningMethodUnsupportedException {
-		throw new ReasoningMethodUnsupportedException();
-	}
-	
- 
- 
-	public  NodeSet<OWLClass> getSuperClasses(OWLClassExpression concept) { 
-			return reasoner.getSuperClasses(concept, true);
-		 
-	}
+//
+//
+//	public Map<OWLIndividual, SortedSet<OWLIndividual>> getPropertyMembersImpl(
+//			OWLObjectProperty atomicRole) throws ReasoningMethodUnsupportedException {
+//		throw new ReasoningMethodUnsupportedException();
+//	}
+//
+//
+//
+//
+//	public final Set<OWLObjectProperty> getObjectProperties() {
+//		try {
+//			return getObjectPropertiesImpl();
+//		} catch (ReasoningMethodUnsupportedException e) {
+//			handleExceptions(e);
+//			return null;
+//		}
+//	}
+//
+//	private Set<OWLObjectProperty> getObjectPropertiesImpl()
+//			throws ReasoningMethodUnsupportedException {
+//		throw new ReasoningMethodUnsupportedException();
+//	}
+//
+//	public final Set<OWLDataProperty> getDatatypeProperties() {
+//		try {
+//			return getDatatypePropertiesImpl();
+//		} catch (ReasoningMethodUnsupportedException e) {
+//			handleExceptions(e);
+//			return null;
+//		}
+//	}
+//
+//	private Set<OWLDataProperty> getDatatypePropertiesImpl()
+//			throws ReasoningMethodUnsupportedException {
+//		throw new ReasoningMethodUnsupportedException();
+//	}
 
  
-	
-	public NodeSet<OWLClass> getSubClasses(OWLClassExpression concept) {
-		return reasoner.getSubClasses(concept, true);
-		
-	}
- 
-	private <T extends OWLProperty<?, ?>> SortedSet<T> getSuperPropertiesImpl(T role) throws ReasoningMethodUnsupportedException {
-		if(OWLObjectProperty.class.isInstance(role)) {
-			// WARNING: unchecked cast!
-			return (SortedSet<T>) getSuperPropertiesImpl((OWLObjectProperty) role);
-		} 
-		//else 
-		//	if(OWLDataProperty.class.isInstance(role)) {
-	//		return (SortedSet<T>) getSuperPropertiesImpl((OWLDataProperty) role);
-	//	}
-		throw new ReasoningMethodUnsupportedException();
-	}
- 
-	 
-	private <T extends OWLProperty> SortedSet<T> getSubPropertiesImpl(T role) throws ReasoningMethodUnsupportedException {
-		if(OWLObjectProperty.class.isInstance(role)) {
-			// WARNING: unchecked cast!
-			return (SortedSet<T>) getSubPropertiesImpl((OWLObjectProperty) role);
-		}  
-		throw new ReasoningMethodUnsupportedException();
-	}
+//
+//	// TODO Even if there is a small performance penalty, we could implement
+//	// the method right here by iterating over all data properties and
+//	// querying their ranges. At least, this should be done once we have a
+//	// reasoner independent of OWL API with datatype support.
+//	public Set<OWLDataProperty> getBooleanDatatypePropertiesImpl()
+//			throws ReasoningMethodUnsupportedException {
+//		throw new ReasoningMethodUnsupportedException();
+//	}
+//
+//
+//
+//	public  NodeSet<OWLClass> getSuperClasses(OWLClassExpression concept) {
+//			return reasoner.getSuperClasses(concept, true);
+//
+//	}
+//
+//
+//
+//	public NodeSet<OWLClass> getSubClasses(OWLClassExpression concept) {
+//		return reasoner.getSubClasses(concept, true);
+//
+//	}
+//
+//	private <T extends OWLProperty<?, ?>> SortedSet<T> getSuperPropertiesImpl(T role) throws ReasoningMethodUnsupportedException {
+//		if(OWLObjectProperty.class.isInstance(role)) {
+//			// WARNING: unchecked cast!
+//			return (SortedSet<T>) getSuperPropertiesImpl((OWLObjectProperty) role);
+//		}
+//		//else
+//		//	if(OWLDataProperty.class.isInstance(role)) {
+//	//		return (SortedSet<T>) getSuperPropertiesImpl((OWLDataProperty) role);
+//	//	}
+//		throw new ReasoningMethodUnsupportedException();
+//	}
+//
+//
+//	private <T extends OWLProperty> SortedSet<T> getSubPropertiesImpl(T role) throws ReasoningMethodUnsupportedException {
+//		if(OWLObjectProperty.class.isInstance(role)) {
+//			// WARNING: unchecked cast!
+//			return (SortedSet<T>) getSubPropertiesImpl((OWLObjectProperty) role);
+//		}
+//		throw new ReasoningMethodUnsupportedException();
+//	}
  
 	/**
 	 * Creates the class hierarchy. Invoking this method is optional (if not
@@ -403,54 +403,54 @@ public    class Reasoner  {
 	 *             Thrown if a reasoning method for object property 
 	 *             hierarchy creation is not supported by the reasoner.
 	 */
-	private ObjectPropertyHierarchyT prepareObjectPropertyHierarchy()
-			throws ReasoningMethodUnsupportedException {
-		
-		TreeMap<OWLObjectProperty, SortedSet<OWLObjectProperty>> roleHierarchyUp = new TreeMap<>(
-		);
-		TreeMap<OWLObjectProperty, SortedSet<OWLObjectProperty>> roleHierarchyDown = new TreeMap<>(
-		);
- 
-		Set<OWLObjectProperty> atomicRoles = ontology.getObjectPropertiesInSignature();
-		for (OWLObjectProperty role : atomicRoles) {
-			roleHierarchyDown.put(role, getSubPropertiesImpl(role));
-			roleHierarchyUp.put(role, getSuperPropertiesImpl(role));
-		}
-		roleHierarchy = new ObjectPropertyHierarchyT(roleHierarchyUp, roleHierarchyDown);
-		return roleHierarchy;		
-	}
-
-	private ObjectPropertyHierarchyT getObjectPropertyHierarchy() {
-		try {
-			if (roleHierarchy == null) {
-				roleHierarchy = prepareObjectPropertyHierarchy();
-			}
-		} catch (ReasoningMethodUnsupportedException e) {
-			handleExceptions(e);
-		}
-
-		return roleHierarchy;
-	}
+//	private ObjectPropertyHierarchyT prepareObjectPropertyHierarchy()
+//			throws ReasoningMethodUnsupportedException {
+//
+//		TreeMap<OWLObjectProperty, SortedSet<OWLObjectProperty>> roleHierarchyUp = new TreeMap<>(
+//		);
+//		TreeMap<OWLObjectProperty, SortedSet<OWLObjectProperty>> roleHierarchyDown = new TreeMap<>(
+//		);
+//
+//		Set<OWLObjectProperty> atomicRoles = ontology.getObjectPropertiesInSignature();
+//		for (OWLObjectProperty role : atomicRoles) {
+//			roleHierarchyDown.put(role, getSubPropertiesImpl(role));
+//			roleHierarchyUp.put(role, getSuperPropertiesImpl(role));
+//		}
+//		roleHierarchy = new ObjectPropertyHierarchyT(roleHierarchyUp, roleHierarchyDown);
+//		return roleHierarchy;
+//	}
+//
+//	private ObjectPropertyHierarchyT getObjectPropertyHierarchy() {
+//		try {
+//			if (roleHierarchy == null) {
+//				roleHierarchy = prepareObjectPropertyHierarchy();
+//			}
+//		} catch (ReasoningMethodUnsupportedException e) {
+//			handleExceptions(e);
+//		}
+//
+//		return roleHierarchy;
+//	}
 	
-	public boolean isSubPropertyOf(OWLProperty subProperty, OWLProperty superProperty){
-		if(subProperty.isOWLObjectProperty() && superProperty.isOWLObjectProperty()){
-			return getObjectPropertyHierarchy().isSubpropertyOf((OWLObjectProperty)subProperty, (OWLObjectProperty)superProperty);
-		} 
-		//else if(subProperty.isOWLDataProperty() && superProperty.isOWLDataProperty()){
-		//	return getDatatypePropertyHierarchy().isSubpropertyOf((OWLDataProperty)subProperty, (OWLDataProperty)superProperty);
-		//}
-		return false;
-	}
+//	public boolean isSubPropertyOf(OWLProperty subProperty, OWLProperty superProperty){
+//		if(subProperty.isOWLObjectProperty() && superProperty.isOWLObjectProperty()){
+//			return getObjectPropertyHierarchy().isSubpropertyOf((OWLObjectProperty)subProperty, (OWLObjectProperty)superProperty);
+//		}
+//		//else if(subProperty.isOWLDataProperty() && superProperty.isOWLDataProperty()){
+//		//	return getDatatypePropertyHierarchy().isSubpropertyOf((OWLDataProperty)subProperty, (OWLDataProperty)superProperty);
+//		//}
+//		return false;
+//	}
+//
+//
+
+//
+//	public void setSubsumptionHierarchy(ClassHierarchyT subsumptionHierarchy) {
+//		this.subsumptionHierarchy = subsumptionHierarchy;
+//	}
 
  
-
- 
-	public void setSubsumptionHierarchy(ClassHierarchyT subsumptionHierarchy) {
-		this.subsumptionHierarchy = subsumptionHierarchy;
-	}
-
- 
-
+/*
 	public long getInstanceCheckReasoningTimeNs() {
 		return instanceCheckReasoningTimeNs;
 	}
@@ -495,5 +495,5 @@ public    class Reasoner  {
 		return subsumptionReasoningTimeNs / nrOfSubsumptionChecks;
 	}
  
- 
+ */
 }

@@ -146,9 +146,10 @@ public class consoleLearner {
 				System.out.println("Total membership queries: " + membCount);
 				System.out.println("Total equivalence queries: " + equivCount);
 				System.out.println("Target TBox logical axioms: " + axiomsT.size());
-				
-				
-				
+				saveOWLFile(hypothesisOntology, hypoFile);
+
+
+
 				new Metrics(myRenderer).showCIT(axiomsT,true);
 				
 				System.out.println("Hypothesis TBox logical axioms: " + hypothesisOntology.getAxioms().size());
@@ -918,7 +919,7 @@ public class consoleLearner {
         System.out.println(addedAxiom.toString());
 		myManager.addAxiom(hypothesisOntology, addedAxiom);
 		minimiseHypothesis();
-		saveOWLFile(hypothesisOntology, hypoFile);
+		// saveOWLFile(hypothesisOntology, hypoFile);
 
 		return StringAxiom;
 	}

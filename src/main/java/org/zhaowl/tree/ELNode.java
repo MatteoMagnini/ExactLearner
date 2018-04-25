@@ -27,19 +27,19 @@ public class ELNode {
 	
 	public List<ELEdge> edges = new LinkedList<>();
 	public int level; 
-	public final Set<ELNode> in = new HashSet<>();
-	public final Set<ELNode> inSC1 = new HashSet<>();
-	public final Set<ELNode> inSC2 = new HashSet<>();
-	public final Set<ELNode> out = new HashSet<>();
-	public final Set<ELNode> outSC1 = new HashSet<>();
-	public final Set<ELNode> outSC2 = new HashSet<>();
+	//public final Set<ELNode> in = new HashSet<>();
+	//public final Set<ELNode> inSC1 = new HashSet<>();
+	//public final Set<ELNode> inSC2 = new HashSet<>();
+	//public final Set<ELNode> out = new HashSet<>();
+//	public final Set<ELNode> outSC1 = new HashSet<>();
+//	public final Set<ELNode> outSC2 = new HashSet<>();
 	// parent node in the tree;
 	// null indicates that this node is a root node
 	public ELNode parent = null;
 	public boolean isClassNode;
 	public OWLDataRange dataRange;
 	private OWLDataFactory df = new OWLDataFactoryImpl();
-	
+
 	
 	
 	public ELNode() {
@@ -111,31 +111,31 @@ public class ELNode {
 		for(ELNode w : nodes) {
 			// to save space, we do not add reflexive relations
 			if(w != this) {
-				// (w,v') is automatically added
-				tree.extendSimulation(w, this);
-				
-				// check conditions for (v',w)
-				boolean sc1 = false, sc2 = false;
-				
-				if(w.label.size() == 0) {
-					tree.extendSimulationSC1(this, w);
-					sc1 = true;
-				}
-				
-				if(w.edges.size() == 0) {
-					tree.extendSimulationSC2(this, w);
-					sc2 = true;
-				}
-				
-				if(sc1 && sc2) {
-					tree.extendSimulationSC12(this, w);
-				}	
+//				// (w,v') is automatically added
+//				tree.extendSimulation(w, this);
+//
+//				// check conditions for (v',w)
+//				boolean sc1 = false, sc2 = false;
+//
+//				if(w.label.size() == 0) {
+//					tree.extendSimulationSC1(this, w);
+//					sc1 = true;
+//				}
+//
+//				if(w.edges.size() == 0) {
+//					tree.extendSimulationSC2(this, w);
+//					sc2 = true;
+//				}
+//
+//				if(sc1 && sc2) {
+//					tree.extendSimulationSC12(this, w);
+//				}
 				
 				update.add(w.parent);
 			}
 		}
 		update.add(this.parent);  
-		tree.updateSimulation(update); 
+		//tree.updateSimulation(update);
 		
 		
 		// 1 for the edge (labels are already taken care of by extendLabel)
@@ -197,24 +197,24 @@ public class ELNode {
 			// to save space, we do not add reflexive relations
 			if(w != this) {
 				// (w,v') is automatically added
-				tree.extendSimulation(w, this);
-				
-				// check conditions for (v',w)
-				boolean sc1 = false, sc2 = false;
-				
-				if(w.label.size() == 0) {
-					tree.extendSimulationSC1(this, w);
-					sc1 = true;
-				}
-				
-				if(w.edges.size() == 0) {
-					tree.extendSimulationSC2(this, w);
-					sc2 = true;
-				}
-				
-				if(sc1 && sc2) {
-					tree.extendSimulationSC12(this, w);
-				}	
+//				tree.extendSimulation(w, this);
+//
+//				// check conditions for (v',w)
+//				boolean sc1 = false, sc2 = false;
+//
+//				if(w.label.size() == 0) {
+//					tree.extendSimulationSC1(this, w);
+//					sc1 = true;
+//				}
+//
+//				if(w.edges.size() == 0) {
+//					tree.extendSimulationSC2(this, w);
+//					sc2 = true;
+//				}
+//
+//				if(sc1 && sc2) {
+//					tree.extendSimulationSC12(this, w);
+//				}
 				
 				update.add(w.parent);
 			}
@@ -222,7 +222,7 @@ public class ELNode {
 		update.add(this.parent); 
 		
 		// apply updates recursively top-down
-		tree.updateSimulation(update);
+//		tree.updateSimulation(update);
 //		mon.stop();
 		
 		// add all classes in label
@@ -277,13 +277,13 @@ public class ELNode {
 	public void replaceInLabel(OWLClass oldClass, OWLClass newClass) {
 		label.remove(oldClass);
 		label.add(newClass);
-		labelSimulationUpdate();
+//		labelSimulationUpdate();
 	}
 	
 	
 	public void remove(OWLClass cl) {
 		label.remove(cl);
-		labelSimulationUpdate();
+//		labelSimulationUpdate();
 	}
 	/**
 	 * Adds an entry to the node label.
@@ -291,47 +291,47 @@ public class ELNode {
 	 */
 	public void extendLabel(OWLClass newClass) {
 		label.add(newClass);
-		labelSimulationUpdate();
+//		labelSimulationUpdate();
 		tree.size += 1;
 //		System.out.println(tree);
 //		System.out.println(tree.size);
 	}
-	private void labelSimulationUpdate() {
-		Set<ELNode> update = new HashSet<>();
-		
-		Set<ELNode> tmp = tree.getNodesOnLevel(level);
-		for(ELNode w : tmp) {
-			if(w != this) {
-				// SC1(v,w) can only change from false to true
-				if(!inSC1.contains(w) && tree.checkSC1(this, w)) {
-					tree.extendSimulationSC1(this, w);
-					if(inSC2.contains(w)) {
-						tree.extendSimulationSC12(this, w);		
-					}
-					update.add(w.getParent());
-				}
-				// SC1(w,v) can only change from true to false
-				if(outSC1.contains(w) && !tree.checkSC1(w, this)) {
-					tree.shrinkSimulationSC1(w, this);
-					if(outSC2.contains(w)) {
-						tree.shrinkSimulationSC12(w, this);		
-					}
-					update.add(w.getParent());
-				}
-			}
-		}
-		if(parent != null) {
-			update.add(parent);
-		} 
-		// apply updates recursively top-down
-		tree.updateSimulation(update);	
-//		mon.stop();
-	}
+//	private void labelSimulationUpdate() {
+//		Set<ELNode> update = new HashSet<>();
+//
+//		Set<ELNode> tmp = tree.getNodesOnLevel(level);
+//		for(ELNode w : tmp) {
+//			if(w != this) {
+//				// SC1(v,w) can only change from false to true
+//				if(!inSC1.contains(w) && tree.checkSC1(this, w)) {
+//					tree.extendSimulationSC1(this, w);
+//					if(inSC2.contains(w)) {
+//						tree.extendSimulationSC12(this, w);
+//					}
+//					update.add(w.getParent());
+//				}
+//				// SC1(w,v) can only change from true to false
+//				if(outSC1.contains(w) && !tree.checkSC1(w, this)) {
+//					tree.shrinkSimulationSC1(w, this);
+//					if(outSC2.contains(w)) {
+//						tree.shrinkSimulationSC12(w, this);
+//					}
+//					update.add(w.getParent());
+//				}
+//			}
+//		}
+//		if(parent != null) {
+//			update.add(parent);
+//		}
+//		// apply updates recursively top-down
+//		tree.updateSimulation(update);
+////		mon.stop();
+//	}
 	public void refineEdge(int edgeNumber, OWLProperty op) {
 		edges.get(edgeNumber).setLabel(op); 
 		Set<ELNode> update = new HashSet<>();
 		update.add(this); 
-		tree.updateSimulation(update);	
+//		tree.updateSimulation(update);
 //		mon.stop();
 	}
 	public NavigableSet<OWLClass> getLabel() {
@@ -421,16 +421,16 @@ public class ELNode {
 		return str.toString();
 	}
 	
-	public String toSimulationString() {
-		String str = "";
-		str += "in: " + toDescriptionString(in) + "\n";
-		str += "inSC1: " + toDescriptionString(inSC1) + "\n";
-		str += "inSC2: " + toDescriptionString(inSC2) + "\n";
-		str += "out: " + toDescriptionString(out) + "\n";
-		str += "outSC1: " + toDescriptionString(outSC1) + "\n";
-		str += "outSC2: " + toDescriptionString(outSC2) + "\n";		
-		return str;
-	}
+//	public String toSimulationString() {
+//		String str = "";
+//		str += "in: " + toDescriptionString(in) + "\n";
+//		str += "inSC1: " + toDescriptionString(inSC1) + "\n";
+//		str += "inSC2: " + toDescriptionString(inSC2) + "\n";
+//		str += "out: " + toDescriptionString(out) + "\n";
+//		str += "outSC1: " + toDescriptionString(outSC1) + "\n";
+//		str += "outSC2: " + toDescriptionString(outSC2) + "\n";
+//		return str;
+//	}
 	private static String toString(Set<ELNode> nodes, Map<ELNode, String> nodeNames) {
 		StringBuilder str = new StringBuilder();
 		// comma separated list of expressions
@@ -444,16 +444,16 @@ public class ELNode {
 		return str.toString();
 	}
 	
-	public String toSimulationString(Map<ELNode,String> nodeNames) {
-		String str = "";
-		str += "  in: " + toString(in, nodeNames) + "\n";
-		str += "  inSC1: " + toString(inSC1, nodeNames) + "\n";
-		str += "  inSC2: " + toString(inSC2, nodeNames) + "\n";
-		str += "  out: " + toString(out, nodeNames) + "\n";
-		str += "  outSC1: " + toString(outSC1, nodeNames) + "\n";
-		str += "  outSC2: " + toString(outSC2, nodeNames) + "\n";		
-		return str;
-	}
+//	public String toSimulationString(Map<ELNode,String> nodeNames) {
+//		String str = "";
+//		str += "  in: " + toString(in, nodeNames) + "\n";
+//		str += "  inSC1: " + toString(inSC1, nodeNames) + "\n";
+//		str += "  inSC2: " + toString(inSC2, nodeNames) + "\n";
+//		str += "  out: " + toString(out, nodeNames) + "\n";
+//		str += "  outSC1: " + toString(outSC1, nodeNames) + "\n";
+//		str += "  outSC2: " + toString(outSC2, nodeNames) + "\n";
+//		return str;
+//	}
 	
 	public ELNode getParent() {
 		return parent;
@@ -465,28 +465,28 @@ public class ELNode {
 		return parent.edges.get(childNr);
 	}
  
-	public Set<ELNode> getIn() {
-		return in;
-	}
+//	public Set<ELNode> getIn() {
+//		return in;
+//	}
+//
+//	public Set<ELNode> getInSC1() {
+//		return inSC1;
+//	}
+//	public Set<ELNode> getInSC2() {
+//		return inSC2;
+//	}
  
-	public Set<ELNode> getInSC1() {
-		return inSC1;
-	} 
-	public Set<ELNode> getInSC2() {
-		return inSC2;
-	}
+//	public Set<ELNode> getOut() {
+//		return out;
+//	}
  
-	public Set<ELNode> getOut() {
-		return out;
-	}
+//	public Set<ELNode> getOutSC1() {
+//		return outSC1;
+//	}
  
-	public Set<ELNode> getOutSC1() {
-		return outSC1;
-	}
- 
-	public Set<ELNode> getOutSC2() {
-		return outSC2;
-	}
+//	public Set<ELNode> getOutSC2() {
+//		return outSC2;
+//	}
 	
 	public ELTree getTree() {
 		return tree;

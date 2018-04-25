@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MvnA.iml" filepath="$PROJECT_DIR$/MvnA.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/ZhaOWL_ELLearner_NoUI.iml" filepath="$PROJECT_DIR$/.idea/ZhaOWL_ELLearner_NoUI.iml" />
     </modules>
   </component>
 </project>

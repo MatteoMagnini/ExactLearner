@@ -125,42 +125,42 @@ public class ELTree implements Cloneable {
 	 */
 
 	// checks whether this tree is minimal wrt. background knowledge
-	public boolean isMinimal() {
-		// System.out.println(this);
-		// System.out.println(levelNodeMapping);
-		// loop through all levels starting from root (level 1)
-		for (int i = 1; i <= maxLevel; i++) {
-			// get all nodes of this level
-			Set<ELNode> nodes = levelNodeMapping.get(i);
-			// System.out.println("level " + i + ": " + nodes);
-			for (ELNode node : nodes) {
-				List<ELEdge> edges = node.getEdges();
-				// we need to compare all combination of edges
-				// (in both directions because subsumption is obviously
-				// not symmetric)
-				for (int j = 0; j < edges.size(); j++) {
-					for (int k = 0; k < edges.size(); k++) {
-						if (j != k) {
-							// we first check inclusion property on edges
-							OWLProperty<?, ?> op1 = edges.get(j).getLabel();
-							OWLProperty<?, ?> op2 = edges.get(k).getLabel();
-							if (rs.isSubPropertyOf(op1, op2)) {
-								ELNode node1 = edges.get(j).getNode();
-								ELNode node2 = edges.get(k).getNode();
-								// check simulation condition
-								if (node1.in.contains(node2)) { // || node2.in.contains(node1)) {
-									// node1 is simulated by node2, i.e. we could remove one
-									// of them, so the tree is not minimal
-									return false;
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-		return true;
-	}
+//	public boolean isMinimal() {
+//		// System.out.println(this);
+//		// System.out.println(levelNodeMapping);
+//		// loop through all levels starting from root (level 1)
+//		for (int i = 1; i <= maxLevel; i++) {
+//			// get all nodes of this level
+//			Set<ELNode> nodes = levelNodeMapping.get(i);
+//			// System.out.println("level " + i + ": " + nodes);
+//			for (ELNode node : nodes) {
+//				List<ELEdge> edges = node.getEdges();
+//				// we need to compare all combination of edges
+//				// (in both directions because subsumption is obviously
+//				// not symmetric)
+//				for (int j = 0; j < edges.size(); j++) {
+//					for (int k = 0; k < edges.size(); k++) {
+//						if (j != k) {
+//							// we first check inclusion property on edges
+//							OWLProperty<?, ?> op1 = edges.get(j).getLabel();
+//							OWLProperty<?, ?> op2 = edges.get(k).getLabel();
+//							if (rs.isSubPropertyOf(op1, op2)) {
+//								ELNode node1 = edges.get(j).getNode();
+//								ELNode node2 = edges.get(k).getNode();
+//								// check simulation condition
+//								if (node1.in.contains(node2)) { // || node2.in.contains(node1)) {
+//									// node1 is simulated by node2, i.e. we could remove one
+//									// of them, so the tree is not minimal
+//									return false;
+//								}
+//							}
+//						}
+//					}
+//				}
+//			}
+//		}
+//		return true;
+//	}
 
 	/**
 	 * Internal method for updating the node set and the level node mapping. It must
@@ -218,76 +218,76 @@ public class ELTree implements Cloneable {
 		return currentNode;
 	}
 
-	void updateSimulation(Set<ELNode> nUpdate) {
-		// create a stack and initialize it with the nodes to be updated
-		LinkedList<ELNode> list = new LinkedList<>();
-		list.addAll(nUpdate);
-
-		while (list.size() != 0) {
-			// take element from bottom of stack (to ensure that all nodes on the
-			// same level are tested before any node of a lower level is tested)
-			ELNode v = list.pollFirst();
-			// loop through all nodes on same level
-			Set<ELNode> sameLevel = levelNodeMapping.get(v.getLevel());
-			for (ELNode w : sameLevel) {
-				if (v != w) {
-
-					// System.out.println(v);
-					// System.out.println(w);
-
-					// we update if SC2 did not hold but does now
-					if (!v.inSC2.contains(w) && checkSC2(v, w)) {
-						// System.out.println("extend sim. after update");
-
-						extendSimulationSC2(v, w);
-						if (v.inSC1.contains(w)) {
-							extendSimulationSC12(v, w);
-						}
-						if (!list.contains(v.getParent())) {
-							list.add(v.getParent());
-						}
-						if (!list.contains(w.getParent())) {
-							list.add(w.getParent());
-						}
-					}
-
-					// similar case, but now possibly shrinking the simulation
-					if (w.inSC2.contains(v) && !checkSC2(w, v)) {
-						// System.out.println("shrink sim. after update");
-
-						shrinkSimulationSC2(w, v);
-						if (w.inSC1.contains(v)) {
-							shrinkSimulationSC12(w, v);
-						}
-						if (!list.contains(v.getParent())) {
-							list.add(v.getParent());
-						}
-						if (!list.contains(w.getParent())) {
-							list.add(w.getParent());
-						}
-					}
-					/*
-					 * if(!v.out.contains(w) ) { System.out.println("test"); if(checkSC2(v,w) &&
-					 * v.outSC1.contains(w)) { extendSimulation(v,w); list.add(v.getParent());
-					 * list.add(w.getParent()); } else { System.out.println("test in");
-					 * shrinkSimulationSC2(v,w); } } if(!w.out.contains(v) ) { if(checkSC2(w,v) &&
-					 * w.outSC1.contains(v)) { extendSimulation(w,v); list.add(v.getParent());
-					 * list.add(w.getParent()); } else { shrinkSimulationSC2(w,v); } }
-					 */
-				}
-			}
-		}
-	}
+//	void updateSimulation(Set<ELNode> nUpdate) {
+//		// create a stack and initialize it with the nodes to be updated
+//		LinkedList<ELNode> list = new LinkedList<>();
+//		list.addAll(nUpdate);
+//
+//		while (list.size() != 0) {
+//			// take element from bottom of stack (to ensure that all nodes on the
+//			// same level are tested before any node of a lower level is tested)
+//			ELNode v = list.pollFirst();
+//			// loop through all nodes on same level
+//			Set<ELNode> sameLevel = levelNodeMapping.get(v.getLevel());
+//			for (ELNode w : sameLevel) {
+//				if (v != w) {
+//
+//					// System.out.println(v);
+//					// System.out.println(w);
+//
+//					// we update if SC2 did not hold but does now
+//					if (!v.inSC2.contains(w) && checkSC2(v, w)) {
+//						// System.out.println("extend sim. after update");
+//
+//						extendSimulationSC2(v, w);
+//						if (v.inSC1.contains(w)) {
+//							extendSimulationSC12(v, w);
+//						}
+//						if (!list.contains(v.getParent())) {
+//							list.add(v.getParent());
+//						}
+//						if (!list.contains(w.getParent())) {
+//							list.add(w.getParent());
+//						}
+//					}
+//
+//					// similar case, but now possibly shrinking the simulation
+//					if (w.inSC2.contains(v) && !checkSC2(w, v)) {
+//						// System.out.println("shrink sim. after update");
+//
+//						shrinkSimulationSC2(w, v);
+//						if (w.inSC1.contains(v)) {
+//							shrinkSimulationSC12(w, v);
+//						}
+//						if (!list.contains(v.getParent())) {
+//							list.add(v.getParent());
+//						}
+//						if (!list.contains(w.getParent())) {
+//							list.add(w.getParent());
+//						}
+//					}
+//					/*
+//					 * if(!v.out.contains(w) ) { System.out.println("test"); if(checkSC2(v,w) &&
+//					 * v.outSC1.contains(w)) { extendSimulation(v,w); list.add(v.getParent());
+//					 * list.add(w.getParent()); } else { System.out.println("test in");
+//					 * shrinkSimulationSC2(v,w); } } if(!w.out.contains(v) ) { if(checkSC2(w,v) &&
+//					 * w.outSC1.contains(v)) { extendSimulation(w,v); list.add(v.getParent());
+//					 * list.add(w.getParent()); } else { shrinkSimulationSC2(w,v); } }
+//					 */
+//				}
+//			}
+//		}
+//	}
 
 	// SC satisfied if both SC1 and SC2 satisfied
-	public boolean checkSC(ELNode node1, ELNode node2) {
-		return checkSC1(node1, node2) && checkSC2(node1, node2);
-	}
+//	public boolean checkSC(ELNode node1, ELNode node2) {
+//		return checkSC1(node1, node2) && checkSC2(node1, node2);
+//	}
 
 	// tests simulation condition 1 (SC1)
-	public boolean checkSC1(ELNode node1, ELNode node2) {
-		return isSublabel(node1.getLabel(), node2.getLabel());
-	}
+//	public boolean checkSC1(ELNode node1, ELNode node2) {
+//		return isSublabel(node1.getLabel(), node2.getLabel());
+//	}
 
 	private boolean isSublabel(NavigableSet<OWLClass> subLabel, NavigableSet<OWLClass> superLabel) {
 		// implemented according to definition in article
@@ -310,122 +310,122 @@ public class ELTree implements Cloneable {
 	}
 
 	// tests simulation condition 2 (SC2)
-    private boolean checkSC2(ELNode node1, ELNode node2) {
-		List<ELEdge> edges1 = node1.getEdges();
-		List<ELEdge> edges2 = node2.getEdges();
-
-		// System.out.println(node1.transformToDescription());
-		// System.out.println(node2.transformToDescription());
-
-		for (ELEdge superEdge : edges2) {
-			// try to find an edge satisfying SC2 in the set,
-			// i.e. detect whether superEdge is indeed more general
-			if (!checkSC2Edge(superEdge, edges1)) {
-				// System.out.println("false");
-				return false;
-			}
-		}
-		// System.out.println("true");
-		return true;
-	}
+//    private boolean checkSC2(ELNode node1, ELNode node2) {
+//		List<ELEdge> edges1 = node1.getEdges();
+//		List<ELEdge> edges2 = node2.getEdges();
+//
+//		// System.out.println(node1.transformToDescription());
+//		// System.out.println(node2.transformToDescription());
+//
+//		for (ELEdge superEdge : edges2) {
+//			// try to find an edge satisfying SC2 in the set,
+//			// i.e. detect whether superEdge is indeed more general
+//			if (!checkSC2Edge(superEdge, edges1)) {
+//				// System.out.println("false");
+//				return false;
+//			}
+//		}
+//		// System.out.println("true");
+//		return true;
+//	}
 
 	// check whether edges contains an element satisfying SC2
-	private boolean checkSC2Edge(ELEdge superEdge, List<ELEdge> edges) {
-		OWLProperty superOP = superEdge.getLabel();
-		ELNode superNode = superEdge.getNode();
-
-		for (ELEdge edge : edges) {
-			// System.out.println("superEdge: " + superEdge);
-			// System.out.println("edge: " + edge);
-
-			OWLProperty op = edge.getLabel();
-			// we first check the condition on the properties
-			if (rs.isSubPropertyOf(op, superOP)) {
-				// check condition on simulations of referred nodes
-				ELNode node = edge.getNode();
-				// if(superNode.in.contains(node) || node.in.contains(superNode)) {
-				if (node.in.contains(superNode)) {
-					// we found a node satisfying the condition, so we can return
-					return true;
-				}
-			}
-		}
-
-		// none of the edges in the set satisfies the 2nd simulation criterion
-		// wrt. the first edge
-		return false;
-	}
+//	private boolean checkSC2Edge(ELEdge superEdge, List<ELEdge> edges) {
+//		OWLProperty superOP = superEdge.getLabel();
+//		ELNode superNode = superEdge.getNode();
+//
+//		for (ELEdge edge : edges) {
+//			// System.out.println("superEdge: " + superEdge);
+//			// System.out.println("edge: " + edge);
+//
+//			OWLProperty op = edge.getLabel();
+//			// we first check the condition on the properties
+//			if (rs.isSubPropertyOf(op, superOP)) {
+//				// check condition on simulations of referred nodes
+//				ELNode node = edge.getNode();
+//				// if(superNode.in.contains(node) || node.in.contains(superNode)) {
+//				if (node.in.contains(superNode)) {
+//					// we found a node satisfying the condition, so we can return
+//					return true;
+//				}
+//			}
+//		}
+//
+//		// none of the edges in the set satisfies the 2nd simulation criterion
+//		// wrt. the first edge
+//		return false;
+//	}
 
 	// adds (node1,node2) to simulation, takes care of all helper sets
-	public void extendSimulation(ELNode node1, ELNode node2) {
-		node1.in.add(node2);
-		node1.inSC1.add(node2);
-		node1.inSC2.add(node2);
-		node2.out.add(node1);
-		node2.outSC1.add(node1);
-		node2.outSC2.add(node1);
-	}
-
-	public void extendSimulationSC1(ELNode node1, ELNode node2) {
-		node1.inSC1.add(node2);
-		node2.outSC1.add(node1);
-	}
-
-	public void extendSimulationSC2(ELNode node1, ELNode node2) {
-		node1.inSC2.add(node2);
-		node2.outSC2.add(node1);
-	}
-
-	public void extendSimulationSC12(ELNode node1, ELNode node2) {
-		node1.in.add(node2);
-		node2.out.add(node1);
-	}
-
-	// removes (node1,node2) from simulation, takes care of all helper sets
-	public void shrinkSimulation(ELNode node1, ELNode node2) {
-		node1.in.remove(node2);
-		node1.inSC1.remove(node2);
-		node1.inSC2.remove(node2);
-		node2.out.remove(node1);
-		node2.outSC1.remove(node1);
-		node2.outSC2.remove(node1);
-	}
-
-	public void shrinkSimulationSC1(ELNode node1, ELNode node2) {
-		node1.inSC1.remove(node2);
-		node2.outSC1.remove(node1);
-	}
-
-	private void shrinkSimulationSC2(ELNode node1, ELNode node2) {
-		// System.out.println(node2.outSC2);
-		node1.inSC2.remove(node2);
-		node2.outSC2.remove(node1);
-		// System.out.println(node2.outSC2);
-	}
-
-	public void shrinkSimulationSC12(ELNode node1, ELNode node2) {
-		node1.in.remove(node2);
-		node2.out.remove(node1);
-	}
-
-	public String toSimulationString() {
-		StringBuilder str = new StringBuilder();
-		for (ELNode node : nodes) {
-			str.append(node.toSimulationString()).append("\n");
-		}
-		return str.toString();
-	}
-
-	public String toSimulationString(Map<ELNode, String> nodeNames) {
-		StringBuilder str = new StringBuilder();
-		for (Entry<ELNode, String> entry : nodeNames.entrySet()) {
-			String nodeName = entry.getValue();
-			ELNode node = entry.getKey();
-			str.append(nodeName).append(":\n");
-			str.append(node.toSimulationString(nodeNames)).append("\n");
-		}
-		return str.toString();
-	}
+//	public void extendSimulation(ELNode node1, ELNode node2) {
+//		node1.in.add(node2);
+//		node1.inSC1.add(node2);
+//		node1.inSC2.add(node2);
+//		node2.out.add(node1);
+//		node2.outSC1.add(node1);
+//		node2.outSC2.add(node1);
+//	}
+//
+//	public void extendSimulationSC1(ELNode node1, ELNode node2) {
+//		node1.inSC1.add(node2);
+//		node2.outSC1.add(node1);
+//	}
+//
+//	public void extendSimulationSC2(ELNode node1, ELNode node2) {
+//		node1.inSC2.add(node2);
+//		node2.outSC2.add(node1);
+//	}
+//
+//	public void extendSimulationSC12(ELNode node1, ELNode node2) {
+//		node1.in.add(node2);
+//		node2.out.add(node1);
+//	}
+//
+//	// removes (node1,node2) from simulation, takes care of all helper sets
+//	public void shrinkSimulation(ELNode node1, ELNode node2) {
+//		node1.in.remove(node2);
+//		node1.inSC1.remove(node2);
+//		node1.inSC2.remove(node2);
+//		node2.out.remove(node1);
+//		node2.outSC1.remove(node1);
+//		node2.outSC2.remove(node1);
+//	}
+//
+//	public void shrinkSimulationSC1(ELNode node1, ELNode node2) {
+//		node1.inSC1.remove(node2);
+//		node2.outSC1.remove(node1);
+//	}
+//
+//	private void shrinkSimulationSC2(ELNode node1, ELNode node2) {
+//		// System.out.println(node2.outSC2);
+//		node1.inSC2.remove(node2);
+//		node2.outSC2.remove(node1);
+//		// System.out.println(node2.outSC2);
+//	}
+//
+//	public void shrinkSimulationSC12(ELNode node1, ELNode node2) {
+//		node1.in.remove(node2);
+//		node2.out.remove(node1);
+//	}
+//
+//	public String toSimulationString() {
+//		StringBuilder str = new StringBuilder();
+//		for (ELNode node : nodes) {
+//			str.append(node.toSimulationString()).append("\n");
+//		}
+//		return str.toString();
+//	}
+//
+//	public String toSimulationString(Map<ELNode, String> nodeNames) {
+//		StringBuilder str = new StringBuilder();
+//		for (Entry<ELNode, String> entry : nodeNames.entrySet()) {
+//			String nodeName = entry.getValue();
+//			ELNode node = entry.getKey();
+//			str.append(nodeName).append(":\n");
+//			str.append(node.toSimulationString(nodeNames)).append("\n");
+//		}
+//		return str.toString();
+//	}
 
 	@Override
 	@SuppressWarnings("unchecked")
@@ -468,25 +468,25 @@ public class ELTree implements Cloneable {
 				newRoot = newNode;
 			}
 
-			// simulation information
-			for (ELNode node : oldNode.in) {
-				newNode.in.add(cloneMap.get(node));
-			}
-			for (ELNode node : oldNode.inSC1) {
-				newNode.inSC1.add(cloneMap.get(node));
-			}
-			for (ELNode node : oldNode.inSC2) {
-				newNode.inSC2.add(cloneMap.get(node));
-			}
-			for (ELNode node : oldNode.out) {
-				newNode.out.add(cloneMap.get(node));
-			}
-			for (ELNode node : oldNode.outSC1) {
-				newNode.outSC1.add(cloneMap.get(node));
-			}
-			for (ELNode node : oldNode.outSC2) {
-				newNode.outSC2.add(cloneMap.get(node));
-			}
+//			// simulation information
+//			for (ELNode node : oldNode.in) {
+//				newNode.in.add(cloneMap.get(node));
+//			}
+//			for (ELNode node : oldNode.inSC1) {
+//				newNode.inSC1.add(cloneMap.get(node));
+//			}
+//			for (ELNode node : oldNode.inSC2) {
+//				newNode.inSC2.add(cloneMap.get(node));
+//			}
+//			for (ELNode node : oldNode.out) {
+//				newNode.out.add(cloneMap.get(node));
+//			}
+//			for (ELNode node : oldNode.outSC1) {
+//				newNode.outSC1.add(cloneMap.get(node));
+//			}
+//			for (ELNode node : oldNode.outSC2) {
+//				newNode.outSC2.add(cloneMap.get(node));
+//			}
 
 			// edges
 			for (ELEdge edge : oldNode.edges) {

@@ -6,10 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="MvnA" />
         <module name="ZhaOWL_ELLearner_NoUI" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="MvnA" target="1.8" />
       <module name="ZhaOWL_ELLearner_NoUI" target="1.8" />
     </bytecodeTargetLevel>
   </component>
