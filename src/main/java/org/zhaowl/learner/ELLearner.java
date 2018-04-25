@@ -3,6 +3,7 @@ package org.zhaowl.learner;
 import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLClassExpression;
+import org.semanticweb.owlapi.model.OWLSubClassOfAxiom;
 import org.zhaowl.engine.ELEngine;
 import org.zhaowl.tree.ELEdge;
 import org.zhaowl.tree.ELNode;
@@ -38,7 +39,7 @@ public class ELLearner {
 	 * @param right
 	 *            class expression on the right of an inclusion
 	 */
-	public OWLAxiom decompose(OWLClassExpression left, OWLClassExpression right) throws Exception {
+	public OWLSubClassOfAxiom decompose(OWLClassExpression left, OWLClassExpression right) throws Exception {
 
 		ELTree treeR = new ELTree(right);
 		ELTree treeL = new ELTree(left);
@@ -70,7 +71,7 @@ public class ELLearner {
 		throw new Exception("Error creating counterexample. Not an EL Terminology");
 	}
 
-	public OWLAxiom decomposeLeft(OWLClassExpression expression, OWLClass cl) throws Exception {
+	public OWLSubClassOfAxiom decomposeLeft(OWLClassExpression expression, OWLClass cl) throws Exception {
 		myClass = cl;
 		myExpression = expression;
 		while (decomposingLeft(myExpression, myClass)) {
@@ -115,7 +116,7 @@ public class ELLearner {
 		return false;
 	}
 
-	public OWLAxiom decomposeRight(OWLClass cl, OWLClassExpression expression) throws Exception {
+	public OWLSubClassOfAxiom decomposeRight(OWLClass cl, OWLClassExpression expression) throws Exception {
 		myClass = cl;
 		myExpression = expression;
 		while (decomposingRight(myClass, myExpression)) {
@@ -189,7 +190,7 @@ public class ELLearner {
 		return false;
 	}
 
-	public OWLAxiom unsaturateLeft(OWLClassExpression expression, OWLClass cl) throws Exception {
+	public OWLSubClassOfAxiom unsaturateLeft(OWLClassExpression expression, OWLClass cl) throws Exception {
 		myClass = cl;
 		myExpression = expression;
 		while (unsaturating(myExpression, myClass)) {
@@ -225,7 +226,7 @@ public class ELLearner {
 		return flag;
 	}
 
-	public OWLAxiom saturateRight(OWLClass cl, OWLClassExpression expression) throws Exception {
+	public OWLSubClassOfAxiom saturateRight(OWLClass cl, OWLClassExpression expression) throws Exception {
 		myClass = cl;
 		myExpression = expression;
 		while (saturating(myClass, myExpression)) {
@@ -260,7 +261,7 @@ public class ELLearner {
 		return flag;
 	}
 
-	public OWLAxiom mergeRight(OWLClass cl, OWLClassExpression expression) throws Exception {
+	public OWLSubClassOfAxiom mergeRight(OWLClass cl, OWLClassExpression expression) throws Exception {
 		myClass = cl;
 		myExpression = expression;
 		while (merging(myClass, myExpression)) {
@@ -313,7 +314,7 @@ public class ELLearner {
 		return flag;
 	}
 
-	public OWLAxiom branchLeft(OWLClassExpression expression, OWLClass cl) throws Exception {
+	public OWLSubClassOfAxiom branchLeft(OWLClassExpression expression, OWLClass cl) throws Exception {
 		myClass = cl;
 		myExpression = expression;
 		while (branching(myExpression, myClass)) {

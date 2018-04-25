@@ -51,7 +51,7 @@ public class ELEngine {
 //		return getSubClassAxiom(concept1, concept2);
 //	}
 	
-	public OWLAxiom getSubClassAxiom(OWLClassExpression concept1, OWLClassExpression concept2){
+	public OWLSubClassOfAxiom getSubClassAxiom(OWLClassExpression concept1, OWLClassExpression concept2){
 		return myParser.parseSubClassOfAxiom(concept1, concept2);
     }
 

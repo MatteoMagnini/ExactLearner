@@ -2,11 +2,7 @@ package org.zhaowl.engine;
 
 import java.util.Set;
 
-import org.semanticweb.owlapi.model.OWLAxiom;
-import org.semanticweb.owlapi.model.OWLClassExpression;
-import org.semanticweb.owlapi.model.OWLDataFactory;
-import org.semanticweb.owlapi.model.OWLOntology;
-import org.semanticweb.owlapi.model.OWLOntologyManager;
+import org.semanticweb.owlapi.model.*;
 import org.semanticweb.owlapi.util.BidirectionalShortFormProvider;
 import org.semanticweb.owlapi.util.BidirectionalShortFormProviderAdapter;
 import org.semanticweb.owlapi.util.ShortFormProvider;
@@ -67,7 +63,7 @@ class ELParser {
 //		return null;
 //    }
     
-    public OWLAxiom parseSubClassOfAxiom(OWLClassExpression concept1, OWLClassExpression concept2){
+    public OWLSubClassOfAxiom parseSubClassOfAxiom(OWLClassExpression concept1, OWLClassExpression concept2){
     	return dataFactory.getOWLSubClassOfAxiom(concept1, concept2);
     }
 }

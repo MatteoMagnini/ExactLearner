@@ -96,7 +96,7 @@ public class ELOracle {
 		return sets;
 	}
 
-	public OWLAxiom saturateWithTreeLeft(OWLSubClassOfAxiom axiom) throws Exception {
+	public OWLSubClassOfAxiom saturateWithTreeLeft(OWLSubClassOfAxiom axiom) throws Exception {
 		OWLClassExpression sub = axiom.getSubClass();
 		OWLClassExpression sup = axiom.getSuperClass();
 
