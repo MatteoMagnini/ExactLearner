@@ -106,9 +106,11 @@ public class ELNode {
 		}
 		return str.toString();
 	}
+
 	private boolean isClassNode() {
 		return isClassNode;
 	}
+
 	public String toDescriptionString() {
 		StringBuilder str = new StringBuilder();
 		if(isClassNode()){
@@ -146,6 +148,7 @@ public class ELNode {
 		}
 		return str.toString();
 	}
+
 	private String toMan(String str)
 	{
 		String mod;
