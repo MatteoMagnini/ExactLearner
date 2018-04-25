@@ -1,17 +1,24 @@
 package org.zhaowl.oracle;
 
+ 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import org.semanticweb.owlapi.model.AxiomType;
+import org.semanticweb.owlapi.model.OWLAxiom;
+ 
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLClassExpression;
+import org.semanticweb.owlapi.model.OWLEquivalentClassesAxiom;
 import org.semanticweb.owlapi.model.OWLSubClassOfAxiom;
 import org.zhaowl.engine.ELEngine;
 import org.zhaowl.tree.ELNode;
 import org.zhaowl.tree.ELTree;
 import org.zhaowl.utils.Metrics;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+ 
 
 public class ELOracle {
 
@@ -25,13 +32,13 @@ public class ELOracle {
 		myMetrics = metrics;
 	}
 
-	public OWLClassExpression oracleSiblingMerge(OWLClassExpression left) throws Exception {
-		// the oracle must do sibling merging (if possible)
-		// on the left hand side
+ 
+	public OWLSubClassOfAxiom mergeLeft(OWLClassExpression left, OWLClassExpression right) throws Exception {
+		 
+ 
 		ELTree tree = new ELTree(left);
-		// Set<ELNode> nodes = null;
-		// System.out.println(tree.toDescriptionString());
-
+		 
+		OWLSubClassOfAxiom axiom=null;
 		OWLClassExpression oldTree = tree.transformToClassExpression();
 		for (int i = 0; i < tree.getMaxLevel(); i++) {
 			Set<ELNode> nodes = tree.getNodesOnLevel(i + 1);
@@ -70,159 +77,171 @@ public class ELOracle {
 		// System.out.println(tree.getRootNode());
 
 		System.out.flush();
-		return tree.transformToClassExpression();
+		return axiom;
 	}
+	 
+	 
 
-	private Set<Set<OWLClass>> powerSetBySize(Set<OWLClass> originalSet, int size) {
-		Set<Set<OWLClass>> sets = new HashSet<>();
-		if (size == 0) {
-			sets.add(new HashSet<>());
-			return sets;
-		}
-		List<OWLClass> list = new ArrayList<>(originalSet);
+//	private Set<Set<OWLClass>> powerSetBySize(Set<OWLClass> originalSet, int size) {
+//		Set<Set<OWLClass>> sets = new HashSet<>();
+//		if (size == 0) {
+//			sets.add(new HashSet<>());
+//			return sets;
+//		}
+//		List<OWLClass> list = new ArrayList<>(originalSet);
+//
+//		for (int i = 0; i < list.size(); i++) {
+//			OWLClass head = list.get(i);
+//			List<OWLClass> rest = list.subList(i + 1, list.size());
+//			Set<Set<OWLClass>> powerRest = powerSetBySize(new HashSet<>(rest), size - 1);
+//			for (Set<OWLClass> p : powerRest) {
+//				HashSet<OWLClass> appendedSet = new HashSet<>();
+//				appendedSet.add(head);
+//				appendedSet.addAll(p);
+//				sets.add(appendedSet);
+//			}
+//		}
+//		return sets;
+//	}
 
-		for (int i = 0; i < list.size(); i++) {
-			OWLClass head = list.get(i);
-			List<OWLClass> rest = list.subList(i + 1, list.size());
-			Set<Set<OWLClass>> powerRest = powerSetBySize(new HashSet<>(rest), size - 1);
-			for (Set<OWLClass> p : powerRest) {
-				HashSet<OWLClass> appendedSet = new HashSet<>();
-				appendedSet.add(head);
-				appendedSet.addAll(p);
-				sets.add(appendedSet);
-			}
-		}
-		return sets;
-	}
-
-	public OWLSubClassOfAxiom saturateWithTreeLeft(OWLSubClassOfAxiom axiom) throws Exception {
-		OWLClassExpression sub = axiom.getSubClass();
-		OWLClassExpression sup = axiom.getSuperClass();
-
-
-		Set<OWLClass> cIo = myEngineForT.getClassesInSignature();
-		// Set<ELNode> nodes = null;
-
-		ELTree tree = new ELTree(sub);
-
-		for (int i = 0; i < tree.getMaxLevel(); i++) {
-			Set<ELNode> nodes = tree.getNodesOnLevel(i + 1);
-			if (!nodes.isEmpty())
-				for (ELNode nod : nodes) {
-					for (OWLClass cl : cIo) {
-						// System.out.println("Node before: " + nod);
-						if (!nod.getLabel().contains(cl) && !cl.toString().contains(":Thing")) {
-							nod.getLabel().add(cl);
-						}
-						// System.out.println("Node after: " + nod);
-						OWLClassExpression newEx = tree.transformToClassExpression();
-						// System.out.println("After saturation step: " + tree.toDescriptionString());
-						OWLSubClassOfAxiom newAx = myEngineForT.getSubClassAxiom(newEx, sup);
-						myMetrics.setMembCount(myMetrics.getMembCount() + 1);
-						if (myEngineForT.entailed(newAx)) {
-							tree = new ELTree(sub);
-						} else {
-							sub = tree.transformToClassExpression();
-						}
-
-					}
-
-				}
-		}
-		// System.out.println("Tree: " + tree.getRootNode());
-		// System.out.println("Aux Tree: " + auxTree.getRootNode());
-		// System.out.println("Final after saturation: " + sub);
-
-
-
-		return myEngineForT.getSubClassAxiom(sub, sup);
-	}
-
-
-
-	public OWLClassExpression unsaturateRight(OWLSubClassOfAxiom ax) throws Exception {
-		OWLClassExpression left = ax.getSubClass();
-		OWLClassExpression right = ax.getSuperClass();
-		ELTree tree = new ELTree(right);
-		// Set<ELNode> nodes = null;
-
-		int sizeToCheck = 0;
-
-		// @foundSomething
-		// this flag is used to create a new set of elements to iterate over,
-		// in order to find if a proper combination of concepts that a node needs
-		// in order to make the CI valid
-
-		boolean foundSomething = false;
-
-
-
-		for (int i = 0; i < tree.getMaxLevel(); i++) {
-			Set<ELNode> nodes = tree.getNodesOnLevel(i + 1);
-			for (ELNode nod : nodes) {
-				if (nod.getLabel().size() < 2)
-					continue;
-				while (!foundSomething) {
-					// size of power set
-					sizeToCheck++;
-					// set to be used when building a power set of concepts
-
-					// populate set
-					Set<OWLClass> toBuildPS = new HashSet<>(nod.getLabel());
-
-					// set of sets of concepts as power set
-					// Set<Set<OWLClass>> conceptSet = new HashSet<>();
-
-					// populate set of sets of concepts
-					// @sizeToCheck is the number of concepts in the set
-					// @sizeToCheck = 1, returns single concepts in power set (ps) [A,B,C,D]
-					// @sizeToCheck = 2, returns ps size 2 of concepts [(A,B), (A,C), (A,D), (B,C),
-					// (B,D), (C,D)]
-					// and so on ...
-					// this is done in order to check which is the minimal concept(s) set required
-					// to satisfy the node
-					// and at the same time, the CI
-					Set<Set<OWLClass>> conceptSet = powerSetBySize(toBuildPS, sizeToCheck);
-					System.out.println("stuck here !!!!");
-					// loop through concept set
-					for (Set<OWLClass> clSet : conceptSet) {
-
-						nod.getLabel().clear();
-
-						nod.getLabel().addAll(clSet);
-
-						myMetrics.setMembCount(myMetrics.getMembCount() + 1);
-
-						// System.out.println(tree.toDescriptionString());
-						if (myEngineForT.entailed(
-								myEngineForT.getSubClassAxiom(left, tree.transformToClassExpression())
-								))
-
-						{
-
-							foundSomething = true;
  
+	public OWLSubClassOfAxiom saturateLeft(OWLClassExpression left, OWLClassExpression right) throws Exception {
+ 
+//		OWLClassExpression sub = axiom.getSubClass();
+//		OWLClassExpression sup = axiom.getSuperClass();
+//
+//
+//		Set<OWLClass> cIo = myEngineForT.getClassesInSignature();
+//		// Set<ELNode> nodes = null;
+//
+//		ELTree tree = new ELTree(sub);
+//
+//		for (int i = 0; i < tree.getMaxLevel(); i++) {
+//			Set<ELNode> nodes = tree.getNodesOnLevel(i + 1);
+//			if (!nodes.isEmpty())
+//				for (ELNode nod : nodes) {
+//					for (OWLClass cl : cIo) {
+//						// System.out.println("Node before: " + nod);
+//						if (!nod.getLabel().contains(cl) && !cl.toString().contains(":Thing")) {
+//							nod.getLabel().add(cl);
+//						}
+//						// System.out.println("Node after: " + nod);
+//						OWLClassExpression newEx = tree.transformToClassExpression();
+//						// System.out.println("After saturation step: " + tree.toDescriptionString());
+//						OWLSubClassOfAxiom newAx = myEngineForT.getSubClassAxiom(newEx, sup);
+//						myMetrics.setMembCount(myMetrics.getMembCount() + 1);
+//						if (myEngineForT.entailed(newAx)) {
+//							tree = new ELTree(sub);
+//						} else {
+//							sub = tree.transformToClassExpression();
+//						}
+//
+//					}
+//
+//				}
+//		}
+//		// System.out.println("Tree: " + tree.getRootNode());
+//		// System.out.println("Aux Tree: " + auxTree.getRootNode());
+//		// System.out.println("Final after saturation: " + sub);
 
-						} else {
-							// System.out.println("This one is useless: " + cl);
-							// nod.label = new TreeSet<OWLClass>();
-
-						}
-
-					}
-				}
-				// reset power set size to check
-				foundSomething = false;
-				sizeToCheck = 0;
-			}
-		}
-		System.out.flush();
 
 
-		return tree.transformToClassExpression();
+		return myEngineForT.getSubClassAxiom(left, right);
 	}
 
-	public OWLClassExpression branchRight(OWLClassExpression right) {
+
+
+ 
+	public OWLSubClassOfAxiom unsaturateRight(OWLClassExpression left, OWLClassExpression right) throws Exception {
+		OWLSubClassOfAxiom axiom=null;
+//		OWLClassExpression left = ((OWLSubClassOfAxiom) ax).getSubClass();
+//		OWLClassExpression right = ((OWLSubClassOfAxiom) ax).getSuperClass();
+// 
+//		ELTree tree = new ELTree(right);
+//		// Set<ELNode> nodes = null;
+//
+//		int sizeToCheck = 0;
+//
+//		// @foundSomething
+//		// this flag is used to create a new set of elements to iterate over,
+//		// in order to find if a proper combination of concepts that a node needs
+//		// in order to make the CI valid
+//
+//		boolean foundSomething = false;
+//
+//
+//
+//		for (int i = 0; i < tree.getMaxLevel(); i++) {
+//			Set<ELNode> nodes = tree.getNodesOnLevel(i + 1);
+//			for (ELNode nod : nodes) {
+//				if (nod.getLabel().size() < 2)
+//					continue;
+//				while (!foundSomething) {
+//					// size of power set
+//					sizeToCheck++;
+//					// set to be used when building a power set of concepts
+//
+//					// populate set
+//					Set<OWLClass> toBuildPS = new HashSet<>(nod.getLabel());
+//
+//					// set of sets of concepts as power set
+//					// Set<Set<OWLClass>> conceptSet = new HashSet<>();
+//
+//					// populate set of sets of concepts
+//					// @sizeToCheck is the number of concepts in the set
+//					// @sizeToCheck = 1, returns single concepts in power set (ps) [A,B,C,D]
+//					// @sizeToCheck = 2, returns ps size 2 of concepts [(A,B), (A,C), (A,D), (B,C),
+//					// (B,D), (C,D)]
+//					// and so on ...
+//					// this is done in order to check which is the minimal concept(s) set required
+//					// to satisfy the node
+//					// and at the same time, the CI
+//					Set<Set<OWLClass>> conceptSet = powerSetBySize(toBuildPS, sizeToCheck);
+//					System.out.println("stuck here !!!!");
+//					// loop through concept set
+//					for (Set<OWLClass> clSet : conceptSet) {
+//
+//						nod.getLabel().clear();
+//
+//						nod.getLabel().addAll(clSet);
+//
+//						myMetrics.setMembCount(myMetrics.getMembCount() + 1);
+//
+//						// System.out.println(tree.toDescriptionString());
+//						if (myEngineForT.entailed(
+//								myEngineForT.getSubClassAxiom(left, tree.transformToClassExpression())
+//								))
+//
+//						{
+//
+//							foundSomething = true;
+// 
+//
+//						} else {
+//							// System.out.println("This one is useless: " + cl);
+//							// nod.label = new TreeSet<OWLClass>();
+//
+//						}
+//
+//					}
+//				}
+//				// reset power set size to check
+//				foundSomething = false;
+//				sizeToCheck = 0;
+//			}
+//		}
+//		System.out.flush();
+
+
+		return axiom;
+	}
+
+ 
+	public OWLSubClassOfAxiom branchRight(OWLClassExpression left, OWLClassExpression right) throws Exception{
+		OWLSubClassOfAxiom axiom=null;
+		return axiom;
+	}
+ 
 //		try {
 //
 //			ELTree treeR = new ELTree(right);
@@ -292,8 +311,7 @@ public class ELOracle {
 //		left = null;
 //		right = null;
 
-		return right;
-	}
+	
 	
 //at the moment duplicated
 	public Boolean isCounterExample(OWLClassExpression left, OWLClassExpression right){
@@ -301,4 +319,7 @@ public class ELOracle {
 				&&
 				!myEngineForH.entailed(myEngineForH.getSubClassAxiom(left, right));
 	}
+	
+	
+ 
 }
