@@ -1,8 +1,16 @@
 package org.zhaowl.console;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+import org.coode.owlapi.manchesterowlsyntax.ManchesterOWLSyntaxOntologyFormat;
+import org.semanticweb.owlapi.apibinding.OWLManager;
+import org.semanticweb.owlapi.io.OWLObjectRenderer;
+import org.semanticweb.owlapi.model.*;
 import org.slf4j.LoggerFactory;
+import org.zhaowl.engine.ELEngine;
+import org.zhaowl.learner.ELLearner;
+import org.zhaowl.oracle.ELOracle;
 import org.zhaowl.utils.Metrics;
-
 import uk.ac.manchester.cs.owl.owlapi.mansyntaxrenderer.ManchesterOWLSyntaxOWLObjectRendererImpl;
 
 import java.io.File;
@@ -14,33 +22,9 @@ import java.util.Set;
 
 //import javax.swing.JOptionPane;
 
-import org.coode.owlapi.manchesterowlsyntax.ManchesterOWLSyntaxOntologyFormat;
-import org.semanticweb.owlapi.apibinding.OWLManager;
-import org.semanticweb.owlapi.model.AddAxiom;
-import org.semanticweb.owlapi.model.AxiomType;
-import org.semanticweb.owlapi.model.IRI;
-import org.semanticweb.owlapi.model.OWLAxiom;
-import org.semanticweb.owlapi.model.OWLClass;
-import org.semanticweb.owlapi.model.OWLClassExpression;
-import org.semanticweb.owlapi.model.OWLEquivalentClassesAxiom;
-import org.semanticweb.owlapi.model.OWLException;
-import org.semanticweb.owlapi.model.OWLOntology;
-import org.semanticweb.owlapi.model.OWLOntologyCreationException;
-import org.semanticweb.owlapi.model.OWLOntologyFormat;
-import org.semanticweb.owlapi.model.OWLOntologyManager;
-import org.semanticweb.owlapi.model.OWLSubClassOfAxiom;
-import org.semanticweb.owlapi.model.RemoveAxiom;
-import org.zhaowl.engine.ELEngine;
-import org.zhaowl.learner.ELLearner;
-import org.zhaowl.oracle.ELOracle;
-import org.apache.log4j.*;
-
 public class consoleLearner {
 
 	// ############# Game variables Start ######################
-
-	public int membCount = 0;
-	private int equivCount = 0;
 	private boolean ezBox;
 	public boolean autoBox = true;
 	private String filePath;
@@ -51,8 +35,9 @@ public class consoleLearner {
 	
 	// ############# OWL variables Start ######################
 
-	private OWLOntologyManager myManager = null;
-	private ManchesterOWLSyntaxOWLObjectRendererImpl myRenderer = null;
+	private static final OWLOntologyManager myManager = OWLManager.createOWLOntologyManager();
+	private final OWLObjectRenderer myRenderer = new ManchesterOWLSyntaxOWLObjectRendererImpl();
+	private final Metrics myMetrics = new Metrics(myRenderer);
 
 
 	private Set<OWLAxiom> axiomsT = null;
@@ -132,16 +117,16 @@ public class consoleLearner {
 				elQueryEngineForT = new ELEngine(targetOntology);
 				elQueryEngineForH = new ELEngine(hypothesisOntology);
 
-				elLearner = new ELLearner(elQueryEngineForT, elQueryEngineForH, this);
-				elOracle = new ELOracle(elQueryEngineForT, elQueryEngineForH, this);
+				elLearner = new ELLearner(elQueryEngineForT, elQueryEngineForH, myMetrics);
+				elOracle = new ELOracle(elQueryEngineForT, elQueryEngineForH, myMetrics);
 
 
 				long timeStart = System.currentTimeMillis();
 				runLearner(elQueryEngineForT, elQueryEngineForH);
 				long timeEnd = System.currentTimeMillis();
 				System.out.println("Total time (ms): " + (timeEnd - timeStart));
-				System.out.println("Total membership queries: " + membCount);
-				System.out.println("Total equivalence queries: " + equivCount);
+				System.out.println("Total membership queries: " + myMetrics.getMembCount());
+				System.out.println("Total equivalence queries: " + myMetrics.getEquivCount());
 				System.out.println("Target TBox logical axioms: " + axiomsT.size());
 				//////////////////////////////////////////////////////////////////////
 				System.out.println("Total left decompositions: " + elLearner.getNumberLeftDecomposition());
@@ -154,10 +139,10 @@ public class consoleLearner {
 
 
 
-				new Metrics(myRenderer).showCIT(axiomsT,true);
+				myMetrics.showCIT(axiomsT,true);
 				
 				System.out.println("Hypothesis TBox logical axioms: " + hypothesisOntology.getAxioms().size());
-				new Metrics(myRenderer).showCIT(hypothesisOntology.getAxioms(),false);
+				myMetrics.showCIT(hypothesisOntology.getAxioms(),false);
 				elQueryEngineForH.disposeOfReasoner();
 				elQueryEngineForT.disposeOfReasoner();
 
@@ -211,7 +196,7 @@ public class consoleLearner {
 		OWLClassExpression right=null;
  
 		while (!equivalenceQuery()) {			
-			equivCount++;	
+			myMetrics.setEquivCount(myMetrics.getMembCount()+1);
 			lastCE=getCounterExample(elQueryEngineForT,elQueryEngineForH);
 					
 			counterexample = (OWLSubClassOfAxiom) lastCE;
@@ -306,10 +291,10 @@ public class consoleLearner {
 		//win = false;
 
 		try {
-			myManager = OWLManager.createOWLOntologyManager();
+
 			System.out.println("Trying to load targetOntology");
 			targetOntology = myManager.loadOntologyFromOntologyDocument(new File(filePath));
-			myRenderer = new ManchesterOWLSyntaxOWLObjectRendererImpl();
+
 
 			axiomsT = new HashSet<>();
 			for (OWLAxiom axe : targetOntology.getAxioms())
@@ -369,8 +354,8 @@ public class consoleLearner {
 			System.out.println("Loaded successfully.");
 			System.out.println();
 
-			concepts = new Metrics(myRenderer).getSuggestionNames("concept", newFile);
-			roles = new Metrics(myRenderer).getSuggestionNames("role", newFile);
+			concepts = myMetrics.getSuggestionNames("concept", newFile);
+			roles = myMetrics.getSuggestionNames("role", newFile);
 
 			System.out.println("Total number of concepts is: " + concepts.size());
 
@@ -403,9 +388,6 @@ public class consoleLearner {
 	}
 
 	public void resetVariables() {
-		myManager = null;
-		myRenderer = null;
-
 		axiomsT = null;
 		axiomsTCheck = null;
 		elQueryEngineForT = null;
@@ -898,7 +880,7 @@ public class consoleLearner {
 
 		//AddAxiom newAxiomInH = new AddAxiom(hypothesisOntology, addedAxiom);
 		//myManager.applyChange(newAxiomInH);
-        System.out.println(addedAxiom.toString());
+        //System.out.println(addedAxiom.toString());
 		myManager.addAxiom(hypothesisOntology, addedAxiom);
 		minimiseHypothesis();
 		// saveOWLFile(hypothesisOntology, hypoFile);

@@ -3,11 +3,11 @@ package org.zhaowl.learner;
 import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLClassExpression;
-import org.zhaowl.console.consoleLearner;
 import org.zhaowl.engine.ELEngine;
 import org.zhaowl.tree.ELEdge;
 import org.zhaowl.tree.ELNode;
 import org.zhaowl.tree.ELTree;
+import org.zhaowl.utils.Metrics;
 
 public class ELLearner {
 	private int unsaturationCounter = 0;
@@ -18,14 +18,14 @@ public class ELLearner {
 	private int branchCounter = 0;
 	private final ELEngine myEngineForT;
 	private final ELEngine myEngineForH;
-	private final consoleLearner myConsole;
+	private final Metrics myMetrics;
 	private OWLClassExpression myExpression;
 	private OWLClass myClass;
 
-	public ELLearner(ELEngine elEngineForT, ELEngine elEngineForH, consoleLearner console) {
+	public ELLearner(ELEngine elEngineForT, ELEngine elEngineForH, Metrics metrics) {
 		myEngineForH = elEngineForH;
 		myEngineForT = elEngineForT;
-		myConsole = console;
+		myMetrics = metrics;
 
 	}
 
@@ -48,7 +48,7 @@ public class ELLearner {
 			for (ELNode nod : treeL.getNodesOnLevel(i + 1)) {
 
 				for (OWLClass cl : myEngineForT.getClassesInSignature()) {
-					myConsole.membCount++;
+					myMetrics.setMembCount(myMetrics.getMembCount() + 1);
 					if (isCounterExample(nod.transformToDescription(), cl))
 						return myEngineForT.getSubClassAxiom(nod.transformToDescription(), cl);
 				}
@@ -60,7 +60,7 @@ public class ELLearner {
 			for (ELNode nod : treeR.getNodesOnLevel(i + 1)) {
 
 				for (OWLClass cl : myEngineForT.getClassesInSignature()) {
-					myConsole.membCount++;
+					myMetrics.setMembCount(myMetrics.getMembCount() + 1);
 					if (isCounterExample(cl, nod.transformToDescription()))
 						return myEngineForT.getSubClassAxiom(cl, nod.transformToDescription());
 				}
@@ -86,7 +86,7 @@ public class ELLearner {
 			for (ELNode nod : tree.getNodesOnLevel(i + 1)) {
 				if (!nod.isRoot()) {
 					for (OWLClass cls : myEngineForT.getClassesInSignature()) {
-						myConsole.membCount++;
+						myMetrics.setMembCount(myMetrics.getMembCount() + 1);
 						if (isCounterExample(nod.transformToDescription(), cls)) {
 							myExpression = nod.transformToDescription();
 							myClass = cls;
@@ -99,7 +99,7 @@ public class ELLearner {
 					oldTree = new ELTree(tree.transformToClassExpression());
 					nod.getEdges().remove(j);
 					for (OWLClass cls : myEngineForT.getClassesInSignature()) {
-						myConsole.membCount++;
+						myMetrics.setMembCount(myMetrics.getMembCount() + 1);
 						if (isCounterExample(tree.transformToClassExpression(), cls)) {
 							myExpression = tree.transformToClassExpression();
 							myClass = cls;
@@ -133,7 +133,7 @@ public class ELLearner {
 			for (ELNode nod : tree.getNodesOnLevel(i + 1)) {
 				if (!nod.isRoot()) {
 					for (OWLClass cls : myEngineForT.getClassesInSignature()) {
-						myConsole.membCount++;
+						myMetrics.setMembCount(myMetrics.getMembCount() + 1);
 						if (isCounterExample(cls, nod.transformToDescription())) {
 							myExpression = nod.transformToDescription();
 							myClass = cls;
@@ -152,7 +152,7 @@ public class ELLearner {
 					for (OWLClass cls : myEngineForT.getClassesInSignature()) {
 						if (!nod.isRoot()) {
 
-							myConsole.membCount++;
+							myMetrics.setMembCount(myMetrics.getMembCount() + 1);
 							if (myEngineForT.entailed(myEngineForT.getSubClassAxiom(cls,
 									nod.getEdges().get(j).getNode().transformToDescription()))) {
 								nod.getEdges().remove(j);
@@ -208,7 +208,7 @@ public class ELLearner {
 				for (OWLClass cl1 : cls.getClassesInSignature()) {
 					if (nod.getLabel().contains(cl1)) {
 						nod.remove(cl1);
-						myConsole.membCount++;
+						myMetrics.setMembCount(myMetrics.getMembCount() + 1);
 						if (myEngineForT
 								.entailed(myEngineForT.getSubClassAxiom(tree.transformToClassExpression(), cl))) {
 							myExpression = tree.transformToClassExpression();
@@ -243,7 +243,7 @@ public class ELLearner {
 				for (OWLClass cl1 : myEngineForT.getClassesInSignature()) {
 					if (!nod.getLabel().contains(cl1)) {
 						nod.extendLabel(cl1);
-						myConsole.membCount++;
+						myMetrics.setMembCount(myMetrics.getMembCount() + 1);
 						if (myEngineForT
 								.entailed(myEngineForT.getSubClassAxiom(cl, tree.transformToClassExpression()))) {
 							myExpression = tree.transformToClassExpression();
@@ -291,7 +291,7 @@ public class ELLearner {
 											.addAll(nod.getEdges().get(k).getNode().getEdges());
 								nod.getEdges().remove(nod.getEdges().get(k));
 
-								myConsole.membCount++;
+								myMetrics.setMembCount(myMetrics.getMembCount() + 1);
 								if (myEngineForT.entailed(
 										myEngineForT.getSubClassAxiom(cl, tree.transformToClassExpression()))) {
 									myExpression = tree.transformToClassExpression();
@@ -344,7 +344,7 @@ public class ELLearner {
 								newEdge = new ELEdge(nod.getEdges().get(j).getLabel(), newSubtree.getRootNode());
 								nod.getEdges().add(newEdge);
 								nod.getEdges().get(j).getNode().remove(lab);
-								myConsole.membCount++;
+								myMetrics.setMembCount(myMetrics.getMembCount() + 1);
 								if (myEngineForT.entailed(
 										myEngineForT.getSubClassAxiom(tree.transformToClassExpression(), cl))) {
 									myExpression = tree.transformToClassExpression();

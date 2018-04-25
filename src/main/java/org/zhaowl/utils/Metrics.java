@@ -8,25 +8,33 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Set;
 
+import org.semanticweb.owlapi.io.OWLObjectRenderer;
 import org.semanticweb.owlapi.model.OWLAxiom;
-import org.semanticweb.owlapi.model.OWLClassExpression;
 
 import uk.ac.manchester.cs.owl.owlapi.mansyntaxrenderer.ManchesterOWLSyntaxOWLObjectRendererImpl;
 
 public class Metrics {
-	private ManchesterOWLSyntaxOWLObjectRendererImpl rendering;
-
+	private OWLObjectRenderer rendering;
+    private int membCount = 0;
+    private int equivCount = 0;
  
-	public Metrics(ManchesterOWLSyntaxOWLObjectRendererImpl rendering)
+	public Metrics(OWLObjectRenderer rendering)
 	{
 		this.rendering = rendering;
 	}
-	public Metrics()
-	{
-		
-	}
-	
+// --Commented out by Inspection START (25/04/2018, 16:31):
+//	public Metrics()
+//	{
+//
+//	}
+// --Commented out by Inspection STOP (25/04/2018, 16:31)
+
 	public void showCIT(Set<OWLAxiom> axSet, boolean x) {
+
+		showCIs(axSet, x);
+	}
+
+	private void showCIs(Set<OWLAxiom> axSet, boolean x) {
 		int avgSize = 0;
 		int sumSize = 0;
 		int smallestSize = 0;
@@ -51,7 +59,7 @@ public class Metrics {
 			for (String anArrIncl : arrIncl)
 				if (anArrIncl.length() > 1)
 					totalSize++;
-			
+
 			if (smallestOne == null) {
 				smallestOne = axe;
 				smallestSize = totalSize;
@@ -66,68 +74,33 @@ public class Metrics {
 		}
 		if(x)
 			System.out.println("Size of T: " + ontSize);
-		else 
+		else
 			System.out.println("Size of H: " + ontSize);
 	}
 
 	public void showCIH(Set<OWLAxiom> axSet) {
-		int avgSize = 0;
-		int sumSize = 0;
-		int smallestSize = 0;
-		OWLAxiom smallestOne = null;
-		int ontSize = 0;
-		int totalSize = 0;
-		for (OWLAxiom axe : axSet) {
-
-			if (axe.toString().contains("Thing"))
-				continue;
-			String inclusion = rendering.render(axe);
-			inclusion = inclusion.replaceAll(" and ", " ");
-			inclusion = inclusion.replaceAll(" some ", " ");
-			if (axe.toString().contains("SubClassOf"))
-				inclusion = inclusion.replaceAll("SubClassOf", "");
-			else
-				inclusion = inclusion.replaceAll("EquivalentTo", "");
-			inclusion = inclusion.replaceAll(" and ", "");
-			// ==System.out.println(inclusion);
-			String[] arrIncl = inclusion.split(" ");
-			totalSize = 0;
-			for (String anArrIncl : arrIncl)
-				if (anArrIncl.length() > 1)
-					totalSize++;
-			
-			if (smallestOne == null) {
-				smallestOne = axe;
-				smallestSize = totalSize;
-			} else {
-				if (smallestSize >= totalSize) {
-					smallestOne = axe;
-					smallestSize = totalSize;
-				}
-			}
-			ontSize += totalSize;
-			sumSize += totalSize;
-		}
-		System.out.println("Size of H: " + ontSize);
+		showCIs(axSet, false);
 	}
 
-	public String fixAxioms(OWLClassExpression axiom) {
-		String auxStr = axiom.toString();
-		auxStr = auxStr.replaceAll(">", "");
-		int startPos = auxStr.indexOf("<");
-		int hashPos = auxStr.indexOf("#");
-		auxStr = auxStr.substring(0, startPos) + auxStr.substring(hashPos + 1);
-		while (auxStr.contains("#")) {
-			// System.out.println(auxStr);
-			startPos = auxStr.indexOf("<");
-			hashPos = auxStr.indexOf("#");
-			auxStr = auxStr.substring(0, startPos) + auxStr.substring(hashPos + 1);
-			// System.out.println(auxStr);
-		}
-		// System.out.println(auxStr);
-		return auxStr;
-	}
-	
+// --Commented out by Inspection START (25/04/2018, 16:30):
+//	public String fixAxioms(OWLClassExpression axiom) {
+//		String auxStr = axiom.toString();
+//		auxStr = auxStr.replaceAll(">", "");
+//		int startPos = auxStr.indexOf("<");
+//		int hashPos = auxStr.indexOf("#");
+//		auxStr = auxStr.substring(0, startPos) + auxStr.substring(hashPos + 1);
+//		while (auxStr.contains("#")) {
+//			// System.out.println(auxStr);
+//			startPos = auxStr.indexOf("<");
+//			hashPos = auxStr.indexOf("#");
+//			auxStr = auxStr.substring(0, startPos) + auxStr.substring(hashPos + 1);
+//			// System.out.println(auxStr);
+//		}
+//		// System.out.println(auxStr);
+//		return auxStr;
+//	}
+// --Commented out by Inspection STOP (25/04/2018, 16:30)
+
 	public ArrayList<String> getSuggestionNames(String s, File newFile) throws IOException {
 
 		ArrayList<String> names = new ArrayList<>();
@@ -212,4 +185,20 @@ public class Metrics {
 		returns[1] = sumSize / axSet.size();
 		return returns;
 	}
+
+    public int getMembCount() {
+        return membCount;
+    }
+
+    public void setMembCount(int membCount) {
+        this.membCount = membCount;
+    }
+
+    public int getEquivCount() {
+        return equivCount;
+    }
+
+    public void setEquivCount(int equivCount) {
+        this.equivCount = equivCount;
+    }
 }

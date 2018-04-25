@@ -195,7 +195,7 @@ public class ELNode {
         return edges;
     }
 
-    public int getLevel() {
+    private int getLevel() {
         return level;
     }
     

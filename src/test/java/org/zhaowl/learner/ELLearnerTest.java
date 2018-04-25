@@ -10,13 +10,17 @@ import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.zhaowl.console.consoleLearner;
 import org.zhaowl.oracle.ELOracle;
 import org.zhaowl.engine.ELEngine;
+import org.zhaowl.utils.Metrics;
+import uk.ac.manchester.cs.owl.owlapi.mansyntaxrenderer.ManchesterOWLSyntaxOWLObjectRendererImpl;
+import org.semanticweb.owlapi.io.OWLObjectRenderer;
 
 
 import static org.junit.Assert.*;
 
 public class ELLearnerTest {
 
-    private final consoleLearner cl = new consoleLearner();
+    private final OWLObjectRenderer myRenderer =  new ManchesterOWLSyntaxOWLObjectRendererImpl();
+    private final Metrics cl = new Metrics(myRenderer);
     private final OWLOntologyManager man = OWLManager.createOWLOntologyManager();
     private OWLOntology targetOntology = null;
     private OWLOntology hypothesisOntology = null;

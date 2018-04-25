@@ -9,21 +9,21 @@ import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLClassExpression;
 import org.semanticweb.owlapi.model.OWLSubClassOfAxiom;
-import org.zhaowl.console.consoleLearner;
 import org.zhaowl.engine.ELEngine;
 import org.zhaowl.tree.ELNode;
 import org.zhaowl.tree.ELTree;
+import org.zhaowl.utils.Metrics;
 
 public class ELOracle {
 
 	private final ELEngine myEngineForT;
 	private final ELEngine myEngineForH;
-	private final consoleLearner myConsole;
+	private final Metrics myMetrics;
 
-	public ELOracle(ELEngine elEngineForT, ELEngine elEngineForH, consoleLearner console) {
+	public ELOracle(ELEngine elEngineForT, ELEngine elEngineForH, Metrics metrics) {
 		myEngineForT = elEngineForT;
 		myEngineForH = elEngineForH;
-		myConsole = console;
+		myMetrics = metrics;
 	}
 
 	public OWLClassExpression oracleSiblingMerge(OWLClassExpression left, OWLClassExpression right) throws Exception {
@@ -119,7 +119,7 @@ public class ELOracle {
 						OWLClassExpression newEx = tree.transformToClassExpression();
 						// System.out.println("After saturation step: " + tree.toDescriptionString());
 						OWLAxiom newAx = myEngineForT.getSubClassAxiom(newEx, sup);
-						myConsole.membCount++;
+						myMetrics.setMembCount(myMetrics.getMembCount() + 1);
 						if (myEngineForT.entailed(newAx)) {
 							tree = new ELTree(sub);
 						} else {
@@ -192,7 +192,7 @@ public class ELOracle {
 
 						nod.getLabel().addAll(clSet);
 
-						myConsole.membCount++;
+						myMetrics.setMembCount(myMetrics.getMembCount() + 1);
 
 						// System.out.println(tree.toDescriptionString());
 						if (myEngineForT.entailed(
