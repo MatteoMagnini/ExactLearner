@@ -24,9 +24,7 @@ import java.util.Set;
 
 public class consoleLearner {
 
-	// ############# Game variables Start ######################
-	private boolean ezBox;
-    private String filePath;
+	private String filePath;
 
 	// ############# Game variables Start ######################
 	
@@ -50,7 +48,6 @@ public class consoleLearner {
 	private ArrayList<String> concepts = new ArrayList<>();
 	private ArrayList<String> roles = new ArrayList<>();
 
-	private Set<OWLAxiom> axiomsH = null;
 	private String ontologyFolderH = null;
 
 	private OWLSubClassOfAxiom lastCE = null;
@@ -82,9 +79,6 @@ public class consoleLearner {
 	private boolean learnerUnsat;
 	private boolean learnerBranch;
 	private boolean learnerDecompR;
-
-	private static final org.slf4j.Logger LOGGER_ = LoggerFactory
-			.getLogger(consoleLearner.class);
 
 	// ############# Oracle and Learner skills END ######################
 
@@ -340,7 +334,7 @@ public class consoleLearner {
 			}
 
 
-			axiomsH = hypothesisOntology.getAxioms();
+//			axiomsH = hypothesisOntology.getAxioms();
 			//public boolean win;
 			// boolean wePlayin = true;
 
@@ -381,25 +375,6 @@ public class consoleLearner {
 			ontologyName = ontologyName + ".owl";
 		ontologyFolder += ontologyName;
 		ontologyFolderH += "hypo_" + ontologyName;
-	}
-
-	public void resetVariables() {
-		axiomsT = null;
-		axiomsTCheck = null;
-		elQueryEngineForT = null;
-		ontologyFolder = null;
-		ontologyName = null;
-		hypoFile = null;
-		newFile = null;
-
-		concepts = new ArrayList<>();
-		roles = new ArrayList<>();
-
-		axiomsH = null;
-		ontologyFolderH = null;
-		targetOntology = null;
-		hypothesisOntology = null;
-		lastCE = null;
 	}
 
 	private Boolean equivalenceQuery() {
@@ -496,14 +471,14 @@ public class consoleLearner {
                                 // System.out.println("eq 1");
                                 // *-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*
                                 // ADD SATURATION FOR newCounterexampleAxiom HERE
-                                OWLClassExpression ex = null;
+//                                OWLClassExpression ex = null;
                                 if (checkLeft(newCounterexampleAxiom)) {
                                     if (oracleMerge) {
 
                                         // ex = null;
                                         // System.out.println(newCounterexampleAxiom);
                                         // if (checkLeft(newCounterexampleAxiom)) {
-                                        ex = elOracle.oracleSiblingMerge(
+										OWLClassExpression ex = elOracle.oracleSiblingMerge(
                                                 newCounterexampleAxiom.getSubClass(),
                                                 newCounterexampleAxiom.getSuperClass());
                                         newCounterexampleAxiom = elQueryEngineForT.getSubClassAxiom(ex,
@@ -517,7 +492,7 @@ public class consoleLearner {
                                     if (oracleBranch) {
                                         // ex = null;
                                         OWLSubClassOfAxiom auxAx = newCounterexampleAxiom;
-                                        ex = elOracle.branchRight(auxAx.getSubClass(), auxAx.getSuperClass());
+										OWLClassExpression ex = elOracle.branchRight(auxAx.getSubClass(), auxAx.getSuperClass());
                                         newCounterexampleAxiom = elQueryEngineForT.getSubClassAxiom(auxAx.getSubClass(),
                                                 ex);
                                         // auxAx = null;
@@ -525,7 +500,7 @@ public class consoleLearner {
                                     }
                                     if (oracleUnsaturate) {
                                         // ex = null;
-                                        ex = elOracle.unsaturateRight(newCounterexampleAxiom);
+										OWLClassExpression ex = elOracle.unsaturateRight(newCounterexampleAxiom);
                                         newCounterexampleAxiom = elQueryEngineForT.getSubClassAxiom(
                                                 newCounterexampleAxiom.getSubClass(), ex);
                                         // ex = null;

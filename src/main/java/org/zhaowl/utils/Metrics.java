@@ -11,16 +11,14 @@ import java.util.Set;
 import org.semanticweb.owlapi.io.OWLObjectRenderer;
 import org.semanticweb.owlapi.model.OWLAxiom;
 
-import uk.ac.manchester.cs.owl.owlapi.mansyntaxrenderer.ManchesterOWLSyntaxOWLObjectRendererImpl;
-
 public class Metrics {
-	private OWLObjectRenderer rendering;
+	private final OWLObjectRenderer myRenderer;
     private int membCount = 0;
     private int equivCount = 0;
  
-	public Metrics(OWLObjectRenderer rendering)
+	public Metrics(OWLObjectRenderer renderer)
 	{
-		this.rendering = rendering;
+		this.myRenderer = renderer;
 	}
 // --Commented out by Inspection START (25/04/2018, 16:31):
 //	public Metrics()
@@ -45,7 +43,7 @@ public class Metrics {
 
 			if (axe.toString().contains("Thing"))
 				continue;
-			String inclusion = rendering.render(axe);
+			String inclusion = myRenderer.render(axe);
 			inclusion = inclusion.replaceAll(" and ", " ");
 			inclusion = inclusion.replaceAll(" some ", " ");
 			if (axe.toString().contains("SubClassOf"))
@@ -143,7 +141,7 @@ public class Metrics {
 		int smallestSize = 0;
 		int totalSize = 0;
 		for (OWLAxiom axe : axSet) {
-			String inclusion = rendering.render(axe);
+			String inclusion = myRenderer.render(axe);
 			inclusion = inclusion.replaceAll(" and ", " ");
 			inclusion = inclusion.replaceAll(" some ", " ");
 			
@@ -179,7 +177,7 @@ public class Metrics {
 			sumSize += totalSize;
 			//System.out.println("Size of : " + rendering.render(axe) + "." + totalSize);
 		}
-		System.out.println("Smallest logical axiom: " + rendering.render(smallestOne));
+		System.out.println("Smallest logical axiom: " + myRenderer.render(smallestOne));
 		System.out.println("Size is: " + smallestSize);
 		returns[0] = smallestSize;
 		returns[1] = sumSize / axSet.size();
