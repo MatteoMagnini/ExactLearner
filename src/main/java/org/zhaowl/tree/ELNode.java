@@ -198,5 +198,9 @@ public class ELNode {
     public int getLevel() {
         return level;
     }
+    
+    public boolean isRoot() {
+		return parent == null;
+	}
 }
 

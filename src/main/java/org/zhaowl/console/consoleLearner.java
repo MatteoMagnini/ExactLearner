@@ -146,6 +146,13 @@ public class consoleLearner {
 				System.out.println("Total membership queries: " + membCount);
 				System.out.println("Total equivalence queries: " + equivCount);
 				System.out.println("Target TBox logical axioms: " + axiomsT.size());
+				//////////////////////////////////////////////////////////////////////
+				System.out.println("Total left decompositions: " + elLearner.getNumberLeftDecomposition());
+				System.out.println("Total right decompositions: " + elLearner.getNumberRightDecomposition());
+				System.out.println("Total mergings: " + elLearner.getNumberMerging());
+				System.out.println("Total branchings: " + elLearner.getNumberBranching());
+				System.out.println("Total saturations: " + elLearner.getNumberSaturations());
+				System.out.println("Total unsaturations: " + elLearner.getNumberUnsaturations());
 				saveOWLFile(hypothesisOntology, hypoFile);
 
 
