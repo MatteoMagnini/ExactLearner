@@ -1,19 +1,13 @@
 package org.zhaowl.oracle;
 
  
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
-import org.semanticweb.owlapi.model.AxiomType;
-import org.semanticweb.owlapi.model.OWLAxiom;
- 
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLClassExpression;
-import org.semanticweb.owlapi.model.OWLEquivalentClassesAxiom;
 import org.semanticweb.owlapi.model.OWLSubClassOfAxiom;
 import org.zhaowl.engine.ELEngine;
+import org.zhaowl.tree.ELEdge;
 import org.zhaowl.tree.ELNode;
 import org.zhaowl.tree.ELTree;
 import org.zhaowl.utils.Metrics;
@@ -21,10 +15,15 @@ import org.zhaowl.utils.Metrics;
  
 
 public class ELOracle {
-
+	private int unsaturationCounter = 0;
+	private int saturationCounter = 0;
+	private int mergeCounter = 0;
+	private int branchCounter = 0;
 	private final ELEngine myEngineForT;
 	private final ELEngine myEngineForH;
 	private final Metrics myMetrics;
+	private OWLClassExpression myExpression;
+	private OWLClassExpression myClass;
 
 	public ELOracle(ELEngine elEngineForT, ELEngine elEngineForH, Metrics metrics) {
 		myEngineForT = elEngineForT;
@@ -32,287 +31,172 @@ public class ELOracle {
 		myMetrics = metrics;
 	}
 
- 
-	public OWLSubClassOfAxiom mergeLeft(OWLClassExpression left, OWLClassExpression right) throws Exception {
-		 
- 
-		ELTree tree = new ELTree(left);
-		 
-		OWLSubClassOfAxiom axiom=null;
-		OWLClassExpression oldTree = tree.transformToClassExpression();
+	public OWLSubClassOfAxiom unsaturateRight(OWLClassExpression cl,OWLClassExpression expression) throws Exception {
+		myClass = cl;
+		myExpression = expression;
+		while (unsaturating(myClass,myExpression)) {
+        }
+		return myEngineForT.getSubClassAxiom(myClass,myExpression);
+	}
+
+	private Boolean unsaturating(OWLClassExpression cl,OWLClassExpression expression) throws Exception {
+		boolean flag = false;
+		ELTree tree = new ELTree(expression);
 		for (int i = 0; i < tree.getMaxLevel(); i++) {
-			Set<ELNode> nodes = tree.getNodesOnLevel(i + 1);
-			if (!nodes.isEmpty())
-				for (ELNode nod : nodes) {
-					// nod.label.addAll(nod.label);
-					if (!nod.getEdges().isEmpty() && nod.getEdges().size() > 1) {
-
-						for (int j = 0; j < nod.getEdges().size(); j++) {
-							for (int k = 0; k < nod.getEdges().size(); k++) {
-								if (j == k) {
-									continue;
-								}
-								if (nod.getEdges().get(j).getStrLabel().equals(nod.getEdges().get(k).getStrLabel())) {
-
-									// System.out.println("they are equal: " +
-									// nod.edges.get(j).node.toDescriptionString() + " AND " +
-									// nod.edges.get(k).node.toDescriptionString());
-									nod.getEdges().get(j).getNode().getLabel().addAll(nod.getEdges().get(k).getNode().getLabel());
-									if (!nod.getEdges().get(k).getNode().getEdges().isEmpty())
-										nod.getEdges().get(j).getNode().getEdges().addAll(nod.getEdges().get(k).getNode().getEdges());
-									nod.getEdges().remove(nod.getEdges().get(k));
-									if (myEngineForT.entailed(myEngineForT.getSubClassAxiom(left,
-											tree.transformToClassExpression()))) {
-										oldTree =  tree.transformToClassExpression();
-									} else {
-										tree = new ELTree(oldTree);
-									}
-								}
-							}
+			for (ELNode nod : tree.getNodesOnLevel(i + 1)) {
+                OWLClassExpression cls = nod.transformToDescription();
+				for (OWLClass cl1 : cls.getClassesInSignature()) {
+					if (nod.getLabel().contains(cl1)) {
+						nod.remove(cl1);
+						 
+						if (!myEngineForH
+								.entailed(myEngineForH.getSubClassAxiom(cl,tree.transformToClassExpression()))) {
+							myExpression = tree.transformToClassExpression();
+							myClass = cl;
+							flag = true;
+							unsaturationCounter++;
+						} else {
+							nod.extendLabel(cl1);
 						}
-
 					}
 				}
+			}
 		}
-		// System.out.println(tree.getRootNode());
-
-		System.out.flush();
-		return axiom;
+		return flag;
 	}
-	 
-	 
-
-//	private Set<Set<OWLClass>> powerSetBySize(Set<OWLClass> originalSet, int size) {
-//		Set<Set<OWLClass>> sets = new HashSet<>();
-//		if (size == 0) {
-//			sets.add(new HashSet<>());
-//			return sets;
-//		}
-//		List<OWLClass> list = new ArrayList<>(originalSet);
-//
-//		for (int i = 0; i < list.size(); i++) {
-//			OWLClass head = list.get(i);
-//			List<OWLClass> rest = list.subList(i + 1, list.size());
-//			Set<Set<OWLClass>> powerRest = powerSetBySize(new HashSet<>(rest), size - 1);
-//			for (Set<OWLClass> p : powerRest) {
-//				HashSet<OWLClass> appendedSet = new HashSet<>();
-//				appendedSet.add(head);
-//				appendedSet.addAll(p);
-//				sets.add(appendedSet);
-//			}
-//		}
-//		return sets;
-//	}
-
- 
-	public OWLSubClassOfAxiom saturateLeft(OWLClassExpression left, OWLClassExpression right) throws Exception {
- 
-//		OWLClassExpression sub = axiom.getSubClass();
-//		OWLClassExpression sup = axiom.getSuperClass();
-//
-//
-//		Set<OWLClass> cIo = myEngineForT.getClassesInSignature();
-//		// Set<ELNode> nodes = null;
-//
-//		ELTree tree = new ELTree(sub);
-//
-//		for (int i = 0; i < tree.getMaxLevel(); i++) {
-//			Set<ELNode> nodes = tree.getNodesOnLevel(i + 1);
-//			if (!nodes.isEmpty())
-//				for (ELNode nod : nodes) {
-//					for (OWLClass cl : cIo) {
-//						// System.out.println("Node before: " + nod);
-//						if (!nod.getLabel().contains(cl) && !cl.toString().contains(":Thing")) {
-//							nod.getLabel().add(cl);
-//						}
-//						// System.out.println("Node after: " + nod);
-//						OWLClassExpression newEx = tree.transformToClassExpression();
-//						// System.out.println("After saturation step: " + tree.toDescriptionString());
-//						OWLSubClassOfAxiom newAx = myEngineForT.getSubClassAxiom(newEx, sup);
-//						myMetrics.setMembCount(myMetrics.getMembCount() + 1);
-//						if (myEngineForT.entailed(newAx)) {
-//							tree = new ELTree(sub);
-//						} else {
-//							sub = tree.transformToClassExpression();
-//						}
-//
-//					}
-//
-//				}
-//		}
-//		// System.out.println("Tree: " + tree.getRootNode());
-//		// System.out.println("Aux Tree: " + auxTree.getRootNode());
-//		// System.out.println("Final after saturation: " + sub);
-
-
-
-		return myEngineForT.getSubClassAxiom(left, right);
-	}
-
-
-
- 
-	public OWLSubClassOfAxiom unsaturateRight(OWLClassExpression left, OWLClassExpression right) throws Exception {
-		OWLSubClassOfAxiom axiom=null;
-//		OWLClassExpression left = ((OWLSubClassOfAxiom) ax).getSubClass();
-//		OWLClassExpression right = ((OWLSubClassOfAxiom) ax).getSuperClass();
-// 
-//		ELTree tree = new ELTree(right);
-//		// Set<ELNode> nodes = null;
-//
-//		int sizeToCheck = 0;
-//
-//		// @foundSomething
-//		// this flag is used to create a new set of elements to iterate over,
-//		// in order to find if a proper combination of concepts that a node needs
-//		// in order to make the CI valid
-//
-//		boolean foundSomething = false;
-//
-//
-//
-//		for (int i = 0; i < tree.getMaxLevel(); i++) {
-//			Set<ELNode> nodes = tree.getNodesOnLevel(i + 1);
-//			for (ELNode nod : nodes) {
-//				if (nod.getLabel().size() < 2)
-//					continue;
-//				while (!foundSomething) {
-//					// size of power set
-//					sizeToCheck++;
-//					// set to be used when building a power set of concepts
-//
-//					// populate set
-//					Set<OWLClass> toBuildPS = new HashSet<>(nod.getLabel());
-//
-//					// set of sets of concepts as power set
-//					// Set<Set<OWLClass>> conceptSet = new HashSet<>();
-//
-//					// populate set of sets of concepts
-//					// @sizeToCheck is the number of concepts in the set
-//					// @sizeToCheck = 1, returns single concepts in power set (ps) [A,B,C,D]
-//					// @sizeToCheck = 2, returns ps size 2 of concepts [(A,B), (A,C), (A,D), (B,C),
-//					// (B,D), (C,D)]
-//					// and so on ...
-//					// this is done in order to check which is the minimal concept(s) set required
-//					// to satisfy the node
-//					// and at the same time, the CI
-//					Set<Set<OWLClass>> conceptSet = powerSetBySize(toBuildPS, sizeToCheck);
-//					System.out.println("stuck here !!!!");
-//					// loop through concept set
-//					for (Set<OWLClass> clSet : conceptSet) {
-//
-//						nod.getLabel().clear();
-//
-//						nod.getLabel().addAll(clSet);
-//
-//						myMetrics.setMembCount(myMetrics.getMembCount() + 1);
-//
-//						// System.out.println(tree.toDescriptionString());
-//						if (myEngineForT.entailed(
-//								myEngineForT.getSubClassAxiom(left, tree.transformToClassExpression())
-//								))
-//
-//						{
-//
-//							foundSomething = true;
-// 
-//
-//						} else {
-//							// System.out.println("This one is useless: " + cl);
-//							// nod.label = new TreeSet<OWLClass>();
-//
-//						}
-//
-//					}
-//				}
-//				// reset power set size to check
-//				foundSomething = false;
-//				sizeToCheck = 0;
-//			}
-//		}
-//		System.out.flush();
-
-
-		return axiom;
-	}
-
- 
-	public OWLSubClassOfAxiom branchRight(OWLClassExpression left, OWLClassExpression right) throws Exception{
-		OWLSubClassOfAxiom axiom=null;
-		return axiom;
-	}
- 
-//		try {
-//
-//			ELTree treeR = new ELTree(right);
-//			Set<ELNode> nodes = null;
-//			List<ELEdge> auxEdges = null;
-//			ELTree auxTree = new ELTree(right);
-//
-//
-//			for (int i = 0; i < treeR.maxLevel; i++) {
-//				nodes = treeR.getNodesOnLevel(i + 1);
-//				for (ELNode nod : nodes) {
-//					if (nod.edges.isEmpty())
-//						continue;
-//					auxEdges = new LinkedList<ELEdge>(nod.edges);
-//					for (int j = 0; j < auxEdges.size(); j++) {
-//						if (auxEdges.get(j).node.label.size() == 1)
-//							continue;
-//						// create list of classes in target node
-//						List<OWLClass> classAux = new ArrayList<OWLClass>();
-//						// fill list with classes
-//						for (OWLClass cl : auxEdges.get(j).node.label)
-//							classAux.add(cl);
-//						// for each class, create a node and add class to target node
-//						for (int k = 0; k < classAux.size(); k++) {
-//
-//							nod.edges.add(new ELEdge(auxEdges.get(j).label, new ELNode(
-//									new ELTree( myEngineForT.getOWLObjectIntersectionOf(classAux)));
-////									 (new Metrics().fixAxioms(classAux.get(k)))))));
-//
-//							// add class to new node
-//							nod.edges.get(nod.edges.size() - 1).node.label.add(classAux.get(k));
-//
-//							// remove class from old node
-//							auxEdges.get(j).node.label.remove(classAux.get(k));
-//
-//							// check target for entailment of new tree
-//
-//							/*
-//							 * if (myEngineForT.entailed(myEngineForT.getSubClassAxiom(left,
-//							 * myEngineForT.parseClassExpression(treeR.toDescriptionString())))) { continue;
-//							 * 
-//							 * } else { // tree is invalid, rollback nod.edges.remove(nod.edges.size() - 1);
-//							 * nod.edges.get(j).node.label.add(classAux.get(k)); // }
-//							 */
-//						}
-//					}
-//				}
-//			}
-//
-//			// System.out.println("branched tree : \n" + treeL.rootNode);
-//			// System.out.println(treeL.toDescriptionString());
-//
-//			System.out.flush();
-//			left = null;
-//			right = null;
-//			auxEdges = null;
-//			nodes = null;
-//			OWLClassExpression ex =  treeR.transformToClassExpression();
-//			treeR = null;
-//
-//
-//			return ex;
-//		} catch (Exception e) {
-//			System.out.println("Error in branchNode: " + e);
-//		}
-//		System.out.flush();
-//		left = null;
-//		right = null;
-
 	
+	public OWLSubClassOfAxiom saturateLeft(OWLClassExpression expression, OWLClassExpression cl) throws Exception {
+		myClass = cl;
+		myExpression = expression;
+		while (saturating(myExpression,myClass)) {
+        }
+		return myEngineForT.getSubClassAxiom(myExpression,myClass);
+	}
+
+	private Boolean saturating(OWLClassExpression expression, OWLClassExpression cl) throws Exception {
+
+		boolean flag = false;
+		ELTree tree = new ELTree(expression);
+		for (int i = 0; i < tree.getMaxLevel(); i++) {
+			for (ELNode nod : tree.getNodesOnLevel(i + 1)) {
+				for (OWLClass cl1 : myEngineForT.getClassesInSignature()) {
+					if (!nod.getLabel().contains(cl1)) {
+						nod.extendLabel(cl1);
+						 
+						if (!myEngineForH
+								.entailed(myEngineForH.getSubClassAxiom( tree.transformToClassExpression(),cl))) {
+							myExpression = tree.transformToClassExpression();
+							myClass = cl;
+							flag = true;
+							saturationCounter++;
+						} else {
+							nod.remove(cl1);
+						}
+					}
+				}
+			}
+		}
+		return flag;
+	}
+ 
+	public OWLSubClassOfAxiom mergeLeft(OWLClassExpression expression,OWLClassExpression cl) throws Exception {
+		myClass = cl;
+		myExpression = expression;
+		while (merging(myExpression,myClass)) {
+        }
+		return myEngineForT.getSubClassAxiom(myClass, myExpression);
+	}
+
+	private Boolean merging(OWLClassExpression expression,OWLClassExpression cl) throws Exception {
+		boolean flag = false;
+		ELTree tree = new ELTree(expression);
+		for (int i = 0; i < tree.getMaxLevel(); i++) {
+			for (ELNode nod : tree.getNodesOnLevel(i + 1)) {
+
+				if (!nod.getEdges().isEmpty() && nod.getEdges().size() > 1) {
+
+					for (int j = 0; j < nod.getEdges().size(); j++) {
+
+						for (int k = 0; k < nod.getEdges().size(); k++) {
+                            ELTree oldTree = new ELTree(tree.transformToClassExpression());
+							if (j != k && nod.getEdges().get(j).getStrLabel()
+									.equals(nod.getEdges().get(k).getStrLabel())) {
+								nod.getEdges().get(j).getNode().getLabel()
+										.addAll(nod.getEdges().get(k).getNode().getLabel());
+								if (!nod.getEdges().get(k).getNode().getEdges().isEmpty())
+									nod.getEdges().get(j).getNode().getEdges()
+											.addAll(nod.getEdges().get(k).getNode().getEdges());
+								nod.getEdges().remove(nod.getEdges().get(k));
+
+								 
+								if (!myEngineForH.entailed(
+										myEngineForH.getSubClassAxiom(tree.transformToClassExpression(),cl))) {
+									myExpression = tree.transformToClassExpression();
+									myClass = cl;
+									flag = true;
+									mergeCounter++;
+								} else {
+									tree = oldTree;
+								}
+
+							}
+						}
+					}
+
+				}
+
+			}
+		}
+		return flag;
+	} 
 	
+	public OWLSubClassOfAxiom branchRight(OWLClassExpression cl,OWLClassExpression expression) throws Exception {
+		myClass = cl;
+		myExpression = expression;
+		while (branching(myClass,myExpression)) {
+        }
+		return myEngineForT.getSubClassAxiom(myClass,myExpression);
+	}
+
+	private Boolean branching(OWLClassExpression cl, OWLClassExpression expression) throws Exception {
+
+		boolean flag = false;
+		ELTree tree = new ELTree(expression);
+		for (int i = 0; i < tree.getMaxLevel(); i++) {
+			for (ELNode nod : tree.getNodesOnLevel(i + 1)) {
+				if (!nod.getEdges().isEmpty()) {
+
+					for (int j = 0; j < nod.getEdges().size(); j++) {
+						if (nod.getEdges().get(j).getNode().getLabel().size() > 1)
+							for (OWLClass lab : nod.getEdges().get(j).getNode().getLabel()) {
+                                ELTree oldTree = new ELTree(tree.transformToClassExpression());
+                                ELTree newSubtree = new ELTree(nod.getEdges().get(j).getNode().transformToDescription());
+								for (OWLClass l : newSubtree.getRootNode().getLabel())
+									newSubtree.getRootNode().remove(l);
+								newSubtree.getRootNode().extendLabel(lab);
+                                ELEdge newEdge = new ELEdge(nod.getEdges().get(j).getLabel(), newSubtree.getRootNode());
+								nod.getEdges().add(newEdge);
+								nod.getEdges().get(j).getNode().remove(lab);
+								
+								if (!myEngineForH.entailed(
+										myEngineForH.getSubClassAxiom(cl,tree.transformToClassExpression()))) {
+									myExpression = tree.transformToClassExpression();
+									myClass = cl;
+									flag = true;
+									branchCounter++;
+								} else {
+									tree = oldTree;
+								}
+							}
+
+					}
+
+				}
+			}
+		}
+		return flag;
+	}
+
 //at the moment duplicated
 	public Boolean isCounterExample(OWLClassExpression left, OWLClassExpression right){
 		return  myEngineForT.entailed(myEngineForT.getSubClassAxiom(left, right))

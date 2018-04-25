@@ -42,7 +42,7 @@ public class ELLearner {
 
 		ELTree treeR = new ELTree(right);
 		ELTree treeL = new ELTree(left);
-
+         
 		for (int i = 0; i < treeL.getMaxLevel(); i++) {
 
 			for (ELNode nod : treeL.getNodesOnLevel(i + 1)) {
