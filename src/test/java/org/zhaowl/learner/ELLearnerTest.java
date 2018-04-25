@@ -6,21 +6,15 @@ import org.junit.Before;
 import org.junit.Test;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.*;
-import org.semanticweb.owlapi.apibinding.OWLManager;
-import org.zhaowl.console.consoleLearner;
-import org.zhaowl.oracle.ELOracle;
 import org.zhaowl.engine.ELEngine;
 import org.zhaowl.utils.Metrics;
 import uk.ac.manchester.cs.owl.owlapi.mansyntaxrenderer.ManchesterOWLSyntaxOWLObjectRendererImpl;
 import org.semanticweb.owlapi.io.OWLObjectRenderer;
 
-
-import static org.junit.Assert.*;
-
 public class ELLearnerTest {
 
     private final OWLObjectRenderer myRenderer =  new ManchesterOWLSyntaxOWLObjectRendererImpl();
-    private final Metrics cl = new Metrics(myRenderer);
+    private final Metrics metrics = new Metrics(myRenderer);
     private final OWLOntologyManager man = OWLManager.createOWLOntologyManager();
     private OWLOntology targetOntology = null;
     private OWLOntology hypothesisOntology = null;
@@ -39,7 +33,7 @@ public class ELLearnerTest {
         elQueryEngineForH = new ELEngine(hypothesisOntology);
         elQueryEngineForT = new ELEngine(targetOntology);
 
-        elLearner = new ELLearner(elQueryEngineForT, elQueryEngineForH, cl);
+        elLearner = new ELLearner(elQueryEngineForT, elQueryEngineForH, metrics);
     }
 
     @Test
