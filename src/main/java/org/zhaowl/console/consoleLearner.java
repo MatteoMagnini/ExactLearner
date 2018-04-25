@@ -117,10 +117,7 @@ public class consoleLearner {
 			// targetOntology from parameters
 			filePath = args[0];
 
-			// normal mode allows for elOracle skills
-			// elOracle skills not allowed
-			// elOracle skills allowed
-			ezBox = args[1].equals("on");
+			 
 
 			// setLearnerSkills
 			setLearnerSkills(args);
@@ -181,28 +178,28 @@ public class consoleLearner {
 	}
 
 	private void setOracleSkills(String[] args) {
-		oracleMerge = args[8].equals("t");
+		oracleMerge = args[7].equals("t");
 
-		oracleSaturate = args[9].equals("t");
+		oracleSaturate = args[8].equals("t");
 
-		oracleBranch = args[10].equals("t");
+		oracleBranch = args[9].equals("t");
 
-		oracleUnsaturate = args[11].equals("t");
+		oracleUnsaturate = args[10].equals("t");
 	}
 
 	private void setLearnerSkills(String[] args) {
 
-		learnerDecompL = args[2].equals("t");
+		learnerDecompL = args[1].equals("t");
 
-		learnerBranch = args[3].equals("t");
+		learnerBranch = args[2].equals("t");
 
-		learnerUnsat = args[4].equals("t");
+		learnerUnsat = args[3].equals("t");
 
-		learnerDecompR = args[5].equals("t");
+		learnerDecompR = args[4].equals("t");
 
-		learnerMerge = args[6].equals("t");
+		learnerMerge = args[5].equals("t");
 
-		learnerSat = args[7].equals("t");
+		learnerSat = args[6].equals("t");
 
 	}
 
@@ -214,18 +211,19 @@ public class consoleLearner {
 		OWLClassExpression right=null;
  
 		while (!equivalenceQuery()) {			
-			equivCount++;
-			if (ezBox) {
-				lastCE=getEasyCounterExample(elQueryEngineForT,elQueryEngineForH);
-			} else {	
-				lastCE=getCounterExample(elQueryEngineForT,elQueryEngineForH);
-			}		
+			equivCount++;	
+			lastCE=getCounterExample(elQueryEngineForT,elQueryEngineForH);
+					
 			counterexample = (OWLSubClassOfAxiom) lastCE;
 			left=counterexample.getSubClass();
 			right=counterexample.getSuperClass();
 			lastCE=elLearner.decompose(left, right);			
 			if(canTransformELrhs()) {
 				lastCE=computeEssentialRightCounterexample();
+				//TODO
+				//if there is a concept name in H ...
+				//if()
+				//siblingmerge	
 			} else if(canTransformELlhs()) {
 				lastCE=computeEssentialLeftCounterexample();
 			} 
@@ -387,30 +385,7 @@ public class consoleLearner {
 
 	}
 	
-	public void ezEq() {
-		if (equivalenceQuery()) {
-			victory();
-			return;
-		}
-
-		for (OWLAxiom ax : axiomsTCheck) {
-			if (ax.toString().contains("Thing"))
-				continue;
-			if (!axiomsH.contains(ax)) {
-				try {
-					addHypothesis(ax);
-					lastCE = ax; 
-					axiomsTCheck.remove(ax);
-					axiomsH.add(ax);
-					break;
-				} catch (Exception e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-			}else
-				System.out.println("Won't add " + myRenderer.render(ax));
-		} 
-	}
+	 
 	
 	private void getOntologyName() {
 

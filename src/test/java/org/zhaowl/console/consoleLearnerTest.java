@@ -50,7 +50,7 @@ public class consoleLearnerTest {
     private void runDoIt(String path, String[] ontologies) {
         for (String fn : ontologies) {
             System.out.println("running on " + path + fn);
-            String[] args = {path + fn, "on", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t"};
+            String[] args = {path + fn,   "t", "t", "t", "t", "t", "t", "t", "t", "t", "t"};
             consoleLearner cl = new consoleLearner();
             cl.doIt(args);
         }
@@ -63,7 +63,7 @@ public class consoleLearnerTest {
             for(File ont : directoryListing) {
                 System.out.println(ont.toString());
                 consoleLearner cl = new consoleLearner();
-                String[] args = {ont.toString(), "on", "t", "t", "t", "t", "t", "t", "t", "t", "t", "t"};
+                String[] args = {ont.toString(),   "t", "t", "t", "t", "t", "t", "t", "t", "t", "t"};
                 cl.doIt(args);
             }
         }
