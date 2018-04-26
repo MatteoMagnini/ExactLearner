@@ -23,7 +23,10 @@ import java.util.Set;
 
 public class consoleLearner {
 
-	private static final double SATURATION_BOUND = 0.5;
+	private static double SATURATION_BOUND = 0d;
+	private static double MERGE_BOUND = 0d;
+	private static double BRANCH_BOUND = 0d;
+	private static double UNSATURATE_BOUND = 0d;
 
 	private String filePath;
 
@@ -158,13 +161,22 @@ public class consoleLearner {
 	}
 
 	private void setOracleSkills(String[] args) {
-		oracleMerge = args[7].equals("t");
-
-		oracleSaturate = args[8].equals("t");
-
-		oracleBranch = args[9].equals("t");
-
-		oracleUnsaturate = args[10].equals("t");
+		if(!args[7].equals("0")) {
+			oracleMerge = true;
+			MERGE_BOUND = Double.parseDouble(args[7]);
+		}
+		if(!args[8].equals("0")) {
+			oracleSaturate = true;
+			SATURATION_BOUND = Double.parseDouble(args[8]);
+		}
+		if(!args[9].equals("0")) {
+			oracleBranch = true;
+			BRANCH_BOUND = Double.parseDouble(args[9]);
+		}
+		if(!args[10].equals("0")) {
+			oracleUnsaturate = true;
+			UNSATURATE_BOUND = Double.parseDouble(args[10]);
+		}
 	}
 
 	private void setLearnerSkills(String[] args) {
@@ -215,7 +227,7 @@ public class consoleLearner {
 	private void addHypothesis(OWLAxiom addedAxiom) {
 
 		myManager.addAxiom(hypothesisOntology, addedAxiom);
-		System.out.println(addedAxiom);
+//		System.out.println(addedAxiom);
 		minimiseHypothesis();
 
 	}
@@ -483,7 +495,7 @@ public class consoleLearner {
 				OWLClassExpression right = counterexample.getSuperClass();	 
 
 							if (oracleMerge) {
-								newCounterexampleAxiom = elOracle.mergeLeft(left, right);
+								newCounterexampleAxiom = elOracle.mergeLeft(left, right, MERGE_BOUND);
 								left = ((OWLSubClassOfAxiom) newCounterexampleAxiom).getSubClass();
 								right = ((OWLSubClassOfAxiom) newCounterexampleAxiom).getSuperClass();
 							}
@@ -494,12 +506,12 @@ public class consoleLearner {
 							}
 
 							if (oracleBranch) {
-								newCounterexampleAxiom = elOracle.branchRight(left, right);
+								newCounterexampleAxiom = elOracle.branchRight(left, right, BRANCH_BOUND);
 								left = ((OWLSubClassOfAxiom) newCounterexampleAxiom).getSubClass();
 								right = ((OWLSubClassOfAxiom) newCounterexampleAxiom).getSuperClass();
 							}
 							if (oracleUnsaturate) {
-								newCounterexampleAxiom = elOracle.unsaturateRight(left, right);
+								newCounterexampleAxiom = elOracle.unsaturateRight(left, right, UNSATURATE_BOUND);
 							}
 						 
 					 

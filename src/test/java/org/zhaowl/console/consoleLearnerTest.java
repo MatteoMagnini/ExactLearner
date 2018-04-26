@@ -20,11 +20,16 @@ public class consoleLearnerTest {
 
     @Test
     public void allParameterCombinationsAnimal () {
-        int numArgs = 10;
+        int numArgs = 6;
         int maxCounter = 2 << (numArgs-1);
+        String [] args = new String[11];
+        args[0]  = "src/main/resources/ontologies/small/animals.owl";
+        args[7]  = "0.1";
+        args[8]  = "0.1";
+        args[9]  = "0.1";
+        args[10] = "0.1";
+
         for(int counter = 0; counter < maxCounter; counter++) {
-            String [] args = new String[numArgs+1];
-            args[0] = "src/main/resources/ontologies/small/animals.owl";
             for (int i = 1; i <= numArgs; i++) {
                 if ((counter & (1<<(i-1))) >0) {
                     args[i] = "t";
@@ -77,7 +82,7 @@ public class consoleLearnerTest {
     private void runDoIt(String path, String[] ontologies) {
         for (String fn : ontologies) {
             System.out.println("running on " + path + fn);
-            String[] args = {path + fn,   "t", "t", "t", "t", "t", "t", "t", "t", "t", "t"};
+            String[] args = {path + fn,   "t", "t", "t", "t", "t", "t", "0.1", "0.1", "0.1", "0.1"};
             consoleLearner cl = new consoleLearner();
             cl.doIt(args);
         }
@@ -90,7 +95,7 @@ public class consoleLearnerTest {
             for(File ont : directoryListing) {
                 System.out.println(ont.toString());
                 consoleLearner cl = new consoleLearner();
-                String[] args = {ont.toString(),   "t", "t", "t", "t", "t", "t", "t", "t", "t", "t"};
+                String[] args = {ont.toString(),   "t", "t", "t", "t", "t", "t", "0.1", "0.1", "0.1", "0.1"};
                 cl.doIt(args);
             }
         }

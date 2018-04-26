@@ -82,14 +82,6 @@ Class: <http://www.geneontology.org/go#FAO_0000040>
          and <http://www.geneontology.org/go#FAO_0000040>
     
     
-Class: <http://www.geneontology.org/go#FAO_0001010>
-
-    SubClassOf: 
-        <http://www.geneontology.org/go#FAO_0000001>
-         and <http://www.geneontology.org/go#FAO_0001001>
-         and <http://www.geneontology.org/go#FAO_0001010>
-    
-    
 Class: <http://www.geneontology.org/go#FAO_0000042>
 
     SubClassOf: 
@@ -100,6 +92,14 @@ Class: <http://www.geneontology.org/go#FAO_0000042>
          and <http://www.geneontology.org/go#FAO_0000024>
          and <http://www.geneontology.org/go#FAO_0000038>
          and <http://www.geneontology.org/go#FAO_0000042>
+    
+    
+Class: <http://www.geneontology.org/go#FAO_0001010>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#FAO_0000001>
+         and <http://www.geneontology.org/go#FAO_0001001>
+         and <http://www.geneontology.org/go#FAO_0001010>
     
     
 Class: <http://www.geneontology.org/go#FAO_0000041>
@@ -576,19 +576,19 @@ Class: <http://www.geneontology.org/go#FAO_0001023>
          and <http://www.geneontology.org/go#FAO_0001023>
     
     
-Class: <http://www.geneontology.org/go#FAO_0000010>
-
-    SubClassOf: 
-        <http://www.geneontology.org/go#FAO_0000001>
-         and <http://www.geneontology.org/go#FAO_0000010>
-    
-    
 Class: <http://www.geneontology.org/go#FAO_0001022>
 
     SubClassOf: 
         <http://www.geneontology.org/go#FAO_0000001>
          and <http://www.geneontology.org/go#FAO_0000018>
          and <http://www.geneontology.org/go#FAO_0001022>
+    
+    
+Class: <http://www.geneontology.org/go#FAO_0000010>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#FAO_0000001>
+         and <http://www.geneontology.org/go#FAO_0000010>
     
     
 Class: <http://www.geneontology.org/go#FAO_0000013>

@@ -31,15 +31,15 @@ public class ELOracle {
 		myMetrics = metrics;
 	}
 
-	public OWLSubClassOfAxiom unsaturateRight(OWLClassExpression cl,OWLClassExpression expression) throws Exception {
+	public OWLSubClassOfAxiom unsaturateRight(OWLClassExpression cl, OWLClassExpression expression, double bound) throws Exception {
 		myClass = cl;
 		myExpression = expression;
-		while (unsaturating(myClass,myExpression)) {
+		while (unsaturating(myClass,myExpression, bound)) {
         }
 		return myEngineForT.getSubClassAxiom(myClass,myExpression);
 	}
 
-	private Boolean unsaturating(OWLClassExpression cl,OWLClassExpression expression) throws Exception {
+	private Boolean unsaturating(OWLClassExpression cl, OWLClassExpression expression, double bound) throws Exception {
 		boolean flag = false;
 		ELTree tree = new ELTree(expression);
 		for (int i = 0; i < tree.getMaxLevel(); i++) {
@@ -100,15 +100,15 @@ public class ELOracle {
 		return flag;
 	}
  
-	public OWLSubClassOfAxiom mergeLeft(OWLClassExpression expression,OWLClassExpression cl) throws Exception {
+	public OWLSubClassOfAxiom mergeLeft(OWLClassExpression expression, OWLClassExpression cl, double bound) throws Exception {
 		myClass = cl;
 		myExpression = expression;
-		while (merging(myExpression,myClass)) {
+		while (merging(myExpression,myClass, bound)) {
         }
 		return myEngineForT.getSubClassAxiom(myExpression,myClass);
 	}
 
-	private Boolean merging(OWLClassExpression expression,OWLClassExpression cl) throws Exception {
+	private Boolean merging(OWLClassExpression expression, OWLClassExpression cl, double bound) throws Exception {
 		boolean flag = false;
 		ELTree tree = new ELTree(expression);
 		for (int i = 0; i < tree.getMaxLevel(); i++) {
@@ -151,15 +151,15 @@ public class ELOracle {
 		return flag;
 	} 
 	
-	public OWLSubClassOfAxiom branchRight(OWLClassExpression cl,OWLClassExpression expression) throws Exception {
+	public OWLSubClassOfAxiom branchRight(OWLClassExpression cl, OWLClassExpression expression, double bound) throws Exception {
 		myClass = cl;
 		myExpression = expression;
-		while (branching(myClass,myExpression)) {
+		while (branching(myClass,myExpression, bound)) {
         }
 		return myEngineForT.getSubClassAxiom(myClass,myExpression);
 	}
 
-	private Boolean branching(OWLClassExpression cl, OWLClassExpression expression) throws Exception {
+	private Boolean branching(OWLClassExpression cl, OWLClassExpression expression, double bound) throws Exception {
 
 		boolean flag = false;
 		ELTree tree = new ELTree(expression);
