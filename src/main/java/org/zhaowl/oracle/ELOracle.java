@@ -203,32 +203,36 @@ public class ELOracle {
 	public OWLSubClassOfAxiom composeLeft(OWLClassExpression expression,OWLClassExpression cl, double bound) throws Exception {
 		myClass = cl;
 		myExpression = expression;
-		while (composingLeft(myExpression,myClass)) {
+		int k=myEngineForT.getOntology().getAxiomCount();
+		while (composingLeft(myExpression,myClass)&&(k>0)) {
+			k--;
         }
 		return myEngineForT.getSubClassAxiom(myExpression,myClass);
 	}
 
 	private Boolean composingLeft(OWLClassExpression expression, OWLClassExpression cl) throws Exception {
 		Boolean flag=false; 
-		
+		//TODO
 		return flag;
 	} 
 	
 	public OWLSubClassOfAxiom composeRight(OWLClassExpression cl, OWLClassExpression expression, double bound) throws Exception {
 		myClass = cl;
 		myExpression = expression;
-		while (composingRight(myClass,myExpression)) {
+		int k=myEngineForT.getOntology().getAxiomCount();
+		while (composingRight(myClass,myExpression)&&(k>0)) {
+			k--;
         }
 		return myEngineForT.getSubClassAxiom(myClass,myExpression);
 	}
 
 	private Boolean composingRight(OWLClassExpression cl, OWLClassExpression expression) throws Exception {
 		Boolean flag=false; 
-		
+		//TODO
 		return flag;
 	} 
 	
-//at the moment duplicated
+	//at the moment duplicated
 	public Boolean isCounterExample(OWLClassExpression left, OWLClassExpression right){
 		return  myEngineForT.entailed(myEngineForT.getSubClassAxiom(left, right))
 				&&
