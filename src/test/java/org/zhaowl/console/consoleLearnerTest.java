@@ -3,13 +3,40 @@ package org.zhaowl.console;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import java.io.File;
-import java.io.FileFilter;
+import java.util.Arrays;
 
 import org.junit.Test;
+import org.junit.Before;
+
 
 import static org.junit.Assert.*;
 
 public class consoleLearnerTest {
+
+    @Before
+    public void setUp() throws Exception {
+        Logger.getRootLogger().setLevel(Level.OFF);
+    }
+
+    @Test
+    public void allParameterCombinationsAnimal () {
+        int numArgs = 10;
+        int maxCounter = 2 << (numArgs-1);
+        for(int counter = 0; counter < maxCounter; counter++) {
+            String [] args = new String[numArgs+1];
+            args[0] = "src/main/resources/ontologies/small/animals.owl";
+            for (int i = 1; i <= numArgs; i++) {
+                if ((counter & (1<<(i-1))) >0) {
+                    args[i] = "t";
+                } else {
+                    args[i] = "f";
+                }
+            }
+            consoleLearner cl = new consoleLearner();
+            System.out.println(Arrays.toString(args));
+            cl.doIt(args);
+        }
+    }
 
     @Test
     public void smallOntologiesNamed() {
