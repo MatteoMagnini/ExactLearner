@@ -1,7 +1,7 @@
 package org.zhaowl.oracle;
 
  
-import java.util.Set;
+import java.util.Random;
 
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLClassExpression;
@@ -65,22 +65,23 @@ public class ELOracle {
 		return flag;
 	}
 	
-	public OWLSubClassOfAxiom saturateLeft(OWLClassExpression expression, OWLClassExpression cl) throws Exception {
+	public OWLSubClassOfAxiom saturateLeft(OWLClassExpression expression, OWLClassExpression cl, double bound) throws Exception {
 		myClass = cl;
 		myExpression = expression;
-		while (saturating(myExpression,myClass)) {
+		while (saturating(myExpression,myClass, bound)) {
         }
 		return myEngineForT.getSubClassAxiom(myExpression,myClass);
 	}
 
-	private Boolean saturating(OWLClassExpression expression, OWLClassExpression cl) throws Exception {
+	private Boolean saturating(OWLClassExpression expression, OWLClassExpression cl, double bound) throws Exception {
 
 		boolean flag = false;
 		ELTree tree = new ELTree(expression);
+		Random random = new Random();
 		for (int i = 0; i < tree.getMaxLevel(); i++) {
 			for (ELNode nod : tree.getNodesOnLevel(i + 1)) {
 				for (OWLClass cl1 : myEngineForT.getClassesInSignature()) {
-					if (!nod.getLabel().contains(cl1)) {
+					if ((random.nextDouble() < bound) && !nod.getLabel().contains(cl1)) {
 						nod.extendLabel(cl1);
 						 
 						if (!myEngineForH

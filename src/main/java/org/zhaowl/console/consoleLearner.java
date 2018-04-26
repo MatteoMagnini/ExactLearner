@@ -23,6 +23,8 @@ import java.util.Set;
 
 public class consoleLearner {
 
+	private static final double SATURATION_BOUND = 0.5;
+
 	private String filePath;
 
 	// ############# Game variables Start ######################
@@ -206,6 +208,7 @@ public class consoleLearner {
 	private void addHypothesis(OWLAxiom addedAxiom) {
 
 		myManager.addAxiom(hypothesisOntology, addedAxiom);
+		System.out.println(addedAxiom);
 		minimiseHypothesis();
 
 	}
@@ -480,7 +483,7 @@ public class consoleLearner {
 								right = ((OWLSubClassOfAxiom) newCounterexampleAxiom).getSuperClass();
 							}
 							if (oracleSaturate) {
-								newCounterexampleAxiom = elOracle.saturateLeft(left, right);
+								newCounterexampleAxiom = elOracle.saturateLeft(left, right, SATURATION_BOUND);
 								left = ((OWLSubClassOfAxiom) newCounterexampleAxiom).getSubClass();
 								right = ((OWLSubClassOfAxiom) newCounterexampleAxiom).getSuperClass();
 							}
