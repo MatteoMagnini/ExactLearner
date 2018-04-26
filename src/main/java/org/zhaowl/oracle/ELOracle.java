@@ -10,9 +10,7 @@ import org.zhaowl.engine.ELEngine;
 import org.zhaowl.tree.ELEdge;
 import org.zhaowl.tree.ELNode;
 import org.zhaowl.tree.ELTree;
-import org.zhaowl.utils.Metrics;
 
- 
 
 public class ELOracle {
 	private int unsaturationCounter = 0;
@@ -21,16 +19,14 @@ public class ELOracle {
 	private int branchCounter = 0;
 	private final ELEngine myEngineForT;
 	private final ELEngine myEngineForH;
-	private final Metrics myMetrics;
-	private OWLClassExpression myExpression;
+    private OWLClassExpression myExpression;
 	private OWLClassExpression myClass;
-	private Random random = new Random();
+	private final Random random = new Random();
 
 
-    public ELOracle(ELEngine elEngineForT, ELEngine elEngineForH, Metrics metrics) {
+    public ELOracle(ELEngine elEngineForT, ELEngine elEngineForH) {
 		myEngineForT = elEngineForT;
 		myEngineForH = elEngineForH;
-		myMetrics = metrics;
 	}
 
 	public OWLSubClassOfAxiom unsaturateRight(OWLClassExpression cl, OWLClassExpression expression, double bound) throws Exception {

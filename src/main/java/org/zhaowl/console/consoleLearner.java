@@ -41,12 +41,9 @@ public class consoleLearner {
 	private final Metrics myMetrics = new Metrics(myRenderer);
 
 	private Set<OWLAxiom> axiomsT = null;
-	private Set<OWLAxiom> axiomsH = null;
 	private String ontologyFolder = null;
 	private String ontologyName = null;
 	private File hypoFile = null;
-
-	private ArrayList<String> roles = new ArrayList<>();
 
 	private String ontologyFolderH = null;
 
@@ -110,7 +107,7 @@ public class consoleLearner {
 				elQueryEngineForH = new ELEngine(hypothesisOntology);
 
 				elLearner = new ELLearner(elQueryEngineForT, elQueryEngineForH, myMetrics);
-				elOracle = new ELOracle(elQueryEngineForT, elQueryEngineForH, myMetrics);
+				elOracle = new ELOracle(elQueryEngineForT, elQueryEngineForH);
 
 				long timeStart = System.currentTimeMillis();
 				runLearner(elQueryEngineForT, elQueryEngineForH);
@@ -420,7 +417,7 @@ public class consoleLearner {
 			System.out.println();
 
 			ArrayList<String> concepts = myMetrics.getSuggestionNames("concept", newFile);
-			roles = myMetrics.getSuggestionNames("role", newFile);
+//			ArrayList<String> roles = myMetrics.getSuggestionNames("role", newFile);
 
 			System.out.println("Total number of concepts is: " + concepts.size());
 
@@ -453,7 +450,7 @@ public class consoleLearner {
 		return elQueryEngineForH.entailed(axiomsT);
 	}
 
-	public OWLSubClassOfAxiom getCounterExample(ELEngine elQueryEngineForT, ELEngine elQueryEngineForH)
+	private OWLSubClassOfAxiom getCounterExample(ELEngine elQueryEngineForT, ELEngine elQueryEngineForH)
 			throws Exception {
 		
 		for (OWLAxiom selectedAxiom : axiomsT) {
@@ -473,22 +470,20 @@ public class consoleLearner {
 
 					OWLEquivalentClassesAxiom equivCounterexample = (OWLEquivalentClassesAxiom) selectedAxiom;
 					Set<OWLSubClassOfAxiom> eqsubclassaxioms = equivCounterexample.asOWLSubClassOfAxioms();
-					Iterator<OWLSubClassOfAxiom> iterator = eqsubclassaxioms.iterator();
 
-					while (iterator.hasNext()) {
-						OWLSubClassOfAxiom subClassAxiom = iterator.next();
-						if (!elQueryEngineForH.entailed(subClassAxiom)) {
-							 
-							return getCounterExampleSubClassOf(elQueryEngineForT,elQueryEngineForH,subClassAxiom);	
-						}
+				for (OWLSubClassOfAxiom subClassAxiom : eqsubclassaxioms) {
+					if (!elQueryEngineForH.entailed(subClassAxiom)) {
+
+						return getCounterExampleSubClassOf(elQueryEngineForT, elQueryEngineForH, subClassAxiom);
 					}
+				}
 				 	
 			}
 		}
 		throw new Exception("No more counterexamples");
 	}
 
-			public OWLSubClassOfAxiom getCounterExampleSubClassOf(ELEngine elQueryEngineForT, ELEngine elQueryEngineForH,OWLSubClassOfAxiom counterexample)
+			private OWLSubClassOfAxiom getCounterExampleSubClassOf(ELEngine elQueryEngineForT, ELEngine elQueryEngineForH, OWLSubClassOfAxiom counterexample)
 					throws Exception {
 				OWLSubClassOfAxiom newCounterexampleAxiom = counterexample;
 				OWLClassExpression left = counterexample.getSubClass();
@@ -496,19 +491,19 @@ public class consoleLearner {
 
 							if (oracleMerge) {
 								newCounterexampleAxiom = elOracle.mergeLeft(left, right, MERGE_BOUND);
-								left = ((OWLSubClassOfAxiom) newCounterexampleAxiom).getSubClass();
-								right = ((OWLSubClassOfAxiom) newCounterexampleAxiom).getSuperClass();
+								left = newCounterexampleAxiom.getSubClass();
+								right = newCounterexampleAxiom.getSuperClass();
 							}
 							if (oracleSaturate) {
 								newCounterexampleAxiom = elOracle.saturateLeft(left, right, SATURATION_BOUND);
-								left = ((OWLSubClassOfAxiom) newCounterexampleAxiom).getSubClass();
-								right = ((OWLSubClassOfAxiom) newCounterexampleAxiom).getSuperClass();
+								left = newCounterexampleAxiom.getSubClass();
+								right = newCounterexampleAxiom.getSuperClass();
 							}
 
 							if (oracleBranch) {
 								newCounterexampleAxiom = elOracle.branchRight(left, right, BRANCH_BOUND);
-								left = ((OWLSubClassOfAxiom) newCounterexampleAxiom).getSubClass();
-								right = ((OWLSubClassOfAxiom) newCounterexampleAxiom).getSuperClass();
+								left = newCounterexampleAxiom.getSubClass();
+								right = newCounterexampleAxiom.getSuperClass();
 							}
 							if (oracleUnsaturate) {
 								newCounterexampleAxiom = elOracle.unsaturateRight(left, right, UNSATURATE_BOUND);

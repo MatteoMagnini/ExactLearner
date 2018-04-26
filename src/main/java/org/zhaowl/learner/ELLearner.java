@@ -330,13 +330,11 @@ public class ELLearner {
 
 					for (int j = 0; j < nod.getEdges().size(); j++) {
 						if (nod.getEdges().get(j).getNode().getLabel().size() > 1) {
-							TreeSet<OWLClass> s=new  TreeSet<OWLClass>();
-                        	s.addAll(nod.getEdges().get(j).getNode().getLabel());
+							TreeSet<OWLClass> s = new TreeSet<>(nod.getEdges().get(j).getNode().getLabel());
 							for (OWLClass lab : s) {
                                 ELTree oldTree = new ELTree(tree.transformToClassExpression());
                                 ELTree newSubtree = new ELTree(nod.getEdges().get(j).getNode().transformToDescription());
-                                TreeSet<OWLClass> ts=new  TreeSet<OWLClass>();
-                                ts.addAll(newSubtree.getRootNode().getLabel());
+								TreeSet<OWLClass> ts = new TreeSet<>(newSubtree.getRootNode().getLabel());
                                 for (OWLClass l : ts) {
 									newSubtree.getRootNode().getLabel().remove(l);
 								}	
@@ -365,7 +363,7 @@ public class ELLearner {
 	}
 
 	// at the moment duplicated
-	public Boolean isCounterExample(OWLClassExpression left, OWLClassExpression right) {
+    private Boolean isCounterExample(OWLClassExpression left, OWLClassExpression right) {
 		return myEngineForT.entailed(myEngineForT.getSubClassAxiom(left, right))
 				&& !myEngineForH.entailed(myEngineForH.getSubClassAxiom(left, right));
 	}

@@ -576,19 +576,19 @@ Class: <http://www.geneontology.org/go#FAO_0001023>
          and <http://www.geneontology.org/go#FAO_0001023>
     
     
+Class: <http://www.geneontology.org/go#FAO_0000010>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#FAO_0000001>
+         and <http://www.geneontology.org/go#FAO_0000010>
+    
+    
 Class: <http://www.geneontology.org/go#FAO_0001022>
 
     SubClassOf: 
         <http://www.geneontology.org/go#FAO_0000001>
          and <http://www.geneontology.org/go#FAO_0000018>
          and <http://www.geneontology.org/go#FAO_0001022>
-    
-    
-Class: <http://www.geneontology.org/go#FAO_0000010>
-
-    SubClassOf: 
-        <http://www.geneontology.org/go#FAO_0000001>
-         and <http://www.geneontology.org/go#FAO_0000010>
     
     
 Class: <http://www.geneontology.org/go#FAO_0000013>
