@@ -199,7 +199,7 @@ public class ELLearner {
 			for (ELNode nod : tree.getNodesOnLevel(i + 1)) {
                 OWLClassExpression cls = nod.transformToDescription();
 				for (OWLClass cl1 : cls.getClassesInSignature()) {
-					if (nod.getLabel().contains(cl1)) {
+					if (nod.getLabel().contains(cl1)&& !cl1.toString().contains("Thing")) {
 						nod.remove(cl1);
 						myMetrics.setMembCount(myMetrics.getMembCount() + 1);
 						if (myEngineForT

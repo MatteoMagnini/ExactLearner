@@ -177,19 +177,21 @@ public class consoleLearner {
 		while (!equivalenceQuery()) {
 			myMetrics.setEquivCount(myMetrics.getMembCount() + 1);
 			lastCE = getCounterExample(elQueryEngineForT, elQueryEngineForH);
-
+			System.out.println("generated coutnerexmple");
 			OWLSubClassOfAxiom counterexample = lastCE;
 			OWLClassExpression left = counterexample.getSubClass();
 			OWLClassExpression right = counterexample.getSuperClass();
 			lastCE = elLearner.decompose(left, right);
 			if (canTransformELrhs()) {
 				lastCE = computeEssentialRightCounterexample();
+				System.out.println("Here1");
 				// TODO
 				// if there is a concept name in H ...
 				// if()
 				// siblingmerge
 			} else if (canTransformELlhs()) {
 				lastCE = computeEssentialLeftCounterexample();
+				System.out.println("Here2");
 			}
 			addHypothesis(lastCE);
 		}
@@ -247,8 +249,8 @@ public class consoleLearner {
 	private Boolean canTransformELrhs() {
 
 		OWLSubClassOfAxiom counterexample = lastCE;
-		OWLClassExpression left = counterexample.getSuperClass();
-		OWLClassExpression right = counterexample.getSubClass();
+		OWLClassExpression left = counterexample.getSubClass();
+		OWLClassExpression right = counterexample.getSuperClass();
 		for (OWLClass cl1 : left.getClassesInSignature()) {
 			if (elOracle.isCounterExample(cl1, right)) {
 				lastCE = elQueryEngineForT.getSubClassAxiom(cl1, right);
@@ -262,8 +264,8 @@ public class consoleLearner {
 
 	private Boolean canTransformELlhs() {
 		OWLSubClassOfAxiom counterexample = lastCE;
-		OWLClassExpression left = counterexample.getSuperClass();
-		OWLClassExpression right = counterexample.getSubClass();
+		OWLClassExpression left = counterexample.getSubClass();
+		OWLClassExpression right = counterexample.getSuperClass();
 		for (OWLClass cl1 : right.getClassesInSignature()) {
 			if (elOracle.isCounterExample(left, cl1)) {
 				lastCE = elQueryEngineForT.getSubClassAxiom(left, cl1);
@@ -440,7 +442,7 @@ public class consoleLearner {
 				}
 			}
 			if (selectedAxiom.isOfType(AxiomType.EQUIVALENT_CLASSES)) {
-				if (selectedAxiom.isOfType(AxiomType.EQUIVALENT_CLASSES)) {
+				 
 
 					OWLEquivalentClassesAxiom equivCounterexample = (OWLEquivalentClassesAxiom) selectedAxiom;
 					Set<OWLSubClassOfAxiom> eqsubclassaxioms = equivCounterexample.asOWLSubClassOfAxioms();
@@ -453,7 +455,7 @@ public class consoleLearner {
 							return getCounterExampleSubClassOf(elQueryEngineForT,elQueryEngineForH,subClassAxiom);	
 						}
 					}
-				}	
+				 	
 			}
 		}
 		throw new Exception("No more counterexamples");
@@ -473,11 +475,11 @@ public class consoleLearner {
 								left = ((OWLSubClassOfAxiom) newCounterexampleAxiom).getSubClass();
 								right = ((OWLSubClassOfAxiom) newCounterexampleAxiom).getSuperClass();
 							}
-							if (oracleSaturate)
+							if (oracleSaturate) {
 								newCounterexampleAxiom = elOracle.saturateLeft(left, right);
-							left = ((OWLSubClassOfAxiom) newCounterexampleAxiom).getSubClass();
-							right = ((OWLSubClassOfAxiom) newCounterexampleAxiom).getSuperClass();
-						
+								left = ((OWLSubClassOfAxiom) newCounterexampleAxiom).getSubClass();
+								right = ((OWLSubClassOfAxiom) newCounterexampleAxiom).getSuperClass();
+							}
 
 							if (oracleBranch) {
 								newCounterexampleAxiom = elOracle.branchRight(left, right);
