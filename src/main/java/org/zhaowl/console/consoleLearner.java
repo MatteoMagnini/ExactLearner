@@ -177,14 +177,14 @@ public class consoleLearner {
 		while (!equivalenceQuery()) {
 			myMetrics.setEquivCount(myMetrics.getMembCount() + 1);
 			lastCE = getCounterExample(elQueryEngineForT, elQueryEngineForH);
-			 
+			  
 			OWLSubClassOfAxiom counterexample = lastCE;
 			OWLClassExpression left = counterexample.getSubClass();
 			OWLClassExpression right = counterexample.getSuperClass();
 			lastCE = elLearner.decompose(left, right);
-		 
+			 
 			if (canTransformELrhs()) {
-				 
+				  
 				lastCE = computeEssentialRightCounterexample();
 				 
 				// TODO
@@ -192,10 +192,11 @@ public class consoleLearner {
 				// if()
 				// siblingmerge
 			} else if (canTransformELlhs()) {
-				 
+				  
 				lastCE = computeEssentialLeftCounterexample();
 				 
-			}
+			}  
+		 
 			addHypothesis(lastCE);
 		}
 		victory();

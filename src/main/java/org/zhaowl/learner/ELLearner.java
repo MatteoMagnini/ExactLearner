@@ -365,7 +365,7 @@ public class ELLearner {
 	}
 
 	// at the moment duplicated
-	private Boolean isCounterExample(OWLClassExpression left, OWLClassExpression right) {
+	public Boolean isCounterExample(OWLClassExpression left, OWLClassExpression right) {
 		return myEngineForT.entailed(myEngineForT.getSubClassAxiom(left, right))
 				&& !myEngineForH.entailed(myEngineForH.getSubClassAxiom(left, right));
 	}
