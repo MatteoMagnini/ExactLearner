@@ -135,6 +135,7 @@ public class ELLearner {
 							myExpression = nod.transformToDescription();
 							myClass = cls;
 							rightDecompositionCounter++;
+							System.out.println("first");
 							return true;
 						}
 					}
@@ -146,16 +147,18 @@ public class ELLearner {
 					// going over all class names because concept saturation is later
 					// another option is do concept saturation first and then go over the concepts
 					// in the label
-					for (OWLClass cls : myEngineForT.getClassesInSignature()) {
+					
 						if (!nod.isRoot()) {
-
+							nod.getEdges().remove(j);
+							for (OWLClass cls : myEngineForT.getClassesInSignature()) {
 							myMetrics.setMembCount(myMetrics.getMembCount() + 1);
-							if (myEngineForT.entailed(myEngineForT.getSubClassAxiom(cls,
-									nod.getEdges().get(j).getNode().transformToDescription()))) {
-								nod.getEdges().remove(j);
+							if (isCounterExample(cls,
+									tree.transformToClassExpression())) {
+								
 								myExpression = tree.transformToClassExpression();
-								myClass = cl;
+								myClass = cls;
 								rightDecompositionCounter++;
+								 
 								return true;
 
 							}
@@ -164,18 +167,22 @@ public class ELLearner {
 						if (nod.isRoot()) {
                             ELTree newSubtree = new ELTree(nod.getEdges().get(j).getNode().transformToDescription());
 							ELEdge newEdge = new ELEdge(nod.getEdges().get(j).getLabel(), newSubtree.getRootNode());
-							for(int k=0;k<nod.getEdges().size();k++)
+							int l=nod.getEdges().size();
+							for(int k=0;k<l;k++)
 								nod.getEdges().remove(k);					
 							nod.getEdges().add(newEdge);
-							rightDecompositionCounter = rightDecompositionCounter + 3;
+							for (OWLClass cls : myEngineForT.getClassesInSignature()) {
+							myMetrics.setMembCount(myMetrics.getMembCount() + 3);
 							if (myEngineForT.entailed(myEngineForT.getSubClassAxiom(cl, cls))
 									&& !myEngineForT.entailed(myEngineForT.getSubClassAxiom(cls, cl))
 									&& isCounterExample(cls, nod.transformToDescription())) {
-
+								 
 								myExpression = nod.transformToDescription();
 								myClass = cls;
 								rightDecompositionCounter++;
+								 
 								return true;
+							}
 							}
 						}
 						tree = oldTree;

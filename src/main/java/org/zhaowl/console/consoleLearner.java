@@ -182,7 +182,9 @@ public class consoleLearner {
 			OWLClassExpression left = counterexample.getSubClass();
 			OWLClassExpression right = counterexample.getSuperClass();
 			lastCE = elLearner.decompose(left, right);
+		 
 			if (canTransformELrhs()) {
+				 
 				lastCE = computeEssentialRightCounterexample();
 				 
 				// TODO
@@ -190,6 +192,7 @@ public class consoleLearner {
 				// if()
 				// siblingmerge
 			} else if (canTransformELlhs()) {
+				 
 				lastCE = computeEssentialLeftCounterexample();
 				 
 			}
@@ -309,24 +312,24 @@ public class consoleLearner {
 		OWLSubClassOfAxiom counterexample = axiom;
 		OWLClass left = (OWLClass) counterexample.getSubClass();
 		OWLClassExpression right = counterexample.getSuperClass();
-
+		 
 		if (learnerDecompR) {
 			axiom = elLearner.decomposeRight(lastName, lastExpression);
 			counterexample = axiom;
 			left = (OWLClass) counterexample.getSubClass();
 			right = counterexample.getSuperClass();
 		}
-
+		 
 		if (learnerMerge) {
 			axiom = elLearner.mergeRight(left, right);
 			counterexample = axiom;
 			left = (OWLClass) counterexample.getSubClass();
 			right = counterexample.getSuperClass();
 		}
-
+		 
 		if (learnerSat) {
 			axiom = elLearner.saturateRight(left, right);
-		}
+		} 
 		return axiom;
 	}
 
