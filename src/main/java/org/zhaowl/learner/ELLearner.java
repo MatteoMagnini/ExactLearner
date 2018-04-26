@@ -135,7 +135,7 @@ public class ELLearner {
 							myExpression = nod.transformToDescription();
 							myClass = cls;
 							rightDecompositionCounter++;
-							System.out.println("first");
+							 
 							return true;
 						}
 					}

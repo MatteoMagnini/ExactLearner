@@ -38,7 +38,7 @@ public class consoleLearner {
 	private final Metrics myMetrics = new Metrics(myRenderer);
 
 	private Set<OWLAxiom> axiomsT = null;
-
+	private Set<OWLAxiom> axiomsH = null;
 	private String ontologyFolder = null;
 	private String ontologyName = null;
 	private File hypoFile = null;
@@ -123,15 +123,23 @@ public class consoleLearner {
 				System.out.println("Total branchings: " + elLearner.getNumberBranching());
 				System.out.println("Total saturations: " + elLearner.getNumberSaturations());
 				System.out.println("Total unsaturations: " + elLearner.getNumberUnsaturations());
+				//////////////////////////////////////////////////////////////////////
+				System.out.println("Oracle Stats:\n");
+				//System.out.println("Total left compositions: " + elOracle.getNumberLeftDecomposition());
+				//System.out.println("Total right compositions: " + elOracle.getNumberRightDecomposition());
+				System.out.println("Total mergings: " + elOracle.getNumberMerging());
+				System.out.println("Total branchings: " + elOracle.getNumberBranching());
+				System.out.println("Total saturations: " + elOracle.getNumberSaturations());
+				System.out.println("Total unsaturations: " + elOracle.getNumberUnsaturations());
 				saveOWLFile(hypothesisOntology, hypoFile);
 
-				myMetrics.showCIT(axiomsT, true);
+				myMetrics.showCIT(targetOntology.getAxioms(), true);
 
 				System.out.println("Hypothesis TBox logical axioms: " + hypothesisOntology.getAxioms().size());
 				myMetrics.showCIT(hypothesisOntology.getAxioms(), false);
 				elQueryEngineForH.disposeOfReasoner();
 				elQueryEngineForT.disposeOfReasoner();
-				myManager.removeOntology(hypothesisOntology);
+				myManager.removeOntology(hypothesisOntology); 
 				myManager.removeOntology(targetOntology);
 
 			} catch (Throwable e) {
@@ -189,17 +197,16 @@ public class consoleLearner {
 				  
 				lastCE = computeEssentialRightCounterexample();
 				 
-				// TODO
-				// if there is a concept name in H ...
-				// if()
-				// siblingmerge
+				  
+				
+				addHypothesis(lastCE);
 			} else if (canTransformELlhs()) {
 				  
 				lastCE = computeEssentialLeftCounterexample();
-				 
+				addHypothesis(lastCE);
 			}  
 		 
-			addHypothesis(lastCE);
+			
 		}
 		victory();
 		lastCE = null;
@@ -221,7 +228,7 @@ public class consoleLearner {
 			// need to remove prefixes
 			manSyntaxFormat.clearPrefixes();
 		}
-		// format = null;
+		 
 		myManager.saveOntology(ontology, manSyntaxFormat, IRI.create(file.toURI()));
 	}
 
@@ -358,7 +365,8 @@ public class consoleLearner {
 
 			axiomsT = new HashSet<>();
 			for (OWLAxiom axe : targetOntology.getAxioms())
-				if (!axe.toString().contains("Thing") && axe.isOfType(AxiomType.SUBCLASS_OF)
+				//removed !axe.toString().contains("Thing") &&
+				if ( axe.isOfType(AxiomType.SUBCLASS_OF)
 						|| axe.isOfType(AxiomType.EQUIVALENT_CLASSES))
 					axiomsT.add(axe);
 
@@ -472,10 +480,7 @@ public class consoleLearner {
 					throws Exception {
 				OWLSubClassOfAxiom newCounterexampleAxiom = counterexample;
 				OWLClassExpression left = counterexample.getSubClass();
-				OWLClassExpression right = counterexample.getSuperClass();
-		 
-					
-					 
+				OWLClassExpression right = counterexample.getSuperClass();	 
 
 							if (oracleMerge) {
 								newCounterexampleAxiom = elOracle.mergeLeft(left, right);

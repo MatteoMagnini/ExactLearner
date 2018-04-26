@@ -168,7 +168,8 @@ public class ELOracle {
 				if (!nod.getEdges().isEmpty()) {
 
 					for (int j = 0; j < nod.getEdges().size(); j++) {
-						if (nod.getEdges().get(j).getNode().getLabel().size() > 1)
+						if (nod.getEdges().get(j).getNode().getLabel().size() > 1) {
+							 
 							for (OWLClass lab : nod.getEdges().get(j).getNode().getLabel()) {
                                 ELTree oldTree = new ELTree(tree.transformToClassExpression());
                                 ELTree newSubtree = new ELTree(nod.getEdges().get(j).getNode().transformToDescription());
@@ -189,6 +190,7 @@ public class ELOracle {
 									tree = oldTree;
 								}
 							}
+						}
 
 					}
 
@@ -205,6 +207,20 @@ public class ELOracle {
 				!myEngineForH.entailed(myEngineForH.getSubClassAxiom(left, right));
 	}
 	
-	
+	public int getNumberUnsaturations() {
+		return unsaturationCounter;
+	}
+
+	public int getNumberSaturations() {
+		return saturationCounter;
+	}
+
+	public int getNumberMerging() {
+		return mergeCounter;
+	}
+
+	public int getNumberBranching() {
+		return branchCounter;
+	}
  
 }
