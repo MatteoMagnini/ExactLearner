@@ -32,17 +32,6 @@ Class: <http://www.semanticweb.org/ontologies/2014/3/football.owl#Manager>
 Class: owl:Thing
 
     
-Class: <http://www.semanticweb.org/ontologies/2014/3/football.owl#Team>
-
-    SubClassOf: 
-        <http://www.semanticweb.org/ontologies/2014/3/football.owl#Team>
-         and owl:Thing
-         and (<http://www.semanticweb.org/ontologies/2014/3/football.owl#managed_by> some 
-            (<http://www.semanticweb.org/ontologies/2014/3/football.owl#Manager>
-             and <http://www.semanticweb.org/ontologies/2014/3/football.owl#Person>
-             and owl:Thing))
-    
-    
 Class: <http://www.semanticweb.org/ontologies/2014/3/football.owl#Player>
 
     SubClassOf: 
@@ -57,6 +46,17 @@ Class: <http://www.semanticweb.org/ontologies/2014/3/football.owl#Player>
          and owl:Thing
          and (<http://www.semanticweb.org/ontologies/2014/3/football.owl#plays> some 
             (<http://www.semanticweb.org/ontologies/2014/3/football.owl#Game>
+             and owl:Thing))
+    
+    
+Class: <http://www.semanticweb.org/ontologies/2014/3/football.owl#Team>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/ontologies/2014/3/football.owl#Team>
+         and owl:Thing
+         and (<http://www.semanticweb.org/ontologies/2014/3/football.owl#managed_by> some 
+            (<http://www.semanticweb.org/ontologies/2014/3/football.owl#Manager>
+             and <http://www.semanticweb.org/ontologies/2014/3/football.owl#Person>
              and owl:Thing))
     
     

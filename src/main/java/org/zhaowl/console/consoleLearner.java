@@ -65,10 +65,10 @@ public class consoleLearner {
 
 	// ############# Oracle and Learner skills Start ######################
 
-	private boolean oracleSaturate;
-	private boolean oracleMerge;
-	private boolean oracleBranch;
-	private boolean oracleUnsaturate;
+	private boolean oracleSaturate = false;
+	private boolean oracleMerge = false;
+	private boolean oracleBranch = false;
+	private boolean oracleUnsaturate = false;
 
 	private boolean learnerSat;
 	private boolean learnerMerge;

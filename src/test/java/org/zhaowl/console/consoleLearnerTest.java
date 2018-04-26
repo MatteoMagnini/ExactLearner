@@ -24,10 +24,10 @@ public class consoleLearnerTest {
         int maxCounter = 2 << (numArgs-1);
         String [] args = new String[11];
         args[0]  = "src/main/resources/ontologies/small/animals.owl";
-        args[7]  = "0.1";
-        args[8]  = "0.1";
-        args[9]  = "0.1";
-        args[10] = "0.1";
+        args[7]  = "0.5";
+        args[8]  = "0.5";
+        args[9]  = "0.5";
+        args[10] = "0.5";
 
         for(int counter = 0; counter < maxCounter; counter++) {
             for (int i = 1; i <= numArgs; i++) {
