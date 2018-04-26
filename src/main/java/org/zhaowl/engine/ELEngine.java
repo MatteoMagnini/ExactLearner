@@ -50,6 +50,14 @@ public class ELEngine {
 		return myManager.getOWLDataFactory().getOWLSubClassOfAxiom(concept1, concept2);
     }
 
+	public OWLClassExpression getOWLObjectIntersectionOf(OWLClassExpression concept1, OWLClassExpression concept2){
+		return myManager.getOWLDataFactory().getOWLObjectIntersectionOf(concept1, concept2);
+    }
+	
+	public OWLClassExpression getOWLObjectIntersectionOf(Set<OWLClassExpression>mySet){
+		return myManager.getOWLDataFactory().getOWLObjectIntersectionOf(mySet);
+    }
+	
     private Boolean entailedEQ(OWLSubClassOfAxiom subclassAxiom) {
         OWLClassExpression left  = subclassAxiom.getSubClass();
         OWLClassExpression right = subclassAxiom.getSuperClass();

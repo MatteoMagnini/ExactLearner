@@ -19,14 +19,14 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-//import javax.swing.JOptionPane;
-
 public class consoleLearner {
 
 	private static double SATURATION_BOUND = 0d;
 	private static double MERGE_BOUND = 0d;
 	private static double BRANCH_BOUND = 0d;
 	private static double UNSATURATE_BOUND = 0d;
+	private static double COMPOSE_LEFT_BOUND = 0d;
+	private static double COMPOSE_RIGHT_BOUND = 0d;
 
 	private String filePath;
 
@@ -41,6 +41,7 @@ public class consoleLearner {
 	private final Metrics myMetrics = new Metrics(myRenderer);
 
 	private Set<OWLAxiom> axiomsT = null;
+ 
 	private String ontologyFolder = null;
 	private String ontologyName = null;
 	private File hypoFile = null;
@@ -65,10 +66,13 @@ public class consoleLearner {
 
 	// ############# Oracle and Learner skills Start ######################
 
+ 
 	private boolean oracleSaturate = false;
 	private boolean oracleMerge = false;
 	private boolean oracleBranch = false;
 	private boolean oracleUnsaturate = false;
+	private boolean oracleLeftCompose= false;
+	private boolean oracleRightCompose= false;
 
 	private boolean learnerSat;
 	private boolean learnerMerge;
@@ -113,10 +117,11 @@ public class consoleLearner {
 				runLearner(elQueryEngineForT, elQueryEngineForH);
 				long timeEnd = System.currentTimeMillis();
 				System.out.println("Total time (ms): " + (timeEnd - timeStart));
+				
 				System.out.println("Total membership queries: " + myMetrics.getMembCount());
-				System.out.println("Total equivalence queries: " + myMetrics.getEquivCount());
-				System.out.println("Target TBox logical axioms: " + axiomsT.size());
+				System.out.println("Total equivalence queries: " + myMetrics.getEquivCount());			
 				//////////////////////////////////////////////////////////////////////
+				System.out.println("Oracle Stats:\n");
 				System.out.println("Total left decompositions: " + elLearner.getNumberLeftDecomposition());
 				System.out.println("Total right decompositions: " + elLearner.getNumberRightDecomposition());
 				System.out.println("Total mergings: " + elLearner.getNumberMerging());
@@ -125,16 +130,16 @@ public class consoleLearner {
 				System.out.println("Total unsaturations: " + elLearner.getNumberUnsaturations());
 				//////////////////////////////////////////////////////////////////////
 				System.out.println("Oracle Stats:\n");
-				//System.out.println("Total left compositions: " + elOracle.getNumberLeftDecomposition());
-				//System.out.println("Total right compositions: " + elOracle.getNumberRightDecomposition());
+				System.out.println("Total left compositions: " + elOracle.getNumberLeftComposition());
+				System.out.println("Total right compositions: " + elOracle.getNumberRightComposition());
 				System.out.println("Total mergings: " + elOracle.getNumberMerging());
 				System.out.println("Total branchings: " + elOracle.getNumberBranching());
 				System.out.println("Total saturations: " + elOracle.getNumberSaturations());
 				System.out.println("Total unsaturations: " + elOracle.getNumberUnsaturations());
 				saveOWLFile(hypothesisOntology, hypoFile);
-
+				System.out.println("Sizes:\n");
+				System.out.println("Target TBox logical axioms: " + axiomsT.size());
 				myMetrics.showCIT(targetOntology.getAxioms(), true);
-
 				System.out.println("Hypothesis TBox logical axioms: " + hypothesisOntology.getAxioms().size());
 				myMetrics.showCIT(hypothesisOntology.getAxioms(), false);
 				elQueryEngineForH.disposeOfReasoner();
@@ -158,6 +163,7 @@ public class consoleLearner {
 	}
 
 	private void setOracleSkills(String[] args) {
+ 
 		if(!args[7].equals("0")) {
 			oracleMerge = true;
 			MERGE_BOUND = Double.parseDouble(args[7]);
@@ -174,6 +180,15 @@ public class consoleLearner {
 			oracleUnsaturate = true;
 			UNSATURATE_BOUND = Double.parseDouble(args[10]);
 		}
+		if(!args[11].equals("0")) {
+			oracleLeftCompose = true;
+			COMPOSE_LEFT_BOUND = Double.parseDouble(args[11]);
+		}
+		if(!args[12].equals("0")) {
+			oracleRightCompose = true;
+			COMPOSE_RIGHT_BOUND = Double.parseDouble(args[12]);
+		}
+ 
 	}
 
 	private void setLearnerSkills(String[] args) {
@@ -193,6 +208,7 @@ public class consoleLearner {
 	}
 
 	private void runLearner(ELEngine elQueryEngineForT, ELEngine elQueryEngineForH) throws Throwable {
+		 
 		while (!equivalenceQuery()) {
 			myMetrics.setEquivCount(myMetrics.getMembCount() + 1);
 			lastCE = getCounterExample(elQueryEngineForT, elQueryEngineForH);
@@ -202,15 +218,23 @@ public class consoleLearner {
 			OWLClassExpression right = counterexample.getSuperClass();
 			lastCE = elLearner.decompose(left, right);
 			 
-			if (canTransformELrhs()) {
-				  
+			if (canTransformELrhs()) { 		  
 				lastCE = computeEssentialRightCounterexample();
-				 
-				  
-				
-				addHypothesis(lastCE);
-			} else if (canTransformELlhs()) {
-				  
+				 for(OWLAxiom ax: hypothesisOntology.getAxioms()) {
+					 if(((OWLSubClassOfAxiom) ax).getSubClass().getClassExpressionType()==ClassExpressionType.OWL_CLASS) {
+						 OWLClass cl= (OWLClass)((OWLSubClassOfAxiom) ax).getSubClass();
+						 if(cl.equals(lastName)) {
+							 Set<OWLClassExpression> mySet = new HashSet<OWLClassExpression>();
+							 mySet.addAll(((OWLSubClassOfAxiom) ax).getSuperClass().asConjunctSet());
+							 mySet.addAll(lastExpression.asConjunctSet()); 
+							 lastCE=elQueryEngineForT.getSubClassAxiom(lastName,  
+									 elQueryEngineForT.getOWLObjectIntersectionOf(mySet));  
+						 }
+					 }
+				 }
+				 lastCE = computeEssentialRightCounterexample();
+				 addHypothesis(lastCE);
+			} else if (canTransformELlhs()) {				  
 				lastCE = computeEssentialLeftCounterexample();
 				addHypothesis(lastCE);
 			}  
@@ -323,7 +347,8 @@ public class consoleLearner {
 		if (learnerUnsat) {
 			axiom = elLearner.unsaturateLeft(left, right);
 		}
-
+		lastExpression=left;
+		lastName=right;
 		return axiom;
 	}
 
@@ -350,6 +375,8 @@ public class consoleLearner {
 		if (learnerSat) {
 			axiom = elLearner.saturateRight(left, right);
 		} 
+		lastName=left;
+		lastExpression=right;
 		return axiom;
 	}
 
@@ -417,10 +444,11 @@ public class consoleLearner {
 			System.out.println();
 
 			ArrayList<String> concepts = myMetrics.getSuggestionNames("concept", newFile);
-//			ArrayList<String> roles = myMetrics.getSuggestionNames("role", newFile);
-
+ 
+ 			ArrayList<String> roles = myMetrics.getSuggestionNames("role", newFile);
+ 
 			System.out.println("Total number of concepts is: " + concepts.size());
-
+			System.out.println("Total number of roles is: " + roles.size());
 			System.out.flush();
 		} catch (OWLOntologyCreationException e) {
 			System.out.println("Could not load targetOntology: " + e.getMessage());
@@ -494,23 +522,34 @@ public class consoleLearner {
 								left = newCounterexampleAxiom.getSubClass();
 								right = newCounterexampleAxiom.getSuperClass();
 							}
-							if (oracleSaturate) {
+							if (oracleSaturate) { 
 								newCounterexampleAxiom = elOracle.saturateLeft(left, right, SATURATION_BOUND);
 								left = newCounterexampleAxiom.getSubClass();
 								right = newCounterexampleAxiom.getSuperClass();
 							}
-
+							if (oracleLeftCompose) { 
+								newCounterexampleAxiom = elOracle.composeLeft(left, right, COMPOSE_LEFT_BOUND);
+								left = ((OWLSubClassOfAxiom) newCounterexampleAxiom).getSubClass();
+								right = ((OWLSubClassOfAxiom) newCounterexampleAxiom).getSuperClass();
+							}
+							if (oracleRightCompose) { 
+								newCounterexampleAxiom = elOracle.composeRight(left, right,COMPOSE_RIGHT_BOUND);
+								left = ((OWLSubClassOfAxiom) newCounterexampleAxiom).getSubClass();
+								right = ((OWLSubClassOfAxiom) newCounterexampleAxiom).getSuperClass();
+							}
 							if (oracleBranch) {
 								newCounterexampleAxiom = elOracle.branchRight(left, right, BRANCH_BOUND);
 								left = newCounterexampleAxiom.getSubClass();
 								right = newCounterexampleAxiom.getSuperClass();
 							}
 							if (oracleUnsaturate) {
+ 
 								newCounterexampleAxiom = elOracle.unsaturateRight(left, right, UNSATURATE_BOUND);
 							}
 						 
 					 
-					 
+ 
+ 
 				 
 				return newCounterexampleAxiom;
 			}		

@@ -17,6 +17,8 @@ public class ELOracle {
 	private int saturationCounter = 0;
 	private int mergeCounter = 0;
 	private int branchCounter = 0;
+	private int leftCompositionCounter = 0;
+	private int rightCompositionCounter = 0;
 	private final ELEngine myEngineForT;
 	private final ELEngine myEngineForH;
     private OWLClassExpression myExpression;
@@ -197,6 +199,35 @@ public class ELOracle {
 		return flag;
 	}
 
+	
+	public OWLSubClassOfAxiom composeLeft(OWLClassExpression expression,OWLClassExpression cl, double bound) throws Exception {
+		myClass = cl;
+		myExpression = expression;
+		while (composingLeft(myExpression,myClass)) {
+        }
+		return myEngineForT.getSubClassAxiom(myExpression,myClass);
+	}
+
+	private Boolean composingLeft(OWLClassExpression expression, OWLClassExpression cl) throws Exception {
+		Boolean flag=false; 
+		
+		return flag;
+	} 
+	
+	public OWLSubClassOfAxiom composeRight(OWLClassExpression cl, OWLClassExpression expression, double bound) throws Exception {
+		myClass = cl;
+		myExpression = expression;
+		while (composingRight(myClass,myExpression)) {
+        }
+		return myEngineForT.getSubClassAxiom(myClass,myExpression);
+	}
+
+	private Boolean composingRight(OWLClassExpression cl, OWLClassExpression expression) throws Exception {
+		Boolean flag=false; 
+		
+		return flag;
+	} 
+	
 //at the moment duplicated
 	public Boolean isCounterExample(OWLClassExpression left, OWLClassExpression right){
 		return  myEngineForT.entailed(myEngineForT.getSubClassAxiom(left, right))
@@ -218,6 +249,14 @@ public class ELOracle {
 
 	public int getNumberBranching() {
 		return branchCounter;
+	}
+	
+	public int getNumberLeftComposition() {
+		return leftCompositionCounter;
+	}
+
+	public int getNumberRightComposition() {
+		return rightCompositionCounter;
 	}
  
 }

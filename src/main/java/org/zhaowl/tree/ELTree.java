@@ -6,7 +6,10 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
+ 
 import org.semanticweb.owlapi.model.OWLClassExpression;
+import org.semanticweb.owlapi.model.OWLDataProperty;
+import org.semanticweb.owlapi.model.OWLDataSomeValuesFrom;
 import org.semanticweb.owlapi.model.OWLObjectIntersectionOf;
 import org.semanticweb.owlapi.model.OWLObjectProperty;
 import org.semanticweb.owlapi.model.OWLObjectSomeValuesFrom;
@@ -31,6 +34,7 @@ public class ELTree implements Cloneable {
     }
 
 
+    
     //Reference: DL Learner
     private void constructTree(OWLClassExpression description, ELNode node) throws Exception {
 //		if (description.isOWLThing()) {
@@ -43,9 +47,7 @@ public class ELTree implements Cloneable {
             ELNode newNode = new ELNode(node, op, new TreeSet<>());
             constructTree(((OWLObjectSomeValuesFrom) description).getFiller(), newNode);
         } else
-//             if (description instanceof OWLDataSomeValuesFrom) {
-//        }
-//            else
+ 
             if (description instanceof OWLObjectIntersectionOf) {
                 // loop through all elements of the intersection
                 for (OWLClassExpression child : ((OWLObjectIntersectionOf) description).getOperands()) {

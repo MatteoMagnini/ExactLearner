@@ -40,7 +40,6 @@ public class Metrics {
 		int ontSize = 0;
  
 		for (OWLAxiom axe : axSet) {
-
 			 
 			String inclusion = myRenderer.render(axe);
 			inclusion = inclusion.replaceAll(" and ", " ");
@@ -79,24 +78,7 @@ public class Metrics {
 		showCIs(axSet, false);
 	}
 
-// --Commented out by Inspection START (25/04/2018, 16:30):
-//	public String fixAxioms(OWLClassExpression axiom) {
-//		String auxStr = axiom.toString();
-//		auxStr = auxStr.replaceAll(">", "");
-//		int startPos = auxStr.indexOf("<");
-//		int hashPos = auxStr.indexOf("#");
-//		auxStr = auxStr.substring(0, startPos) + auxStr.substring(hashPos + 1);
-//		while (auxStr.contains("#")) {
-//			// System.out.println(auxStr);
-//			startPos = auxStr.indexOf("<");
-//			hashPos = auxStr.indexOf("#");
-//			auxStr = auxStr.substring(0, startPos) + auxStr.substring(hashPos + 1);
-//			// System.out.println(auxStr);
-//		}
-//		// System.out.println(auxStr);
-//		return auxStr;
-//	}
-// --Commented out by Inspection STOP (25/04/2018, 16:30)
+ 
 
 	public ArrayList<String> getSuggestionNames(String s, File newFile) throws IOException {
 
