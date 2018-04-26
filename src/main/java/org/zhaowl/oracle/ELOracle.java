@@ -24,8 +24,10 @@ public class ELOracle {
 	private final Metrics myMetrics;
 	private OWLClassExpression myExpression;
 	private OWLClassExpression myClass;
+	private Random random = new Random();
 
-	public ELOracle(ELEngine elEngineForT, ELEngine elEngineForH, Metrics metrics) {
+
+    public ELOracle(ELEngine elEngineForT, ELEngine elEngineForH, Metrics metrics) {
 		myEngineForT = elEngineForT;
 		myEngineForH = elEngineForH;
 		myMetrics = metrics;
@@ -46,7 +48,7 @@ public class ELOracle {
 			for (ELNode nod : tree.getNodesOnLevel(i + 1)) {
                 OWLClassExpression cls = nod.transformToDescription();
 				for (OWLClass cl1 : cls.getClassesInSignature()) {
-					if (nod.getLabel().contains(cl1)&& !cl1.toString().contains("Thing")) {
+					if ((random.nextDouble() < bound)&&(nod.getLabel().contains(cl1)&& !cl1.toString().contains("Thing"))) {
 						nod.remove(cl1);
 						 
 						if (!myEngineForH
@@ -77,7 +79,6 @@ public class ELOracle {
 
 		boolean flag = false;
 		ELTree tree = new ELTree(expression);
-		Random random = new Random();
 		for (int i = 0; i < tree.getMaxLevel(); i++) {
 			for (ELNode nod : tree.getNodesOnLevel(i + 1)) {
 				for (OWLClass cl1 : myEngineForT.getClassesInSignature()) {
@@ -120,8 +121,8 @@ public class ELOracle {
 
 						for (int k = 0; k < nod.getEdges().size(); k++) {
                             ELTree oldTree = new ELTree(tree.transformToClassExpression());
-							if (j != k && nod.getEdges().get(j).getStrLabel()
-									.equals(nod.getEdges().get(k).getStrLabel())) {
+							if ((random.nextDouble() < bound)&& (j != k && nod.getEdges().get(j).getStrLabel()
+									.equals(nod.getEdges().get(k).getStrLabel()))) {
 								nod.getEdges().get(j).getNode().getLabel()
 										.addAll(nod.getEdges().get(k).getNode().getLabel());
 								if (!nod.getEdges().get(k).getNode().getEdges().isEmpty())
@@ -180,7 +181,7 @@ public class ELOracle {
 								nod.getEdges().add(newEdge);
 								nod.getEdges().get(j).getNode().remove(lab);
 								
-								if (!myEngineForH.entailed(
+								if ((random.nextDouble() < bound) && !myEngineForH.entailed(
 										myEngineForH.getSubClassAxiom(cl,tree.transformToClassExpression()))) {
 									myExpression = tree.transformToClassExpression();
 									myClass = cl;
