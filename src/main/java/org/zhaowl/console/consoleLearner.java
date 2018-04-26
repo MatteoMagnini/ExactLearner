@@ -177,21 +177,21 @@ public class consoleLearner {
 		while (!equivalenceQuery()) {
 			myMetrics.setEquivCount(myMetrics.getMembCount() + 1);
 			lastCE = getCounterExample(elQueryEngineForT, elQueryEngineForH);
-			System.out.println("generated coutnerexmple");
+			 
 			OWLSubClassOfAxiom counterexample = lastCE;
 			OWLClassExpression left = counterexample.getSubClass();
 			OWLClassExpression right = counterexample.getSuperClass();
 			lastCE = elLearner.decompose(left, right);
 			if (canTransformELrhs()) {
 				lastCE = computeEssentialRightCounterexample();
-				System.out.println("Here1");
+				 
 				// TODO
 				// if there is a concept name in H ...
 				// if()
 				// siblingmerge
 			} else if (canTransformELlhs()) {
 				lastCE = computeEssentialLeftCounterexample();
-				System.out.println("Here2");
+				 
 			}
 			addHypothesis(lastCE);
 		}

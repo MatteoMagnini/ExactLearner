@@ -1,5 +1,7 @@
 package org.zhaowl.learner;
 
+import java.util.TreeSet;
+
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLClassExpression;
 import org.semanticweb.owlapi.model.OWLSubClassOfAxiom;
@@ -320,12 +322,17 @@ public class ELLearner {
 				if (!nod.getEdges().isEmpty()) {
 
 					for (int j = 0; j < nod.getEdges().size(); j++) {
-						if (nod.getEdges().get(j).getNode().getLabel().size() > 1)
-							for (OWLClass lab : nod.getEdges().get(j).getNode().getLabel()) {
+						if (nod.getEdges().get(j).getNode().getLabel().size() > 1) {
+							TreeSet<OWLClass> s=new  TreeSet<OWLClass>();
+                        	s.addAll(nod.getEdges().get(j).getNode().getLabel());
+							for (OWLClass lab : s) {
                                 ELTree oldTree = new ELTree(tree.transformToClassExpression());
                                 ELTree newSubtree = new ELTree(nod.getEdges().get(j).getNode().transformToDescription());
-								for (OWLClass l : newSubtree.getRootNode().getLabel())
-									newSubtree.getRootNode().remove(l);
+                                TreeSet<OWLClass> ts=new  TreeSet<OWLClass>();
+                                ts.addAll(newSubtree.getRootNode().getLabel());
+                                for (OWLClass l : ts) {
+									newSubtree.getRootNode().getLabel().remove(l);
+								}	
 								newSubtree.getRootNode().extendLabel(lab);
                                 ELEdge newEdge = new ELEdge(nod.getEdges().get(j).getLabel(), newSubtree.getRootNode());
 								nod.getEdges().add(newEdge);
@@ -341,7 +348,7 @@ public class ELLearner {
 									tree = oldTree;
 								}
 							}
-
+						}
 					}
 
 				}
