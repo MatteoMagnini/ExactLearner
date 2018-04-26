@@ -104,7 +104,7 @@ public class ELOracle {
 		myExpression = expression;
 		while (merging(myExpression,myClass)) {
         }
-		return myEngineForT.getSubClassAxiom(myClass, myExpression);
+		return myEngineForT.getSubClassAxiom(myExpression,myClass);
 	}
 
 	private Boolean merging(OWLClassExpression expression,OWLClassExpression cl) throws Exception {
