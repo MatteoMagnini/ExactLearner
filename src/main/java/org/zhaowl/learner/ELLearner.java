@@ -270,7 +270,7 @@ public class ELLearner {
 	}
 
 	private Boolean merging(OWLClass cl, OWLClassExpression expression) throws Exception {
-		boolean flag = false;
+		 
 		ELTree tree = new ELTree(expression);
 		for (int i = 0; i < tree.getMaxLevel(); i++) {
 			for (ELNode nod : tree.getNodesOnLevel(i + 1)) {
@@ -281,22 +281,32 @@ public class ELLearner {
 
 						for (int k = 0; k < nod.getEdges().size(); k++) {
                             ELTree oldTree = new ELTree(tree.transformToClassExpression());
+                             
 							if (j != k && nod.getEdges().get(j).getStrLabel()
 									.equals(nod.getEdges().get(k).getStrLabel())) {
 								nod.getEdges().get(j).getNode().getLabel()
 										.addAll(nod.getEdges().get(k).getNode().getLabel());
+								
+								 
 								if (!nod.getEdges().get(k).getNode().getEdges().isEmpty())
 									nod.getEdges().get(j).getNode().getEdges()
 											.addAll(nod.getEdges().get(k).getNode().getEdges());
 								nod.getEdges().remove(nod.getEdges().get(k));
-
+								 
 								myMetrics.setMembCount(myMetrics.getMembCount() + 1);
-								if (myEngineForT.entailed(
+								 
+								if (!myEngineForT.entailed(
+										myEngineForT.getSubClassAxiom(oldTree.transformToClassExpression(), 
+												tree.transformToClassExpression())) //if the merged tree is in fact a stronger expression
+										&&
+										myEngineForT.entailed(
 										myEngineForT.getSubClassAxiom(cl, tree.transformToClassExpression()))) {
 									myExpression = tree.transformToClassExpression();
 									myClass = cl;
-									flag = true;
 									mergeCounter++;
+									
+									return true;
+									
 								} else {
 									tree = oldTree;
 								}
@@ -309,7 +319,7 @@ public class ELLearner {
 
 			}
 		}
-		return flag;
+		return false;
 	}
 
 	public OWLSubClassOfAxiom branchLeft(OWLClassExpression expression, OWLClass cl) throws Exception {

@@ -1,62 +1,27 @@
-Prefix: owl: <http://www.w3.org/2002/07/owl#>
-Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-Prefix: xml: <http://www.w3.org/XML/1998/namespace>
-Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
-Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+before 
+
+ObjectIntersectionOf(<http://www.semanticweb.org/ontologies/2014/3/animals.owl#Vertebrate> 
+
+ObjectSomeValuesFrom(<http://www.semanticweb.org/ontologies/2014/3/animals.owl#has_part>
+
+ObjectIntersectionOf(<http://www.semanticweb.org/ontologies/2014/3/animals.owl#Leg> owl:Thing)) 
+
+ObjectSomeValuesFrom(<http://www.semanticweb.org/ontologies/2014/3/animals.owl#has_part>
+
+ObjectIntersectionOf(<http://www.semanticweb.org/ontologies/2014/3/animals.owl#Wing> owl:Thing)) 
+
+ObjectSomeValuesFrom(<http://www.semanticweb.org/ontologies/2014/3/animals.owl#lays> <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Egg>) 
+
+ObjectSomeValuesFrom(<http://www.semanticweb.org/ontologies/2014/3/animals.owl#lays> owl:Thing))
 
 
+after ObjectIntersectionOf(<http://www.semanticweb.org/ontologies/2014/3/animals.owl#Vertebrate>
 
-Ontology: 
+ObjectSomeValuesFrom(<http://www.semanticweb.org/ontologies/
+2014/3/animals.owl#has_part> 
 
-ObjectProperty: <http://aims.fao.org/aos/geopolitical.owl#manages>
+ObjectIntersectionOf(<http://www.semanticweb.org/ontologies/2014/3/animals.owl#Leg> <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Wing> owl:Thing)) 
 
-    
-ObjectProperty: <http://aims.fao.org/aos/geopolitical.owl#teaches>
+ObjectSomeValuesFrom(<http://www.semanticweb.org/ontologies/2014/3/animals.owl#lays> <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Egg>) 
 
-    
-ObjectProperty: <http://aims.fao.org/aos/geopolitical.owl#employed_by>
-
-    
-Class: <http://aims.fao.org/aos/geopolitical.owl#Person>
-
-    
-Class: <http://aims.fao.org/aos/geopolitical.owl#Researcher>
-
-    SubClassOf: 
-        <http://aims.fao.org/aos/geopolitical.owl#Person>
-         and <http://aims.fao.org/aos/geopolitical.owl#Researcher>
-         and (<http://aims.fao.org/aos/geopolitical.owl#manages> some <http://aims.fao.org/aos/geopolitical.owl#Project>),
-        <http://aims.fao.org/aos/geopolitical.owl#Person>
-         and <http://aims.fao.org/aos/geopolitical.owl#Researcher>
-         and (<http://aims.fao.org/aos/geopolitical.owl#employed_by> some <http://aims.fao.org/aos/geopolitical.owl#University>)
-    
-    
-Class: <http://aims.fao.org/aos/geopolitical.owl#Module>
-
-    
-Class: <http://aims.fao.org/aos/geopolitical.owl#Project>
-
-    
-Class: <http://aims.fao.org/aos/geopolitical.owl#Professor>
-
-    SubClassOf: 
-        <http://aims.fao.org/aos/geopolitical.owl#Person>
-         and <http://aims.fao.org/aos/geopolitical.owl#Professor>
-         and <http://aims.fao.org/aos/geopolitical.owl#Researcher>
-         and <http://aims.fao.org/aos/geopolitical.owl#Teacher>
-         and (<http://aims.fao.org/aos/geopolitical.owl#employed_by> some <http://aims.fao.org/aos/geopolitical.owl#University>)
-         and (<http://aims.fao.org/aos/geopolitical.owl#teaches> some <http://aims.fao.org/aos/geopolitical.owl#Module>)
-    
-    
-Class: <http://aims.fao.org/aos/geopolitical.owl#Teacher>
-
-    SubClassOf: 
-        <http://aims.fao.org/aos/geopolitical.owl#Person>
-         and <http://aims.fao.org/aos/geopolitical.owl#Teacher>
-         and (<http://aims.fao.org/aos/geopolitical.owl#employed_by> some <http://aims.fao.org/aos/geopolitical.owl#University>)
-         and (<http://aims.fao.org/aos/geopolitical.owl#teaches> some <http://aims.fao.org/aos/geopolitical.owl#Module>)
-    
-    
-Class: <http://aims.fao.org/aos/geopolitical.owl#University>
-
-    
+ObjectSomeValuesFrom(<http://www.semanticweb.org/ontologies/2014/3/animals.owl#lays> owl:Thing))
