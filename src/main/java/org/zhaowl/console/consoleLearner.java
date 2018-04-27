@@ -248,9 +248,13 @@ public class consoleLearner {
 	private void addHypothesis(OWLAxiom addedAxiom) {
 
 		myManager.addAxiom(hypothesisOntology, addedAxiom);
-		// System.out.println(addedAxiom);
+//		System.out.println(addedAxiom);
 		minimiseHypothesis();
-
+//		try {
+//			saveOWLFile(hypothesisOntology, hypoFile);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
 	}
 
 	private void saveOWLFile(OWLOntology ontology, File file) throws Exception {
