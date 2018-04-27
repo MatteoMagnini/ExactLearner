@@ -25,16 +25,11 @@ Class: <http://aims.fao.org/aos/geopolitical.owl#Researcher>
     SubClassOf: 
         <http://aims.fao.org/aos/geopolitical.owl#Person>
          and <http://aims.fao.org/aos/geopolitical.owl#Researcher>
-         and (<http://aims.fao.org/aos/geopolitical.owl#employed_by> some 
-            (<http://aims.fao.org/aos/geopolitical.owl#University>
-             and owl:Thing)),
+         and (<http://aims.fao.org/aos/geopolitical.owl#manages> some <http://aims.fao.org/aos/geopolitical.owl#Project>),
         <http://aims.fao.org/aos/geopolitical.owl#Person>
          and <http://aims.fao.org/aos/geopolitical.owl#Researcher>
-         and (<http://aims.fao.org/aos/geopolitical.owl#manages> some <http://aims.fao.org/aos/geopolitical.owl#Project>)
+         and (<http://aims.fao.org/aos/geopolitical.owl#employed_by> some <http://aims.fao.org/aos/geopolitical.owl#University>)
     
-    
-Class: owl:Thing
-
     
 Class: <http://aims.fao.org/aos/geopolitical.owl#Module>
 
