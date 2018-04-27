@@ -27,7 +27,7 @@ public class consoleLearner {
 	private static double UNSATURATE_BOUND = 0d;
 	private static double COMPOSE_LEFT_BOUND = 0d;
 	private static double COMPOSE_RIGHT_BOUND = 0d;
-
+ 
 	private String filePath;
 
 	// ############# Game variables Start ######################
@@ -233,11 +233,15 @@ public class consoleLearner {
 				}
 				 
 				lastCE = computeEssentialRightCounterexample();
-				addHypothesis(lastCE);  
+				addHypothesis(lastCE);   
 			} else if (canTransformELlhs()) {
 				 
 				lastCE = computeEssentialLeftCounterexample();
+				addHypothesis(lastCE);  
+			} else {
 				addHypothesis(lastCE); 
+				System.out.println("Not an EL Terminology:" + lastCE.toString());
+
 			}
 
 		}
@@ -248,7 +252,7 @@ public class consoleLearner {
 	private void addHypothesis(OWLAxiom addedAxiom) {
 
 		myManager.addAxiom(hypothesisOntology, addedAxiom);
-//		System.out.println(addedAxiom);
+ 		System.out.println(addedAxiom);
 		minimiseHypothesis();
 //		try {
 //			saveOWLFile(hypothesisOntology, hypoFile);
@@ -515,32 +519,37 @@ public class consoleLearner {
 		OWLSubClassOfAxiom newCounterexampleAxiom = counterexample;
 		OWLClassExpression left = counterexample.getSubClass();
 		OWLClassExpression right = counterexample.getSuperClass();
-
+		 
 		if (oracleMerge) {
 			newCounterexampleAxiom = elOracle.mergeLeft(left, right, MERGE_BOUND);
 			left = newCounterexampleAxiom.getSubClass();
 			right = newCounterexampleAxiom.getSuperClass();
 		}
+		 
 		if (oracleSaturate) {
 			newCounterexampleAxiom = elOracle.saturateLeft(left, right, SATURATION_BOUND);
 			left = newCounterexampleAxiom.getSubClass();
 			right = newCounterexampleAxiom.getSuperClass();
 		}
+		 
 		if (oracleLeftCompose) {
 			newCounterexampleAxiom = elOracle.composeLeft(left, right, COMPOSE_LEFT_BOUND);
 			left = ((OWLSubClassOfAxiom) newCounterexampleAxiom).getSubClass();
 			right = ((OWLSubClassOfAxiom) newCounterexampleAxiom).getSuperClass();
 		}
+		 
 		if (oracleRightCompose) {
 			newCounterexampleAxiom = elOracle.composeRight(left, right, COMPOSE_RIGHT_BOUND);
 			left = ((OWLSubClassOfAxiom) newCounterexampleAxiom).getSubClass();
 			right = ((OWLSubClassOfAxiom) newCounterexampleAxiom).getSuperClass();
 		}
+		 
 		if (oracleBranch) {
 			newCounterexampleAxiom = elOracle.branchRight(left, right, BRANCH_BOUND);
 			left = newCounterexampleAxiom.getSubClass();
 			right = newCounterexampleAxiom.getSuperClass();
 		}
+		 
 		if (oracleUnsaturate) {
 
 			newCounterexampleAxiom = elOracle.unsaturateRight(left, right, UNSATURATE_BOUND);

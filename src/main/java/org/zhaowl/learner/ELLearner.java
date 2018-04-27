@@ -2,9 +2,12 @@ package org.zhaowl.learner;
 
 import java.util.TreeSet;
 
+import org.apache.log4j.Logger;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLClassExpression;
 import org.semanticweb.owlapi.model.OWLSubClassOfAxiom;
+import org.slf4j.LoggerFactory;
+import org.zhaowl.console.consoleLearner;
 import org.zhaowl.engine.ELEngine;
 import org.zhaowl.tree.ELEdge;
 import org.zhaowl.tree.ELNode;
@@ -12,6 +15,7 @@ import org.zhaowl.tree.ELTree;
 import org.zhaowl.utils.Metrics;
 
 public class ELLearner {
+ 
 	private int unsaturationCounter = 0;
 	private int saturationCounter = 0;
 	private int leftDecompositionCounter = 0;
@@ -68,8 +72,9 @@ public class ELLearner {
 				}
 			}
 		}
-
-		throw new Exception("Error creating counterexample. Not an EL Terminology");
+		System.out.println("Error decomposing. Not an EL Terminology: "+ left.toString()+ "subclass of" +right.toString());
+		return myEngineForT.getSubClassAxiom(left, right);
+		 
 	}
 
 	public OWLSubClassOfAxiom decomposeLeft(OWLClassExpression expression, OWLClass cl) throws Exception {
