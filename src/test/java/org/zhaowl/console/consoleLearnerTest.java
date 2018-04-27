@@ -26,19 +26,19 @@ public class consoleLearnerTest {
         int maxCounter = 2 << (numArgs-1);
         String [] args = new String[13];
         args[0]  = "src/main/resources/ontologies/small/animals.owl";
-        args[7]  = "0.5";
-        args[8]  = "0.5";
-        args[9]  = "0.5";
-        args[10] = "0.5";
-        args[11] = "0.5";
-        args[12] = "0.5";
+        args[7]  = "0.1";
+        args[8]  = "0.1";
+        args[9]  = "0.1";
+        args[10] = "0.1";
+        args[11] = "0.1";
+        args[12] = "0.1";
 
         for(int counter = 0; counter < maxCounter; counter++) {
             for (int i = 1; i <= numArgs; i++) {
                 if ((counter & (1<<(i-1))) >0) {
-                    args[i] = "t";
-                } else {
                     args[i] = "f";
+                } else {
+                    args[i] = "t";
                 }
             }
             consoleLearner cl = new consoleLearner();
