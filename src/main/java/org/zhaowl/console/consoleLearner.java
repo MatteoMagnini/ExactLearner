@@ -119,7 +119,7 @@ public class consoleLearner {
 				System.out.println("Total membership queries: " + myMetrics.getMembCount());
 				System.out.println("Total equivalence queries: " + myMetrics.getEquivCount());
 				//////////////////////////////////////////////////////////////////////
-				System.out.println("Oracle Stats:\n");
+				System.out.println("Learner Stats:\n");
 				System.out.println("Total left decompositions: " + elLearner.getNumberLeftDecomposition());
 				System.out.println("Total right decompositions: " + elLearner.getNumberRightDecomposition());
 				System.out.println("Total mergings: " + elLearner.getNumberMerging());
