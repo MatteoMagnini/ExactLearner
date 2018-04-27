@@ -135,7 +135,11 @@ public class ELOracle {
 											.addAll(nod.getEdges().get(k).getNode().getEdges());
 								nod.getEdges().remove(nod.getEdges().get(k));
 
-								if (!myEngineForH.entailed(
+								if (!myEngineForT.entailed(
+										myEngineForT.getSubClassAxiom(tree.transformToClassExpression(), 
+												oldTree.transformToClassExpression())) //if the merged tree is in fact a weaker expression
+										&&
+										!myEngineForH.entailed(
 										myEngineForH.getSubClassAxiom(tree.transformToClassExpression(), cl))) {
 									myExpression = tree.transformToClassExpression();
 									myClass = cl;
