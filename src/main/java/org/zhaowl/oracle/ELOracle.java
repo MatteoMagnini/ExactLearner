@@ -254,37 +254,38 @@ public class ELOracle {
 						}
 					}
 
-					Set<OWLEquivalentClassesAxiom> myEqAxiomSet = myEngineForT.getOntology()
-							.getEquivalentClassesAxioms(c);
-
-					for (OWLEquivalentClassesAxiom myEqAxiom : myEqAxiomSet) {
-						if (!nod.getLabel().contains(c)) {
-							break;
-						}
-
-						Set<OWLClassExpression> myExpSet = myEqAxiom.getClassExpressions();
-						for (OWLClassExpression exp : myExpSet) {
-							if (!nod.getLabel().contains(c)) {
-								break;
-							}
-							ELTree oldTree = new ELTree(tree.transformToClassExpression());
-							ELTree newSubtree = new ELTree(exp);
-							nod.getEdges().addAll(newSubtree.getRootNode().getEdges());
-							nod.extendLabel(newSubtree.getRootNode().getLabel());
-							nod.remove(c);
-							if ((random.nextDouble() < bound) && !myEngineForH
-									.entailed(myEngineForH.getSubClassAxiom(tree.transformToClassExpression(), cl))) {
-								myExpression = tree.transformToClassExpression();
-								myClass = cl;
-								flag = true;
-
-								leftCompositionCounter++;
-							} else {
-								tree = oldTree;
-							}
-						}
-					}
-
+					// Set<OWLEquivalentClassesAxiom> myEqAxiomSet = myEngineForT.getOntology()
+					// .getEquivalentClassesAxioms(c);
+					//
+					// for (OWLEquivalentClassesAxiom myEqAxiom : myEqAxiomSet) {
+					// if (!nod.getLabel().contains(c)) {
+					// break;
+					// }
+					//
+					// Set<OWLClassExpression> myExpSet = myEqAxiom.getClassExpressions();
+					// for (OWLClassExpression exp : myExpSet) {
+					// if (!nod.getLabel().contains(c)) {
+					// break;
+					// }
+					// ELTree oldTree = new ELTree(tree.transformToClassExpression());
+					// ELTree newSubtree = new ELTree(exp);
+					// nod.getEdges().addAll(newSubtree.getRootNode().getEdges());
+					// nod.extendLabel(newSubtree.getRootNode().getLabel());
+					// nod.remove(c);
+					// if ((random.nextDouble() < bound) && !myEngineForH
+					// .entailed(myEngineForH.getSubClassAxiom(tree.transformToClassExpression(),
+					// cl))) {
+					// myExpression = tree.transformToClassExpression();
+					// myClass = cl;
+					// flag = true;
+					//
+					// leftCompositionCounter++;
+					// } else {
+					// tree = oldTree;
+					// }
+					// }
+					// }
+					//
 				}
 
 			}
@@ -306,25 +307,41 @@ public class ELOracle {
 	private Boolean composingRight(OWLClassExpression cl, OWLClassExpression expression, double bound)
 			throws Exception {
 		boolean flag = false;
-		// ELTree tree = new ELTree(expression);
-		// for (int i = 0; i < tree.getMaxLevel(); i++) {
-		// for (ELNode nod : tree.getNodesOnLevel(i + 1)) {
-		//
-		// ELTree oldTree = new ELTree(tree.transformToClassExpression());
-		//
-		// if ((random.nextDouble() < bound) && !myEngineForH.entailed(
-		// myEngineForH.getSubClassAxiom(cl,tree.transformToClassExpression()))) {
-		// myExpression = tree.transformToClassExpression();
-		// myClass = cl;
-		// flag = true;
-		// rightCompositionCounter++;
-		// } else {
-		// tree = oldTree;
-		// }
-		//
-		//
-		// }
-		// }
+		ELTree tree = new ELTree(expression);
+		for (int i = 0; i < tree.getMaxLevel(); i++) {
+			for (ELNode nod : tree.getNodesOnLevel(i + 1)) {
+
+				TreeSet<OWLClass> myClassSet = new TreeSet<OWLClass>();
+				myClassSet.addAll(nod.getLabel());
+				for (OWLClass c : myClassSet) {
+
+					Set<OWLSubClassOfAxiom> myAxiomSet = myEngineForT.getOntology().getSubClassAxiomsForSubClass(c);
+
+					for (OWLSubClassOfAxiom mySubClassAxiom : myAxiomSet) {
+						if (!nod.getLabel().contains(c)) {
+							break;
+						}
+						ELTree oldTree = new ELTree(tree.transformToClassExpression());
+						ELTree subtree = new ELTree(mySubClassAxiom.getSuperClass());
+						nod.getEdges().addAll(subtree.getRootNode().getEdges());
+						nod.extendLabel(subtree.getRootNode().getLabel());
+						nod.remove(c);
+						if ((random.nextDouble() < bound) && !myEngineForH
+								.entailed(myEngineForH.getSubClassAxiom(cl, tree.transformToClassExpression()))) {
+							myExpression = tree.transformToClassExpression();
+							myClass = cl;
+							flag = true;
+
+							rightCompositionCounter++;
+						} else {
+							tree = oldTree;
+						}
+					}
+
+				}
+
+			}
+		}
 		return flag;
 	}
 
