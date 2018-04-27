@@ -79,6 +79,17 @@ public class ELNode {
 		getLabel().add(newClass);
 		tree.setSize(tree.getSize() + 1);
 	}
+	
+	/**
+	 * Adds entries to the node label.
+	 * @param newSetClass Classes to add to label.
+	 */
+	public void extendLabel(TreeSet<OWLClass> newSetClass) {
+		for(OWLClass newClass :  newSetClass) {
+			getLabel().add(newClass);
+			tree.setSize(tree.getSize() + 1);
+		}
+	}
 
     public TreeSet<OWLClass> getLabel() {
 		return label;
