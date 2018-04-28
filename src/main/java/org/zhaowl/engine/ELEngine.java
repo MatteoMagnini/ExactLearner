@@ -35,16 +35,6 @@ public class ELEngine {
     public Set<OWLClass> getClassesInSignature() {
         return myOntology.getClassesInSignature();
     }
-
-//    public OWLClassExpression parseClassExpression(String s){
-//    	return myParser.parseClassExpression(s);
-//	}
-    
-//	public OWLAxiom parseToOWLSubClassOfAxiom(String concept1String, String concept2String){
-//    	OWLClassExpression concept1 = myParser.parseClassExpression(concept1String);
-//		OWLClassExpression concept2 = myParser.parseClassExpression(concept2String);
-//		return getSubClassAxiom(concept1, concept2);
-//	}
 	
 	public OWLSubClassOfAxiom getSubClassAxiom(OWLClassExpression concept1, OWLClassExpression concept2){
 		return myManager.getOWLDataFactory().getOWLSubClassOfAxiom(concept1, concept2);
@@ -80,7 +70,7 @@ public class ELEngine {
         for(OWLAxiom ax : myReasoner.getRootOntology().getAxioms())
             LOGGER_.trace(ax.toString());
          */
-        //System.out.println("SubclassAx: " + subclassAxiom.toString());
+         
 
         myReasoner.flush();
         myReasoner.precomputeInferences(InferenceType.CLASS_HIERARCHY);
@@ -125,11 +115,11 @@ public class ELEngine {
             OWLEquivalentClassesAxiom eax = (OWLEquivalentClassesAxiom) ax;
             for(OWLSubClassOfAxiom sax : eax.asOWLSubClassOfAxioms()) {
                 if(!entailedEQ(sax)) {
-                    //System.out.println("returning false");
+                    
                     return false;
                 }
             }
-            //System.out.println("returning true");
+            
             return true;
         }
 
@@ -145,12 +135,11 @@ public class ELEngine {
 	public Boolean entailed(Set<OWLAxiom> axioms) {
         for(OWLAxiom ax : axioms) {
             if(!entailed(ax)) {
-                //System.out.println("SET CALL: " + ax.toString());
-                //System.out.println("returning false");
+                 
                 return false;
             }
         }
-        //System.out.println("returning true");
+         
         return true;
 	}
     
@@ -185,21 +174,21 @@ public class ELEngine {
 
     private OWLReasoner createReasoner(final OWLOntology rootOntology) {
         LOGGER_.trace("Reasoner created");
-        //Thread.dumpStack();
+         
         System.out.flush();
         ElkReasonerFactory reasoningFactory = new ElkReasonerFactory();
         return reasoningFactory.createReasoner(rootOntology);
     }
     public void disposeOfReasoner() {
         LOGGER_.trace("Reasoner "  + " disposed of");
-        //Thread.dumpStack();
+         
         System.out.flush();
         myReasoner.dispose();
     }
     public void applyChange(OWLOntologyChange change) {
     	myManager.applyChange(change);
     }	
-    	//	public Reasoner getOWLObjectIntersectionOf(List<OWLClass> classAux) {
+    	 
 
 
     

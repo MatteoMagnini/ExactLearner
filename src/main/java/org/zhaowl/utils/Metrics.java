@@ -20,12 +20,7 @@ public class Metrics {
 	{
 		this.myRenderer = renderer;
 	}
-// --Commented out by Inspection START (25/04/2018, 16:31):
-//	public Metrics()
-//	{
-//
-//	}
-// --Commented out by Inspection STOP (25/04/2018, 16:31)
+ 
 
 	public void showCIT(Set<OWLAxiom> axSet, boolean x) {
 
@@ -33,8 +28,7 @@ public class Metrics {
 	}
 
 	private void showCIs(Set<OWLAxiom> axSet, boolean x) {
-		int avgSize = 0;
-		int sumSize = 0;
+	 
 		int smallestSize = 0;
 		OWLAxiom smallestOne = null;
 		int ontSize = 0;
@@ -66,7 +60,7 @@ public class Metrics {
 				}
 			}
 			ontSize += totalSize;
-			sumSize += totalSize;
+			 
 		}
 		if(x)
 			System.out.println("Size of T: " + ontSize);
@@ -129,7 +123,7 @@ public class Metrics {
 				inclusion = inclusion.replaceAll("SubClassOf", "");
 			else
 				inclusion = inclusion.replaceAll("EquivalentTo", ""); 
-			//System.out.println(inclusion);
+			 
 			String[] arrIncl = inclusion.split(" ");
             int totalSize = 0;
 
@@ -137,10 +131,7 @@ public class Metrics {
 				if (anArrIncl.length() > 0 && !anArrIncl.equals("some"))
 					totalSize++;
 			
-			//for(int i = 0; i < arrIncl.length; i++)
-			//	System.out.println(arrIncl[i] + "=====" +arrIncl[i].length());
-			
-			//System.out.println(totalSize);
+	 
 			if(smallestOne == null) {
 				smallestOne = axe;
 				smallestSize = totalSize;
@@ -155,7 +146,7 @@ public class Metrics {
 			}
 				
 			sumSize += totalSize;
-			//System.out.println("Size of : " + rendering.render(axe) + "." + totalSize);
+			 
 		}
 		System.out.println("Smallest logical axiom: " + myRenderer.render(smallestOne));
 		System.out.println("Size is: " + smallestSize);

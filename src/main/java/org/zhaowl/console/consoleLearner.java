@@ -30,7 +30,7 @@ public class consoleLearner {
  
 	private String filePath;
 
-	// ############# Game variables Start ######################
+	 
 
 	// #########################################################
 
@@ -60,11 +60,11 @@ public class consoleLearner {
 	private ELLearner elLearner = null;
 	private ELOracle elOracle = null;
 
-	// ############# OWL variables Start ######################
+	// ############# OWL variables End ######################
 
 	// #########################################################
 
-	// ############# Oracle and Learner skills Start ######################
+	// ############# Oracle and Learner Skills Start ######################
 
 	private boolean oracleSaturate = false;
 	private boolean oracleMerge = false;
@@ -80,7 +80,7 @@ public class consoleLearner {
 	private boolean learnerBranch;
 	private boolean learnerDecompR;
 
-	// ############# Oracle and Learner skills END ######################
+	// ############# Oracle and Learner Skills End ######################
 
 	public static void main(String[] args) {
 		Logger.getRootLogger().setLevel(Level.OFF);
@@ -218,8 +218,9 @@ public class consoleLearner {
 			 
 			if (canTransformELrhs()) {
 				lastCE = computeEssentialRightCounterexample();
-				for (OWLAxiom ax : hypothesisOntology.getAxioms()) {
-					if (((OWLSubClassOfAxiom) ax).getSubClass()
+				Set<OWLSubClassOfAxiom> myAxiomSet = elQueryEngineForH.getOntology().getSubClassAxiomsForSubClass(lastName);
+				for (OWLSubClassOfAxiom ax : myAxiomSet) {
+					if (ax.getSubClass()
 							.getClassExpressionType() == ClassExpressionType.OWL_CLASS) {
 						OWLClass cl = (OWLClass) ((OWLSubClassOfAxiom) ax).getSubClass();
 						if (cl.equals(lastName)) {
@@ -253,7 +254,7 @@ public class consoleLearner {
 
 		myManager.addAxiom(hypothesisOntology, addedAxiom);
  		System.out.println(addedAxiom);
-		minimiseHypothesis();
+		
 //		try {
 //			saveOWLFile(hypothesisOntology, hypoFile);
 //		} catch (Exception e) {
@@ -263,6 +264,7 @@ public class consoleLearner {
 
 	private void saveOWLFile(OWLOntology ontology, File file) throws Exception {
 
+		minimiseHypothesis();
 		OWLOntologyFormat format = myManager.getOntologyFormat(ontology);
 		ManchesterOWLSyntaxOntologyFormat manSyntaxFormat = new ManchesterOWLSyntaxOntologyFormat();
 		if (format.isPrefixOWLOntologyFormat()) {
@@ -483,7 +485,7 @@ public class consoleLearner {
 	}
 
 	private OWLSubClassOfAxiom getCounterExample(ELEngine elQueryEngineForT, ELEngine elQueryEngineForH)
-			throws Exception {
+			throws Exception { 
 
 		for (OWLAxiom selectedAxiom : axiomsT) {
 			selectedAxiom.getAxiomType();
@@ -551,7 +553,6 @@ public class consoleLearner {
 		}
 		 
 		if (oracleUnsaturate) {
-
 			newCounterexampleAxiom = elOracle.unsaturateRight(left, right, UNSATURATE_BOUND);
 		}
 
