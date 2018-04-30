@@ -512,9 +512,12 @@ public class consoleLearner {
     private OWLSubClassOfAxiom getCounterExample(ELEngine elQueryEngineForT, ELEngine elQueryEngineForH)
             throws Exception {
         //necessary to avoid Concurrent Modification Exception
-        Set<OWLAxiom> tmp = new HashSet<>(axiomsTtmp);
+     //   Set<OWLAxiom> tmp = new HashSet<>(axiomsTtmp);
 
-        for (OWLAxiom selectedAxiom : tmp) {
+        Iterator<OWLAxiom> iterator = axiomsTtmp.iterator();
+        //for (OWLAxiom selectedAxiom : tmp) {
+        while(iterator.hasNext()) {
+            OWLAxiom selectedAxiom = iterator.next();
             selectedAxiom.getAxiomType();
 
             // first get CounterExample from an axiom with the type SUBCLASS_OF
@@ -525,7 +528,8 @@ public class consoleLearner {
 
                     return getCounterExampleSubClassOf(elQueryEngineForT, elQueryEngineForH, counterexample);
                 }
-                axiomsTtmp.remove(selectedAxiom);
+                //axiomsTtmp.remove(selectedAxiom);
+                iterator.remove();
             }
             if (selectedAxiom.isOfType(AxiomType.EQUIVALENT_CLASSES)) {
                 OWLEquivalentClassesAxiom equivCounterexample = (OWLEquivalentClassesAxiom) selectedAxiom;
@@ -537,7 +541,8 @@ public class consoleLearner {
                         return getCounterExampleSubClassOf(elQueryEngineForT, elQueryEngineForH, subClassAxiom);
                     }
                 }
-                axiomsTtmp.remove(selectedAxiom);
+                //axiomsTtmp.remove(selectedAxiom);
+                iterator.remove();
             }
 
 
