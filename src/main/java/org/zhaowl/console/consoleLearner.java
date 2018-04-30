@@ -506,9 +506,8 @@ public class consoleLearner {
 					OWLSubClassOfAxiom counterexample = (OWLSubClassOfAxiom) selectedAxiom;
 
 					return getCounterExampleSubClassOf(elQueryEngineForT, elQueryEngineForH, counterexample);
-				} else {
-					axiomsTtmp.remove(selectedAxiom);
-				}
+				} 
+				axiomsTtmp.remove(selectedAxiom);
 			}
 			if (selectedAxiom.isOfType(AxiomType.EQUIVALENT_CLASSES)) {
 
@@ -519,12 +518,12 @@ public class consoleLearner {
 					if (!elQueryEngineForH.entailed(subClassAxiom)) {
 
 						return getCounterExampleSubClassOf(elQueryEngineForT, elQueryEngineForH, subClassAxiom);
-					} else {
-						axiomsTtmp.remove(selectedAxiom);
-					}
+					} 
 				}
-
-			}
+				axiomsTtmp.remove(selectedAxiom);
+			}  
+					
+			
 		}
 		throw new Exception("No more counterexamples");
 	}
