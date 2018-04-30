@@ -22,12 +22,12 @@ public class Metrics {
 	}
  
 
-	public void showCIT(Set<OWLAxiom> axSet, boolean x) {
+	public int sizeOfCIT(Set<OWLAxiom> axSet, boolean x) {
 
-		showCIs(axSet, x);
+		return showCIs(axSet, x);
 	}
 
-	private void showCIs(Set<OWLAxiom> axSet, boolean x) {
+	private int showCIs(Set<OWLAxiom> axSet, boolean x) {
 	 
 		int smallestSize = 0;
 		OWLAxiom smallestOne = null;
@@ -62,10 +62,12 @@ public class Metrics {
 			ontSize += totalSize;
 			 
 		}
-		if(x)
-			System.out.println("Size of T: " + ontSize);
-		else
-			System.out.println("Size of H: " + ontSize);
+		return ontSize;
+//
+//		if(x)
+//			System.out.println("Size of T: " + ontSize);
+//		else
+//			System.out.println("Size of H: " + ontSize);
 	}
 
 // --Commented out by Inspection START (30/04/2018, 15:29):

@@ -38,16 +38,16 @@ Class: <http://www.geneontology.org/go#WBls_0000013>
         <http://www.geneontology.org/go#WBls_0000004>
     
     
-Class: <http://www.geneontology.org/go#WBls_0000012>
-
-    SubClassOf: 
-        <http://www.geneontology.org/go#WBls_0000010>
-    
-    
 Class: <http://www.geneontology.org/go#WBls_0000056>
 
     SubClassOf: 
         <http://www.geneontology.org/go#WBls_0000041>
+    
+    
+Class: <http://www.geneontology.org/go#WBls_0000012>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#WBls_0000010>
     
     
 Class: <http://www.geneontology.org/go#WBls_0000011>
@@ -164,26 +164,26 @@ Class: <http://www.geneontology.org/go#WBls_0000047>
         <http://www.geneontology.org/go#WBls_0000029>
     
     
-Class: <http://www.geneontology.org/go#WBls_0000002>
-
-    SubClassOf: 
-        <http://www.geneontology.org/go#WBls_0000001>
-    
-    
 Class: <http://www.geneontology.org/go#WBls_0000046>
 
     SubClassOf: 
         <http://www.geneontology.org/go#WBls_0000023>
     
     
-Class: <http://www.geneontology.org/go#WBls_0000001>
+Class: <http://www.geneontology.org/go#WBls_0000002>
 
+    SubClassOf: 
+        <http://www.geneontology.org/go#WBls_0000001>
+    
     
 Class: <http://www.geneontology.org/go#WBls_0000045>
 
     SubClassOf: 
         <http://www.geneontology.org/go#WBls_0000043>
     
+    
+Class: <http://www.geneontology.org/go#WBls_0000001>
+
     
 Class: <http://www.geneontology.org/go#WBls_0000044>
 
@@ -377,16 +377,16 @@ Class: <http://www.geneontology.org/go#WBls_0000066>
         <http://www.geneontology.org/go#WBls_0000057>
     
     
-Class: <http://www.geneontology.org/go#WBls_0000021>
-
-    SubClassOf: 
-        <http://www.geneontology.org/go#WBls_0000003>
-    
-    
 Class: <http://www.geneontology.org/go#WBls_0000065>
 
     SubClassOf: 
         <http://www.geneontology.org/go#WBls_0000057>
+    
+    
+Class: <http://www.geneontology.org/go#WBls_0000021>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#WBls_0000003>
     
     
 Class: <http://www.geneontology.org/go#WBls_0000020>

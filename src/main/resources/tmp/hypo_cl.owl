@@ -85,13 +85,13 @@ Class: <http://obo.sourceforge.net/cl.owl#Osteocyte>
         <http://obo.sourceforge.net/cl.owl#MatureCell>
     
     
-Class: <http://obo.sourceforge.net/cl.owl#ChondroBlast>
+Class: <http://obo.sourceforge.net/cl.owl#MioBlast>
 
     SubClassOf: 
         <http://obo.sourceforge.net/cl.owl#InMatureCell>
     
     
-Class: <http://obo.sourceforge.net/cl.owl#MioBlast>
+Class: <http://obo.sourceforge.net/cl.owl#ChondroBlast>
 
     SubClassOf: 
         <http://obo.sourceforge.net/cl.owl#InMatureCell>

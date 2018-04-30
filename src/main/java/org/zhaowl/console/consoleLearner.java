@@ -121,32 +121,8 @@ public class consoleLearner {
                 long timeStart = System.currentTimeMillis();
                 runLearner(elQueryEngineForT, elQueryEngineForH);
                 long timeEnd = System.currentTimeMillis();
-                System.out.println("Total time (ms): " + (timeEnd - timeStart));
-
-                System.out.println("Total membership queries: " + myMetrics.getMembCount());
-                System.out.println("Total equivalence queries: " + myMetrics.getEquivCount());
-                //////////////////////////////////////////////////////////////////////
-                System.out.println("Learner Stats:\n");
-                System.out.println("Total left decompositions: " + elLearner.getNumberLeftDecomposition());
-                System.out.println("Total right decompositions: " + elLearner.getNumberRightDecomposition());
-                System.out.println("Total mergings: " + elLearner.getNumberMerging());
-                System.out.println("Total branchings: " + elLearner.getNumberBranching());
-                System.out.println("Total saturations: " + elLearner.getNumberSaturations());
-                System.out.println("Total unsaturations: " + elLearner.getNumberUnsaturations());
-                //////////////////////////////////////////////////////////////////////
-                System.out.println("Oracle Stats:\n");
-                System.out.println("Total left compositions: " + elOracle.getNumberLeftComposition());
-                System.out.println("Total right compositions: " + elOracle.getNumberRightComposition());
-                System.out.println("Total mergings: " + elOracle.getNumberMerging());
-                System.out.println("Total branchings: " + elOracle.getNumberBranching());
-                System.out.println("Total saturations: " + elOracle.getNumberSaturations());
-                System.out.println("Total unsaturations: " + elOracle.getNumberUnsaturations());
                 saveOWLFile(hypothesisOntology, hypoFile);
-                System.out.println("Sizes:\n");
-                System.out.println("Target TBox logical axioms: " + axiomsT.size());
-                myMetrics.showCIT(targetOntology.getAxioms(), true);
-                System.out.println("Hypothesis TBox logical axioms: " + hypothesisOntology.getAxioms().size());
-                myMetrics.showCIT(hypothesisOntology.getAxioms(), false);
+                printStats(timeStart, timeEnd, true);
                 elQueryEngineForH.disposeOfReasoner();
                 elQueryEngineForT.disposeOfReasoner();
                 myManager.removeOntology(hypothesisOntology);
@@ -165,6 +141,48 @@ public class consoleLearner {
             elQueryEngineForT.disposeOfReasoner();
         }
 
+    }
+
+    private void verbose(String description, String value, Boolean verb) {
+        if(verb) {
+            System.out.print(description);
+            System.out.println(value);
+        }
+        else {
+            System.out.print(value + " ");
+        }
+    }
+    private void verbose(String description, int value, Boolean verb) {
+        verbose(description, String.valueOf(value), verb);
+    }
+
+    private void printStats(long timeStart, long timeEnd, Boolean verb) throws Exception {
+        verbose("Total time (ms): ", String.valueOf(timeEnd - timeStart), verb);
+
+        verbose("Total membership queries: ", myMetrics.getMembCount(), verb);
+        verbose("Total equivalence queries: ", myMetrics.getEquivCount(), verb);
+        //////////////////////////////////////////////////////////////////////
+        verbose("\nLearner Stats:", "", verb);
+        verbose("Total left decompositions: " , elLearner.getNumberLeftDecomposition(), verb);
+        verbose("Total right decompositions: " , elLearner.getNumberRightDecomposition(), verb);
+        verbose("Total mergings: " , elLearner.getNumberMerging(), verb);
+        verbose("Total branchings: " , elLearner.getNumberBranching(), verb);
+        verbose("Total saturations: " , elLearner.getNumberSaturations(), verb);
+        verbose("Total unsaturations: " , elLearner.getNumberUnsaturations(), verb);
+        //////////////////////////////////////////////////////////////////////
+        verbose("\nOracle Stats:", "", verb);
+        verbose("Total left compositions: " , elOracle.getNumberLeftComposition(), verb);
+        verbose("Total right compositions: " , elOracle.getNumberRightComposition(), verb);
+        verbose("Total mergings: " , elOracle.getNumberMerging(), verb);
+        verbose("Total branchings: " , elOracle.getNumberBranching(), verb);
+        verbose("Total saturations: " , elOracle.getNumberSaturations(), verb);
+        verbose("Total unsaturations: " , elOracle.getNumberUnsaturations(), verb);
+        verbose("\nSizes:", "", verb);
+        verbose("Target TBox logical axioms: ", axiomsT.size(), verb);
+        verbose("Size of T: ", myMetrics.sizeOfCIT(targetOntology.getAxioms(),true), verb);
+        verbose("Hypothesis TBox logical axioms: ", hypothesisOntology.getAxioms().size(), verb);
+        verbose("Size of H: ", myMetrics.sizeOfCIT(targetOntology.getAxioms(),false), verb);
+        System.out.println();
     }
 
     private void setOracleSkills(String[] args) {
@@ -268,7 +286,7 @@ public class consoleLearner {
 
         myManager.addAxiom(hypothesisOntology, addedAxiom);
 
-        System.out.println(addedAxiom);
+        //System.out.println(addedAxiom);
 
 //		try {
 //			saveOWLFile(hypothesisOntology, hypoFile);
