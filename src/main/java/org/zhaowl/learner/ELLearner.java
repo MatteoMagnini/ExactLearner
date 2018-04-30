@@ -92,21 +92,25 @@ public class ELLearner {
 						if (isCounterExample(nod.transformToDescription(), cls)) {
 							myExpression = nod.transformToDescription();
 							myClass = cls;
-							leftDecompositionCounter++;
+							leftDecompositionCounter++; 
 							return true;
 						}
 					}
 				}
 				for (int j = 0; j < nod.getEdges().size(); j++) {
                     ELTree oldTree = new ELTree(tree.transformToClassExpression());
-					nod.getEdges().remove(j);
-					for (OWLClass cls : myEngineForT.getClassesInSignature()) {
-						myMetrics.setMembCount(myMetrics.getMembCount() + 1);
-						if (isCounterExample(tree.transformToClassExpression(), cls)) {
-							myExpression = tree.transformToClassExpression();
-							myClass = cls;
-							leftDecompositionCounter++;
-							return true;
+					
+                    nod.getEdges().remove(j);
+					if(!myEngineForT.entailed(myEngineForT.getSubClassAxiom(tree.transformToClassExpression(), 
+							oldTree.transformToClassExpression()))){//we are removing things with top, this check is to avoid loop
+						for (OWLClass cls : myEngineForT.getClassesInSignature()) {
+							myMetrics.setMembCount(myMetrics.getMembCount() + 1);
+							if (isCounterExample(tree.transformToClassExpression(), cls)) {
+								myExpression = tree.transformToClassExpression();
+								myClass = cls;
+								leftDecompositionCounter++; 
+								return true;
+							}
 						}
 					}
 					tree = oldTree;
@@ -173,6 +177,8 @@ public class ELLearner {
 							for(int k=0;k<l;k++)
 								nod.getEdges().remove(k);					
 							nod.getEdges().add(newEdge);
+							if(!myEngineForT.entailed(myEngineForT.getSubClassAxiom(tree.transformToClassExpression(), 
+									oldTree.transformToClassExpression()))){//we are removing things with top, this check is to avoid loop
 							for (OWLClass cls : myEngineForT.getClassesInSignature()) {
 							myMetrics.setMembCount(myMetrics.getMembCount() + 3);
 							if (myEngineForT.entailed(myEngineForT.getSubClassAxiom(cl, cls))
@@ -184,6 +190,7 @@ public class ELLearner {
 								rightDecompositionCounter++;
 								 
 								return true;
+							}
 							}
 							}
 						}

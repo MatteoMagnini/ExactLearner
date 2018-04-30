@@ -238,12 +238,12 @@ public class consoleLearner {
             while (true) {
                 lastCE = getCounterExample(elQueryEngineForT, elQueryEngineForH);
                 myMetrics.setEquivCount(myMetrics.getMembCount() + 1);
-
+ 
                 OWLSubClassOfAxiom counterexample = lastCE;
                 OWLClassExpression left = counterexample.getSubClass();
                 OWLClassExpression right = counterexample.getSuperClass();
                 lastCE = elLearner.decompose(left, right);
-
+                 
                 if (canTransformELrhs()) {
                     lastCE = computeEssentialRightCounterexample();
                     Set<OWLSubClassOfAxiom> myAxiomSet = elQueryEngineForH.getOntology().getSubClassAxiomsForSubClass(lastName);
@@ -260,15 +260,15 @@ public class consoleLearner {
                             }
                         }
                     }
-
+                    
                     lastCE = computeEssentialRightCounterexample();
                     addHypothesis(lastCE);
                 } else if (canTransformELlhs()) {
-
+                	 
                     lastCE = computeEssentialLeftCounterexample();
                     addHypothesis(lastCE);
                 } else {
-                    addHypothesis(lastCE);
+                    addHypothesis(lastCE); System.out.println(271);
                     System.out.println("Not an EL Terminology:" + lastCE.toString());
 
                 }
@@ -372,20 +372,20 @@ public class consoleLearner {
 
         lastExpression = axiom.getSubClass();
         lastName = (OWLClass) axiom.getSuperClass();
-
+ 
         if (learnerDecompL) {
             axiom = elLearner.decomposeLeft(lastExpression, lastName);
 
             lastExpression = axiom.getSubClass();
             lastName = (OWLClass) axiom.getSuperClass();
         }
-
+        
         if (learnerBranch) {
             axiom = elLearner.branchLeft(lastExpression, lastName);
             lastExpression = axiom.getSubClass();
             lastName = (OWLClass) axiom.getSuperClass();
         }
-
+         
         if (learnerUnsat) {
             axiom = elLearner.unsaturateLeft(lastExpression, lastName);
         }
