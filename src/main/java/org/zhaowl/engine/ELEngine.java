@@ -4,7 +4,6 @@ import java.util.Set;
 
 import org.semanticweb.elk.owlapi.ElkReasonerFactory;
 import org.semanticweb.owlapi.model.*;
-import org.semanticweb.owlapi.reasoner.InferenceType;
 import org.semanticweb.owlapi.reasoner.NodeSet;
 import org.semanticweb.owlapi.reasoner.Node;
 import org.semanticweb.owlapi.reasoner.OWLReasoner;
@@ -40,10 +39,12 @@ public class ELEngine {
 		return myManager.getOWLDataFactory().getOWLSubClassOfAxiom(concept1, concept2);
     }
 
-	public OWLClassExpression getOWLObjectIntersectionOf(OWLClassExpression concept1, OWLClassExpression concept2){
-		return myManager.getOWLDataFactory().getOWLObjectIntersectionOf(concept1, concept2);
-    }
-	
+// --Commented out by Inspection START (30/04/2018, 15:27):
+//	public OWLClassExpression getOWLObjectIntersectionOf(OWLClassExpression concept1, OWLClassExpression concept2){
+//		return myManager.getOWLDataFactory().getOWLObjectIntersectionOf(concept1, concept2);
+//    }
+// --Commented out by Inspection STOP (30/04/2018, 15:27)
+
 	public OWLClassExpression getOWLObjectIntersectionOf(Set<OWLClassExpression>mySet){
 		return myManager.getOWLDataFactory().getOWLObjectIntersectionOf(mySet);
     }
@@ -73,7 +74,7 @@ public class ELEngine {
          
 
         myReasoner.flush();
-        myReasoner.precomputeInferences(InferenceType.CLASS_HIERARCHY);
+        //myReasoner.precomputeInferences(InferenceType.CLASS_HIERARCHY);
 
         NodeSet<OWLClass> superClasses = myReasoner.getSuperClasses(leftName, false);
         Node<OWLClass> equivClasses = myReasoner.getEquivalentClasses(leftName);
@@ -143,34 +144,38 @@ public class ELEngine {
         return true;
 	}
     
-    /** Gets the superclasses of a class expression parsed from a string.
-     * 
-     * @param superclass
-     *            The string from which the class expression will be parsed.
-     * @param direct
-     *            Specifies whether direct superclasses should be returned or
-     *            not.
-     * @return The superclasses of the specified class expression If there was a
-     *         problem parsing the class expression. */
-	
-    public Set<OWLClass> getSuperClasses(OWLClassExpression superclass, boolean direct) {
-        NodeSet<OWLClass> superClasses = myReasoner.getSuperClasses(superclass, direct);
+// --Commented out by Inspection START (30/04/2018, 15:29):
+//    /** Gets the superclasses of a class expression parsed from a string.
+//     *
+//     * @param superclass
+//     *            The string from which the class expression will be parsed.
+//     * @param direct
+//     *            Specifies whether direct superclasses should be returned or
+//     *            not.
+//     * @return The superclasses of the specified class expression If there was a
+//     *         problem parsing the class expression. */
+//
+//    public Set<OWLClass> getSuperClasses(OWLClassExpression superclass, boolean direct) {
+//        NodeSet<OWLClass> superClasses = myReasoner.getSuperClasses(superclass, direct);
+//
+//        return superClasses.getFlattened();
+//    }
+// --Commented out by Inspection STOP (30/04/2018, 15:29)
 
-        return superClasses.getFlattened();
-    }
-
-    /** Gets the subclasses of a class expression parsed from a string.
-     * 
-     * @param subclass
-     *            The string from which the class expression will be parsed.
-     * @param direct
-     *            Specifies whether direct subclasses should be returned or not.
-     * @return The subclasses of the specified class expression If there was a
-     *         problem parsing the class expression. */
-    public Set<OWLClass> getSubClasses(OWLClassExpression subclass, boolean direct) {
-        NodeSet<OWLClass> subClasses = myReasoner.getSubClasses(subclass, direct);
-        return subClasses.getFlattened();
-    }
+// --Commented out by Inspection START (30/04/2018, 15:29):
+//    /** Gets the subclasses of a class expression parsed from a string.
+//     *
+//     * @param subclass
+//     *            The string from which the class expression will be parsed.
+//     * @param direct
+//     *            Specifies whether direct subclasses should be returned or not.
+//     * @return The subclasses of the specified class expression If there was a
+//     *         problem parsing the class expression. */
+//    public Set<OWLClass> getSubClasses(OWLClassExpression subclass, boolean direct) {
+//        NodeSet<OWLClass> subClasses = myReasoner.getSubClasses(subclass, direct);
+//        return subClasses.getFlattened();
+//    }
+// --Commented out by Inspection STOP (30/04/2018, 15:29)
 
     private OWLReasoner createReasoner(final OWLOntology rootOntology) {
         LOGGER_.trace("Reasoner created");

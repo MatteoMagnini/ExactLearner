@@ -68,9 +68,11 @@ public class Metrics {
 			System.out.println("Size of H: " + ontSize);
 	}
 
-	public void showCIH(Set<OWLAxiom> axSet) {
-		showCIs(axSet, false);
-	}
+// --Commented out by Inspection START (30/04/2018, 15:29):
+//	public void showCIH(Set<OWLAxiom> axSet) {
+//		showCIs(axSet, false);
+//	}
+// --Commented out by Inspection STOP (30/04/2018, 15:29)
 
  
 
@@ -106,54 +108,56 @@ public class Metrics {
 		return names;
 	}
 	
-	public int[] showCISizes(Set<OWLAxiom> axSet)
-	{
-		int[] returns = new int[2];
-		
-		int sumSize = 0;
-		
-		OWLAxiom smallestOne = null;
-		int smallestSize = 0;
-		for (OWLAxiom axe : axSet) {
-			String inclusion = myRenderer.render(axe);
-			inclusion = inclusion.replaceAll(" and ", " ");
-			inclusion = inclusion.replaceAll(" some ", " ");
-			
-			if(axe.toString().contains("SubClassOf"))
-				inclusion = inclusion.replaceAll("SubClassOf", "");
-			else
-				inclusion = inclusion.replaceAll("EquivalentTo", ""); 
-			 
-			String[] arrIncl = inclusion.split(" ");
-            int totalSize = 0;
-
-			for (String anArrIncl : arrIncl)
-				if (anArrIncl.length() > 0 && !anArrIncl.equals("some"))
-					totalSize++;
-			
-	 
-			if(smallestOne == null) {
-				smallestOne = axe;
-				smallestSize = totalSize;
-			}
-			else
-			{
-				if(smallestSize > totalSize)
-				{
-					smallestOne = axe;
-					smallestSize = totalSize;
-				}
-			}
-				
-			sumSize += totalSize;
-			 
-		}
-		System.out.println("Smallest logical axiom: " + myRenderer.render(smallestOne));
-		System.out.println("Size is: " + smallestSize);
-		returns[0] = smallestSize;
-		returns[1] = sumSize / axSet.size();
-		return returns;
-	}
+// --Commented out by Inspection START (30/04/2018, 15:29):
+//	public int[] showCISizes(Set<OWLAxiom> axSet)
+//	{
+//		int[] returns = new int[2];
+//
+//		int sumSize = 0;
+//
+//		OWLAxiom smallestOne = null;
+//		int smallestSize = 0;
+//		for (OWLAxiom axe : axSet) {
+//			String inclusion = myRenderer.render(axe);
+//			inclusion = inclusion.replaceAll(" and ", " ");
+//			inclusion = inclusion.replaceAll(" some ", " ");
+//
+//			if(axe.toString().contains("SubClassOf"))
+//				inclusion = inclusion.replaceAll("SubClassOf", "");
+//			else
+//				inclusion = inclusion.replaceAll("EquivalentTo", "");
+//
+//			String[] arrIncl = inclusion.split(" ");
+//            int totalSize = 0;
+//
+//			for (String anArrIncl : arrIncl)
+//				if (anArrIncl.length() > 0 && !anArrIncl.equals("some"))
+//					totalSize++;
+//
+//
+//			if(smallestOne == null) {
+//				smallestOne = axe;
+//				smallestSize = totalSize;
+//			}
+//			else
+//			{
+//				if(smallestSize > totalSize)
+//				{
+//					smallestOne = axe;
+//					smallestSize = totalSize;
+//				}
+//			}
+//
+//			sumSize += totalSize;
+//
+//		}
+//		System.out.println("Smallest logical axiom: " + myRenderer.render(smallestOne));
+//		System.out.println("Size is: " + smallestSize);
+//		returns[0] = smallestSize;
+//		returns[1] = sumSize / axSet.size();
+//		return returns;
+//	}
+// --Commented out by Inspection STOP (30/04/2018, 15:29)
 
     public int getMembCount() {
         return membCount;

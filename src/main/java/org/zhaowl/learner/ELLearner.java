@@ -2,12 +2,9 @@ package org.zhaowl.learner;
 
 import java.util.TreeSet;
 
-import org.apache.log4j.Logger;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLClassExpression;
 import org.semanticweb.owlapi.model.OWLSubClassOfAxiom;
-import org.slf4j.LoggerFactory;
-import org.zhaowl.console.consoleLearner;
 import org.zhaowl.engine.ELEngine;
 import org.zhaowl.tree.ELEdge;
 import org.zhaowl.tree.ELNode;

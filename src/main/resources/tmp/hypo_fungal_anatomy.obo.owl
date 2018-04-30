@@ -19,7 +19,8 @@ Class: <http://www.geneontology.org/go#FAO_0001012>
          and (<http://www.geneontology.org/go#part_of> some 
             (<http://www.geneontology.org/go#FAO_0000001>
              and <http://www.geneontology.org/go#FAO_0001001>
-             and <http://www.geneontology.org/go#FAO_0001003>))
+             and <http://www.geneontology.org/go#FAO_0001003>
+             and owl:Thing))
     
     
 Class: <http://www.geneontology.org/go#FAO_0001011>
@@ -49,6 +50,9 @@ Class: <http://www.geneontology.org/go#FAO_0001014>
             (<http://www.geneontology.org/go#FAO_0000001>
              and <http://www.geneontology.org/go#FAO_0000011>))
     
+    
+Class: owl:Thing
+
     
 Class: <http://www.geneontology.org/go#FAO_0000001>
 

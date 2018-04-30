@@ -4,12 +4,8 @@ import java.util.Random;
 import java.util.Set;
 import java.util.TreeSet;
 
-import org.semanticweb.owlapi.model.AxiomType;
-import org.semanticweb.owlapi.model.ClassExpressionType;
-import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLClassExpression;
-import org.semanticweb.owlapi.model.OWLEquivalentClassesAxiom;
 import org.semanticweb.owlapi.model.OWLSubClassOfAxiom;
 import org.zhaowl.engine.ELEngine;
 import org.zhaowl.tree.ELEdge;
@@ -236,8 +232,7 @@ public class ELOracle {
 		for (int i = 0; i < tree.getMaxLevel(); i++) {
 			for (ELNode nod : tree.getNodesOnLevel(i + 1)) {
 
-				TreeSet<OWLClass> myClassSet = new TreeSet<OWLClass>();
-				myClassSet.addAll(nod.getLabel());
+				TreeSet<OWLClass> myClassSet = new TreeSet<>(nod.getLabel());
 				for (OWLClass c : myClassSet) {
 
 					Set<OWLSubClassOfAxiom> myAxiomSet = myEngineForT.getOntology().getSubClassAxiomsForSuperClass(c);
@@ -320,8 +315,7 @@ public class ELOracle {
 		for (int i = 0; i < tree.getMaxLevel(); i++) {
 			for (ELNode nod : tree.getNodesOnLevel(i + 1)) {
 
-				TreeSet<OWLClass> myClassSet = new TreeSet<OWLClass>();
-				myClassSet.addAll(nod.getLabel());
+				TreeSet<OWLClass> myClassSet = new TreeSet<>(nod.getLabel());
 				for (OWLClass c : myClassSet) {
 
 					Set<OWLSubClassOfAxiom> myAxiomSet = myEngineForT.getOntology().getSubClassAxiomsForSubClass(c);
