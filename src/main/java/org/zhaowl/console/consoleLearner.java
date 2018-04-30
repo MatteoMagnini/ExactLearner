@@ -257,7 +257,7 @@ public class consoleLearner {
 
 		myManager.addAxiom(hypothesisOntology, addedAxiom);
 		 
- 		System.out.println(addedAxiom);
+ 		//System.out.println(addedAxiom);
 		
 //		try {
 //			saveOWLFile(hypothesisOntology, hypoFile);
@@ -576,6 +576,7 @@ public class consoleLearner {
 		for (OWLClass cl1 : elQueryEngineForT.getClassesInSignature()) {
 			for (OWLClass cl2 : elQueryEngineForT.getClassesInSignature()) {
 				addedAxiom=elQueryEngineForT.getSubClassAxiom(cl1,cl2);
+				myMetrics.setMembCount(myMetrics.getMembCount() + 1);
 				if (elQueryEngineForT.entailed(addedAxiom))
 					addHypothesis(addedAxiom);
 			}
