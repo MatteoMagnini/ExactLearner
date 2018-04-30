@@ -29,6 +29,7 @@ public class consoleLearner {
     private static double COMPOSE_RIGHT_BOUND = 0d;
 
     private String filePath;
+    private File targetFile;
 
 
     // #########################################################
@@ -122,7 +123,7 @@ public class consoleLearner {
                 runLearner(elQueryEngineForT, elQueryEngineForH);
                 long timeEnd = System.currentTimeMillis();
                 saveOWLFile(hypothesisOntology, hypoFile);
-                printStats(timeStart, timeEnd, true);
+                printStats(timeStart, timeEnd, false);
                 elQueryEngineForH.disposeOfReasoner();
                 elQueryEngineForT.disposeOfReasoner();
                 myManager.removeOntology(hypothesisOntology);
@@ -149,7 +150,7 @@ public class consoleLearner {
             System.out.println(value);
         }
         else {
-            System.out.print(value + " ");
+            System.out.print(", " + value);
         }
     }
     private void verbose(String description, int value, Boolean verb) {
@@ -157,6 +158,9 @@ public class consoleLearner {
     }
 
     private void printStats(long timeStart, long timeEnd, Boolean verb) {
+        if(!verb) {
+            System.out.print(targetFile.getName());
+        }
         verbose("Total time (ms): ", String.valueOf(timeEnd - timeStart), verb);
 
         verbose("Total membership queries: ", myMetrics.getMembCount(), verb);
@@ -442,7 +446,8 @@ public class consoleLearner {
         try {
 
             System.out.println("Trying to load targetOntology");
-            targetOntology = myManager.loadOntologyFromOntologyDocument(new File(filePath));
+            targetFile = new File(filePath);
+            targetOntology = myManager.loadOntologyFromOntologyDocument(targetFile);
 
             axiomsT = new HashSet<>();
             axiomsTtmp = new HashSet<>();
