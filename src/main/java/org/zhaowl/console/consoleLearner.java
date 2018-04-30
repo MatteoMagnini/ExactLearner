@@ -156,7 +156,7 @@ public class consoleLearner {
         verbose(description, String.valueOf(value), verb);
     }
 
-    private void printStats(long timeStart, long timeEnd, Boolean verb) throws Exception {
+    private void printStats(long timeStart, long timeEnd, Boolean verb) {
         verbose("Total time (ms): ", String.valueOf(timeEnd - timeStart), verb);
 
         verbose("Total membership queries: ", myMetrics.getMembCount(), verb);
@@ -614,7 +614,7 @@ public class consoleLearner {
     private void precomputation(ELEngine elQueryEngineForT, ELEngine elQueryEngineForH) {
         for (OWLClass cl1 : elQueryEngineForT.getClassesInSignature()) {
             Set<OWLClass> implied = elQueryEngineForT.getSuperClasses(cl1, true);
-            for (OWLClassExpression cl2 : implied) {
+            for (OWLClass cl2 : implied) {
                 if (elQueryEngineForT.getClassesInSignature().contains(cl2)) {
                     OWLSubClassOfAxiom addedAxiom = elQueryEngineForT.getSubClassAxiom(cl1, cl2);
                     myMetrics.setMembCount(myMetrics.getMembCount() + 1);
