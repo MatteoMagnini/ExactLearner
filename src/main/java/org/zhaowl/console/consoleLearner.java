@@ -41,6 +41,7 @@ public class consoleLearner {
 	private final Metrics myMetrics = new Metrics(myRenderer);
 
 	private Set<OWLAxiom> axiomsT = null;
+	private Set<OWLAxiom> axiomsTtmp = null;
 
 	private String ontologyFolder = null;
 	private String ontologyName = null;
@@ -206,7 +207,9 @@ public class consoleLearner {
 	}
 
 	private void runLearner(ELEngine elQueryEngineForT, ELEngine elQueryEngineForH) throws Throwable {
-
+		//computes inclusions of the form A implies B
+		precomputation(elQueryEngineForT,elQueryEngineForH);
+		
 		while (!equivalenceQuery()) {
 			myMetrics.setEquivCount(myMetrics.getMembCount() + 1);
 			lastCE = getCounterExample(elQueryEngineForT, elQueryEngineForH);
@@ -253,6 +256,7 @@ public class consoleLearner {
 	private void addHypothesis(OWLAxiom addedAxiom) {
 
 		myManager.addAxiom(hypothesisOntology, addedAxiom);
+		 
  		System.out.println(addedAxiom);
 		
 //		try {
@@ -407,10 +411,13 @@ public class consoleLearner {
 			targetOntology = myManager.loadOntologyFromOntologyDocument(new File(filePath));
 
 			axiomsT = new HashSet<>();
+			axiomsTtmp = new HashSet<>();
 			for (OWLAxiom axe : targetOntology.getAxioms())
 				// removed !axe.toString().contains("Thing") &&
-				if (axe.isOfType(AxiomType.SUBCLASS_OF) || axe.isOfType(AxiomType.EQUIVALENT_CLASSES))
+				if (axe.isOfType(AxiomType.SUBCLASS_OF) || axe.isOfType(AxiomType.EQUIVALENT_CLASSES)) {
 					axiomsT.add(axe);
+					axiomsTtmp.add(axe);
+				}	
 
 			lastCE = null;
 
@@ -481,13 +488,15 @@ public class consoleLearner {
 
 	private Boolean equivalenceQuery() {
 
-		return elQueryEngineForH.entailed(axiomsT);
+		return elQueryEngineForH.entailed(axiomsTtmp);
 	}
 
 	private OWLSubClassOfAxiom getCounterExample(ELEngine elQueryEngineForT, ELEngine elQueryEngineForH)
 			throws Exception { 
-
-		for (OWLAxiom selectedAxiom : axiomsT) {
+		Set<OWLAxiom> tmp = new HashSet<>();
+		tmp.addAll(axiomsTtmp);	//necessary to avoid Concurrent Modification Exception
+				 
+		for (OWLAxiom selectedAxiom : tmp) {
 			selectedAxiom.getAxiomType();
 
 			// first get CounterExample from an axiom with the type SUBCLASS_OF
@@ -497,6 +506,8 @@ public class consoleLearner {
 					OWLSubClassOfAxiom counterexample = (OWLSubClassOfAxiom) selectedAxiom;
 
 					return getCounterExampleSubClassOf(elQueryEngineForT, elQueryEngineForH, counterexample);
+				} else {
+					axiomsTtmp.remove(selectedAxiom);
 				}
 			}
 			if (selectedAxiom.isOfType(AxiomType.EQUIVALENT_CLASSES)) {
@@ -508,6 +519,8 @@ public class consoleLearner {
 					if (!elQueryEngineForH.entailed(subClassAxiom)) {
 
 						return getCounterExampleSubClassOf(elQueryEngineForT, elQueryEngineForH, subClassAxiom);
+					} else {
+						axiomsTtmp.remove(selectedAxiom);
 					}
 				}
 
@@ -557,5 +570,16 @@ public class consoleLearner {
 		}
 
 		return newCounterexampleAxiom;
+	}
+	
+	private void precomputation(ELEngine elQueryEngineForT, ELEngine elQueryEngineForH) {
+		OWLSubClassOfAxiom addedAxiom;
+		for (OWLClass cl1 : elQueryEngineForT.getClassesInSignature()) {
+			for (OWLClass cl2 : elQueryEngineForT.getClassesInSignature()) {
+				addedAxiom=elQueryEngineForT.getSubClassAxiom(cl1,cl2);
+				if (elQueryEngineForT.entailed(addedAxiom))
+					addHypothesis(addedAxiom);
+			}
+		}
 	}
 }
