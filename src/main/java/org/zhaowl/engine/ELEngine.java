@@ -144,23 +144,19 @@ public class ELEngine {
         return true;
 	}
     
-// --Commented out by Inspection START (30/04/2018, 15:29):
-//    /** Gets the superclasses of a class expression parsed from a string.
-//     *
-//     * @param superclass
-//     *            The string from which the class expression will be parsed.
-//     * @param direct
-//     *            Specifies whether direct superclasses should be returned or
-//     *            not.
-//     * @return The superclasses of the specified class expression If there was a
-//     *         problem parsing the class expression. */
-//
-//    public Set<OWLClass> getSuperClasses(OWLClassExpression superclass, boolean direct) {
-//        NodeSet<OWLClass> superClasses = myReasoner.getSuperClasses(superclass, direct);
-//
-//        return superClasses.getFlattened();
-//    }
-// --Commented out by Inspection STOP (30/04/2018, 15:29)
+/** Gets the superclasses of a class expression parsed from a string.
+ *
+ * @param superclass
+ *            The string from which the class expression will be parsed.
+ * @param direct
+ *            Specifies whether direct superclasses should be returned or
+ *            not.
+ * @return The superclasses of the specified class expression If there was a
+ *         problem parsing the class expression. */
+public Set<OWLClass> getSuperClasses(OWLClassExpression superclass, boolean direct) {
+    NodeSet<OWLClass> superClasses = myReasoner.getSuperClasses(superclass, direct);
+    return superClasses.getFlattened();
+}
 
 // --Commented out by Inspection START (30/04/2018, 15:29):
 //    /** Gets the subclasses of a class expression parsed from a string.

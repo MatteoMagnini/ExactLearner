@@ -268,7 +268,7 @@ public class consoleLearner {
 
         myManager.addAxiom(hypothesisOntology, addedAxiom);
 
-        //System.out.println(addedAxiom);
+        System.out.println(addedAxiom);
 
 //		try {
 //			saveOWLFile(hypothesisOntology, hypoFile);
@@ -594,13 +594,19 @@ public class consoleLearner {
     }
 
     private void precomputation(ELEngine elQueryEngineForT, ELEngine elQueryEngineForH) {
-        OWLSubClassOfAxiom addedAxiom;
         for (OWLClass cl1 : elQueryEngineForT.getClassesInSignature()) {
-            for (OWLClass cl2 : elQueryEngineForT.getClassesInSignature()) {
-                addedAxiom = elQueryEngineForT.getSubClassAxiom(cl1, cl2);
-                myMetrics.setMembCount(myMetrics.getMembCount() + 1);
-                if (elQueryEngineForT.entailed(addedAxiom))
+            Set<OWLClass> implied = elQueryEngineForT.getSuperClasses(cl1, true);
+            for (OWLClassExpression cl2 : implied) {
+                if (elQueryEngineForT.getClassesInSignature().contains(cl2)) {
+                    OWLSubClassOfAxiom addedAxiom = elQueryEngineForT.getSubClassAxiom(cl1, cl2);
+                    myMetrics.setMembCount(myMetrics.getMembCount() + 1);
                     addHypothesis(addedAxiom);
+                }
+//            for (OWLClass cl2 : elQueryEngineForT.getClassesInSignature()) {
+//                addedAxiom = elQueryEngineForT.getSubClassAxiom(cl1, cl2);
+//                myMetrics.setMembCount(myMetrics.getMembCount() + 1);
+//                if (elQueryEngineForT.entailed(addedAxiom))
+//                    addHypothesis(addedAxiom);
             }
         }
     }
