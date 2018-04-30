@@ -65,8 +65,7 @@ Class: <http://www.geneontology.org/go#ID_0000092>
          and <http://www.geneontology.org/go#ID_0000092>
          and (<http://www.geneontology.org/go#part_of> some 
             (<http://www.geneontology.org/go#GO_0000021>
-             and <http://www.geneontology.org/go#ID_0000000>
-             and owl:Thing))
+             and <http://www.geneontology.org/go#ID_0000000>))
     
     
 Class: <http://www.geneontology.org/go#ID_0000091>
@@ -118,7 +117,8 @@ Class: <http://www.geneontology.org/go#ID_0000097>
          and <http://www.geneontology.org/go#ID_0000097>
          and (<http://www.geneontology.org/go#part_of> some 
             (<http://www.geneontology.org/go#GO_0000021>
-             and <http://www.geneontology.org/go#ID_0000000>))
+             and <http://www.geneontology.org/go#ID_0000000>
+             and owl:Thing))
     
     
 Class: <http://www.geneontology.org/go#ID_0000096>
@@ -509,9 +509,6 @@ Class: <http://www.geneontology.org/go#ID_0000062>
         <http://www.geneontology.org/go#ID_0000001>
     
     
-Class: owl:Thing
-
-    
 Class: <http://www.geneontology.org/go#GO_0000020>
 
     SubClassOf: 
@@ -520,6 +517,9 @@ Class: <http://www.geneontology.org/go#GO_0000020>
             (<http://www.geneontology.org/go#GO_0000021>
              and <http://www.geneontology.org/go#ID_0000000>))
     
+    
+Class: owl:Thing
+
     
 Class: <http://www.geneontology.org/go#ID_0000059>
 
