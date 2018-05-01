@@ -272,12 +272,11 @@ public class consoleLearner {
                     
                     lastCE = computeEssentialRightCounterexample();
                     addHypothesis(lastCE);
-                } else if (canTransformELlhs()) {
-                	 
+                } else if (canTransformELlhs()) {  
                     lastCE = computeEssentialLeftCounterexample();
                     addHypothesis(lastCE);
                 } else {
-                    addHypothesis(lastCE); System.out.println(271);
+                    addHypothesis(lastCE);  
                     System.out.println("Not an EL Terminology:" + lastCE.toString());
 
                 }
@@ -415,15 +414,17 @@ public class consoleLearner {
             lastExpression = axiom.getSuperClass();
         }
 
-        if (learnerMerge) {
-            axiom = elLearner.mergeRight(lastName, lastExpression);
-
+        
+        if (learnerSat) {
+            axiom = elLearner.saturateRight(lastName, lastExpression);
             lastName = (OWLClass) axiom.getSubClass();
             lastExpression = axiom.getSuperClass();
         }
 
-        if (learnerSat) {
-            axiom = elLearner.saturateRight(lastName, lastExpression);
+        if (learnerMerge) {
+            axiom = elLearner.mergeRight(lastName, lastExpression);
+
+            
         }
 
         return axiom;
@@ -589,13 +590,19 @@ public class consoleLearner {
             left = newCounterexampleAxiom.getSubClass();
             right = newCounterexampleAxiom.getSuperClass();
         }
-
+        if (oracleBranch) {
+            newCounterexampleAxiom = elOracle.branchRight(left, right, BRANCH_BOUND);
+            left = newCounterexampleAxiom.getSubClass();
+            right = newCounterexampleAxiom.getSuperClass();
+        }
         if (oracleSaturate) {
             newCounterexampleAxiom = elOracle.saturateLeft(left, right, SATURATION_BOUND);
             left = newCounterexampleAxiom.getSubClass();
             right = newCounterexampleAxiom.getSuperClass();
         }
 
+       
+        
         if (oracleLeftCompose) {
             newCounterexampleAxiom = elOracle.composeLeft(left, right, COMPOSE_LEFT_BOUND);
             left = newCounterexampleAxiom.getSubClass();
@@ -608,11 +615,7 @@ public class consoleLearner {
             right = newCounterexampleAxiom.getSuperClass();
         }
 
-        if (oracleBranch) {
-            newCounterexampleAxiom = elOracle.branchRight(left, right, BRANCH_BOUND);
-            left = newCounterexampleAxiom.getSubClass();
-            right = newCounterexampleAxiom.getSuperClass();
-        }
+       
 
         if (oracleUnsaturate) {
             newCounterexampleAxiom = elOracle.unsaturateRight(left, right, UNSATURATE_BOUND);

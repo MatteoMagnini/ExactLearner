@@ -12,104 +12,104 @@ Prefix: owl2xml: <http://www.w3.org/2006/12/owl2-xml#>
 Ontology: <http://www.semanticweb.org/ontologies/2014/3/animals.owl>
 
 
-ObjectProperty: <http://ontology.dumontierlab.com/biological-measure-primitive#lays>
+ObjectProperty: lays
 
     
-ObjectProperty: <http://ontology.dumontierlab.com/biological-measure-primitive#eats>
+ObjectProperty: eats
 
     
-ObjectProperty: <http://ontology.dumontierlab.com/biological-measure-primitive#has_part>
+ObjectProperty: has_part
 
     
-ObjectProperty: <http://ontology.dumontierlab.com/biological-measure-primitive#lives_in>
+ObjectProperty: lives_in
 
     
-Class: <http://ontology.dumontierlab.com/biological-measure-primitive#Bird>
-
-    SubClassOf: 
-        <http://ontology.dumontierlab.com/biological-measure-primitive#lays> some <http://ontology.dumontierlab.com/biological-measure-primitive#Egg>,
-        (<http://ontology.dumontierlab.com/biological-measure-primitive#has_part> some <http://ontology.dumontierlab.com/biological-measure-primitive#Leg>)
-         and (<http://ontology.dumontierlab.com/biological-measure-primitive#has_part> some <http://ontology.dumontierlab.com/biological-measure-primitive#Wing>),
-        <http://ontology.dumontierlab.com/biological-measure-primitive#Vertebrate>
-    
-    
-Class: <http://ontology.dumontierlab.com/biological-measure-primitive#Fish>
-
-    SubClassOf: 
-        <http://ontology.dumontierlab.com/biological-measure-primitive#Animal>
-         and (<http://ontology.dumontierlab.com/biological-measure-primitive#lives_in> some <http://ontology.dumontierlab.com/biological-measure-primitive#Water>),
-        <http://ontology.dumontierlab.com/biological-measure-primitive#Vertebrate>
-    
-    
-Class: <http://ontology.dumontierlab.com/biological-measure-primitive#Animal>
+Class: Egg
 
     
-Class: <http://ontology.dumontierlab.com/biological-measure-primitive#Herbivore>
+Class: Meat
+
+    
+Class: Carnivore
 
     EquivalentTo: 
-        <http://ontology.dumontierlab.com/biological-measure-primitive#Animal>
-         and (<http://ontology.dumontierlab.com/biological-measure-primitive#eats> some <http://ontology.dumontierlab.com/biological-measure-primitive#Plant>)
+        Animal
+         and (eats some Meat)
     
     
-Class: <http://ontology.dumontierlab.com/biological-measure-primitive#Plant>
+Class: Water
 
     
-Class: <http://ontology.dumontierlab.com/biological-measure-primitive#Vertebrate>
+Class: Animal
+
+    
+Class: Reptile
+
+    SubClassOf: 
+        Carnivore
+         and (lays some Egg)
+    
+    
+Class: Plant
+
+    
+Class: Vertebrate
 
     EquivalentTo: 
-        <http://ontology.dumontierlab.com/biological-measure-primitive#Animal>
-         and (<http://ontology.dumontierlab.com/biological-measure-primitive#has_part> some <http://ontology.dumontierlab.com/biological-measure-primitive#Backbone>)
+        Animal
+         and (has_part some Backbone)
     
     
-Class: <http://ontology.dumontierlab.com/biological-measure-primitive#Egg>
-
-    
-Class: <http://ontology.dumontierlab.com/biological-measure-primitive#Reptile>
+Class: Cat
 
     SubClassOf: 
-        <http://ontology.dumontierlab.com/biological-measure-primitive#Carnivore>
-         and (<http://ontology.dumontierlab.com/biological-measure-primitive#lays> some <http://ontology.dumontierlab.com/biological-measure-primitive#Egg>)
+        Carnivore
+         and Mammal
     
     
-Class: <http://ontology.dumontierlab.com/biological-measure-primitive#Elephant>
+Class: Fish
 
     SubClassOf: 
-        <http://ontology.dumontierlab.com/biological-measure-primitive#Herbivore>
-         and <http://ontology.dumontierlab.com/biological-measure-primitive#Mammal>
+        Vertebrate,
+        Animal
+         and (lives_in some Water)
     
     
-Class: <http://ontology.dumontierlab.com/biological-measure-primitive#Leg>
-
-    
-Class: <http://ontology.dumontierlab.com/biological-measure-primitive#Meat>
-
-    
-Class: <http://ontology.dumontierlab.com/biological-measure-primitive#Wing>
-
-    
-Class: <http://ontology.dumontierlab.com/biological-measure-primitive#Backbone>
-
-    
-Class: <http://ontology.dumontierlab.com/biological-measure-primitive#Mammal>
+Class: Mammal
 
     SubClassOf: 
-        <http://ontology.dumontierlab.com/biological-measure-primitive#Vertebrate>
+        Vertebrate
     
     
-Class: <http://ontology.dumontierlab.com/biological-measure-primitive#Water>
-
-    
-Class: <http://ontology.dumontierlab.com/biological-measure-primitive#Carnivore>
+Class: Herbivore
 
     EquivalentTo: 
-        <http://ontology.dumontierlab.com/biological-measure-primitive#Animal>
-         and (<http://ontology.dumontierlab.com/biological-measure-primitive#eats> some <http://ontology.dumontierlab.com/biological-measure-primitive#Meat>)
+        Animal
+         and (eats some Plant)
     
     
-Class: <http://ontology.dumontierlab.com/biological-measure-primitive#Cat>
+Class: Leg
+
+    
+Class: Elephant
 
     SubClassOf: 
-        <http://ontology.dumontierlab.com/biological-measure-primitive#Carnivore>
-         and <http://ontology.dumontierlab.com/biological-measure-primitive#Mammal>
+        Herbivore
+         and Mammal
     
+    
+Class: Bird
+
+    SubClassOf: 
+        Vertebrate,
+        lays some Egg,
+        (has_part some Leg)
+         and (has_part some Wing)
+    
+    
+Class: Backbone
+
+    
+Class: Wing
+
     

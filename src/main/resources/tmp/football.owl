@@ -21,54 +21,51 @@ ObjectProperty: managed_by
 ObjectProperty: plays
 
     
-Class: owl:Thing
-
-    
 Class: Manager
 
-    SubClassOf: 
-        Person
-         and (managed_by some Manager)
     
+Class: Player
+
     
 Class: Team
 
     SubClassOf: 
-        managed_by some Manager
-    
-    
-Class: Player
-
-    SubClassOf: 
-        plays some Game,
-        Person
-         and (plays_for some Team)
+        FootballTeam
     
     
 Class: FootballTeam
 
+    
+Class: Soccer
+
     SubClassOf: 
-        Team
+        plays some 
+            (Football
+             and Soccer)
     
     
 Class: Game
 
     SubClassOf: 
-        owl:Thing
+        BallGame
     
     
 Class: FootballPlayer
 
     SubClassOf: 
         Player
-         and (plays some Football)
+         and (plays some 
+            (Football
+             and Soccer))
          and (plays_for some FootballTeam)
     
     
 Class: Football
 
     SubClassOf: 
-        BallGame
+        plays some 
+            (Football
+             and Soccer)
     
     
 Class: Person
@@ -77,6 +74,6 @@ Class: Person
 Class: BallGame
 
     SubClassOf: 
-        Game
+        Football
     
     

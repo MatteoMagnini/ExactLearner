@@ -1,9 +1,11 @@
 package org.zhaowl.oracle;
 
+import java.util.Iterator;
 import java.util.Random;
 import java.util.Set;
 import java.util.TreeSet;
 
+import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLClassExpression;
 import org.semanticweb.owlapi.model.OWLSubClassOfAxiom;
@@ -132,8 +134,8 @@ public class ELOracle {
 								nod.getEdges().remove(nod.getEdges().get(k));
 
 								if (!myEngineForT.entailed(
-										myEngineForT.getSubClassAxiom(tree.transformToClassExpression(), 
-												oldTree.transformToClassExpression())) //if the merged tree is in fact a weaker expression
+										myEngineForT.getSubClassAxiom(oldTree.transformToClassExpression(), 
+												tree.transformToClassExpression())) //if the merged tree is in fact a stronger expression
 										&&
 										!myEngineForH.entailed(
 										myEngineForH.getSubClassAxiom(tree.transformToClassExpression(), cl))) {
@@ -175,22 +177,29 @@ public class ELOracle {
 
 					for (int j = 0; j < nod.getEdges().size(); j++) {
 						if (nod.getEdges().get(j).getNode().getLabel().size() > 1) {
-
-							for (OWLClass lab : nod.getEdges().get(j).getNode().getLabel()) {
+							Iterator<OWLClass> iterator1 = nod.getEdges().get(j).getNode().getLabel().iterator();
+							
+							while(iterator1.hasNext()) {
+								OWLClass lab =iterator1.next();
 								ELTree oldTree = new ELTree(tree.transformToClassExpression());
 								ELTree newSubtree = new ELTree(
 										nod.getEdges().get(j).getNode().transformToDescription());
-								for (OWLClass l : newSubtree.getRootNode().getLabel())
-									newSubtree.getRootNode().remove(l);
+								Iterator<OWLClass> iterator = newSubtree.getRootNode().getLabel().iterator();
+								 
+								while(iterator.hasNext()) {
+									iterator.next();
+									iterator.remove();
+									 
+								}
 								newSubtree.getRootNode().extendLabel(lab);
 								ELEdge newEdge = new ELEdge(nod.getEdges().get(j).getLabel(), newSubtree.getRootNode());
 								nod.getEdges().add(newEdge);
-								nod.getEdges().get(j).getNode().remove(lab);
-
+								 
+								iterator1.remove();
 								if ((random.nextDouble() < bound) && 
 										!myEngineForT.entailed(
 												myEngineForT.getSubClassAxiom(tree.transformToClassExpression(), 
-														oldTree.transformToClassExpression())) //if the merged tree is in fact a weaker expression
+														oldTree.transformToClassExpression())) //if the branched tree is in fact a weaker expression
 												&&
 										!myEngineForH.entailed(
 										myEngineForH.getSubClassAxiom(cl, tree.transformToClassExpression()))) {

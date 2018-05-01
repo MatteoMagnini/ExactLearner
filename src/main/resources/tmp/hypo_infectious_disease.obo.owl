@@ -278,13 +278,7 @@ Class: <http://www.geneontology.org/go#ID_0000115>
 Class: <http://www.geneontology.org/go#ID_0000114>
 
     SubClassOf: 
-        <http://www.geneontology.org/go#ID_0000000>
-         and <http://www.geneontology.org/go#ID_0000100>
-         and <http://www.geneontology.org/go#ID_0000111>
-         and <http://www.geneontology.org/go#ID_0000114>
-         and (<http://www.geneontology.org/go#part_of> some 
-            (<http://www.geneontology.org/go#GO_0000021>
-             and <http://www.geneontology.org/go#ID_0000000>))
+        <http://www.geneontology.org/go#ID_0000111>
     
     
 Class: <http://www.geneontology.org/go#ID_0000072>

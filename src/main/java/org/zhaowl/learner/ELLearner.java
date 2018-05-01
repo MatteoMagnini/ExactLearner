@@ -363,8 +363,8 @@ public class ELLearner {
 								nod.getEdges().get(j).getNode().remove(lab);
 								myMetrics.setMembCount(myMetrics.getMembCount() + 1);
 								if (!myEngineForT.entailed(
-										myEngineForT.getSubClassAxiom(oldTree.transformToClassExpression(), 
-												tree.transformToClassExpression())) //if the merged tree is in fact a stronger expression
+										myEngineForT.getSubClassAxiom(tree.transformToClassExpression(), 
+												oldTree.transformToClassExpression())) //if the branched tree is in fact a weaker expression
 										&&
 										myEngineForT.entailed(
 										myEngineForT.getSubClassAxiom(tree.transformToClassExpression(), cl))) {
