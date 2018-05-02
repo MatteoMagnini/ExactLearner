@@ -245,8 +245,9 @@ public class consoleLearner {
 
         try {
             while (true) {
-                lastCE = getCounterExample(elQueryEngineForT, elQueryEngineForH);
                 myMetrics.setEquivCount(myMetrics.getMembCount() + 1);
+
+                lastCE = getCounterExample(elQueryEngineForT, elQueryEngineForH);
 
                 OWLSubClassOfAxiom counterexample = lastCE;
                 OWLClassExpression left = counterexample.getSubClass();
