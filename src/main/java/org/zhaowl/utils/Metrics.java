@@ -23,12 +23,8 @@ public class Metrics {
 	}
  
 
+ 
 	public int sizeOfCIT(Set<OWLLogicalAxiom> axSet) {
-
-		return showCIs(axSet);
-	}
-
-	private int showCIs(Set<OWLLogicalAxiom> axSet) {
 	 
 		 
 		int ontSize = 0;
