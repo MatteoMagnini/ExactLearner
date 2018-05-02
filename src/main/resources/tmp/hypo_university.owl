@@ -22,7 +22,7 @@ Class: <http://aims.fao.org/aos/geopolitical.owl#Person>
     
 Class: <http://aims.fao.org/aos/geopolitical.owl#Researcher>
 
-    SubClassOf: 
+    EquivalentTo: 
         <http://aims.fao.org/aos/geopolitical.owl#Person>
          and <http://aims.fao.org/aos/geopolitical.owl#Researcher>
          and (<http://aims.fao.org/aos/geopolitical.owl#manages> some <http://aims.fao.org/aos/geopolitical.owl#Project>),
@@ -39,7 +39,7 @@ Class: <http://aims.fao.org/aos/geopolitical.owl#Project>
     
 Class: <http://aims.fao.org/aos/geopolitical.owl#Professor>
 
-    SubClassOf: 
+    EquivalentTo: 
         <http://aims.fao.org/aos/geopolitical.owl#Person>
          and <http://aims.fao.org/aos/geopolitical.owl#Professor>
          and <http://aims.fao.org/aos/geopolitical.owl#Researcher>
@@ -50,7 +50,7 @@ Class: <http://aims.fao.org/aos/geopolitical.owl#Professor>
     
 Class: <http://aims.fao.org/aos/geopolitical.owl#Teacher>
 
-    SubClassOf: 
+    EquivalentTo: 
         <http://aims.fao.org/aos/geopolitical.owl#Person>
          and <http://aims.fao.org/aos/geopolitical.owl#Teacher>
          and (<http://aims.fao.org/aos/geopolitical.owl#employed_by> some <http://aims.fao.org/aos/geopolitical.owl#University>)

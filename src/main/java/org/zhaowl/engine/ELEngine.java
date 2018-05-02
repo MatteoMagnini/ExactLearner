@@ -39,6 +39,9 @@ public class ELEngine {
 		return myManager.getOWLDataFactory().getOWLSubClassOfAxiom(concept1, concept2);
     }
 
+	public OWLEquivalentClassesAxiom getOWLEquivalentClassesAxiom(OWLClassExpression concept1, OWLClassExpression concept2){
+		return myManager.getOWLDataFactory().getOWLEquivalentClassesAxiom(concept1, concept2);
+    }
 // --Commented out by Inspection START (30/04/2018, 15:27):
 //	public OWLClassExpression getOWLObjectIntersectionOf(OWLClassExpression concept1, OWLClassExpression concept2){
 //		return myManager.getOWLDataFactory().getOWLObjectIntersectionOf(concept1, concept2);
