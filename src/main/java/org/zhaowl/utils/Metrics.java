@@ -22,15 +22,14 @@ public class Metrics {
 	}
  
 
-	public int sizeOfCIT(Set<OWLAxiom> axSet, boolean x) {
+	public int sizeOfCIT(Set<OWLAxiom> axSet) {
 
-		return showCIs(axSet, x);
+		return showCIs(axSet);
 	}
 
-	private int showCIs(Set<OWLAxiom> axSet, boolean x) {
+	private int showCIs(Set<OWLAxiom> axSet) {
 	 
-		int smallestSize = 0;
-		OWLAxiom smallestOne = null;
+		 
 		int ontSize = 0;
  
 		for (OWLAxiom axe : axSet) {
@@ -44,48 +43,10 @@ public class Metrics {
 				inclusion = inclusion.replaceAll("EquivalentTo", " ");
 				ontSize += inclusion.split(" ").length;
 			}
-//
-//
-//
-//			inclusion = inclusion.replaceAll(" and ", " ");
-//			inclusion = inclusion.replaceAll(" some ", " ");
-//			if (axe.toString().contains("SubClassOf"))
-//				inclusion = inclusion.replaceAll("SubClassOf", "");
-//			else
-//				inclusion = inclusion.replaceAll("EquivalentTo", "");
-//			inclusion = inclusion.replaceAll(" and ", "");
-//
-//			String[] arrIncl = inclusion.split(" ");
-//			int totalSize = 0;
-//			for (String anArrIncl : arrIncl)
-//				if (anArrIncl.length() > 1)
-//					totalSize++;
-//
-//			if (smallestOne == null) {
-//				smallestOne = axe;
-//				smallestSize = totalSize;
-//			} else {
-//				if (smallestSize >= totalSize) {
-//					smallestOne = axe;
-//					smallestSize = totalSize;
-//				}
-//			}
-//			ontSize += totalSize;
-			 
+ 
 		}
 		return ontSize;
-//
-//		if(x)
-//			System.out.println("Size of T: " + ontSize);
-//		else
-//			System.out.println("Size of H: " + ontSize);
 	}
-
-// --Commented out by Inspection START (30/04/2018, 15:29):
-//	public void showCIH(Set<OWLAxiom> axSet) {
-//		showCIs(axSet, false);
-//	}
-// --Commented out by Inspection STOP (30/04/2018, 15:29)
 
  
 
