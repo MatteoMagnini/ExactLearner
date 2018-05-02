@@ -190,7 +190,7 @@ public class consoleLearner {
         printStat("Target TBox logical axioms: ", axiomsT.size(), verb);
         printStat("Size of T: ", myMetrics.sizeOfCIT(targetOntology.getAxioms(),true), verb);
         printStat("Hypothesis TBox logical axioms: ", hypothesisOntology.getAxioms().size(), verb);
-        printStat("Size of H: ", myMetrics.sizeOfCIT(targetOntology.getAxioms(),false), verb);
+        printStat("Size of H: ", myMetrics.sizeOfCIT(hypothesisOntology.getAxioms(),false), verb);
         System.out.println();
     }
 
