@@ -12,7 +12,7 @@ import org.semanticweb.owlapi.model.OWLObjectIntersectionOf;
 import org.semanticweb.owlapi.model.OWLObjectProperty;
 import org.semanticweb.owlapi.model.OWLObjectSomeValuesFrom;
 
-public class ELTree implements Cloneable {
+public class ELTree {
 
     private int maxLevel = 0;
 
@@ -21,16 +21,23 @@ public class ELTree implements Cloneable {
     private ELNode rootNode;
 
     // nodes on a given level of the tree
-    private final Map<Integer, Set<ELNode>> levelNodeMapping = new HashMap<>();
+    private final Map<Integer, Set<ELNode>> levelNodeMapping;
 
 
     public ELTree(OWLClassExpression description) throws Exception {
         // construct root node and recursively build the tree
         setRootNode(new ELNode(this));
         constructTree(description, getRootNode());
+        levelNodeMapping = new HashMap<>();
 
     }
 
+    public ELTree(ELTree tree) {
+        this.maxLevel = tree.maxLevel;
+        this.size = tree.size;
+        this.rootNode = new ELNode(tree.rootNode);
+        levelNodeMapping = new HashMap<>(tree.levelNodeMapping);
+    }
 
     
     //Reference: DL Learner

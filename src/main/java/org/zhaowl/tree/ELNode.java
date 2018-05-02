@@ -18,6 +18,15 @@ public class ELNode {
 	private static final OWLDataFactory df = new OWLDataFactoryImpl();
 
 
+	public ELNode(ELNode node) {
+		this.tree = new ELTree(node.tree);
+		this.label = new TreeSet<>(node.label);
+		this.edges = new LinkedList<>(node.edges);
+		this.level = node.level;
+		this.parent = node.parent;
+		this.isClassNode = node.isClassNode;
+	}
+
     public ELNode(ELTree tree) {
 		this(tree, new TreeSet<>());
     }
