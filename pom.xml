@@ -3,10 +3,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>MvnG</groupId>
-    <artifactId>MvnA</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <artifactId>ZhaOWL</artifactId>
+    <version>1.0</version>
     <packaging>jar</packaging>
-    <name>MvnA</name>
+    <name>ZhaOWL</name>
     <url>http://maven.apache.org</url>
 
     <properties>
