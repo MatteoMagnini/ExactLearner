@@ -102,7 +102,7 @@ public class ELLearnerTest {
         OWLObjectProperty R = df.getOWLObjectProperty(IRI.create(":r"));
         OWLClass C = df.getOWLClass(IRI.create(":C"));
         OWLClassExpression right = df.getOWLObjectIntersectionOf(df.getOWLObjectSomeValuesFrom(R, df.getOWLObjectIntersectionOf(B,C)));
-        OWLSubClassOfAxiom axiom= df.getOWLSubClassOfAxiom(A, df.getOWLObjectSomeValuesFrom(R, df.getOWLObjectIntersectionOf(B,C)));
+        OWLSubClassOfAxiom axiom= df.getOWLSubClassOfAxiom(A, df.getOWLObjectIntersectionOf(df.getOWLObjectSomeValuesFrom(R, B), df.getOWLObjectSomeValuesFrom(R,C)));
       //  man.addAxiom(targetOntology, mergedAxiom);
         try {
             OWLSubClassOfAxiom newCounterexampleAxiom = elOracle.branchRight(left, right, 2);
