@@ -40,8 +40,8 @@ public class Metrics {
 			if(inclusion.contains("SubClassOf") || inclusion.contains("EquivalentTo")) {
 				inclusion = inclusion.replaceAll(" and ", " ");
 				inclusion = inclusion.replaceAll(" some ", " ");
-				inclusion = inclusion.replaceAll("SubClassOf", "");
-				inclusion = inclusion.replaceAll("EquivalentTo", "");
+				inclusion = inclusion.replaceAll("SubClassOf", " ");
+				inclusion = inclusion.replaceAll("EquivalentTo", " ");
 				ontSize += inclusion.split(" ").length;
 			}
 //
