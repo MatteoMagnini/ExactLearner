@@ -187,10 +187,10 @@ public class consoleLearner {
         printStat("Total saturations: " , elOracle.getNumberSaturations(), verb);
         printStat("Total unsaturations: " , elOracle.getNumberUnsaturations(), verb);
         printStat("\nSizes:", verb);
-        printStat("Target TBox logical axioms: ", axiomsT.size(), verb);
-        printStat("Size of T: ", myMetrics.sizeOfCIT(targetOntology.getAxioms()), verb);
-        printStat("Hypothesis TBox logical axioms: ", hypothesisOntology.getAxioms().size(), verb);
-        printStat("Size of H: ", myMetrics.sizeOfCIT(hypothesisOntology.getAxioms()), verb);
+        printStat("Target TBox logical axioms: ", targetOntology.getLogicalAxiomCount(), verb);
+        printStat("Size of T: ", myMetrics.sizeOfCIT(targetOntology.getLogicalAxioms()), verb);
+        printStat("Hypothesis TBox logical axioms: ", hypothesisOntology.getLogicalAxiomCount(), verb);
+        printStat("Size of H: ", myMetrics.sizeOfCIT(hypothesisOntology.getLogicalAxioms()), verb);
         System.out.println();
     }
 

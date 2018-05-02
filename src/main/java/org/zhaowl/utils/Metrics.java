@@ -10,6 +10,7 @@ import java.util.Set;
 
 import org.semanticweb.owlapi.io.OWLObjectRenderer;
 import org.semanticweb.owlapi.model.OWLAxiom;
+import org.semanticweb.owlapi.model.OWLLogicalAxiom;
 
 public class Metrics {
 	private final OWLObjectRenderer myRenderer;
@@ -22,12 +23,12 @@ public class Metrics {
 	}
  
 
-	public int sizeOfCIT(Set<OWLAxiom> axSet) {
+	public int sizeOfCIT(Set<OWLLogicalAxiom> axSet) {
 
 		return showCIs(axSet);
 	}
 
-	private int showCIs(Set<OWLAxiom> axSet) {
+	private int showCIs(Set<OWLLogicalAxiom> axSet) {
 	 
 		 
 		int ontSize = 0;
