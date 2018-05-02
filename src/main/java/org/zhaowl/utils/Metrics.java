@@ -34,32 +34,43 @@ public class Metrics {
 		int ontSize = 0;
  
 		for (OWLAxiom axe : axSet) {
-			 
-			String inclusion = myRenderer.render(axe);
-			inclusion = inclusion.replaceAll(" and ", " ");
-			inclusion = inclusion.replaceAll(" some ", " ");
-			if (axe.toString().contains("SubClassOf"))
-				inclusion = inclusion.replaceAll("SubClassOf", "");
-			else
-				inclusion = inclusion.replaceAll("EquivalentTo", "");
-			inclusion = inclusion.replaceAll(" and ", "");
-			 
-			String[] arrIncl = inclusion.split(" ");
-			int totalSize = 0;
-			for (String anArrIncl : arrIncl)
-				if (anArrIncl.length() > 1)
-					totalSize++;
 
-			if (smallestOne == null) {
-				smallestOne = axe;
-				smallestSize = totalSize;
-			} else {
-				if (smallestSize >= totalSize) {
-					smallestOne = axe;
-					smallestSize = totalSize;
-				}
+			String inclusion = myRenderer.render(axe);
+
+			if(inclusion.contains("SubClassOf") || inclusion.contains("EquivalentTo")) {
+				inclusion = inclusion.replaceAll(" and ", " ");
+				inclusion = inclusion.replaceAll(" some ", " ");
+				inclusion = inclusion.replaceAll("SubClassOf", "");
+				inclusion = inclusion.replaceAll("EquivalentTo", "");
+				ontSize += inclusion.split(" ").length;
 			}
-			ontSize += totalSize;
+//
+//
+//
+//			inclusion = inclusion.replaceAll(" and ", " ");
+//			inclusion = inclusion.replaceAll(" some ", " ");
+//			if (axe.toString().contains("SubClassOf"))
+//				inclusion = inclusion.replaceAll("SubClassOf", "");
+//			else
+//				inclusion = inclusion.replaceAll("EquivalentTo", "");
+//			inclusion = inclusion.replaceAll(" and ", "");
+//
+//			String[] arrIncl = inclusion.split(" ");
+//			int totalSize = 0;
+//			for (String anArrIncl : arrIncl)
+//				if (anArrIncl.length() > 1)
+//					totalSize++;
+//
+//			if (smallestOne == null) {
+//				smallestOne = axe;
+//				smallestSize = totalSize;
+//			} else {
+//				if (smallestSize >= totalSize) {
+//					smallestOne = axe;
+//					smallestSize = totalSize;
+//				}
+//			}
+//			ontSize += totalSize;
 			 
 		}
 		return ontSize;
