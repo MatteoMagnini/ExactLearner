@@ -590,18 +590,18 @@ public class consoleLearner {
             left = newCounterexampleAxiom.getSubClass();
             right = newCounterexampleAxiom.getSuperClass();
         }
-        if (oracleBranch) {
-            newCounterexampleAxiom = elOracle.branchRight(left, right, BRANCH_BOUND);
-            left = newCounterexampleAxiom.getSubClass();
-            right = newCounterexampleAxiom.getSuperClass();
-        }
+        
         if (oracleSaturate) {
             newCounterexampleAxiom = elOracle.saturateLeft(left, right, SATURATION_BOUND);
             left = newCounterexampleAxiom.getSubClass();
             right = newCounterexampleAxiom.getSuperClass();
         }
 
-       
+        if (oracleBranch) {
+            newCounterexampleAxiom = elOracle.branchRight(left, right, BRANCH_BOUND);
+            left = newCounterexampleAxiom.getSubClass();
+            right = newCounterexampleAxiom.getSuperClass();
+        }
         
         if (oracleLeftCompose) {
             newCounterexampleAxiom = elOracle.composeLeft(left, right, COMPOSE_LEFT_BOUND);

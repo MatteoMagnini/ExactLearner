@@ -1,5 +1,7 @@
 package org.zhaowl.learner;
 
+import static org.junit.Assert.fail;
+
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.junit.Before;
@@ -61,6 +63,25 @@ public class ELLearnerTest {
 
     @Test
     public void learnerSiblingMerge() {
+    	 OWLDataFactory df = man.getOWLDataFactory();
+    	 
+    	 
+    	 OWLClass A = df.getOWLClass(IRI.create(":A"));
+         OWLClass left = A; 
+         OWLClass B = df.getOWLClass(IRI.create(":B"));
+         OWLObjectProperty R = df.getOWLObjectProperty(IRI.create(":r"));
+         OWLClass C = df.getOWLClass(IRI.create(":C"));
+         OWLClassExpression right = df.getOWLObjectIntersectionOf(df.getOWLObjectSomeValuesFrom(R, C), df.getOWLObjectSomeValuesFrom(R, B));
+         OWLSubClassOfAxiom axiom;
+         OWLSubClassOfAxiom mergedAxiom= df.getOWLSubClassOfAxiom(A, df.getOWLObjectSomeValuesFrom(R, df.getOWLObjectIntersectionOf(B,C)));
+         man.addAxiom(targetOntology, mergedAxiom);
+         try {
+        	 axiom=elLearner.mergeRight(left, right);
+             if(!axiom.equals(mergedAxiom))
+            	 fail("Did not merge.");
+         } catch (Exception e) {
+             e.printStackTrace();
+         }
     }
 
     @Test
