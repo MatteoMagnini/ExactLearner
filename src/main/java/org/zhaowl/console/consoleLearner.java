@@ -120,7 +120,7 @@ public class consoleLearner {
                 runLearner(elQueryEngineForT, elQueryEngineForH);
                 long timeEnd = System.currentTimeMillis();
                 saveOWLFile(hypothesisOntology, hypoFile);
-                printStats(timeStart, timeEnd, args, true);
+                printStats(timeStart, timeEnd, args, false);
                 elQueryEngineForH.disposeOfReasoner();
                 elQueryEngineForT.disposeOfReasoner();
                 myManager.removeOntology(hypothesisOntology);
@@ -245,7 +245,7 @@ public class consoleLearner {
 
         try {
             while (true) {
-                myMetrics.setEquivCount(myMetrics.getMembCount() + 1);
+                myMetrics.setEquivCount(myMetrics.getEquivCount() + 1);
 
                 lastCE = getCounterExample(elQueryEngineForT, elQueryEngineForH);
 
