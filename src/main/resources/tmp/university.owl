@@ -12,47 +12,47 @@ Prefix: university: <http://www.semanticweb.org/ontologies/2014/3/university.owl
 Ontology: <http://www.semanticweb.org/ontologies/2014/3/university.owl>
 
 
-ObjectProperty: employed_by
+ObjectProperty: <http://aims.fao.org/aos/geopolitical.owl#manages>
 
     
-ObjectProperty: manages
+ObjectProperty: <http://aims.fao.org/aos/geopolitical.owl#teaches>
 
     
-ObjectProperty: teaches
+ObjectProperty: <http://aims.fao.org/aos/geopolitical.owl#employed_by>
 
     
-Class: University
+Class: <http://aims.fao.org/aos/geopolitical.owl#Person>
 
     
-Class: Project
-
-    
-Class: Module
-
-    
-Class: Professor
+Class: <http://aims.fao.org/aos/geopolitical.owl#Researcher>
 
     SubClassOf: 
-        Researcher
-         and Teacher
+        <http://aims.fao.org/aos/geopolitical.owl#manages> some <http://aims.fao.org/aos/geopolitical.owl#Project>,
+        <http://aims.fao.org/aos/geopolitical.owl#Person>
+         and (<http://aims.fao.org/aos/geopolitical.owl#employed_by> some <http://aims.fao.org/aos/geopolitical.owl#University>)
     
     
-Class: Teacher
+Class: <http://aims.fao.org/aos/geopolitical.owl#Module>
+
+    
+Class: <http://aims.fao.org/aos/geopolitical.owl#Project>
+
+    
+Class: <http://aims.fao.org/aos/geopolitical.owl#Professor>
 
     SubClassOf: 
-        Person
-         and (employed_by some University)
-         and (teaches some Module)
+        <http://aims.fao.org/aos/geopolitical.owl#Researcher>
+         and <http://aims.fao.org/aos/geopolitical.owl#Teacher>
     
     
-Class: Person
-
-    
-Class: Researcher
+Class: <http://aims.fao.org/aos/geopolitical.owl#Teacher>
 
     SubClassOf: 
-        manages some Project,
-        Person
-         and (employed_by some University)
+        <http://aims.fao.org/aos/geopolitical.owl#Person>
+         and (<http://aims.fao.org/aos/geopolitical.owl#employed_by> some <http://aims.fao.org/aos/geopolitical.owl#University>)
+         and (<http://aims.fao.org/aos/geopolitical.owl#teaches> some <http://aims.fao.org/aos/geopolitical.owl#Module>)
     
+    
+Class: <http://aims.fao.org/aos/geopolitical.owl#University>
+
     

@@ -1,0 +1,939 @@
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+
+
+Ontology: 
+
+ObjectProperty: <http://www.geneontology.org/go#has_position>
+
+    
+ObjectProperty: <http://www.geneontology.org/go#has_axis>
+
+    
+ObjectProperty: <http://www.geneontology.org/go#opposite_to>
+
+    
+ObjectProperty: <http://www.geneontology.org/go#orthogonal_to>
+
+    
+Class: <http://www.geneontology.org/go#BSPO_0000094>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000092>
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000371>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000005>
+         and <http://www.geneontology.org/go#BSPO_0000371>
+         and (<http://www.geneontology.org/go#has_position> some 
+            (<http://www.geneontology.org/go#BSPO_0000054>
+             and <http://www.geneontology.org/go#BSPO_0000055>))
+         and (<http://www.geneontology.org/go#has_position> some 
+            (<http://www.geneontology.org/go#BSPO_0000054>
+             and <http://www.geneontology.org/go#BSPO_0000055>
+             and owl:Thing))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000372>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000005>
+         and <http://www.geneontology.org/go#BSPO_0000372>
+         and (<http://www.geneontology.org/go#has_position> some 
+            (<http://www.geneontology.org/go#BSPO_0000054>
+             and <http://www.geneontology.org/go#BSPO_0000056>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000090>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000086>
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000091>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000086>
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000092>
+
+    
+Class: <http://www.geneontology.org/go#BSPO_0000093>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000092>
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000007>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000007>
+         and <http://www.geneontology.org/go#BSPO_0000054>
+         and (<http://www.geneontology.org/go#has_axis> some 
+            (<http://www.geneontology.org/go#BSPO_0000010>
+             and <http://www.geneontology.org/go#BSPO_0000017>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000008>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000417>
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000009>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000417>
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000003>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000003>
+         and <http://www.geneontology.org/go#BSPO_0000054>
+         and (<http://www.geneontology.org/go#has_axis> some 
+            (<http://www.geneontology.org/go#BSPO_0000010>
+             and <http://www.geneontology.org/go#BSPO_0000012>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000004>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000004>
+         and <http://www.geneontology.org/go#BSPO_0000054>
+         and (<http://www.geneontology.org/go#has_axis> some 
+            (<http://www.geneontology.org/go#BSPO_0000010>
+             and <http://www.geneontology.org/go#BSPO_0000012>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000400>
+
+    
+Class: <http://www.geneontology.org/go#BSPO_0000005>
+
+    
+Class: <http://www.geneontology.org/go#BSPO_0000006>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000070>
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000087>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000086>
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000000>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000000>
+         and <http://www.geneontology.org/go#BSPO_0000054>
+         and (<http://www.geneontology.org/go#has_axis> some 
+            (<http://www.geneontology.org/go#BSPO_0000010>
+             and <http://www.geneontology.org/go#BSPO_0000017>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000088>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000086>
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000001>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000001>
+         and <http://www.geneontology.org/go#BSPO_0000054>
+         and (<http://www.geneontology.org/go#has_axis> some 
+            (<http://www.geneontology.org/go#BSPO_0000010>
+             and <http://www.geneontology.org/go#BSPO_0000011>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000089>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000086>
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000002>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000002>
+         and <http://www.geneontology.org/go#BSPO_0000054>
+         and (<http://www.geneontology.org/go#has_axis> some 
+            (<http://www.geneontology.org/go#BSPO_0000010>
+             and <http://www.geneontology.org/go#BSPO_0000011>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000381>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000005>
+         and <http://www.geneontology.org/go#BSPO_0000381>
+         and (<http://www.geneontology.org/go#has_position> some 
+            (<http://www.geneontology.org/go#BSPO_0000054>
+             and <http://www.geneontology.org/go#BSPO_0000065>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000382>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000005>
+         and <http://www.geneontology.org/go#BSPO_0000382>
+         and (<http://www.geneontology.org/go#has_position> some 
+            (<http://www.geneontology.org/go#BSPO_0000054>
+             and <http://www.geneontology.org/go#BSPO_0000066>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000020>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000020>
+         and <http://www.geneontology.org/go#BSPO_0000051>
+         and (<http://www.geneontology.org/go#has_axis> some 
+            (<http://www.geneontology.org/go#BSPO_0000010>
+             and <http://www.geneontology.org/go#BSPO_0000011>
+             and owl:Thing))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000383>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000005>
+         and <http://www.geneontology.org/go#BSPO_0000383>
+         and (<http://www.geneontology.org/go#has_position> some 
+            (<http://www.geneontology.org/go#BSPO_0000054>
+             and <http://www.geneontology.org/go#BSPO_0000067>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_00000021>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_00000021>
+         and <http://www.geneontology.org/go#BSPO_0000051>
+         and (<http://www.geneontology.org/go#has_axis> some 
+            (<http://www.geneontology.org/go#BSPO_0000010>
+             and <http://www.geneontology.org/go#BSPO_0000012>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000018>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000400>
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000019>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000400>
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000417>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000400>
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000014>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000010>
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000377>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000005>
+         and <http://www.geneontology.org/go#BSPO_0000377>
+         and (<http://www.geneontology.org/go#has_position> some 
+            (<http://www.geneontology.org/go#BSPO_0000054>
+             and <http://www.geneontology.org/go#BSPO_0000061>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000015>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000010>
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000378>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000005>
+         and <http://www.geneontology.org/go#BSPO_0000378>
+         and (<http://www.geneontology.org/go#has_position> some 
+            (<http://www.geneontology.org/go#BSPO_0000054>
+             and <http://www.geneontology.org/go#BSPO_0000062>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000016>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000010>
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000379>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000005>
+         and <http://www.geneontology.org/go#BSPO_0000379>
+         and (<http://www.geneontology.org/go#has_position> some 
+            (<http://www.geneontology.org/go#BSPO_0000054>
+             and <http://www.geneontology.org/go#BSPO_0000063>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000017>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000010>
+         and <http://www.geneontology.org/go#BSPO_0000017>
+         and (<http://www.geneontology.org/go#orthogonal_to> some 
+            (<http://www.geneontology.org/go#BSPO_0000400>
+             and <http://www.geneontology.org/go#BSPO_0000417>
+             and owl:Thing))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000010>
+
+    
+Class: <http://www.geneontology.org/go#BSPO_0000373>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000005>
+         and <http://www.geneontology.org/go#BSPO_0000373>
+         and (<http://www.geneontology.org/go#has_position> some 
+            (<http://www.geneontology.org/go#BSPO_0000054>
+             and <http://www.geneontology.org/go#BSPO_0000057>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000011>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000010>
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000374>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000005>
+         and <http://www.geneontology.org/go#BSPO_0000374>
+         and (<http://www.geneontology.org/go#has_position> some 
+            (<http://www.geneontology.org/go#BSPO_0000054>
+             and <http://www.geneontology.org/go#BSPO_0000058>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000012>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000010>
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000013>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000010>
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000376>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000005>
+         and <http://www.geneontology.org/go#BSPO_0000376>
+         and (<http://www.geneontology.org/go#has_position> some 
+            (<http://www.geneontology.org/go#BSPO_0000054>
+             and <http://www.geneontology.org/go#BSPO_0000060>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000072>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000070>
+         and <http://www.geneontology.org/go#BSPO_0000072>
+         and (<http://www.geneontology.org/go#has_position> some 
+            (<http://www.geneontology.org/go#BSPO_0000054>
+             and <http://www.geneontology.org/go#BSPO_0000056>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000073>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000070>
+         and <http://www.geneontology.org/go#BSPO_0000073>
+         and (<http://www.geneontology.org/go#has_position> some 
+            (<http://www.geneontology.org/go#BSPO_0000054>
+             and <http://www.geneontology.org/go#BSPO_0000057>
+             and owl:Thing))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000074>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000070>
+         and <http://www.geneontology.org/go#BSPO_0000074>
+         and (<http://www.geneontology.org/go#has_position> some 
+            (<http://www.geneontology.org/go#BSPO_0000054>
+             and <http://www.geneontology.org/go#BSPO_0000058>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000075>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000070>
+         and <http://www.geneontology.org/go#BSPO_0000075>
+         and (<http://www.geneontology.org/go#has_position> some 
+            (<http://www.geneontology.org/go#BSPO_0000054>
+             and <http://www.geneontology.org/go#BSPO_0000059>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000070>
+
+    
+Class: <http://www.geneontology.org/go#BSPO_0000071>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000070>
+         and <http://www.geneontology.org/go#BSPO_0000071>
+         and (<http://www.geneontology.org/go#has_position> some 
+            (<http://www.geneontology.org/go#BSPO_0000054>
+             and <http://www.geneontology.org/go#BSPO_0000055>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000065>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000054>
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000066>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000054>
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000067>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000054>
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000068>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000054>
+         and <http://www.geneontology.org/go#BSPO_0000068>
+         and (<http://www.geneontology.org/go#has_axis> some 
+            (<http://www.geneontology.org/go#BSPO_0000010>
+             and <http://www.geneontology.org/go#BSPO_0000016>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000083>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000070>
+         and <http://www.geneontology.org/go#BSPO_0000083>
+         and (<http://www.geneontology.org/go#has_position> some 
+            (<http://www.geneontology.org/go#BSPO_0000054>
+             and <http://www.geneontology.org/go#BSPO_0000067>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000084>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000070>
+         and <http://www.geneontology.org/go#BSPO_0000084>
+         and (<http://www.geneontology.org/go#has_position> some 
+            (<http://www.geneontology.org/go#BSPO_0000054>
+             and <http://www.geneontology.org/go#BSPO_0000068>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000085>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000084>,
+        <http://www.geneontology.org/go#BSPO_0000082>
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000086>
+
+    
+Class: <http://www.geneontology.org/go#BSPO_0000080>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000082>,
+        <http://www.geneontology.org/go#BSPO_0000079>
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000081>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000070>
+         and <http://www.geneontology.org/go#BSPO_0000081>
+         and (<http://www.geneontology.org/go#has_position> some 
+            (<http://www.geneontology.org/go#BSPO_0000054>
+             and <http://www.geneontology.org/go#BSPO_0000065>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000082>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000070>
+         and <http://www.geneontology.org/go#BSPO_0000082>
+         and (<http://www.geneontology.org/go#has_position> some 
+            (<http://www.geneontology.org/go#BSPO_0000054>
+             and <http://www.geneontology.org/go#BSPO_0000066>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000076>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000070>
+         and <http://www.geneontology.org/go#BSPO_0000076>
+         and (<http://www.geneontology.org/go#has_position> some 
+            (<http://www.geneontology.org/go#BSPO_0000054>
+             and <http://www.geneontology.org/go#BSPO_0000060>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000077>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000070>
+         and <http://www.geneontology.org/go#BSPO_0000077>
+         and (<http://www.geneontology.org/go#has_position> some 
+            (<http://www.geneontology.org/go#BSPO_0000054>
+             and <http://www.geneontology.org/go#BSPO_0000061>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000078>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000070>
+         and <http://www.geneontology.org/go#BSPO_0000078>
+         and (<http://www.geneontology.org/go#has_position> some 
+            (<http://www.geneontology.org/go#BSPO_0000054>
+             and <http://www.geneontology.org/go#BSPO_0000062>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000079>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000070>
+         and <http://www.geneontology.org/go#BSPO_0000079>
+         and (<http://www.geneontology.org/go#has_position> some 
+            (<http://www.geneontology.org/go#BSPO_0000054>
+             and <http://www.geneontology.org/go#BSPO_0000063>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000051>
+
+    
+Class: <http://www.geneontology.org/go#BSPO_0000052>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000051>
+         and <http://www.geneontology.org/go#BSPO_0000052>
+         and (<http://www.geneontology.org/go#has_axis> some 
+            (<http://www.geneontology.org/go#BSPO_0000010>
+             and <http://www.geneontology.org/go#BSPO_0000013>))
+    
+    
+Class: owl:Thing
+
+    
+Class: <http://www.geneontology.org/go#BSPO_0000053>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000051>
+         and <http://www.geneontology.org/go#BSPO_0000053>
+         and (<http://www.geneontology.org/go#has_axis> some 
+            (<http://www.geneontology.org/go#BSPO_0000010>
+             and <http://www.geneontology.org/go#BSPO_0000016>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000689>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000672>,
+        <http://www.geneontology.org/go#BSPO_0000684>
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000685>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000682>,
+        <http://www.geneontology.org/go#BSPO_0000684>
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000686>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000679>,
+        <http://www.geneontology.org/go#BSPO_0000671>
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000687>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000006>
+         and <http://www.geneontology.org/go#BSPO_0000070>
+         and <http://www.geneontology.org/go#BSPO_0000072>
+         and <http://www.geneontology.org/go#BSPO_0000079>
+         and <http://www.geneontology.org/go#BSPO_0000672>
+         and <http://www.geneontology.org/go#BSPO_0000679>
+         and <http://www.geneontology.org/go#BSPO_0000687>
+         and (<http://www.geneontology.org/go#has_position> some 
+            (<http://www.geneontology.org/go#BSPO_0000054>
+             and <http://www.geneontology.org/go#BSPO_0000056>))
+         and (<http://www.geneontology.org/go#has_position> some 
+            (<http://www.geneontology.org/go#BSPO_0000054>
+             and <http://www.geneontology.org/go#BSPO_0000063>
+             and owl:Thing))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000688>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000006>
+         and <http://www.geneontology.org/go#BSPO_0000070>
+         and <http://www.geneontology.org/go#BSPO_0000071>
+         and <http://www.geneontology.org/go#BSPO_0000084>
+         and <http://www.geneontology.org/go#BSPO_0000671>
+         and <http://www.geneontology.org/go#BSPO_0000684>
+         and <http://www.geneontology.org/go#BSPO_0000688>
+         and (<http://www.geneontology.org/go#has_position> some 
+            (<http://www.geneontology.org/go#BSPO_0000054>
+             and <http://www.geneontology.org/go#BSPO_0000055>))
+         and (<http://www.geneontology.org/go#has_position> some 
+            (<http://www.geneontology.org/go#BSPO_0000054>
+             and <http://www.geneontology.org/go#BSPO_0000068>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000043>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000043>
+         and <http://www.geneontology.org/go#BSPO_0000092>
+         and (<http://www.geneontology.org/go#has_axis> some 
+            (<http://www.geneontology.org/go#BSPO_0000010>
+             and <http://www.geneontology.org/go#BSPO_0000014>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000682>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000082>,
+        <http://www.geneontology.org/go#BSPO_0000006>
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000044>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000044>
+         and <http://www.geneontology.org/go#BSPO_0000092>
+         and (<http://www.geneontology.org/go#has_axis> some 
+            (<http://www.geneontology.org/go#BSPO_0000010>
+             and <http://www.geneontology.org/go#BSPO_0000015>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000683>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000006>
+         and <http://www.geneontology.org/go#BSPO_0000070>
+         and <http://www.geneontology.org/go#BSPO_0000083>
+         and <http://www.geneontology.org/go#BSPO_0000683>
+         and (<http://www.geneontology.org/go#has_position> some 
+            (<http://www.geneontology.org/go#BSPO_0000054>
+             and <http://www.geneontology.org/go#BSPO_0000067>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000684>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000084>,
+        <http://www.geneontology.org/go#BSPO_0000006>
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000061>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000054>
+         and <http://www.geneontology.org/go#BSPO_0000061>
+         and (<http://www.geneontology.org/go#has_axis> some 
+            (<http://www.geneontology.org/go#BSPO_0000010>
+             and <http://www.geneontology.org/go#BSPO_0000015>))
+         and (<http://www.geneontology.org/go#opposite_to> some 
+            (<http://www.geneontology.org/go#BSPO_0000054>
+             and <http://www.geneontology.org/go#BSPO_0000062>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000062>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000054>
+         and <http://www.geneontology.org/go#BSPO_0000062>
+         and (<http://www.geneontology.org/go#has_axis> some 
+            (<http://www.geneontology.org/go#BSPO_0000010>
+             and <http://www.geneontology.org/go#BSPO_0000015>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000063>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000054>
+         and <http://www.geneontology.org/go#BSPO_0000063>
+         and (<http://www.geneontology.org/go#has_axis> some 
+            (<http://www.geneontology.org/go#BSPO_0000010>
+             and <http://www.geneontology.org/go#BSPO_0000016>)),
+        <http://www.geneontology.org/go#BSPO_0000054>
+         and <http://www.geneontology.org/go#BSPO_0000063>
+         and (<http://www.geneontology.org/go#opposite_to> some 
+            (<http://www.geneontology.org/go#BSPO_0000054>
+             and <http://www.geneontology.org/go#BSPO_0000068>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000060>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000054>
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000058>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000054>
+         and <http://www.geneontology.org/go#BSPO_0000058>
+         and (<http://www.geneontology.org/go#has_axis> some 
+            (<http://www.geneontology.org/go#BSPO_0000010>
+             and <http://www.geneontology.org/go#BSPO_0000014>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000059>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000054>
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000054>
+
+    
+Class: <http://www.geneontology.org/go#BSPO_0000055>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000054>
+         and <http://www.geneontology.org/go#BSPO_0000055>
+         and (<http://www.geneontology.org/go#has_axis> some 
+            (<http://www.geneontology.org/go#BSPO_0000010>
+             and <http://www.geneontology.org/go#BSPO_0000013>)),
+        <http://www.geneontology.org/go#BSPO_0000054>
+         and <http://www.geneontology.org/go#BSPO_0000055>
+         and (<http://www.geneontology.org/go#opposite_to> some 
+            (<http://www.geneontology.org/go#BSPO_0000054>
+             and <http://www.geneontology.org/go#BSPO_0000056>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000056>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000054>
+         and <http://www.geneontology.org/go#BSPO_0000056>
+         and (<http://www.geneontology.org/go#has_axis> some 
+            (<http://www.geneontology.org/go#BSPO_0000010>
+             and <http://www.geneontology.org/go#BSPO_0000013>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000057>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000054>
+         and <http://www.geneontology.org/go#BSPO_0000057>
+         and (<http://www.geneontology.org/go#opposite_to> some 
+            (<http://www.geneontology.org/go#BSPO_0000054>
+             and <http://www.geneontology.org/go#BSPO_0000058>)),
+        <http://www.geneontology.org/go#BSPO_0000054>
+         and <http://www.geneontology.org/go#BSPO_0000057>
+         and (<http://www.geneontology.org/go#has_axis> some 
+            (<http://www.geneontology.org/go#BSPO_0000010>
+             and <http://www.geneontology.org/go#BSPO_0000014>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000031>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000031>
+         and <http://www.geneontology.org/go#BSPO_0000070>
+         and (<http://www.geneontology.org/go#has_position> some 
+            (<http://www.geneontology.org/go#BSPO_0000001>
+             and <http://www.geneontology.org/go#BSPO_0000054>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000025>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000054>
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000384>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000005>
+         and <http://www.geneontology.org/go#BSPO_0000384>
+         and (<http://www.geneontology.org/go#has_position> some 
+            (<http://www.geneontology.org/go#BSPO_0000054>
+             and <http://www.geneontology.org/go#BSPO_0000068>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000022>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000054>
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000023>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000023>
+         and <http://www.geneontology.org/go#BSPO_0000051>
+         and (<http://www.geneontology.org/go#has_axis> some 
+            (<http://www.geneontology.org/go#BSPO_0000010>
+             and <http://www.geneontology.org/go#BSPO_0000014>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000024>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000024>
+         and <http://www.geneontology.org/go#BSPO_0000051>
+         and (<http://www.geneontology.org/go#has_axis> some 
+            (<http://www.geneontology.org/go#BSPO_0000010>
+             and <http://www.geneontology.org/go#BSPO_0000015>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000040>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000040>
+         and <http://www.geneontology.org/go#BSPO_0000092>
+         and (<http://www.geneontology.org/go#has_axis> some 
+            (<http://www.geneontology.org/go#BSPO_0000010>
+             and <http://www.geneontology.org/go#BSPO_0000011>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000041>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000041>
+         and <http://www.geneontology.org/go#BSPO_0000092>
+         and (<http://www.geneontology.org/go#has_axis> some 
+            (<http://www.geneontology.org/go#BSPO_0000010>
+             and <http://www.geneontology.org/go#BSPO_0000012>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000680>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000080>,
+        <http://www.geneontology.org/go#BSPO_0000682>
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000678>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000006>,
+        <http://www.geneontology.org/go#BSPO_0000078>
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000679>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000006>,
+        <http://www.geneontology.org/go#BSPO_0000079>
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000674>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000074>,
+        <http://www.geneontology.org/go#BSPO_0000006>
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000677>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000006>
+         and <http://www.geneontology.org/go#BSPO_0000070>
+         and <http://www.geneontology.org/go#BSPO_0000077>
+         and <http://www.geneontology.org/go#BSPO_0000677>
+         and (<http://www.geneontology.org/go#has_position> some 
+            (<http://www.geneontology.org/go#BSPO_0000054>
+             and <http://www.geneontology.org/go#BSPO_0000061>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000032>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000032>
+         and <http://www.geneontology.org/go#BSPO_0000070>
+         and (<http://www.geneontology.org/go#has_position> some 
+            (<http://www.geneontology.org/go#BSPO_0000002>
+             and <http://www.geneontology.org/go#BSPO_0000054>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000671>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000006>
+         and <http://www.geneontology.org/go#BSPO_0000070>
+         and <http://www.geneontology.org/go#BSPO_0000071>
+         and <http://www.geneontology.org/go#BSPO_0000671>
+         and (<http://www.geneontology.org/go#has_position> some 
+            (<http://www.geneontology.org/go#BSPO_0000054>
+             and <http://www.geneontology.org/go#BSPO_0000055>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000033>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000033>
+         and <http://www.geneontology.org/go#BSPO_0000070>
+         and (<http://www.geneontology.org/go#has_position> some 
+            (<http://www.geneontology.org/go#BSPO_0000003>
+             and <http://www.geneontology.org/go#BSPO_0000054>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000672>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000006>
+         and <http://www.geneontology.org/go#BSPO_0000070>
+         and <http://www.geneontology.org/go#BSPO_0000072>
+         and <http://www.geneontology.org/go#BSPO_0000672>
+         and (<http://www.geneontology.org/go#has_position> some 
+            (<http://www.geneontology.org/go#BSPO_0000054>
+             and <http://www.geneontology.org/go#BSPO_0000056>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000034>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000034>
+         and <http://www.geneontology.org/go#BSPO_0000070>
+         and (<http://www.geneontology.org/go#has_position> some 
+            (<http://www.geneontology.org/go#BSPO_0000004>
+             and <http://www.geneontology.org/go#BSPO_0000054>))
+    
+    
+Class: <http://www.geneontology.org/go#BSPO_0000673>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#BSPO_0000073>,
+        <http://www.geneontology.org/go#BSPO_0000006>
+    
+    
