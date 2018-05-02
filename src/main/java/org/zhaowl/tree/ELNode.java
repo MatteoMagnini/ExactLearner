@@ -19,7 +19,7 @@ public class ELNode {
 
 
 	public ELNode(ELNode node) {
-		this.tree = new ELTree(node.tree);
+		this.tree = node.tree;
 		this.label = new TreeSet<>(node.label);
 		this.edges = new LinkedList<>(node.edges);
 		this.level = node.level;

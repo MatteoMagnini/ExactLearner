@@ -26,12 +26,16 @@ public class ELTree {
 
     public ELTree(OWLClassExpression description) throws Exception {
         // construct root node and recursively build the tree
+        levelNodeMapping = new HashMap<>();
         setRootNode(new ELNode(this));
         constructTree(description, getRootNode());
-        levelNodeMapping = new HashMap<>();
 
     }
 
+
+    // Copying constructor
+    // WARNING: does not work yet (something stays uncopied), its use breaks sibling merging
+    // @todo FIX IT!!!
     public ELTree(ELTree tree) {
         this.maxLevel = tree.maxLevel;
         this.size = tree.size;
