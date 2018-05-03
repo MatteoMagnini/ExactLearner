@@ -119,7 +119,8 @@ public class consoleLearner {
 				runLearner(elQueryEngineForT, elQueryEngineForH);
 				long timeEnd = System.currentTimeMillis();
 				saveOWLFile(hypothesisOntology, hypoFile);
-				printStats(timeStart, timeEnd, args, true);
+                victory();
+                printStats(timeStart, timeEnd, args, true);
 				elQueryEngineForH.disposeOfReasoner();
 				elQueryEngineForT.disposeOfReasoner();
 				myManager.removeOntology(hypothesisOntology);
@@ -288,8 +289,7 @@ public class consoleLearner {
 			// nothing to do: no counterexample has been found
 		}
 
-		victory();
-		lastCE = null;
+//		lastCE = null;
 	}
 
 	private void addHypothesis(OWLAxiom addedAxiom) {
@@ -312,17 +312,16 @@ public class consoleLearner {
 	}
 
 	private void minimiseHypothesis() {
-
 		Set<OWLAxiom> tmpaxiomsH = elQueryEngineForH.getOntology().getAxioms();
 		Iterator<OWLAxiom> ineratorMinH = tmpaxiomsH.iterator();
-		Set<OWLAxiom> checkedAxiomsSet = new HashSet<>();
+//		Set<OWLAxiom> checkedAxiomsSet = new HashSet<>();
 
 		if (tmpaxiomsH.size() > 1) {
 			while (ineratorMinH.hasNext()) {
 				OWLAxiom checkedAxiom = ineratorMinH.next();
 
-				if (!checkedAxiomsSet.contains(checkedAxiom)) {
-					checkedAxiomsSet.add(checkedAxiom);
+//				if (!checkedAxiomsSet.contains(checkedAxiom)) {
+//					checkedAxiomsSet.add(checkedAxiom);
 					if (checkedAxiom.isOfType(AxiomType.SUBCLASS_OF)) {
 						OWLSubClassOfAxiom axiom = (OWLSubClassOfAxiom) checkedAxiom;
 						OWLClassExpression left = axiom.getSubClass();
@@ -331,8 +330,9 @@ public class consoleLearner {
 						if (elQueryEngineForH.entailed(elQueryEngineForH.getSubClassAxiom(right, left))) {
 							RemoveAxiom removedAxiom = new RemoveAxiom(elQueryEngineForH.getOntology(), checkedAxiom);
 							elQueryEngineForH.applyChange(removedAxiom);
+							checkedAxiom = elQueryEngineForH.getOWLEquivalentClassesAxiom(left, right);
 							AddAxiom addAxiomtoH = new AddAxiom(hypothesisOntology,
-									elQueryEngineForH.getOWLEquivalentClassesAxiom(left, right));
+									checkedAxiom);
 							elQueryEngineForH.applyChange(addAxiomtoH);
 						}
 					}
@@ -344,7 +344,7 @@ public class consoleLearner {
 						AddAxiom addAxiomtoH = new AddAxiom(hypothesisOntology, checkedAxiom);
 						elQueryEngineForH.applyChange(addAxiomtoH);
 					}
-				}
+//				}
 
 			}
 		}
