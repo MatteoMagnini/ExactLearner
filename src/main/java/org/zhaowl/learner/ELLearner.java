@@ -220,9 +220,9 @@ public class ELLearner {
 	 * @author anaozaki Concept Unsaturation on the left side of the inclusion
 	 *          
 	 * 
-	 * @param left
+	 * @param expression
 	 *            class expression on the left of an inclusion
-	 * @param right
+	 * @param cl
 	 *            class name on the right of an inclusion
 	 */
 	public OWLSubClassOfAxiom unsaturateLeft(OWLClassExpression expression, OWLClass cl) throws Exception { 
@@ -233,7 +233,7 @@ public class ELLearner {
 		return myEngineForT.getSubClassAxiom(myExpression, myClass);
 	}
 
-	private Boolean unsaturating() throws Exception {
+	private Boolean unsaturating() {
 
 		boolean flag = false;		 
 		for (int i = 0; i < leftTree.getMaxLevel(); i++) {
@@ -263,9 +263,9 @@ public class ELLearner {
 	 * @author anaozaki Concept Saturation on the right side of the inclusion
 	 *          
 	 * 
-	 * @param left
+	 * @param cl
 	 *            class name on the left of an inclusion
-	 * @param right
+	 * @param expression
 	 *            class expression on the right of an inclusion
 	 */
 	public OWLSubClassOfAxiom saturateRight(OWLClass cl, OWLClassExpression expression) throws Exception {
@@ -279,7 +279,7 @@ public class ELLearner {
 		return myEngineForT.getSubClassAxiom(myClass, myExpression);
 	}
 
-	private Boolean saturating() throws Exception {
+	private Boolean saturating() {
 		
 		boolean flag = false; 
 		for (int i = 0; i < rightTree.getMaxLevel(); i++) {
@@ -498,7 +498,7 @@ public class ELLearner {
 	
  
 
-	public OWLSubClassOfAxiom  minimizeConcept(OWLClassExpression leftExpr, OWLClassExpression rightExpr) throws Exception {
+	private OWLSubClassOfAxiom  minimizeConcept(OWLClassExpression leftExpr, OWLClassExpression rightExpr) throws Exception {
 
 	    ELTree tree=new ELTree(rightExpr);
 
@@ -510,7 +510,9 @@ public class ELLearner {
 						nod.remove(cl1);
 						if (myEngineForH
 								.entailed(myEngineForH.getSubClassAxiom(tree.transformToClassExpression(), rightExpr))) {
-						} else {
+						    System.out.print(".");
+						}
+						else {
 							nod.extendLabel(cl1);
 						}
 					}

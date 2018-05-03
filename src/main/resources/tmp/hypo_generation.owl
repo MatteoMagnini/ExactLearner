@@ -58,6 +58,7 @@ Class: <http://www.semanticweb.org/ontologies/2014/3/generation.owl#Woman>
     EquivalentTo: 
         <http://www.semanticweb.org/ontologies/2014/3/generation.owl#Person>
          and (<http://www.semanticweb.org/ontologies/2014/3/generation.owl#gender> some <http://www.semanticweb.org/ontologies/2014/3/generation.owl#Female>)
+         and (<http://www.semanticweb.org/ontologies/2014/3/generation.owl#gender> some owl:Thing)
     
     
 Class: <http://www.semanticweb.org/ontologies/2014/3/generation.owl#Mother>
