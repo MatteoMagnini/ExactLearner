@@ -62,7 +62,7 @@ public class ELOracleTest {
             man.removeAxiom(targetOntology, axiom);
             System.out.println("Branched: " + axiom);
             if(!axiom.equals(newCounterexampleAxiom))
-                fail("Did not merge.");
+                fail("Did not branch.");
         } catch (Exception e) {
             e.printStackTrace();
         }
