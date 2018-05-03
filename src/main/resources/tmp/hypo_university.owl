@@ -8,60 +8,54 @@ Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 Ontology: 
 
-ObjectProperty: <http://aims.fao.org/aos/geopolitical.owl#manages>
+ObjectProperty: <http://www.semanticweb.org/ontologies/2014/3/university.owl#manages>
 
     
-ObjectProperty: <http://aims.fao.org/aos/geopolitical.owl#teaches>
+ObjectProperty: <http://www.semanticweb.org/ontologies/2014/3/university.owl#employed_by>
 
     
-ObjectProperty: <http://aims.fao.org/aos/geopolitical.owl#employed_by>
+ObjectProperty: <http://www.semanticweb.org/ontologies/2014/3/university.owl#teaches>
 
     
-Class: <http://aims.fao.org/aos/geopolitical.owl#Person>
+Class: <http://www.semanticweb.org/ontologies/2014/3/university.owl#University>
 
     
-Class: owl:Thing
+Class: <http://www.semanticweb.org/ontologies/2014/3/university.owl#Project>
 
     
-Class: <http://aims.fao.org/aos/geopolitical.owl#Researcher>
-
-    EquivalentTo: 
-        <http://aims.fao.org/aos/geopolitical.owl#Person>
-         and <http://aims.fao.org/aos/geopolitical.owl#Researcher>
-         and (<http://aims.fao.org/aos/geopolitical.owl#manages> some 
-            (<http://aims.fao.org/aos/geopolitical.owl#Project>
-             and owl:Thing)),
-        <http://aims.fao.org/aos/geopolitical.owl#Person>
-         and <http://aims.fao.org/aos/geopolitical.owl#Researcher>
-         and (<http://aims.fao.org/aos/geopolitical.owl#employed_by> some <http://aims.fao.org/aos/geopolitical.owl#University>)
-    
-    
-Class: <http://aims.fao.org/aos/geopolitical.owl#Module>
-
-    
-Class: <http://aims.fao.org/aos/geopolitical.owl#Project>
-
-    
-Class: <http://aims.fao.org/aos/geopolitical.owl#Professor>
+Class: <http://www.semanticweb.org/ontologies/2014/3/university.owl#Teacher>
 
     EquivalentTo: 
-        <http://aims.fao.org/aos/geopolitical.owl#Person>
-         and <http://aims.fao.org/aos/geopolitical.owl#Professor>
-         and <http://aims.fao.org/aos/geopolitical.owl#Researcher>
-         and <http://aims.fao.org/aos/geopolitical.owl#Teacher>
-         and (<http://aims.fao.org/aos/geopolitical.owl#employed_by> some <http://aims.fao.org/aos/geopolitical.owl#University>)
-         and (<http://aims.fao.org/aos/geopolitical.owl#teaches> some <http://aims.fao.org/aos/geopolitical.owl#Module>)
+        <http://www.semanticweb.org/ontologies/2014/3/university.owl#Person>
+         and <http://www.semanticweb.org/ontologies/2014/3/university.owl#Teacher>
+         and (<http://www.semanticweb.org/ontologies/2014/3/university.owl#employed_by> some <http://www.semanticweb.org/ontologies/2014/3/university.owl#University>)
+         and (<http://www.semanticweb.org/ontologies/2014/3/university.owl#teaches> some <http://www.semanticweb.org/ontologies/2014/3/university.owl#Module>)
     
     
-Class: <http://aims.fao.org/aos/geopolitical.owl#Teacher>
+Class: <http://www.semanticweb.org/ontologies/2014/3/university.owl#Module>
+
+    
+Class: <http://www.semanticweb.org/ontologies/2014/3/university.owl#Professor>
 
     EquivalentTo: 
-        <http://aims.fao.org/aos/geopolitical.owl#Person>
-         and <http://aims.fao.org/aos/geopolitical.owl#Teacher>
-         and (<http://aims.fao.org/aos/geopolitical.owl#employed_by> some <http://aims.fao.org/aos/geopolitical.owl#University>)
-         and (<http://aims.fao.org/aos/geopolitical.owl#teaches> some <http://aims.fao.org/aos/geopolitical.owl#Module>)
+        <http://www.semanticweb.org/ontologies/2014/3/university.owl#Person>
+         and <http://www.semanticweb.org/ontologies/2014/3/university.owl#Professor>
+         and <http://www.semanticweb.org/ontologies/2014/3/university.owl#Researcher>
+         and <http://www.semanticweb.org/ontologies/2014/3/university.owl#Teacher>
+         and (<http://www.semanticweb.org/ontologies/2014/3/university.owl#manages> some <http://www.semanticweb.org/ontologies/2014/3/university.owl#Project>)
     
     
-Class: <http://aims.fao.org/aos/geopolitical.owl#University>
+Class: <http://www.semanticweb.org/ontologies/2014/3/university.owl#Person>
 
+    
+Class: <http://www.semanticweb.org/ontologies/2014/3/university.owl#Researcher>
+
+    EquivalentTo: 
+        <http://www.semanticweb.org/ontologies/2014/3/university.owl#Person>
+         and <http://www.semanticweb.org/ontologies/2014/3/university.owl#Researcher>
+         and (<http://www.semanticweb.org/ontologies/2014/3/university.owl#manages> some <http://www.semanticweb.org/ontologies/2014/3/university.owl#Project>),
+        <http://www.semanticweb.org/ontologies/2014/3/university.owl#Person>
+         and <http://www.semanticweb.org/ontologies/2014/3/university.owl#Researcher>
+         and (<http://www.semanticweb.org/ontologies/2014/3/university.owl#employed_by> some <http://www.semanticweb.org/ontologies/2014/3/university.owl#University>)
+    
     

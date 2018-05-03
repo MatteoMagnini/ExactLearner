@@ -49,10 +49,10 @@ public class consoleLearner {
 	private OWLClassExpression lastExpression = null;
 	private OWLClass lastName = null;
 	private OWLOntology targetOntology = null;
-	private OWLOntology hypothesisOntology = null;
+	public OWLOntology hypothesisOntology = null;
 
 	private ELEngine elQueryEngineForT = null;
-	private ELEngine elQueryEngineForH = null;
+	public ELEngine elQueryEngineForH = null;
 
 	private ELLearner elLearner = null;
 	private ELOracle elOracle = null;
@@ -300,7 +300,7 @@ public class consoleLearner {
 
 	private void saveOWLFile(OWLOntology ontology, File file) throws Exception {
 
-		minimiseHypothesis();
+		elLearner.minimiseHypothesis(this);
 		OWLOntologyFormat format = myManager.getOntologyFormat(ontology);
 		ManchesterOWLSyntaxOntologyFormat manSyntaxFormat = new ManchesterOWLSyntaxOntologyFormat();
 		if (format.isPrefixOWLOntologyFormat()) {
@@ -309,46 +309,6 @@ public class consoleLearner {
 		}
 
 		myManager.saveOntology(ontology, manSyntaxFormat, IRI.create(file.toURI()));
-	}
-
-	private void minimiseHypothesis() {
-		Set<OWLAxiom> tmpaxiomsH = elQueryEngineForH.getOntology().getAxioms();
-		Iterator<OWLAxiom> ineratorMinH = tmpaxiomsH.iterator();
-//		Set<OWLAxiom> checkedAxiomsSet = new HashSet<>();
-
-		if (tmpaxiomsH.size() > 1) {
-			while (ineratorMinH.hasNext()) {
-				OWLAxiom checkedAxiom = ineratorMinH.next();
-
-//				if (!checkedAxiomsSet.contains(checkedAxiom)) {
-//					checkedAxiomsSet.add(checkedAxiom);
-					if (checkedAxiom.isOfType(AxiomType.SUBCLASS_OF)) {
-						OWLSubClassOfAxiom axiom = (OWLSubClassOfAxiom) checkedAxiom;
-						OWLClassExpression left = axiom.getSubClass();
-						OWLClassExpression right = axiom.getSuperClass();
-
-						if (elQueryEngineForH.entailed(elQueryEngineForH.getSubClassAxiom(right, left))) {
-							RemoveAxiom removedAxiom = new RemoveAxiom(elQueryEngineForH.getOntology(), checkedAxiom);
-							elQueryEngineForH.applyChange(removedAxiom);
-							checkedAxiom = elQueryEngineForH.getOWLEquivalentClassesAxiom(left, right);
-							AddAxiom addAxiomtoH = new AddAxiom(hypothesisOntology,
-									checkedAxiom);
-							elQueryEngineForH.applyChange(addAxiomtoH);
-						}
-					}
-					RemoveAxiom removedAxiom = new RemoveAxiom(elQueryEngineForH.getOntology(), checkedAxiom);
-					elQueryEngineForH.applyChange(removedAxiom);
-
-					if (!elQueryEngineForH.entailed(checkedAxiom)) {
-						// put it back
-						AddAxiom addAxiomtoH = new AddAxiom(hypothesisOntology, checkedAxiom);
-						elQueryEngineForH.applyChange(addAxiomtoH);
-					}
-//				}
-
-			}
-		}
-
 	}
 
 	private Boolean canTransformELrhs() {

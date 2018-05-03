@@ -60,7 +60,7 @@ Class: <http://www.semanticweb.org/ontologies/2014/3/football.owl#Player>
 Class: <http://www.semanticweb.org/ontologies/2014/3/football.owl#FootballTeam>
 
     SubClassOf: 
-        <http://www.semanticweb.org/ontologies/2014/3/football.owl#Team>
+        owl:Thing
     
     
 Class: <http://www.semanticweb.org/ontologies/2014/3/football.owl#Game>
@@ -90,12 +90,12 @@ Class: <http://www.semanticweb.org/ontologies/2014/3/football.owl#Person>
 Class: <http://www.semanticweb.org/ontologies/2014/3/football.owl#Football>
 
     SubClassOf: 
-        <http://www.semanticweb.org/ontologies/2014/3/football.owl#BallGame>
+        owl:Thing
     
     
 Class: <http://www.semanticweb.org/ontologies/2014/3/football.owl#BallGame>
 
     SubClassOf: 
-        <http://www.semanticweb.org/ontologies/2014/3/football.owl#Game>
+        owl:Thing
     
     

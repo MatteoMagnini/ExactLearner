@@ -1,10 +1,17 @@
 package org.zhaowl.learner;
 
+import java.util.Iterator;
+import java.util.Set;
 import java.util.TreeSet;
 
+import org.semanticweb.owlapi.model.AddAxiom;
+import org.semanticweb.owlapi.model.AxiomType;
+import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLClassExpression;
 import org.semanticweb.owlapi.model.OWLSubClassOfAxiom;
+import org.semanticweb.owlapi.model.RemoveAxiom;
+import org.zhaowl.console.consoleLearner;
 import org.zhaowl.engine.ELEngine;
 import org.zhaowl.tree.ELEdge;
 import org.zhaowl.tree.ELNode;
@@ -26,6 +33,8 @@ public class ELLearner {
 	private OWLClass myClass;
 	private ELTree leftTree;
 	private ELTree rightTree;
+	private ELTree tree;
+	private ELTree oldTree;
 
 	public ELLearner(ELEngine elEngineForT, ELEngine elEngineForH, Metrics metrics) {
 		myEngineForH = elEngineForH;
@@ -437,5 +446,90 @@ public class ELLearner {
 
 	public int getNumberRightDecomposition() {
 		return rightDecompositionCounter;
+	}
+
+	public void minimiseHypothesis(consoleLearner consoleLearner) {
+		Set<OWLAxiom> tmpaxiomsH = consoleLearner.elQueryEngineForH.getOntology().getAxioms();
+		Iterator<OWLAxiom> ineratorMinH = tmpaxiomsH.iterator();
+	 
+		if (tmpaxiomsH.size() > 1) {
+			while (ineratorMinH.hasNext()) {
+				OWLAxiom checkedAxiom = ineratorMinH.next();
+	
+	 
+					if (checkedAxiom.isOfType(AxiomType.SUBCLASS_OF)) {
+						OWLSubClassOfAxiom axiom = (OWLSubClassOfAxiom) checkedAxiom;
+						OWLClassExpression left = axiom.getSubClass();
+						OWLClassExpression right = axiom.getSuperClass();
+	
+						if (consoleLearner.elQueryEngineForH.entailed(consoleLearner.elQueryEngineForH.getSubClassAxiom(right, left))) {
+							RemoveAxiom removedAxiom = new RemoveAxiom(consoleLearner.elQueryEngineForH.getOntology(), checkedAxiom);
+							consoleLearner.elQueryEngineForH.applyChange(removedAxiom);
+							checkedAxiom = consoleLearner.elQueryEngineForH.getOWLEquivalentClassesAxiom(left, right);
+							 					 
+							AddAxiom addAxiomtoH = new AddAxiom(consoleLearner.hypothesisOntology,
+									checkedAxiom);
+							
+							consoleLearner.elQueryEngineForH.applyChange(addAxiomtoH);
+						}
+					}
+					RemoveAxiom removedAxiom = new RemoveAxiom(consoleLearner.elQueryEngineForH.getOntology(), checkedAxiom);
+					consoleLearner.elQueryEngineForH.applyChange(removedAxiom);
+	
+					if (!consoleLearner.elQueryEngineForH.entailed(checkedAxiom)) {
+						// put it back
+						if (checkedAxiom.isOfType(AxiomType.SUBCLASS_OF)) {
+							try {
+								checkedAxiom=minimizeConcept(((OWLSubClassOfAxiom)checkedAxiom).getSubClass(),
+										((OWLSubClassOfAxiom)checkedAxiom).getSuperClass());
+							} catch (Exception e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+						} 
+						AddAxiom addAxiomtoH = new AddAxiom(consoleLearner.hypothesisOntology, checkedAxiom);
+						consoleLearner.elQueryEngineForH.applyChange(addAxiomtoH);
+					}
+	 
+	
+			}
+		}
+	
+	}
+	
+ 
+
+	public OWLSubClassOfAxiom  minimizeConcept(OWLClassExpression cl, OWLClassExpression expression)   {
+		  
+		try {
+			this.tree=new ELTree(expression);
+			this.oldTree=new ELTree(expression);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		for (int i = 0; i < tree.getMaxLevel(); i++) {
+			for (ELNode nod : tree.getNodesOnLevel(i + 1)) {
+				OWLClassExpression cls = nod.transformToDescription();
+				for (OWLClass cl1 : cls.getClassesInSignature()) {
+					if ( (nod.getLabel().contains(cl1) && !cl1.toString().contains("Thing"))) {
+						nod.remove(cl1);
+						if (myEngineForH
+								.entailed(myEngineForH.getSubClassAxiom(oldTree.transformToClassExpression(), 
+										tree.transformToClassExpression()))) {
+							 
+							oldTree=tree; 
+						} else {
+							
+							nod.extendLabel(cl1);
+							tree=oldTree; 
+						}
+					}
+				}
+			}
+		}
+		myExpression = tree.transformToClassExpression();
+		 
+		return myEngineForH.getSubClassAxiom(cl, myExpression);
 	}
 }
