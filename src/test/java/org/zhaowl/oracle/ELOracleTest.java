@@ -7,18 +7,20 @@ import org.apache.log4j.Logger;
 import org.junit.Before;
 import org.junit.Test;
 import org.semanticweb.owlapi.apibinding.OWLManager;
-import org.semanticweb.owlapi.model.*;
+import org.semanticweb.owlapi.model.IRI;
+import org.semanticweb.owlapi.model.OWLClass;
+import org.semanticweb.owlapi.model.OWLClassExpression;
+import org.semanticweb.owlapi.model.OWLDataFactory;
+import org.semanticweb.owlapi.model.OWLObjectProperty;
+import org.semanticweb.owlapi.model.OWLOntology;
+import org.semanticweb.owlapi.model.OWLOntologyManager;
+import org.semanticweb.owlapi.model.OWLSubClassOfAxiom;
 import org.zhaowl.engine.ELEngine;
-import org.zhaowl.learner.ELLearner;
-import org.zhaowl.oracle.ELOracle;
-import org.zhaowl.utils.Metrics;
-import uk.ac.manchester.cs.owl.owlapi.mansyntaxrenderer.ManchesterOWLSyntaxOWLObjectRendererImpl;
-import org.semanticweb.owlapi.io.OWLObjectRenderer;
 
 public class ELOracleTest {
 
-    private final OWLObjectRenderer myRenderer =  new ManchesterOWLSyntaxOWLObjectRendererImpl();
-    private final Metrics metrics = new Metrics(myRenderer);
+     
+     
     private final OWLOntologyManager man = OWLManager.createOWLOntologyManager();
     private OWLOntology targetOntology = null;
     private OWLOntology hypothesisOntology = null;
@@ -225,11 +227,7 @@ public class ELOracleTest {
         
 	
 	}
-    @Test
-    public void powerSetBySize() {
-    }
+    
 
-    @Test
-    public void isCounterExample() {
-    }
+  
 }

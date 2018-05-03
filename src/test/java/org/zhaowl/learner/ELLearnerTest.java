@@ -240,13 +240,5 @@ public class ELLearnerTest {
         }
     }
     
-    
-
-    @Test
-    public void powerSetBySize() {
-    }
-
-    @Test
-    public void isCounterExample() {
-    }
+ 
 }
