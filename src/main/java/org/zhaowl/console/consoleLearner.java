@@ -626,20 +626,15 @@ public class consoleLearner {
 	}
 
 	private void precomputation(ELEngine elQueryEngineForT, ELEngine elQueryEngineForH) {
+		int i= elQueryEngineForT.getClassesInSignature().size();
+		myMetrics.setMembCount(myMetrics.getMembCount() +  i*(i-1));
 		for (OWLClass cl1 : elQueryEngineForT.getClassesInSignature()) {
 			Set<OWLClass> implied = elQueryEngineForT.getSuperClasses(cl1, true);
-			for (OWLClass cl2 : implied) {
-				if (elQueryEngineForT.getClassesInSignature().contains(cl2)) {
+			for (OWLClass cl2 : implied) {		 
 					OWLSubClassOfAxiom addedAxiom = elQueryEngineForT.getSubClassAxiom(cl1, cl2);
-					myMetrics.setMembCount(myMetrics.getMembCount() + 1);
 					addHypothesis(addedAxiom);
-				}
-				// for (OWLClass cl2 : elQueryEngineForT.getClassesInSignature()) {
-				// addedAxiom = elQueryEngineForT.getSubClassAxiom(cl1, cl2);
-				// myMetrics.setMembCount(myMetrics.getMembCount() + 1);
-				// if (elQueryEngineForT.entailed(addedAxiom))
-				// addHypothesis(addedAxiom);
 			}
 		}
+		
 	}
 }
