@@ -19,8 +19,7 @@ Class: <http://www.geneontology.org/go#FAO_0001012>
          and (<http://www.geneontology.org/go#part_of> some 
             (<http://www.geneontology.org/go#FAO_0000001>
              and <http://www.geneontology.org/go#FAO_0001001>
-             and <http://www.geneontology.org/go#FAO_0001003>
-             and owl:Thing))
+             and <http://www.geneontology.org/go#FAO_0001003>))
     
     
 Class: <http://www.geneontology.org/go#FAO_0001011>
@@ -44,15 +43,9 @@ Class: <http://www.geneontology.org/go#FAO_0000002>
     
 Class: <http://www.geneontology.org/go#FAO_0001014>
 
-    EquivalentTo: 
-        <http://www.geneontology.org/go#FAO_0000001>
-         and <http://www.geneontology.org/go#FAO_0001001>
-         and <http://www.geneontology.org/go#FAO_0001003>
-         and <http://www.geneontology.org/go#FAO_0001010>
-         and <http://www.geneontology.org/go#FAO_0001014>
-         and (<http://www.geneontology.org/go#part_of> some 
-            (<http://www.geneontology.org/go#FAO_0000001>
-             and <http://www.geneontology.org/go#FAO_0000011>))
+    SubClassOf: 
+        <http://www.geneontology.org/go#FAO_0001003>,
+        <http://www.geneontology.org/go#FAO_0001010>
     
     
 Class: <http://www.geneontology.org/go#FAO_0000001>
@@ -351,17 +344,8 @@ Class: <http://www.geneontology.org/go#FAO_0001006>
     
 Class: <http://www.geneontology.org/go#FAO_0000022>
 
-    EquivalentTo: 
-        <http://www.geneontology.org/go#FAO_0000001>
-         and <http://www.geneontology.org/go#FAO_0000017>
-         and <http://www.geneontology.org/go#FAO_0000018>
-         and <http://www.geneontology.org/go#FAO_0000019>
-         and <http://www.geneontology.org/go#FAO_0000021>
-         and <http://www.geneontology.org/go#FAO_0000022>
-         and (<http://www.geneontology.org/go#part_of> some 
-            (<http://www.geneontology.org/go#FAO_0000001>
-             and <http://www.geneontology.org/go#FAO_0000003>
-             and <http://www.geneontology.org/go#FAO_0000010>))
+    SubClassOf: 
+        <http://www.geneontology.org/go#FAO_0000021>
     
     
 Class: <http://www.geneontology.org/go#FAO_0000021>

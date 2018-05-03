@@ -20,12 +20,17 @@ ObjectProperty: <http://aims.fao.org/aos/geopolitical.owl#employed_by>
 Class: <http://aims.fao.org/aos/geopolitical.owl#Person>
 
     
+Class: owl:Thing
+
+    
 Class: <http://aims.fao.org/aos/geopolitical.owl#Researcher>
 
     EquivalentTo: 
         <http://aims.fao.org/aos/geopolitical.owl#Person>
          and <http://aims.fao.org/aos/geopolitical.owl#Researcher>
-         and (<http://aims.fao.org/aos/geopolitical.owl#manages> some <http://aims.fao.org/aos/geopolitical.owl#Project>),
+         and (<http://aims.fao.org/aos/geopolitical.owl#manages> some 
+            (<http://aims.fao.org/aos/geopolitical.owl#Project>
+             and owl:Thing)),
         <http://aims.fao.org/aos/geopolitical.owl#Person>
          and <http://aims.fao.org/aos/geopolitical.owl#Researcher>
          and (<http://aims.fao.org/aos/geopolitical.owl#employed_by> some <http://aims.fao.org/aos/geopolitical.owl#University>)

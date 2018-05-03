@@ -24,7 +24,7 @@ public class ELLearnerTest {
     private ELEngine elQueryEngineForT = null;
     private ELEngine elQueryEngineForH = null;
     private ELLearner elLearner = null;
-    private ELOracle elOracle = null;
+     
 
 
     @Before
@@ -38,7 +38,7 @@ public class ELLearnerTest {
         elQueryEngineForT = new ELEngine(targetOntology);
 
         elLearner = new ELLearner(elQueryEngineForT, elQueryEngineForH, metrics);
-        elOracle = new ELOracle(elQueryEngineForT, elQueryEngineForH);
+        
     }
 
 
@@ -240,28 +240,7 @@ public class ELLearnerTest {
         }
     }
     
-    @Test
-    public void branchRight() {
-        OWLDataFactory df = man.getOWLDataFactory();
-
-
-        OWLClass A = df.getOWLClass(IRI.create(":A"));
-        OWLClass left = A;
-        OWLClass B = df.getOWLClass(IRI.create(":B"));
-        OWLObjectProperty R = df.getOWLObjectProperty(IRI.create(":r"));
-        OWLClass C = df.getOWLClass(IRI.create(":C"));
-        OWLClassExpression right = df.getOWLObjectIntersectionOf(df.getOWLObjectSomeValuesFrom(R, df.getOWLObjectIntersectionOf(B,C)));
-        OWLSubClassOfAxiom axiom= df.getOWLSubClassOfAxiom(A, df.getOWLObjectIntersectionOf(df.getOWLObjectSomeValuesFrom(R, B), df.getOWLObjectSomeValuesFrom(R,C)));
-      //  man.addAxiom(targetOntology, mergedAxiom);
-        try {
-            OWLSubClassOfAxiom newCounterexampleAxiom = elOracle.branchRight(left, right, 2);
-            //axiom=elLearner.mergeRight(left, right);
-            if(!axiom.equals(newCounterexampleAxiom))
-                fail("Did not merge.");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+    
 
     @Test
     public void powerSetBySize() {
