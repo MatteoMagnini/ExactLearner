@@ -187,7 +187,8 @@ public class consoleLearner {
 		printStat("Total saturations: ", elOracle.getNumberSaturations(), verb);
 		printStat("Total unsaturations: ", elOracle.getNumberUnsaturations(), verb);
 		printStat("\nSizes:", verb);
-		printStat("Target TBox logical axioms: ", targetOntology.getLogicalAxiomCount(), verb);
+		printStat("Target TBox logical axioms: ", targetOntology.getAxiomCount(AxiomType.SUBCLASS_OF)+
+				targetOntology.getAxiomCount(AxiomType.EQUIVALENT_CLASSES), verb);
 		printStat("Size of T: ", myMetrics.sizeOfCIT(targetOntology.getLogicalAxioms()), verb);
 		printStat("Hypothesis TBox logical axioms: ", hypothesisOntology.getLogicalAxiomCount(), verb);
 		printStat("Size of H: ", myMetrics.sizeOfCIT(hypothesisOntology.getLogicalAxioms()), verb);

@@ -54,8 +54,10 @@ public class ELLearner {
 
 				for (OWLClass cl : myEngineForT.getClassesInSignature()) {
 					myMetrics.setMembCount(myMetrics.getMembCount() + 1);
-					if (isCounterExample(nod.transformToDescription(), cl))
+					if (isCounterExample(nod.transformToDescription(), cl)) {
+						leftDecompositionCounter++; 
 						return myEngineForT.getSubClassAxiom(nod.transformToDescription(), cl);
+					}
 				}
 			}
 		}
@@ -66,8 +68,10 @@ public class ELLearner {
 
 				for (OWLClass cl : myEngineForT.getClassesInSignature()) {
 					myMetrics.setMembCount(myMetrics.getMembCount() + 1);
-					if (isCounterExample(cl, nod.transformToDescription()))
+					if (isCounterExample(cl, nod.transformToDescription())) {
+						rightDecompositionCounter++; 
 						return myEngineForT.getSubClassAxiom(cl, nod.transformToDescription());
+					}
 				}
 			}
 		}
