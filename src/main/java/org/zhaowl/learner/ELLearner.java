@@ -33,8 +33,7 @@ public class ELLearner {
 	private OWLClass myClass;
 	private ELTree leftTree;
 	private ELTree rightTree;
-	private ELTree tree;
-	private ELTree oldTree;
+
 
 	public ELLearner(ELEngine elEngineForT, ELEngine elEngineForH, Metrics metrics) {
 		myEngineForH = elEngineForH;
@@ -499,15 +498,10 @@ public class ELLearner {
 	
  
 
-	public OWLSubClassOfAxiom  minimizeConcept(OWLClassExpression cl, OWLClassExpression expression)   {
-		  
-		try {
-			this.tree=new ELTree(expression);
-			this.oldTree=new ELTree(expression);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	public OWLSubClassOfAxiom  minimizeConcept(OWLClassExpression leftExpr, OWLClassExpression rightExpr) throws Exception {
+
+	    ELTree tree=new ELTree(rightExpr);
+
 		for (int i = 0; i < tree.getMaxLevel(); i++) {
 			for (ELNode nod : tree.getNodesOnLevel(i + 1)) {
 				OWLClassExpression cls = nod.transformToDescription();
@@ -515,14 +509,9 @@ public class ELLearner {
 					if ( (nod.getLabel().contains(cl1) && !cl1.toString().contains("Thing"))) {
 						nod.remove(cl1);
 						if (myEngineForH
-								.entailed(myEngineForH.getSubClassAxiom(oldTree.transformToClassExpression(), 
-										tree.transformToClassExpression()))) {
-							 
-							oldTree=tree; 
+								.entailed(myEngineForH.getSubClassAxiom(tree.transformToClassExpression(), rightExpr))) {
 						} else {
-							
 							nod.extendLabel(cl1);
-							tree=oldTree; 
 						}
 					}
 				}
@@ -530,6 +519,6 @@ public class ELLearner {
 		}
 		myExpression = tree.transformToClassExpression();
 		 
-		return myEngineForH.getSubClassAxiom(cl, myExpression);
+		return myEngineForH.getSubClassAxiom(leftExpr, myExpression);
 	}
 }
