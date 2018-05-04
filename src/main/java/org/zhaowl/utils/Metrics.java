@@ -50,6 +50,7 @@ public class Metrics {
 	public ArrayList<String> getSuggestionNames(String s, File newFile) throws IOException {
 
 		ArrayList<String> names = new ArrayList<>();
+
 		FileInputStream in = new FileInputStream(newFile);
 		BufferedReader reader = new BufferedReader(new InputStreamReader(in));
 

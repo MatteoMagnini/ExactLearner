@@ -1,0 +1,164 @@
+package org.zhaowl.tree;
+
+import java.util.HashSet;
+import java.util.Set;
+import java.util.SortedMap;
+import java.util.SortedSet;
+import java.util.TreeSet;
+ 
+import org.semanticweb.owlapi.model.OWLAxiom;
+import org.semanticweb.owlapi.model.OWLClass;
+import org.semanticweb.owlapi.model.OWLClassExpression;
+import org.semanticweb.owlapi.model.OWLDataFactory;
+import org.semanticweb.owlapi.reasoner.Node;
+import org.semanticweb.owlapi.vocab.OWLRDFVocabulary;
+
+import uk.ac.manchester.cs.owl.owlapi.OWLClassImpl;
+import uk.ac.manchester.cs.owl.owlapi.OWLDataFactoryImpl;
+
+public class ClassHierarchy extends AbstractH<OWLClassExpression>{
+	private static final OWLClass OWL_THING = new OWLClassImpl(
+            OWLRDFVocabulary.OWL_THING.getIRI());
+    private static final OWLClass OWL_NOTHING = new OWLClassImpl(
+            OWLRDFVocabulary.OWL_NOTHING.getIRI());
+    
+    private OWLDataFactory df = new OWLDataFactoryImpl();
+    
+	/**
+	 * The arguments specify the superclasses and subclasses of each class. This
+	 * is used to build the subsumption hierarchy. 
+	 * @param subsumptionHierarchyUp Contains super classes for each class.
+	 * @param subsumptionHierarchyDown Contains sub classes for each class.
+	 */
+	public ClassHierarchy(
+			SortedMap<OWLClassExpression, SortedSet<OWLClassExpression>> subsumptionHierarchyUp,
+			SortedMap<OWLClassExpression, SortedSet<OWLClassExpression>> subsumptionHierarchyDown) {
+		super(subsumptionHierarchyUp, subsumptionHierarchyDown);
+	}
+
+	/**
+	 * Returns the all superclasses for the given class.
+	 * @param concept the class
+	 * @return all superclasses
+	 */
+	public SortedSet<OWLClassExpression> getSuperClasses(OWLClassExpression concept) {
+		return getSuperClasses(concept, false);
+	}
+
+	/**
+	 * Returns the all superclasses for the given class.
+	 * @param concept the class
+	 * @param direct whether to return only direct superclasses or not
+	 * @return all superclasses
+	 */
+	public SortedSet<OWLClassExpression> getSuperClasses(OWLClassExpression concept, boolean direct) {
+		if(concept.isOWLThing()) {
+			return new TreeSet<OWLClassExpression>();
+		}
+		return getParents(concept, direct);
+	}
+
+	/**
+	 * Returns the all subclasses.
+	 * @param concept the class
+	 * @return all subclasses
+	 */
+	public SortedSet<OWLClassExpression> getSubClasses(OWLClassExpression concept) {
+		return getSubClasses(concept, false);
+	}
+
+	/**
+	 * Returns the all subclasses.
+	 * @param concept the class
+	 * @param direct whether to return only direct subclasses or not
+	 * @return all subclasses
+	 */
+	public SortedSet<OWLClassExpression> getSubClasses(OWLClassExpression concept, boolean direct) {
+		if(concept.isOWLNothing()) {
+			return new TreeSet<OWLClassExpression>();
+		}
+		return getChildren(concept, direct);
+	}
+
+	public SortedSet<OWLClassExpression> getSiblingClasses(OWLClassExpression concept) {
+		return getSiblings(concept);
+	}
+	
+	public boolean isSubclassOf(OWLClass subClass, OWLClass superClass) {
+		return isChildOf(subClass, superClass);
+	}
+	
+	public boolean isSubclassOf(OWLClassExpression subClass, OWLClassExpression superClass) {
+		return isChildOf(subClass, superClass);
+	}
+	
+	@Override
+	public ClassHierarchy clone() {
+		return new ClassHierarchy(getHierarchyUp(), getHierarchyDown());		
+	}
+	
+	public Set<OWLAxiom> toOWLAxioms(){
+		return toOWLAxioms(OWL_THING);
+	}
+	
+	public Set<OWLAxiom> toOWLAxioms(OWLClassExpression concept){
+		Set<OWLAxiom> axioms = new HashSet<OWLAxiom>();
+		Set<OWLClassExpression> subConcepts = getChildren(concept);
+		if (subConcepts != null) {
+			for (OWLClassExpression sub : subConcepts){
+				axioms.add(df.getOWLSubClassOfAxiom(sub, concept));
+				axioms.addAll(toOWLAxioms(sub));
+			}
+		}
+		return axioms;
+	}
+	
+	public int getDepth2Root(OWLClassExpression concept){
+		SortedSet<OWLClassExpression> superClasses = getParents(concept);
+		int depth = 0;
+		if(superClasses != null){
+			depth = 1;
+			for(OWLClassExpression superClass : superClasses){
+				depth += getDepth2Root(superClass);
+			}
+		}
+		return depth;
+	}
+	
+	public SortedSet<OWLClassExpression> getMostGeneralClasses(){
+		return getRoots();
+	}
+
+	/* (non-Javadoc)
+	 * @see org.dllearner.core.owl.AbstractHierarchy#getTopConcept()
+	 */ 
+	public OWLClassExpression getTopConcept() {
+		return OWL_THING;
+	}
+
+	/* (non-Javadoc)
+	 * @see org.dllearner.core.owl.AbstractHierarchy#getBottomConcept()
+	 */ 
+	public OWLClassExpression getBottomConcept() {
+		return OWL_NOTHING;
+	}
+
+ 
+
+	public Node<OWLClassExpression> getUnsatisfiables() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String getWarning() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public boolean hasWarning() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+ 
+}

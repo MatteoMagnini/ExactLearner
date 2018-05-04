@@ -1,0 +1,323 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/ontologies/2014/3/animals.owl#"
+     xml:base="http://www.semanticweb.org/ontologies/2014/3/animals.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:animals="http://www.semanticweb.org/ontologies/2014/3/animals.owl#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ontologies/2014/3/animals.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/animals.owl#eats -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/animals.owl#eats"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/animals.owl#has_part -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/animals.owl#has_part"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/animals.owl#is_alive -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/animals.owl#is_alive"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/animals.owl#lays -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/animals.owl#lays"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/animals.owl#lives_in -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/animals.owl#lives_in"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/temp001 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/temp001">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/animals.owl#eats"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/animals.owl#Living_Being"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/temp002 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/temp002">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/animals.owl#is_alive"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/animals.owl#Animal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/animals.owl#Animal"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/animals.owl#Backbone -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/animals.owl#Backbone"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/animals.owl#Bird -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/animals.owl#Bird">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/animals.owl#Vertebrate"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/animals.owl#has_part"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/animals.owl#Leg"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/animals.owl#has_part"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/animals.owl#Wing"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/animals.owl#lays"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/animals.owl#Egg"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/animals.owl#Carnivore -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/animals.owl#Carnivore">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2014/3/animals.owl#Animal"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/animals.owl#eats"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/animals.owl#Meat"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/animals.owl#Cat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/animals.owl#Cat">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2014/3/animals.owl#Carnivore"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2014/3/animals.owl#Mammal"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/animals.owl#Egg -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/animals.owl#Egg"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/animals.owl#Elephant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/animals.owl#Elephant">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2014/3/animals.owl#Herbivore"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2014/3/animals.owl#Mammal"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/animals.owl#Fish -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/animals.owl#Fish">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/animals.owl#Vertebrate"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2014/3/animals.owl#Animal"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/animals.owl#lives_in"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/animals.owl#Water"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/animals.owl#Herbivore -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/animals.owl#Herbivore">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2014/3/animals.owl#Animal"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/animals.owl#eats"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/animals.owl#Plant"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/animals.owl#Leg -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/animals.owl#Leg"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/animals.owl#Living_Being -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/animals.owl#Living_Being">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/animals.owl#is_alive"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/animals.owl#eats"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/animals.owl#Living_Being"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/animals.owl#Mammal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/animals.owl#Mammal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/animals.owl#Vertebrate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/animals.owl#Meat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/animals.owl#Meat"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/animals.owl#Plant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/animals.owl#Plant"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/animals.owl#Reptile -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/animals.owl#Reptile">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2014/3/animals.owl#Carnivore"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/animals.owl#lays"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/animals.owl#Egg"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/animals.owl#Vertebrate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/animals.owl#Vertebrate">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2014/3/animals.owl#Animal"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/animals.owl#has_part"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/animals.owl#Backbone"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/animals.owl#Water -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/animals.owl#Water"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/animals.owl#Wing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/animals.owl#Wing"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.4) http://owlapi.sourceforge.net -->
+
