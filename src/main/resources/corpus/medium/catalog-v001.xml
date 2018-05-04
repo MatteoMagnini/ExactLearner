@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1522920445534" name="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/anatomy/caro/spatial.obo" uri="space.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1522920445534" name="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/anatomy/gross_anatomy/microbial_gross_anatomy/fungi/fungal_anatomy.obo" uri="fungal_anatomy.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1522920445534" name="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/developmental/animal_development/worm/worm_development.obo" uri="worm_development.owl"/>
+    </group>
+</catalog>

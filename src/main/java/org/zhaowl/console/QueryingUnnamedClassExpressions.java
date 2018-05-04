@@ -28,7 +28,7 @@ public class QueryingUnnamedClassExpressions {
     public static void main(String[] args) throws OWLOntologyCreationException {
 
         Logger.getRootLogger().setLevel(Level.TRACE);
-        consoleLearner maker = new consoleLearner();
+        // consoleLearner maker = new consoleLearner();
 
         OWLOntologyManager man = OWLManager.createOWLOntologyManager();
         OWLDataFactory dataFactory = man.getOWLDataFactory();
@@ -62,8 +62,6 @@ public class QueryingUnnamedClassExpressions {
         reasoner2.getSubClasses(newName, true);
 
         reasoner2.dispose();
-
-
 
         // Make the query equivalent to the fresh class
         OWLAxiom definition = dataFactory.getOWLEquivalentClassesAxiom(newName, query);

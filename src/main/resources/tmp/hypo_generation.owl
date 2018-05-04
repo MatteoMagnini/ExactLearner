@@ -17,21 +17,38 @@ ObjectProperty: <http://www.semanticweb.org/ontologies/2014/3/generation.owl#has
 ObjectProperty: <http://www.semanticweb.org/ontologies/2014/3/generation.owl#gender>
 
     
-Class: <http://www.semanticweb.org/ontologies/2014/3/generation.owl#GrandMother>
+Class: owl:Thing
 
-    SubClassOf: 
-        <http://www.semanticweb.org/ontologies/2014/3/generation.owl#GrandParent>,
-        <http://www.semanticweb.org/ontologies/2014/3/generation.owl#Woman>
-    
     
 Class: <http://www.semanticweb.org/ontologies/2014/3/generation.owl#Female>
 
     
+Class: <http://www.semanticweb.org/ontologies/2014/3/generation.owl#GrandMother>
+
+    EquivalentTo: 
+        <http://www.semanticweb.org/ontologies/2014/3/generation.owl#GrandMother>
+         and <http://www.semanticweb.org/ontologies/2014/3/generation.owl#GrandParent>
+         and <http://www.semanticweb.org/ontologies/2014/3/generation.owl#Parent>
+         and <http://www.semanticweb.org/ontologies/2014/3/generation.owl#Person>
+         and <http://www.semanticweb.org/ontologies/2014/3/generation.owl#Woman>
+         and owl:Thing
+         and (<http://www.semanticweb.org/ontologies/2014/3/generation.owl#gender> some 
+            (<http://www.semanticweb.org/ontologies/2014/3/generation.owl#Female>
+             and owl:Thing))
+    
+    
 Class: <http://www.semanticweb.org/ontologies/2014/3/generation.owl#GrandParent>
 
-    SubClassOf: 
-        <http://www.semanticweb.org/ontologies/2014/3/generation.owl#hasChild> some (<http://www.semanticweb.org/ontologies/2014/3/generation.owl#hasChild> some <http://www.semanticweb.org/ontologies/2014/3/generation.owl#Person>),
-        <http://www.semanticweb.org/ontologies/2014/3/generation.owl#Parent>
+    EquivalentTo: 
+        <http://www.semanticweb.org/ontologies/2014/3/generation.owl#GrandParent>
+         and <http://www.semanticweb.org/ontologies/2014/3/generation.owl#Parent>
+         and <http://www.semanticweb.org/ontologies/2014/3/generation.owl#Person>
+         and owl:Thing
+         and (<http://www.semanticweb.org/ontologies/2014/3/generation.owl#hasChild> some 
+            (owl:Thing
+             and (<http://www.semanticweb.org/ontologies/2014/3/generation.owl#hasChild> some 
+                (<http://www.semanticweb.org/ontologies/2014/3/generation.owl#Person>
+                 and owl:Thing))))
     
     
 Class: <http://www.semanticweb.org/ontologies/2014/3/generation.owl#Woman>
@@ -39,25 +56,45 @@ Class: <http://www.semanticweb.org/ontologies/2014/3/generation.owl#Woman>
     EquivalentTo: 
         <http://www.semanticweb.org/ontologies/2014/3/generation.owl#Person>
          and (<http://www.semanticweb.org/ontologies/2014/3/generation.owl#gender> some <http://www.semanticweb.org/ontologies/2014/3/generation.owl#Female>)
+         and (<http://www.semanticweb.org/ontologies/2014/3/generation.owl#gender> some owl:Thing)
     
     
 Class: <http://www.semanticweb.org/ontologies/2014/3/generation.owl#Mother>
 
-    SubClassOf: 
-        <http://www.semanticweb.org/ontologies/2014/3/generation.owl#Woman>,
-        <http://www.semanticweb.org/ontologies/2014/3/generation.owl#Parent>
+    EquivalentTo: 
+        <http://www.semanticweb.org/ontologies/2014/3/generation.owl#Mother>
+         and <http://www.semanticweb.org/ontologies/2014/3/generation.owl#Parent>
+         and <http://www.semanticweb.org/ontologies/2014/3/generation.owl#Person>
+         and <http://www.semanticweb.org/ontologies/2014/3/generation.owl#Woman>
+         and owl:Thing
+         and (<http://www.semanticweb.org/ontologies/2014/3/generation.owl#hasChild> some 
+            (<http://www.semanticweb.org/ontologies/2014/3/generation.owl#Person>
+             and owl:Thing))
     
     
 Class: <http://www.semanticweb.org/ontologies/2014/3/generation.owl#Parent>
 
     EquivalentTo: 
         <http://www.semanticweb.org/ontologies/2014/3/generation.owl#Person>
-         and (<http://www.semanticweb.org/ontologies/2014/3/generation.owl#hasChild> some <http://www.semanticweb.org/ontologies/2014/3/generation.owl#Person>)
+         and (<http://www.semanticweb.org/ontologies/2014/3/generation.owl#hasChild> some <http://www.semanticweb.org/ontologies/2014/3/generation.owl#Person>),
+        <http://www.semanticweb.org/ontologies/2014/3/generation.owl#Parent>
+         and <http://www.semanticweb.org/ontologies/2014/3/generation.owl#Person>
+         and owl:Thing
+         and (<http://www.semanticweb.org/ontologies/2014/3/generation.owl#hasChild> some 
+            (<http://www.semanticweb.org/ontologies/2014/3/generation.owl#Person>
+             and owl:Thing))
+         and (<http://www.semanticweb.org/ontologies/2014/3/generation.owl#hasParent> some 
+            (<http://www.semanticweb.org/ontologies/2014/3/generation.owl#Person>
+             and owl:Thing))
     
     
 Class: <http://www.semanticweb.org/ontologies/2014/3/generation.owl#Person>
 
-    SubClassOf: 
-        <http://www.semanticweb.org/ontologies/2014/3/generation.owl#hasParent> some <http://www.semanticweb.org/ontologies/2014/3/generation.owl#Person>
+    EquivalentTo: 
+        <http://www.semanticweb.org/ontologies/2014/3/generation.owl#Person>
+         and owl:Thing
+         and (<http://www.semanticweb.org/ontologies/2014/3/generation.owl#hasParent> some 
+            (<http://www.semanticweb.org/ontologies/2014/3/generation.owl#Person>
+             and owl:Thing))
     
     

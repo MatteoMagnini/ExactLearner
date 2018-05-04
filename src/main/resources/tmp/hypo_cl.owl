@@ -14,24 +14,10 @@ Class: <http://obo.sourceforge.net/cl.owl#SclerenchymaCell>
         <http://obo.sourceforge.net/cl.owl#MatureCell>
     
     
-Class: <http://obo.sourceforge.net/cl.owl#LeafCell>
-
-    SubClassOf: 
-        <http://obo.sourceforge.net/cl.owl#PhotosyntheticCell>,
-        <http://obo.sourceforge.net/cl.owl#MatureCell>
-    
-    
 Class: <http://obo.sourceforge.net/cl.owl#PhotosyntheticCell>
 
     SubClassOf: 
         <http://obo.sourceforge.net/cl.owl#CellByClass>
-    
-    
-Class: <http://obo.sourceforge.net/cl.owl#Erythrocyte>
-
-    SubClassOf: 
-        <http://obo.sourceforge.net/cl.owl#CirculatingCell>,
-        <http://obo.sourceforge.net/cl.owl#MatureCell>
     
     
 Class: <http://obo.sourceforge.net/cl.owl#CirculatingCell>
@@ -46,16 +32,61 @@ Class: <http://obo.sourceforge.net/cl.owl#PlantCell>
         <http://obo.sourceforge.net/cl.owl#CellByOrganism>
     
     
-Class: <http://obo.sourceforge.net/cl.owl#CellByClass>
+Class: <http://obo.sourceforge.net/cl.owl#MatureCell>
+
+    SubClassOf: 
+        <http://obo.sourceforge.net/cl.owl#CellByDevelopmentStage>
+    
+    
+Class: <http://obo.sourceforge.net/cl.owl#Osteocyte>
+
+    SubClassOf: 
+        <http://obo.sourceforge.net/cl.owl#MatureCell>
+    
+    
+Class: <http://obo.sourceforge.net/cl.owl#MioBlast>
+
+    SubClassOf: 
+        <http://obo.sourceforge.net/cl.owl#InMatureCell>
+    
+    
+Class: <http://obo.sourceforge.net/cl.owl#PhotoreceptorCell>
+
+    SubClassOf: 
+        <http://obo.sourceforge.net/cl.owl#MatureCell>
+    
+    
+Class: <http://obo.sourceforge.net/cl.owl#CellByOrganism>
 
     SubClassOf: 
         <http://obo.sourceforge.net/cl.owl#Cell>
     
     
-Class: <http://obo.sourceforge.net/cl.owl#MatureCell>
+Class: <http://obo.sourceforge.net/cl.owl#Neuron>
 
     SubClassOf: 
-        <http://obo.sourceforge.net/cl.owl#CellByDevelopmentStage>
+        <http://obo.sourceforge.net/cl.owl#ElectricallyActiveCell>,
+        <http://obo.sourceforge.net/cl.owl#MatureCell>
+    
+    
+Class: <http://obo.sourceforge.net/cl.owl#LeafCell>
+
+    SubClassOf: 
+        <http://obo.sourceforge.net/cl.owl#PhotosyntheticCell>,
+        <http://obo.sourceforge.net/cl.owl#MatureCell>
+    
+    
+Class: <http://obo.sourceforge.net/cl.owl#Erythrocyte>
+
+    SubClassOf: 
+        <http://obo.sourceforge.net/cl.owl#CirculatingCell>,
+        <http://obo.sourceforge.net/cl.owl#MatureCell>
+    
+    
+Class: <http://obo.sourceforge.net/cl.owl#CellByClass>
+
+    SubClassOf: 
+        <http://obo.sourceforge.net/cl.owl#Cell>
     
     
 Class: <http://obo.sourceforge.net/cl.owl#AnimalCell>
@@ -79,18 +110,6 @@ Class: <http://obo.sourceforge.net/cl.owl#InMatureCell>
         <http://obo.sourceforge.net/cl.owl#CellByDevelopmentStage>
     
     
-Class: <http://obo.sourceforge.net/cl.owl#Osteocyte>
-
-    SubClassOf: 
-        <http://obo.sourceforge.net/cl.owl#MatureCell>
-    
-    
-Class: <http://obo.sourceforge.net/cl.owl#MioBlast>
-
-    SubClassOf: 
-        <http://obo.sourceforge.net/cl.owl#InMatureCell>
-    
-    
 Class: <http://obo.sourceforge.net/cl.owl#ChondroBlast>
 
     SubClassOf: 
@@ -98,18 +117,6 @@ Class: <http://obo.sourceforge.net/cl.owl#ChondroBlast>
     
     
 Class: <http://obo.sourceforge.net/cl.owl#CellByDevelopmentStage>
-
-    SubClassOf: 
-        <http://obo.sourceforge.net/cl.owl#Cell>
-    
-    
-Class: <http://obo.sourceforge.net/cl.owl#PhotoreceptorCell>
-
-    SubClassOf: 
-        <http://obo.sourceforge.net/cl.owl#MatureCell>
-    
-    
-Class: <http://obo.sourceforge.net/cl.owl#CellByOrganism>
 
     SubClassOf: 
         <http://obo.sourceforge.net/cl.owl#Cell>
@@ -125,13 +132,6 @@ Class: <http://obo.sourceforge.net/cl.owl#StructuralCell>
 
     SubClassOf: 
         <http://obo.sourceforge.net/cl.owl#CellByClass>
-    
-    
-Class: <http://obo.sourceforge.net/cl.owl#Neuron>
-
-    SubClassOf: 
-        <http://obo.sourceforge.net/cl.owl#ElectricallyActiveCell>,
-        <http://obo.sourceforge.net/cl.owl#MatureCell>
     
     
 Class: <http://obo.sourceforge.net/cl.owl#ChondroCyte>

@@ -1,0 +1,147 @@
+Galen EL
+
+
+Axiom: 60633
+Logical axiom count: 36547
+Declaration axioms count: 24086
+Class count: 23136
+Object property count: 950
+Data property count: 0
+Individual count: 0
+Annotation Property count: 0
+DL expressivity: ALEH+
+SubClassOf: 25563
+EquivalentClasses: 9968
+DisjointClasses: 0
+GCI count: 0
+Hidden GCI Count: 1951
+SubObjectPropertyOf: 958
+EquivalentObjectProperties: 0
+InverseObjectProperties: 0
+DisjointObjectProperties: 0
+FunctionalObjectProperty: 0
+InverseFunctionalObjectProperty: 0
+TransitiveObjectProperty: 58
+SymmetricObjectProperty: 0
+AsymmetricObjectProperty: 0
+ReflexiveObjectProperty: 0
+IrrefexiveObjectProperty: 0
+ObjectPropertyDomain: 0
+ObjectPropertyRange: 0
+SubPropertyChainOf: 0
+SubDataPropertyOf: 0
+EquivalentDataProperties: 0
+DisjointDataProperties: 0
+FunctionalDataProperty: 0
+DataPropertyDomain: 0
+DataPropertyRange: 0
+ClassAssertion: 0
+ObjectPropertyAssertion: 0
+DataPropertyAssertion: 0
+NegativeObjectPropertyAssertion: 0
+NegativeDataPropertyAssertion: 0
+SameIndividual: 0
+DifferentIndividuals: 0
+AnnotationAssertion: 0
+AnnotationPropertyDomain: 0
+AnnotationPropertyRangeOf: 0
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Mosquito
+
+http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/anatomy/gross_anatomy/animal_gross_anatomy/mosquito_anatomy.obo
+
+Axiom: 14800
+Logical axiom count: 2728
+Declaration axioms count: 1874
+Class count: 1861
+Object property count: 3
+Data property count: 0
+Individual count: 0
+Annotation Property count: 10
+DL expressivity: ALE+
+SubClassOf: 2727
+EquivalentClasses: 0
+DisjointClasses: 0
+GCI count: 0
+Hidden GCI Count: 0
+SubObjectPropertyOf: 0
+EquivalentObjectProperties: 0
+InverseObjectProperties: 0
+DisjointObjectProperties: 0
+FunctionalObjectProperty: 0
+InverseFunctionalObjectProperty: 0
+TransitiveObjectProperty: 1
+SymmetricObjectProperty: 0
+AsymmetricObjectProperty: 0
+ReflexiveObjectProperty: 0
+IrrefexiveObjectProperty: 0
+ObjectPropertyDomain: 0
+ObjectPropertyRange: 0
+SubPropertyChainOf: 0
+SubDataPropertyOf: 0
+EquivalentDataProperties: 0
+DisjointDataProperties: 0
+FunctionalDataProperty: 0
+DataPropertyDomain: 0
+DataPropertyRange: 0
+ClassAssertion: 0
+ObjectPropertyAssertion: 0
+DataPropertyAssertion: 0
+NegativeObjectPropertyAssertion: 0
+NegativeDataPropertyAssertion: 0
+SameIndividual: 0
+DifferentIndividuals: 0
+AnnotationAssertion: 10198
+AnnotationPropertyDomain: 0
+AnnotationPropertyRangeOf: 0
+
+%%%%%%%%%%%%%%%
+Envo
+
+Axiom: 7745
+Logical axiom count: 1317
+Declaration axioms count: 1220
+Class count: 1199
+Object property count: 4
+Data property count: 0
+Individual count: 0
+Annotation Property count: 17
+DL expressivity: ALE+
+SubClassOf: 1314
+EquivalentClasses: 0
+DisjointClasses: 0
+GCI count: 0
+Hidden GCI Count: 0
+SubObjectPropertyOf: 0
+EquivalentObjectProperties: 0
+InverseObjectProperties: 0
+DisjointObjectProperties: 0
+FunctionalObjectProperty: 0
+InverseFunctionalObjectProperty: 0
+TransitiveObjectProperty: 3
+SymmetricObjectProperty: 0
+AsymmetricObjectProperty: 0
+ReflexiveObjectProperty: 0
+IrrefexiveObjectProperty: 0
+ObjectPropertyDomain: 0
+ObjectPropertyRange: 0
+SubPropertyChainOf: 0
+SubDataPropertyOf: 0
+EquivalentDataProperties: 0
+DisjointDataProperties: 0
+FunctionalDataProperty: 0
+DataPropertyDomain: 0
+DataPropertyRange: 0
+ClassAssertion: 0
+ObjectPropertyAssertion: 0
+DataPropertyAssertion: 0
+NegativeObjectPropertyAssertion: 0
+NegativeDataPropertyAssertion: 0
+SameIndividual: 0
+DifferentIndividuals: 0
+AnnotationAssertion: 5208
+AnnotationPropertyDomain: 0
+AnnotationPropertyRangeOf: 0
+

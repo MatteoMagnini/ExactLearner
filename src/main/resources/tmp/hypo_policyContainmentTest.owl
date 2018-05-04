@@ -13,86 +13,63 @@ Class: <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#Policy>
     
 Class: <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#Retry-Until-SucceedUsernamePolicy>
 
-    EquivalentTo: 
-        <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#Retry-Until-Succeed>
-         and <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#UsernameToken>
+    SubClassOf: 
+        <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#X509>,
+        <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#GeneralReliabilityKerberosPolicy>
     
     
 Class: <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#IncoherentPolicy>
 
-    EquivalentTo: 
-        <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#Retry-On-FailureUsernamePolicy>
-         and <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#Retry-Until-SucceedUsernamePolicy>
-    
-    
-Class: <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#UsernameToken>
-
     SubClassOf: 
-        <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#SecurityTokenType>
+        <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#GeneralReliabilityKerberosPolicy>,
+        <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#X509>
     
     
 Class: <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#GeneralReliabilityKerberosPolicy>
 
-    SubClassOf: 
-        <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#Policy>
     
+Class: <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#UsernameToken>
+
     
 Class: <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#X509>
 
-    SubClassOf: 
-        <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#SecurityTokenType>
-    
     
 Class: <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#SecurityTokenType>
 
     
 Class: <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#GeneralReliabilityUsernamePolicy>
 
-    EquivalentTo: 
-        <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#Reliable>
-         and <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#UsernameToken>
-    
     SubClassOf: 
-        <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#Policy>
+        <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#X509>,
+        <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#GeneralReliabilityKerberosPolicy>
     
     
 Class: <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#Retry-On-FailureUsernamePolicy>
 
-    EquivalentTo: 
-        <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#Retry-On-Failure>
-         and <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#UsernameToken>
+    SubClassOf: 
+        <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#UsernameToken>,
+        <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#Messaging>,
+        <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#ExactlyOneExamplePolicy>,
+        <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#Retry-On-Failure>,
+        <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#Kerberos>,
+        <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#Retry-Until-Succeed>
     
     
 Class: <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#Reliable>
 
-    SubClassOf: 
-        <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#Messaging>
-    
     
 Class: <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#Messaging>
 
     
 Class: <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#ExactlyOneExamplePolicy>
 
-    SubClassOf: 
-        <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#Policy>
-    
     
 Class: <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#Retry-On-Failure>
 
-    SubClassOf: 
-        <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#Reliable>
-    
     
 Class: <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#Kerberos>
 
-    SubClassOf: 
-        <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#SecurityTokenType>
-    
     
 Class: <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#Retry-Until-Succeed>
 
-    SubClassOf: 
-        <http://www.mindswap.org/dav/ontologies/policyContainmentTest.owl#Reliable>
-    
     
