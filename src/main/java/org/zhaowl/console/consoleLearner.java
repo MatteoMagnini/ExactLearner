@@ -120,7 +120,7 @@ public class consoleLearner {
 				long timeEnd = System.currentTimeMillis();
 				saveOWLFile(hypothesisOntology, hypoFile);
                 victory();
-                printStats(timeStart, timeEnd, args, true);
+                printStats(timeStart, timeEnd, args, false);
 				elQueryEngineForH.disposeOfReasoner();
 				elQueryEngineForT.disposeOfReasoner();
 				myManager.removeOntology(hypothesisOntology);
@@ -163,9 +163,7 @@ public class consoleLearner {
 	private void printStats(long timeStart, long timeEnd, String[] args, Boolean verb) {
 		if (!verb) {
 			System.out.print(targetFile.getName());
-			Arrays.stream(args).skip(1).forEach(x -> {
-				System.out.print(", " + x);
-			});
+			Arrays.stream(args).skip(1).forEach(x -> System.out.print(", " + x));
 		}
 		printStat("Total time (ms): ", String.valueOf(timeEnd - timeStart), verb);
 
