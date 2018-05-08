@@ -253,7 +253,7 @@ public class consoleLearner {
 				OWLClassExpression left = counterexample.getSubClass();
 				OWLClassExpression right = counterexample.getSuperClass();
 				lastCE = elLearner.decompose(left, right);
-
+ 
 				if (canTransformELrhs()) {
 					lastCE = computeEssentialRightCounterexample();
 					Set<OWLSubClassOfAxiom> myAxiomSet = elQueryEngineForH.getOntology()
@@ -272,12 +272,15 @@ public class consoleLearner {
 					}
 
 					lastCE = computeEssentialRightCounterexample();
+					 
 					addHypothesis(lastCE);
 				} else if (canTransformELlhs()) {
 					lastCE = computeEssentialLeftCounterexample();
+					 
 					addHypothesis(lastCE);
 				} else {
 					addHypothesis(lastCE);
+					 
 					System.out.println("Not an EL Terminology:" + lastCE.toString());
 
 				}

@@ -28,12 +28,16 @@ Class: <http://aims.fao.org/aos/geopolitical.owl#Researcher>
     EquivalentTo: 
         <http://aims.fao.org/aos/geopolitical.owl#Person>
          and <http://aims.fao.org/aos/geopolitical.owl#Researcher>
-         and (<http://aims.fao.org/aos/geopolitical.owl#manages> some 
-            (<http://aims.fao.org/aos/geopolitical.owl#Project>
+         and owl:Thing
+         and (<http://aims.fao.org/aos/geopolitical.owl#employed_by> some 
+            (<http://aims.fao.org/aos/geopolitical.owl#University>
              and owl:Thing)),
         <http://aims.fao.org/aos/geopolitical.owl#Person>
          and <http://aims.fao.org/aos/geopolitical.owl#Researcher>
-         and (<http://aims.fao.org/aos/geopolitical.owl#employed_by> some <http://aims.fao.org/aos/geopolitical.owl#University>)
+         and owl:Thing
+         and (<http://aims.fao.org/aos/geopolitical.owl#manages> some 
+            (<http://aims.fao.org/aos/geopolitical.owl#Project>
+             and owl:Thing))
     
     
 Class: <http://aims.fao.org/aos/geopolitical.owl#Module>
@@ -49,10 +53,11 @@ Class: <http://aims.fao.org/aos/geopolitical.owl#Professor>
          and <http://aims.fao.org/aos/geopolitical.owl#Professor>
          and <http://aims.fao.org/aos/geopolitical.owl#Researcher>
          and <http://aims.fao.org/aos/geopolitical.owl#Teacher>
-         and (<http://aims.fao.org/aos/geopolitical.owl#employed_by> some 
-            (<http://aims.fao.org/aos/geopolitical.owl#University>
+         and owl:Thing
+         and (<http://aims.fao.org/aos/geopolitical.owl#employed_by> some <http://aims.fao.org/aos/geopolitical.owl#University>)
+         and (<http://aims.fao.org/aos/geopolitical.owl#teaches> some 
+            (<http://aims.fao.org/aos/geopolitical.owl#Module>
              and owl:Thing))
-         and (<http://aims.fao.org/aos/geopolitical.owl#teaches> some <http://aims.fao.org/aos/geopolitical.owl#Module>)
     
     
 Class: <http://aims.fao.org/aos/geopolitical.owl#Teacher>
@@ -60,8 +65,11 @@ Class: <http://aims.fao.org/aos/geopolitical.owl#Teacher>
     EquivalentTo: 
         <http://aims.fao.org/aos/geopolitical.owl#Person>
          and <http://aims.fao.org/aos/geopolitical.owl#Teacher>
+         and owl:Thing
          and (<http://aims.fao.org/aos/geopolitical.owl#employed_by> some <http://aims.fao.org/aos/geopolitical.owl#University>)
-         and (<http://aims.fao.org/aos/geopolitical.owl#teaches> some <http://aims.fao.org/aos/geopolitical.owl#Module>)
+         and (<http://aims.fao.org/aos/geopolitical.owl#teaches> some 
+            (<http://aims.fao.org/aos/geopolitical.owl#Module>
+             and owl:Thing))
     
     
 Class: <http://aims.fao.org/aos/geopolitical.owl#University>

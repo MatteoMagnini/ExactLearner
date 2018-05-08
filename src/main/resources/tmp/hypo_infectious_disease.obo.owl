@@ -43,19 +43,21 @@ Class: <http://www.geneontology.org/go#ID_0000015>
     
 Class: <http://www.geneontology.org/go#ID_0000094>
 
-    SubClassOf: 
-        <http://www.geneontology.org/go#ID_0000092>
+    EquivalentTo: 
+        <http://www.geneontology.org/go#ID_0000000>
+         and <http://www.geneontology.org/go#ID_0000092>
+         and <http://www.geneontology.org/go#ID_0000094>
+         and owl:Thing
+         and (<http://www.geneontology.org/go#part_of> some 
+            (<http://www.geneontology.org/go#GO_0000021>
+             and <http://www.geneontology.org/go#ID_0000000>
+             and owl:Thing))
     
     
 Class: <http://www.geneontology.org/go#ID_0000093>
 
-    EquivalentTo: 
-        <http://www.geneontology.org/go#ID_0000000>
-         and <http://www.geneontology.org/go#ID_0000092>
-         and <http://www.geneontology.org/go#ID_0000093>
-         and (<http://www.geneontology.org/go#part_of> some 
-            (<http://www.geneontology.org/go#GO_0000021>
-             and <http://www.geneontology.org/go#ID_0000000>))
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000092>
     
     
 Class: <http://www.geneontology.org/go#ID_0000092>
@@ -63,9 +65,11 @@ Class: <http://www.geneontology.org/go#ID_0000092>
     EquivalentTo: 
         <http://www.geneontology.org/go#ID_0000000>
          and <http://www.geneontology.org/go#ID_0000092>
+         and owl:Thing
          and (<http://www.geneontology.org/go#part_of> some 
             (<http://www.geneontology.org/go#GO_0000021>
-             and <http://www.geneontology.org/go#ID_0000000>))
+             and <http://www.geneontology.org/go#ID_0000000>
+             and owl:Thing))
     
     
 Class: <http://www.geneontology.org/go#ID_0000091>
@@ -115,9 +119,11 @@ Class: <http://www.geneontology.org/go#ID_0000097>
     EquivalentTo: 
         <http://www.geneontology.org/go#ID_0000000>
          and <http://www.geneontology.org/go#ID_0000097>
+         and owl:Thing
          and (<http://www.geneontology.org/go#part_of> some 
             (<http://www.geneontology.org/go#GO_0000021>
-             and <http://www.geneontology.org/go#ID_0000000>))
+             and <http://www.geneontology.org/go#ID_0000000>
+             and owl:Thing))
     
     
 Class: <http://www.geneontology.org/go#ID_0000096>
@@ -173,9 +179,11 @@ Class: <http://www.geneontology.org/go#ID_0000083>
     EquivalentTo: 
         <http://www.geneontology.org/go#ID_0000000>
          and <http://www.geneontology.org/go#ID_0000083>
+         and owl:Thing
          and (<http://www.geneontology.org/go#part_of> some 
             (<http://www.geneontology.org/go#GO_0000021>
-             and <http://www.geneontology.org/go#ID_0000000>))
+             and <http://www.geneontology.org/go#ID_0000000>
+             and owl:Thing))
     
     
 Class: <http://www.geneontology.org/go#ID_0000082>
@@ -264,14 +272,8 @@ Class: <http://www.geneontology.org/go#ID_0000117>
     
 Class: <http://www.geneontology.org/go#ID_0000116>
 
-    EquivalentTo: 
-        <http://www.geneontology.org/go#ID_0000000>
-         and <http://www.geneontology.org/go#ID_0000100>
-         and <http://www.geneontology.org/go#ID_0000113>
-         and <http://www.geneontology.org/go#ID_0000116>
-         and (<http://www.geneontology.org/go#part_of> some 
-            (<http://www.geneontology.org/go#GO_0000021>
-             and <http://www.geneontology.org/go#ID_0000000>))
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000113>
     
     
 Class: <http://www.geneontology.org/go#ID_0000115>
@@ -287,9 +289,11 @@ Class: <http://www.geneontology.org/go#ID_0000114>
          and <http://www.geneontology.org/go#ID_0000100>
          and <http://www.geneontology.org/go#ID_0000111>
          and <http://www.geneontology.org/go#ID_0000114>
+         and owl:Thing
          and (<http://www.geneontology.org/go#part_of> some 
             (<http://www.geneontology.org/go#GO_0000021>
-             and <http://www.geneontology.org/go#ID_0000000>))
+             and <http://www.geneontology.org/go#ID_0000000>
+             and owl:Thing))
     
     
 Class: <http://www.geneontology.org/go#ID_0000072>
@@ -312,8 +316,15 @@ Class: <http://www.geneontology.org/go#ID_0000070>
     
 Class: <http://www.geneontology.org/go#ID_0000113>
 
-    SubClassOf: 
-        <http://www.geneontology.org/go#ID_0000100>
+    EquivalentTo: 
+        <http://www.geneontology.org/go#ID_0000000>
+         and <http://www.geneontology.org/go#ID_0000100>
+         and <http://www.geneontology.org/go#ID_0000113>
+         and owl:Thing
+         and (<http://www.geneontology.org/go#part_of> some 
+            (<http://www.geneontology.org/go#GO_0000021>
+             and <http://www.geneontology.org/go#ID_0000000>
+             and owl:Thing))
     
     
 Class: <http://www.geneontology.org/go#ID_0000079>
@@ -328,9 +339,11 @@ Class: <http://www.geneontology.org/go#ID_0000112>
         <http://www.geneontology.org/go#ID_0000000>
          and <http://www.geneontology.org/go#ID_0000100>
          and <http://www.geneontology.org/go#ID_0000112>
+         and owl:Thing
          and (<http://www.geneontology.org/go#part_of> some 
             (<http://www.geneontology.org/go#GO_0000021>
-             and <http://www.geneontology.org/go#ID_0000000>))
+             and <http://www.geneontology.org/go#ID_0000000>
+             and owl:Thing))
     
     
 Class: <http://www.geneontology.org/go#ID_0000111>
@@ -363,9 +376,11 @@ Class: <http://www.geneontology.org/go#ID_0000075>
         <http://www.geneontology.org/go#ID_0000000>
          and <http://www.geneontology.org/go#ID_0000074>
          and <http://www.geneontology.org/go#ID_0000075>
+         and owl:Thing
          and (<http://www.geneontology.org/go#part_of> some 
             (<http://www.geneontology.org/go#GO_0000021>
-             and <http://www.geneontology.org/go#ID_0000000>))
+             and <http://www.geneontology.org/go#ID_0000000>
+             and owl:Thing))
     
     
 Class: <http://www.geneontology.org/go#ID_0000074>
@@ -373,9 +388,11 @@ Class: <http://www.geneontology.org/go#ID_0000074>
     EquivalentTo: 
         <http://www.geneontology.org/go#ID_0000000>
          and <http://www.geneontology.org/go#ID_0000074>
+         and owl:Thing
          and (<http://www.geneontology.org/go#part_of> some 
             (<http://www.geneontology.org/go#GO_0000021>
-             and <http://www.geneontology.org/go#ID_0000000>))
+             and <http://www.geneontology.org/go#ID_0000000>
+             and owl:Thing))
     
     
 Class: <http://www.geneontology.org/go#ID_0000073>
@@ -467,9 +484,11 @@ Class: <http://www.geneontology.org/go#ID_0000100>
     EquivalentTo: 
         <http://www.geneontology.org/go#ID_0000000>
          and <http://www.geneontology.org/go#ID_0000100>
+         and owl:Thing
          and (<http://www.geneontology.org/go#part_of> some 
             (<http://www.geneontology.org/go#GO_0000021>
-             and <http://www.geneontology.org/go#ID_0000000>))
+             and <http://www.geneontology.org/go#ID_0000000>
+             and owl:Thing))
     
     
 Class: <http://www.geneontology.org/go#ID_0000067>
@@ -518,7 +537,8 @@ Class: <http://www.geneontology.org/go#GO_0000020>
          and owl:Thing
          and (<http://www.geneontology.org/go#part_of> some 
             (<http://www.geneontology.org/go#GO_0000021>
-             and <http://www.geneontology.org/go#ID_0000000>))
+             and <http://www.geneontology.org/go#ID_0000000>
+             and owl:Thing))
     
     
 Class: <http://www.geneontology.org/go#ID_0000059>
@@ -546,7 +566,8 @@ Class: <http://www.geneontology.org/go#GO_0000025>
          and owl:Thing
          and (<http://www.geneontology.org/go#part_of> some 
             (<http://www.geneontology.org/go#GO_0000026>
-             and <http://www.geneontology.org/go#ID_0000000>))
+             and <http://www.geneontology.org/go#ID_0000000>
+             and owl:Thing))
     
     
 Class: <http://www.geneontology.org/go#GO_0000028>
@@ -599,7 +620,8 @@ Class: <http://www.geneontology.org/go#GO_0000019>
          and owl:Thing
          and (<http://www.geneontology.org/go#part_of> some 
             (<http://www.geneontology.org/go#GO_0000021>
-             and <http://www.geneontology.org/go#ID_0000000>))
+             and <http://www.geneontology.org/go#ID_0000000>
+             and owl:Thing))
     
     
 Class: <http://www.geneontology.org/go#GO_0000018>
@@ -799,9 +821,11 @@ Class: <http://www.geneontology.org/go#GO_0000005>
     EquivalentTo: 
         <http://www.geneontology.org/go#GO_0000005>
          and <http://www.geneontology.org/go#ID_0000000>
+         and owl:Thing
          and (<http://www.geneontology.org/go#part_of> some 
             (<http://www.geneontology.org/go#GO_0000021>
-             and <http://www.geneontology.org/go#ID_0000000>))
+             and <http://www.geneontology.org/go#ID_0000000>
+             and owl:Thing))
     
     
 Class: <http://www.geneontology.org/go#GO_0000000>
