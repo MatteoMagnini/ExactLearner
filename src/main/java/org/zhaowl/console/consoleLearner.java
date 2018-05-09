@@ -265,8 +265,9 @@ public class consoleLearner {
 								Set<OWLClassExpression> mySet = new HashSet<>();
 								mySet.addAll(ax.getSuperClass().asConjunctSet());
 								mySet.addAll(lastExpression.asConjunctSet());
+								lastExpression=elQueryEngineForT.getOWLObjectIntersectionOf(mySet);
 								lastCE = elQueryEngineForT.getSubClassAxiom(lastName,
-										elQueryEngineForT.getOWLObjectIntersectionOf(mySet));
+										lastExpression);
 							}
 						}
 					}
