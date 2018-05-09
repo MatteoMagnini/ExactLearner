@@ -288,14 +288,6 @@ public class ELLearner {
 		this.rightTree = new ELTree(cl);
 		myExpression = leftTree.transformToClassExpression();
 		myClass = (OWLClass) rightTree.transformToClassExpression();
-		while (unsaturating()) {
-		}
-		return myEngineForT.getSubClassAxiom(myExpression, myClass);
-	}
-
-	private Boolean unsaturating() {
-
-		boolean flag = false;
 		for (int i = 0; i < leftTree.getMaxLevel(); i++) {
 			for (ELNode nod : leftTree.getNodesOnLevel(i + 1)) {
 				OWLClassExpression cls = nod.transformToDescription();
@@ -307,7 +299,7 @@ public class ELLearner {
 								rightTree.transformToClassExpression()))) {
 							myExpression = leftTree.transformToClassExpression();
 							myClass = (OWLClass) rightTree.transformToClassExpression();
-							flag = true;
+							 
 							unsaturationCounter++;
 						} else {
 							nod.extendLabel(cl1);
@@ -316,8 +308,10 @@ public class ELLearner {
 				}
 			}
 		}
-		return flag;
+		return myEngineForT.getSubClassAxiom(myExpression, myClass);
 	}
+
+	 
 
 	/**
 	 * @author anaozaki Concept Saturation on the right side of the inclusion
@@ -332,25 +326,14 @@ public class ELLearner {
 
 		this.leftTree = new ELTree(cl);
 		this.rightTree = new ELTree(expression);
-		while (saturating()) {
-		}
-		myClass = (OWLClass) leftTree.transformToClassExpression();
-		myExpression = rightTree.transformToClassExpression();
-		return myEngineForT.getSubClassAxiom(myClass, myExpression);
-	}
-
-	private Boolean saturating() {
-
-		boolean flag = false;
 		for (int i = 0; i < rightTree.getMaxLevel(); i++) {
 			for (ELNode nod : rightTree.getNodesOnLevel(i + 1)) {
 				for (OWLClass cl1 : myEngineForT.getClassesInSignature()) {
-					if (!nod.getLabel().contains(cl1)) {
+					if (!nod.getLabel().contains(cl1)&& (!cl1.containsConjunct(cl)|| !nod.isRoot())) {
 						nod.extendLabel(cl1);
 						myMetrics.setMembCount(myMetrics.getMembCount() + 1);
 						if (myEngineForT.entailed(myEngineForT.getSubClassAxiom(leftTree.transformToClassExpression(),
-								rightTree.transformToClassExpression()))) {
-							flag = true;
+								rightTree.transformToClassExpression()))) {						 
 							saturationCounter++;
 						} else {
 							nod.remove(cl1);
@@ -358,9 +341,13 @@ public class ELLearner {
 					}
 				}
 			}
-		}
-		return flag;
+		}	 
+		myClass = (OWLClass) leftTree.transformToClassExpression();
+		myExpression = rightTree.transformToClassExpression();
+		return myEngineForT.getSubClassAxiom(myClass, myExpression);
 	}
+
+ 
 
 	public OWLSubClassOfAxiom mergeRight(OWLClass cl, OWLClassExpression expression) throws Exception {
 		myClass = cl;
