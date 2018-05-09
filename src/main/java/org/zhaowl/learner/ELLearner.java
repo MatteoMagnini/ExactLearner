@@ -329,7 +329,7 @@ public class ELLearner {
 		for (int i = 0; i < rightTree.getMaxLevel(); i++) {
 			for (ELNode nod : rightTree.getNodesOnLevel(i + 1)) {
 				for (OWLClass cl1 : myEngineForT.getClassesInSignature()) {
-					if (!nod.getLabel().contains(cl1)&& (!cl1.containsConjunct(cl)|| !nod.isRoot())) {
+					if (!nod.getLabel().contains(cl1)&& (!cl1.equals(cl)|| !nod.isRoot())) {
 						nod.extendLabel(cl1);
 						myMetrics.setMembCount(myMetrics.getMembCount() + 1);
 						if (myEngineForT.entailed(myEngineForT.getSubClassAxiom(leftTree.transformToClassExpression(),
