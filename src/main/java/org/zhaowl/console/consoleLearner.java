@@ -375,7 +375,7 @@ public class consoleLearner {
 		lastName = (OWLClass) axiom.getSubClass();
 		lastExpression = axiom.getSuperClass();
 
-		if (learnerDecompR) {
+		if (learnerDecompR) {//do decomposition before saturation to try to get a smaller tree and do less saturation steps
 			axiom = elLearner.decomposeRight(lastName, lastExpression);
 
 			lastName = (OWLClass) axiom.getSubClass();
@@ -388,6 +388,13 @@ public class consoleLearner {
 			lastExpression = axiom.getSuperClass();
 		}
 
+		if (learnerDecompR) {//do decomposition after saturation to capture the case an inserted concept
+							 //allows a subtree to be removed
+			axiom = elLearner.decomposeRight(lastName, lastExpression);
+
+			lastName = (OWLClass) axiom.getSubClass();
+			lastExpression = axiom.getSuperClass();
+		}
 		if (learnerMerge) {
 			axiom = elLearner.mergeRight(lastName, lastExpression);
 

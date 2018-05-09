@@ -54,7 +54,9 @@ Class: <http://aims.fao.org/aos/geopolitical.owl#Professor>
          and <http://aims.fao.org/aos/geopolitical.owl#Researcher>
          and <http://aims.fao.org/aos/geopolitical.owl#Teacher>
          and owl:Thing
-         and (<http://aims.fao.org/aos/geopolitical.owl#employed_by> some <http://aims.fao.org/aos/geopolitical.owl#University>)
+         and (<http://aims.fao.org/aos/geopolitical.owl#employed_by> some 
+            (<http://aims.fao.org/aos/geopolitical.owl#University>
+             and owl:Thing))
          and (<http://aims.fao.org/aos/geopolitical.owl#teaches> some 
             (<http://aims.fao.org/aos/geopolitical.owl#Module>
              and owl:Thing))
@@ -69,7 +71,9 @@ Class: <http://aims.fao.org/aos/geopolitical.owl#Teacher>
          and (<http://aims.fao.org/aos/geopolitical.owl#employed_by> some 
             (<http://aims.fao.org/aos/geopolitical.owl#University>
              and owl:Thing))
-         and (<http://aims.fao.org/aos/geopolitical.owl#teaches> some <http://aims.fao.org/aos/geopolitical.owl#Module>)
+         and (<http://aims.fao.org/aos/geopolitical.owl#teaches> some 
+            (<http://aims.fao.org/aos/geopolitical.owl#Module>
+             and owl:Thing))
     
     
 Class: <http://aims.fao.org/aos/geopolitical.owl#University>
