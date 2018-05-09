@@ -263,7 +263,7 @@ public class consoleLearner {
 							OWLClass cl = (OWLClass) ax.getSubClass();
 							if (cl.equals(lastName)) {
 								Set<OWLClassExpression> mySet = new HashSet<>();
-								mySet.addAll(ax.getSuperClass().asConjunctSet());
+								mySet.addAll(ax.getSuperClass().asConjunctSet());//done in this way to avoid nesting of intersectionOf
 								mySet.addAll(lastExpression.asConjunctSet());
 								lastExpression=elQueryEngineForT.getOWLObjectIntersectionOf(mySet);
 								lastCE = elQueryEngineForT.getSubClassAxiom(lastName,
