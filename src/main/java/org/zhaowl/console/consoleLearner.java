@@ -196,6 +196,7 @@ public class consoleLearner {
 		printStat("Size of H: ", myMetrics.getSizeOfHypothesis(), verb);
 		printStat("Size of largest  concept in T: ", myMetrics.getSizeOfTargetLargestConcept(), verb);
 		printStat("Size of largest  concept in H: ", myMetrics.getSizeOfHypothesisLargestConcept(), verb);
+		printStat("Size of largest  counterexample: ", myMetrics.getSizeOfLargestCounterExample(), verb);
 		//printStat("Size of largest  concept (sum conjunctions) in T: ", myMetrics.getSumSizeOfLargestConcept(), verb); 
 		 
 		System.out.println();
@@ -255,7 +256,9 @@ public class consoleLearner {
 				myMetrics.setEquivCount(myMetrics.getEquivCount() + 1);
 
 				lastCE = getCounterExample(elQueryEngineForT, elQueryEngineForH);
-
+				int size=myMetrics.getSizeOfCounterexample(lastCE);
+				if(size>myMetrics.getSizeOfLargestCounterExample())
+					myMetrics.setSizeOfLargestCounterExample(size);
 				OWLSubClassOfAxiom counterexample = lastCE;
 				OWLClassExpression left = counterexample.getSubClass();
 				OWLClassExpression right = counterexample.getSuperClass();

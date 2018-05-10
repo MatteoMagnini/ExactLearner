@@ -27,7 +27,7 @@ public class Metrics {
 	private int sizeOfHypothesisLargestConcept = 0;
 	private int sumSizeOfLargestConcept = 0;
 	private int depthOfLargestConcept = 0;
-
+	private int sizeOfLargestCounterExample = 0;
 	private int sizeOfHypothesis = 0;
 	private int sizeOfTarget = 0;
 
@@ -244,5 +244,34 @@ public class Metrics {
 
 	public void setSumSizeOfLargestConcept(int sumSizeOfLargestConcept) {
 		this.sumSizeOfLargestConcept = sumSizeOfLargestConcept;
+	}
+
+	 
+
+	public int getSizeOfLargestCounterExample() {
+		return sizeOfLargestCounterExample;
+	}
+
+	public void setSizeOfLargestCounterExample(int sizeOfLargestCounterExample) {
+		this.sizeOfLargestCounterExample = sizeOfLargestCounterExample;
+	}
+	
+	public int getSizeOfCounterexample(OWLLogicalAxiom axe) {
+
+		 
+		 
+
+			String inclusion = myRenderer.render(axe);
+
+			if (inclusion.contains("SubClassOf") || inclusion.contains("EquivalentTo")) {
+				inclusion = inclusion.replaceAll(" and ", " ");
+				inclusion = inclusion.replaceAll(" some ", " ");
+				inclusion = inclusion.replaceAll("SubClassOf", " ");
+				inclusion = inclusion.replaceAll("EquivalentTo", " ");
+				 
+			}
+
+		 
+		return inclusion.split(" ").length;
 	}
 }
