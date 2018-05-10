@@ -77,6 +77,9 @@ public class consoleLearner {
 	private boolean learnerBranch;
 	private boolean learnerDecompR;
 
+	private int conceptNumber;
+	private int roleNumber;
+
 	class EquivalentException extends Exception {
 
 		EquivalentException(String no_more_counterexamples) {
@@ -193,6 +196,8 @@ public class consoleLearner {
 		printStat("Size of T: ", myMetrics.getSizeOfTarget(), verb);
 		printStat("Hypothesis TBox logical axioms: ",  hypothesisOntology.getAxiomCount(AxiomType.SUBCLASS_OF)+
 				hypothesisOntology.getAxiomCount(AxiomType.EQUIVALENT_CLASSES), verb);
+		printStat("Number of concept names", conceptNumber, verb);
+		printStat("Number of role names", roleNumber, verb);
 		printStat("Size of H: ", myMetrics.getSizeOfHypothesis(), verb);
 		printStat("Size of largest  concept in T: ", myMetrics.getSizeOfTargetLargestConcept(), verb);
 		printStat("Size of largest  concept in H: ", myMetrics.getSizeOfHypothesisLargestConcept(), verb);
@@ -486,8 +491,11 @@ public class consoleLearner {
 
 			ArrayList<String> roles = myMetrics.getSuggestionNames("role", newFile);
 
-			System.out.println("Total number of concepts is: " + concepts.size());
-			System.out.println("Total number of roles is: " + roles.size());
+			this.conceptNumber = concepts.size();
+			this.roleNumber = roles.size();
+
+			//System.out.println("Total number of concepts is: " + concepts.size());
+			//System.out.println("Total number of roles is: " + roles.size());
 			System.out.flush();
 		} catch (OWLOntologyCreationException e) {
 			System.out.println("Could not load targetOntology: " + e.getMessage());
