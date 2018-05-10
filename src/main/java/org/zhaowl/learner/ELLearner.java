@@ -299,7 +299,7 @@ public class ELLearner {
 								rightTree.transformToClassExpression()))) {
 							myExpression = leftTree.transformToClassExpression();
 							myClass = (OWLClass) rightTree.transformToClassExpression();
-							 
+
 							unsaturationCounter++;
 						} else {
 							nod.extendLabel(cl1);
@@ -310,8 +310,6 @@ public class ELLearner {
 		}
 		return myEngineForT.getSubClassAxiom(myExpression, myClass);
 	}
-
-	 
 
 	/**
 	 * @author anaozaki Concept Saturation on the right side of the inclusion
@@ -329,11 +327,11 @@ public class ELLearner {
 		for (int i = 0; i < rightTree.getMaxLevel(); i++) {
 			for (ELNode nod : rightTree.getNodesOnLevel(i + 1)) {
 				for (OWLClass cl1 : myEngineForT.getClassesInSignature()) {
-					if (!nod.getLabel().contains(cl1)&& (!cl1.equals(cl)|| !nod.isRoot())) {
+					if (!nod.getLabel().contains(cl1) && (!cl1.equals(cl) || !nod.isRoot())) {
 						nod.extendLabel(cl1);
 						myMetrics.setMembCount(myMetrics.getMembCount() + 1);
 						if (myEngineForT.entailed(myEngineForT.getSubClassAxiom(leftTree.transformToClassExpression(),
-								rightTree.transformToClassExpression()))) {						 
+								rightTree.transformToClassExpression()))) {
 							saturationCounter++;
 						} else {
 							nod.remove(cl1);
@@ -341,13 +339,11 @@ public class ELLearner {
 					}
 				}
 			}
-		}	 
+		}
 		myClass = (OWLClass) leftTree.transformToClassExpression();
 		myExpression = rightTree.transformToClassExpression();
 		return myEngineForT.getSubClassAxiom(myClass, myExpression);
 	}
-
- 
 
 	public OWLSubClassOfAxiom mergeRight(OWLClass cl, OWLClassExpression expression) throws Exception {
 		myClass = cl;
@@ -538,16 +534,9 @@ public class ELLearner {
 				consoleLearner.elQueryEngineForH.applyChange(removedAxiom);
 
 				if (!consoleLearner.elQueryEngineForH.entailed(checkedAxiom)) {
-					// put it back
-					if (checkedAxiom.isOfType(AxiomType.SUBCLASS_OF)) {
-						try {
-							checkedAxiom = minimizeConcept(((OWLSubClassOfAxiom) checkedAxiom).getSubClass(),
-									((OWLSubClassOfAxiom) checkedAxiom).getSuperClass());
-						} catch (Exception e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
-					}
+					// minimize and put it back
+					checkedAxiom = minimizeAxiom(checkedAxiom);
+
 					AddAxiom addAxiomtoH = new AddAxiom(consoleLearner.hypothesisOntology, checkedAxiom);
 					consoleLearner.elQueryEngineForH.applyChange(addAxiomtoH);
 				}
@@ -557,29 +546,43 @@ public class ELLearner {
 
 	}
 
-	private OWLSubClassOfAxiom minimizeConcept(OWLClassExpression leftExpr, OWLClassExpression rightExpr)
-			throws Exception {
+	private OWLAxiom minimizeAxiom(OWLAxiom checkedAxiom) {
 
-		ELTree tree = new ELTree(rightExpr);
+		if (checkedAxiom.isOfType(AxiomType.SUBCLASS_OF)) {
 
-		for (int i = 0; i < tree.getMaxLevel(); i++) {
-			for (ELNode nod : tree.getNodesOnLevel(i + 1)) {
-				OWLClassExpression cls = nod.transformToDescription();
-				for (OWLClass cl1 : cls.getClassesInSignature()) {
-					if ((nod.getLabel().contains(cl1) && !cl1.toString().contains("Thing"))) {
-						nod.remove(cl1);
-						if (myEngineForH.entailed(
-								myEngineForH.getSubClassAxiom(tree.transformToClassExpression(), rightExpr))) {
-							System.out.print(".");
-						} else {
-							nod.extendLabel(cl1);
+			checkedAxiom = minimizeRightConcept(((OWLSubClassOfAxiom) checkedAxiom).getSubClass(),
+					((OWLSubClassOfAxiom) checkedAxiom).getSuperClass());
+
+		}
+		return checkedAxiom;
+	}
+
+	private OWLSubClassOfAxiom minimizeRightConcept(OWLClassExpression leftExpr, OWLClassExpression rightExpr) {
+
+		ELTree tree;
+		try {
+			tree = new ELTree(rightExpr);
+
+			for (int i = 0; i < tree.getMaxLevel(); i++) {
+				for (ELNode nod : tree.getNodesOnLevel(i + 1)) {
+					OWLClassExpression cls = nod.transformToDescription();
+					for (OWLClass cl1 : cls.getClassesInSignature()) {
+						if ((nod.getLabel().contains(cl1) && !cl1.toString().contains("Thing"))) {
+							nod.remove(cl1);
+							if (myEngineForH.entailed(
+									myEngineForH.getSubClassAxiom(tree.transformToClassExpression(), rightExpr))) {								 
+							} else {
+								nod.extendLabel(cl1);
+							}
 						}
 					}
 				}
 			}
+			myExpression = tree.transformToClassExpression();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		myExpression = tree.transformToClassExpression();
-
 		return myEngineForH.getSubClassAxiom(leftExpr, myExpression);
 	}
 }
