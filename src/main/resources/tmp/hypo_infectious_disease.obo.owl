@@ -1,0 +1,960 @@
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+
+
+Ontology: 
+
+ObjectProperty: <http://www.geneontology.org/go#part_of>
+
+    
+Class: <http://www.geneontology.org/go#ID_0000019>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#GO_0000015>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000018>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000029>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000017>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000002>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000016>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000002>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000015>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#GO_0000010>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000094>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000092>
+         and owl:Thing
+         and (<http://www.geneontology.org/go#part_of> some owl:Thing)
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000093>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000092>
+         and owl:Thing
+         and (<http://www.geneontology.org/go#part_of> some owl:Thing)
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000092>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000000>
+         and owl:Thing
+         and (<http://www.geneontology.org/go#part_of> some 
+            (<http://www.geneontology.org/go#GO_0000021>
+             and owl:Thing))
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000091>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000086>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000090>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000086>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000013>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000002>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000012>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#GO_0000010>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000011>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#GO_0000011>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000010>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#GO_0000010>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000098>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#GO_0000015>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000097>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000000>
+         and owl:Thing
+         and (<http://www.geneontology.org/go#part_of> some 
+            (<http://www.geneontology.org/go#GO_0000021>
+             and owl:Thing))
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000096>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000092>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000095>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000092>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000009>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#GO_0000011>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000008>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#GO_0000011>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000007>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000002>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000006>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000002>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000005>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#GO_0000010>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000004>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#GO_0000011>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000083>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000000>
+         and owl:Thing
+         and (<http://www.geneontology.org/go#part_of> some 
+            (<http://www.geneontology.org/go#GO_0000021>
+             and owl:Thing))
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000082>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000079>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000081>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000079>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000080>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000079>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000003>
+
+    
+Class: <http://www.geneontology.org/go#ID_0000002>
+
+    
+Class: <http://www.geneontology.org/go#ID_0000001>
+
+    
+Class: <http://www.geneontology.org/go#ID_0000089>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000085>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000000>
+
+    
+Class: <http://www.geneontology.org/go#ID_0000088>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000085>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000087>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000085>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000086>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000085>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000085>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000000>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000084>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000000>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000119>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000106>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000118>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000102>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000117>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000102>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000116>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000113>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000115>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000111>
+         and owl:Thing
+         and (<http://www.geneontology.org/go#part_of> some owl:Thing)
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000114>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000111>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000072>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000071>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000071>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000000>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000070>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000066>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000113>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000100>
+         and owl:Thing
+         and (<http://www.geneontology.org/go#part_of> some owl:Thing)
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000079>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000000>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000112>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000100>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000111>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000100>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000078>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000076>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000077>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000076>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000076>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000074>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000075>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000074>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000074>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000000>
+         and owl:Thing
+         and (<http://www.geneontology.org/go#part_of> some 
+            (<http://www.geneontology.org/go#GO_0000021>
+             and owl:Thing))
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000073>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000071>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000109>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000097>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000108>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000097>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000107>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000000>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000106>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000000>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000105>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000000>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000104>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000000>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000103>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000000>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000061>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000001>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000060>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000059>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000102>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000000>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000069>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000066>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000101>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000000>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000068>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000066>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000100>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000000>
+         and owl:Thing
+         and (<http://www.geneontology.org/go#part_of> some 
+            (<http://www.geneontology.org/go#GO_0000021>
+             and owl:Thing))
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000067>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000064>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000066>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000064>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000065>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000064>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000064>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000001>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000063>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000001>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000062>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000001>
+    
+    
+Class: owl:Thing
+
+    
+Class: <http://www.geneontology.org/go#GO_0000020>
+
+    SubClassOf: 
+        owl:Thing
+         and (<http://www.geneontology.org/go#part_of> some 
+            (<http://www.geneontology.org/go#GO_0000021>
+             and owl:Thing))
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000059>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000001>
+    
+    
+Class: <http://www.geneontology.org/go#GO_0000026>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000000>
+    
+    
+Class: <http://www.geneontology.org/go#TB_0000000>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000002>
+    
+    
+Class: <http://www.geneontology.org/go#GO_0000025>
+
+    SubClassOf: 
+        owl:Thing
+         and (<http://www.geneontology.org/go#part_of> some 
+            (<http://www.geneontology.org/go#GO_0000026>
+             and owl:Thing))
+    
+    
+Class: <http://www.geneontology.org/go#GO_0000028>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000000>
+    
+    
+Class: <http://www.geneontology.org/go#GO_0000027>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000000>
+    
+    
+Class: <http://www.geneontology.org/go#GO_0000022>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000000>
+    
+    
+Class: <http://www.geneontology.org/go#GO_0000021>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000000>
+    
+    
+Class: <http://www.geneontology.org/go#GO_0000024>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#GO_0000019>
+         and <http://www.geneontology.org/go#ID_0000000>
+         and owl:Thing
+         and (<http://www.geneontology.org/go#part_of> some owl:Thing)
+    
+    
+Class: <http://www.geneontology.org/go#GO_0000023>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000000>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000050>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000047>
+    
+    
+Class: <http://www.geneontology.org/go#GO_0000019>
+
+    SubClassOf: 
+        owl:Thing
+         and (<http://www.geneontology.org/go#part_of> some 
+            (<http://www.geneontology.org/go#GO_0000021>
+             and owl:Thing))
+    
+    
+Class: <http://www.geneontology.org/go#GO_0000018>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#GO_0000010>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000058>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000057>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000057>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000056>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000056>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000001>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000055>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#GO_0000004>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000054>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#GO_0000004>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000053>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000049>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000052>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000047>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000051>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000047>
+    
+    
+Class: <http://www.geneontology.org/go#GO_0000031>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000083>
+    
+    
+Class: <http://www.geneontology.org/go#GO_0000030>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000083>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000049>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000047>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000048>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000001>
+    
+    
+Class: <http://www.geneontology.org/go#TB_0000005>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#GO_0000010>
+    
+    
+Class: <http://www.geneontology.org/go#TB_0000006>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000002>
+    
+    
+Class: <http://www.geneontology.org/go#TB_0000003>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#TB_0000000>
+    
+    
+Class: <http://www.geneontology.org/go#GO_0000029>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000083>
+    
+    
+Class: <http://www.geneontology.org/go#TB_0000001>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#TB_0000000>
+    
+    
+Class: <http://www.geneontology.org/go#TB_0000002>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#TB_0000000>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000047>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000001>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000046>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000001>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000045>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000043>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000044>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000043>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000043>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000040>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000042>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000040>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000041>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000001>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000040>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#GO_0000004>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000039>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000036>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000038>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000036>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000037>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000036>
+    
+    
+Class: <http://www.geneontology.org/go#GO_0000004>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000001>
+    
+    
+Class: <http://www.geneontology.org/go#GO_0000006>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000003>
+    
+    
+Class: <http://www.geneontology.org/go#GO_0000005>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000000>
+         and owl:Thing
+         and (<http://www.geneontology.org/go#part_of> some 
+            (<http://www.geneontology.org/go#GO_0000021>
+             and owl:Thing))
+    
+    
+Class: <http://www.geneontology.org/go#GO_0000000>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000001>
+    
+    
+Class: <http://www.geneontology.org/go#GO_0000001>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000059>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000036>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000001>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000035>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000001>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000034>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#GO_0000017>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000033>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000002>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000032>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000002>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000031>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#GO_0000011>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000030>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#GO_0000011>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000029>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#GO_0000017>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000028>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000027>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000027>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#GO_0000011>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000026>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000002>
+    
+    
+Class: <http://www.geneontology.org/go#GO_0000015>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000002>
+    
+    
+Class: <http://www.geneontology.org/go#GO_0000014>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#GO_0000010>
+    
+    
+Class: <http://www.geneontology.org/go#GO_0000017>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000002>
+    
+    
+Class: <http://www.geneontology.org/go#GO_0000016>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#GO_0000015>
+    
+    
+Class: <http://www.geneontology.org/go#GO_0000011>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000002>
+    
+    
+Class: <http://www.geneontology.org/go#GO_0000010>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000002>
+    
+    
+Class: <http://www.geneontology.org/go#GO_0000013>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#GO_0000010>
+    
+    
+Class: <http://www.geneontology.org/go#GO_0000012>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#GO_0000010>
+    
+    
+Class: <http://www.geneontology.org/go#GO_0000008>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000019>
+    
+    
+Class: <http://www.geneontology.org/go#GO_0000009>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#GO_0000011>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000025>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#GO_0000011>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000024>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#GO_0000010>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000023>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#GO_0000011>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000022>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000002>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000021>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#GO_0000010>
+    
+    
+Class: <http://www.geneontology.org/go#ID_0000020>
+
+    SubClassOf: 
+        <http://www.geneontology.org/go#ID_0000029>
+    
+    

@@ -47,16 +47,6 @@ public class ELOracle {
 			throws Exception {
 		this.leftTree = new ELTree(cl);
 		this.rightTree = new ELTree(expression);
-		while (unsaturating(bound)) {
-		}
-		myClass =   leftTree.transformToClassExpression();
-		myExpression = rightTree.transformToClassExpression();
-		return myEngineForT.getSubClassAxiom(myClass, myExpression);
-	}
-
-	private Boolean unsaturating(double bound) throws Exception {
-		boolean flag = false;
-		 
 		for (int i = 0; i < rightTree.getMaxLevel(); i++) {
 			for (ELNode nod : rightTree.getNodesOnLevel(i + 1)) {
 				OWLClassExpression cls = nod.transformToDescription();
@@ -68,7 +58,7 @@ public class ELOracle {
 						if (!myEngineForH
 								.entailed(myEngineForH.getSubClassAxiom(leftTree.transformToClassExpression(), 
 										rightTree.transformToClassExpression()))) {
-							flag = true;
+							 
 							unsaturationCounter++;
 						} else {
 							nod.extendLabel(cl1);
@@ -77,8 +67,36 @@ public class ELOracle {
 				}
 			}
 		}
-		return flag;
+		myClass =   leftTree.transformToClassExpression();
+		myExpression = rightTree.transformToClassExpression();
+		return myEngineForT.getSubClassAxiom(myClass, myExpression);
 	}
+
+//	private Boolean unsaturating(double bound) throws Exception {
+//		boolean flag = false;
+//		 
+//		for (int i = 0; i < rightTree.getMaxLevel(); i++) {
+//			for (ELNode nod : rightTree.getNodesOnLevel(i + 1)) {
+//				OWLClassExpression cls = nod.transformToDescription();
+//				for (OWLClass cl1 : cls.getClassesInSignature()) {
+//					if ((random.nextDouble() < bound)
+//							&& (nod.getLabel().contains(cl1) && !cl1.toString().contains("Thing"))) {
+//						nod.remove(cl1);
+//
+//						if (!myEngineForH
+//								.entailed(myEngineForH.getSubClassAxiom(leftTree.transformToClassExpression(), 
+//										rightTree.transformToClassExpression()))) {
+//							flag = true;
+//							unsaturationCounter++;
+//						} else {
+//							nod.extendLabel(cl1);
+//						}
+//					}
+//				}
+//			}
+//		}
+//		return flag;
+//	}
 
 	/**
 	 * @author anaozaki Concept Saturation on the left side of the inclusion
@@ -93,17 +111,6 @@ public class ELOracle {
 			throws Exception {
 		this.leftTree = new ELTree(expression);
 		this.rightTree = new ELTree(cl);
-		while (saturating(bound)) {
-		}
-		myClass =   rightTree.transformToClassExpression();
-		myExpression = leftTree.transformToClassExpression();
-		return myEngineForT.getSubClassAxiom(myExpression, myClass);
-	}
-
-	private Boolean saturating(double bound) throws Exception {
-
-		boolean flag = false;
-		 
 		for (int i = 0; i < leftTree.getMaxLevel(); i++) {
 			for (ELNode nod : leftTree.getNodesOnLevel(i + 1)) {
 				for (OWLClass cl1 : myEngineForT.getClassesInSignature()) {
@@ -112,8 +119,7 @@ public class ELOracle {
 
 						if (!myEngineForH
 								.entailed(myEngineForH.getSubClassAxiom(leftTree.transformToClassExpression(), 
-										rightTree.transformToClassExpression()))) {						
-							flag = true;
+										rightTree.transformToClassExpression()))) {													 
 							saturationCounter++;
 						} else {
 							nod.remove(cl1);
@@ -122,8 +128,35 @@ public class ELOracle {
 				}
 			}
 		}
-		return flag;
+		myClass =   rightTree.transformToClassExpression();
+		myExpression = leftTree.transformToClassExpression();
+		return myEngineForT.getSubClassAxiom(myExpression, myClass);
 	}
+
+//	private Boolean saturating(double bound) throws Exception {
+//
+//		boolean flag = false;
+//		 
+//		for (int i = 0; i < leftTree.getMaxLevel(); i++) {
+//			for (ELNode nod : leftTree.getNodesOnLevel(i + 1)) {
+//				for (OWLClass cl1 : myEngineForT.getClassesInSignature()) {
+//					if ((random.nextDouble() < bound) && !nod.getLabel().contains(cl1)) {
+//						nod.extendLabel(cl1);
+//
+//						if (!myEngineForH
+//								.entailed(myEngineForH.getSubClassAxiom(leftTree.transformToClassExpression(), 
+//										rightTree.transformToClassExpression()))) {						
+//							flag = true;
+//							saturationCounter++;
+//						} else {
+//							nod.remove(cl1);
+//						}
+//					}
+//				}
+//			}
+//		}
+//		return flag;
+//	}
 
 	public OWLSubClassOfAxiom mergeLeft(OWLClassExpression expression, OWLClassExpression cl, double bound)
 			throws Exception {
