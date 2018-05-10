@@ -77,6 +77,9 @@ public class consoleLearner {
 	private boolean learnerBranch;
 	private boolean learnerDecompR;
 
+	private int conceptNumber;
+	private int roleNumber;
+
 	class EquivalentException extends Exception {
 
 		EquivalentException(String no_more_counterexamples) {
@@ -120,7 +123,7 @@ public class consoleLearner {
 				long timeEnd = System.currentTimeMillis();
 				saveOWLFile(hypothesisOntology, hypoFile);
                 victory();
-                printStats(timeStart, timeEnd, args, false);
+                printStats(timeStart, timeEnd, args, true);
 				elQueryEngineForH.disposeOfReasoner();
 				elQueryEngineForT.disposeOfReasoner();
 				myManager.removeOntology(hypothesisOntology);
@@ -185,7 +188,7 @@ public class consoleLearner {
 		printStat("Total branchings: ", elOracle.getNumberBranching(), verb);
 		printStat("Total saturations: ", elOracle.getNumberSaturations(), verb);
 		printStat("Total unsaturations: ", elOracle.getNumberUnsaturations(), verb);
-		printStat("\nSizes:", verb);
+		printStat("\nOntology sizes:", verb);
 		printStat("Target TBox logical axioms: ", targetOntology.getAxiomCount(AxiomType.SUBCLASS_OF)+
 				targetOntology.getAxiomCount(AxiomType.EQUIVALENT_CLASSES), verb);
 		myMetrics.computeTargetSizes(targetOntology);
@@ -194,7 +197,9 @@ public class consoleLearner {
 		printStat("Hypothesis TBox logical axioms: ",  hypothesisOntology.getAxiomCount(AxiomType.SUBCLASS_OF)+
 				hypothesisOntology.getAxiomCount(AxiomType.EQUIVALENT_CLASSES), verb);
 		printStat("Size of H: ", myMetrics.getSizeOfHypothesis(), verb);
-		printStat("Size of largest  concept in T: ", myMetrics.getSizeOfTargetLargestConcept(), verb);
+        printStat("Number of concept names: ", conceptNumber, verb);
+        printStat("Number of role names: ", roleNumber, verb);
+        printStat("Size of largest  concept in T: ", myMetrics.getSizeOfTargetLargestConcept(), verb);
 		printStat("Size of largest  concept in H: ", myMetrics.getSizeOfHypothesisLargestConcept(), verb);
 		printStat("Size of largest  counterexample: ", myMetrics.getSizeOfLargestCounterExample(), verb);
 		//printStat("Size of largest  concept (sum conjunctions) in T: ", myMetrics.getSumSizeOfLargestConcept(), verb); 
@@ -489,8 +494,11 @@ public class consoleLearner {
 
 			ArrayList<String> roles = myMetrics.getSuggestionNames("role", newFile);
 
-			System.out.println("Total number of concepts is: " + concepts.size());
-			System.out.println("Total number of roles is: " + roles.size());
+			this.conceptNumber = concepts.size();
+			this.roleNumber = roles.size();
+
+			//System.out.println("Total number of concepts is: " + concepts.size());
+			//System.out.println("Total number of roles is: " + roles.size());
 			System.out.flush();
 		} catch (OWLOntologyCreationException e) {
 			System.out.println("Could not load targetOntology: " + e.getMessage());
