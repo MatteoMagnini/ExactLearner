@@ -42,11 +42,6 @@ public class ELEngine {
 	public OWLEquivalentClassesAxiom getOWLEquivalentClassesAxiom(OWLClassExpression concept1, OWLClassExpression concept2){
 		return myManager.getOWLDataFactory().getOWLEquivalentClassesAxiom(concept1, concept2);
     }
-// --Commented out by Inspection START (30/04/2018, 15:27):
-//	public OWLClassExpression getOWLObjectIntersectionOf(OWLClassExpression concept1, OWLClassExpression concept2){
-//		return myManager.getOWLDataFactory().getOWLObjectIntersectionOf(concept1, concept2);
-//    }
-// --Commented out by Inspection STOP (30/04/2018, 15:27)
 
 	public OWLClassExpression getOWLObjectIntersectionOf(Set<OWLClassExpression>mySet){
 		return myManager.getOWLDataFactory().getOWLObjectIntersectionOf(mySet);
@@ -57,59 +52,58 @@ public class ELEngine {
         OWLClassExpression right = subclassAxiom.getSuperClass();
 
         Boolean workaround = false;
-        myReasoner.flush();
 
         OWLDataFactory dataFactory = myManager.getOWLDataFactory();
 
-        OWLClass leftName  = dataFactory.getOWLClass(IRI.create("#temp001"));
-        OWLClass rightName = dataFactory.getOWLClass(IRI.create("#temp002"));
+        OWLClass leftName;
+        OWLAxiom leftDefinition = null;
 
-        OWLAxiom leftDefinition  = dataFactory.getOWLEquivalentClassesAxiom(leftName,  left);
-        OWLAxiom rightDefinition = dataFactory.getOWLEquivalentClassesAxiom(rightName, right);
-        myManager.addAxiom(myReasoner.getRootOntology(), leftDefinition);
-        myManager.addAxiom(myReasoner.getRootOntology(), rightDefinition);
+        if(left.isAnonymous()) {
+            leftName  = dataFactory.getOWLClass(IRI.create("#temp001"));
+            leftDefinition  = dataFactory.getOWLSubClassOfAxiom(leftName,  left);
+            myManager.addAxiom(myReasoner.getRootOntology(), leftDefinition);
+        }
+        else {
+            leftName = left.asOWLClass();
+        }
 
-        /*
-        LOGGER_.trace("ontology: ");
-        for(OWLAxiom ax : myReasoner.getRootOntology().getAxioms())
-            LOGGER_.trace(ax.toString());
-         */
-         
+
+        OWLClass rightName;
+        OWLAxiom rightDefinition = null;
+        if(right.isAnonymous()) {
+            rightName = dataFactory.getOWLClass(IRI.create("#temp002"));
+            rightDefinition = dataFactory.getOWLSubClassOfAxiom(right, rightName);
+            myManager.addAxiom(myReasoner.getRootOntology(), rightDefinition);
+        }
+        else {
+            rightName = right.asOWLClass();
+        }
+
 
         myReasoner.flush();
-        //myReasoner.precomputeInferences(InferenceType.CLASS_HIERARCHY);
 
         NodeSet<OWLClass> superClasses = myReasoner.getSuperClasses(leftName, false);
         Node<OWLClass> equivClasses = myReasoner.getEquivalentClasses(leftName);
 
-        /*
-        LOGGER_.trace("(Strict) superClasses of " + leftName + " ");
-        for(OWLClass c : superClasses.getFlattened()) {
-            LOGGER_.trace(c.toString());
-        }
-        LOGGER_.trace("");
-        */
-        if (!superClasses.isEmpty() && superClasses.containsEntity(rightName))
+
+        if (!superClasses.isEmpty() && superClasses.containsEntity(rightName)) {
             workaround = true;
-
-        /*
-        LOGGER_.trace("equivalentClasses of " + leftName + " ");
-        for(OWLClass c : equivClasses.getEntities()) {
-            LOGGER_.trace(c.toString());
         }
-        LOGGER_.trace("");
-        */
-        if (!equivClasses.getEntities().isEmpty() && equivClasses.getEntities().contains(rightName))
+
+        if (!equivClasses.getEntities().isEmpty() && equivClasses.getEntities().contains(rightName)) {
             workaround = true;
+        }
 
 
-        myManager.removeAxiom(myReasoner.getRootOntology(), leftDefinition);
-        myManager.removeAxiom(myReasoner.getRootOntology(), rightDefinition);
-        myReasoner.flush();
+        if(leftDefinition != null) {
+            myManager.removeAxiom(myReasoner.getRootOntology(), leftDefinition);
+        }
+
+        if(rightDefinition != null) {
+            myManager.removeAxiom(myReasoner.getRootOntology(), rightDefinition);
+        }
+
         LOGGER_.trace("returning " + workaround);
-        LOGGER_.trace("");
-        LOGGER_.trace("");
-
         return workaround;
     }
 
