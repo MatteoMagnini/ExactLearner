@@ -83,15 +83,16 @@ public class ELEngine {
         myReasoner.flush();
 
         NodeSet<OWLClass> superClasses = myReasoner.getSuperClasses(leftName, false);
-        Node<OWLClass> equivClasses = myReasoner.getEquivalentClasses(leftName);
 
 
         if (!superClasses.isEmpty() && superClasses.containsEntity(rightName)) {
             workaround = true;
         }
-
-        if (!equivClasses.getEntities().isEmpty() && equivClasses.getEntities().contains(rightName)) {
-            workaround = true;
+        else {
+            Node<OWLClass> equivClasses = myReasoner.getEquivalentClasses(leftName);
+            if (!equivClasses.getEntities().isEmpty() && equivClasses.getEntities().contains(rightName)) {
+                workaround = true;
+            }
         }
 
 

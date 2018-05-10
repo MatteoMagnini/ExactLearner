@@ -88,7 +88,7 @@ public class ELLearner {
 
 	}
 
-	private OWLSubClassOfAxiom saturateHypothesisLeft(OWLClassExpression expression, OWLClass cl) throws Exception {
+	private void saturateHypothesisLeft(OWLClassExpression expression, OWLClass cl) throws Exception {
 		ELTree oldTree = new ELTree(expression);
 		this.leftTree = new ELTree(expression);
 		this.rightTree = new ELTree(cl);
@@ -112,8 +112,8 @@ public class ELLearner {
 		}
 		myExpression = leftTree.transformToClassExpression();
 		myClass = (OWLClass) rightTree.transformToClassExpression();
-		return myEngineForT.getSubClassAxiom(myExpression, myClass);
-	}
+        myEngineForT.getSubClassAxiom(myExpression, myClass);
+    }
 
 	public OWLSubClassOfAxiom decomposeLeft(OWLClassExpression expression, OWLClass cl) throws Exception {
 		myClass = cl;
@@ -166,7 +166,7 @@ public class ELLearner {
 		return false;
 	}
 
-	private OWLSubClassOfAxiom saturateHypothesisRight(OWLClass cl, OWLClassExpression expression) throws Exception {
+	private void saturateHypothesisRight(OWLClass cl, OWLClassExpression expression) throws Exception {
 		ELTree oldTree = new ELTree(expression);
 		this.leftTree = new ELTree(cl);
 		this.rightTree = new ELTree(expression);
@@ -189,8 +189,8 @@ public class ELLearner {
 		}
 		myClass = (OWLClass) leftTree.transformToClassExpression();
 		myExpression = rightTree.transformToClassExpression();
-		return myEngineForT.getSubClassAxiom(myClass, myExpression);
-	}
+        myEngineForT.getSubClassAxiom(myClass, myExpression);
+    }
 
 	public OWLSubClassOfAxiom decomposeRight(OWLClass cl, OWLClassExpression expression) throws Exception {
 		myClass = cl;

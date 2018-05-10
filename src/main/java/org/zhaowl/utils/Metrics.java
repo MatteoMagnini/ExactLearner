@@ -13,265 +13,265 @@ import org.semanticweb.owlapi.model.AxiomType;
 import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLClassExpression;
-import org.semanticweb.owlapi.model.OWLEntity;
 import org.semanticweb.owlapi.model.OWLEquivalentClassesAxiom;
 import org.semanticweb.owlapi.model.OWLLogicalAxiom;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLSubClassOfAxiom;
 
 public class Metrics {
-	private final OWLObjectRenderer myRenderer;
-	private int membCount = 0;
-	private int equivCount = 0;
-	private int sizeOfTargetLargestConcept = 0;
-	private int sizeOfHypothesisLargestConcept = 0;
-	private int sumSizeOfLargestConcept = 0;
-	private int depthOfLargestConcept = 0;
-	private int sizeOfLargestCounterExample = 0;
-	private int sizeOfHypothesis = 0;
-	private int sizeOfTarget = 0;
+    private final OWLObjectRenderer myRenderer;
+    private int membCount = 0;
+    private int equivCount = 0;
+    private int sizeOfTargetLargestConcept = 0;
+    private int sizeOfHypothesisLargestConcept = 0;
+    private int sumSizeOfLargestConcept = 0;
+    private int depthOfLargestConcept = 0;
+    private int sizeOfLargestCounterExample = 0;
+    private int sizeOfHypothesis = 0;
+    private int sizeOfTarget = 0;
 
-	public Metrics(OWLObjectRenderer renderer) {
-		this.myRenderer = renderer;
-	}
+    public Metrics(OWLObjectRenderer renderer) {
+        this.myRenderer = renderer;
+    }
 
-	public int sizeOfCIT(Set<OWLLogicalAxiom> axSet) {
+    private int sizeOfCIT(Set<OWLLogicalAxiom> axSet) {
 
-		int ontSize = 0;
+        int ontSize = 0;
 
-		for (OWLAxiom axe : axSet) {
+        for (OWLAxiom axe : axSet) {
 
-			String inclusion = myRenderer.render(axe);
+            String inclusion = myRenderer.render(axe);
 
-			if (inclusion.contains("SubClassOf") || inclusion.contains("EquivalentTo")) {
-				inclusion = inclusion.replaceAll(" and ", " ");
-				inclusion = inclusion.replaceAll(" some ", " ");
-				inclusion = inclusion.replaceAll("SubClassOf", " ");
-				inclusion = inclusion.replaceAll("EquivalentTo", " ");
-				ontSize += inclusion.split(" ").length;
-			}
+            if (inclusion.contains("SubClassOf") || inclusion.contains("EquivalentTo")) {
+                inclusion = inclusion.replaceAll(" and ", " ");
+                inclusion = inclusion.replaceAll(" some ", " ");
+                inclusion = inclusion.replaceAll("SubClassOf", " ");
+                inclusion = inclusion.replaceAll("EquivalentTo", " ");
+                ontSize += inclusion.split(" ").length;
+            }
 
-		}
-		return ontSize;
-	}
+        }
+        return ontSize;
+    }
 
-	public int sizeOfConcept(Set<OWLLogicalAxiom> axSet) {
-		int largestConceptSize = 0;
+    private int sizeOfConcept(Set<OWLLogicalAxiom> axSet) {
+        int largestConceptSize = 0;
 
-		for (OWLAxiom axe : axSet) {
-			if (axe.isOfType(AxiomType.SUBCLASS_OF)) {
-				OWLSubClassOfAxiom axiom = (OWLSubClassOfAxiom) axe;
-				axiom.getSubClass();
+        for (OWLAxiom axe : axSet) {
+            if (axe.isOfType(AxiomType.SUBCLASS_OF)) {
+                OWLSubClassOfAxiom axiom = (OWLSubClassOfAxiom) axe;
+                axiom.getSubClass();
 
-				String left = myRenderer.render(axiom.getSubClass());
-				String right = myRenderer.render(axiom.getSuperClass());
+                String left = myRenderer.render(axiom.getSubClass());
+                String right = myRenderer.render(axiom.getSuperClass());
 
-				left = left.replaceAll(" and ", " ");
-				left = left.replaceAll(" some ", " ");
+                left = left.replaceAll(" and ", " ");
+                left = left.replaceAll(" some ", " ");
 
-				if (left.split(" ").length > largestConceptSize)
-					largestConceptSize = left.split(" ").length;
+                if (left.split(" ").length > largestConceptSize) {
+                    largestConceptSize = left.split(" ").length;
+                }
 
-				right = right.replaceAll(" and ", " ");
-				right = right.replaceAll(" some ", " ");
-				if (right.split(" ").length > largestConceptSize)
-					largestConceptSize = right.split(" ").length;
+                right = right.replaceAll(" and ", " ");
+                right = right.replaceAll(" some ", " ");
+                if (right.split(" ").length > largestConceptSize) {
+                    largestConceptSize = right.split(" ").length;
+                }
 
-			}
-			if (axe.isOfType(AxiomType.EQUIVALENT_CLASSES)) {
-				OWLEquivalentClassesAxiom axiom = (OWLEquivalentClassesAxiom) axe;
-				String concept;
-				for (OWLClassExpression exp : axiom.getClassExpressions()) {
-					concept = myRenderer.render(exp);
-					concept = concept.replaceAll(" and ", " ");
-					concept = concept.replaceAll(" some ", " ");
-					if (concept.split(" ").length > largestConceptSize)
-						largestConceptSize = concept.split(" ").length;
-				}
-			}
-		}
-		return largestConceptSize;
+            }
+            if (axe.isOfType(AxiomType.EQUIVALENT_CLASSES)) {
+                OWLEquivalentClassesAxiom axiom = (OWLEquivalentClassesAxiom) axe;
+                String concept;
+                for (OWLClassExpression exp : axiom.getClassExpressions()) {
+                    concept = myRenderer.render(exp);
+                    concept = concept.replaceAll(" and ", " ");
+                    concept = concept.replaceAll(" some ", " ");
+                    if (concept.split(" ").length > largestConceptSize)
+                        largestConceptSize = concept.split(" ").length;
+                }
+            }
+        }
+        return largestConceptSize;
 
-	}
+    }
 
-	public int sumOfSizeOfConcept(OWLOntology ontology) {
-		int largestConceptSize = 0;
-		Set<OWLLogicalAxiom> axSet = ontology.getLogicalAxioms();
-		for (OWLClass cl : ontology.getClassesInSignature()) {
-			 
-			int tmp = 0;
+    public int sumOfSizeOfConcept(OWLOntology ontology) {
+        int largestConceptSize = 0;
+        Set<OWLLogicalAxiom> axSet = ontology.getLogicalAxioms();
+        for (OWLClass cl : ontology.getClassesInSignature()) {
 
-			for (OWLAxiom axe : axSet) {
-				if (axe.isOfType(AxiomType.SUBCLASS_OF)) {
-					OWLSubClassOfAxiom axiom = (OWLSubClassOfAxiom) axe;
-					if (axiom.getSubClass().equals(cl)) {
+            int tmp = 0;
 
-						String right = myRenderer.render(axiom.getSuperClass());
+            for (OWLAxiom axe : axSet) {
+                if (axe.isOfType(AxiomType.SUBCLASS_OF)) {
+                    OWLSubClassOfAxiom axiom = (OWLSubClassOfAxiom) axe;
+                    if (axiom.getSubClass().equals(cl)) {
 
-						right = right.replaceAll(" and ", " ");
-						right = right.replaceAll(" some ", " ");
+                        String right = myRenderer.render(axiom.getSuperClass());
 
-						tmp = +right.split(" ").length;
-					}
-				}
-				if (axe.isOfType(AxiomType.EQUIVALENT_CLASSES)) {
-					OWLEquivalentClassesAxiom axiom = (OWLEquivalentClassesAxiom) axe;
-					String concept;
-					if (axiom.contains(cl)) {
-						for (OWLClassExpression exp : axiom.getClassExpressions()) {
-							if (!exp.equals(cl)) {
-								concept = myRenderer.render(exp);
-								concept = concept.replaceAll(" and ", " ");
-								concept = concept.replaceAll(" some ", " ");
+                        right = right.replaceAll(" and ", " ");
+                        right = right.replaceAll(" some ", " ");
 
-								tmp = +concept.split(" ").length;
-							}
-						}
-					}
-				}
-			}
-			if (tmp > largestConceptSize)
-				largestConceptSize = tmp;
-		}
-		return largestConceptSize;
+                        tmp = +right.split(" ").length;
+                    }
+                }
+                if (axe.isOfType(AxiomType.EQUIVALENT_CLASSES)) {
+                    OWLEquivalentClassesAxiom axiom = (OWLEquivalentClassesAxiom) axe;
+                    String concept;
+                    if (axiom.contains(cl)) {
+                        for (OWLClassExpression exp : axiom.getClassExpressions()) {
+                            if (!exp.equals(cl)) {
+                                concept = myRenderer.render(exp);
+                                concept = concept.replaceAll(" and ", " ");
+                                concept = concept.replaceAll(" some ", " ");
 
-	}
+                                tmp = +concept.split(" ").length;
+                            }
+                        }
+                    }
+                }
+            }
+            if (tmp > largestConceptSize)
+                largestConceptSize = tmp;
+        }
+        return largestConceptSize;
 
-	public ArrayList<String> getSuggestionNames(String s, File newFile) throws IOException {
+    }
 
-		ArrayList<String> names = new ArrayList<>();
+    public ArrayList<String> getSuggestionNames(String s, File newFile) throws IOException {
 
-		FileInputStream in = new FileInputStream(newFile);
-		BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+        ArrayList<String> names = new ArrayList<>();
 
-		String line = reader.readLine();
-		if (s.equals("concept")) {
-			while (line != null) {
-				if (line.startsWith("Class:")) {
-					String conceptName = line.substring(7);
-					if (!conceptName.equals("owl:Thing")) {
-						names.add(conceptName);
-					}
-				}
-				line = reader.readLine();
-			}
-		} else if (s.equals("role")) {
-			while (line != null) {
-				if (line.startsWith("ObjectProperty:")) {
-					String roleName = line.substring(16);
-					names.add(roleName);
+        FileInputStream in = new FileInputStream(newFile);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(in));
 
-				}
+        String line = reader.readLine();
+        if (s.equals("concept")) {
+            while (line != null) {
+                if (line.startsWith("Class:")) {
+                    String conceptName = line.substring(7);
+                    if (!conceptName.equals("owl:Thing")) {
+                        names.add(conceptName);
+                    }
+                }
+                line = reader.readLine();
+            }
+        } else if (s.equals("role")) {
+            while (line != null) {
+                if (line.startsWith("ObjectProperty:")) {
+                    String roleName = line.substring(16);
+                    names.add(roleName);
 
-				line = reader.readLine();
-			}
-		}
-		reader.close();
-		return names;
-	}
+                }
 
-	public int getMembCount() {
-		return membCount;
-	}
+                line = reader.readLine();
+            }
+        }
+        reader.close();
+        return names;
+    }
 
-	public void setMembCount(int membCount) {
-		this.membCount = membCount;
-	}
+    public int getMembCount() {
+        return membCount;
+    }
 
-	public int getEquivCount() {
-		return equivCount;
-	}
+    public void setMembCount(int membCount) {
+        this.membCount = membCount;
+    }
 
-	public void setEquivCount(int equivCount) {
-		this.equivCount = equivCount;
-	}
+    public int getEquivCount() {
+        return equivCount;
+    }
 
-	public int getSizeOfTargetLargestConcept() {
-		return sizeOfTargetLargestConcept;
-	}
+    public void setEquivCount(int equivCount) {
+        this.equivCount = equivCount;
+    }
 
-	public void setSizeOfTargetLargestConcept(int sizeOfLargestConcept) {
-		this.sizeOfTargetLargestConcept = sizeOfLargestConcept;
-	}
+    public int getSizeOfTargetLargestConcept() {
+        return sizeOfTargetLargestConcept;
+    }
 
-	public int getSizeOfHypothesisLargestConcept() {
-		return sizeOfHypothesisLargestConcept;
-	}
+    private void setSizeOfTargetLargestConcept(int sizeOfLargestConcept) {
+        this.sizeOfTargetLargestConcept = sizeOfLargestConcept;
+    }
 
-	public void setSizeOfHypothesisLargestConcept(int sizeOfLargestConcept) {
-		this.sizeOfHypothesisLargestConcept = sizeOfLargestConcept;
-	}
-	public int getDepthOfLargestConcept() {
-		return depthOfLargestConcept;
-	}
+    public int getSizeOfHypothesisLargestConcept() {
+        return sizeOfHypothesisLargestConcept;
+    }
 
-	public void setDepthOfLargestConcept(int depthOfLargestConcept) {
-		this.depthOfLargestConcept = depthOfLargestConcept;
-	}
+    private void setSizeOfHypothesisLargestConcept(int sizeOfLargestConcept) {
+        this.sizeOfHypothesisLargestConcept = sizeOfLargestConcept;
+    }
 
-	public int getSizeOfHypothesis() {
-		return sizeOfHypothesis;
-	}
+    public int getDepthOfLargestConcept() {
+        return depthOfLargestConcept;
+    }
 
-	public void setSizeOfHypothesis(int sizeOfHypothesis) {
-		this.sizeOfHypothesis = sizeOfHypothesis;
-	}
+    public void setDepthOfLargestConcept(int depthOfLargestConcept) {
+        this.depthOfLargestConcept = depthOfLargestConcept;
+    }
 
-	public int getSizeOfTarget() {
-		return sizeOfTarget;
-	}
+    public int getSizeOfHypothesis() {
+        return sizeOfHypothesis;
+    }
 
-	public void setSizeOfTarget(int sizeOfTarget) {
-		this.sizeOfTarget = sizeOfTarget;
-	}
+    public void setSizeOfHypothesis(int sizeOfHypothesis) {
+        this.sizeOfHypothesis = sizeOfHypothesis;
+    }
 
-	public void computeTargetSizes(OWLOntology ontology) {
-		Set<OWLLogicalAxiom> logicalAxioms = ontology.getLogicalAxioms();
-		this.setSizeOfTarget(sizeOfCIT(logicalAxioms));
-		this.setSizeOfTargetLargestConcept(sizeOfConcept(logicalAxioms));
-		//this.setSumSizeOfLargestConcept(sumOfSizeOfConcept(ontology));
-	}
+    public int getSizeOfTarget() {
+        return sizeOfTarget;
+    }
 
-	public void computeHypothesisSizes(OWLOntology ontology) {
-		Set<OWLLogicalAxiom> logicalAxioms = ontology.getLogicalAxioms();
-		this.sizeOfHypothesis = sizeOfCIT(logicalAxioms);
-		this.setSizeOfHypothesisLargestConcept(sizeOfConcept(logicalAxioms));
-	}
+    private void setSizeOfTarget(int sizeOfTarget) {
+        this.sizeOfTarget = sizeOfTarget;
+    }
 
-	public int getSumSizeOfLargestConcept() {
-		return sumSizeOfLargestConcept;
-	}
+    public void computeTargetSizes(OWLOntology ontology) {
+        Set<OWLLogicalAxiom> logicalAxioms = ontology.getLogicalAxioms();
+        this.setSizeOfTarget(sizeOfCIT(logicalAxioms));
+        this.setSizeOfTargetLargestConcept(sizeOfConcept(logicalAxioms));
+        //this.setSumSizeOfLargestConcept(sumOfSizeOfConcept(ontology));
+    }
 
-	public void setSumSizeOfLargestConcept(int sumSizeOfLargestConcept) {
-		this.sumSizeOfLargestConcept = sumSizeOfLargestConcept;
-	}
+    public void computeHypothesisSizes(OWLOntology ontology) {
+        Set<OWLLogicalAxiom> logicalAxioms = ontology.getLogicalAxioms();
+        this.sizeOfHypothesis = sizeOfCIT(logicalAxioms);
+        this.setSizeOfHypothesisLargestConcept(sizeOfConcept(logicalAxioms));
+    }
 
-	 
+    public int getSumSizeOfLargestConcept() {
+        return sumSizeOfLargestConcept;
+    }
 
-	public int getSizeOfLargestCounterExample() {
-		return sizeOfLargestCounterExample;
-	}
+    public void setSumSizeOfLargestConcept(int sumSizeOfLargestConcept) {
+        this.sumSizeOfLargestConcept = sumSizeOfLargestConcept;
+    }
 
-	public void setSizeOfLargestCounterExample(int sizeOfLargestCounterExample) {
-		this.sizeOfLargestCounterExample = sizeOfLargestCounterExample;
-	}
-	
-	public int getSizeOfCounterexample(OWLLogicalAxiom axe) {
 
-		 
-		 
+    public int getSizeOfLargestCounterExample() {
+        return sizeOfLargestCounterExample;
+    }
 
-			String inclusion = myRenderer.render(axe);
+    public void setSizeOfLargestCounterExample(int sizeOfLargestCounterExample) {
+        this.sizeOfLargestCounterExample = sizeOfLargestCounterExample;
+    }
 
-			if (inclusion.contains("SubClassOf") || inclusion.contains("EquivalentTo")) {
-				inclusion = inclusion.replaceAll(" and ", " ");
-				inclusion = inclusion.replaceAll(" some ", " ");
-				inclusion = inclusion.replaceAll("SubClassOf", " ");
-				inclusion = inclusion.replaceAll("EquivalentTo", " ");
-				 
-			}
+    public int getSizeOfCounterexample(OWLLogicalAxiom axe) {
 
-		 
-		return inclusion.split(" ").length;
-	}
+
+        String inclusion = myRenderer.render(axe);
+
+        if (inclusion.contains("SubClassOf") || inclusion.contains("EquivalentTo")) {
+            inclusion = inclusion.replaceAll(" and ", " ");
+            inclusion = inclusion.replaceAll(" some ", " ");
+            inclusion = inclusion.replaceAll("SubClassOf", " ");
+            inclusion = inclusion.replaceAll("EquivalentTo", " ");
+            return inclusion.split(" ").length;
+        }
+        // else the axiom is not of one of the types above.
+        // Let's not count it
+        return 0;
+
+    }
 }

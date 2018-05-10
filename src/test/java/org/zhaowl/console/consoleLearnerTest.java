@@ -91,7 +91,7 @@ public class consoleLearnerTest {
 				System.out.println(ont.toString());
 				consoleLearner cl = new consoleLearner();
 
-				String[] args = { ont.toString(), "t", "t", "t", "t", "t", "t", "0.1", "0.1", "0.1", "0.1", "0.1",
+				String[] args = { ont.toString(), "t", "t", "t", "t", "t", "t", "1", "1", "1", "1", "1",
 						"0.1" };
 
 				cl.doIt(args);

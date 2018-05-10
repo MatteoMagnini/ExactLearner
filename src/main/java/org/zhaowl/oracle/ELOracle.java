@@ -28,7 +28,7 @@ public class ELOracle {
 	private final Random random = new Random();
 	private ELTree leftTree;
 	private ELTree rightTree;
-	
+
 	public ELOracle(ELEngine elEngineForT, ELEngine elEngineForH) {
 		myEngineForT = elEngineForT;
 		myEngineForH = elEngineForH;
@@ -36,11 +36,11 @@ public class ELOracle {
 
 	/**
 	 * @author anaozaki Concept Unsaturation on the right side of the inclusion
-	 *          
-	 * 
-	 * @param left
+	 *
+	 *
+	 * @param cl
 	 *            class name on the left of an inclusion
-	 * @param right
+	 * @param expression
 	 *            class expression on the right of an inclusion
 	 */
 	public OWLSubClassOfAxiom unsaturateRight(OWLClassExpression cl, OWLClassExpression expression, double bound)
@@ -56,9 +56,9 @@ public class ELOracle {
 						nod.remove(cl1);
 
 						if (!myEngineForH
-								.entailed(myEngineForH.getSubClassAxiom(leftTree.transformToClassExpression(), 
+								.entailed(myEngineForH.getSubClassAxiom(leftTree.transformToClassExpression(),
 										rightTree.transformToClassExpression()))) {
-							 
+
 							unsaturationCounter++;
 						} else {
 							nod.extendLabel(cl1);
@@ -100,11 +100,11 @@ public class ELOracle {
 
 	/**
 	 * @author anaozaki Concept Saturation on the left side of the inclusion
-	 *          
-	 * 
-	 * @param left
+	 *
+	 *
+	 * @param expression
 	 *            class expression on the left of an inclusion
-	 * @param right
+	 * @param cl
 	 *            class name on the right of an inclusion
 	 */
 	public OWLSubClassOfAxiom saturateLeft(OWLClassExpression expression, OWLClassExpression cl, double bound)
@@ -118,8 +118,8 @@ public class ELOracle {
 						nod.extendLabel(cl1);
 
 						if (!myEngineForH
-								.entailed(myEngineForH.getSubClassAxiom(leftTree.transformToClassExpression(), 
-										rightTree.transformToClassExpression()))) {													 
+								.entailed(myEngineForH.getSubClassAxiom(leftTree.transformToClassExpression(),
+										rightTree.transformToClassExpression()))) {
 							saturationCounter++;
 						} else {
 							nod.remove(cl1);
@@ -182,14 +182,14 @@ public class ELOracle {
 								nod.getEdges().remove(nod.getEdges().get(k));
 
 								if (!myEngineForT.entailed(
-										myEngineForT.getSubClassAxiom(oldTree.transformToClassExpression(), 
+										myEngineForT.getSubClassAxiom(oldTree.transformToClassExpression(),
 												tree.transformToClassExpression())) //if the merged tree is in fact a stronger expression
 										&&
 										!myEngineForH.entailed(
 										myEngineForH.getSubClassAxiom(tree.transformToClassExpression(), cl))) {
 									myExpression = tree.transformToClassExpression();
 									myClass = cl;
-									 
+
 									mergeCounter++;
 								} else {
 									tree = oldTree;
@@ -262,38 +262,56 @@ public class ELOracle {
 				if (!nod.getEdges().isEmpty()) {
 
 					for (int j = 0; j < nod.getEdges().size(); j++) {
+//                        if (random.nextDouble() >= bound) {
+//                            continue;
+//                        }
+//                        Set<OWLClass> concepts = nod.getEdges().get(j).getNode().getLabel();
+//                        for (OWLClass c : concepts) {
+//                            Set<OWLClass> impliedC = myEngineForT.getSuperClasses(c, false);
+//                            for(OWLAxiom ax : myEngineForT.getOntology().getAxioms()) {
+//                                System.out.println(ax);
+//                            }
+//
+//                            for (OWLClass d : impliedC) {
+//                                System.out.println(d);
+//                                if(d.isOWLThing()) {
+//                                    continue;
+//                                }
+//                                nod.getEdges().get(j).getNode().extendLabel(d);
+//                            }
+//                        }
 						if (nod.getEdges().get(j).getNode().getLabel().size() > 1) {
-							
-							
+
+
 							Iterator<OWLClass> iterator1 = nod.getEdges().get(j).getNode().getLabel().iterator();
-							
+
 							while(iterator1.hasNext()) {
 								OWLClass lab =iterator1.next();
 								ELTree oldTree = new ELTree(tree.transformToClassExpression());
 								ELTree newSubtree = new ELTree(
 										nod.getEdges().get(j).getNode().transformToDescription());
 								Iterator<OWLClass> iterator = newSubtree.getRootNode().getLabel().iterator();
-								 
+
 								while(iterator.hasNext()) {
 									iterator.next();
 									iterator.remove();
-									 
+
 								}
 								newSubtree.getRootNode().extendLabel(lab);
 								ELEdge newEdge = new ELEdge(nod.getEdges().get(j).getLabel(), newSubtree.getRootNode());
 								nod.getEdges().add(newEdge);
-								 
+
 								iterator1.remove();
-								if ((random.nextDouble() < bound) && 
+								if ((random.nextDouble() < bound) &&
 										!myEngineForT.entailed(
-												myEngineForT.getSubClassAxiom(tree.transformToClassExpression(), 
+												myEngineForT.getSubClassAxiom(tree.transformToClassExpression(),
 														oldTree.transformToClassExpression())) //if the branched tree is in fact a weaker expression
 												&&
 										!myEngineForH.entailed(
 										myEngineForH.getSubClassAxiom(cl, tree.transformToClassExpression()))) {
 									myExpression = tree.transformToClassExpression();
 									myClass = cl;
-									 
+
 									branchCounter++;
 								} else {
 									tree = oldTree;

@@ -82,8 +82,8 @@ public class consoleLearner {
 
 	class EquivalentException extends Exception {
 
-		EquivalentException(String no_more_counterexamples) {
-			super(no_more_counterexamples);
+		EquivalentException() {
+			super();
 		}
 	}
 
@@ -123,7 +123,7 @@ public class consoleLearner {
 				long timeEnd = System.currentTimeMillis();
 				saveOWLFile(hypothesisOntology, hypoFile);
                 victory();
-                printStats(timeStart, timeEnd, args, true);
+                printStats(timeStart, timeEnd, args, false);
 				elQueryEngineForH.disposeOfReasoner();
 				elQueryEngineForT.disposeOfReasoner();
 				myManager.removeOntology(hypothesisOntology);
@@ -567,7 +567,7 @@ public class consoleLearner {
 			}
 
 		}
-		throw new EquivalentException("No more counterexamples");
+		throw new EquivalentException();
 	}
 
 	private OWLSubClassOfAxiom getCounterExampleSubClassOf(ELEngine elQueryEngineForT, ELEngine elQueryEngineForH,
