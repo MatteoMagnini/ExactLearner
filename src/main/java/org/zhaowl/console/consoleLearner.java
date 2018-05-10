@@ -188,9 +188,14 @@ public class consoleLearner {
 		printStat("\nSizes:", verb);
 		printStat("Target TBox logical axioms: ", targetOntology.getAxiomCount(AxiomType.SUBCLASS_OF)+
 				targetOntology.getAxiomCount(AxiomType.EQUIVALENT_CLASSES), verb);
-		printStat("Size of T: ", myMetrics.sizeOfCIT(targetOntology.getLogicalAxioms()), verb);
+		myMetrics.computeTargetSizes(targetOntology.getLogicalAxioms());
+		myMetrics.computeHypothesisSizes(hypothesisOntology.getLogicalAxioms()); 
+		printStat("Size of T: ", myMetrics.getSizeOfTarget(), verb);
 		printStat("Hypothesis TBox logical axioms: ", hypothesisOntology.getLogicalAxiomCount(), verb);
-		printStat("Size of H: ", myMetrics.sizeOfCIT(hypothesisOntology.getLogicalAxioms()), verb);
+		printStat("Size of H: ", myMetrics.getSizeOfHypothesis(), verb);
+		printStat("Size of largest  concept in T: ", myMetrics.getSizeOfLargestConcept(), verb);
+		 
+		 
 		System.out.println();
 	}
 
@@ -491,7 +496,7 @@ public class consoleLearner {
 	}
 
 	private void getOntologyName() {
-
+		 
 		int con = 0;
 		for (int i = 0; i < targetOntology.getOntologyID().toString().length(); i++)
 			if (targetOntology.getOntologyID().toString().charAt(i) == '/')
