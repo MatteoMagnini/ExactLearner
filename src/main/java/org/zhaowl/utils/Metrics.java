@@ -11,9 +11,12 @@ import java.util.Set;
 import org.semanticweb.owlapi.io.OWLObjectRenderer;
 import org.semanticweb.owlapi.model.AxiomType;
 import org.semanticweb.owlapi.model.OWLAxiom;
+import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLClassExpression;
+import org.semanticweb.owlapi.model.OWLEntity;
 import org.semanticweb.owlapi.model.OWLEquivalentClassesAxiom;
 import org.semanticweb.owlapi.model.OWLLogicalAxiom;
+import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLSubClassOfAxiom;
 
 public class Metrics {
@@ -21,9 +24,9 @@ public class Metrics {
 	private int membCount = 0;
 	private int equivCount = 0;
 	private int sizeOfLargestConcept = 0;
-	 
+	private int sumSizeOfLargestConcept = 0;
 	private int depthOfLargestConcept = 0;
-	 
+
 	private int sizeOfHypothesis = 0;
 	private int sizeOfTarget = 0;
 
@@ -50,10 +53,10 @@ public class Metrics {
 		}
 		return ontSize;
 	}
-	
+
 	public int sizeOfConcept(Set<OWLLogicalAxiom> axSet) {
 		int largestConceptSize = 0;
-		 
+
 		for (OWLAxiom axe : axSet) {
 			if (axe.isOfType(AxiomType.SUBCLASS_OF)) {
 				OWLSubClassOfAxiom axiom = (OWLSubClassOfAxiom) axe;
@@ -61,33 +64,76 @@ public class Metrics {
 
 				String left = myRenderer.render(axiom.getSubClass());
 				String right = myRenderer.render(axiom.getSuperClass());
-				 
+
 				left = left.replaceAll(" and ", " ");
 				left = left.replaceAll(" some ", " ");
 
-				if (left.split(" ").length > largestConceptSize)			 
+				if (left.split(" ").length > largestConceptSize)
 					largestConceptSize = left.split(" ").length;
 
 				right = right.replaceAll(" and ", " ");
 				right = right.replaceAll(" some ", " ");
-				if (right.split(" ").length > largestConceptSize)	 
+				if (right.split(" ").length > largestConceptSize)
 					largestConceptSize = right.split(" ").length;
 
 			}
 			if (axe.isOfType(AxiomType.EQUIVALENT_CLASSES)) {
 				OWLEquivalentClassesAxiom axiom = (OWLEquivalentClassesAxiom) axe;
-				String concept; 
-				for(OWLClassExpression exp: axiom.getClassExpressions()) {
+				String concept;
+				for (OWLClassExpression exp : axiom.getClassExpressions()) {
 					concept = myRenderer.render(exp);
 					concept = concept.replaceAll(" and ", " ");
 					concept = concept.replaceAll(" some ", " ");
-				if (concept.split(" ").length > largestConceptSize)			 
-					largestConceptSize = concept.split(" ").length;
+					if (concept.split(" ").length > largestConceptSize)
+						largestConceptSize = concept.split(" ").length;
 				}
 			}
 		}
-		return  largestConceptSize;
-				
+		return largestConceptSize;
+
+	}
+
+	public int sumOfSizeOfConcept(OWLOntology ontology) {
+		int largestConceptSize = 0;
+		Set<OWLLogicalAxiom> axSet = ontology.getLogicalAxioms();
+		for (OWLClass cl : ontology.getClassesInSignature()) {
+			 
+			int tmp = 0;
+
+			for (OWLAxiom axe : axSet) {
+				if (axe.isOfType(AxiomType.SUBCLASS_OF)) {
+					OWLSubClassOfAxiom axiom = (OWLSubClassOfAxiom) axe;
+					if (axiom.getSubClass().equals(cl)) {
+
+						String right = myRenderer.render(axiom.getSuperClass());
+
+						right = right.replaceAll(" and ", " ");
+						right = right.replaceAll(" some ", " ");
+
+						tmp = +right.split(" ").length;
+					}
+				}
+				if (axe.isOfType(AxiomType.EQUIVALENT_CLASSES)) {
+					OWLEquivalentClassesAxiom axiom = (OWLEquivalentClassesAxiom) axe;
+					String concept;
+					if (axiom.contains(cl)) {
+						for (OWLClassExpression exp : axiom.getClassExpressions()) {
+							if (!exp.equals(cl)) {
+								concept = myRenderer.render(exp);
+								concept = concept.replaceAll(" and ", " ");
+								concept = concept.replaceAll(" some ", " ");
+
+								tmp = +concept.split(" ").length;
+							}
+						}
+					}
+				}
+			}
+			if (tmp > largestConceptSize)
+				largestConceptSize = tmp;
+		}
+		return largestConceptSize;
+
 	}
 
 	public ArrayList<String> getSuggestionNames(String s, File newFile) throws IOException {
@@ -147,8 +193,6 @@ public class Metrics {
 		this.sizeOfLargestConcept = sizeOfLargestConcept;
 	}
 
-	 
-
 	public int getDepthOfLargestConcept() {
 		return depthOfLargestConcept;
 	}
@@ -156,8 +200,6 @@ public class Metrics {
 	public void setDepthOfLargestConcept(int depthOfLargestConcept) {
 		this.depthOfLargestConcept = depthOfLargestConcept;
 	}
-
-	 
 
 	public int getSizeOfHypothesis() {
 		return sizeOfHypothesis;
@@ -175,15 +217,24 @@ public class Metrics {
 		this.sizeOfTarget = sizeOfTarget;
 	}
 
-	public void computeTargetSizes(Set<OWLLogicalAxiom> logicalAxioms) {
+	public void computeTargetSizes(OWLOntology ontology) {
+		Set<OWLLogicalAxiom> logicalAxioms = ontology.getLogicalAxioms();
 		this.setSizeOfTarget(sizeOfCIT(logicalAxioms));
 		this.setSizeOfLargestConcept(sizeOfConcept(logicalAxioms));
-		 
+		this.setSumSizeOfLargestConcept(sumOfSizeOfConcept(ontology));
 	}
 
-	public void computeHypothesisSizes(Set<OWLLogicalAxiom> logicalAxioms) {
+	public void computeHypothesisSizes(OWLOntology ontology) {
+		Set<OWLLogicalAxiom> logicalAxioms = ontology.getLogicalAxioms();
 		this.sizeOfHypothesis = sizeOfCIT(logicalAxioms);
- 
 
+	}
+
+	public int getSumSizeOfLargestConcept() {
+		return sumSizeOfLargestConcept;
+	}
+
+	public void setSumSizeOfLargestConcept(int sumSizeOfLargestConcept) {
+		this.sumSizeOfLargestConcept = sumSizeOfLargestConcept;
 	}
 }
