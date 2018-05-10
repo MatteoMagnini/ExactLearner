@@ -23,7 +23,8 @@ public class Metrics {
 	private final OWLObjectRenderer myRenderer;
 	private int membCount = 0;
 	private int equivCount = 0;
-	private int sizeOfLargestConcept = 0;
+	private int sizeOfTargetLargestConcept = 0;
+	private int sizeOfHypothesisLargestConcept = 0;
 	private int sumSizeOfLargestConcept = 0;
 	private int depthOfLargestConcept = 0;
 
@@ -185,14 +186,21 @@ public class Metrics {
 		this.equivCount = equivCount;
 	}
 
-	public int getSizeOfLargestConcept() {
-		return sizeOfLargestConcept;
+	public int getSizeOfTargetLargestConcept() {
+		return sizeOfTargetLargestConcept;
 	}
 
-	public void setSizeOfLargestConcept(int sizeOfLargestConcept) {
-		this.sizeOfLargestConcept = sizeOfLargestConcept;
+	public void setSizeOfTargetLargestConcept(int sizeOfLargestConcept) {
+		this.sizeOfTargetLargestConcept = sizeOfLargestConcept;
 	}
 
+	public int getSizeOfHypothesisLargestConcept() {
+		return sizeOfHypothesisLargestConcept;
+	}
+
+	public void setSizeOfHypothesisLargestConcept(int sizeOfLargestConcept) {
+		this.sizeOfHypothesisLargestConcept = sizeOfLargestConcept;
+	}
 	public int getDepthOfLargestConcept() {
 		return depthOfLargestConcept;
 	}
@@ -220,14 +228,14 @@ public class Metrics {
 	public void computeTargetSizes(OWLOntology ontology) {
 		Set<OWLLogicalAxiom> logicalAxioms = ontology.getLogicalAxioms();
 		this.setSizeOfTarget(sizeOfCIT(logicalAxioms));
-		this.setSizeOfLargestConcept(sizeOfConcept(logicalAxioms));
-		this.setSumSizeOfLargestConcept(sumOfSizeOfConcept(ontology));
+		this.setSizeOfTargetLargestConcept(sizeOfConcept(logicalAxioms));
+		//this.setSumSizeOfLargestConcept(sumOfSizeOfConcept(ontology));
 	}
 
 	public void computeHypothesisSizes(OWLOntology ontology) {
 		Set<OWLLogicalAxiom> logicalAxioms = ontology.getLogicalAxioms();
 		this.sizeOfHypothesis = sizeOfCIT(logicalAxioms);
-
+		this.setSizeOfHypothesisLargestConcept(sizeOfConcept(logicalAxioms));
 	}
 
 	public int getSumSizeOfLargestConcept() {

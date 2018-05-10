@@ -348,13 +348,6 @@ public class ELLearner {
 	public OWLSubClassOfAxiom mergeRight(OWLClass cl, OWLClassExpression expression) throws Exception {
 		myClass = cl;
 		myExpression = expression;
-		while (merging(myClass, myExpression)) {
-		}
-		return myEngineForT.getSubClassAxiom(myClass, myExpression);
-	}
-
-	private Boolean merging(OWLClass cl, OWLClassExpression expression) throws Exception {
-
 		ELTree tree = new ELTree(expression);
 		for (int i = 0; i < tree.getMaxLevel(); i++) {
 			for (ELNode nod : tree.getNodesOnLevel(i + 1)) {
@@ -395,7 +388,7 @@ public class ELLearner {
 									myClass = cl;
 									mergeCounter++;
 
-									return true;
+									 
 
 								} else {
 									tree = oldTree;
@@ -409,13 +402,118 @@ public class ELLearner {
 
 			}
 		}
-		return false;
+		return myEngineForT.getSubClassAxiom(myClass, myExpression);
 	}
+
+//	private Boolean merging(OWLClass cl, OWLClassExpression expression) throws Exception {
+//
+//		ELTree tree = new ELTree(expression);
+//		for (int i = 0; i < tree.getMaxLevel(); i++) {
+//			for (ELNode nod : tree.getNodesOnLevel(i + 1)) {
+//
+//				if (!nod.getEdges().isEmpty() && nod.getEdges().size() > 1) {
+//
+//					for (int j = 0; j < nod.getEdges().size(); j++) {
+//
+//						for (int k = 0; k < nod.getEdges().size(); k++) {
+//							ELTree oldTree = new ELTree(tree.transformToClassExpression());
+//
+//							if (j != k && nod.getEdges().get(j).getStrLabel()
+//									.equals(nod.getEdges().get(k).getStrLabel())) {
+//								nod.getEdges().get(j).getNode().getLabel()
+//										.addAll(nod.getEdges().get(k).getNode().getLabel());
+//
+//								if (!nod.getEdges().get(k).getNode().getEdges().isEmpty())
+//									nod.getEdges().get(j).getNode().getEdges()
+//											.addAll(nod.getEdges().get(k).getNode().getEdges());
+//								nod.getEdges().remove(nod.getEdges().get(k));
+//
+//								myMetrics.setMembCount(myMetrics.getMembCount() + 1);
+//
+//								if (!myEngineForT.entailed(myEngineForT.getSubClassAxiom(
+//										oldTree.transformToClassExpression(), tree.transformToClassExpression())) // if
+//																													// the
+//																													// merged
+//																													// tree
+//																													// is
+//																													// in
+//																													// fact
+//																													// a
+//																													// stronger
+//																													// expression
+//										&& myEngineForT.entailed(
+//												myEngineForT.getSubClassAxiom(cl, tree.transformToClassExpression()))) {
+//									myExpression = tree.transformToClassExpression();
+//									myClass = cl;
+//									mergeCounter++;
+//
+//									return true;
+//
+//								} else {
+//									tree = oldTree;
+//								}
+//
+//							}
+//						}
+//					}
+//
+//				}
+//
+//			}
+//		}
+//		return false;
+//	}
 
 	public OWLSubClassOfAxiom branchLeft(OWLClassExpression expression, OWLClass cl) throws Exception {
 		myClass = cl;
 		myExpression = expression;
-		while (branching(myExpression, myClass)) {
+		ELTree tree = new ELTree(expression);
+		for (int i = 0; i < tree.getMaxLevel(); i++) {
+			for (ELNode nod : tree.getNodesOnLevel(i + 1)) {
+				if (!nod.getEdges().isEmpty()) {
+
+					for (int j = 0; j < nod.getEdges().size(); j++) {
+						if (nod.getEdges().get(j).getNode().getLabel().size() > 1) {
+							TreeSet<OWLClass> s = new TreeSet<>(nod.getEdges().get(j).getNode().getLabel());
+							for (OWLClass lab : s) {
+								ELTree oldTree = new ELTree(tree.transformToClassExpression());
+								ELTree newSubtree = new ELTree(
+										nod.getEdges().get(j).getNode().transformToDescription());
+								TreeSet<OWLClass> ts = new TreeSet<>(newSubtree.getRootNode().getLabel());
+								for (OWLClass l : ts) {
+									newSubtree.getRootNode().getLabel().remove(l);
+								}
+								newSubtree.getRootNode().extendLabel(lab);
+								ELEdge newEdge = new ELEdge(nod.getEdges().get(j).getLabel(), newSubtree.getRootNode());
+								nod.getEdges().add(newEdge);
+								nod.getEdges().get(j).getNode().remove(lab);
+								myMetrics.setMembCount(myMetrics.getMembCount() + 1);
+								if (!myEngineForT.entailed(myEngineForT.getSubClassAxiom(
+										tree.transformToClassExpression(), oldTree.transformToClassExpression())) // if
+																													// the
+																													// branched
+																													// tree
+																													// is
+																													// in
+																													// fact
+																													// a
+																													// weaker
+																													// expression
+										&& myEngineForT.entailed(
+												myEngineForT.getSubClassAxiom(tree.transformToClassExpression(), cl))) {
+									myExpression = tree.transformToClassExpression();
+									myClass = cl;
+									 
+									branchCounter++;
+								} else {
+									tree = oldTree;
+								}
+							}
+						}
+					}
+
+				}
+			}
 		}
 		return myEngineForT.getSubClassAxiom(myExpression, myClass);
 	}

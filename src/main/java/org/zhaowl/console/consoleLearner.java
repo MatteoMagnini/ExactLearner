@@ -194,7 +194,8 @@ public class consoleLearner {
 		printStat("Hypothesis TBox logical axioms: ",  hypothesisOntology.getAxiomCount(AxiomType.SUBCLASS_OF)+
 				hypothesisOntology.getAxiomCount(AxiomType.EQUIVALENT_CLASSES), verb);
 		printStat("Size of H: ", myMetrics.getSizeOfHypothesis(), verb);
-		printStat("Size of largest  concept in T: ", myMetrics.getSizeOfLargestConcept(), verb);
+		printStat("Size of largest  concept in T: ", myMetrics.getSizeOfTargetLargestConcept(), verb);
+		printStat("Size of largest  concept in H: ", myMetrics.getSizeOfHypothesisLargestConcept(), verb);
 		//printStat("Size of largest  concept (sum conjunctions) in T: ", myMetrics.getSumSizeOfLargestConcept(), verb); 
 		 
 		System.out.println();
