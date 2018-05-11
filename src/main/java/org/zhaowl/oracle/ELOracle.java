@@ -171,7 +171,7 @@ public class ELOracle {
 		ELTree tree = new ELTree(expression);
 		for (int i = 0; i < tree.getMaxLevel(); i++) {
 			for (ELNode nod : tree.getNodesOnLevel(i + 1)) {
-
+				int l1=0;
 				if (!nod.getEdges().isEmpty() && nod.getEdges().size() > 1) {
 
 					for (int j = 0; j <= nod.getEdges().size(); j++) {
@@ -180,25 +180,36 @@ public class ELOracle {
 							ELTree oldTree = new ELTree(tree.transformToClassExpression());
 							if ((random.nextDouble() < bound) && (j != k && nod.getEdges().get(j).getStrLabel()
 									.equals(nod.getEdges().get(k).getStrLabel()))) {
-								nod.getEdges().get(j).getNode().getLabel()
-										.addAll(nod.getEdges().get(k).getNode().getLabel());
-								if (!nod.getEdges().get(k).getNode().getEdges().isEmpty())
-									nod.getEdges().get(j).getNode().getEdges()
-											.addAll(nod.getEdges().get(k).getNode().getEdges());
-								nod.getEdges().remove(nod.getEdges().get(k));
+								ELTree tmp=new ELTree(tree.transformToClassExpression());
+								Set<ELNode> set=tmp.getNodesOnLevel(i+1);
+								ELNode n=set.iterator().next();
+								for(int i1=0; i1<l1;i1++ ) {
+									  n=set.iterator().next();
+								}
+								n.getEdges().get(j).getNode().getLabel()
+										.addAll(n.getEdges().get(k).getNode().getLabel());
+								 
+								
+								if (!n.getEdges().get(k).getNode().getEdges().isEmpty())
+									n.getEdges().get(j).getNode().getEdges()
+											.addAll(n.getEdges().get(k).getNode().getEdges());
+								 
+								n.getEdges().remove(n.getEdges().get(k));
+								 
 
 								if (!myEngineForT.entailed(
-										myEngineForT.getSubClassAxiom(oldTree.transformToClassExpression(), 
-												tree.transformToClassExpression())) //if the merged tree is in fact a stronger expression
+										myEngineForT.getSubClassAxiom(tree.transformToClassExpression(), 
+												tmp.transformToClassExpression())) //if the merged tree is in fact a stronger expression
 										&&
 										!myEngineForH.entailed(
-										myEngineForH.getSubClassAxiom(tree.transformToClassExpression(), cl))) {
-									myExpression = tree.transformToClassExpression();
+										myEngineForH.getSubClassAxiom(tmp.transformToClassExpression(), cl))) {
+									myExpression = tmp.transformToClassExpression();
 									myClass = cl;
-									flag = true;
+									
 									mergeCounter++;
+									return true;
 								} else {
-									tree = oldTree;
+									//tree = oldTree;
 								}
 
 							}
@@ -206,7 +217,7 @@ public class ELOracle {
 					}
 
 				}
-
+				l1++;
 			}
 		}
 		return flag;

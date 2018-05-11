@@ -408,12 +408,7 @@ public class ELLearner {
  
 									return true;
 
-								} else {
-									 
-									//tree = oldTree;
-									 
-								}
-
+								}  
 							}
 						}
 					}

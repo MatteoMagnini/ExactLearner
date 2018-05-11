@@ -41,9 +41,8 @@ Class: <http://www.semanticweb.org/ontologies/2014/3/football.owl#Team>
     
 Class: <http://www.semanticweb.org/ontologies/2014/3/football.owl#Player>
 
-    EquivalentTo: 
+    SubClassOf: 
         <http://www.semanticweb.org/ontologies/2014/3/football.owl#Person>
-         and <http://www.semanticweb.org/ontologies/2014/3/football.owl#Player>
          and owl:Thing
          and (<http://www.semanticweb.org/ontologies/2014/3/football.owl#plays> some 
             (<http://www.semanticweb.org/ontologies/2014/3/football.owl#Game>
@@ -67,7 +66,9 @@ Class: <http://www.semanticweb.org/ontologies/2014/3/football.owl#FootballPlayer
     SubClassOf: 
         <http://www.semanticweb.org/ontologies/2014/3/football.owl#Player>
          and owl:Thing
-         and (<http://www.semanticweb.org/ontologies/2014/3/football.owl#plays> some <http://www.semanticweb.org/ontologies/2014/3/football.owl#Football>)
+         and (<http://www.semanticweb.org/ontologies/2014/3/football.owl#plays> some 
+            (<http://www.semanticweb.org/ontologies/2014/3/football.owl#Football>
+             and owl:Thing))
          and (<http://www.semanticweb.org/ontologies/2014/3/football.owl#plays_for> some 
             (<http://www.semanticweb.org/ontologies/2014/3/football.owl#FootballTeam>
              and owl:Thing))
