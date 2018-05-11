@@ -41,8 +41,30 @@ public class ELLearnerTest {
         
     }
 
+    @Test
+    public void learnerSiblingMerge1() {
+        OWLDataFactory df = man.getOWLDataFactory();
 
 
+        OWLClass A = df.getOWLClass(IRI.create(":A"));
+        OWLClass B = df.getOWLClass(IRI.create(":B"));
+        OWLClass C = df.getOWLClass(IRI.create(":C"));
+        OWLObjectProperty R = df.getOWLObjectProperty(IRI.create(":r"));
+        OWLObjectProperty S = df.getOWLObjectProperty(IRI.create(":s"));
+        OWLClass left = A;
+        OWLClassExpression right = df.getOWLObjectIntersectionOf(df.getOWLObjectSomeValuesFrom(R, C), df.getOWLObjectSomeValuesFrom(R, B), df.getOWLObjectSomeValuesFrom(R,A));
+        OWLSubClassOfAxiom axiom;
+        OWLSubClassOfAxiom mergedAxiom= df.getOWLSubClassOfAxiom(A, df.getOWLObjectIntersectionOf(df.getOWLObjectSomeValuesFrom(R, df.getOWLObjectIntersectionOf(B,C)),df.getOWLObjectSomeValuesFrom(R,A)));
+        man.addAxiom(targetOntology, mergedAxiom);
+        try {
+            axiom = elLearner.mergeRight(left, right);
+            System.out.println("Merged: " + axiom);
+            if(!axiom.equals(mergedAxiom))
+                fail("Did not merge.");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     @Test
     public void unsaturateLeft() {
         OWLDataFactory df = man.getOWLDataFactory();

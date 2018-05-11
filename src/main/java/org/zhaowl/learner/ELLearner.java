@@ -356,26 +356,28 @@ public class ELLearner {
 	private Boolean merging(OWLClass cl, OWLClassExpression expression) throws Exception {
 
 		ELTree tree = new ELTree(expression);
+		ELTree oldTree;
 		for (int i = 0; i < tree.getMaxLevel(); i++) {
 			for (ELNode nod : tree.getNodesOnLevel(i + 1)) {
 
 				if (!nod.getEdges().isEmpty() && nod.getEdges().size() > 1) {
 
-					for (int j = 0; j < nod.getEdges().size(); j++) {
+					for (int j = 0; j <= nod.getEdges().size();  j++) {
 
-						for (int k = 0; k < nod.getEdges().size(); k++) {
-							ELTree oldTree = new ELTree(tree.transformToClassExpression());
-
+						for (int k = 0; k <= nod.getEdges().size(); k++) {
+							 oldTree = new ELTree(tree.transformToClassExpression());
+							 
 							if (j != k && nod.getEdges().get(j).getStrLabel()
 									.equals(nod.getEdges().get(k).getStrLabel())) {
 								nod.getEdges().get(j).getNode().getLabel()
 										.addAll(nod.getEdges().get(k).getNode().getLabel());
-
+								 
 								if (!nod.getEdges().get(k).getNode().getEdges().isEmpty())
 									nod.getEdges().get(j).getNode().getEdges()
 											.addAll(nod.getEdges().get(k).getNode().getEdges());
+								 
 								nod.getEdges().remove(nod.getEdges().get(k));
-
+								
 								myMetrics.setMembCount(myMetrics.getMembCount() + 1);
 
 								if (!myEngineForT.entailed(myEngineForT.getSubClassAxiom(
@@ -398,7 +400,9 @@ public class ELLearner {
 									return true;
 
 								} else {
+									 
 									tree = oldTree;
+									 
 								}
 
 							}
