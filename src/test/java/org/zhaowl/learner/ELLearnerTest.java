@@ -63,6 +63,7 @@ public class ELLearnerTest {
                 fail("Did not merge.");
         } catch (Exception e) {
             e.printStackTrace();
+            fail();
         }
     }
     @Test
@@ -212,13 +213,14 @@ public class ELLearnerTest {
 
 
         OWLClass A = df.getOWLClass(IRI.create(":A"));
-        OWLClass left = A;
         OWLClass B = df.getOWLClass(IRI.create(":B"));
-        OWLObjectProperty R = df.getOWLObjectProperty(IRI.create(":r"));
         OWLClass C = df.getOWLClass(IRI.create(":C"));
-        OWLClassExpression right = df.getOWLObjectIntersectionOf(df.getOWLObjectSomeValuesFrom(R, C), df.getOWLObjectSomeValuesFrom(R, B));
+        OWLObjectProperty R = df.getOWLObjectProperty(IRI.create(":r"));
+        OWLObjectProperty S = df.getOWLObjectProperty(IRI.create(":s"));
+        OWLClass left = A;
+        OWLClassExpression right = df.getOWLObjectIntersectionOf(df.getOWLObjectSomeValuesFrom(R, C), df.getOWLObjectSomeValuesFrom(R, B), df.getOWLObjectSomeValuesFrom(R,A));
         OWLSubClassOfAxiom axiom;
-        OWLSubClassOfAxiom mergedAxiom= df.getOWLSubClassOfAxiom(A, df.getOWLObjectSomeValuesFrom(R, df.getOWLObjectIntersectionOf(B,C)));
+        OWLSubClassOfAxiom mergedAxiom= df.getOWLSubClassOfAxiom(A, df.getOWLObjectIntersectionOf(df.getOWLObjectSomeValuesFrom(R, df.getOWLObjectIntersectionOf(B,C)),df.getOWLObjectSomeValuesFrom(R,A)));
         man.addAxiom(targetOntology, mergedAxiom);
         try {
             axiom = elLearner.mergeRight(left, right);
