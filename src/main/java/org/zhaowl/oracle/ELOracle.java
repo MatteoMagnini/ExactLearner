@@ -162,6 +162,12 @@ public class ELOracle {
 			throws Exception {
 		myClass = cl;
 		myExpression = expression;
+		while(merging(myExpression, myClass,bound)) {}
+		return myEngineForT.getSubClassAxiom(myExpression, myClass);
+	}
+
+	private Boolean merging(OWLClassExpression expression, OWLClassExpression cl, double bound) throws Exception {
+		boolean flag = false;
 		ELTree tree = new ELTree(expression);
 		for (int i = 0; i < tree.getMaxLevel(); i++) {
 			for (ELNode nod : tree.getNodesOnLevel(i + 1)) {
@@ -182,14 +188,14 @@ public class ELOracle {
 								nod.getEdges().remove(nod.getEdges().get(k));
 
 								if (!myEngineForT.entailed(
-										myEngineForT.getSubClassAxiom(oldTree.transformToClassExpression(),
+										myEngineForT.getSubClassAxiom(oldTree.transformToClassExpression(), 
 												tree.transformToClassExpression())) //if the merged tree is in fact a stronger expression
 										&&
 										!myEngineForH.entailed(
 										myEngineForH.getSubClassAxiom(tree.transformToClassExpression(), cl))) {
 									myExpression = tree.transformToClassExpression();
 									myClass = cl;
-
+									flag = true;
 									mergeCounter++;
 								} else {
 									tree = oldTree;
@@ -203,54 +209,8 @@ public class ELOracle {
 
 			}
 		}
-		return myEngineForT.getSubClassAxiom(myExpression, myClass);
+		return flag;
 	}
-
-//	private Boolean merging(OWLClassExpression expression, OWLClassExpression cl, double bound) throws Exception {
-//		boolean flag = false;
-//		ELTree tree = new ELTree(expression);
-//		for (int i = 0; i < tree.getMaxLevel(); i++) {
-//			for (ELNode nod : tree.getNodesOnLevel(i + 1)) {
-//
-//				if (!nod.getEdges().isEmpty() && nod.getEdges().size() > 1) {
-//
-//					for (int j = 0; j < nod.getEdges().size(); j++) {
-//
-//						for (int k = 0; k < nod.getEdges().size(); k++) {
-//							ELTree oldTree = new ELTree(tree.transformToClassExpression());
-//							if ((random.nextDouble() < bound) && (j != k && nod.getEdges().get(j).getStrLabel()
-//									.equals(nod.getEdges().get(k).getStrLabel()))) {
-//								nod.getEdges().get(j).getNode().getLabel()
-//										.addAll(nod.getEdges().get(k).getNode().getLabel());
-//								if (!nod.getEdges().get(k).getNode().getEdges().isEmpty())
-//									nod.getEdges().get(j).getNode().getEdges()
-//											.addAll(nod.getEdges().get(k).getNode().getEdges());
-//								nod.getEdges().remove(nod.getEdges().get(k));
-//
-//								if (!myEngineForT.entailed(
-//										myEngineForT.getSubClassAxiom(oldTree.transformToClassExpression(), 
-//												tree.transformToClassExpression())) //if the merged tree is in fact a stronger expression
-//										&&
-//										!myEngineForH.entailed(
-//										myEngineForH.getSubClassAxiom(tree.transformToClassExpression(), cl))) {
-//									myExpression = tree.transformToClassExpression();
-//									myClass = cl;
-//									flag = true;
-//									mergeCounter++;
-//								} else {
-//									tree = oldTree;
-//								}
-//
-//							}
-//						}
-//					}
-//
-//				}
-//
-//			}
-//		}
-//		return flag;
-//	}
 
 	public OWLSubClassOfAxiom branchRight(OWLClassExpression cl, OWLClassExpression expression, double bound)
 			throws Exception {
