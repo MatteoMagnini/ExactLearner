@@ -1,4 +1,4 @@
-package org.zhaowl.oracle;
+package org.exactlearner.oracle;
 
 import static org.junit.Assert.fail;
 
@@ -15,7 +15,7 @@ import org.semanticweb.owlapi.model.OWLObjectProperty;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.model.OWLSubClassOfAxiom;
-import org.zhaowl.engine.ELEngine;
+import org.exactlearner.engine.ELEngine;
 
 public class ELOracleTest {
 

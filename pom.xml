@@ -3,10 +3,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>MvnG</groupId>
-    <artifactId>ZhaOWL</artifactId>
+    <artifactId>ExactLearner</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
-    <name>ZhaOWL</name>
+    <name>ExactLearner</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -40,7 +40,7 @@
                             <transformers>
                                 <transformer implementation=
                                                      "org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>org.zhaowl.console.consoleLearner</mainClass>
+                                    <mainClass>org.exactlearner.console.consoleLearner</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>

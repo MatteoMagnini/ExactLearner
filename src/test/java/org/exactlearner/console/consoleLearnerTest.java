@@ -1,4 +1,4 @@
-package org.zhaowl.console;
+package org.exactlearner.console;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -7,8 +7,6 @@ import java.util.Arrays;
 
 import org.junit.Test;
 import org.junit.Before;
-
-import static org.junit.Assert.*;
 
 public class consoleLearnerTest {
 

@@ -1,4 +1,4 @@
-package org.zhaowl.learner;
+package org.exactlearner.learner;
 
 import static org.junit.Assert.fail;
 
@@ -8,9 +8,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.*;
-import org.zhaowl.engine.ELEngine;
-import org.zhaowl.oracle.ELOracle;
-import org.zhaowl.utils.Metrics;
+import org.exactlearner.engine.ELEngine;
+import org.exactlearner.utils.Metrics;
 import uk.ac.manchester.cs.owl.owlapi.mansyntaxrenderer.ManchesterOWLSyntaxOWLObjectRendererImpl;
 import org.semanticweb.owlapi.io.OWLObjectRenderer;
 
