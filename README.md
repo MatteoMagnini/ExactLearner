@@ -1,4 +1,6 @@
+ 
 # ExactLearner
+ 
 Backend engine for ExactLearner (without graphical user interface)
 
 From running the jar file, the following array elements specify the parameters for the learner
