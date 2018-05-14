@@ -22,19 +22,18 @@ ORACLE SKILLS:
 - [12] = compose right [0..1]
 
 
------ OUTPUT 
-
-aside from some console metrics (number of equivalence queries
+## OUTPUT 
+Aside from some console metrics (number of equivalence queries
 and some other info) a new ontology file will be created in the folder of
 ontology input this new ontology will be the hypothesis learned by the
 program
 
-		
+## Example
+```
 java -jar ExactLearner.jar animals.owl t t t t t t 0 0 0 0 0 0 
-
-
-@Param
-ontology to load = animals.owl 
-learner skills (see above for details) = t t t t t t 
-oracle skills (see above for details) = 0 0 0 0 0 0 
-
+```
+run the system with all learner features and none of teacher features
+```
+java -jar ExactLearner.jar animals.owl t t f t t t 0.5 0.5 0.5 0.5 0.5 0.5 
+```
+run the system with all learner features but unsaturation and teacher applying transformations to examples with 50% chance.
