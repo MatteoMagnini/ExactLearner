@@ -137,6 +137,8 @@ public class consoleLearner {
 		} catch (Throwable e) {
 			// TODO Auto-generated catch block
 			System.out.println("error in doIt --- " + e);
+			if(args!=null && args.length<13)
+				System.out.println("Wrong number of parameters.");
 		} finally {
 			elQueryEngineForH.disposeOfReasoner();
 			elQueryEngineForT.disposeOfReasoner();
