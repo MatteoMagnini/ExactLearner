@@ -173,10 +173,10 @@ public class ELOracle {
 				int l1=0;
 				if (!nod.getEdges().isEmpty() && nod.getEdges().size() > 1) {
 
-					for (int j = 0; j <= nod.getEdges().size(); j++) {
+					for (int j = 0; j < nod.getEdges().size(); j++) {
 
-						for (int k = 0; k <= nod.getEdges().size(); k++) {
-							ELTree oldTree = new ELTree(tree.transformToClassExpression());
+						for (int k = 0; k < nod.getEdges().size(); k++) {
+							 
 							if ((random.nextDouble() < bound) && (j != k && nod.getEdges().get(j).getStrLabel()
 									.equals(nod.getEdges().get(k).getStrLabel()))) {
 								ELTree tmp=new ELTree(tree.transformToClassExpression());
@@ -207,9 +207,7 @@ public class ELOracle {
 									
 									mergeCounter++;
 									return true;
-								} else {
-									//tree = oldTree;
-								}
+								} 
 
 							}
 						}

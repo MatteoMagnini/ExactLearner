@@ -356,7 +356,7 @@ public class ELLearner {
 	private Boolean merging(OWLClass cl, OWLClassExpression expression) throws Exception {
 
 		ELTree tree = new ELTree(expression);
-		ELTree oldTree;
+		 
 		 
 		for (int i = 0; i < tree.getMaxLevel(); i++) {
 			int l1=0;
@@ -367,8 +367,7 @@ public class ELLearner {
 					for (int j = 0; j < nod.getEdges().size();  j++) {
 
 						for (int k = 0; k <nod.getEdges().size(); k++) {
-							 oldTree = new ELTree(tree.transformToClassExpression());
-							 
+							 					 
 							if (j != k && nod.getEdges().get(j).getStrLabel()
 									.equals(nod.getEdges().get(k).getStrLabel())) {
 								ELTree tmp=new ELTree(tree.transformToClassExpression());
@@ -472,60 +471,6 @@ public class ELLearner {
 			}
 		}
 		return myEngineForT.getSubClassAxiom(myExpression, myClass);
-	}
-
-	private Boolean branching(OWLClassExpression expression, OWLClass cl) throws Exception {
-
-		boolean flag = false;
-		ELTree tree = new ELTree(expression);
-		for (int i = 0; i < tree.getMaxLevel(); i++) {
-			for (ELNode nod : tree.getNodesOnLevel(i + 1)) {
-				if (!nod.getEdges().isEmpty()) {
-
-					for (int j = 0; j < nod.getEdges().size(); j++) {
-						if (nod.getEdges().get(j).getNode().getLabel().size() > 1) {
-							TreeSet<OWLClass> s = new TreeSet<>(nod.getEdges().get(j).getNode().getLabel());
-							for (OWLClass lab : s) {
-								ELTree oldTree = new ELTree(tree.transformToClassExpression());
-								ELTree newSubtree = new ELTree(
-										nod.getEdges().get(j).getNode().transformToDescription());
-								TreeSet<OWLClass> ts = new TreeSet<>(newSubtree.getRootNode().getLabel());
-								for (OWLClass l : ts) {
-									newSubtree.getRootNode().getLabel().remove(l);
-								}
-								newSubtree.getRootNode().extendLabel(lab);
-								ELEdge newEdge = new ELEdge(nod.getEdges().get(j).getLabel(), newSubtree.getRootNode());
-								nod.getEdges().add(newEdge);
-								nod.getEdges().get(j).getNode().remove(lab);
-								myMetrics.setMembCount(myMetrics.getMembCount() + 1);
-								if (!myEngineForT.entailed(myEngineForT.getSubClassAxiom(
-										tree.transformToClassExpression(), oldTree.transformToClassExpression())) // if
-																													// the
-																													// branched
-																													// tree
-																													// is
-																													// in
-																													// fact
-																													// a
-																													// weaker
-																													// expression
-										&& myEngineForT.entailed(
-												myEngineForT.getSubClassAxiom(tree.transformToClassExpression(), cl))) {
-									myExpression = tree.transformToClassExpression();
-									myClass = cl;
-									flag = true;
-									branchCounter++;
-								} else {
-									tree = oldTree;
-								}
-							}
-						}
-					}
-
-				}
-			}
-		}
-		return flag;
 	}
 
 	// at the moment duplicated
