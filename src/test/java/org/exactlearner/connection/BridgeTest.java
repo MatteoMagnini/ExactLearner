@@ -1,6 +1,9 @@
 package org.exactlearner.connection;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
 public class BridgeTest {
 
     @Test
@@ -13,14 +16,21 @@ public class BridgeTest {
     }
 
     @Test
-    public void testChatGPTBridge() {
-        String api_key = System.getenv("OPENAI_API_KEY");
-        // Get only the value of the OPENAI_API_KEY environment variable
-        api_key = api_key.split("=")[1];
+    public void testChatGPTBridgeConnection() {
+        String api_key = System.getenv("OPENAI_API_KEY").split("=")[1];
 
         // Test the ChatGPTBridge
         ChatGPTBridge chatGPTBridge = new ChatGPTBridge();
-        System.out.println(chatGPTBridge.checkConnection("https://api.openai.com/v1/chat/completions", api_key));
-        System.out.println(chatGPTBridge.ask("Hello", api_key));
+        assertTrue(chatGPTBridge.checkConnection(api_key));
+    }
+
+    @Test
+    public void testChatGPTBridgeAsk() {
+        String api_key = System.getenv("OPENAI_API_KEY").split("=")[1];
+
+        // Test the ChatGPTBridge
+        ChatGPTBridge chatGPTBridge = new ChatGPTBridge();
+        String response = chatGPTBridge.ask("Hello, how are you?", api_key);
+        assertNotNull(response);
     }
 }

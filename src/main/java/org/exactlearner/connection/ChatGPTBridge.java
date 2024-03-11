@@ -5,6 +5,39 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
+
+enum ChatGPTCodes {
+    OK(200),
+    BAD_REQUEST(400),
+    UNAUTHORIZED(401),
+    FORBIDDEN(403),
+    NOT_FOUND(404),
+    TOO_MANY_REQUESTS(429),
+    INTERNAL_SERVER_ERROR(500),
+    SERVICE_UNAVAILABLE(503);
+
+    private static final Map<Integer, ChatGPTCodes> map = new HashMap<>(values().length, 1);
+
+    static {
+        for (ChatGPTCodes c : values()) map.put(c.code, c);
+    }
+
+    private final int code;
+
+    private ChatGPTCodes(int code) {
+        this.code = code;
+    }
+
+    public static ChatGPTCodes valueOf(int code) {
+        return map.get(code);
+    }
+
+    public int code() {
+        return code;
+    }
+}
 
 public class ChatGPTBridge extends BasicBridge{
 
@@ -19,14 +52,15 @@ public class ChatGPTBridge extends BasicBridge{
     public boolean checkConnection(String stringURL, String key) {
         try {
             HttpURLConnection connection = getConnection(stringURL);
-            connection.setRequestMethod("POST");
-            connection.setRequestProperty("Authorization", "Bearer " + key);
-            connection.setRequestProperty("Content-Type", "application/json");
-            int code = connection.getResponseCode();
-            return code == 200;
+            connection.connect();
         } catch (Exception e) {
-            return false;
+            System.out.println(e.getMessage());
         }
+        return true;
+    }
+
+    public boolean checkConnection(String key) {
+        return checkConnection(url, key);
     }
 
     public String ask(String message, String key) {
@@ -44,9 +78,8 @@ public class ChatGPTBridge extends BasicBridge{
             String jsonResponse = getChatGPTResponse(connection);
             return extractMessageFromJSON(jsonResponse);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
-            System.exit(1);
-            return "";
+            System.out.println(ChatGPTCodes.valueOf(extractErrorCode(e.getMessage())));
+            return null;
         }
     }
 
@@ -70,5 +103,12 @@ public class ChatGPTBridge extends BasicBridge{
         int start = json.indexOf("text") + startJSONResponseOffset;
         int end = json.indexOf("\"", start);
         return json.substring(start, end);
+    }
+
+    private int extractErrorCode(String error) {
+        //The error number is the first number after the string "code:" and then take the first integer
+        int start = error.indexOf("code: ") + 6;
+        int end = error.indexOf(" ", start);
+        return Integer.parseInt(error.substring(start, end));
     }
 }
