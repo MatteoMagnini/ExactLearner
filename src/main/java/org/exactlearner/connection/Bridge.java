@@ -1,12 +1,48 @@
 package org.exactlearner.connection;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
+
+enum ChatGPTCodes {
+    MALFORMED_URL(0),
+    OK(200),
+    BAD_REQUEST(400),
+    UNAUTHORIZED(401),
+    FORBIDDEN(403),
+    NOT_FOUND(404),
+    TOO_MANY_REQUESTS(429),
+    INTERNAL_SERVER_ERROR(500),
+    SERVICE_UNAVAILABLE(503);
+
+    private static final Map<Integer, ChatGPTCodes> map = new HashMap<>(values().length, 1);
+
+    static {
+        for (ChatGPTCodes c : values()) map.put(c.code, c);
+    }
+
+    private final int code;
+
+    private ChatGPTCodes(int code) {
+        this.code = code;
+    }
+
+    public static ChatGPTCodes valueOf(int code) {
+        return map.get(code);
+    }
+
+}
 
 public interface Bridge {
 
-    boolean checkConnection(String ip, int port, String key);
+    boolean checkConnection(String ip, int port);
 
-    boolean checkConnection(String stringURL, String key);
+    boolean checkConnection(String stringURL);
 
     String ask(String message, String key);
 
@@ -19,11 +55,87 @@ public interface Bridge {
 
 abstract class BasicBridge implements Bridge {
 
+    static String model = "";
+    static String url = "";
+    private static final int startJSONResponseOffset = 11;
+
     public URL getURL(String ip, int port) throws MalformedURLException {
         return new URL(ip.concat(":".concat(String.valueOf(port))));
     }
 
     public URL getURL(String stringURL) throws MalformedURLException {
         return new URL(stringURL);
+    }
+
+    public boolean checkConnection(String stringURL) {
+        try {
+            HttpURLConnection connection = getConnection(stringURL);
+            connection.connect();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return true;
+    }
+
+    public boolean checkConnection(String ip, int port) {
+        return checkConnection(url);
+    }
+
+    public boolean checkConnection() {
+        return checkConnection(url);
+    }
+
+    public String ask(String message, String key) {
+        try {
+            HttpURLConnection connection = getConnection(url);
+            connection.setRequestMethod("POST");
+            connection.setRequestProperty("Authorization", "Bearer " + key);
+            connection.setRequestProperty("Content-Type", "application/json");
+            String jsonInputString = "{\"model\": \"" + model + "\", \"messages\": [{\"role\": \"system\", \"content\": \"" + message + "\"}]}";
+            connection.setDoOutput(true);
+            OutputStreamWriter writer = new OutputStreamWriter(connection.getOutputStream());
+            writer.write(jsonInputString);
+            writer.flush();
+            writer.close();
+            String jsonResponse = getChatGPTResponse(connection);
+            return extractMessageFromJSON(jsonResponse);
+        } catch (Exception e) {
+            System.out.println(ChatGPTCodes.valueOf(extractErrorCode(e.getMessage())));
+            return null;
+        }
+    }
+
+    public HttpURLConnection getConnection(String stringURL) throws Exception {
+        URL url = getURL(stringURL);
+        return (HttpURLConnection) url.openConnection();
+    }
+
+
+    public String getChatGPTResponse(HttpURLConnection connection) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+        String line;
+        StringBuilder response = new StringBuilder();
+        while ((line = br.readLine()) != null) {
+            response.append(line);
+        }
+        br.close();
+        return response.toString();
+    }
+
+    public String extractMessageFromJSON(String json) {
+        int start = json.indexOf("text") + startJSONResponseOffset;
+        int end = json.indexOf("\"", start);
+        return json.substring(start, end);
+    }
+
+    public int extractErrorCode(String error) {
+        //The error number is the first number after the string "code:" and then take the first integer
+        if (!error.contains("code: ")) {
+            return 0;
+        } else {
+            int start = error.indexOf("code: ") + 6;
+            int end = error.indexOf(" ", start);
+            return Integer.parseInt(error.substring(start, end));
+        }
     }
 }
