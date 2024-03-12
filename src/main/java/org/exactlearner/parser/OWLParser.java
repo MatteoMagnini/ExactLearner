@@ -7,4 +7,5 @@ import java.util.Set;
 
 public interface OWLParser {
     Optional<Set<OWLClass>> getClasses();
+    Set<String> getClassesNamesAsString();
 }
