@@ -30,13 +30,13 @@ class Launch {
     }
 
     private static void askGPT3(Set<String> classesNames) {
-        String openAiKey = "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";
+        String openAiKey = "key";
         ChatGPTBridge bridge = new ChatGPTBridge();
         sendQuestions(classesNames, openAiKey, bridge);
 
     }
     private static void askHuggingFace(Set<String> classesNames) {
-        String huggingFaceKey = "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";
+        String huggingFaceKey = "key";
         HuggingFaceBridge bridge = new HuggingFaceBridge("openai-community/gpt2-xl");
         sendQuestions(classesNames, huggingFaceKey, bridge);
     }
