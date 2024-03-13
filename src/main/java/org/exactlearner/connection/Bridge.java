@@ -2,7 +2,6 @@ package org.exactlearner.connection;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -85,25 +84,6 @@ abstract class BasicBridge implements Bridge {
         return checkConnection(url);
     }
 
-    public String ask(String message, String key) {
-        try {
-            HttpURLConnection connection = getConnection(url);
-            connection.setRequestMethod("POST");
-            connection.setRequestProperty("Authorization", "Bearer " + key);
-            connection.setRequestProperty("Content-Type", "application/json");
-            String jsonInputString = "{\"model\": \"" + model + "\", \"messages\": [{\"role\": \"system\", \"content\": \"" + message + "\"}]}";
-            connection.setDoOutput(true);
-            OutputStreamWriter writer = new OutputStreamWriter(connection.getOutputStream());
-            writer.write(jsonInputString);
-            writer.flush();
-            writer.close();
-            String jsonResponse = getChatGPTResponse(connection);
-            return extractMessageFromJSON(jsonResponse);
-        } catch (Exception e) {
-            System.out.println(ChatGPTCodes.valueOf(extractErrorCode(e.getMessage())));
-            return null;
-        }
-    }
 
     public HttpURLConnection getConnection(String stringURL) throws Exception {
         URL url = getURL(stringURL);

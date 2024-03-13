@@ -16,6 +16,15 @@ public class BridgeTest {
     }
 
     @Test
+    public void testOllamaBridgeAsk() {
+        // Test the ChatGPTBridge
+        OllamaBridge ollamaBridge = new OllamaBridge("mixtral");
+        String response = ollamaBridge.ask("What\'s the temperature of the Sun?");
+        assertNotNull(response);
+        System.out.println(response);
+    }
+
+    @Test
     public void testHuggingFaceBridgeConnection() {
         // Test the ChatGPTBridge
         HuggingFaceBridge huggingFaceBridge = new HuggingFaceBridge("gpt2");
@@ -46,7 +55,7 @@ public class BridgeTest {
 
         // Test the ChatGPTBridge
         ChatGPTBridge chatGPTBridge = new ChatGPTBridge();
-        String response = chatGPTBridge.ask("Hello, how are you?", api_key);
+        String response = chatGPTBridge.ask("What\'s the temperature of the Sun?", api_key);
         assertNotNull(response);
     }
 }
