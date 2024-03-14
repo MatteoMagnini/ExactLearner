@@ -34,4 +34,11 @@ public class ChatGPTBridge extends BasicBridge{
         }
     }
 
+    public String extractMessageFromJSON(String json) {
+        String key = "text\":\"";
+        int start = json.indexOf(key) + key.length();
+        int end = json.indexOf("\"", start);
+        return json.substring(start, end);
+    }
+
 }

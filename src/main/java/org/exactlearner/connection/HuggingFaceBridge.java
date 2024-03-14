@@ -32,9 +32,9 @@ public class HuggingFaceBridge extends BasicBridge {
         }
     }
 
-    @Override
-    public String extractMessageFromJSON(String json) {
-        int start = json.indexOf("text\":\"") + 7;
+    private String extractMessageFromJSON(String json) {
+        String key = "text\":\"";
+        int start = json.indexOf(key) + key.length();
         int end = json.indexOf("\"}]", start);
         return json.substring(start, end);
     }

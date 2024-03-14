@@ -56,7 +56,6 @@ abstract class BasicBridge implements Bridge {
 
     static String model = "";
     static String url = "";
-    private static final int startJSONResponseOffset = 11;
 
     public URL getURL(String ip, int port) throws MalformedURLException {
         return new URL(ip.concat(":".concat(String.valueOf(port))));
@@ -100,12 +99,6 @@ abstract class BasicBridge implements Bridge {
         }
         br.close();
         return response.toString();
-    }
-
-    public String extractMessageFromJSON(String json) {
-        int start = json.indexOf("text") + startJSONResponseOffset;
-        int end = json.indexOf("\"", start);
-        return json.substring(start, end);
     }
 
     public int extractErrorCode(String error) {

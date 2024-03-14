@@ -36,8 +36,7 @@ public class OllamaBridge extends BasicBridge {
         }
     }
 
-    @Override
-    public String extractMessageFromJSON(String json) {
+    private String extractMessageFromJSON(String json) {
         String key = "\"response\":\"";
         int start = json.indexOf(key) + key.length();
         int end = json.indexOf("\"", start);
