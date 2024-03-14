@@ -29,7 +29,7 @@ public class OWLParserImpl implements OWLParser {
 
     @Override
     public Set<String> getClassesNamesAsString() {
-        if (!this.getClasses().isPresent()) {
+        if (this.getClasses().isEmpty()) {
             return new HashSet<>();
         }
         return this.getClasses().get().stream()
@@ -37,5 +37,11 @@ public class OWLParserImpl implements OWLParser {
                 .map(s -> s.substring(s.indexOf("#") + 1, s.length() - 1))
                 .collect(Collectors.toSet());
     }
+
+    @Override
+    public Set<OWLAxiom> getAxioms() {
+        return owl.getAxioms();
+    }
+
 
 }

@@ -10,20 +10,42 @@ import java.io.FileNotFoundException;
 import java.util.Set;
 
 class Launch {
-    public static void main(String[] args) throws FileNotFoundException {
-        OWLParser parser = null;
-        try {
-            parser = new OWLParserImpl("src/main/resources/ontologies/small/animals.owl");
-        } catch (OWLOntologyCreationException e) {
-            System.out.println(e.getMessage());
-        }
-        assert parser != null;
-        var classesNames = parser.getClassesNamesAsString();
+    private final static String ANIMAL_ONTOLOGY = "src/main/resources/ontologies/small/animals.owl";
+    private final static String FAMILY_ONTOLOGY = "src/main/resources/ontologies/small/family.rdf.owl";
 
+    public static void main(String[] args) throws FileNotFoundException {
+        runAnimalOntology();
+        runFamilyOntology();
+    }
+
+    private static void runFamilyOntology() {
+        var parser = loadOntology(FAMILY_ONTOLOGY);
+        var classesNames = parser.getClassesNamesAsString();
+        var axiom = parser.getAxioms();
         //askGPT4Free(classesNames);
         askGPT3(classesNames);
         //askHuggingFace(classesNames);
     }
+
+    private static void runAnimalOntology() {
+        var parser = loadOntology(ANIMAL_ONTOLOGY);
+        var classesNames = parser.getClassesNamesAsString();
+        var axiom = parser.getAxioms();
+        //askGPT4Free(classesNames);
+        askGPT3(classesNames);
+        //askHuggingFace(classesNames);
+    }
+
+    private static OWLParser loadOntology(String familyOntology) {
+        OWLParser parser = null;
+        try {
+            parser = new OWLParserImpl(ANIMAL_ONTOLOGY);
+        } catch (OWLOntologyCreationException e) {
+            System.out.println(e.getMessage());
+        }
+        return parser;
+    }
+
 
     private static void askGPT4Free(Set<String> classesNames) {
         Gpt4FreeBridge bridge = new Gpt4FreeBridge();
