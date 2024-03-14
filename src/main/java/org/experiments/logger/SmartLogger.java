@@ -10,22 +10,6 @@ public class SmartLogger {
     private static final String CACHE_DIR = "cache";
     private static final String FILE_EXTENSION = ".csv";
 
-    static {
-        // Remove all default handlers
-        logger.setUseParentHandlers(false);
-
-        // Create a new ConsoleHandler with a custom formatter
-        Handler consoleHandler = new ConsoleHandler();
-        consoleHandler.setFormatter(new SimpleFormatter() {
-            @Override
-            public String format(java.util.logging.LogRecord record) {
-                return record.getMessage() + "\n";
-            }
-        });
-        logger.addHandler(consoleHandler);
-        logger.setLevel(Level.ALL); // Set the logger level as needed
-    }
-
     private static String getFullFileName(String filename) {
         return CACHE_DIR + System.getProperty("file.separator") + filename + FILE_EXTENSION;
     }
@@ -41,17 +25,31 @@ public class SmartLogger {
         }
     }
 
-    public static void enableFileLogging(String filename) throws IOException {
+    public static void enableFileLogging(String filename) {
         // If cache directory does not exist, then create it
         if (!new File(CACHE_DIR).exists()) {
             new File(CACHE_DIR).mkdir();
         }
-        logger.addHandler(new FileHandler(getFullFileName(filename)));
+        try {
+            // Create a new FileHandler with a custom formatter
+            Handler fileHandler = new FileHandler(getFullFileName(filename));
+            fileHandler.setFormatter(new SimpleFormatter() {
+                @Override
+                public String format(java.util.logging.LogRecord record) {
+                    return record.getMessage() + "\n";
+                }
+            });
+            logger.addHandler(fileHandler);
+        } catch (IOException e) {
+            System.err.println("Error setting up FileHandler: " + e.getMessage());
+        }
     }
 
     public static void disableFileLogging() {
-        logger.getHandlers()[0].close();
-        logger.removeHandler(logger.getHandlers()[0]);
+        if (logger.getHandlers().length > 0) {
+            logger.getHandlers()[0].close();
+            logger.removeHandler(logger.getHandlers()[0]);
+        }
     }
 
     /**
