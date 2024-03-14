@@ -2,18 +2,22 @@ package org.experiments.task;
 
 import static org.experiments.utility.SHA256Hash.sha256;
 
-public abstract class ExperimentTask implements Task {
+public class ExperimentTask implements Task {
 
     private String taskName;
     private String modelName;
     private String ontology;
     private String query;
 
-    public ExperimentTask(String taskName, String modelName, String ontology, String query) {
+    private Runnable workload;
+
+    public ExperimentTask(String taskName, String modelName, String ontology, String query, Runnable workload) {
         this.taskName = taskName;
         this.modelName = modelName;
         this.ontology = ontology;
         this.query = query;
+        this.workload = workload;
+
     }
 
     public String getTaskName() {
@@ -38,6 +42,11 @@ public abstract class ExperimentTask implements Task {
 
     public String getFileName() {
         return SHA256Hash(taskName + modelName + ontology + query) + ".yml";
+    }
+
+    @Override
+    public void run() {
+        workload.run();
     }
 
     public int hashCode() {

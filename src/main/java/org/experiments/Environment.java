@@ -4,9 +4,9 @@ import org.experiments.logger.SmartLogger;
 import org.experiments.task.Task;
 import static org.experiments.logger.SmartLogger.isFileInCache;
 
-public abstract class Environment {
+public class Environment {
 
-    public void run(Task task) {
+    public static void run(Task task) {
         // Setup logging
         String filename = task.getFileName();
         // If filename is already present in the cache, then skip the task

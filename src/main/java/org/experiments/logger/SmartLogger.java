@@ -10,7 +10,7 @@ public class SmartLogger {
     private static final String CACHE_DIR = "cache";
     private static final String FILE_EXTENSION = ".csv";
 
-    private static String getFullFileName(String filename) {
+    public static String getFullFileName(String filename) {
         return CACHE_DIR + System.getProperty("file.separator") + filename + FILE_EXTENSION;
     }
 
