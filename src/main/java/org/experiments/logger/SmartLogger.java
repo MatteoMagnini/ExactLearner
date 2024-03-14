@@ -26,6 +26,10 @@ public class SmartLogger {
     }
 
     public static void enableFileLogging(String filename) {
+        enableFileLogging(filename, "");
+    }
+
+    public static void enableFileLogging(String filename, String lineTerminator) {
         // If cache directory does not exist, then create it
         if (!new File(CACHE_DIR).exists()) {
             new File(CACHE_DIR).mkdir();
@@ -36,7 +40,7 @@ public class SmartLogger {
             fileHandler.setFormatter(new SimpleFormatter() {
                 @Override
                 public String format(java.util.logging.LogRecord record) {
-                    return record.getMessage() + "\n";
+                    return record.getMessage() + lineTerminator;
                 }
             });
             logger.addHandler(fileHandler);

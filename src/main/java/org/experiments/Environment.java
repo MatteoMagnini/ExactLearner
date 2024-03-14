@@ -23,7 +23,7 @@ public class Environment {
             task.run();
             // Disable file logging
             SmartLogger.disableFileLogging();
-            System.out.println("Task " + task.getTaskName() + " is completed.");
+            SmartLogger.log("Task " + task.getTaskName() + " is completed.");
         }
     }
 }

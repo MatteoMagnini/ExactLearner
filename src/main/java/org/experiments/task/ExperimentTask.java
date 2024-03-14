@@ -41,7 +41,7 @@ public class ExperimentTask implements Task {
     }
 
     public String getFileName() {
-        return SHA256Hash(taskName + modelName + ontology + query) + ".yml";
+        return SHA256Hash(taskName + modelName + ontology + query);
     }
 
     @Override
