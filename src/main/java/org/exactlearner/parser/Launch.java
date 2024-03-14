@@ -1,8 +1,5 @@
 package org.exactlearner.parser;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 import org.exactlearner.connection.Bridge;
 import org.exactlearner.connection.ChatGPTBridge;
 import org.exactlearner.connection.Gpt4FreeBridge;
@@ -10,7 +7,6 @@ import org.exactlearner.connection.HuggingFaceBridge;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.util.Set;
 
 class Launch {
@@ -19,7 +15,7 @@ class Launch {
         try {
             parser = new OWLParserImpl("src/main/resources/ontologies/small/animals.owl");
         } catch (OWLOntologyCreationException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
         assert parser != null;
         var classesNames = parser.getClassesNamesAsString();
@@ -34,19 +30,15 @@ class Launch {
         sendQuestions(classesNames, "", bridge);
     }
 
-    private static void askGPT3(Set<String> classesNames) throws FileNotFoundException {
-        FileReader reader = new FileReader("src/main/resources/openai-key.json");
-        JsonParser jsonParser = new JsonParser();
-        JsonObject jsonObject = jsonParser.parse(reader).getAsJsonObject();
-        Gson gson = new Gson();
-        String key = gson.fromJson(jsonObject, String.class);
+    private static void askGPT3(Set<String> classesNames) {
+        String key = System.getenv("OPENAI_API_KEY");
         System.out.println(key);
         ChatGPTBridge bridge = new ChatGPTBridge();
         sendQuestions(classesNames, "", bridge);
     }
 
     private static void askHuggingFace(Set<String> classesNames) {
-        String huggingFaceKey = "key";
+        String huggingFaceKey = System.getenv("HUGGINGFACE_API_KEY");
         HuggingFaceBridge bridge = new HuggingFaceBridge("openai-community/gpt2-xl");
         sendQuestions(classesNames, huggingFaceKey, bridge);
     }
