@@ -3,6 +3,8 @@ import org.exactlearner.connection.OllamaBridge;
 import org.experiments.Environment;
 import org.experiments.task.ExperimentTask;
 import org.experiments.task.Task;
+import org.experiments.workload.OllamaWorkload;
+import org.experiments.workload.OpenAIWorkload;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -32,15 +34,22 @@ public class EnvironmentTest {
     }
 
     @Test
-    public void testRealTaskInEnvironment() {
+    public void testOllamaRealTaskInEnvironment() {
         String taskName = "Task2";
-        Task task = new ExperimentTask(taskName, modelName, "Dummy", query, () -> {
-            OllamaBridge bridge = new OllamaBridge(modelName);
-            String response = bridge.ask(query);
-            SmartLogger.log(query);
-            SmartLogger.log(", ");
-            SmartLogger.log(response);
-        });
+        var workload = new OllamaWorkload();
+        workload.setUp(modelName, query);
+        Task task = new ExperimentTask(taskName, modelName, "Dummy", query, workload);
+        Environment.run(task);
+        assertTrue(SmartLogger.isFileInCache(task.getFileName()));
+        SmartLogger.removeFileFromCache(task.getFileName());
+    }
+
+    @Test
+    public void testOpenAIRealTaskInEnvironment() {
+        String taskName = "Task2";
+        var workload = new OpenAIWorkload();
+        workload.setUp(query);
+        Task task = new ExperimentTask(taskName, modelName, "Dummy", query, workload);
         Environment.run(task);
         assertTrue(SmartLogger.isFileInCache(task.getFileName()));
         SmartLogger.removeFileFromCache(task.getFileName());

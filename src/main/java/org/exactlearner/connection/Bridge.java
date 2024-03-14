@@ -1,4 +1,5 @@
 package org.exactlearner.connection;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -63,6 +64,10 @@ abstract class BasicBridge implements Bridge {
 
     public URL getURL(String stringURL) throws MalformedURLException {
         return new URL(stringURL);
+    }
+
+    public String getUrl() {
+        return url;
     }
 
     public boolean checkConnection(String stringURL) {
