@@ -14,13 +14,13 @@ public class ChatGPTBridge extends BasicBridge{
         BasicBridge.url = url;
     }
 
-    public String ask(String message, String key) {
+    public String ask(String message, String key, String system) {
         try {
             HttpURLConnection connection = getConnection(url);
             connection.setRequestMethod("POST");
             connection.setRequestProperty("Authorization", "Bearer " + key);
             connection.setRequestProperty("Content-Type", "application/json");
-            String jsonInputString = "{\"model\": \"" + model + "\", \"messages\": [{\"role\": \"system\", \"content\": \"" + message + "\"}]}";
+            String jsonInputString = "{\"model\": \"" + model + "\", \"messages\": [{\"role\": \""+system+"\", \"content\": \"" + message + "\"}]}";
             connection.setDoOutput(true);
             OutputStreamWriter writer = new OutputStreamWriter(connection.getOutputStream());
             writer.write(jsonInputString);

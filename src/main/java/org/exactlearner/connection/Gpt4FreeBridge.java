@@ -17,7 +17,7 @@ public class Gpt4FreeBridge extends BasicBridge {
     }
 
     @Override
-    public String ask(String message, String key) {
+    public String ask(String message, String key, String system) {
         try {
             URL apiUrl = new URL(url + URLEncoder.encode(message, StandardCharsets.UTF_8));
             HttpURLConnection connection = (HttpURLConnection) apiUrl.openConnection();

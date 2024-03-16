@@ -17,12 +17,12 @@ public class OllamaBridge extends BasicBridge {
         BasicBridge.url = "http://" + host + ":" + port + "/api/generate";
     }
 
-    public String ask(String message) {
+    public String ask(String message, String system) {
         try {
             HttpURLConnection connection = getConnection(url);
             connection.setRequestMethod("POST");
             connection.setRequestProperty("Content-Type", "application/json");
-            String jsonInputString = "{\"model\": \"" + model + "\", \"system\": \" \",\"stream\": false, \"prompt\": \"" + message + "\"}]}";
+            String jsonInputString = "{\"model\": \"" + model + "\", \""+system+"\": \" \",\"stream\": false, \"prompt\": \"" + message + "\"}]}";
             connection.setDoOutput(true);
             OutputStreamWriter writer = new OutputStreamWriter(connection.getOutputStream());
             writer.write(jsonInputString);
@@ -44,7 +44,7 @@ public class OllamaBridge extends BasicBridge {
     }
 
     @Override
-    public String ask(String message, String key) {
-        return ask(message);
+    public String ask(String message, String key, String system) {
+        return ask(message, system);
     }
 }

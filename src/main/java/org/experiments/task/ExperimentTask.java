@@ -8,15 +8,17 @@ public class ExperimentTask implements Task {
     private String modelName;
     private String ontology;
     private String query;
+    private String system;
 
     private Runnable workload;
 
-    public ExperimentTask(String taskName, String modelName, String ontology, String query, Runnable workload) {
+    public ExperimentTask(String taskName, String modelName, String ontology, String query, String system, Runnable workload) {
         this.taskName = taskName;
         this.modelName = modelName;
         this.ontology = ontology;
         this.query = query;
         this.workload = workload;
+        this.system = system;
 
     }
 
@@ -41,7 +43,11 @@ public class ExperimentTask implements Task {
     }
 
     public String getFileName() {
-        return SHA256Hash(taskName + modelName + ontology + query);
+        return SHA256Hash(taskName + modelName + ontology + query + system);
+    }
+
+    public String getSystem() {
+        return system;
     }
 
     @Override
@@ -50,11 +56,11 @@ public class ExperimentTask implements Task {
     }
 
     public int hashCode() {
-        return taskName.hashCode() + modelName.hashCode() + ontology.hashCode() + query.hashCode();
+        return taskName.hashCode() + modelName.hashCode() + ontology.hashCode() + query.hashCode() + system.hashCode();
     }
 
     public String toString() {
-        return "Task:\n\tName: " + taskName + "\n\tModel: " + modelName + "\n\tOntology: " + ontology + "\n\tQuery: " + query;
+        return "Task:\n\tName: " + taskName + "\n\tModel: " + modelName + "\n\tOntology: " + ontology + "\n\tQuery: " + query + "\n\tSystem: " + system;
     }
 
     public boolean equals(Object obj) {
@@ -71,6 +77,7 @@ public class ExperimentTask implements Task {
         return taskName.equals(task.getTaskName())
                 && modelName.equals(task.getModelName())
                 && ontology.equals(task.getOntology())
-                && query.equals(task.getQuery());
+                && query.equals(task.getQuery())
+                && system.equals(task.getSystem());
     }
 }

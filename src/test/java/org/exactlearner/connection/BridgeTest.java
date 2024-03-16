@@ -22,7 +22,7 @@ public class BridgeTest {
     public void testOllamaBridgeAsk() {
         // Test the ChatGPTBridge
         OllamaBridge ollamaBridge = new OllamaBridge("mixtral");
-        String response = ollamaBridge.ask(testQuestion);
+        String response = ollamaBridge.ask(testQuestion, "");
         assertNotNull(response);
         System.out.println(response);
     }
@@ -40,7 +40,7 @@ public class BridgeTest {
 
         // Test the ChatGPTBridge
         HuggingFaceBridge huggingFaceBridge = new HuggingFaceBridge("gpt2");
-        String response = huggingFaceBridge.ask(testQuestion, api_key);
+        String response = huggingFaceBridge.ask(testQuestion, api_key, "");
         assertNotNull(response);
         System.out.println(response);
     }
@@ -59,7 +59,7 @@ public class BridgeTest {
 
         // Test the ChatGPTBridge
         ChatGPTBridge chatGPTBridge = new ChatGPTBridge();
-        String response = chatGPTBridge.ask(testQuestion, api_key);
+        String response = chatGPTBridge.ask(testQuestion, api_key, "");
         assertNotNull(response);
     }
 }

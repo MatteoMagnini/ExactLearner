@@ -15,7 +15,7 @@ public class HuggingFaceBridge extends BasicBridge {
     }
 
     @Override
-    public String ask(String message, String key) {
+    public String ask(String message, String key, String system) {
         try {
             HttpClient client = HttpClient.newHttpClient();
             HttpRequest request = HttpRequest.newBuilder()

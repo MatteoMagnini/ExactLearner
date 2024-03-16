@@ -44,7 +44,7 @@ public interface Bridge {
 
     boolean checkConnection(String stringURL);
 
-    String ask(String message, String key);
+    String ask(String message, String key, String system);
 
     URL getURL(String ip, int port) throws MalformedURLException;
 
@@ -93,7 +93,6 @@ abstract class BasicBridge implements Bridge {
         URL url = getURL(stringURL);
         return (HttpURLConnection) url.openConnection();
     }
-
 
     public String getChatGPTResponse(HttpURLConnection connection) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));

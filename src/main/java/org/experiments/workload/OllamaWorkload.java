@@ -10,6 +10,7 @@ import java.net.URLConnection;
 public class OllamaWorkload implements BaseWorkload {
     private String query;
     private String model;
+    private String system;
 
     public OllamaWorkload() {
     }
@@ -19,7 +20,7 @@ public class OllamaWorkload implements BaseWorkload {
         checkSetup();
         OllamaBridge bridge = new OllamaBridge(model);
         checkConnection(bridge);
-        String response = bridge.ask(query);
+        String response = bridge.ask(query,system);
         SmartLogger.log(query);
         SmartLogger.log(", ");
         SmartLogger.log(response);
@@ -28,6 +29,7 @@ public class OllamaWorkload implements BaseWorkload {
     private void checkConnection(OllamaBridge bridge) {
         try {
             URLConnection connection = new URL(bridge.getUrl()).openConnection();
+            connection.connect();
         } catch (Exception e) {
             throw new IllegalStateException("Could not connect to the Ollama bridge.");
         }
@@ -40,8 +42,9 @@ public class OllamaWorkload implements BaseWorkload {
         }
     }
 
-    public void setUp(String model, String query) {
+    public void setUp(String model, String query, String system){
         this.model = model;
         this.query = query;
+        this.system = system;
     }
 }

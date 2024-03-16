@@ -10,6 +10,7 @@ import java.net.URLConnection;
 
 public class OpenAIWorkload implements BaseWorkload {
     private String query;
+    private String system;
 
     public OpenAIWorkload() {
     }
@@ -19,7 +20,7 @@ public class OpenAIWorkload implements BaseWorkload {
         checkSetup();
         ChatGPTBridge bridge = new ChatGPTBridge();
         checkConnection(bridge);
-        String response = bridge.ask(query, System.getenv("OPENAI_API_KEY"));
+        String response = bridge.ask(query, System.getenv("OPENAI_API_KEY"), system);
         SmartLogger.log(query);
         SmartLogger.log(", ");
         SmartLogger.log(response);
@@ -34,12 +35,14 @@ public class OpenAIWorkload implements BaseWorkload {
     private void checkConnection(ChatGPTBridge bridge) {
         try {
             URLConnection connection = new URL(bridge.getUrl()).openConnection();
+            connection.connect();
         } catch (Exception e) {
             throw new IllegalStateException("Could not connect to the ChatGPT bridge.");
         }
     }
 
-    public void setUp(String query) {
+    public void setUp(String query, String system) {
         this.query = query;
+        this.system = system;
     }
 }
