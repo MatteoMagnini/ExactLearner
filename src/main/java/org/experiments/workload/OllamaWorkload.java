@@ -3,7 +3,6 @@ package org.experiments.workload;
 import org.exactlearner.connection.OllamaBridge;
 import org.experiments.logger.SmartLogger;
 
-import java.net.Inet4Address;
 import java.net.URL;
 import java.net.URLConnection;
 
@@ -20,7 +19,7 @@ public class OllamaWorkload implements BaseWorkload {
         checkSetup();
         OllamaBridge bridge = new OllamaBridge(model);
         checkConnection(bridge);
-        String response = bridge.ask(query,system);
+        String response = bridge.ask(query, system);
         SmartLogger.log(query);
         SmartLogger.log(", ");
         SmartLogger.log(response);
@@ -42,7 +41,7 @@ public class OllamaWorkload implements BaseWorkload {
         }
     }
 
-    public void setUp(String model, String query, String system){
+    public void setUp(String model, String query, String system) {
         this.model = model;
         this.query = query;
         this.system = system;

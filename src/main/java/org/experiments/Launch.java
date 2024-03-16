@@ -1,6 +1,7 @@
-package org.exactlearner.parser;
+package org.experiments;
 
-import org.experiments.Environment;
+import org.exactlearner.parser.OWLParser;
+import org.exactlearner.parser.OWLParserImpl;
 import org.experiments.task.ExperimentTask;
 import org.experiments.task.Task;
 import org.experiments.workload.OllamaModels;
@@ -66,9 +67,9 @@ class Launch {
         for (String className : classesNames) {
             for (String className2 : classesNames) {
                 if (!className.equals(className2)) {
-                    String message = "You must reply to this with just one word(True, False): In the real world, is " + className + " a subclass of " + className2 + "?";
-                    ollama.setUp(OllamaModels.MIXTRAL.getModelName(), message, system);
-                    Task task = new ExperimentTask(message, OllamaModels.MIXTRAL.getModelName(), "Family", message, system, ollama);
+                    String message = "(True or False only, i don't want explanation) In the real world, is " + className + " a subclass of " + className2 + "?";
+                    ollama.setUp(OllamaModels.MISTRAL.getModelName(), message, system);
+                    Task task = new ExperimentTask(message, OllamaModels.MISTRAL.getModelName(), "Family", message, system, ollama);
                     Environment.run(task);
                     //SmartLogger.isFileInCache(task.getFileName());
                     //SmartLogger.removeFileFromCache(task.getFileName());
@@ -86,7 +87,7 @@ class Launch {
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                    String message = "Reply to this question with ONLY True or False: In the real world, is " + className + " a subclass of " + className2 + "?";
+                    String message = "(True or False only, i don't want explanation) In the real world, is " + className + " a subclass of " + className2 + "?";
                     openAI.setUp(message, system);
                     Task task = new ExperimentTask(message, "gpt3.5-turbo", "Family", message, system, openAI);
                     Environment.run(task);

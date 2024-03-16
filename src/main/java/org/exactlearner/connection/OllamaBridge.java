@@ -22,7 +22,7 @@ public class OllamaBridge extends BasicBridge {
             HttpURLConnection connection = getConnection(url);
             connection.setRequestMethod("POST");
             connection.setRequestProperty("Content-Type", "application/json");
-            String jsonInputString = "{\"model\": \"" + model + "\", \""+system+"\": \" \",\"stream\": false, \"prompt\": \"" + message + "\"}]}";
+            String jsonInputString = "{\"model\": \"" + model + "\",\"system\": \"" + system + "\",\"stream\": false, \"prompt\": \"" + message + "\"}]}";
             connection.setDoOutput(true);
             OutputStreamWriter writer = new OutputStreamWriter(connection.getOutputStream());
             writer.write(jsonInputString);

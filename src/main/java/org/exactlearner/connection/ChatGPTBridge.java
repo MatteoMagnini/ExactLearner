@@ -3,7 +3,7 @@ package org.exactlearner.connection;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 
-public class ChatGPTBridge extends BasicBridge{
+public class ChatGPTBridge extends BasicBridge {
 
     private static final String model = "gpt-3.5-turbo";
     private static final String url = "https://api.openai.com/v1/chat/completions";
@@ -20,7 +20,8 @@ public class ChatGPTBridge extends BasicBridge{
             connection.setRequestMethod("POST");
             connection.setRequestProperty("Authorization", "Bearer " + key);
             connection.setRequestProperty("Content-Type", "application/json");
-            String jsonInputString = "{\"model\": \"" + model + "\", \"messages\": [{\"role\": \""+system+"\", \"content\": \"" + message + "\"}]}";
+
+            String jsonInputString = "{\"model\": \"" + model + "\", \"messages\": [{\"role\": \", \"system\": \"" + system + ",\"content\": \"" + message + "\"}]}";
             connection.setDoOutput(true);
             OutputStreamWriter writer = new OutputStreamWriter(connection.getOutputStream());
             writer.write(jsonInputString);
