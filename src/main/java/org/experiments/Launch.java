@@ -2,6 +2,7 @@ package org.experiments;
 
 import org.exactlearner.parser.OWLParser;
 import org.exactlearner.parser.OWLParserImpl;
+import org.experiments.logger.SmartLogger;
 import org.experiments.task.ExperimentTask;
 import org.experiments.task.Task;
 import org.experiments.workload.OllamaModels;
@@ -23,13 +24,13 @@ class Launch {
             "subclass of 'className2' in the context of class hierarchies." +
             " Examples:" +
             "In the real world, is 'Dog' a subclass of 'Animal'? -> True" +
-            "Is 'Carrot' a subclass of 'Vegetable'? -> False" +
-            "Is 'Circle' a subclass of 'Shape'? -> True" +
+            "Is 'Carrot' a subclass of 'Animal'? -> False" +
+            "Is 'Animal' a subclass of 'Dog'? -> False" +
             "You can only respond with either True or False.";
 
     public static void main(String[] args) throws FileNotFoundException {
-        //runAnimalOntology();
-        runFamilyOntology();
+        runAnimalOntology();
+        //runFamilyOntology();
     }
 
     private static void runFamilyOntology() {
@@ -47,7 +48,7 @@ class Launch {
         var parser = loadOntology(ANIMAL_ONTOLOGY);
         var classesNames = parser.getClassesNamesAsString();
         var axiom = parser.getAxioms();
-        //sendOllamaQuestions(classesNames, new OllamaWorkload());
+        sendOllamaQuestions(classesNames, new OllamaWorkload());
         //askGPT4Free(classesNames);
         //askGPT3(classesNames);
         //askHuggingFace(classesNames);
@@ -64,6 +65,8 @@ class Launch {
     }
 
     private static void sendOllamaQuestions(Set<String> classesNames, OllamaWorkload ollama) {
+        //GET time from system
+        //long start = System.currentTimeMillis();
         for (String className : classesNames) {
             for (String className2 : classesNames) {
                 if (!className.equals(className2)) {
@@ -71,11 +74,17 @@ class Launch {
                     ollama.setUp(OllamaModels.MISTRAL.getModelName(), message, system);
                     Task task = new ExperimentTask(message, OllamaModels.MISTRAL.getModelName(), "Family", message, system, ollama);
                     Environment.run(task);
+                    /*if (System.currentTimeMillis() - start > 120000) {
+                        //close the application and restart it
+                        System.out.println("Time is up, stopping the application");
+                        System.exit(0);
+                    }*/
                     //SmartLogger.isFileInCache(task.getFileName());
                     //SmartLogger.removeFileFromCache(task.getFileName());
                 }
             }
         }
+        SmartLogger.checkCachedFiles();
     }
 
     private static void sendChatGPTQuestions(Set<String> classesNames, OpenAIWorkload openAI) {
@@ -94,5 +103,6 @@ class Launch {
                 }
             }
         }
+        SmartLogger.checkCachedFiles();
     }
 }

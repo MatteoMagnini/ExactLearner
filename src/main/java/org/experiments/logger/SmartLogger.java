@@ -2,11 +2,15 @@ package org.experiments.logger;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.logging.*;
+import java.util.logging.FileHandler;
+import java.util.logging.Handler;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
 public class SmartLogger {
 
-    private static final Logger logger = Logger.getLogger(SmartLogger.class.getName());;
+    private static final Logger logger = Logger.getLogger(SmartLogger.class.getName());
+    ;
     private static final String CACHE_DIR = "cache";
     private static final String FILE_EXTENSION = ".csv";
 
@@ -58,6 +62,7 @@ public class SmartLogger {
 
     /**
      * Check if the file is already present in the cache
+     *
      * @param filename
      * @return true if the file is present in the cache, false otherwise
      */
@@ -72,4 +77,30 @@ public class SmartLogger {
         }
     }
 
+    /**
+     * Check cache's files integrity
+     * If a file is present in the cache but does not contain the answer, then remove it from the cache
+     */
+    public static void checkCachedFiles() {
+        File cacheDir = new File(CACHE_DIR);
+        if (cacheDir.exists()) {
+            File[] files = cacheDir.listFiles();
+            if (files != null) {
+                for (File file : files) {
+                    try {
+                        String content = java.nio.file.Files.readString(file.toPath());
+                        if (content.contains("True") || content.contains("False")) {
+                            System.out.println("File" + file.getName() + " Integrity check ... OK");
+                        } else {
+                            System.out.println("File " + file.getName() + " Integrity check ... FAILED, removing.");
+                            file.delete();
+                        }
+                    } catch (IOException e) {
+                        System.err.println("Error reading file: " + e.getMessage());
+                    }
+
+                }
+            }
+        }
+    }
 }
