@@ -36,8 +36,7 @@ public class EnvironmentTest {
     @Test
     public void testOllamaRealTaskInEnvironment() {
         String taskName = "Task2";
-        var workload = new OllamaWorkload();
-        workload.setUp(modelName, query, "");
+        var workload = new OllamaWorkload(modelName, "", query, 10);
         Task task = new ExperimentTask(taskName, modelName, "Dummy", query, "",workload);
         Environment.run(task);
         assertTrue(SmartLogger.isFileInCache(task.getFileName()));
