@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/rikys/ontologies/2024/2/university_inferred#"
+     xml:base="http://www.semanticweb.org/rikys/ontologies/2024/2/university_inferred"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/rikys/ontologies/2024/2/university_inferred"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/university.owl#employed_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/university.owl#employed_by"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/university.owl#manages -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/university.owl#manages"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/university.owl#teaches -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/university.owl#teaches"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/university.owl#Module -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/university.owl#Module"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/university.owl#Person -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/university.owl#Person"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/university.owl#Professor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/university.owl#Professor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/university.owl#Researcher"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/university.owl#Teacher"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2014/3/university.owl#Researcher"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2014/3/university.owl#Teacher"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/university.owl#Project -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/university.owl#Project"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/university.owl#Researcher -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/university.owl#Researcher">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/university.owl#Person"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2014/3/university.owl#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/university.owl#employed_by"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/university.owl#University"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/university.owl#manages"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/university.owl#Project"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/university.owl#Teacher -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/university.owl#Teacher">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/university.owl#Person"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2014/3/university.owl#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/university.owl#employed_by"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/university.owl#University"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/university.owl#teaches"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/university.owl#Module"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/university.owl#University -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/university.owl#University"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+
