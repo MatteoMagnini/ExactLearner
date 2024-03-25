@@ -4,6 +4,7 @@ import org.exactlearner.parser.OWLParserImpl;
 import org.experiments.logger.SmartLogger;
 import org.experiments.task.ExperimentTask;
 import org.experiments.task.Task;
+import org.experiments.workload.OllamaModels;
 import org.experiments.workload.OllamaWorkload;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.yaml.snakeyaml.Yaml;
@@ -30,38 +31,40 @@ class Launch {
         // For each model in the configuration file and for each ontology in the configuration file, run the experiment
         for (String model : config.getModels()) {
             for (String ontology : config.getOntologies()) {
-                runExperiment(model, ontology, config.getSystem(), config.getMaxTokens());
+                runExperiment(model, ontology, config.getSystem(), config.getMaxTokens(), config.getType());
             }
         }
     }
 
-    private static void runExperiment(String model, String ontology, String system, int maxTokens) {
+    private static void runExperiment(String model, String ontology, String system, int maxTokens, String type) {
         var parser = loadOntology(ontology);
         var classesNames = parser.getClassesNamesAsString();
         var axioms = parser.getAxioms();
         var filteredManchesterSyntaxAxioms = parseAxioms(axioms);
         SmartLogger.checkCachedFiles();
-        for (String className : classesNames) {
-            for (String className2 : classesNames) {
-                if (!className.equals(className2)) {
-                    String message = "Is " + className + " a subclass of " + className2 + "?";
-                    var work = new OllamaWorkload(model, system, message, maxTokens);
-                    Task task = new ExperimentTask(message, model, ontology, message, system, work);
-                    Environment.run(task);
+
+        if (type.equals("classesQuerying")){
+            for (String className : classesNames) {
+                for (String className2 : classesNames) {
+                    if (!className.equals(className2)) {
+                        String message = "Is " + className + " a subclass of " + className2 + "?";
+                        var work = new OllamaWorkload(model, system, message, maxTokens);
+                        Task task = new ExperimentTask(message, model, ontology, message, system, work);
+                        Environment.run(task);
+                    }
                 }
             }
+        }else if (type.equals("axiomsQuerying")) {
+            for (String axiom : filteredManchesterSyntaxAxioms) {
+                var work = new OllamaWorkload(model, system, axiom, maxTokens);
+                Task task = new ExperimentTask(axiom, OllamaModels.MISTRAL.getModelName(), ontology, axiom, system, work);
+                Environment.run(task);
+            }
+            SmartLogger.checkCachedFiles();
+        }else{
+            throw new IllegalStateException("Invalid type of experiment.");
         }
         SmartLogger.checkCachedFiles();
-
-        for (String className : classesNames) {
-            for (String className2 : classesNames) {
-                if (!className.equals(className2)) {
-                    String query = "Is " + className + " a subclass of " + className2 + "?";
-                    Task task = new ExperimentTask("Experiment", model, ontology, query, system, new OllamaWorkload(model, system, query, maxTokens));
-                    task.run();
-                }
-            }
-        }
     }
 
     private static Set<String> parseAxioms(Set<OWLAxiom> axioms) {
