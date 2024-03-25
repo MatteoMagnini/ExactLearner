@@ -21,9 +21,7 @@ public class OpenAIWorkload implements BaseWorkload {
         ChatGPTBridge bridge = new ChatGPTBridge();
         checkConnection(bridge);
         String response = bridge.ask(query, System.getenv("OPENAI_API_KEY"), system);
-        SmartLogger.log(query);
-        SmartLogger.log(", ");
-        SmartLogger.log(response);
+        SmartLogger.log(query + ", " + response);
     }
 
     private void checkSetup() {

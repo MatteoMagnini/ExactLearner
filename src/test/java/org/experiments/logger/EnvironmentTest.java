@@ -36,8 +36,7 @@ public class EnvironmentTest {
     @Test
     public void testOllamaRealTaskInEnvironment() {
         String taskName = "Task2";
-        var workload = new OllamaWorkload();
-        workload.setUp(modelName, query, "");
+        var workload = new OllamaWorkload(modelName, "", query, 10);
         Task task = new ExperimentTask(taskName, modelName, "Dummy", query, "",workload);
         Environment.run(task);
         assertTrue(SmartLogger.isFileInCache(task.getFileName()));
@@ -62,9 +61,7 @@ public class EnvironmentTest {
             Task task = new ExperimentTask(taskName, modelName, "Dummy", query, "",() -> {
                 OllamaBridge bridge = new OllamaBridge(modelName);
                 String response = bridge.ask(query,"");
-                SmartLogger.log(query);
-                SmartLogger.log(", ");
-                SmartLogger.log(response);
+                SmartLogger.log(query + ", " + response);
             });
             Environment.run(task);
             assertTrue(SmartLogger.isFileInCache(task.getFileName()));

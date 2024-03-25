@@ -7,22 +7,25 @@ import java.net.URL;
 import java.net.URLConnection;
 
 public class OllamaWorkload implements BaseWorkload {
-    private String query;
-    private String model;
-    private String system;
+    private final String model;
+    private final String system;
+    private final String query;
+    private final int maxTokens;
 
-    public OllamaWorkload() {
+    public OllamaWorkload(String model, String system, String query,  int maxTokens) {
+        this.model = model;
+        this.system = system;
+        this.query = query;
+        this.maxTokens = maxTokens;
     }
 
     @Override
     public void run() {
         checkSetup();
-        OllamaBridge bridge = new OllamaBridge(model);
+        OllamaBridge bridge = new OllamaBridge(model, maxTokens);
         checkConnection(bridge);
         String response = bridge.ask(query, system);
-        SmartLogger.log(query);
-        SmartLogger.log(", ");
-        SmartLogger.log(response);
+        SmartLogger.log(query + ", " + response);
     }
 
     private void checkConnection(OllamaBridge bridge) {
@@ -40,10 +43,19 @@ public class OllamaWorkload implements BaseWorkload {
             throw new IllegalStateException("Model and query must be set up before running the workload.");
         }
     }
+    public String getModel() {
+        return model;
+    }
 
-    public void setUp(String model, String query, String system) {
-        this.model = model;
-        this.query = query;
-        this.system = system;
+    public String getSystem() {
+        return system;
+    }
+
+    public int getMaxTokens() {
+        return maxTokens;
+    }
+
+    public String getQuery() {
+        return query;
     }
 }

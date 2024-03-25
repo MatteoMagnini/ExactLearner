@@ -5,10 +5,20 @@ import java.net.HttpURLConnection;
 
 public class OllamaBridge extends BasicBridge {
 
+    private int maxTokens = 100;
+    private static String defaultURL = "http://clusters.almaai.unibo.it:11434/api/generate";
+
     public OllamaBridge(String model) {
         super();
         BasicBridge.model = model;
-        BasicBridge.url = "http://clusters.almaai.unibo.it:11434/api/generate";
+        BasicBridge.url = defaultURL;
+    }
+
+    public OllamaBridge(String model, int maxTokens) {
+        super();
+        BasicBridge.model = model;
+        this.maxTokens = maxTokens;
+        BasicBridge.url = defaultURL;
     }
 
     public OllamaBridge(String host, int port, String model) {
@@ -22,7 +32,11 @@ public class OllamaBridge extends BasicBridge {
             HttpURLConnection connection = getConnection(url);
             connection.setRequestMethod("POST");
             connection.setRequestProperty("Content-Type", "application/json");
-            String jsonInputString = "{\"model\": \"" + model + "\",\"system\": \"" + system + "\",\"stream\": false, \"prompt\": \"" + message + "\"}]}";
+            String jsonInputString = "{\"model\": \"" + model + "\",\n" +
+                    "\"system\": \"" + system + "\",\n" +
+                    "\"options\": {\n\"num_predict\": " + maxTokens + "\n},\n" +
+                    "\"stream\": false,\n" +
+                    "\"prompt\": \"" + message + "\"}";
             connection.setDoOutput(true);
             OutputStreamWriter writer = new OutputStreamWriter(connection.getOutputStream());
             writer.write(jsonInputString);

@@ -1,0 +1,11 @@
+models: ["mistral",
+         "mixtral",
+         "llama2:7b",
+         "llama2:13b",
+  ]
+system: >
+  Your task is to reply at the question I will give you.
+  Reply only with True or False.
+  If you don't know the answer, reply with "Unknown".
+max_tokens: 20
+ontologies: ["animals", "family"]
