@@ -61,9 +61,7 @@ public class EnvironmentTest {
             Task task = new ExperimentTask(taskName, modelName, "Dummy", query, "",() -> {
                 OllamaBridge bridge = new OllamaBridge(modelName);
                 String response = bridge.ask(query,"");
-                SmartLogger.log(query);
-                SmartLogger.log(", ");
-                SmartLogger.log(response);
+                SmartLogger.log(query + ", " + response);
             });
             Environment.run(task);
             assertTrue(SmartLogger.isFileInCache(task.getFileName()));

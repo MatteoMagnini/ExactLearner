@@ -2,6 +2,7 @@ package org.experiments.logger;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.logging.FileHandler;
 import java.util.logging.Handler;
 import java.util.logging.Logger;
@@ -13,6 +14,7 @@ public class SmartLogger {
     ;
     private static final String CACHE_DIR = "cache";
     private static final String FILE_EXTENSION = ".csv";
+    private static final String WARNING_FILE = "warnings.txt";
 
     public static String getFullFileName(String filename) {
         return CACHE_DIR + System.getProperty("file.separator") + filename + FILE_EXTENSION;
@@ -63,7 +65,7 @@ public class SmartLogger {
     /**
      * Check if the file is already present in the cache
      *
-     * @param filename
+     * @param filename the name of the file to check
      * @return true if the file is present in the cache, false otherwise
      */
     public static boolean isFileInCache(String filename) {
@@ -79,26 +81,35 @@ public class SmartLogger {
 
     /**
      * Check cache's files integrity
-     * If a file is present in the cache but does not contain the answer, then remove it from the cache
+     * If a file does not contain the answer, then remove it from the cache.
+     * If the answer does not contain "True" or "False", then append the file name to the warning file.
      */
     public static void checkCachedFiles() {
         File cacheDir = new File(CACHE_DIR);
         if (cacheDir.exists()) {
             File[] files = cacheDir.listFiles();
+            ArrayList<String> warnings = new ArrayList<>();
             if (files != null) {
                 for (File file : files) {
                     try {
                         String content = java.nio.file.Files.readString(file.toPath());
-                        if (content.contains("True") || content.contains("False")) {
-                            System.out.println("File" + file.getName() + " Integrity check ... OK");
-                        } else {
-                            System.out.println("File " + file.getName() + " Integrity check ... FAILED, removing.");
+                        if (content.length() == 0) {
+                            log("Error: " + file.getName() + " does not contain an answer.");
                             file.delete();
+                        } else if (!content.contains("True") && !content.contains("False")) {
+                            log("Warning: " + file.getName() + " does not contain a valid answer.");
+                            warnings.add(file.getName());
                         }
                     } catch (IOException e) {
                         System.err.println("Error reading file: " + e.getMessage());
                     }
-
+                }
+            }
+            if (warnings.size() > 0) {
+                try {
+                    java.nio.file.Files.write(java.nio.file.Paths.get(WARNING_FILE), warnings);
+                } catch (IOException e) {
+                    System.err.println("Error writing warnings file: " + e.getMessage());
                 }
             }
         }
