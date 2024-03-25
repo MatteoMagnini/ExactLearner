@@ -25,29 +25,37 @@ class Launch {
     private final static String GENERATIONS = "src/main/resources/ontologies/small/generations(large).owl";
     private final static String GENERATIONS_INFERRED = "src/main/resources/ontologies/small/generations_inferred.owl";
 
-    private final static String system = "Your sole task is to respond " +
-            "to questions that I'm going to ask you with this syntax: 'In the real world," +
-            " is 'className' a subclass of 'className2'?'" +
-            " Provide a binary response indicating whether 'className' is a " +
-            "subclass of 'className2' in the context of class hierarchies." +
-            " Examples:" +
-            "In the real world, is 'Dog' a subclass of 'Animal'? -> True" +
-            "Is 'Carrot' a subclass of 'Animal'? -> False" +
-            "Is 'Animal' a subclass of 'Dog'? -> False" +
-            "You can only respond with either True or False.";
+    private final static String systemForClasses = "Your sole task is to respond " +
+            "to questions like: 'In the real world," +
+            " is 'className' a subclass of 'className2'?" +
+            "Your answer must contain only one word that can be either True or False.";
+    private final static String systemForAxioms = "Your sole task is to respond " +
+            "to Manchester Syntax statements." +
+            "Your answer must contain only one word that can be either True or False.";
 
     public static void main(String[] args) throws FileNotFoundException {
-        runOntology();
+        runOntologyQuestions();
     }
 
-    private static void runOntology() {
+    private static void runOntologyQuestions() {
         var parser = loadOntology(GENERATIONS_INFERRED);
         var classesNames = parser.getClassesNamesAsString();
         var axioms = parser.getAxioms();
         var filteredManchesterSyntaxAxioms = parseAxioms(axioms);
 
         //sendChatGPTQuestions(classesNames, new OpenAIWorkload());
-        sendOllamaQuestions(classesNames, new OllamaWorkload(),"Generations Inferred");
+        //ollamaClassesQuestions(classesNames, new OllamaWorkload(), "Generations Inferred");
+        ollamaAxiomsQuestions(filteredManchesterSyntaxAxioms, new OllamaWorkload(), "Generations Inferred");
+    }
+
+    private static void ollamaAxiomsQuestions(Set<String> filteredManchesterSyntaxAxioms, OllamaWorkload ollamaWorkload, String generationsInferred) {
+        SmartLogger.checkCachedFiles();
+        for (String axiom : filteredManchesterSyntaxAxioms) {
+            ollamaWorkload.setUp(OllamaModels.MISTRAL.getModelName(), axiom, systemForAxioms);
+            Task task = new ExperimentTask(axiom, OllamaModels.MISTRAL.getModelName(), generationsInferred, axiom, systemForAxioms, ollamaWorkload);
+            Environment.run(task);
+        }
+        SmartLogger.checkCachedFiles();
     }
 
     private static Set<String> parseAxioms(Set<OWLAxiom> axioms) {
@@ -68,14 +76,14 @@ class Launch {
         return parser;
     }
 
-    private static void sendOllamaQuestions(Set<String> classesNames, OllamaWorkload ollama, String OntologyName) {
+    private static void ollamaClassesQuestions(Set<String> classesNames, OllamaWorkload ollama, String OntologyName) {
         SmartLogger.checkCachedFiles();
         for (String className : classesNames) {
             for (String className2 : classesNames) {
                 if (!className.equals(className2)) {
                     String message = "(True or False only, i don't want explanation) In the real world, is " + className + " a subclass of " + className2 + "?";
-                    ollama.setUp(OllamaModels.MISTRAL.getModelName(), message, system);
-                    Task task = new ExperimentTask(message, OllamaModels.MISTRAL.getModelName(), OntologyName, message, system, ollama);
+                    ollama.setUp(OllamaModels.MISTRAL.getModelName(), message, systemForClasses);
+                    Task task = new ExperimentTask(message, OllamaModels.MISTRAL.getModelName(), OntologyName, message, systemForClasses, ollama);
                     Environment.run(task);
                 }
             }
@@ -93,8 +101,8 @@ class Launch {
                         e.printStackTrace();
                     }
                     String message = "(True or False only, i don't want explanation) In the real world, is " + className + " a subclass of " + className2 + "?";
-                    openAI.setUp(message, system);
-                    Task task = new ExperimentTask(message, "gpt3.5-turbo", "Family", message, system, openAI);
+                    openAI.setUp(message, systemForClasses);
+                    Task task = new ExperimentTask(message, "gpt3.5-turbo", "Family", message, systemForClasses, openAI);
                     Environment.run(task);
                 }
             }
