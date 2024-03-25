@@ -5,13 +5,12 @@ models:
   - "llama2:13b"
   - "gpt-3.5-turbo"
 ontologies:
-  - "animals"
-  - "family"
+  - "src/main/resources/ontologies/animals.owl"
+  - "src/main/resources/ontologies/family.owl"
 system: >
   Your sole task is to respond to questions like: 
-  'In the real world, is 'className' a subclass of 'className2'?"
+  'In the real world, is 'className' a subclass of 'className2'?
   Your task is to reply at the question I will give you.
   Your answer must contain only one word that can be either True or False.
-#If you don't know the answer, reply with "Unknown".
 maxTokens: 20
 type: "classesQuerying"

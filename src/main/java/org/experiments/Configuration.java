@@ -38,7 +38,7 @@ public class Configuration {
     }
 
     public void setSystem(String system) {
-        this.system = system;
+        this.system = system.trim();
     }
 
     public int getMaxTokens() {
