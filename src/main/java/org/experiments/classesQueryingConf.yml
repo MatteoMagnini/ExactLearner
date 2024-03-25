@@ -5,8 +5,12 @@ models:
   - "llama2:13b"
   - "gpt-3.5-turbo"
 ontologies:
-  - "src/main/resources/ontologies/animals.owl"
-  - "src/main/resources/ontologies/family.owl"
+  - "src/main/resources/ontologies/small/animals.owl"
+  - "src/main/resources/ontologies/small/animals_inferred.owl"
+  - "src/main/resources/ontologies/small/university.owl"
+  - "src/main/resources/ontologies/small/university_inferred.owl"
+  - "src/main/resources/ontologies/small/generations(large).owl"
+  - "src/main/resources/ontologies/small/generations_inferred.owl"
 system: >
   Your sole task is to respond to questions like: 
   'In the real world, is 'className' a subclass of 'className2'?
