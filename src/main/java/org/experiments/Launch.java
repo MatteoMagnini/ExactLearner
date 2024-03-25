@@ -10,6 +10,8 @@ import org.yaml.snakeyaml.Yaml;
 import org.semanticweb.owlapi.model.AxiomType;
 import org.semanticweb.owlapi.model.OWLAxiom;
 import uk.ac.manchester.cs.owl.owlapi.mansyntaxrenderer.ManchesterOWLSyntaxOWLObjectRendererImpl;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -18,7 +20,12 @@ class Launch {
     public static void main(String[] args) {
         // Read the configuration file passed by the user as an argument
         Yaml yaml = new Yaml();
-        Configuration config = yaml.load(Launch.class.getClassLoader().getResourceAsStream(args[0]));
+        Configuration config;
+        try {
+            config = yaml.load(new FileInputStream(args[0]));
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
 
         // For each model in the configuration file and for each ontology in the configuration file, run the experiment
         for (String model : config.getModels()) {
