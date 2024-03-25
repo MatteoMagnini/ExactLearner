@@ -22,7 +22,7 @@ class Launch {
         Yaml yaml = new Yaml();
         Configuration config;
         try {
-            config = yaml.load(new FileInputStream(args[0]));
+            config = yaml.loadAs(new FileInputStream(args[0]), Configuration.class);
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }

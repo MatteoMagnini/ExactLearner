@@ -1,27 +1,28 @@
 package org.experiments;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Configuration {
 
-    private ArrayList<String> models;
-    private ArrayList<String> ontologies;
+    private List<String> models;
+    private List<String> ontologies;
     private String system;
     private int maxTokens;
 
-    public ArrayList<String> getModels() {
+    public List<String> getModels() {
         return models;
     }
 
-    public void setModels(ArrayList<String> models) {
+    public void setModels(List<String> models) {
         this.models = models;
     }
 
-    public ArrayList<String> getOntologies() {
+    public List<String> getOntologies() {
         return ontologies;
     }
 
-    public void setOntologies(ArrayList<String> ontologies) {
+    public void setOntologies(List<String> ontologies) {
         this.ontologies = ontologies;
     }
 
@@ -41,10 +42,13 @@ public class Configuration {
         this.maxTokens = maxTokens;
     }
 
-    public Configuration(ArrayList<String> models, ArrayList<String> ontologies, String system, int maxTokens) {
-        this.models = models;
-        this.ontologies = ontologies;
-        this.system = system;
-        this.maxTokens = maxTokens;
+
+    public String toString() {
+        return "Configuration{" +
+                "models=" + models +
+                ", ontologies=" + ontologies +
+                ", system='" + system + '\'' +
+                ", maxTokens=" + maxTokens +
+                '}';
     }
 }
