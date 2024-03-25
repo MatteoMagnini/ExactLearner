@@ -9,6 +9,16 @@ public class Configuration {
     private String system;
     private int maxTokens;
 
+    private String type;
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     public ArrayList<String> getModels() {
         return models;
     }
@@ -41,10 +51,11 @@ public class Configuration {
         this.maxTokens = maxTokens;
     }
 
-    public Configuration(ArrayList<String> models, ArrayList<String> ontologies, String system, int maxTokens) {
+    public Configuration(ArrayList<String> models, ArrayList<String> ontologies, String system, int maxTokens, String type) {
         this.models = models;
         this.ontologies = ontologies;
         this.system = system;
         this.maxTokens = maxTokens;
+        this.type = type;
     }
 }
