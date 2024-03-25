@@ -1,6 +1,4 @@
 package org.experiments;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class Configuration {
@@ -9,6 +7,15 @@ public class Configuration {
     private List<String> ontologies;
     private String system;
     private int maxTokens;
+    private String type;
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
     public List<String> getModels() {
         return models;
@@ -42,13 +49,13 @@ public class Configuration {
         this.maxTokens = maxTokens;
     }
 
-
     public String toString() {
         return "Configuration{" +
                 "models=" + models +
                 ", ontologies=" + ontologies +
                 ", system='" + system + '\'' +
                 ", maxTokens=" + maxTokens +
+                ", type='" + type + '\'' +
                 '}';
     }
 }
