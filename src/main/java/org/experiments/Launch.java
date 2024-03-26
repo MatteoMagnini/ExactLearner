@@ -16,7 +16,7 @@ import java.io.FileNotFoundException;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-class Launch {
+public class Launch {
 
     public static void main(String[] args) {
         // Read the configuration file passed by the user as an argument
@@ -49,7 +49,7 @@ class Launch {
                     if (!className.equals(className2)) {
                         String message = "Is " + className + " a subclass of " + className2 + "?";
                         var work = new OllamaWorkload(model, system, message, maxTokens);
-                        Task task = new ExperimentTask(message, model, ontology, message, system, work);
+                        Task task = new ExperimentTask(type, model, ontology, message, system, work);
                         Environment.run(task);
                     }
                 }
@@ -57,7 +57,7 @@ class Launch {
         }else if (type.equals("axiomsQuerying")) {
             for (String axiom : filteredManchesterSyntaxAxioms) {
                 var work = new OllamaWorkload(model, system, axiom, maxTokens);
-                Task task = new ExperimentTask(axiom, OllamaModels.MISTRAL.getModelName(), ontology, axiom, system, work);
+                Task task = new ExperimentTask(type, model, ontology, axiom, system, work);
                 Environment.run(task);
             }
             SmartLogger.checkCachedFiles();
