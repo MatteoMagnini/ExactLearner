@@ -60,11 +60,9 @@ public class Launch {
                 Task task = new ExperimentTask(type, model, ontology, axiom, system, work);
                 Environment.run(task);
             }
-            SmartLogger.checkCachedFiles();
         }else{
             throw new IllegalStateException("Invalid type of experiment.");
         }
-        SmartLogger.checkCachedFiles();
     }
 
     private static Set<String> parseAxioms(Set<OWLAxiom> axioms) {
