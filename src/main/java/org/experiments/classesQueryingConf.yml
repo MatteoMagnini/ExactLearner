@@ -16,5 +16,5 @@ system: >
   'In the real world, is 'className' a subclass of 'className2'?
   Your task is to reply at the question I will give you.
   Your answer must contain only one word that can be either True or False.
-maxTokens: 20
+maxTokens: 2
 type: "classesQuerying"
