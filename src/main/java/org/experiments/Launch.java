@@ -4,8 +4,8 @@ import org.exactlearner.parser.OWLParserImpl;
 import org.experiments.logger.SmartLogger;
 import org.experiments.task.ExperimentTask;
 import org.experiments.task.Task;
-import org.experiments.workload.OllamaModels;
 import org.experiments.workload.OllamaWorkload;
+import org.experiments.workload.OpenAIWorkload;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.yaml.snakeyaml.Yaml;
 import org.semanticweb.owlapi.model.AxiomType;
@@ -49,13 +49,20 @@ public class Launch {
                 for (String className2 : classesNames) {
                     if (!className.equals(className2)) {
                         String message = "Is " + className + " a subclass of " + className2 + "?";
-                        var work = new OllamaWorkload(model, system, message, maxTokens);
+                        Runnable work = null;
+                        if (OllamaWorkload.supportedModels.contains(model)) {
+                            work = new OllamaWorkload(model, system, message, maxTokens);
+                        } else if (OpenAIWorkload.supportedModels.contains(model)) {
+                            work = new OpenAIWorkload(model, system, message, maxTokens);
+                        } else {
+                            throw new IllegalStateException("Invalid model.");
+                        }
                         Task task = new ExperimentTask(type, model, ontology, message, system, work);
                         Environment.run(task);
                     }
                 }
             }
-        }else if (type.equals("axiomsQuerying")) {
+        } else if (type.equals("axiomsQuerying")) {
             for (String axiom : filteredManchesterSyntaxAxioms) {
                 // Remove carriage return and line feed characters
                 axiom = axiom.replaceAll("\r", " ").replaceAll("\n", " ");
@@ -63,7 +70,7 @@ public class Launch {
                 Task task = new ExperimentTask(type, model, ontology, axiom, system, work);
                 Environment.run(task);
             }
-        }else{
+        } else{
             throw new IllegalStateException("Invalid type of experiment.");
         }
     }

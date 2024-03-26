@@ -7,18 +7,27 @@ import org.experiments.logger.SmartLogger;
 import java.net.Inet4Address;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.List;
 
 public class OpenAIWorkload implements BaseWorkload {
-    private String query;
-    private String system;
 
-    public OpenAIWorkload() {
+    private final String model;
+    private final String system;
+    private final String query;
+    private final int maxTokens;
+    public static final List<String> supportedModels = List.of("gpt-3.5-turbo");
+
+    public OpenAIWorkload(String model, String system, String query, int maxTokens) {
+        this.model = model;
+        this.system = system;
+        this.query = query;
+        this.maxTokens = maxTokens;
     }
 
     @Override
     public void run() {
         checkSetup();
-        ChatGPTBridge bridge = new ChatGPTBridge();
+        ChatGPTBridge bridge = new ChatGPTBridge(model, maxTokens);
         checkConnection(bridge);
         String response = bridge.ask(query, System.getenv("OPENAI_API_KEY"), system);
         SmartLogger.log(query + ", " + response);
@@ -37,10 +46,5 @@ public class OpenAIWorkload implements BaseWorkload {
         } catch (Exception e) {
             throw new IllegalStateException("Could not connect to the ChatGPT bridge.");
         }
-    }
-
-    public void setUp(String query, String system) {
-        this.query = query;
-        this.system = system;
     }
 }
