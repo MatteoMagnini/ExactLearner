@@ -25,6 +25,26 @@ public class OllamaWorkload implements BaseWorkload {
         OllamaBridge bridge = new OllamaBridge(model, maxTokens);
         checkConnection(bridge);
         String response = bridge.ask(query, system);
+        // Sleep for 100 milliseconds to avoid overloading the Ollama bridge and retrying the request
+        if (response == null) {
+            int maxRetries = 2; // So the total number of retries is 3
+            for (int i = 0; i < maxRetries; i++) {
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                response = bridge.ask(query, system);
+                if (response != null) {
+                    break;
+                }
+            }
+        }
+        if (response == null) {
+            System.out.println("Could not get a response from the Ollama bridge.");
+            System.out.println("Check file " + SmartLogger.getFilename() + " for more information.");
+            response = "";
+        }
         SmartLogger.log(query + ", " + response);
     }
 

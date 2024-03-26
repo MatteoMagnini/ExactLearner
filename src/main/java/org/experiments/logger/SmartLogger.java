@@ -2,6 +2,7 @@ package org.experiments.logger;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.logging.FileHandler;
 import java.util.logging.Handler;
@@ -50,6 +51,8 @@ public class SmartLogger {
                 }
             });
             logger.addHandler(fileHandler);
+            // Save in a temporary file the name of the file that is being logged
+            java.nio.file.Files.write(java.nio.file.Paths.get("logging_file_name.txt"), filename.getBytes());
         } catch (IOException e) {
             System.err.println("Error setting up FileHandler: " + e.getMessage());
         }
@@ -59,6 +62,17 @@ public class SmartLogger {
         if (logger.getHandlers().length > 0) {
             logger.getHandlers()[0].close();
             logger.removeHandler(logger.getHandlers()[0]);
+            // Delete the temporary file that contains the name of the file that was being logged
+            new File("logging_file_name.txt").delete();
+        }
+    }
+
+    public static String getFilename() {
+        try {
+            return new String(java.nio.file.Files.readAllBytes(java.nio.file.Paths.get("logging_file_name.txt")));
+        } catch (IOException e) {
+            System.err.println("Error reading logging file name: " + e.getMessage());
+            return "";
         }
     }
 
@@ -94,6 +108,9 @@ public class SmartLogger {
                     try {
                         String content = java.nio.file.Files.readString(file.toPath());
                         if (content.length() == 0) {
+                            log("Error: " + file.getName() + " is empty.");
+                            file.delete();
+                        } else if (content.split(",")[1].trim().length() == 0) {
                             log("Error: " + file.getName() + " does not contain an answer.");
                             file.delete();
                         } else if (!content.contains("True") && !content.contains("False")) {

@@ -29,8 +29,10 @@ public class Launch {
         }
 
         // For each model in the configuration file and for each ontology in the configuration file, run the experiment
+        SmartLogger.checkCachedFiles();
         for (String model : config.getModels()) {
             for (String ontology : config.getOntologies()) {
+                System.out.println("Running experiment for model: " + model + " and ontology: " + ontology);
                 runExperiment(model, ontology, config.getSystem(), config.getMaxTokens(), config.getType());
             }
         }
@@ -41,7 +43,6 @@ public class Launch {
         var classesNames = parser.getClassesNamesAsString();
         var axioms = parser.getAxioms();
         var filteredManchesterSyntaxAxioms = parseAxioms(axioms);
-        SmartLogger.checkCachedFiles();
 
         if (type.equals("classesQuerying")){
             for (String className : classesNames) {
@@ -56,6 +57,8 @@ public class Launch {
             }
         }else if (type.equals("axiomsQuerying")) {
             for (String axiom : filteredManchesterSyntaxAxioms) {
+                // Remove carriage return and line feed characters
+                axiom = axiom.replaceAll("\r", " ").replaceAll("\n", " ");
                 var work = new OllamaWorkload(model, system, axiom, maxTokens);
                 Task task = new ExperimentTask(type, model, ontology, axiom, system, work);
                 Environment.run(task);
