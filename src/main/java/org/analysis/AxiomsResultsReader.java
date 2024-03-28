@@ -20,7 +20,7 @@ public class AxiomsResultsReader implements BaseResultReader {
     }
 
     @Override
-    public void computeResults() {
+    public boolean computeResults() {
         File file = new File("cache/" + fileNameToAnalyze + ".csv");
         try (FileInputStream fis = new FileInputStream(file)) {
             byte[] data = new byte[(int) file.length()];
@@ -37,10 +37,12 @@ public class AxiomsResultsReader implements BaseResultReader {
                 axiom = strArr[0].replace("SubClassOf", "SubClassOf:")
                         .replace("DisjointWith", "DisjointWith:")
                         .replace("EquivalentTo", "EquivalentTo:");
+                return true;
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return false;
     }
 
     @Override

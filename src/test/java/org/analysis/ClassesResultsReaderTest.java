@@ -44,12 +44,12 @@ public class ClassesResultsReaderTest {
     }
 
     private void runSomeTask() {
-        String message = "Is Mammal a subclass of Animal?";
+        String message = "Mammal SubClassOf Animal";
         var work = new OllamaWorkload(model, system, message, maxTokens);
         Task task = new ExperimentTask(type, model, ontology, message, system, work);
         Environment.run(task);
 
-        message = "Is Backbone a subclass of Bird?";
+        message = "Backbone SubClassOf Bird";
         work = new OllamaWorkload(model, system, message, maxTokens);
         task = new ExperimentTask(type, model, ontology, message, system, work);
         Environment.run(task);
@@ -58,7 +58,7 @@ public class ClassesResultsReaderTest {
     @Test
     public void testComputeResultsTrue() {
 
-        query = "Is Mammal a subclass of Animal?";
+        query = "Mammal SubClassOf Animal";
         classesResultsReader = new ClassesResultsReader(type, model, ontology, query, system);
         checkFileExists();
         classesResultsReader.computeResults();
@@ -70,7 +70,7 @@ public class ClassesResultsReaderTest {
 
     @Test
     public void testComputeResultsFalse() {
-        query = "Is Backbone a subclass of Bird?";
+        query = "Backbone SubClassOf Bird";
         classesResultsReader = new ClassesResultsReader(type, model, ontology, query, system);
         checkFileExists();
         classesResultsReader.computeResults();

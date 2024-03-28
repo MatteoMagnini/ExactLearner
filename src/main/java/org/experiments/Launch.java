@@ -1,27 +1,35 @@
 package org.experiments;
+
+import org.analysis.ClassesResultsReader;
 import org.exactlearner.parser.OWLParser;
 import org.exactlearner.parser.OWLParserImpl;
 import org.experiments.logger.SmartLogger;
 import org.experiments.task.ExperimentTask;
 import org.experiments.task.Task;
-import org.experiments.workload.OllamaModels;
 import org.experiments.workload.OllamaWorkload;
-import org.semanticweb.owlapi.model.OWLOntologyCreationException;
+import org.semanticweb.elk.util.collections.Pair;
+import org.semanticweb.owlapi.apibinding.OWLManager;
+import org.semanticweb.owlapi.model.*;
 import org.yaml.snakeyaml.Yaml;
-import org.semanticweb.owlapi.model.AxiomType;
-import org.semanticweb.owlapi.model.OWLAxiom;
+import uk.ac.manchester.cs.owl.owlapi.OWLClassImpl;
 import uk.ac.manchester.cs.owl.owlapi.mansyntaxrenderer.ManchesterOWLSyntaxOWLObjectRendererImpl;
+
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 public class Launch {
 
+    private static HashMap<Pair<String,String>,String> queries = new HashMap<>();
     public static void main(String[] args) {
         // Read the configuration file passed by the user as an argument
         Yaml yaml = new Yaml();
         Configuration config;
+
         try {
             config = yaml.loadAs(new FileInputStream(args[0]), Configuration.class);
         } catch (FileNotFoundException e) {
@@ -36,6 +44,34 @@ public class Launch {
                 runExperiment(model, ontology, config.getSystem(), config.getMaxTokens(), config.getType());
             }
         }
+
+        // Recreate ontologies from results
+        //get the classes first
+        if (config.getType().equals("classesQuerying")) {
+            queries.forEach((pair, message) -> {
+                OWLOntologyManager manager= OWLManager.createOWLOntologyManager();
+                try {
+                    OWLOntology rootOntology=manager.loadOntologyFromOntologyDocument(new File(pair.getSecond()));
+                    var reader = new ClassesResultsReader(config.getType(), pair.getFirst(), pair.getSecond(), message, config.getSystem());
+                    reader.computeResults();
+                    var parentClassName = reader.getParentClassName();
+                    var childClassName = reader.getChildClassName();
+                    OWLParserImpl parser = new OWLParserImpl(pair.getSecond());
+                    rootOntology.getSubClassAxiomsForSuperClass(parser.getClasses().get()
+                                    .stream()
+                                    .filter(c -> c.toString().contains(parentClassName))
+                                    .findFirst()
+                                    .get()).stream()
+                            .filter(axiom -> axiom.getSubClass().asOWLClass().toString().contains(childClassName));
+
+                } catch (OWLOntologyCreationException e) {
+                    throw new RuntimeException(e);
+                }
+
+
+
+            });
+        }
     }
 
     private static void runExperiment(String model, String ontology, String system, int maxTokens, String type) {
@@ -48,7 +84,8 @@ public class Launch {
             for (String className : classesNames) {
                 for (String className2 : classesNames) {
                     if (!className.equals(className2)) {
-                        String message = "Is " + className + " a subclass of " + className2 + "?";
+                        String message = className + " SubClassOf " + className2;
+                        queries.put(new Pair<>(model, ontology), message);
                         var work = new OllamaWorkload(model, system, message, maxTokens);
                         Task task = new ExperimentTask(type, model, ontology, message, system, work);
                         Environment.run(task);

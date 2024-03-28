@@ -17,7 +17,7 @@ public class ClassesResultsReader implements BaseResultReader {
     }
 
     @Override
-    public void computeResults() {
+    public boolean computeResults() {
         File file = new File("cache/" + fileNameToAnalyze + ".csv");
         try (FileInputStream fis = new FileInputStream(file)) {
             byte[] data = new byte[(int) file.length()];
@@ -28,17 +28,15 @@ public class ClassesResultsReader implements BaseResultReader {
             var strArr = str.split(charToSplit);
             strArr[1] = strArr[1].toLowerCase();
             if ((strArr[1].contains("true") || strArr[1].contains("yes"))) {
-                strArr[0] = strArr[0].replace("?", "")
-                        .replace("Is ", "")
-                        .replace("a ", "")
-                        .replace("subclass ", "")
-                        .replace("of ", "").trim();
+                strArr[0] = strArr[0].replace("SubClassOf ", "").trim();
                 ParentClassName = strArr[0].split(" ")[1];
                 childClassName = strArr[0].split(" ")[0];
+                return true;
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return false;
     }
     @Override
     public String getFileNameToAnalyze() {
