@@ -28,7 +28,7 @@ public class ClassesResultsReader implements BaseResultReader {
             var strArr = str.split(charToSplit);
             strArr[1] = strArr[1].toLowerCase();
             if ((strArr[1].contains("true") || strArr[1].contains("yes"))) {
-                strArr[0] = strArr[0].replace("SubClassOf ", "").trim();
+                strArr[0] = strArr[0].replace(" SubClassOf ", " SubClassOf: ").trim();
                 ParentClassName = strArr[0].split(" ")[1];
                 childClassName = strArr[0].split(" ")[0];
                 return true;
