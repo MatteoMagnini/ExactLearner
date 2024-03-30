@@ -1,1 +1,1 @@
-Animal SubClassOf Plant, True
+Animal SubClassOf Plant, False
