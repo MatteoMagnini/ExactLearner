@@ -93,11 +93,7 @@ public class Launch {
     }
 
     private static Set<String> parseAxioms(Set<OWLAxiom> axioms) {
-        return axioms.stream().filter(axiom -> !axiom.isOfType(AxiomType.DECLARATION))
-                .filter(axiom -> !axiom.isOfType(AxiomType.FUNCTIONAL_OBJECT_PROPERTY))
-                .filter(axiom -> !axiom.isOfType(AxiomType.SYMMETRIC_OBJECT_PROPERTY))
-                .filter(axiom -> !axiom.isOfType(AxiomType.CLASS_ASSERTION)).collect(Collectors.toSet())
-                .stream().map(new ManchesterOWLSyntaxOWLObjectRendererImpl()::render).collect(Collectors.toSet());
+        return axioms.stream().map(new ManchesterOWLSyntaxOWLObjectRendererImpl()::render).collect(Collectors.toSet());
     }
 
     private static OWLParser loadOntology(String ontology) {
