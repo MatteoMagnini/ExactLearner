@@ -82,13 +82,13 @@ public class AxiomsAnalyser {
         ELEngine engine = new ELEngine(resultedOntology);
         unknownAxioms.forEach(axiom -> {
             if (engine.entailed(axiom)) {
-                System.out.println(axiom + "was unknown but is entailed adding to true axioms");
+                System.out.println(new ManchesterOWLSyntaxOWLObjectRendererImpl().render(axiom) + ", was unknown but is entailed, adding to true axioms");
                 trueAxioms.add(axiom);
             }
         });
         falseAxioms.forEach(axiom -> {
             if (engine.entailed(axiom)) {
-                System.out.println(axiom + "was false but is entailed adding to true axioms");
+                System.out.println(new ManchesterOWLSyntaxOWLObjectRendererImpl().render(axiom) + ", was false but is entailed, adding to true axioms");
                 trueAxioms.add(axiom);
             }
         });
