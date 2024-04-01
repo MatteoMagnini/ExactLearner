@@ -1,23 +1,24 @@
 package org.analysis;
 
+import org.exactlearner.engine.ELEngine;
 import org.exactlearner.parser.OWLParser;
 import org.exactlearner.parser.OWLParserImpl;
 import org.experiments.Configuration;
 import org.experiments.logger.SmartLogger;
 import org.experiments.task.ExperimentTask;
-import org.semanticweb.owlapi.model.AxiomType;
-import org.semanticweb.owlapi.model.OWLAxiom;
-import org.semanticweb.owlapi.model.OWLOntologyCreationException;
+import org.semanticweb.owlapi.apibinding.OWLManager;
+import org.semanticweb.owlapi.model.*;
 import org.yaml.snakeyaml.Yaml;
 import uk.ac.manchester.cs.owl.owlapi.mansyntaxrenderer.ManchesterOWLSyntaxOWLObjectRendererImpl;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class AxiomsAnalyser{
+public class AxiomsAnalyser {
 
     public static void main(String[] args) {
         // Read the configuration file passed by the user as an argument
@@ -41,32 +42,62 @@ public class AxiomsAnalyser{
     }
 
     private static void runAnalysis(String model, String ontology, String system, int maxTokens, String type) {
+
+        Set<OWLAxiom> trueAxioms = new HashSet<>();
+        Set<OWLAxiom> falseAxioms = new HashSet<>();
+        Set<OWLAxiom> unknownAxioms = new HashSet<>();
         var parser = loadOntology(ontology);
         int trueCounter = 0;
         int falseCounter = 0;
         int unknownCounter = 0;
-
         if (type.equals("axiomsQuerying")) {
             var axioms = parser.getAxioms();
-            var filteredManchesterSyntaxAxioms = parseAxioms(axioms);
-            for (String axiom : filteredManchesterSyntaxAxioms) {
+            for (OWLAxiom axiom : filterUnusedAxioms(axioms)) {
                 // Remove carriage return and line feed characters
-                axiom = axiom.replaceAll("\r", " ").replaceAll("\n", " ");
+                var stringAxiom = new ManchesterOWLSyntaxOWLObjectRendererImpl().render(axiom).replaceAll("\r", " ").replaceAll("\n", " ");
                 // load result
-                String fileName = new ExperimentTask("axiomsQuerying", model, ontology, axiom, system, () -> {}).getFileName();
+                String fileName = new ExperimentTask("axiomsQuerying", model, ontology, stringAxiom, system, () -> {
+                }).getFileName();
                 Result result = new Result(fileName);
                 if (result.isTrue()) {
-                    trueCounter++;
+                    trueAxioms.add(axiom);
                 } else if (result.isFalse()) {
-                    falseCounter++;
+                    falseAxioms.add(axiom);
                 } else {
-                    unknownCounter++;
+                    unknownAxioms.add(axiom);
                 }
             }
         } else {
             throw new IllegalStateException("Invalid type of experiment.");
         }
 
+        //using true axiom based ontology to compute false and unknown axioms, if there are entailed, add them to true axioms
+        OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
+        OWLOntology resultedOntology = null;
+        try {
+            resultedOntology = manager.createOntology(trueAxioms);
+        } catch (OWLOntologyCreationException e) {
+            throw new RuntimeException(e);
+        }
+        ELEngine engine = new ELEngine(resultedOntology);
+        unknownAxioms.forEach(axiom -> {
+            if (engine.entailed(axiom)) {
+                System.out.println(axiom + "was unknown but is entailed adding to true axioms");
+                trueAxioms.add(axiom);
+            }
+        });
+        falseAxioms.forEach(axiom -> {
+            if (engine.entailed(axiom)) {
+                System.out.println(axiom + "was false but is entailed adding to true axioms");
+                trueAxioms.add(axiom);
+            }
+        });
+        unknownAxioms.removeAll(trueAxioms);
+        falseAxioms.removeAll(trueAxioms);
+
+        trueCounter = trueAxioms.size();
+        falseCounter = falseAxioms.size();
+        unknownCounter = unknownAxioms.size();
         // Save results to file
         String separator = System.getProperty("file.separator");
         // Check if the results directory exists
@@ -86,12 +117,13 @@ public class AxiomsAnalyser{
         SmartLogger.disableFileLogging();
     }
 
-    private static Set<String> parseAxioms(Set<OWLAxiom> axioms) {
+    private static Set<OWLAxiom> filterUnusedAxioms(Set<OWLAxiom> axioms) {
         return axioms.stream().filter(axiom -> !axiom.isOfType(AxiomType.DECLARATION))
+                .filter(axiom -> !axiom.isOfType(AxiomType.CLASS_ASSERTION))
                 .filter(axiom -> !axiom.isOfType(AxiomType.FUNCTIONAL_OBJECT_PROPERTY))
                 .filter(axiom -> !axiom.isOfType(AxiomType.SYMMETRIC_OBJECT_PROPERTY))
-                .filter(axiom -> !axiom.isOfType(AxiomType.CLASS_ASSERTION)).collect(Collectors.toSet())
-                .stream().map(new ManchesterOWLSyntaxOWLObjectRendererImpl()::render).collect(Collectors.toSet());
+                .filter(axiom -> !axiom.isOfType(AxiomType.INVERSE_OBJECT_PROPERTIES))
+                .collect(Collectors.toSet());
     }
 
     private static OWLParser loadOntology(String ontology) {
