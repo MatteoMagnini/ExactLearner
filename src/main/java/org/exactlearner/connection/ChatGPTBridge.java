@@ -49,7 +49,7 @@ public class ChatGPTBridge extends BasicBridge {
             return extractMessageFromJSON(jsonResponse);
         } catch (Exception e) {
             System.out.println(ChatGPTCodes.valueOf(extractErrorCode(e.getMessage())));
-            return "";
+            return null;
         }
     }
 

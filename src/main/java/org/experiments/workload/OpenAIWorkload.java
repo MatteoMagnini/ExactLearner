@@ -33,7 +33,6 @@ public class OpenAIWorkload implements BaseWorkload {
         if (response == null) {
             int maxRetries = 2; // So the total number of retries is 3
             for (int i = 0; i < maxRetries; i++) {
-                // Busy wait
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
