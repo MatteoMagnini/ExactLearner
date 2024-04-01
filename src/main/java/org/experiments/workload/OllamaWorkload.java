@@ -23,7 +23,6 @@ public class OllamaWorkload implements BaseWorkload {
 
     @Override
     public void run() {
-        checkSetup();
         OllamaBridge bridge = new OllamaBridge(model, maxTokens);
         checkConnection(bridge);
         String response = bridge.ask(query, system);
@@ -58,12 +57,6 @@ public class OllamaWorkload implements BaseWorkload {
             throw new IllegalStateException("Could not connect to the Ollama bridge.");
         }
 
-    }
-
-    private void checkSetup() {
-        if (model == null || query == null) {
-            throw new IllegalStateException("Model and query must be set up before running the workload.");
-        }
     }
     public String getModel() {
         return model;

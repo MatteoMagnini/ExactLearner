@@ -36,7 +36,10 @@ public class ChatGPTBridge extends BasicBridge {
             connection.setRequestMethod("POST");
             connection.setRequestProperty("Authorization", "Bearer " + key);
             connection.setRequestProperty("Content-Type", "application/json");
-            String jsonInputString = "{\"model\": \"" + model + "\", \"max_tokens\": " + maxTokens + ", \"messages\": [{\"role\": \"" + system + "\", \"content\": \"" + message + "\"}]}";
+            String jsonInputString = "{\"model\": \"" + model + "\", \"max_tokens\": " + maxTokens +
+                    ", \"messages\": [" +
+                        "{\"role\": \"system\", \"content\": \"" + system + "\"}," +
+                        "{\"role\": \"user\", \"content\": \"" + message + "\"}]}";
             connection.setDoOutput(true);
             OutputStreamWriter writer = new OutputStreamWriter(connection.getOutputStream());
             writer.write(jsonInputString);
@@ -46,7 +49,7 @@ public class ChatGPTBridge extends BasicBridge {
             return extractMessageFromJSON(jsonResponse);
         } catch (Exception e) {
             System.out.println(ChatGPTCodes.valueOf(extractErrorCode(e.getMessage())));
-            return null;
+            return "";
         }
     }
 

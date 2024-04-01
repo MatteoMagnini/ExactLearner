@@ -26,18 +26,33 @@ public class OpenAIWorkload implements BaseWorkload {
 
     @Override
     public void run() {
-        checkSetup();
         ChatGPTBridge bridge = new ChatGPTBridge(model, maxTokens);
         checkConnection(bridge);
         String response = bridge.ask(query, System.getenv("OPENAI_API_KEY"), system);
+        // Sleep for 100 milliseconds to avoid overloading the Ollama bridge and retrying the request
+        if (response == null) {
+            int maxRetries = 2; // So the total number of retries is 3
+            for (int i = 0; i < maxRetries; i++) {
+                // Busy wait
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                response = bridge.ask(query, System.getenv("OPENAI_API_KEY"), system);
+                if (response != null) {
+                    break;
+                }
+            }
+        }
+        if (response == null) {
+            System.out.println("Could not get a response from the Ollama bridge.");
+            System.out.println("Check file " + SmartLogger.getFilename() + " for more information.");
+            response = "";
+        }
         SmartLogger.log(query + ", " + response);
     }
 
-    private void checkSetup() {
-        if (query == null) {
-            throw new IllegalStateException("Query must be set up before running the workload.");
-        }
-    }
 
     private void checkConnection(ChatGPTBridge bridge) {
         try {

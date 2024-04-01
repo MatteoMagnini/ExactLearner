@@ -81,7 +81,7 @@ public class Launch {
         }
         Task task = new ExperimentTask(type, model, ontology, message, system, work);
         Environment.run(task);
-        moveFile(type, model, ontology, message, system);
+        //moveFile(type, model, ontology, message, system);
     }
 
     private static void moveFile(String type, String model, String ontology, String message, String system) {
