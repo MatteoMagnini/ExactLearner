@@ -7,27 +7,25 @@ import org.experiments.task.ExperimentTask;
 import org.experiments.task.Task;
 import org.experiments.utility.SHA256Hash;
 import org.experiments.workload.OllamaWorkload;
-import org.semanticweb.elk.util.collections.Pair;
-import org.semanticweb.owlapi.model.*;
+import org.experiments.workload.OpenAIWorkload;
+import org.semanticweb.owlapi.model.AxiomType;
+import org.semanticweb.owlapi.model.OWLAxiom;
+import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.yaml.snakeyaml.Yaml;
 import uk.ac.manchester.cs.owl.owlapi.mansyntaxrenderer.ManchesterOWLSyntaxOWLObjectRendererImpl;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.util.HashMap;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 public class Launch {
 
-    private static HashMap<Pair<String, String>, String> queries = new HashMap<>();
-
     public static void main(String[] args) {
         // Read the configuration file passed by the user as an argument
         Yaml yaml = new Yaml();
         Configuration config;
-
         try {
             config = yaml.loadAs(new FileInputStream(args[0]), Configuration.class);
         } catch (FileNotFoundException e) {
@@ -55,6 +53,7 @@ public class Launch {
                 for (String className2 : classesNames) {
                     if (!className.equals(className2)) {
                         String message = className + " SubClassOf " + className2;
+                        //queries.put(new Pair<>(model, ontology), message);
                         runModel(model, ontology, system, maxTokens, type, message);
                     }
                 }
@@ -71,18 +70,26 @@ public class Launch {
     }
 
     private static void runModel(String model, String ontology, String system, int maxTokens, String type, String message) {
-        var work = new OllamaWorkload(model, system, message, maxTokens);
+
+        Runnable work = null;
+        if (OllamaWorkload.supportedModels.contains(model)) {
+            work = new OllamaWorkload(model, system, message, maxTokens);
+        } else if (OpenAIWorkload.supportedModels.contains(model)) {
+            work = new OpenAIWorkload(model, system, message, maxTokens);
+        } else {
+            throw new IllegalStateException("Invalid model.");
+        }
         Task task = new ExperimentTask(type, model, ontology, message, system, work);
         Environment.run(task);
-        // moveFile(type, model, ontology, message, system);
+        //moveFile(type, model, ontology, message, system);
     }
 
     private static void moveFile(String type, String model, String ontology, String message, String system) {
         File f = new File("cache/" + SHA256Hash.sha256(type + model + ontology + message + system) + ".csv");
         var ontName = ontology.split("/")[5].replace(".owl", "");
-        if (!new File("cache/"+type+"-"+model+"-"+ontName).exists())
-            new File("cache/"+type+"-"+model+"-"+ontName).mkdir();
-        f.renameTo(new File("cache/"+type+"-"+model+"-"+ontName+"/"+f.getName()));
+        if (!new File("cache/" + type + "-" + model + "-" + ontName).exists())
+            new File("cache/" + type + "-" + model + "-" + ontName).mkdir();
+        f.renameTo(new File("cache/" + type + "-" + model + "-" + ontName + "/" + f.getName()));
     }
 
     private static Set<String> parseAxioms(Set<OWLAxiom> axioms) {

@@ -113,28 +113,21 @@ public class SmartLogger {
     public static void checkCachedFiles() {
         File cacheDir = new File(CACHE_DIR);
         if (cacheDir.exists()) {
-            File[] files = cacheDir.listFiles();
+            File[] directories = cacheDir.listFiles();
             ArrayList<String> warnings = new ArrayList<>();
-            if (files != null) {
-                for (File file : files) {
-                    try {
-                        String content = java.nio.file.Files.readString(file.toPath());
-                        if (content.length() == 0) {
-                            log("Error: " + file.getName() + " is empty.");
-                            file.delete();
-                        } else if (content.split(",")[1].trim().length() == 0) {
-                            log("Error: " + file.getName() + " does not contain an answer.");
-                            file.delete();
-                        } else if (!content.contains("True") && !content.contains("False")) {
-                            log("Warning: " + file.getName() + " does not contain a valid answer.");
-                            warnings.add(file.getName());
+            if (directories != null) {
+                for(var dir : directories){
+                    if(dir.isDirectory()){
+                        File [] files = dir.listFiles();
+                        for (File file : files) {
+                            warnings.addAll(readFilesAndCheckForError(file));
                         }
-                    } catch (IOException e) {
-                        System.err.println("Error reading file: " + e.getMessage());
+                    }else{
+                        warnings.addAll(readFilesAndCheckForError(dir));
                     }
                 }
             }
-            if (warnings.size() > 0) {
+            if (!warnings.isEmpty()) {
                 try {
                     java.nio.file.Files.write(java.nio.file.Paths.get(WARNING_FILE), warnings);
                 } catch (IOException e) {
@@ -142,5 +135,25 @@ public class SmartLogger {
                 }
             }
         }
+    }
+
+    private static ArrayList<String> readFilesAndCheckForError(File file) {
+        ArrayList<String> warnings = new ArrayList<>();
+        try {
+            String content = java.nio.file.Files.readString(file.toPath());
+            if (content.isEmpty()) {
+                log("Error: " + file.getName() + " is empty.");
+                file.delete();
+            } else if (!content.contains(",") || content.split(",")[1].trim().isEmpty()) {
+                log("Error: " + file.getName() + " does not contain an answer.");
+                file.delete();
+            } else if (!content.contains("True") && !content.contains("False")) {
+                log("Warning: " + file.getName() + " does not contain a valid answer.");
+                warnings.add(file.getName());
+            }
+        } catch (IOException e) {
+            System.err.println("Error reading file: " + e.getMessage());
+        }
+        return warnings;
     }
 }
