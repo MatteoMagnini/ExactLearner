@@ -12,13 +12,16 @@ import java.util.logging.SimpleFormatter;
 public class SmartLogger {
 
     private static final Logger logger = Logger.getLogger(SmartLogger.class.getName());
-    ;
     private static final String CACHE_DIR = "cache";
     private static final String FILE_EXTENSION = ".csv";
     private static final String WARNING_FILE = "warnings.txt";
 
     public static String getFullFileName(String filename) {
         return CACHE_DIR + System.getProperty("file.separator") + filename + FILE_EXTENSION;
+    }
+
+    public static String getFullFileName(String filename, boolean cache) {
+        return cache ? getFullFileName(filename) : filename + FILE_EXTENSION;
     }
 
     public static void log(String message) {
@@ -36,14 +39,23 @@ public class SmartLogger {
         enableFileLogging(filename, "");
     }
 
+    public static void enableFileLogging(String filename, boolean cache) {
+        enableFileLogging(filename, "", cache);
+    }
+
     public static void enableFileLogging(String filename, String lineTerminator) {
+        // If cache directory does not exist, then create it
+        enableFileLogging(filename, lineTerminator, true);
+    }
+
+    public static void enableFileLogging(String filename, String lineTerminator, boolean cache) {
         // If cache directory does not exist, then create it
         if (!new File(CACHE_DIR).exists()) {
             new File(CACHE_DIR).mkdir();
         }
         try {
             // Create a new FileHandler with a custom formatter
-            Handler fileHandler = new FileHandler(getFullFileName(filename));
+            Handler fileHandler = new FileHandler(getFullFileName(filename, cache));
             fileHandler.setFormatter(new SimpleFormatter() {
                 @Override
                 public String format(java.util.logging.LogRecord record) {
