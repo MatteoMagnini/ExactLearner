@@ -1,0 +1,1 @@
+Bird SubClassOf (has_part some Leg) and (has_part some Wing), True
