@@ -28,13 +28,20 @@ public class OpenAIWorkload implements BaseWorkload {
     public void run() {
         ChatGPTBridge bridge = new ChatGPTBridge(model, maxTokens);
         checkConnection(bridge);
+        // Always sleep for 25 seconds before sending a request to OpenAI because of the rate limit!
+        // 3 requests per minute for the GPT-3.5-turbo model free tier
+        try {
+            Thread.sleep(1000 * 25);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         String response = bridge.ask(query, System.getenv("OPENAI_API_KEY"), system);
         // Sleep for 100 milliseconds to avoid overloading the Ollama bridge and retrying the request
         if (response == null) {
             int maxRetries = 2; // So the total number of retries is 3
             for (int i = 0; i < maxRetries; i++) {
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(1000 * 25 * (i + 1));
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

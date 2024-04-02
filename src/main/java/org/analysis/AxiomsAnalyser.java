@@ -118,11 +118,12 @@ public class AxiomsAnalyser {
     }
 
     private static Set<OWLAxiom> filterUnusedAxioms(Set<OWLAxiom> axioms) {
-        return axioms.stream().filter(axiom -> !axiom.isOfType(AxiomType.DECLARATION))
-                .filter(axiom -> !axiom.isOfType(AxiomType.CLASS_ASSERTION))
-                .filter(axiom -> !axiom.isOfType(AxiomType.FUNCTIONAL_OBJECT_PROPERTY))
-                .filter(axiom -> !axiom.isOfType(AxiomType.SYMMETRIC_OBJECT_PROPERTY))
-                .filter(axiom -> !axiom.isOfType(AxiomType.INVERSE_OBJECT_PROPERTIES))
+        return axioms.stream().filter(axiom -> axiom.isOfType(AxiomType.SUBCLASS_OF)
+                || axiom.isOfType(AxiomType.EQUIVALENT_CLASSES)
+                || axiom.isOfType(AxiomType.SUB_OBJECT_PROPERTY)
+                || axiom.isOfType(AxiomType.EQUIVALENT_OBJECT_PROPERTIES)
+                || axiom.isOfType(AxiomType.OBJECT_PROPERTY_DOMAIN)
+                || axiom.isOfType(AxiomType.DISJOINT_CLASSES))
                 .collect(Collectors.toSet());
     }
 
