@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/matteomagnini/ontologies/2024/3/untitled-ontology-40#"
+     xml:base="http://www.semanticweb.org/matteomagnini/ontologies/2024/3/untitled-ontology-40"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/matteomagnini/ontologies/2024/3/untitled-ontology-40"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/football.owl#managed_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/football.owl#managed_by"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/football.owl#plays -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/football.owl#plays"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/football.owl#plays_for -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/football.owl#plays_for"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/football.owl#BallGame -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/football.owl#BallGame">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/football.owl#Game"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/football.owl#Football -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/football.owl#Football">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/football.owl#BallGame"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/football.owl#FootballPlayer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/football.owl#FootballPlayer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/football.owl#Player"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2014/3/football.owl#Player"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/football.owl#plays"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/football.owl#Football"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/football.owl#plays_for"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/football.owl#FootballTeam"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/football.owl#FootballTeam -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/football.owl#FootballTeam">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/football.owl#Team"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/football.owl#Game -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/football.owl#Game">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/football.owl#Manager -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/football.owl#Manager">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/football.owl#Person"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2014/3/football.owl#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/football.owl#managed_by"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/football.owl#Manager"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/football.owl#Person -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/football.owl#Person"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/football.owl#Player -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/football.owl#Player">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/football.owl#Person"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2014/3/football.owl#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/football.owl#plays_for"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/football.owl#Team"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/football.owl#plays"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/football.owl#Game"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/football.owl#Team -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/football.owl#Team">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/football.owl#managed_by"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/football.owl#Manager"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+

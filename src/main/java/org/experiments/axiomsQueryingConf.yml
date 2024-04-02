@@ -7,6 +7,10 @@ ontologies:
   - "src/main/resources/ontologies/small/university_inferred.owl"
   - "src/main/resources/ontologies/small/generations(large).owl"
   - "src/main/resources/ontologies/small/generations_inferred.owl"
+  - "src/main/resources/ontologies/small/football.owl"
+  - "src/main/resources/ontologies/small/football_inferred.owl"
+  - "src/main/resources/ontologies/small/cell.owl"
+  - "src/main/resources/ontologies/small/cell_inferred.owl"
 system: >
   Your sole task is to respond to Manchester Syntax statements.
   Your answer must contain only one word that can be either True or False.
