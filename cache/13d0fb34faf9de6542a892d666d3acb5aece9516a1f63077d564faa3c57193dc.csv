@@ -1,0 +1,1 @@
+FootballPlayer SubClassOf Player and (plays some Football) and (plays_for some FootballTeam),  True.
