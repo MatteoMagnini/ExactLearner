@@ -46,6 +46,7 @@ public class AxiomsAnalyser {
         Set<OWLAxiom> trueAxioms = new HashSet<>();
         Set<OWLAxiom> falseAxioms = new HashSet<>();
         Set<OWLAxiom> unknownAxioms = new HashSet<>();
+        Set<OWLAxiom> logicInconsistentAxioms = new HashSet<>();
         var parser = loadOntology(ontology);
         int trueCounter = 0;
         int falseCounter = 0;
@@ -70,30 +71,29 @@ public class AxiomsAnalyser {
         } else {
             throw new IllegalStateException("Invalid type of experiment.");
         }
-
-        //using true axiom based ontology to compute false and unknown axioms, if there are entailed, add them to true axioms
-        OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
-        OWLOntology resultedOntology = null;
-        try {
-            resultedOntology = manager.createOntology(trueAxioms);
-        } catch (OWLOntologyCreationException e) {
-            throw new RuntimeException(e);
+        if(ontology.contains("inferred")){
+            //using true axiom based ontology to compute false and unknown axioms, if there are entailed, add them to true axioms
+            OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
+            OWLOntology resultedOntology = null;
+            try {
+                resultedOntology = manager.createOntology(trueAxioms);
+            } catch (OWLOntologyCreationException e) {
+                throw new RuntimeException(e);
+            }
+            ELEngine engine = new ELEngine(resultedOntology);
+            unknownAxioms.forEach(axiom -> {
+                if (engine.entailed(axiom)) {
+                    System.out.println(new ManchesterOWLSyntaxOWLObjectRendererImpl().render(axiom) + ", was unknown but is entailed, adding to true axioms");
+                    logicInconsistentAxioms.add(axiom);
+                }
+            });
+            falseAxioms.forEach(axiom -> {
+                if (engine.entailed(axiom)) {
+                    System.out.println(new ManchesterOWLSyntaxOWLObjectRendererImpl().render(axiom) + ", was false but is entailed, adding to true axioms");
+                    logicInconsistentAxioms.add(axiom);
+                }
+            });
         }
-        ELEngine engine = new ELEngine(resultedOntology);
-        unknownAxioms.forEach(axiom -> {
-            if (engine.entailed(axiom)) {
-                System.out.println(new ManchesterOWLSyntaxOWLObjectRendererImpl().render(axiom) + ", was unknown but is entailed, adding to true axioms");
-                trueAxioms.add(axiom);
-            }
-        });
-        falseAxioms.forEach(axiom -> {
-            if (engine.entailed(axiom)) {
-                System.out.println(new ManchesterOWLSyntaxOWLObjectRendererImpl().render(axiom) + ", was false but is entailed, adding to true axioms");
-                trueAxioms.add(axiom);
-            }
-        });
-        unknownAxioms.removeAll(trueAxioms);
-        falseAxioms.removeAll(trueAxioms);
 
         trueCounter = trueAxioms.size();
         falseCounter = falseAxioms.size();
@@ -109,11 +109,17 @@ public class AxiomsAnalyser {
         }
         String shortOntology = ontology.substring(ontology.lastIndexOf(separator) + 1);
         shortOntology = shortOntology.substring(0, shortOntology.lastIndexOf('.'));
-        String resultFileName = "results" + separator + "axiomsQuerying" + separator + model + '_' + shortOntology;
+        String resultFileName = "results" + separator + "axiomsQuerying" + separator + model.replace(":","-") + '_' + shortOntology;
         SmartLogger.disableFileLogging();
         SmartLogger.enableFileLogging(resultFileName, false);
-        SmartLogger.log("True, False, Unknown\n");
-        SmartLogger.log(trueCounter + ", " + falseCounter + ", " + unknownCounter);
+        if(ontology.contains("inferred")){
+
+            SmartLogger.log("True, False, Unknown, Logic Inconsistent Axioms\n");
+            SmartLogger.log(trueCounter + ", " + falseCounter + ", " + unknownCounter + ", " + logicInconsistentAxioms.size());
+        }else {
+            SmartLogger.log("True, False, Unknown\n");
+            SmartLogger.log(trueCounter + ", " + falseCounter + ", " + unknownCounter);
+        }
         SmartLogger.disableFileLogging();
     }
 
@@ -123,7 +129,8 @@ public class AxiomsAnalyser {
                 || axiom.isOfType(AxiomType.SUB_OBJECT_PROPERTY)
                 || axiom.isOfType(AxiomType.EQUIVALENT_OBJECT_PROPERTIES)
                 || axiom.isOfType(AxiomType.OBJECT_PROPERTY_DOMAIN)
-                || axiom.isOfType(AxiomType.DISJOINT_CLASSES))
+                || axiom.isOfType(AxiomType.DISJOINT_CLASSES)
+                || axiom.isOfType(AxiomType.getAxiomType("ObjectOneOf")))
                 .collect(Collectors.toSet());
     }
 

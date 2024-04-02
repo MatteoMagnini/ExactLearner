@@ -1,0 +1,1 @@
+Brother EquivalentTo Person and ((hasSibling some Person) and (hasSex value MaleSex)),  True\n

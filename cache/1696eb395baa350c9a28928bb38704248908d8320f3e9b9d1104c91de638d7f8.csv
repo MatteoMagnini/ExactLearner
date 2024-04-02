@@ -1,0 +1,1 @@
+Son EquivalentTo Person and (hasParent some Person) and (hasSex value MaleSex), \nTrue
