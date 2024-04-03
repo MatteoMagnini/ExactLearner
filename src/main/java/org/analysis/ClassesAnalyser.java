@@ -26,7 +26,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.nio.file.FileSystems;
 import java.util.Arrays;
-import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -61,14 +60,18 @@ public class ClassesAnalyser {
         // Calculate metrics
         double accuracy = calculateAccuracy(confusionMatrix);
         double f1Score = calculateF1Score(confusionMatrix);
+        double precision = calculatePrecision(confusionMatrix);
+        double recall = calculateRecall(confusionMatrix);
         double logLoss = calculateLogLoss(confusionMatrix);
         double matthewsCorrelationCoefficient = calculateMatthewsCorrelationCoefficient(confusionMatrix);
 
         // Print results
-//        System.out.println("Accuracy: " + accuracy);
-//        System.out.println("F1 Score: " + f1Score);
-//        System.out.println("Log Loss: " + logLoss);
-//        System.out.println("Matthews MCC: " + matthewsCorrelationCoefficient);
+        System.out.println("Accuracy: " + accuracy);
+        System.out.println("Precision: " + precision);
+        System.out.println("Recall: " + recall);
+        System.out.println("F1 Score: " + f1Score);
+        System.out.println("Log Loss: " + logLoss);
+        System.out.println("Matthews MCC: " + matthewsCorrelationCoefficient);
         for (int i = 0; i < confusionMatrix.length; i++) {
             for (int j = 0; j < confusionMatrix[i].length; j++) {
                 System.out.print(confusionMatrix[i][j] + " ");
@@ -90,9 +93,9 @@ public class ClassesAnalyser {
         String resultFileName = "results" + separator + "classesQuerying" + separator + model.replace(":","-") + '_' + shortOntology;
         SmartLogger.disableFileLogging();
         SmartLogger.enableFileLogging(resultFileName, false);
-        SmartLogger.log("Accuracy; F1 Score; Log Loss; Matthews MCC\n");
-        // Approximate the values to 3 decimal places
-        SmartLogger.log(String.format("%.3f; %.3f; %.3f; %.3f;", accuracy, f1Score, logLoss, matthewsCorrelationCoefficient));
+        SmartLogger.log("Accuracy; F1 Score; Precision; Recall; Log Loss; Matthews MCC\n");
+        // Approximate the values to 2 decimal places
+        SmartLogger.log(String.format("%.2f; %.2f; %.2f; %.2f; %.2f; %.2f\n", accuracy, f1Score, precision, recall, logLoss, matthewsCorrelationCoefficient));
         SmartLogger.disableFileLogging();
     }
 
