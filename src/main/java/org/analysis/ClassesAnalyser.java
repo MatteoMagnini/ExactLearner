@@ -69,7 +69,7 @@ public class ClassesAnalyser {
         System.out.println("F1 Score: " + f1Score);
         System.out.println("Log Loss: " + logLoss);
         System.out.println("Matthews MCC: " + matthewsCorrelationCoefficient);
-
+        System.out.println(Arrays.deepToString(confusionMatrix));
         // Save results to file
         String separator = FileSystems.getDefault().getSeparator();
         // Check if the results directory exists
@@ -81,12 +81,12 @@ public class ClassesAnalyser {
         }
         String shortOntology = ontology.substring(ontology.lastIndexOf(separator) + 1);
         shortOntology = shortOntology.substring(0, shortOntology.lastIndexOf('.'));
-        String resultFileName = "results" + separator + "classesQuerying" + separator + model + '_' + shortOntology;
+        String resultFileName = "results" + separator + "classesQuerying" + separator + model.replace(":","-") + '_' + shortOntology;
         SmartLogger.disableFileLogging();
         SmartLogger.enableFileLogging(resultFileName, false);
         SmartLogger.log("Accuracy; F1 Score; Log Loss; Matthews MCC\n");
         // Approximate the values to 3 decimal places
-        SmartLogger.log(String.format("%.3f; %.3f; %.3f; %.3f", accuracy, f1Score, logLoss, matthewsCorrelationCoefficient));
+        SmartLogger.log(String.format("%.3f; %.3f; %.3f; %.3f;", accuracy, f1Score, logLoss, matthewsCorrelationCoefficient));
         SmartLogger.disableFileLogging();
     }
 
@@ -101,7 +101,7 @@ public class ClassesAnalyser {
 
     public static double calculatePrecision(int[][] confusionMatrix) {
         int tp = confusionMatrix[0][0];
-        int fp = confusionMatrix[1][0] + confusionMatrix[2][0];
+        int fp = confusionMatrix[1][0];
         return (double) tp / (tp + fp);
     }
 
@@ -135,9 +135,12 @@ public class ClassesAnalyser {
 
     public static double calculateMatthewsCorrelationCoefficient(int[][] confusionMatrix) {
         int tp = confusionMatrix[0][0];
-        int tn = confusionMatrix[1][1] + confusionMatrix[1][2] + confusionMatrix[2][1] + confusionMatrix[2][2];
-        int fp = confusionMatrix[1][0] + confusionMatrix[2][0];
+        int tn = confusionMatrix[1][1] + confusionMatrix[1][2];
+        int fp = confusionMatrix[1][0];
         int fn = confusionMatrix[0][1] + confusionMatrix[0][2];
+        //      T   F   U
+        //  T   TP  FN  FN
+        //  F   FP  TN  TN
 
         double numerator = (tp * tn) - (fp * fn);
         double denominator = Math.sqrt((tp + fp) * (tp + fn) * (tn + fp) * (tn + fn));
@@ -209,7 +212,7 @@ public class ClassesAnalyser {
         }
         String shortOntology = ontology.substring(ontology.lastIndexOf(separator) + 1);
         shortOntology = shortOntology.substring(0, shortOntology.lastIndexOf('.'));
-        String resultFileName = "results" + separator + "classesQuerying" + separator + model + '_' + shortOntology;
+        String resultFileName = "results" + separator + "classesQuerying" + separator + model.replace(":","-") + '_' + shortOntology;
         SmartLogger.disableFileLogging();
         SmartLogger.enableFileLogging(resultFileName, false);
         SmartLogger.log("True, False, Unknown\n");
