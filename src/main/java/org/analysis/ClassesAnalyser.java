@@ -65,11 +65,17 @@ public class ClassesAnalyser {
         double matthewsCorrelationCoefficient = calculateMatthewsCorrelationCoefficient(confusionMatrix);
 
         // Print results
-        System.out.println("Accuracy: " + accuracy);
-        System.out.println("F1 Score: " + f1Score);
-        System.out.println("Log Loss: " + logLoss);
-        System.out.println("Matthews MCC: " + matthewsCorrelationCoefficient);
-        System.out.println(Arrays.deepToString(confusionMatrix));
+//        System.out.println("Accuracy: " + accuracy);
+//        System.out.println("F1 Score: " + f1Score);
+//        System.out.println("Log Loss: " + logLoss);
+//        System.out.println("Matthews MCC: " + matthewsCorrelationCoefficient);
+        for (int i = 0; i < confusionMatrix.length; i++) {
+            for (int j = 0; j < confusionMatrix[i].length; j++) {
+                System.out.print(confusionMatrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+
         // Save results to file
         String separator = FileSystems.getDefault().getSeparator();
         // Check if the results directory exists
@@ -182,7 +188,7 @@ public class ClassesAnalyser {
                     if (engine.entailed(createAxiomFromString(message, owl))) {
                         matrixCFU[0][0]++;
                     } else {
-                        matrixCFU[0][1]++;
+                        matrixCFU[1][0]++;
                     }
                 } else if (result.isFalse()) {
                     if (engine.entailed(createAxiomFromString(message, owl))) {
