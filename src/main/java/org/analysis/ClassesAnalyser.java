@@ -12,7 +12,10 @@ import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.expression.OWLEntityChecker;
 import org.semanticweb.owlapi.expression.ParserException;
 import org.semanticweb.owlapi.expression.ShortFormEntityChecker;
-import org.semanticweb.owlapi.model.*;
+import org.semanticweb.owlapi.model.OWLAxiom;
+import org.semanticweb.owlapi.model.OWLOntology;
+import org.semanticweb.owlapi.model.OWLOntologyCreationException;
+import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.util.BidirectionalShortFormProviderAdapter;
 import org.semanticweb.owlapi.util.SimpleShortFormProvider;
 import org.yaml.snakeyaml.Yaml;
@@ -21,6 +24,7 @@ import uk.ac.manchester.cs.owl.owlapi.OWLDataFactoryImpl;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.nio.file.FileSystems;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
@@ -45,7 +49,7 @@ public class ClassesAnalyser {
             for (String ontology : config.getOntologies()) {
                 System.out.println("Analysing experiment for model: " + model + " and ontology: " + ontology);
                 runExperiment3(model, ontology, config.getSystem());
-                //runAnalysis(model, ontology, config.getSystem(), config.getMaxTokens(), config.getType());
+                //runAnalysis(model, ontology, config.getSystem(), config.getType());
             }
         }
     }
@@ -53,20 +57,89 @@ public class ClassesAnalyser {
     private static void runExperiment3(String model, String ontology, String system) {
         var parser = loadOntology(ontology);
         var classesNames = parser.getClassesNamesAsString();
-        var confusionMatrixTFU = createConfusionMatrix(classesNames, model, ontology, system);
-        System.out.println(Arrays.deepToString(confusionMatrixTFU));
+        var confusionMatrix = createConfusionMatrix(classesNames, model, ontology, system);
+        // Calculate metrics
+        double accuracy = calculateAccuracy(confusionMatrix);
+        double f1Score = calculateF1Score(confusionMatrix);
+        double logLoss = calculateLogLoss(confusionMatrix);
+        double matthewsCorrelationCoefficient = calculateMatthewsCorrelationCoefficient(confusionMatrix);
 
+        // Print results
+        System.out.println("Accuracy: " + accuracy);
+        System.out.println("F1 Score: " + f1Score);
+        System.out.println("Log Loss: " + logLoss);
+        System.out.println("Matthews MCC: " + matthewsCorrelationCoefficient);
     }
 
-    private static void runAnalysis(String model, String ontology, String system, int maxTokens, String type) {
+    public static double calculateAccuracy(int[][] confusionMatrix) {
+        int total = Arrays.stream(confusionMatrix).flatMapToInt(Arrays::stream).sum();
+        int correct = 0;
+        for (int i = 0; i < confusionMatrix.length; i++) {
+            correct += confusionMatrix[i][i];
+        }
+        return (double) correct / total;
+    }
+
+    public static double calculatePrecision(int[][] confusionMatrix) {
+        int tp = confusionMatrix[0][0];
+        int fp = confusionMatrix[1][0] + confusionMatrix[2][0];
+        return (double) tp / (tp + fp);
+    }
+
+    public static double calculateRecall(int[][] confusionMatrix) {
+        int tp = confusionMatrix[0][0];
+        int fn = confusionMatrix[0][1] + confusionMatrix[0][2];
+        return (double) tp / (tp + fn);
+    }
+
+    public static double calculateF1Score(int[][] confusionMatrix) {
+        double precision = calculatePrecision(confusionMatrix);
+        double recall = calculateRecall(confusionMatrix);
+        if (precision + recall == 0) {
+            return 0.0; // Avoid division by zero
+        } else {
+            return 2.0 * (precision * recall) / (precision + recall);
+        }
+    }
+
+    public static double calculateLogLoss(int[][] confusionMatrix) {
+        double sum = 0;
+        int total = Arrays.stream(confusionMatrix).flatMapToInt(Arrays::stream).sum();
+        for (int[] matrix : confusionMatrix) {
+            for (int i : matrix) {
+                double prob = (double) i / total;
+                sum += i == 0 ? 0 : i * Math.log(prob);
+            }
+        }
+        return -sum / total;
+    }
+
+    public static double calculateMatthewsCorrelationCoefficient(int[][] confusionMatrix) {
+        int tp = confusionMatrix[0][0];
+        int tn = confusionMatrix[1][1] + confusionMatrix[1][2] + confusionMatrix[2][1] + confusionMatrix[2][2];
+        int fp = confusionMatrix[1][0] + confusionMatrix[2][0];
+        int fn = confusionMatrix[0][1] + confusionMatrix[0][2];
+
+        double numerator = (tp * tn) - (fp * fn);
+        double denominator = Math.sqrt((tp + fp) * (tp + fn) * (tn + fp) * (tn + fn));
+
+        if (denominator == 0) {
+            return 0.0; // Avoid division by zero
+        } else {
+            return numerator / denominator;
+        }
+    }
+
+
+    private static void runAnalysis(String model, String ontology, String system, String type) {
 
         Set<String> trueClassesQuerying = new HashSet<>();
         Set<String> falseClassesQuerying = new HashSet<>();
         Set<String> unknownClassesQuerying = new HashSet<>();
 
-        int trueCounter = 0;
-        int falseCounter = 0;
-        int unknownCounter = 0;
+        int trueCounter;
+        int falseCounter;
+        int unknownCounter;
         var parser = loadOntology(ontology);
         var classesNames = parser.getClassesNamesAsString();
 
@@ -107,7 +180,7 @@ public class ClassesAnalyser {
         falseCounter = falseClassesQuerying.size();
         unknownCounter = unknownClassesQuerying.size();
         // Save results to file
-        String separator = System.getProperty("file.separator");
+        String separator = FileSystems.getDefault().getSeparator();
         // Check if the results directory exists
         if (!new File("results").exists()) {
             new File("results").mkdir();
@@ -145,7 +218,7 @@ public class ClassesAnalyser {
             throw new RuntimeException(e);
         }
         var classesArray = classesNames.stream().filter(s -> !s.contains("owl:Thin")).toList();
-        for(String className1 : classesArray){
+        for (String className1 : classesArray) {
             for (String className2 : classesArray) {
                 if (className1.equals(className2)) {
                     matrixCFU[1][1]++;
@@ -154,7 +227,7 @@ public class ClassesAnalyser {
                     //queries.put(new Pair<>(model, ontology), message);
                     String fileName = new ExperimentTask("classesQuerying", model, ontology, message, system, () -> {
                     }).getFileName();
-                    Result result=result = new Result(fileName);
+                    Result result = new Result(fileName);
                     if (result.isTrue()) {
                         if (engine.entailed(createAxiomFromString(message, owl))) {
                             matrixCFU[0][0]++;
