@@ -191,11 +191,11 @@ public class ClassesAnalyser {
                     if (engine.entailed(createAxiomFromString(message, owl))) {
                         matrixCFU[0][0]++;
                     } else {
-                        matrixCFU[0][1]++;
+                        matrixCFU[1][0]++;
                     }
                 } else if (result.isFalse()) {
                     if (engine.entailed(createAxiomFromString(message, owl))) {
-                        matrixCFU[1][0]++;
+                        matrixCFU[0][1]++;
                     } else {
                         matrixCFU[1][1]++;
                     }
