@@ -152,85 +152,16 @@ public class ClassesAnalyser {
         }
     }
 
-
-    private static void runAnalysis(String model, String ontology, String system, String type) {
-
-        Set<String> trueClassesQuerying = new HashSet<>();
-        Set<String> falseClassesQuerying = new HashSet<>();
-        Set<String> unknownClassesQuerying = new HashSet<>();
-
-        int trueCounter;
-        int falseCounter;
-        int unknownCounter;
-        var parser = loadOntology(ontology);
-        var classesNames = parser.getClassesNamesAsString();
-
-        if (type.equals("classesQuerying")) {
-            for (String className : classesNames) {
-                for (String className2 : classesNames) {
-                    if (!className.equals(className2)) {
-                        String message = className + " SubClassOf " + className2;
-                        //queries.put(new Pair<>(model, ontology), message);
-                        String fileName = new ExperimentTask("classesQuerying", model, ontology, message, system, () -> {
-                        }).getFileName();
-                        Result result = new Result(fileName);
-                        if (result.isTrue()) {
-                            trueClassesQuerying.add(message);
-                        } else if (result.isFalse()) {
-                            falseClassesQuerying.add(message);
-                        } else {
-                            unknownClassesQuerying.add(message);
-                        }
-                    }
-                }
-            }
-        } else {
-            throw new IllegalStateException("Invalid type of experiment.");
-        }
-
-        if (!falseClassesQuerying.isEmpty() && !unknownClassesQuerying.isEmpty()) {
-            falseClassesQuerying.addAll(unknownClassesQuerying);
-
-            trueClassesQuerying.addAll(checkClosure(trueClassesQuerying, falseClassesQuerying));
-
-            falseClassesQuerying.removeAll(trueClassesQuerying);
-            falseClassesQuerying.removeAll(unknownClassesQuerying);
-            unknownClassesQuerying.removeAll(trueClassesQuerying);
-        }
-
-        trueCounter = trueClassesQuerying.size();
-        falseCounter = falseClassesQuerying.size();
-        unknownCounter = unknownClassesQuerying.size();
-        // Save results to file
-        String separator = FileSystems.getDefault().getSeparator();
-        // Check if the results directory exists
-        if (!new File("results").exists()) {
-            new File("results").mkdir();
-        }
-        if (!new File("results" + separator + "classesQuerying").exists()) {
-            new File("results" + separator + "classesQuerying").mkdir();
-        }
-        String shortOntology = ontology.substring(ontology.lastIndexOf(separator) + 1);
-        shortOntology = shortOntology.substring(0, shortOntology.lastIndexOf('.'));
-        String resultFileName = "results" + separator + "classesQuerying" + separator + model.replace(":","-") + '_' + shortOntology;
-        SmartLogger.disableFileLogging();
-        SmartLogger.enableFileLogging(resultFileName, false);
-        SmartLogger.log("True, False, Unknown\n");
-        SmartLogger.log(trueCounter + ", " + falseCounter + ", " + unknownCounter);
-        SmartLogger.disableFileLogging();
-    }
-
     private static int[][] createConfusionMatrix(Set<String> classesNames, String model, String ontology, String system) {
         var manager = OWLManager.createOWLOntologyManager();
-        var matrixCFU = new int[3][3];
+        var matrixCFU = new int[2][3];
         // Populate the confusion matrix with zeros
         for (int[] i : matrixCFU) {
             Arrays.fill(i, 0);
         }
         //      T   F   U
-        //  T   TT
-        //  F       FF
-        //  U           UU
+        //  T   TP  FN  FN
+        //  F   FP  TN  TN
         ELEngine engine;
         OWLOntology owl;
         try {
@@ -242,32 +173,28 @@ public class ClassesAnalyser {
         var classesArray = classesNames.stream().filter(s -> !s.contains("owl:Thin")).toList();
         for (String className1 : classesArray) {
             for (String className2 : classesArray) {
-                if (className1.equals(className2)) {
-                    matrixCFU[1][1]++;
-                } else {
-                    String message = className1 + " SubClassOf " + className2;
-                    //queries.put(new Pair<>(model, ontology), message);
-                    String fileName = new ExperimentTask("classesQuerying", model, ontology, message, system, () -> {
-                    }).getFileName();
-                    Result result = new Result(fileName);
-                    if (result.isTrue()) {
-                        if (engine.entailed(createAxiomFromString(message, owl))) {
-                            matrixCFU[0][0]++;
-                        } else {
-                            matrixCFU[0][1]++;
-                        }
-                    } else if (result.isFalse()) {
-                        if (engine.entailed(createAxiomFromString(message, owl))) {
-                            matrixCFU[1][0]++;
-                        } else {
-                            matrixCFU[1][1]++;
-                        }
+                String message = className1 + " SubClassOf " + className2;
+                //queries.put(new Pair<>(model, ontology), message);
+                String fileName = new ExperimentTask("classesQuerying", model, ontology, message, system, () -> {
+                }).getFileName();
+                Result result = new Result(fileName);
+                if (result.isTrue()) {
+                    if (engine.entailed(createAxiomFromString(message, owl))) {
+                        matrixCFU[0][0]++;
                     } else {
-                        if (engine.entailed(createAxiomFromString(message, owl))) {
-                            matrixCFU[2][0]++;
-                        } else {
-                            matrixCFU[2][1]++;
-                        }
+                        matrixCFU[0][1]++;
+                    }
+                } else if (result.isFalse()) {
+                    if (engine.entailed(createAxiomFromString(message, owl))) {
+                        matrixCFU[0][1]++;
+                    } else {
+                        matrixCFU[1][1]++;
+                    }
+                } else {
+                    if (engine.entailed(createAxiomFromString(message, owl))) {
+                        matrixCFU[0][2]++;
+                    } else {
+                        matrixCFU[1][2]++;
                     }
                 }
             }
