@@ -51,11 +51,9 @@ public class Launch {
         if (type.equals("classesQuerying")) {
             for (String className : classesNames) {
                 for (String className2 : classesNames) {
-                    if (!className.equals(className2)) {
-                        String message = className + " SubClassOf " + className2;
-                        //queries.put(new Pair<>(model, ontology), message);
-                        runModel(model, ontology, system, maxTokens, type, message);
-                    }
+                    String message = className + " SubClassOf " + className2;
+                    //queries.put(new Pair<>(model, ontology), message);
+                    runModel(model, ontology, system, maxTokens, type, message);
                 }
             }
         } else if (type.equals("axiomsQuerying")) {
