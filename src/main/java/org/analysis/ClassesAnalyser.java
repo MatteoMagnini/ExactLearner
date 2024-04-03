@@ -69,6 +69,25 @@ public class ClassesAnalyser {
         System.out.println("F1 Score: " + f1Score);
         System.out.println("Log Loss: " + logLoss);
         System.out.println("Matthews MCC: " + matthewsCorrelationCoefficient);
+
+        // Save results to file
+        String separator = FileSystems.getDefault().getSeparator();
+        // Check if the results directory exists
+        if (!new File("results").exists()) {
+            new File("results").mkdir();
+        }
+        if (!new File("results" + separator + "classesQuerying").exists()) {
+            new File("results" + separator + "classesQuerying").mkdir();
+        }
+        String shortOntology = ontology.substring(ontology.lastIndexOf(separator) + 1);
+        shortOntology = shortOntology.substring(0, shortOntology.lastIndexOf('.'));
+        String resultFileName = "results" + separator + "classesQuerying" + separator + model + '_' + shortOntology;
+        SmartLogger.disableFileLogging();
+        SmartLogger.enableFileLogging(resultFileName, false);
+        SmartLogger.log("Accuracy; F1 Score; Log Loss; Matthews MCC\n");
+        // Approximate the values to 3 decimal places
+        SmartLogger.log(String.format("%.3f; %.3f; %.3f; %.3f", accuracy, f1Score, logLoss, matthewsCorrelationCoefficient));
+        SmartLogger.disableFileLogging();
     }
 
     public static double calculateAccuracy(int[][] confusionMatrix) {

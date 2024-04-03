@@ -20,3 +20,4 @@ system: >
   Your answer must contain only one word that can be either True or False.
 maxTokens: 2
 type: "axiomsQuerying"
+
