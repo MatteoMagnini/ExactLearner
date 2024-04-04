@@ -1,0 +1,1 @@
+Father EquivalentTo Person and (hasChild some Person) and (hasSex value MaleSex),  False.

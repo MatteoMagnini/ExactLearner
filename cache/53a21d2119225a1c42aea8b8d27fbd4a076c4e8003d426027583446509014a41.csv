@@ -1,0 +1,1 @@
+Player SubClassOf Person and (plays_for some Team), True.
