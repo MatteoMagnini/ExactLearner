@@ -3,10 +3,10 @@ import os
 import yaml
 import pandas as pd
 
-file_name = os.sep.join(["src", "main", "java", "org", "experiments", "classesQueryingConf.yml"])
+file_name = os.sep.join(["src", "main", "java", "org", "experiments", "axiomsQueryingConf.yml"])
 configuration = yaml.load(open(file_name), Loader=yaml.FullLoader)
 models = configuration["models"]
-ontologies = configuration["ontologies"]
+ontologies = [x for x in configuration["ontologies"] if "inferred" in x]
 results_path = os.sep.join(["results", "axiomsQuerying"])
 answer_values = ["True", "False", "Unknown", "Logic Inconsistent Axioms"]
 short_answer_values = ["T", "F", "U", "L"]
@@ -17,17 +17,18 @@ short_answer_values = ["T", "F", "U", "L"]
 # Each ontology has 4 possible answers: True, False, Unknown, Logic Inconsistent Axioms.
 # So in total we have 5 * 4 = 20 columns only
 table = "\\begin{table*}[]\n\\centering\n\\resizebox{\\textwidth}{!}{\n"
-table += "\\begin{tabular}{ccc|ccc|ccc|ccc|ccc}\n"
+table += "\\begin{tabular}{cccc|cccc|cccc|cccc|cccc}\n"
 table += "\\hline\n"
 for ontology in ontologies:
     onto = ontology.split(os.sep)[-1].replace('.owl', '').capitalize()
     # remove (...) from the ontology name
     onto = onto.split('(')[0]
-    table += f"\\multicolumn{{3}}{{c{'|' if ontology != ontologies[-1] else ''}}}{{\\textbf{{{onto}}}}} & "
+    onto = onto.split('_')[0]
+    table += f"\\multicolumn{{4}}{{c{'|' if ontology != ontologies[-1] else ''}}}{{\\textbf{{{onto}}}}} & "
 table = table[:-2] + "\\\\\n"
 for ontology in ontologies:
     for value in short_answer_values:
-        bar = '|' if value == metrics_short[-1] and ontology != ontologies[-1] else ''
+        bar = '|' if value == short_answer_values[-1] and ontology != ontologies[-1] else ''
         table += f"\\multicolumn{{1}}{{c{bar}}}{{\\textbf{{{value}}}}} &"
 table = table[:-2] + "\\\\ \\hline\n"
 for i, model in enumerate(models):
@@ -38,14 +39,14 @@ for i, model in enumerate(models):
         # take only the name, not the whole path and remove .owl from the ontology name
         short_ontology = ontology.split(os.sep)[-1].replace(".owl", "")
         results_file = os.sep.join([results_path, f"{model.replace(':', '-')}_{short_ontology}.csv"])
-        results_values = pd.read_csv(results_file, sep=";", header=0)
+        results_values = pd.read_csv(results_file, sep=",", header=0)
         results_values.columns = [x.strip() for x in results_values.columns]
         for value_name in answer_values:
-            value = float(results_values[value_name][0].replace(",", ".").strip())
+            value = int(results_values[value_name][0])
             # Do not show the 0 in .## format
             # and if it is 1, show it as 1 instead of 1.00
-            bar = '|' if value_name == metrics[-1] and ontology != ontologies[-1] else ''
-            table += f'\\multicolumn{{1}}{{r{bar}}}{value} & '
+            bar = '|' if value_name == answer_values[-1] and ontology != ontologies[-1] else ''
+            table += f'\\multicolumn{{1}}{{r{bar}}}{{{value}}} & '
     table = table[:-2] + "\\\\ \\hline\n"
 table += "\\end{tabular}\n}\n"
 table += "\\caption{Results for the experiment testing logical consistency.\n%\n" \
