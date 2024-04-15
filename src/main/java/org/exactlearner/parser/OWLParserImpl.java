@@ -43,5 +43,10 @@ public class OWLParserImpl implements OWLParser {
         return owl.getAxioms();
     }
 
+    @Override
+    public Set<OWLObjectProperty> getObjectProperties() {
+        return owl.getObjectPropertiesInSignature();
+    }
+
 
 }
