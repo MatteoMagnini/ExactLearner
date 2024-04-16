@@ -6,6 +6,8 @@ import org.exactlearner.parser.OWLParserImpl;
 import org.experiments.Configuration;
 import org.experiments.logger.SmartLogger;
 import org.experiments.task.ExperimentTask;
+import org.experiments.utility.OntologyLoader;
+import org.experiments.utility.YAMLConfigLoader;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.*;
 import org.yaml.snakeyaml.Yaml;
@@ -22,14 +24,7 @@ public class AxiomsAnalyser {
 
     public static void main(String[] args) {
         // Read the configuration file passed by the user as an argument
-        Yaml yaml = new Yaml();
-        Configuration config;
-
-        try {
-            config = yaml.loadAs(new FileInputStream(args[0]), Configuration.class);
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
+        var config = new YAMLConfigLoader().getConfig(args[0], Configuration.class);
 
         // For each model in the configuration file and for each ontology in the configuration file, run the experiment
         SmartLogger.checkCachedFiles();
@@ -47,7 +42,7 @@ public class AxiomsAnalyser {
         Set<OWLAxiom> falseAxioms = new HashSet<>();
         Set<OWLAxiom> unknownAxioms = new HashSet<>();
         Set<OWLAxiom> logicInconsistentAxioms = new HashSet<>();
-        var parser = loadOntology(ontology);
+        var parser = new OntologyLoader().getParser(ontology);
         int trueCounter = 0;
         int falseCounter = 0;
         int unknownCounter = 0;
@@ -132,15 +127,5 @@ public class AxiomsAnalyser {
                 || axiom.isOfType(AxiomType.DISJOINT_CLASSES)
                 || axiom.isOfType(AxiomType.getAxiomType("ObjectOneOf")))
                 .collect(Collectors.toSet());
-    }
-
-    private static OWLParser loadOntology(String ontology) {
-        OWLParser parser = null;
-        try {
-            parser = new OWLParserImpl(ontology);
-        } catch (OWLOntologyCreationException e) {
-            System.out.println(e.getMessage());
-        }
-        return parser;
     }
 }

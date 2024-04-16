@@ -7,6 +7,7 @@ import org.experiments.logger.SmartLogger;
 import org.experiments.task.ExperimentTask;
 import org.experiments.task.Task;
 import org.experiments.utility.SHA256Hash;
+import org.experiments.utility.YAMLConfigLoader;
 import org.experiments.workload.OllamaWorkload;
 import org.jetbrains.annotations.NotNull;
 import org.junit.*;
@@ -38,13 +39,7 @@ public class AxiomsResultsReaderTest{
     private AxiomsResultsReader axiomsResultsReader;
     @Before
     public void setUp() {
-        Yaml yaml = new Yaml();
-        Configuration config;
-        try {
-            config = yaml.loadAs(new FileInputStream("src/main/java/org/experiments/axiomsQueryingConf.yml"), Configuration.class);
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
+        var config = new YAMLConfigLoader().getConfig("src/main/java/org/experiments/axiomsQueryingConf.yml", Configuration.class);
 
         type = config.getType();
         model = config.getModels().get(0);

@@ -8,6 +8,8 @@ import org.exactlearner.parser.OWLParserImpl;
 import org.experiments.Configuration;
 import org.experiments.logger.SmartLogger;
 import org.experiments.task.ExperimentTask;
+import org.experiments.utility.OntologyLoader;
+import org.experiments.utility.YAMLConfigLoader;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.expression.OWLEntityChecker;
 import org.semanticweb.owlapi.expression.ParserException;
@@ -33,15 +35,7 @@ public class ClassesAnalyser {
 
     public static void main(String[] args) {
         // Read the configuration file passed by the user as an argument
-        Yaml yaml = new Yaml();
-        Configuration config;
-
-        try {
-            config = yaml.loadAs(new FileInputStream(args[0]), Configuration.class);
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-
+        var config = new YAMLConfigLoader().getConfig(args[0], Configuration.class);
         // For each model in the configuration file and for each ontology in the configuration file, run the experiment
         SmartLogger.checkCachedFiles();
         for (String model : config.getModels()) {
@@ -54,7 +48,7 @@ public class ClassesAnalyser {
     }
 
     private static void runExperiment3(String model, String ontology, String system) {
-        var parser = loadOntology(ontology);
+        var parser = new OntologyLoader().getParser(ontology);
         var classesNames = parser.getClassesNamesAsString();
         var confusionMatrix = createConfusionMatrix(classesNames, model, ontology, system);
         // Calculate metrics
@@ -261,15 +255,5 @@ public class ClassesAnalyser {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-    }
-
-    private static OWLParser loadOntology(String ontology) {
-        OWLParser parser = null;
-        try {
-            parser = new OWLParserImpl(ontology);
-        } catch (OWLOntologyCreationException e) {
-            System.out.println(e.getMessage());
-        }
-        return parser;
     }
 }
