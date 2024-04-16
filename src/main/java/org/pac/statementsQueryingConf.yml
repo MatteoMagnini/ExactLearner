@@ -1,0 +1,16 @@
+models:
+  - "mistral"
+  - "mixtral"
+  - "llama2"
+  - "llama2:13b"
+  #- "gpt-3.5-turbo"
+ontologies:
+  - "src/main/resources/ontologies/small/animals.owl"
+  - "src/main/resources/ontologies/small/university.owl"
+  - "src/main/resources/ontologies/small/generations(large).owl"
+  - "src/main/resources/ontologies/small/football.owl"
+  - "src/main/resources/ontologies/small/cell.owl"
+system: >
+  Answer with True or False.
+maxTokens: 2
+type: "statementsQuerying"

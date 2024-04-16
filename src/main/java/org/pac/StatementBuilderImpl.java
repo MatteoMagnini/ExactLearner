@@ -1,6 +1,8 @@
 package org.pac;
 
 import java.util.HashSet;
+import java.util.Optional;
+import java.util.Random;
 import java.util.Set;
 
 public class StatementBuilderImpl implements StatementBuilder {
@@ -52,13 +54,36 @@ public class StatementBuilderImpl implements StatementBuilder {
 
     @Override
     public String chooseRandomStatement() {
-        Set<String> allStatements = new HashSet<>();
-        allStatements.addAll(generatedStatementsType1);
-        allStatements.addAll(generatedStatementsType2);
-        allStatements.addAll(generatedStatementsType3);
-        //RANDOM PICK DOESN'T CONSIDER THE SIZE OF EACH SET, WE WANT UNIFORM DISTRIBUTION
-        int randomIndex = (int) (Math.random() * allStatements.size());
-        return (String) allStatements.toArray()[randomIndex];
+        try {
+            return uniformPick().get();
+        } catch (RuntimeException e) {
+            throw new RuntimeException("No statements found");
+        }
+    }
+
+    private Optional<String> uniformPick() {
+        switch (new Random().nextInt(3) + 1) {
+            case 1:
+                if (generatedStatementsType1.isEmpty()) {
+                    return uniformPick();
+                } else {
+                    return generatedStatementsType1.stream().skip(new Random().nextInt(generatedStatementsType1.size())).findFirst();
+                }
+            case 2:
+                if (generatedStatementsType2.isEmpty()) {
+                    return uniformPick();
+                } else {
+                    return generatedStatementsType2.stream().skip(new Random().nextInt(generatedStatementsType2.size())).findFirst();
+                }
+            case 3:
+                if (generatedStatementsType3.isEmpty()) {
+                    return uniformPick();
+                } else {
+                    return generatedStatementsType3.stream().skip(new Random().nextInt(generatedStatementsType3.size())).findFirst();
+                }
+            default:
+                throw new IllegalStateException("Unexpected value");
+        }
     }
 
     @Override
@@ -67,7 +92,17 @@ public class StatementBuilderImpl implements StatementBuilder {
         allStatements.addAll(generatedStatementsType1);
         allStatements.addAll(generatedStatementsType2);
         allStatements.addAll(generatedStatementsType3);
+
         return allStatements.size();
+    }
+
+    @Override
+    public Set<String> getAllStatements() {
+        Set<String> allStatements = new HashSet<>();
+        allStatements.addAll(generatedStatementsType1);
+        allStatements.addAll(generatedStatementsType2);
+        allStatements.addAll(generatedStatementsType3);
+        return allStatements;
     }
 
 }
