@@ -2,6 +2,7 @@ package org.pac;
 
 import org.exactlearner.parser.OWLParser;
 import org.exactlearner.parser.OWLParserImpl;
+import org.experiments.utility.OntologyLoader;
 import org.junit.Assert;
 import org.junit.Test;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
@@ -14,21 +15,10 @@ public class StatementBuilderTest {
 
     Set<String> classesNames;
     Set<String> objectDataPropertiesNames;
-
-    private static OWLParser loadOntology(String ontologyPath) {
-        OWLParser parser = null;
-        try {
-            parser = new OWLParserImpl(ontologyPath);
-        } catch (OWLOntologyCreationException e) {
-            System.out.println(e.getMessage());
-        }
-        return parser;
-    }
-
     @Test
     public void testAnimalStatementChecker() {
         // ANIMALS ONTOLOGY
-        OWLParser parser = loadOntology("src/main/resources/ontologies/small/animals.owl");
+        OWLParser parser = new OntologyLoader().getParser("src/main/resources/ontologies/small/animals.owl");
         classesNames = parser.getClassesNamesAsString();
         objectDataPropertiesNames = parser.getObjectProperties().stream().map(Object::toString).map(s -> s.split("#")[1].replace(">", "")).collect(Collectors.toSet());
         StatementBuilder statementBuilder = new StatementBuilderImpl(classesNames, objectDataPropertiesNames);
@@ -36,26 +26,29 @@ public class StatementBuilderTest {
         // type 1 statement = 17 * 16 * 15 = 4080
         // type 2 and 3 statement = 2 * ( 17 * 4 * 16) = 2176
         Assert.assertEquals(Optional.of(6256).get(), statementBuilder.getNumberOfStatements());
+        System.out.println(statementBuilder.chooseRandomStatement());
     }
 
     @Test
     public void testGenerationsStatementChecker() {
         // GENeRATIONS ONTOLOGY
-        OWLParser parser = loadOntology("src/main/resources/ontologies/small/generations(large).owl");
+        OWLParser parser = new OntologyLoader().getParser("src/main/resources/ontologies/small/generations(large).owl");
         classesNames = parser.getClassesNamesAsString();
         objectDataPropertiesNames = parser.getObjectProperties().stream().map(Object::toString).map(s -> s.split("#")[1].replace(">", "")).collect(Collectors.toSet());
         StatementBuilder statementBuilder = new StatementBuilderImpl(classesNames, objectDataPropertiesNames);
         Assert.assertEquals(Optional.of(9880).get(), statementBuilder.getNumberOfStatements());
+        System.out.println(statementBuilder.chooseRandomStatement());
     }
 
     @Test
     public void testCellStatementChecker() {
         // FAMILIES ONTOLOGY
-        OWLParser parser = loadOntology("src/main/resources/ontologies/small/cell.owl");
+        OWLParser parser = new OntologyLoader().getParser("src/main/resources/ontologies/small/cell.owl");
         classesNames = parser.getClassesNamesAsString();
         objectDataPropertiesNames = parser.getObjectProperties().stream().map(Object::toString).map(s -> s.split("#")[1].replace(">", "")).collect(Collectors.toSet());
         StatementBuilder statementBuilder = new StatementBuilderImpl(classesNames, objectDataPropertiesNames);
         Assert.assertEquals(Optional.of(9240).get(), statementBuilder.getNumberOfStatements());
+        System.out.println(statementBuilder.chooseRandomStatement());
     }
 
 }
