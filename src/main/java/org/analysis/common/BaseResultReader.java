@@ -1,4 +1,4 @@
-package org.analysis;
+package org.analysis.common;
 
 public interface BaseResultReader {
     boolean computeResults();

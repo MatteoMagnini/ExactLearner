@@ -1,11 +1,9 @@
 package org.pac;
 
+import org.analysis.OntologyManipulator;
 import org.exactlearner.parser.OWLParser;
-import org.exactlearner.parser.OWLParserImpl;
-import org.experiments.utility.OntologyLoader;
 import org.junit.Assert;
 import org.junit.Test;
-import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 
 import java.util.Optional;
 import java.util.Set;
@@ -18,7 +16,7 @@ public class StatementBuilderTest {
     @Test
     public void testAnimalStatementChecker() {
         // ANIMALS ONTOLOGY
-        OWLParser parser = new OntologyLoader().getParser("src/main/resources/ontologies/small/animals.owl");
+        OWLParser parser = OntologyManipulator.getParser("src/main/resources/ontologies/small/animals.owl");
         classesNames = parser.getClassesNamesAsString();
         objectDataPropertiesNames = parser.getObjectProperties().stream().map(Object::toString).map(s -> s.split("#")[1].replace(">", "")).collect(Collectors.toSet());
         StatementBuilder statementBuilder = new StatementBuilderImpl(classesNames, objectDataPropertiesNames);
@@ -32,7 +30,7 @@ public class StatementBuilderTest {
     @Test
     public void testGenerationsStatementChecker() {
         // GENeRATIONS ONTOLOGY
-        OWLParser parser = new OntologyLoader().getParser("src/main/resources/ontologies/small/generations(large).owl");
+        OWLParser parser = OntologyManipulator.getParser("src/main/resources/ontologies/small/generations(large).owl");
         classesNames = parser.getClassesNamesAsString();
         objectDataPropertiesNames = parser.getObjectProperties().stream().map(Object::toString).map(s -> s.split("#")[1].replace(">", "")).collect(Collectors.toSet());
         StatementBuilder statementBuilder = new StatementBuilderImpl(classesNames, objectDataPropertiesNames);
@@ -43,7 +41,7 @@ public class StatementBuilderTest {
     @Test
     public void testCellStatementChecker() {
         // FAMILIES ONTOLOGY
-        OWLParser parser = new OntologyLoader().getParser("src/main/resources/ontologies/small/cell.owl");
+        OWLParser parser = OntologyManipulator.getParser("src/main/resources/ontologies/small/cell.owl");
         classesNames = parser.getClassesNamesAsString();
         objectDataPropertiesNames = parser.getObjectProperties().stream().map(Object::toString).map(s -> s.split("#")[1].replace(">", "")).collect(Collectors.toSet());
         StatementBuilder statementBuilder = new StatementBuilderImpl(classesNames, objectDataPropertiesNames);

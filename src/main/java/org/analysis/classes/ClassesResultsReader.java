@@ -1,5 +1,6 @@
-package org.analysis;
+package org.analysis.classes;
 
+import org.analysis.common.BaseResultReader;
 import org.experiments.utility.SHA256Hash;
 
 import java.io.File;

@@ -1,5 +1,6 @@
 package org.analysis;
 
+import org.analysis.axioms.AxiomsResultsReader;
 import org.coode.owlapi.manchesterowlsyntax.ManchesterOWLSyntaxEditorParser;
 import org.experiments.Configuration;
 import org.experiments.Environment;
@@ -9,7 +10,6 @@ import org.experiments.task.Task;
 import org.experiments.utility.SHA256Hash;
 import org.experiments.utility.YAMLConfigLoader;
 import org.experiments.workload.OllamaWorkload;
-import org.jetbrains.annotations.NotNull;
 import org.junit.*;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.expression.OWLEntityChecker;
@@ -21,12 +21,9 @@ import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.util.BidirectionalShortFormProviderAdapter;
 import org.semanticweb.owlapi.util.SimpleShortFormProvider;
-import org.yaml.snakeyaml.Yaml;
 import uk.ac.manchester.cs.owl.owlapi.OWLDataFactoryImpl;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.util.Set;
 
 public class AxiomsResultsReaderTest{

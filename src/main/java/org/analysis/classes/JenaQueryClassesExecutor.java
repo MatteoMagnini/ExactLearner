@@ -1,4 +1,6 @@
-package org.analysis;
+package org.analysis.classes;
+
+import org.analysis.common.JenaQueryExecutor;
 
 public class JenaQueryClassesExecutor extends JenaQueryExecutor {
     String query;

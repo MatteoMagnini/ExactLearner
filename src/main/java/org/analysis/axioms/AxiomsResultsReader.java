@@ -1,10 +1,7 @@
-package org.analysis;
+package org.analysis.axioms;
 
-import org.coode.owlapi.manchesterowlsyntax.ManchesterOWLSyntaxEditorParser;
+import org.analysis.common.BaseResultReader;
 import org.experiments.utility.SHA256Hash;
-import org.semanticweb.owlapi.expression.ParserException;
-import org.semanticweb.owlapi.model.OWLAxiom;
-import uk.ac.manchester.cs.owl.owlapi.OWLDataFactoryImpl;
 
 import java.io.File;
 import java.io.FileInputStream;

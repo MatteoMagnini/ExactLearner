@@ -1,4 +1,4 @@
-package org.analysis;
+package org.analysis.common;
 
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.query.Query;

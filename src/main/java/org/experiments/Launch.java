@@ -1,9 +1,9 @@
 package org.experiments;
 
+import org.analysis.OntologyManipulator;
 import org.experiments.logger.SmartLogger;
 import org.experiments.task.ExperimentTask;
 import org.experiments.task.Task;
-import org.experiments.utility.OntologyLoader;
 import org.experiments.utility.SHA256Hash;
 import org.experiments.utility.YAMLConfigLoader;
 import org.experiments.workload.OllamaWorkload;
@@ -31,7 +31,7 @@ public class Launch {
     }
 
     private static void runExperiment(String model, String ontology, String system, int maxTokens, String type) {
-        var parser = new OntologyLoader().getParser(ontology);
+        var parser = OntologyManipulator.getParser(ontology);
         var classesNames = parser.getClassesNamesAsString();
         var axioms = parser.getAxioms();
         var filteredManchesterSyntaxAxioms = parseAxioms(axioms);

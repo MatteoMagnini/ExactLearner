@@ -1,4 +1,6 @@
-package org.analysis;
+package org.analysis.axioms;
+
+import org.analysis.common.JenaQueryExecutor;
 
 public class JenaQueryAxiomsExecutor extends JenaQueryExecutor {
 

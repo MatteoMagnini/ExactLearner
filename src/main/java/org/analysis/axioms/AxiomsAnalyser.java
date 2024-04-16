@@ -1,24 +1,24 @@
-package org.analysis;
+package org.analysis.axioms;
 
+import org.analysis.OntologyManipulator;
+import org.analysis.Result;
 import org.exactlearner.engine.ELEngine;
-import org.exactlearner.parser.OWLParser;
-import org.exactlearner.parser.OWLParserImpl;
 import org.experiments.Configuration;
 import org.experiments.logger.SmartLogger;
 import org.experiments.task.ExperimentTask;
-import org.experiments.utility.OntologyLoader;
 import org.experiments.utility.YAMLConfigLoader;
 import org.semanticweb.owlapi.apibinding.OWLManager;
-import org.semanticweb.owlapi.model.*;
-import org.yaml.snakeyaml.Yaml;
+import org.semanticweb.owlapi.model.OWLAxiom;
+import org.semanticweb.owlapi.model.OWLOntology;
+import org.semanticweb.owlapi.model.OWLOntologyCreationException;
+import org.semanticweb.owlapi.model.OWLOntologyManager;
 import uk.ac.manchester.cs.owl.owlapi.mansyntaxrenderer.ManchesterOWLSyntaxOWLObjectRendererImpl;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.stream.Collectors;
+
+import static org.analysis.OntologyManipulator.filterUnusedAxioms;
+import static org.analysis.OntologyManipulator.getOntologyShortName;
 
 public class AxiomsAnalyser {
 
@@ -31,21 +31,20 @@ public class AxiomsAnalyser {
         for (String model : config.getModels()) {
             for (String ontology : config.getOntologies()) {
                 System.out.println("Analysing experiment for model: " + model + " and ontology: " + ontology);
-                runAnalysis(model, ontology, config.getSystem(), config.getMaxTokens(), config.getType());
+                runAnalysis(model, ontology, config.getSystem(), config.getType());
             }
         }
     }
 
-    private static void runAnalysis(String model, String ontology, String system, int maxTokens, String type) {
-
+    private static void runAnalysis(String model, String ontology, String system, String type) {
         Set<OWLAxiom> trueAxioms = new HashSet<>();
         Set<OWLAxiom> falseAxioms = new HashSet<>();
         Set<OWLAxiom> unknownAxioms = new HashSet<>();
         Set<OWLAxiom> logicInconsistentAxioms = new HashSet<>();
-        var parser = new OntologyLoader().getParser(ontology);
-        int trueCounter = 0;
-        int falseCounter = 0;
-        int unknownCounter = 0;
+        var parser = OntologyManipulator.getParser(ontology);
+        int trueCounter;
+        int falseCounter;
+        int unknownCounter;
         if (type.equals("axiomsQuerying")) {
             var axioms = parser.getAxioms();
             for (OWLAxiom axiom : filterUnusedAxioms(axioms)) {
@@ -66,10 +65,10 @@ public class AxiomsAnalyser {
         } else {
             throw new IllegalStateException("Invalid type of experiment.");
         }
-        if(ontology.contains("inferred")){
+        if (ontology.contains("inferred")) {
             //using true axiom based ontology to compute false and unknown axioms, if there are entailed, add them to true axioms
             OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
-            OWLOntology resultedOntology = null;
+            OWLOntology resultedOntology;
             try {
                 resultedOntology = manager.createOntology(trueAxioms);
             } catch (OWLOntologyCreationException e) {
@@ -94,38 +93,17 @@ public class AxiomsAnalyser {
         falseCounter = falseAxioms.size();
         unknownCounter = unknownAxioms.size();
         // Save results to file
-        String separator = System.getProperty("file.separator");
-        // Check if the results directory exists
-        if (!new File("results").exists()) {
-            new File("results").mkdir();
-        }
-        if (!new File("results" + separator + "axiomsQuerying").exists()) {
-            new File("results" + separator + "axiomsQuerying").mkdir();
-        }
-        String shortOntology = ontology.substring(ontology.lastIndexOf(separator) + 1);
-        shortOntology = shortOntology.substring(0, shortOntology.lastIndexOf('.'));
-        String resultFileName = "results" + separator + "axiomsQuerying" + separator + model.replace(":","-") + '_' + shortOntology;
+        String resultFileName = getOntologyShortName(model, ontology);
+
         SmartLogger.disableFileLogging();
         SmartLogger.enableFileLogging(resultFileName, false);
-        if(ontology.contains("inferred")){
-
+        if (ontology.contains("inferred")) {
             SmartLogger.log("True, False, Unknown, Logic Inconsistent Axioms\n");
             SmartLogger.log(trueCounter + ", " + falseCounter + ", " + unknownCounter + ", " + logicInconsistentAxioms.size());
-        }else {
+        } else {
             SmartLogger.log("True, False, Unknown\n");
             SmartLogger.log(trueCounter + ", " + falseCounter + ", " + unknownCounter);
         }
         SmartLogger.disableFileLogging();
-    }
-
-    private static Set<OWLAxiom> filterUnusedAxioms(Set<OWLAxiom> axioms) {
-        return axioms.stream().filter(axiom -> axiom.isOfType(AxiomType.SUBCLASS_OF)
-                || axiom.isOfType(AxiomType.EQUIVALENT_CLASSES)
-                || axiom.isOfType(AxiomType.SUB_OBJECT_PROPERTY)
-                || axiom.isOfType(AxiomType.EQUIVALENT_OBJECT_PROPERTIES)
-                || axiom.isOfType(AxiomType.OBJECT_PROPERTY_DOMAIN)
-                || axiom.isOfType(AxiomType.DISJOINT_CLASSES)
-                || axiom.isOfType(AxiomType.getAxiomType("ObjectOneOf")))
-                .collect(Collectors.toSet());
     }
 }
