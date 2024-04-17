@@ -1,0 +1,1 @@
+( ElectricallyActiveCell and Osteocyte ) SubClassOf: Neuron, \nFalseTask statementsQuerying is completed.( ChondroCyte and ChondroBlast ) SubClassOf: Cell, \nTrueTask statementsQuerying is completed.Bird SubClassOf: ( lives_in some Animal ), \nTrueTask statementsQuerying is completed.
