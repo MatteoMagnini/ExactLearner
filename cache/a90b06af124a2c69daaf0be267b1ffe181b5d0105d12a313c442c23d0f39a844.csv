@@ -1,0 +1,1 @@
+( Neuron and PlantCell ) SubClassOf: PhotosyntheticCell,  False.

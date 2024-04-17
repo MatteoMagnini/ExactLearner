@@ -1,0 +1,1 @@
+( Osteocyte and CellByClass ) SubClassOf: LeafCell,  False.Task statementsQuerying is completed.( Water and Plant ) SubClassOf: Vertebrate, \nFalseTask statementsQuerying is completed.( Water and Plant ) SubClassOf: Vertebrate,  False.Task statementsQuerying is completed.Cat SubClassOf: ( lives_in some Mammal ), True

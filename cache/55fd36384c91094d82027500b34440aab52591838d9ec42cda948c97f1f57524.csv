@@ -1,0 +1,1 @@
+( hasSibling some OffSpring ) SubClassOf: Child,  False.

@@ -1,0 +1,1 @@
+( Person and Manager ) SubClassOf: Team,  False.

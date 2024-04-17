@@ -1,0 +1,1 @@
+( hasChild some GrandFather ) SubClassOf: Father,  False.

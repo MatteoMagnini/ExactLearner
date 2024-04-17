@@ -1,0 +1,1 @@
+( ElectricallyActiveCell and Erythrocyte ) SubClassOf: Neuron,  False.

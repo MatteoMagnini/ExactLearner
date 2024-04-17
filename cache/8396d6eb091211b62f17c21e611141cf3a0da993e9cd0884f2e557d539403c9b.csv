@@ -1,0 +1,1 @@
+( Erythrocyte and CirculatingCell ) SubClassOf: CellByOrganism,  True.Task statementsQuerying is completed.( Herbivore and Wing ) SubClassOf: Backbone,  False.Task statementsQuerying is completed.( Herbivore and Wing ) SubClassOf: Backbone,  False.Task statementsQuerying is completed.Mammal SubClassOf: ( lays some Carnivore ), True.

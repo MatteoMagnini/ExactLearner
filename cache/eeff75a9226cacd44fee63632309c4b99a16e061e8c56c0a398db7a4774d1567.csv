@@ -1,0 +1,1 @@
+( ElectricallyActiveCell and PlantCell ) SubClassOf: InMatureCell,  Both Electric

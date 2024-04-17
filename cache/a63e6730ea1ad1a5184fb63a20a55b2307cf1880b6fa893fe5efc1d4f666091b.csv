@@ -1,0 +1,1 @@
+( hasSex some Parent ) SubClassOf: Father,  False.

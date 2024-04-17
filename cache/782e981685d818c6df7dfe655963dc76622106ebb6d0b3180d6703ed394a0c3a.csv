@@ -1,0 +1,1 @@
+( Player and Person ) SubClassOf: Game,  True.

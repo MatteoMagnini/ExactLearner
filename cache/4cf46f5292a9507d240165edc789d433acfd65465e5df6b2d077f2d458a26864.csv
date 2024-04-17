@@ -1,0 +1,1 @@
+( Cell and Miocyte ) SubClassOf: AnimalCell,  True.

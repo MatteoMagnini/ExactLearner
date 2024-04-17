@@ -1,0 +1,1 @@
+( Erythrocyte and InMatureCell ) SubClassOf: CellByDevelopmentStage,  True.

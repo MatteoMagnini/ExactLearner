@@ -1,0 +1,1 @@
+Person SubClassOf: ( managed_by some FootballTeam ),  False.

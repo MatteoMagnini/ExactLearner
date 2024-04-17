@@ -1,0 +1,1 @@
+( MatureCell and PhotosyntheticCell ) SubClassOf: CellByOrganism,  False.

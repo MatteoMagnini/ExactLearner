@@ -1,0 +1,1 @@
+( Bird and Reptile ) SubClassOf: Animal,  True.

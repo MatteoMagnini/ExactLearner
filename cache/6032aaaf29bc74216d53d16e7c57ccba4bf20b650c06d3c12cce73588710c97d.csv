@@ -1,0 +1,1 @@
+( PlantCell and CellByOrganism ) SubClassOf: AnimalCell,  False.Task statementsQuerying is completed.( Herbivore and Meat ) SubClassOf: Bird, \nTrueTask statementsQuerying is completed.( Herbivore and Meat ) SubClassOf: Bird,  False.Task statementsQuerying is completed.Water SubClassOf: ( lives_in some Vertebrate ), True

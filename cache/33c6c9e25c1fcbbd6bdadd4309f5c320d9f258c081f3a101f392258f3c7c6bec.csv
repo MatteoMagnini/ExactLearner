@@ -1,0 +1,1 @@
+( has_part some Animal ) SubClassOf: Reptile,  False.Task statementsQuerying is completed.( Water and Herbivore ) SubClassOf: Meat, True.Task statementsQuerying is completed.( Egg and Wing ) SubClassOf: Meat, \nFalseTask statementsQuerying is completed.( ChondroBlast and MioBlast ) SubClassOf: CellByOrganism,  False.

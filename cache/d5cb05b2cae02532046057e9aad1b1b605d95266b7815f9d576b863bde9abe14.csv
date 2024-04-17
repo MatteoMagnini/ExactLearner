@@ -1,0 +1,1 @@
+( plays some Manager ) SubClassOf: owl:Thin,  False.

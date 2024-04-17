@@ -1,0 +1,1 @@
+Child SubClassOf: ( hasSibling some GrandMother ),  False.

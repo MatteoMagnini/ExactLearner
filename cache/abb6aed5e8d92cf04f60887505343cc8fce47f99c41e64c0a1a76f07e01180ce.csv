@@ -1,0 +1,1 @@
+( hasParent some Brother ) SubClassOf: Person,  False.

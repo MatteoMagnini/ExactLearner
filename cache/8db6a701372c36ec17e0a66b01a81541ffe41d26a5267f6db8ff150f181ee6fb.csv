@@ -1,0 +1,1 @@
+Animal SubClassOf: ( lives_in some Backbone ),  False.

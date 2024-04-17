@@ -1,0 +1,1 @@
+( PlantCell and ChondroBlast ) SubClassOf: MatureCell,  False.

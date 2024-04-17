@@ -1,0 +1,1 @@
+( CirculatingCell and PhotosyntheticCell ) SubClassOf: PlantCell,  False.

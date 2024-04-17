@@ -1,0 +1,1 @@
+( Water and Animal ) SubClassOf: Herbivore, \nTrueTask statementsQuerying is completed.( MioBlast and Neuron ) SubClassOf: CellByClass,  I'Task statementsQuerying is completed.( Egg and Wing ) SubClassOf: Meat,  False.Task statementsQuerying is completed.( Water and Animal ) SubClassOf: Herbivore, True

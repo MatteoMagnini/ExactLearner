@@ -1,0 +1,1 @@
+( Teacher and Professor ) SubClassOf: Person,  True.

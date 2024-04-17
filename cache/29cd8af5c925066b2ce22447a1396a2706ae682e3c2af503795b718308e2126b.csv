@@ -1,0 +1,1 @@
+( has_part some Mammal ) SubClassOf: Leg,  False.

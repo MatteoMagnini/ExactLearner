@@ -1,0 +1,1 @@
+Mammal SubClassOf: ( has_part some Herbivore ),  False.

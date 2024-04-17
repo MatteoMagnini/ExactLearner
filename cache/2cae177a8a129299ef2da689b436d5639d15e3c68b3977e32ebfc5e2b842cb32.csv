@@ -1,0 +1,1 @@
+Bird SubClassOf: ( lives_in some Plant ),  False.

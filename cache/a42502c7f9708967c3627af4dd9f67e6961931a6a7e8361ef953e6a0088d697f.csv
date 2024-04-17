@@ -1,0 +1,1 @@
+( ChondroBlast and MioBlast ) SubClassOf: CellByOrganism,  False.Task statementsQuerying is completed.( Water and Herbivore ) SubClassOf: Meat,  False.Task statementsQuerying is completed.( Egg and Wing ) SubClassOf: Meat, True.Task statementsQuerying is completed.( Water and Animal ) SubClassOf: Herbivore, \nTrue

@@ -1,0 +1,1 @@
+Daughter SubClassOf: ( hasChild some Sibling ),  False.

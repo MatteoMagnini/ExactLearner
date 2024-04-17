@@ -1,0 +1,1 @@
+( PhotoreceptorCell and LeafCell ) SubClassOf: CellByClass,  True forTask statementsQuerying is completed.Water SubClassOf: ( lives_in some Vertebrate ), \nTrueTask statementsQuerying is completed.Water SubClassOf: ( lives_in some Vertebrate ),  False.Task statementsQuerying is completed.( Backbone and Cat ) SubClassOf: Carnivore, True.

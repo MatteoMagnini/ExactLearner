@@ -1,0 +1,1 @@
+( PhotoreceptorCell and CellByOrganism ) SubClassOf: AnimalCell,  False.

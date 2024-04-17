@@ -1,0 +1,1 @@
+( manages some Person ) SubClassOf: Module,  False.

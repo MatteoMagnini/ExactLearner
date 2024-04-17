@@ -1,0 +1,1 @@
+Project SubClassOf: ( teaches some University ), \nTrueTask statementsQuerying is completed.( Person and Sister ) SubClassOf: Sibling,  False.Task statementsQuerying is completed.( lives_in some Wing ) SubClassOf: Reptile, \nTrueTask statementsQuerying is completed.( Person and Sister ) SubClassOf: Sibling, TrueTask statementsQuerying is completed.

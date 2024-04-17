@@ -1,0 +1,1 @@
+( hasParent some Daughter ) SubClassOf: Father,  False.

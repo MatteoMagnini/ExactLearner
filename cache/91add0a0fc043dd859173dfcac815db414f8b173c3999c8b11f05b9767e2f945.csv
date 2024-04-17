@@ -1,0 +1,1 @@
+( plays some Manager ) SubClassOf: FootballTeam, False.

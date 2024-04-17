@@ -1,0 +1,1 @@
+( GrandFather and Parent ) SubClassOf: GrandParent,  True.

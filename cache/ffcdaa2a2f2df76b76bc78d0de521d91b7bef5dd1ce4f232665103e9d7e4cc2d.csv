@@ -1,0 +1,1 @@
+( LeafCell and Osteocyte ) SubClassOf: AnimalCell,  False.

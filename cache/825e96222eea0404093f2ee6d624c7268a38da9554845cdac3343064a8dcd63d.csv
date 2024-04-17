@@ -1,0 +1,1 @@
+( Herbivore and Wing ) SubClassOf: Backbone,  False.Task statementsQuerying is completed.Mammal SubClassOf: ( lays some Carnivore ), True.Task statementsQuerying is completed.( AnimalCell and ChondroBlast ) SubClassOf: PhotosyntheticCell,  False.Task statementsQuerying is completed.Mammal SubClassOf: ( lays some Carnivore ), \nTrue

@@ -1,0 +1,1 @@
+( PlantCell and Neuron ) SubClassOf: LeafCell,  False.Task statementsQuerying is completed.Meat SubClassOf: ( lays some Reptile ), \nTrueTask statementsQuerying is completed.Meat SubClassOf: ( lays some Reptile ),  False.Task statementsQuerying is completed.( Egg and Plant ) SubClassOf: Carnivore, True.

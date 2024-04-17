@@ -1,0 +1,1 @@
+Sister SubClassOf: ( hasSibling some Daughter ),  False.
