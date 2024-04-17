@@ -49,4 +49,26 @@ public class StatementBuilderTest {
         System.out.println(statementBuilder.chooseRandomStatement());
     }
 
+    @Test
+    public void testUniversityStatementChecker() {
+        // UNIVERSITY ONTOLOGY
+        OWLParser parser = OntologyManipulator.getParser("src/main/resources/ontologies/small/university.owl");
+        classesNames = parser.getClassesNamesAsString();
+        objectDataPropertiesNames = parser.getObjectProperties().stream().map(Object::toString).map(s -> s.split("#")[1].replace(">", "")).collect(Collectors.toSet());
+        StatementBuilder statementBuilder = new StatementBuilderImpl(classesNames, objectDataPropertiesNames);
+        Assert.assertEquals(Optional.of(462).get(), statementBuilder.getNumberOfStatements());
+        System.out.println(statementBuilder.chooseRandomStatement());
+    }
+
+    @Test
+    public void testFootballStatementChecker() {
+        // FOOTBALL ONTOLOGY
+        OWLParser parser = OntologyManipulator.getParser("src/main/resources/ontologies/small/football.owl");
+        classesNames = parser.getClassesNamesAsString();
+        objectDataPropertiesNames = parser.getObjectProperties().stream().map(Object::toString).map(s -> s.split("#")[1].replace(">", "")).collect(Collectors.toSet());
+        StatementBuilder statementBuilder = new StatementBuilderImpl(classesNames, objectDataPropertiesNames);
+        Assert.assertEquals(Optional.of(1260).get(), statementBuilder.getNumberOfStatements());
+        System.out.println(statementBuilder.chooseRandomStatement());
+    }
+
 }
