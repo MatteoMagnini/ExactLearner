@@ -1,1 +1,0 @@
-( lays some Reptile ) SubClassOf: Cat,  False.Task statementsQuerying is completed.( Water and Fish ) SubClassOf: Bird, \nFalseTask statementsQuerying is completed.( CellByOrganism and AnimalCell ) SubClassOf: PhotoreceptorCell,  False.Task statementsQuerying is completed.( Water and Fish ) SubClassOf: Bird, \nFalse

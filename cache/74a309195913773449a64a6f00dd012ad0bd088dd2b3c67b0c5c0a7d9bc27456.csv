@@ -1,1 +1,0 @@
-( Fish and Wing ) SubClassOf: Vertebrate,  False.Task statementsQuerying is completed.( has_part some Herbivore ) SubClassOf: Cat, True.Task statementsQuerying is completed.( CellByDevelopmentStage and CirculatingCell ) SubClassOf: ChondroCyte,  False.Task statementsQuerying is completed.( has_part some Herbivore ) SubClassOf: Cat, \nTrue

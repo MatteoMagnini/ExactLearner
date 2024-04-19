@@ -1,1 +1,0 @@
-( Backbone and Cat ) SubClassOf: Carnivore,  False.Task statementsQuerying is completed.( lays some Reptile ) SubClassOf: Cat, TrueTask statementsQuerying is completed.( Cell and MioBlast ) SubClassOf: StructuralCell,  True forTask statementsQuerying is completed.( lays some Reptile ) SubClassOf: Cat, \nTrue

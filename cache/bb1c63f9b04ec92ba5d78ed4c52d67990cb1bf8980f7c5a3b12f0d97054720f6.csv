@@ -1,1 +1,0 @@
-( Herbivore and Meat ) SubClassOf: Bird, \nFalseTask statementsQuerying is completed.( PlantCell and CellByOrganism ) SubClassOf: AnimalCell,  False.Task statementsQuerying is completed.( Herbivore and Meat ) SubClassOf: Bird, \nTrueTask statementsQuerying is completed.( Herbivore and Meat ) SubClassOf: Bird,  False.

@@ -1,1 +1,0 @@
-( AnimalCell and ChondroBlast ) SubClassOf: PhotosyntheticCell,  False.Task statementsQuerying is completed.Mammal SubClassOf: ( lays some Carnivore ), \nTrueTask statementsQuerying is completed.Mammal SubClassOf: ( lays some Carnivore ),  False.Task statementsQuerying is completed.( Water and Plant ) SubClassOf: Vertebrate, False.

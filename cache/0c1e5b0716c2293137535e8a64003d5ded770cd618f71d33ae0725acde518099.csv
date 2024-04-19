@@ -1,1 +1,0 @@
-( Carnivore and Backbone ) SubClassOf: Elephant,  False.Task statementsQuerying is completed.( ElectricallyActiveCell and AnimalCell ) SubClassOf: PlantCell,  False.Task statementsQuerying is completed.Elephant SubClassOf: ( eats some Bird ),  False.

@@ -1,1 +1,0 @@
-Water SubClassOf: ( lives_in some Vertebrate ),  False.Task statementsQuerying is completed.( Backbone and Cat ) SubClassOf: Carnivore, True.Task statementsQuerying is completed.( MioBlast and LeafCell ) SubClassOf: Miocyte,  False.Task statementsQuerying is completed.( Backbone and Cat ) SubClassOf: Carnivore, \nTrue

@@ -1,1 +1,0 @@
-( ChondroBlast and Neuron ) SubClassOf: PhotosyntheticCell,  False.Task statementsQuerying is completed.( Fish and Wing ) SubClassOf: Vertebrate, \nTrueTask statementsQuerying is completed.( Fish and Wing ) SubClassOf: Vertebrate,  False.Task statementsQuerying is completed.( has_part some Herbivore ) SubClassOf: Cat, True.

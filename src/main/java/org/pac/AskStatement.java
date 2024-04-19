@@ -22,27 +22,27 @@ public class AskStatement {
 
     public AskStatement(String YMLFilePath) {
         var config = new YAMLConfigLoader().getConfig(YMLFilePath, Configuration.class);
+
         SmartLogger.checkCachedFiles();
         var cpus = Runtime.getRuntime().availableProcessors();//THIS COUNT LOGIC CORES NOT PHYSICAL CORES
         ExecutorService executorService = Executors.newFixedThreadPool(cpus/2-1);
         for (String model : config.getModels()) {
-            executorService.execute(() -> {
                 for (String ontology : config.getOntologies()) {
-                    executorService.execute(() -> {
                         System.out.println("Asking statements for model: " + model + " and ontology: " + ontology);
                         askStatement(model, ontology, config.getSystem(), config.getMaxTokens(), config.getType());
-                    });
                 }
-            });
         }
     }
 
     private void askStatement(String model, String ontology, String system, int maxTokens, String type) {
+
         var parser = OntologyManipulator.getParser(ontology);
         var builder = new StatementBuilderImpl(parser.getClassesNamesAsString(), parser.getObjectProperties().stream().map(Object::toString).map(s -> s.split("#")[1].replace(">", "")).collect(Collectors.toSet()));
-
-        builder.getAllStatements().forEach(s -> {
+        //epsilon and gamma = 0.01
+        Pac pac = new Pac(builder.getNumberOfStatements(),0.01,0.01);
+        for(int i=1; i < pac.getTrainingSamples(); i++){
             Runnable work;
+            var s = builder.chooseRandomStatement();
             if (OllamaWorkload.supportedModels.contains(model)) {
                 work = new OllamaWorkload(model, system, s, maxTokens);
             } else if (OpenAIWorkload.supportedModels.contains(model)) {
@@ -52,7 +52,6 @@ public class AskStatement {
             }
             Task task = new ExperimentTask(type, model, ontology, s, system, work);
             Environment.run(task);
-        });
-
+        }
     }
 }

@@ -1,1 +1,0 @@
-( Cat and Meat ) SubClassOf: Animal,  False.Task statementsQuerying is completed.( Carnivore and Leg ) SubClassOf: Meat, TrueTask statementsQuerying is completed.

@@ -1,1 +1,0 @@
-( Cell and MioBlast ) SubClassOf: StructuralCell,  True forTask statementsQuerying is completed.( lays some Reptile ) SubClassOf: Cat, \nTrueTask statementsQuerying is completed.( lays some Reptile ) SubClassOf: Cat,  False.Task statementsQuerying is completed.( Water and Fish ) SubClassOf: Bird, \nFalse

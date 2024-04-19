@@ -1,1 +1,0 @@
-( Cat and Meat ) SubClassOf: Animal, TrueTask statementsQuerying is completed.( Carnivore and Leg ) SubClassOf: Meat, \nTrueTask statementsQuerying is completed.( Cell and AnimalCell ) SubClassOf: SclerenchymaCell,  False.Task statementsQuerying is completed.( Cat and Meat ) SubClassOf: Animal,  False.

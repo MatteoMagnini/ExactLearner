@@ -1,1 +1,0 @@
-( Egg and Wing ) SubClassOf: Meat,  False.Task statementsQuerying is completed.( Water and Animal ) SubClassOf: Herbivore, TrueTask statementsQuerying is completed.( Cat and Meat ) SubClassOf: Animal, \nTrueTask statementsQuerying is completed.( PhotoreceptorCell and Osteocyte ) SubClassOf: MatureCell,  True for
