@@ -11,6 +11,7 @@ public class StatementBuilderImpl implements StatementBuilder {
     private final Set<String> generatedStatementsType1 = new HashSet<>();
     private final Set<String> generatedStatementsType2 = new HashSet<>();
     private final Set<String> generatedStatementsType3 = new HashSet<>();
+    private final static Random seed = new Random(42);
 
     public StatementBuilderImpl(Set<String> classes, Set<String> objectProperties) {
         this.classes = classes;
@@ -62,38 +63,12 @@ public class StatementBuilderImpl implements StatementBuilder {
     }
 
     private Optional<String> uniformPick() {
-        switch (new Random().nextInt(3) + 1) {
-            case 1:
-                if (generatedStatementsType1.isEmpty()) {
-                    return uniformPick();
-                } else {
-                    return generatedStatementsType1.stream().skip(new Random().nextInt(generatedStatementsType1.size())).findFirst();
-                }
-            case 2:
-                if (generatedStatementsType2.isEmpty()) {
-                    return uniformPick();
-                } else {
-                    return generatedStatementsType2.stream().skip(new Random().nextInt(generatedStatementsType2.size())).findFirst();
-                }
-            case 3:
-                if (generatedStatementsType3.isEmpty()) {
-                    return uniformPick();
-                } else {
-                    return generatedStatementsType3.stream().skip(new Random().nextInt(generatedStatementsType3.size())).findFirst();
-                }
-            default:
-                throw new IllegalStateException("Unexpected value");
-        }
+        return getAllStatements().stream().skip(seed.nextInt(getAllStatements().size())).findFirst();
     }
 
     @Override
     public Integer getNumberOfStatements() {
-        Set<String> allStatements = new HashSet<>();
-        allStatements.addAll(generatedStatementsType1);
-        allStatements.addAll(generatedStatementsType2);
-        allStatements.addAll(generatedStatementsType3);
-
-        return allStatements.size();
+        return getAllStatements().size();
     }
 
     @Override
