@@ -11,9 +11,10 @@ public class StatementBuilderImpl implements StatementBuilder {
     private final Set<String> generatedStatementsType1 = new HashSet<>();
     private final Set<String> generatedStatementsType2 = new HashSet<>();
     private final Set<String> generatedStatementsType3 = new HashSet<>();
-    private final static Random seed = new Random(42);
+    private final Random rand;
 
-    public StatementBuilderImpl(Set<String> classes, Set<String> objectProperties) {
+    public StatementBuilderImpl(Integer seed, Set<String> classes, Set<String> objectProperties) {
+        rand = new Random(seed);
         this.classes = classes;
         this.objectProperties = objectProperties;
         generateStatements();
@@ -63,7 +64,7 @@ public class StatementBuilderImpl implements StatementBuilder {
     }
 
     private Optional<String> uniformPick() {
-        return getAllStatements().stream().skip(seed.nextInt(getAllStatements().size())).findFirst();
+        return getAllStatements().stream().skip(rand.nextInt(getAllStatements().size())).findFirst();
     }
 
     @Override
