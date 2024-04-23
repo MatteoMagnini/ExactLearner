@@ -4,6 +4,9 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
 import java.util.logging.FileHandler;
 import java.util.logging.Handler;
 import java.util.logging.Logger;
@@ -113,19 +116,19 @@ public class SmartLogger {
     public static void checkCachedFiles() {
         File cacheDir = new File(CACHE_DIR);
         if (cacheDir.exists()) {
-            File[] directories = cacheDir.listFiles();
+            List<File> directories = Arrays.stream(Objects.requireNonNull(cacheDir.listFiles())).toList();
             ArrayList<String> warnings = new ArrayList<>();
-            if (directories != null) {
-                for(var dir : directories){
+            if (!directories.isEmpty()) {
+                directories.parallelStream().forEach(dir -> {
                     if(dir.isDirectory()){
-                        File [] files = dir.listFiles();
-                        for (File file : files) {
+                        var files = Arrays.stream(Objects.requireNonNull(dir.listFiles())).toList();
+                        files.parallelStream().forEach(file -> {
                             warnings.addAll(readFilesAndCheckForError(file));
-                        }
+                        });
                     }else{
                         warnings.addAll(readFilesAndCheckForError(dir));
                     }
-                }
+                });
             }
             if (!warnings.isEmpty()) {
                 try {
