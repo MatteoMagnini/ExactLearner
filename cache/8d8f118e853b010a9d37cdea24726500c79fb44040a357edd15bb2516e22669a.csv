@@ -1,0 +1,1 @@
+Parent SubClassOf: ( hasParent some GrandParent ),  True.

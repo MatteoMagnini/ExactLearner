@@ -1,0 +1,1 @@
+( SclerenchymaCell and Neuron ) SubClassOf: ChondroCyte, \nTrue

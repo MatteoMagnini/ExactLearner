@@ -1,0 +1,1 @@
+( hasSex some Son ) SubClassOf: GrandMother, \nTrue

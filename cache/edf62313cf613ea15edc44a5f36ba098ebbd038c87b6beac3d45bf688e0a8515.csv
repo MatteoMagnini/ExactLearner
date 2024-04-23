@@ -1,0 +1,1 @@
+( SclerenchymaCell and PhotosyntheticCell ) SubClassOf: CellByClass,  False.

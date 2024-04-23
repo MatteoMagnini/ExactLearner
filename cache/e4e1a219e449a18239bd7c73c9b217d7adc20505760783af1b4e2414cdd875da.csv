@@ -1,0 +1,1 @@
+Football SubClassOf: ( managed_by some Team ), True

@@ -1,0 +1,1 @@
+( hasSibling some GrandFather ) SubClassOf: owl:Thin, \nFalse

@@ -1,0 +1,1 @@
+( hasSibling some Parent ) SubClassOf: Father, True

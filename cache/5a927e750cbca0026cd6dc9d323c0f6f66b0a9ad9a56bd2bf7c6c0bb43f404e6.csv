@@ -1,0 +1,1 @@
+( hasChild some Son ) SubClassOf: Parent,  False.

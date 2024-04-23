@@ -1,0 +1,1 @@
+( StructuralCell and PhotosyntheticCell ) SubClassOf: InMatureCell, \nTrue

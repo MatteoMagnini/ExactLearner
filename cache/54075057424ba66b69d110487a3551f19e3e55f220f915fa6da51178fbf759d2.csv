@@ -1,0 +1,1 @@
+( CellByDevelopmentStage and LeafCell ) SubClassOf: ElectricallyActiveCell,  False.

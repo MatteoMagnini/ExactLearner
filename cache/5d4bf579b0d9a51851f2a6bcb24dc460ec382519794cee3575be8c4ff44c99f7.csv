@@ -1,0 +1,1 @@
+( hasSex some Male ) SubClassOf: OffSpring, \nFalse

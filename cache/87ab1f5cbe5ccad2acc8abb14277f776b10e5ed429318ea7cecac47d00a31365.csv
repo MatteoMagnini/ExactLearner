@@ -1,0 +1,1 @@
+( SclerenchymaCell and MioBlast ) SubClassOf: LeafCell, \nTrue

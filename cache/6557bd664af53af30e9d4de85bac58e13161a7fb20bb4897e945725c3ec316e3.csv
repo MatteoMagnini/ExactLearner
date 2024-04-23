@@ -1,0 +1,1 @@
+( CirculatingCell and ChondroBlast ) SubClassOf: StructuralCell, True.

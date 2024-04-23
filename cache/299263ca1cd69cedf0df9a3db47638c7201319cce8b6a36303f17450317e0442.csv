@@ -1,0 +1,1 @@
+( MatureCell and PlantCell ) SubClassOf: Miocyte, \nTrue

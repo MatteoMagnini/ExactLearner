@@ -1,0 +1,1 @@
+( hasChild some Sister ) SubClassOf: Person, \nTrue

@@ -1,0 +1,1 @@
+( SclerenchymaCell and ChondroBlast ) SubClassOf: Cell, \nTrue

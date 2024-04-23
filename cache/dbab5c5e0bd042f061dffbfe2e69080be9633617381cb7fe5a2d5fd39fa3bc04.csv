@@ -1,0 +1,1 @@
+( Fish and Herbivore ) SubClassOf: Bird, True.

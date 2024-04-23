@@ -1,0 +1,1 @@
+( ChondroCyte and PhotoreceptorCell ) SubClassOf: CellByClass, \nTrue

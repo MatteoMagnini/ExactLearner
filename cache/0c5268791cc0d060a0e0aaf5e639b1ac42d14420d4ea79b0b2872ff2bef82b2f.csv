@@ -1,0 +1,1 @@
+( FootballTeam and owl:Thin ) SubClassOf: FootballPlayer, \nFalse

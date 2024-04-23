@@ -1,0 +1,1 @@
+Player SubClassOf: ( plays some FootballPlayer ), True

@@ -1,0 +1,1 @@
+( PhotoreceptorCell and MatureCell ) SubClassOf: CellByDevelopmentStage, \nTrue

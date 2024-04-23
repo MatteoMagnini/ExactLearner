@@ -1,0 +1,1 @@
+( LeafCell and InMatureCell ) SubClassOf: Neuron, \nTrue

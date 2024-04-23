@@ -1,0 +1,1 @@
+( hasSex some Father ) SubClassOf: owl:Thin, \nFalse

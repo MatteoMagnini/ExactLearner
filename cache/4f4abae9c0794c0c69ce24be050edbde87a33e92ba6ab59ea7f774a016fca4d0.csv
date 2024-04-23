@@ -1,0 +1,1 @@
+( hasSibling some Male ) SubClassOf: Sex, True

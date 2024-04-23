@@ -1,0 +1,1 @@
+( Person and GrandParent ) SubClassOf: Son, \nTrue

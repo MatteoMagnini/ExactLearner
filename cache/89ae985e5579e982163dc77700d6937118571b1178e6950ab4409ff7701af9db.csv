@@ -1,0 +1,1 @@
+( Neuron and PhotoreceptorCell ) SubClassOf: CirculatingCell, \nFalse

@@ -1,0 +1,1 @@
+( InMatureCell and CellByOrganism ) SubClassOf: Cell, \nTrue

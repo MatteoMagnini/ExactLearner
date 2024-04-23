@@ -1,0 +1,1 @@
+Person SubClassOf: ( hasSibling some Woman ), \nTrue

@@ -1,0 +1,1 @@
+( StructuralCell and Cell ) SubClassOf: ChondroBlast, \nTrue

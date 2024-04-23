@@ -1,0 +1,1 @@
+( PhotoreceptorCell and AnimalCell ) SubClassOf: CirculatingCell, \nTrue

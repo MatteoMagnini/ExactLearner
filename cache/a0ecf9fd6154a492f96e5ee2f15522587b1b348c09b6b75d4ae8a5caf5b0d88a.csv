@@ -1,0 +1,1 @@
+( hasChild some owl:Thin ) SubClassOf: OffSpring, \nTrue

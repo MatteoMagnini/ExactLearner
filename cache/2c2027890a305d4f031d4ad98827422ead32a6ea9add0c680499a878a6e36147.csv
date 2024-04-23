@@ -1,0 +1,1 @@
+( Plant and Carnivore ) SubClassOf: Animal,  False.

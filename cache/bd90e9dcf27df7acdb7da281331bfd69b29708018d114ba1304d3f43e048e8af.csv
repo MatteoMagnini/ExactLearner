@@ -1,0 +1,1 @@
+( CellByDevelopmentStage and ChondroBlast ) SubClassOf: LeafCell, True.

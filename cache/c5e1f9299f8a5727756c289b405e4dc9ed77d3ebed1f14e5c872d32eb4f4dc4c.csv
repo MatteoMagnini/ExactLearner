@@ -1,0 +1,1 @@
+( Neuron and MatureCell ) SubClassOf: CirculatingCell,  False.

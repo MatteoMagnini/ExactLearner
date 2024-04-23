@@ -1,0 +1,1 @@
+( GrandParent and Person ) SubClassOf: Sibling,  False.

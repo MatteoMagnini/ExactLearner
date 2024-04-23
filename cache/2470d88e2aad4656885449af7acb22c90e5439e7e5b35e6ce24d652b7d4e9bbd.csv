@@ -1,0 +1,1 @@
+( Animal and Bird ) SubClassOf: Carnivore, \nTrue

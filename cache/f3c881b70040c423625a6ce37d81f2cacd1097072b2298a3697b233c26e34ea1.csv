@@ -1,0 +1,1 @@
+( PlantCell and ElectricallyActiveCell ) SubClassOf: MioBlast, \nTrue

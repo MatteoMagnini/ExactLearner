@@ -1,0 +1,1 @@
+( managed_by some FootballPlayer ) SubClassOf: Game, \nTrue

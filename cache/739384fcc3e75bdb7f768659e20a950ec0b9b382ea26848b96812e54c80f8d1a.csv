@@ -1,0 +1,1 @@
+( Erythrocyte and StructuralCell ) SubClassOf: Cell,  True.

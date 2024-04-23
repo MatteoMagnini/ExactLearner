@@ -1,0 +1,1 @@
+( has_part some Reptile ) SubClassOf: Wing, \nTrue

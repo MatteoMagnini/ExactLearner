@@ -1,0 +1,1 @@
+Mother SubClassOf: ( hasSibling some owl:Thin ), \nTrue

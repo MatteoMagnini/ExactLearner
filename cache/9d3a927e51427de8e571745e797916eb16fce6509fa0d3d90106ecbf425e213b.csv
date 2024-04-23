@@ -1,0 +1,1 @@
+( StructuralCell and InMatureCell ) SubClassOf: Miocyte,  False.

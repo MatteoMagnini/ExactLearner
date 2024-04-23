@@ -1,0 +1,1 @@
+( hasParent some Sex ) SubClassOf: Son, \nTrue

@@ -1,0 +1,1 @@
+( MatureCell and AnimalCell ) SubClassOf: PlantCell,  False.

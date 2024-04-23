@@ -1,0 +1,1 @@
+( eats some Herbivore ) SubClassOf: Elephant, \nFalse

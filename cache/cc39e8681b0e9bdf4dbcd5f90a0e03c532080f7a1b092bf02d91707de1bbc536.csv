@@ -1,0 +1,1 @@
+( GrandParent and Child ) SubClassOf: Father, \nTrue

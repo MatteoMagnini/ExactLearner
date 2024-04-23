@@ -1,0 +1,1 @@
+( SclerenchymaCell and CellByClass ) SubClassOf: PlantCell,  True,

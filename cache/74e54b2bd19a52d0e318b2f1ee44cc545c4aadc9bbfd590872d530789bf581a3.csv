@@ -1,0 +1,1 @@
+( CirculatingCell and StructuralCell ) SubClassOf: SclerenchymaCell, \nTrue

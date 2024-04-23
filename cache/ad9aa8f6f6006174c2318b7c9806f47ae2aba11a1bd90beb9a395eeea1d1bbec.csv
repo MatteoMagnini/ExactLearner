@@ -1,0 +1,1 @@
+( SclerenchymaCell and Miocyte ) SubClassOf: InMatureCell, \nTrue

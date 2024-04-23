@@ -1,0 +1,1 @@
+( lays some Mammal ) SubClassOf: Herbivore, True.

@@ -1,0 +1,1 @@
+( PlantCell and CellByClass ) SubClassOf: Cell, \nTrue

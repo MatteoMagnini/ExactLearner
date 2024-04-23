@@ -1,0 +1,1 @@
+( Team and FootballPlayer ) SubClassOf: Person,  True.

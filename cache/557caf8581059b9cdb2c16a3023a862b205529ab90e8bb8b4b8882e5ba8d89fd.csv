@@ -1,0 +1,1 @@
+( lays some Plant ) SubClassOf: Herbivore, True.

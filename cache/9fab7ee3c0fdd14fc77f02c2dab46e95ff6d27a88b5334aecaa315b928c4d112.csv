@@ -1,0 +1,1 @@
+( manages some Professor ) SubClassOf: Person, \nTrue

@@ -1,0 +1,1 @@
+( Manager and Person ) SubClassOf: BallGame,  False.

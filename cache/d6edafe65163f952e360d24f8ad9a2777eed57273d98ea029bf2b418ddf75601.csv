@@ -1,0 +1,1 @@
+( CirculatingCell and InMatureCell ) SubClassOf: Neuron, \nTrue

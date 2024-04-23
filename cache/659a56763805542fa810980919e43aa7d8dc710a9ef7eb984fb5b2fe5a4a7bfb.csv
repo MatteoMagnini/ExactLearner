@@ -1,0 +1,1 @@
+( AnimalCell and CellByOrganism ) SubClassOf: Osteocyte, \nTrue

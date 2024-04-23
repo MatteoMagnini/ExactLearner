@@ -1,0 +1,1 @@
+( plays_for some Game ) SubClassOf: Player, \nTrue

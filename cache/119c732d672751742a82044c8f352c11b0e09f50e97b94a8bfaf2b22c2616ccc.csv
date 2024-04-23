@@ -1,0 +1,1 @@
+( manages some University ) SubClassOf: Person, True.

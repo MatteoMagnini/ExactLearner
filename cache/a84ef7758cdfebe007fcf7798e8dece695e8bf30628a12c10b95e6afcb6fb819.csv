@@ -1,0 +1,1 @@
+( PlantCell and PhotosyntheticCell ) SubClassOf: SclerenchymaCell, True.

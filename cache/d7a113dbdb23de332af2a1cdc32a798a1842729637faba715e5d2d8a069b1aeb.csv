@@ -1,0 +1,1 @@
+( CellByClass and AnimalCell ) SubClassOf: ChondroBlast,  False.

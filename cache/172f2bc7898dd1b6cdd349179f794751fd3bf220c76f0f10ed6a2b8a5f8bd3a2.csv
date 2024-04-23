@@ -1,0 +1,1 @@
+( CellByClass and CirculatingCell ) SubClassOf: LeafCell,  False.

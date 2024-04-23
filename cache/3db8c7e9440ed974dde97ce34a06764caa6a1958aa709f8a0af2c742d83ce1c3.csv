@@ -1,0 +1,1 @@
+( plays some Game ) SubClassOf: Player,  True.

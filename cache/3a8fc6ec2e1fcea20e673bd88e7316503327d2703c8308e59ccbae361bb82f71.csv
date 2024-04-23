@@ -1,0 +1,1 @@
+( CellByDevelopmentStage and SclerenchymaCell ) SubClassOf: ElectricallyActiveCell, \nFalse

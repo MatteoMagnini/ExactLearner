@@ -1,0 +1,1 @@
+( hasSex some Man ) SubClassOf: Child, \nI

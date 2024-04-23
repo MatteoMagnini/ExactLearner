@@ -1,0 +1,1 @@
+Herbivore SubClassOf: ( has_part some Carnivore ),  False.

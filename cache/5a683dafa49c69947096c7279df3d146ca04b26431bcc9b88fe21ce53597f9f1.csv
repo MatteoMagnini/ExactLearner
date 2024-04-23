@@ -1,0 +1,1 @@
+( Manager and FootballTeam ) SubClassOf: Football, \nTrue

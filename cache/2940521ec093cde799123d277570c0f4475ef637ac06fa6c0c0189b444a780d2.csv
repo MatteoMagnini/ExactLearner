@@ -1,0 +1,1 @@
+( LeafCell and MioBlast ) SubClassOf: Neuron, \nFalse

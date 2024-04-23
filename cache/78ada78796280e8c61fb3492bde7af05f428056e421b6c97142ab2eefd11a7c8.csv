@@ -1,0 +1,1 @@
+( Cell and ChondroCyte ) SubClassOf: CellByClass, True.

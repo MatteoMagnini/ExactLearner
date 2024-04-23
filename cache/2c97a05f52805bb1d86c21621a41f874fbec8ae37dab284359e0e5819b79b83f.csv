@@ -1,0 +1,1 @@
+( PhotoreceptorCell and Neuron ) SubClassOf: CellByDevelopmentStage,  False.

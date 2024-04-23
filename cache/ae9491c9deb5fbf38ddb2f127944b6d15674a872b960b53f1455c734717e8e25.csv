@@ -1,0 +1,1 @@
+Mother SubClassOf: ( hasParent some Person ),  True.

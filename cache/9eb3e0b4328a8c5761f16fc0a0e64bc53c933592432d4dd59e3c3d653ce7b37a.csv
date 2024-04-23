@@ -1,0 +1,1 @@
+( AnimalCell and LeafCell ) SubClassOf: Miocyte, True.

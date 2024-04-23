@@ -1,0 +1,1 @@
+( ChondroBlast and LeafCell ) SubClassOf: InMatureCell, \nTrue

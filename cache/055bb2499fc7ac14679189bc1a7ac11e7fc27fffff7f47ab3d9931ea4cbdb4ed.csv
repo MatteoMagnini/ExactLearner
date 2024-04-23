@@ -1,0 +1,1 @@
+( Osteocyte and InMatureCell ) SubClassOf: MioBlast, \nFalse

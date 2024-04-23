@@ -1,0 +1,1 @@
+( Team and Player ) SubClassOf: Manager, True

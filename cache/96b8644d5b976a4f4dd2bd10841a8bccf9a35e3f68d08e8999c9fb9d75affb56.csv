@@ -1,0 +1,1 @@
+( ElectricallyActiveCell and CellByClass ) SubClassOf: AnimalCell, \nTrue

@@ -1,0 +1,1 @@
+( PhotosyntheticCell and SclerenchymaCell ) SubClassOf: CirculatingCell, \nTrue

@@ -1,0 +1,1 @@
+( AnimalCell and StructuralCell ) SubClassOf: ChondroBlast,  False.

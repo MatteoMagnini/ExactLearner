@@ -1,0 +1,1 @@
+( PlantCell and CellByDevelopmentStage ) SubClassOf: AnimalCell, \nFalse

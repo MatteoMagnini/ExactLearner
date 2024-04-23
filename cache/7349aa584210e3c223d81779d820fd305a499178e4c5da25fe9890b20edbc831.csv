@@ -1,0 +1,1 @@
+( hasSibling some Son ) SubClassOf: Mother, \nTrue

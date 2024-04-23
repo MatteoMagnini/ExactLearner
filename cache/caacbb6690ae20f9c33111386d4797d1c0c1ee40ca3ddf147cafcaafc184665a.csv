@@ -1,0 +1,1 @@
+( has_part some Wing ) SubClassOf: Animal, True

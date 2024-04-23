@@ -1,0 +1,1 @@
+( Cell and LeafCell ) SubClassOf: MioBlast, \nTrue

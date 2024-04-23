@@ -1,0 +1,1 @@
+( has_part some Animal ) SubClassOf: Backbone,  False.

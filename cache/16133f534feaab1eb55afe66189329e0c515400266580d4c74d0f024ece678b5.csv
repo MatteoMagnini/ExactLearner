@@ -1,0 +1,1 @@
+( Erythrocyte and CirculatingCell ) SubClassOf: Cell, True.

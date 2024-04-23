@@ -1,0 +1,1 @@
+( plays some Player ) SubClassOf: BallGame, \nTrue

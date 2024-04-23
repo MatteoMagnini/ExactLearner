@@ -1,0 +1,1 @@
+FootballTeam SubClassOf: ( plays_for some Team ), True

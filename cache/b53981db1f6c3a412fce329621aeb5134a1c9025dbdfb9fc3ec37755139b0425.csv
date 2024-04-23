@@ -1,0 +1,1 @@
+( plays_for some Person ) SubClassOf: Football,  False.

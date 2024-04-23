@@ -1,0 +1,1 @@
+( PhotoreceptorCell and Osteocyte ) SubClassOf: AnimalCell, \nTrue

@@ -1,0 +1,1 @@
+( PlantCell and MatureCell ) SubClassOf: InMatureCell, \nTrue

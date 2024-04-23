@@ -1,0 +1,1 @@
+( MatureCell and Cell ) SubClassOf: LeafCell, True

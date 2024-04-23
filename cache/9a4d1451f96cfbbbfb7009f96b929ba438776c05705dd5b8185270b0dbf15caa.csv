@@ -1,0 +1,1 @@
+( MatureCell and Osteocyte ) SubClassOf: InMatureCell, \nTrue

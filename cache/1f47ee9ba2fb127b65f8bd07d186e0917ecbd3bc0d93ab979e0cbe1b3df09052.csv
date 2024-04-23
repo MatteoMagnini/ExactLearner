@@ -1,0 +1,1 @@
+( PhotosyntheticCell and Osteocyte ) SubClassOf: LeafCell, \nFalse

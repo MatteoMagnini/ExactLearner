@@ -1,0 +1,1 @@
+( hasParent some Person ) SubClassOf: Daughter, True

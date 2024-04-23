@@ -1,0 +1,1 @@
+Bird SubClassOf: ( eats some Herbivore ), True.

@@ -1,0 +1,1 @@
+( AnimalCell and CirculatingCell ) SubClassOf: PlantCell,  False.

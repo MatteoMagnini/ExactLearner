@@ -1,0 +1,1 @@
+( CellByClass and LeafCell ) SubClassOf: Cell,  True.

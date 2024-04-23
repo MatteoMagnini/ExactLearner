@@ -1,0 +1,1 @@
+( LeafCell and ElectricallyActiveCell ) SubClassOf: AnimalCell,  False.

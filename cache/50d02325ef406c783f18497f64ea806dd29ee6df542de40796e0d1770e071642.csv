@@ -1,0 +1,1 @@
+( Bird and Herbivore ) SubClassOf: Reptile, \nFalse

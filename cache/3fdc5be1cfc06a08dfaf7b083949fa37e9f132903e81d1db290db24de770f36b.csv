@@ -1,0 +1,1 @@
+( Person and Researcher ) SubClassOf: Teacher, \nTrue

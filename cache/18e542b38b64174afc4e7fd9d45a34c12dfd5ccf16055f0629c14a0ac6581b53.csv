@@ -1,0 +1,1 @@
+( CellByClass and PlantCell ) SubClassOf: PhotoreceptorCell, True.

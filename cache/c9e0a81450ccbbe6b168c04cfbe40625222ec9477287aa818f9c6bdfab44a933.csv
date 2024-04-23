@@ -1,0 +1,1 @@
+( PhotosyntheticCell and CellByOrganism ) SubClassOf: ElectricallyActiveCell,  False.

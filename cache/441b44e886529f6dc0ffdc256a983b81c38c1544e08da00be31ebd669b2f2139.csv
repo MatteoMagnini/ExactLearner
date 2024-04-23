@@ -1,0 +1,1 @@
+Male SubClassOf: ( hasSibling some GrandParent ),  False.

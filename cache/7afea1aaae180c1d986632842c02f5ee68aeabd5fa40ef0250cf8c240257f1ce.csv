@@ -1,0 +1,1 @@
+( hasParent some Child ) SubClassOf: Person, True.

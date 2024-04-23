@@ -1,0 +1,1 @@
+( lives_in some Leg ) SubClassOf: Bird, \nTrue

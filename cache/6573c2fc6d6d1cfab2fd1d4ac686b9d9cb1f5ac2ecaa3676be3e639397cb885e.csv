@@ -1,0 +1,1 @@
+( Player and Football ) SubClassOf: FootballTeam, \nTrue

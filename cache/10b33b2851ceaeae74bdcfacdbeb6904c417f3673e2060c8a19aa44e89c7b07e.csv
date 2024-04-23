@@ -1,0 +1,1 @@
+( ElectricallyActiveCell and ChondroCyte ) SubClassOf: Cell, \nTrue

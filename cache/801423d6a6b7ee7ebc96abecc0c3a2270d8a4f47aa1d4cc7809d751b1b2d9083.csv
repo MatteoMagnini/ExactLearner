@@ -1,0 +1,1 @@
+( lays some Bird ) SubClassOf: Fish, \nFalse

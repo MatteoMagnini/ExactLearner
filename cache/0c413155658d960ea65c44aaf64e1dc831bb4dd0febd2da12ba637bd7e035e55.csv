@@ -1,0 +1,1 @@
+( PhotoreceptorCell and SclerenchymaCell ) SubClassOf: CellByDevelopmentStage, \nTrue

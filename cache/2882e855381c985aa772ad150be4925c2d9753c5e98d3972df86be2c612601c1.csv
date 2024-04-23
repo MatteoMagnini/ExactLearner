@@ -1,0 +1,1 @@
+( Erythrocyte and MatureCell ) SubClassOf: StructuralCell, True.

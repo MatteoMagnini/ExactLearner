@@ -1,0 +1,1 @@
+( AnimalCell and ChondroBlast ) SubClassOf: InMatureCell, \nTrue

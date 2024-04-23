@@ -1,0 +1,1 @@
+( hasSex some GrandFather ) SubClassOf: Son, \nFalse

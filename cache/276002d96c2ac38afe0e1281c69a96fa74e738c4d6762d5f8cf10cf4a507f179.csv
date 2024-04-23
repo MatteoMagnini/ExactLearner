@@ -1,0 +1,1 @@
+( hasSex some Female ) SubClassOf: Father, \nTrue

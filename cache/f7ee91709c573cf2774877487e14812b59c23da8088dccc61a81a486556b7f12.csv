@@ -1,0 +1,1 @@
+( lives_in some Elephant ) SubClassOf: Mammal, \nTrue

@@ -1,0 +1,1 @@
+( Father and OffSpring ) SubClassOf: Child, \nFalse

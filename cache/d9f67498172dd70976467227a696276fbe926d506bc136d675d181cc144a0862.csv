@@ -1,0 +1,1 @@
+( ChondroCyte and InMatureCell ) SubClassOf: CellByClass,  False.

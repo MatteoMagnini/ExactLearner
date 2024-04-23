@@ -1,0 +1,1 @@
+( PlantCell and CellByOrganism ) SubClassOf: SclerenchymaCell,  False.

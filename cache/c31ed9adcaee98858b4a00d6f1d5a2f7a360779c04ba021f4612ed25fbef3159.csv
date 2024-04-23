@@ -1,0 +1,1 @@
+( AnimalCell and InMatureCell ) SubClassOf: PhotosyntheticCell, \nTrue

@@ -1,0 +1,1 @@
+( MatureCell and Neuron ) SubClassOf: CellByOrganism, \nTrue

@@ -1,0 +1,1 @@
+( Game and FootballTeam ) SubClassOf: Team,  True.

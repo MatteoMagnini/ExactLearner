@@ -1,0 +1,1 @@
+( AnimalCell and Miocyte ) SubClassOf: PhotoreceptorCell, True.

@@ -1,0 +1,1 @@
+( FootballPlayer and Team ) SubClassOf: owl:Thin, True

@@ -1,0 +1,1 @@
+( PhotoreceptorCell and ElectricallyActiveCell ) SubClassOf: AnimalCell, \nTrue

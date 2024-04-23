@@ -1,0 +1,1 @@
+( BallGame and FootballPlayer ) SubClassOf: Player, True

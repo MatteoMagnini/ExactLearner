@@ -1,0 +1,1 @@
+( FootballPlayer and BallGame ) SubClassOf: owl:Thin, \nTrue

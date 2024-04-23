@@ -1,0 +1,1 @@
+( LeafCell and StructuralCell ) SubClassOf: MatureCell,  True.

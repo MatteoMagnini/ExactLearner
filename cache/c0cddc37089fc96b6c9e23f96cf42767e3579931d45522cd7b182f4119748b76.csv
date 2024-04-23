@@ -1,0 +1,1 @@
+( ElectricallyActiveCell and AnimalCell ) SubClassOf: SclerenchymaCell,  False.

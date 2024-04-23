@@ -1,0 +1,1 @@
+( PhotosyntheticCell and Miocyte ) SubClassOf: AnimalCell, \nFalse

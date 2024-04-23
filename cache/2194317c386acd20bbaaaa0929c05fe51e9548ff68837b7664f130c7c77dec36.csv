@@ -1,0 +1,1 @@
+( hasSibling some GrandFather ) SubClassOf: Brother, \nFalse

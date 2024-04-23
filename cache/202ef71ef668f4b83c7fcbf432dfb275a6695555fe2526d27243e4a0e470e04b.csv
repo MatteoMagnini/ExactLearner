@@ -1,0 +1,1 @@
+( Team and BallGame ) SubClassOf: Game, \nTrue

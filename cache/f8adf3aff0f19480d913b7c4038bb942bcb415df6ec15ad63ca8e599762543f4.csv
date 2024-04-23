@@ -1,0 +1,1 @@
+( PlantCell and Neuron ) SubClassOf: LeafCell, \nTrue

@@ -1,0 +1,1 @@
+Water SubClassOf: ( has_part some Wing ), True.

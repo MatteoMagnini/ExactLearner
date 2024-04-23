@@ -1,0 +1,1 @@
+( hasParent some Sibling ) SubClassOf: Brother, \nTrue

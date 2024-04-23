@@ -1,0 +1,1 @@
+( lives_in some Plant ) SubClassOf: Cat, True.

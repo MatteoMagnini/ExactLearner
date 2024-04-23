@@ -1,0 +1,1 @@
+Mammal SubClassOf: ( lives_in some Reptile ), \nFalse

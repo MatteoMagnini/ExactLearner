@@ -1,0 +1,1 @@
+( Neuron and AnimalCell ) SubClassOf: LeafCell,  False.

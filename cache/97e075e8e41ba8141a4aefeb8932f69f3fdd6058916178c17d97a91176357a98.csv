@@ -1,0 +1,1 @@
+( hasParent some Woman ) SubClassOf: Sister,  False.

@@ -1,0 +1,1 @@
+( hasChild some Daughter ) SubClassOf: Son, \nTrue

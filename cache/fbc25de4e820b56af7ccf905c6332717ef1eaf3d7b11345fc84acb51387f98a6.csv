@@ -1,0 +1,1 @@
+( eats some Animal ) SubClassOf: Wing,  False.

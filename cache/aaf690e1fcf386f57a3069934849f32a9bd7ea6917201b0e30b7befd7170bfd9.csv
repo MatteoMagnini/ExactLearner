@@ -1,0 +1,1 @@
+( CellByDevelopmentStage and CirculatingCell ) SubClassOf: PhotosyntheticCell, \nTrue

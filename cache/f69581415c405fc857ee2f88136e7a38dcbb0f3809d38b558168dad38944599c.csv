@@ -1,0 +1,1 @@
+( PhotoreceptorCell and CellByClass ) SubClassOf: Neuron, \nTrue
