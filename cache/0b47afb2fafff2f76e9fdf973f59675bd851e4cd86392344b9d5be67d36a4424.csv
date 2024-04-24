@@ -1,0 +1,1 @@
+( PhotoreceptorCell and CellByDevelopmentStage ) SubClassOf: ElectricallyActiveCell, \nTrue

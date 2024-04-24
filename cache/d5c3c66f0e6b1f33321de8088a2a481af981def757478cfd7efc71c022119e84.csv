@@ -1,0 +1,1 @@
+( InMatureCell and StructuralCell ) SubClassOf: ElectricallyActiveCell,  True.

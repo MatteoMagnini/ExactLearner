@@ -1,0 +1,1 @@
+( PlantCell and Erythrocyte ) SubClassOf: MioBlast, \nTrue

@@ -1,0 +1,1 @@
+( ChondroCyte and Miocyte ) SubClassOf: Cell,  True.

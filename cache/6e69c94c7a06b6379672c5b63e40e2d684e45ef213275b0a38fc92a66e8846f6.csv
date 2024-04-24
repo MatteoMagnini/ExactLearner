@@ -1,0 +1,1 @@
+( hasSex some Female ) SubClassOf: Brother, \nFalse

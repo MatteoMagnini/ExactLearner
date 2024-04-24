@@ -1,0 +1,1 @@
+( MatureCell and InMatureCell ) SubClassOf: ElectricallyActiveCell, \nTrue

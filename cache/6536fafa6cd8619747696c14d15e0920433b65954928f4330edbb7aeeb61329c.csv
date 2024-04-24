@@ -1,0 +1,1 @@
+( CellByDevelopmentStage and InMatureCell ) SubClassOf: Neuron, \nTrue

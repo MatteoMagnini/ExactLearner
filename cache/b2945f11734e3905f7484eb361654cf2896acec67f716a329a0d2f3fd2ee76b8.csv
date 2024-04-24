@@ -1,0 +1,1 @@
+Father SubClassOf: ( hasSibling some GrandMother ), True.

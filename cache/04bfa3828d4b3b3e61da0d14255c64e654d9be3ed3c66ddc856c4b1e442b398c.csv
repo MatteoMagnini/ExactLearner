@@ -1,0 +1,1 @@
+( Bird and Leg ) SubClassOf: Animal, True.

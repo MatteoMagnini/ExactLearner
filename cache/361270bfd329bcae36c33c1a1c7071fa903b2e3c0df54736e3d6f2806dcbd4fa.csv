@@ -1,0 +1,1 @@
+( Herbivore and Mammal ) SubClassOf: Carnivore, \nFalse

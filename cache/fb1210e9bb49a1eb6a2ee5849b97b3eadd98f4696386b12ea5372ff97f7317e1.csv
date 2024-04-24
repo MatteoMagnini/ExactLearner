@@ -1,0 +1,1 @@
+( ElectricallyActiveCell and MioBlast ) SubClassOf: MatureCell, \nFalse

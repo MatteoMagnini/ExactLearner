@@ -1,0 +1,1 @@
+( CirculatingCell and PhotoreceptorCell ) SubClassOf: CellByClass, \nTrue

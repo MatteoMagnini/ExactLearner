@@ -1,0 +1,1 @@
+( LeafCell and Neuron ) SubClassOf: PhotoreceptorCell, True.

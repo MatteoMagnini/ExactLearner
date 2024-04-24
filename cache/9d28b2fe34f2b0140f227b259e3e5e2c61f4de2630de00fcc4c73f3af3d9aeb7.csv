@@ -1,0 +1,1 @@
+( PhotoreceptorCell and StructuralCell ) SubClassOf: Erythrocyte, True.

@@ -1,0 +1,1 @@
+( MatureCell and CellByOrganism ) SubClassOf: ElectricallyActiveCell,  False.

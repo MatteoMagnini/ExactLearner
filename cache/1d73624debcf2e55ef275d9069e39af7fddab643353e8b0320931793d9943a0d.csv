@@ -1,0 +1,1 @@
+( PlantCell and Miocyte ) SubClassOf: Erythrocyte, True.

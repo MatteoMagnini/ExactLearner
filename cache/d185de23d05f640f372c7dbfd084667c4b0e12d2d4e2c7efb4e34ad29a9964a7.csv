@@ -1,0 +1,1 @@
+( StructuralCell and ChondroCyte ) SubClassOf: Osteocyte, True

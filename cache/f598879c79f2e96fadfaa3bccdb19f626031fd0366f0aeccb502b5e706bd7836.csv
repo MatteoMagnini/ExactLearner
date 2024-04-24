@@ -1,0 +1,1 @@
+( Mammal and Bird ) SubClassOf: Fish, \nFalse

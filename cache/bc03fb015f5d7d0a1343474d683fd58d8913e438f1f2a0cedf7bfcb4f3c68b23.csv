@@ -1,0 +1,1 @@
+( CellByOrganism and PlantCell ) SubClassOf: AnimalCell, True.

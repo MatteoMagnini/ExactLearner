@@ -1,0 +1,1 @@
+( hasParent some Sister ) SubClassOf: OffSpring, \nTrue

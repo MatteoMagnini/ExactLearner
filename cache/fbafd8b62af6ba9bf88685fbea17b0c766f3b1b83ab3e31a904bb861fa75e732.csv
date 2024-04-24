@@ -1,0 +1,1 @@
+( InMatureCell and Osteocyte ) SubClassOf: LeafCell, \nTrue

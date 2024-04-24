@@ -1,0 +1,1 @@
+( Neuron and PhotosyntheticCell ) SubClassOf: CirculatingCell, \nFalse

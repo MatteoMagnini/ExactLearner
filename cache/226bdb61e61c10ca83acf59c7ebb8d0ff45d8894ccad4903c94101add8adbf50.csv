@@ -1,0 +1,1 @@
+( eats some Plant ) SubClassOf: Cat, \nTrue

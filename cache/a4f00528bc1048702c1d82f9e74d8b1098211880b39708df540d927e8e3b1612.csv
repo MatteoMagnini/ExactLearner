@@ -1,0 +1,1 @@
+( hasSex some Person ) SubClassOf: Sex, \nI

@@ -1,0 +1,1 @@
+Mother SubClassOf: ( hasChild some Male ), True.

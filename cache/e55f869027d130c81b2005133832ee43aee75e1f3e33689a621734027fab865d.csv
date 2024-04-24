@@ -1,0 +1,1 @@
+( PhotoreceptorCell and CirculatingCell ) SubClassOf: Erythrocyte, \nTrue

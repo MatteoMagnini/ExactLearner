@@ -1,0 +1,1 @@
+( Parent and Father ) SubClassOf: Child, \nFalse

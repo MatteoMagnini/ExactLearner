@@ -1,0 +1,1 @@
+( hasParent some GrandFather ) SubClassOf: Sister,  False.

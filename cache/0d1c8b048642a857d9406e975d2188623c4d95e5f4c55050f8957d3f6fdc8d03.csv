@@ -1,0 +1,1 @@
+( CellByOrganism and ElectricallyActiveCell ) SubClassOf: LeafCell, \nTrue
