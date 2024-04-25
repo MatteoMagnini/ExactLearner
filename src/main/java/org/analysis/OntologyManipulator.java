@@ -12,6 +12,7 @@ import org.semanticweb.owlapi.model.*;
 import org.semanticweb.owlapi.util.BidirectionalShortFormProviderAdapter;
 import org.semanticweb.owlapi.util.SimpleShortFormProvider;
 import uk.ac.manchester.cs.owl.owlapi.OWLDataFactoryImpl;
+import uk.ac.manchester.cs.owl.owlapi.mansyntaxrenderer.ManchesterOWLSyntaxOWLObjectRendererImpl;
 
 import java.io.File;
 import java.nio.file.FileSystems;
@@ -33,7 +34,11 @@ public class OntologyManipulator {
         return axiom;
     }
 
-    private static ManchesterOWLSyntaxEditorParser getManchesterOWLSyntaxEditorParser(OWLOntology rootOntology, OWLOntologyManager manager, String axiomResult) {
+    public static Set<String> parseAxioms(Set<OWLAxiom> axioms) {
+        return axioms.stream().map(new ManchesterOWLSyntaxOWLObjectRendererImpl()::render).collect(Collectors.toSet());
+    }
+
+    public static ManchesterOWLSyntaxEditorParser getManchesterOWLSyntaxEditorParser(OWLOntology rootOntology, OWLOntologyManager manager, String axiomResult) {
         Set<OWLOntology> importsClosure = rootOntology.getImportsClosure();
         OWLEntityChecker entityChecker = new ShortFormEntityChecker(
                 new BidirectionalShortFormProviderAdapter(manager, importsClosure,
