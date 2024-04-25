@@ -15,7 +15,7 @@ public class StatementBuilderImpl implements StatementBuilder {
 
     public StatementBuilderImpl(Integer seed, Set<String> classes, Set<String> objectProperties) {
         rand = new Random(seed);
-        this.classes = classes;
+        this.classes = classes.stream().filter(s-> !s.contains("Thin")).collect(java.util.stream.Collectors.toSet());
         this.objectProperties = objectProperties;
         generateStatements();
     }
@@ -29,8 +29,7 @@ public class StatementBuilderImpl implements StatementBuilder {
     // Type 1: (A ∩ B) ⊑ C
     private void createStatementsType1() {
         classes.forEach(c1 -> {
-            classes.stream().filter(c2 -> !c2.equals(c1)).forEach(c2 -> classes.stream()
-                    .filter(c3 -> !c3.equals(c1) && !c3.equals(c2))
+            classes.forEach(c2 -> classes
                     .forEach(c3 -> generatedStatementsType1.add("( " + c1 + " and " + c2 + " ) SubClassOf: " + c3)));
         });
     }
@@ -38,7 +37,7 @@ public class StatementBuilderImpl implements StatementBuilder {
     // Type 2: B ⊑ ∃R.A
     private void createStatementsType2() {
         classes.forEach(c1 -> {
-            classes.stream().filter(c2 -> !c2.equals(c1)).forEach(c2 -> {
+            classes.forEach(c2 -> {
                 objectProperties.forEach(o -> generatedStatementsType2.add(c1 + " SubClassOf: ( " + o + " some " + c2 + " )"));
             });
         });
@@ -47,7 +46,7 @@ public class StatementBuilderImpl implements StatementBuilder {
     // Type 3: ∃R.A ⊑ B
     private void createStatementsType3() {
         classes.forEach(c1 -> {
-            classes.stream().filter(c2 -> !c2.equals(c1)).forEach(c2 -> {
+            classes.forEach(c2 -> {
                 objectProperties.forEach(o -> generatedStatementsType3.add("( " + o + " some " + c1 + " ) SubClassOf: " + c2));
             });
         });

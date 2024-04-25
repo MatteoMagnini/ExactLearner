@@ -11,7 +11,7 @@ public class Pac {
         this.epsilon = epsilon;
         this.gamma = gamma;
         this.hypothesisCardinality = hypothesisCardinality;
-        nTrainingSamples = Math.round(Math.log(hypothesisCardinality / gamma) / epsilon);
+        nTrainingSamples = Math.round(hypothesisCardinality * (Math.log(2) - Math.log(gamma)) / epsilon);
     }
 
     public double getEpsilon() {
@@ -20,7 +20,7 @@ public class Pac {
 
     public void setEpsilon(Double epsilon) {
         this.epsilon = epsilon;
-        nTrainingSamples = Math.round(Math.log(hypothesisCardinality / gamma) / epsilon);
+        nTrainingSamples = Math.round(hypothesisCardinality * (Math.log(2) - Math.log(gamma)) / epsilon);
     }
 
     public double getGamma() {
@@ -29,7 +29,7 @@ public class Pac {
 
     public void setGamma(Double gamma) {
         this.gamma = gamma;
-        nTrainingSamples = Math.round(Math.log(hypothesisCardinality / gamma) / epsilon);
+        nTrainingSamples = Math.round(hypothesisCardinality * (Math.log(2) - Math.log(gamma)) / epsilon);
     }
 
     public long getTrainingSamples() {
@@ -42,6 +42,6 @@ public class Pac {
 
     public void setHypothesisCardinality(Integer hypothesisCardinality) {
         this.hypothesisCardinality = hypothesisCardinality;
-        nTrainingSamples = Math.round(Math.log(hypothesisCardinality / gamma) / epsilon);
+        nTrainingSamples = Math.round(hypothesisCardinality * (Math.log(2) - Math.log(gamma)) / epsilon);
     }
 }
