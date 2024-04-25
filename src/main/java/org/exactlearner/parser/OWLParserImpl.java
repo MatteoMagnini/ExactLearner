@@ -27,6 +27,10 @@ public class OWLParserImpl implements OWLParser {
         return Optional.ofNullable(owl.getClassesInSignature());
     }
 
+    public OWLOntology getOwl() {
+        return owl;
+    }
+
     @Override
     public Set<String> getClassesNamesAsString() {
         if (this.getClasses().isEmpty()) {
