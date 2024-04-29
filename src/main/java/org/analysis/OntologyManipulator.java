@@ -77,7 +77,7 @@ public class OntologyManipulator {
         }
     }
 
-    public static OWLParser getParser(String ontologyFilePath) {
+    public static OWLParserImpl getParser(String ontologyFilePath) {
         try {
             return new OWLParserImpl(ontologyFilePath);
         } catch (OWLOntologyCreationException e) {
