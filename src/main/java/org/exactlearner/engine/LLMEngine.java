@@ -82,21 +82,13 @@ public class LLMEngine implements BaseEngine {
         return manager.getOWLDataFactory().getOWLObjectIntersectionOf(mySet);
     }
 
-    private Boolean entailedEQ(OWLSubClassOfAxiom subclassAxiom) {
+    private Boolean entailedSubclass(OWLSubClassOfAxiom subclassAxiom) {
 
-        //left and right
-        //check if left subClassOf right
-        //if true return true
-        //else check if left equivalent classes are subclass of right
-        //if true return true
-        //else return false
         OWLClassExpression left = subclassAxiom.getSubClass();
         OWLClassExpression right = subclassAxiom.getSuperClass();
         boolean workaround = false;
 
         OWLClass leftName;
-        OWLAxiom leftDefinition = null;
-
         if (left.isAnonymous()) {
             leftName = manager.getOWLDataFactory().getOWLClass(IRI.create("#temp001"));
         } else {
@@ -104,7 +96,6 @@ public class LLMEngine implements BaseEngine {
         }
 
         OWLClass rightName;
-        OWLAxiom rightDefinition = null;
         if (right.isAnonymous()) {
             rightName = manager.getOWLDataFactory().getOWLClass(IRI.create("#temp002"));
         } else {
@@ -114,13 +105,7 @@ public class LLMEngine implements BaseEngine {
         String sx = leftName.toString().substring(leftName.toString().indexOf("#") + 1, leftName.toString().length() - 1);
         String dx = rightName.toString().substring(rightName.toString().indexOf("#") + 1, rightName.toString().length() - 1);
 
-        if (runTaskAndGetResult(sx + "SubClassOf: " + dx)) {
-            workaround = true;
-        } else {
-            //search for equivalence classes
-            //HOW TO DO IT?
-        }
-
+        workaround = runTaskAndGetResult(sx + "SubClassOf: " + dx);
         return workaround;
     }
 
@@ -128,7 +113,7 @@ public class LLMEngine implements BaseEngine {
         if (ax.isOfType(AxiomType.EQUIVALENT_CLASSES)) {
             OWLEquivalentClassesAxiom eax = (OWLEquivalentClassesAxiom) ax;
             for (OWLSubClassOfAxiom sax : eax.asOWLSubClassOfAxioms()) {
-                if (!entailedEQ(sax)) {
+                if (!entailedSubclass(sax)) {
                     return false;
                 }
             }
