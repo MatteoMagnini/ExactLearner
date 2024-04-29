@@ -11,7 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 
-public class ELEngine {
+public class ELEngine implements BaseEngine{
 	private final OWLReasoner myReasoner;
 	private final OWLOntology myOntology;
 	private final OWLOntologyManager myManager;
