@@ -1,19 +1,17 @@
 package org.experiments;
 
-import org.analysis.OntologyManipulator;
+import org.configurations.Configuration;
+import org.utility.OntologyManipulator;
+import org.exactlearner.parser.OWLParserImpl;
 import org.experiments.logger.SmartLogger;
 import org.experiments.task.ExperimentTask;
 import org.experiments.task.Task;
-import org.experiments.utility.SHA256Hash;
-import org.experiments.utility.YAMLConfigLoader;
+import org.utility.SHA256Hash;
+import org.utility.YAMLConfigLoader;
 import org.experiments.workload.OllamaWorkload;
 import org.experiments.workload.OpenAIWorkload;
-import org.semanticweb.owlapi.model.OWLAxiom;
-import uk.ac.manchester.cs.owl.owlapi.mansyntaxrenderer.ManchesterOWLSyntaxOWLObjectRendererImpl;
 
 import java.io.File;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 public class Launch {
 
@@ -31,10 +29,10 @@ public class Launch {
     }
 
     private static void runExperiment(String model, String ontology, String system, int maxTokens, String type) {
-        var parser = OntologyManipulator.getParser(ontology);
+        var parser = new OWLParserImpl(ontology);
         var classesNames = parser.getClassesNamesAsString();
         var axioms = parser.getAxioms();
-        var filteredManchesterSyntaxAxioms = parseAxioms(axioms);
+        var filteredManchesterSyntaxAxioms = OntologyManipulator.parseAxioms(axioms);
 
         if (type.equals("classesQuerying")) {
             for (String className : classesNames) {
@@ -78,7 +76,5 @@ public class Launch {
         f.renameTo(new File("cache/" + type + "-" + model + "-" + ontName + "/" + f.getName()));
     }
 
-    private static Set<String> parseAxioms(Set<OWLAxiom> axioms) {
-        return axioms.stream().map(new ManchesterOWLSyntaxOWLObjectRendererImpl()::render).collect(Collectors.toSet());
-    }
+
 }

@@ -1,6 +1,5 @@
 package org.pac;
 
-import org.analysis.OntologyManipulator;
 import org.exactlearner.parser.OWLParser;
 import org.exactlearner.parser.OWLParserImpl;
 import org.junit.Assert;

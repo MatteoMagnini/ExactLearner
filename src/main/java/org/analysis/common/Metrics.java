@@ -1,4 +1,4 @@
-package org.analysis;
+package org.analysis.common;
 
 import java.util.Arrays;
 

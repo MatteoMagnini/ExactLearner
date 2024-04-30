@@ -2,13 +2,13 @@ package org.analysis;
 
 import org.analysis.axioms.AxiomsResultsReader;
 import org.coode.owlapi.manchesterowlsyntax.ManchesterOWLSyntaxEditorParser;
-import org.experiments.Configuration;
+import org.configurations.Configuration;
 import org.experiments.Environment;
 import org.experiments.logger.SmartLogger;
 import org.experiments.task.ExperimentTask;
 import org.experiments.task.Task;
-import org.experiments.utility.SHA256Hash;
-import org.experiments.utility.YAMLConfigLoader;
+import org.utility.SHA256Hash;
+import org.utility.YAMLConfigLoader;
 import org.experiments.workload.OllamaWorkload;
 import org.junit.*;
 import org.semanticweb.owlapi.apibinding.OWLManager;

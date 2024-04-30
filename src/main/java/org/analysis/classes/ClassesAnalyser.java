@@ -1,13 +1,12 @@
 package org.analysis.classes;
 
-import org.analysis.OntologyManipulator;
-import org.analysis.Result;
+import org.experiments.Result;
 import org.exactlearner.engine.ELEngine;
 import org.exactlearner.parser.OWLParserImpl;
-import org.experiments.Configuration;
+import org.configurations.Configuration;
 import org.experiments.logger.SmartLogger;
 import org.experiments.task.ExperimentTask;
-import org.experiments.utility.YAMLConfigLoader;
+import org.utility.YAMLConfigLoader;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
@@ -17,8 +16,8 @@ import java.nio.file.FileSystems;
 import java.util.Arrays;
 import java.util.Set;
 
-import static org.analysis.Metrics.*;
-import static org.analysis.OntologyManipulator.*;
+import static org.analysis.common.Metrics.*;
+import static org.utility.OntologyManipulator.*;
 
 public class ClassesAnalyser {
 
@@ -55,9 +54,9 @@ public class ClassesAnalyser {
         System.out.println("F1 Score: " + f1Score);
         System.out.println("Log Loss: " + logLoss);
         System.out.println("Matthews MCC: " + matthewsCorrelationCoefficient);
-        for (int i = 0; i < confusionMatrix.length; i++) {
-            for (int j = 0; j < confusionMatrix[i].length; j++) {
-                System.out.print(confusionMatrix[i][j] + " ");
+        for (int[] matrix : confusionMatrix) {
+            for (int i : matrix) {
+                System.out.print(i + " ");
             }
             System.out.println();
         }

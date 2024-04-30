@@ -1,12 +1,12 @@
 package org.analysis;
 
 import org.analysis.classes.ClassesResultsReader;
-import org.experiments.Configuration;
+import org.configurations.Configuration;
 import org.experiments.Environment;
 import org.experiments.logger.SmartLogger;
 import org.experiments.task.ExperimentTask;
 import org.experiments.task.Task;
-import org.experiments.utility.SHA256Hash;
+import org.utility.SHA256Hash;
 import org.experiments.workload.OllamaWorkload;
 import org.junit.Before;
 import org.junit.Test;

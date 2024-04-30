@@ -1,4 +1,4 @@
-package org.experiments.utility;
+package org.utility;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

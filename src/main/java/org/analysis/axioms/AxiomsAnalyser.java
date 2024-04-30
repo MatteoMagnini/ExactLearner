@@ -1,13 +1,12 @@
 package org.analysis.axioms;
 
-import org.analysis.OntologyManipulator;
-import org.analysis.Result;
+import org.experiments.Result;
 import org.exactlearner.engine.ELEngine;
 import org.exactlearner.parser.OWLParserImpl;
-import org.experiments.Configuration;
+import org.configurations.Configuration;
 import org.experiments.logger.SmartLogger;
 import org.experiments.task.ExperimentTask;
-import org.experiments.utility.YAMLConfigLoader;
+import org.utility.YAMLConfigLoader;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLOntology;
@@ -18,8 +17,8 @@ import uk.ac.manchester.cs.owl.owlapi.mansyntaxrenderer.ManchesterOWLSyntaxOWLOb
 import java.util.HashSet;
 import java.util.Set;
 
-import static org.analysis.OntologyManipulator.filterUnusedAxioms;
-import static org.analysis.OntologyManipulator.getOntologyShortName;
+import static org.utility.OntologyManipulator.filterUnusedAxioms;
+import static org.utility.OntologyManipulator.getOntologyShortName;
 
 public class AxiomsAnalyser {
 

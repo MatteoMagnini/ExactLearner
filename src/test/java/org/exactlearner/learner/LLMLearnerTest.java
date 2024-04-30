@@ -5,8 +5,8 @@ import org.apache.log4j.Logger;
 import org.exactlearner.engine.ELEngine;
 import org.exactlearner.engine.LLMEngine;
 import org.exactlearner.utils.Metrics;
-import org.experiments.Configuration;
-import org.experiments.utility.YAMLConfigLoader;
+import org.configurations.Configuration;
+import org.utility.YAMLConfigLoader;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -234,7 +234,6 @@ public class LLMLearnerTest {
         OWLDataFactory df = man.getOWLDataFactory();
 
         OWLClass A = df.getOWLClass(IRI.create(":A"));
-        OWLClass right = A;
         OWLClass B = df.getOWLClass(IRI.create(":B"));
         OWLObjectProperty R = df.getOWLObjectProperty(IRI.create(":r"));
         OWLClass C = df.getOWLClass(IRI.create(":C"));
@@ -252,7 +251,7 @@ public class LLMLearnerTest {
         //System.out.println("Expected: " + branchedAxiom);
         man.addAxiom(targetOntology, branchedAxiom);
         try {
-            axiom = baseLearner.branchLeft(left, right);
+            axiom = baseLearner.branchLeft(left, A);
             System.out.println("Branched: " + axiom);
             if(!axiom.equals(branchedAxiom))
                 fail("Did not branch.");

@@ -1,7 +1,7 @@
 package org.analysis.axioms;
 
 import org.analysis.common.BaseResultReader;
-import org.experiments.utility.SHA256Hash;
+import org.utility.SHA256Hash;
 
 import java.io.File;
 import java.io.FileInputStream;

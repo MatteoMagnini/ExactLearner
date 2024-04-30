@@ -1,7 +1,7 @@
 package org.analysis;
 
 import org.analysis.classes.JenaQueryClassesExecutor;
-import org.experiments.Configuration;
+import org.configurations.Configuration;
 import org.junit.Before;
 import org.junit.Test;
 import org.yaml.snakeyaml.Yaml;

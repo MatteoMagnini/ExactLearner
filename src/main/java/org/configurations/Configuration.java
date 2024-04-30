@@ -1,4 +1,4 @@
-package org.experiments;
+package org.configurations;
 import java.util.List;
 
 public class Configuration {

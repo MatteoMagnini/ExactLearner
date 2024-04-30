@@ -1,9 +1,7 @@
-package org.analysis;
+package org.utility;
 
 import org.apache.jena.atlas.lib.Pair;
 import org.coode.owlapi.manchesterowlsyntax.ManchesterOWLSyntaxEditorParser;
-import org.exactlearner.parser.OWLParser;
-import org.exactlearner.parser.OWLParserImpl;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.expression.OWLEntityChecker;
 import org.semanticweb.owlapi.expression.ParserException;

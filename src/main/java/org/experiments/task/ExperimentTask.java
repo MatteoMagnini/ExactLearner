@@ -1,14 +1,14 @@
 package org.experiments.task;
 
-import static org.experiments.utility.SHA256Hash.sha256;
+import static org.utility.SHA256Hash.sha256;
 
 public class ExperimentTask implements Task {
 
-    private String taskName;
-    private String modelName;
-    private String ontology;
-    private String query;
-    private String system;
+    private final String taskName;
+    private final String modelName;
+    private final String ontology;
+    private final String query;
+    private final String system;
 
     private Runnable workload;
 

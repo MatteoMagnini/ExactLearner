@@ -1,6 +1,6 @@
-package org.experiments.utility;
+package org.utility;
 
-import org.experiments.Configuration;
+import org.configurations.Configuration;
 import org.yaml.snakeyaml.Yaml;
 
 import java.io.FileInputStream;

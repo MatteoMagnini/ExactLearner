@@ -1,6 +1,6 @@
 package org.exactlearner.engine;
 
-import org.analysis.Result;
+import org.experiments.Result;
 import org.exactlearner.parser.OWLParserImpl;
 import org.experiments.Environment;
 import org.experiments.task.ExperimentTask;
@@ -13,7 +13,6 @@ import org.semanticweb.owlapi.model.*;
 import org.semanticweb.owlapi.reasoner.OWLReasoner;
 import uk.ac.manchester.cs.owl.owlapi.mansyntaxrenderer.ManchesterOWLSyntaxOWLObjectRendererImpl;
 
-import java.util.ArrayList;
 import java.util.Set;
 
 public class LLMEngine implements BaseEngine {
