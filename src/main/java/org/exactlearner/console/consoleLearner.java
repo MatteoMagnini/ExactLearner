@@ -3,12 +3,14 @@ package org.exactlearner.console;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.coode.owlapi.manchesterowlsyntax.ManchesterOWLSyntaxOntologyFormat;
+import org.exactlearner.learner.BaseLearner;
+import org.exactlearner.oracle.BaseOracle;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.io.OWLObjectRenderer;
 import org.semanticweb.owlapi.model.*;
 import org.exactlearner.engine.ELEngine;
-import org.exactlearner.learner.ELLearner;
-import org.exactlearner.oracle.ELOracle;
+import org.exactlearner.learner.Learner;
+import org.exactlearner.oracle.Oracle;
 import org.exactlearner.utils.Metrics;
 import uk.ac.manchester.cs.owl.owlapi.mansyntaxrenderer.ManchesterOWLSyntaxOWLObjectRendererImpl;
 
@@ -54,8 +56,8 @@ public class consoleLearner {
 	private ELEngine elQueryEngineForT = null;
 	public ELEngine elQueryEngineForH = null;
 
-	private ELLearner elLearner = null;
-	private ELOracle elOracle = null;
+	private BaseLearner baseLearner = null;
+	private BaseOracle baseOracle = null;
 
 	// ############# OWL variables End ######################
 
@@ -115,8 +117,8 @@ public class consoleLearner {
 				elQueryEngineForT = new ELEngine(targetOntology);
 				elQueryEngineForH = new ELEngine(hypothesisOntology);
 
-				elLearner = new ELLearner(elQueryEngineForT, elQueryEngineForH, myMetrics);
-				elOracle = new ELOracle(elQueryEngineForT, elQueryEngineForH);
+				baseLearner = new Learner(elQueryEngineForT, elQueryEngineForH, myMetrics);
+				baseOracle = new Oracle(elQueryEngineForT, elQueryEngineForH);
 
 				long timeStart = System.currentTimeMillis();
 				runLearner(elQueryEngineForT, elQueryEngineForH);
@@ -176,20 +178,20 @@ public class consoleLearner {
 		printStat("Total equivalence queries: ", myMetrics.getEquivCount(), verb);
 		//////////////////////////////////////////////////////////////////////
 		printStat("\nLearner Stats:", verb);
-		printStat("Total left decompositions: ", elLearner.getNumberLeftDecomposition(), verb);
-		printStat("Total right decompositions: ", elLearner.getNumberRightDecomposition(), verb);
-		printStat("Total mergings: ", elLearner.getNumberMerging(), verb);
-		printStat("Total branchings: ", elLearner.getNumberBranching(), verb);
-		printStat("Total saturations: ", elLearner.getNumberSaturations(), verb);
-		printStat("Total unsaturations: ", elLearner.getNumberUnsaturations(), verb);
+		printStat("Total left decompositions: ", baseLearner.getNumberLeftDecomposition(), verb);
+		printStat("Total right decompositions: ", baseLearner.getNumberRightDecomposition(), verb);
+		printStat("Total mergings: ", baseLearner.getNumberMerging(), verb);
+		printStat("Total branchings: ", baseLearner.getNumberBranching(), verb);
+		printStat("Total saturations: ", baseLearner.getNumberSaturations(), verb);
+		printStat("Total unsaturations: ", baseLearner.getNumberUnsaturations(), verb);
 		//////////////////////////////////////////////////////////////////////
 		printStat("\nOracle Stats:", verb);
-		printStat("Total left compositions: ", elOracle.getNumberLeftComposition(), verb);
-		printStat("Total right compositions: ", elOracle.getNumberRightComposition(), verb);
-		printStat("Total mergings: ", elOracle.getNumberMerging(), verb);
-		printStat("Total branchings: ", elOracle.getNumberBranching(), verb);
-		printStat("Total saturations: ", elOracle.getNumberSaturations(), verb);
-		printStat("Total unsaturations: ", elOracle.getNumberUnsaturations(), verb);
+		printStat("Total left compositions: ", baseOracle.getNumberLeftComposition(), verb);
+		printStat("Total right compositions: ", baseOracle.getNumberRightComposition(), verb);
+		printStat("Total mergings: ", baseOracle.getNumberMerging(), verb);
+		printStat("Total branchings: ", baseOracle.getNumberBranching(), verb);
+		printStat("Total saturations: ", baseOracle.getNumberSaturations(), verb);
+		printStat("Total unsaturations: ", baseOracle.getNumberUnsaturations(), verb);
 		printStat("\nOntology sizes:", verb);
 		printStat("Target TBox logical axioms: ", targetOntology.getAxiomCount(AxiomType.SUBCLASS_OF)+
 				targetOntology.getAxiomCount(AxiomType.EQUIVALENT_CLASSES), verb);
@@ -269,7 +271,7 @@ public class consoleLearner {
 				OWLSubClassOfAxiom counterexample = lastCE;
 				OWLClassExpression left = counterexample.getSubClass();
 				OWLClassExpression right = counterexample.getSuperClass();
-				lastCE = elLearner.decompose(left, right);
+				lastCE = baseLearner.decompose(left, right);
  
 				if (canTransformELrhs()) {
 					lastCE = computeEssentialRightCounterexample();
@@ -319,7 +321,7 @@ public class consoleLearner {
 
 	private void saveOWLFile(OWLOntology ontology, File file) throws Exception {
 
-		elLearner.minimiseHypothesis(this);
+		baseLearner.minimiseHypothesis(this);
 		OWLOntologyFormat format = myManager.getOntologyFormat(ontology);
 		ManchesterOWLSyntaxOntologyFormat manSyntaxFormat = new ManchesterOWLSyntaxOntologyFormat();
 		if (format.isPrefixOWLOntologyFormat()) {
@@ -336,7 +338,7 @@ public class consoleLearner {
 		OWLClassExpression left = counterexample.getSubClass();
 		OWLClassExpression right = counterexample.getSuperClass();
 		for (OWLClass cl1 : left.getClassesInSignature()) {
-			if (elOracle.isCounterExample(cl1, right)) {
+			if (baseOracle.isCounterExample(cl1, right)) {
 				lastCE = elQueryEngineForT.getSubClassAxiom(cl1, right);
 				lastExpression = right;
 				lastName = cl1;
@@ -351,7 +353,7 @@ public class consoleLearner {
 		OWLClassExpression left = counterexample.getSubClass();
 		OWLClassExpression right = counterexample.getSuperClass();
 		for (OWLClass cl1 : right.getClassesInSignature()) {
-			if (elOracle.isCounterExample(left, cl1)) {
+			if (baseOracle.isCounterExample(left, cl1)) {
 				lastCE = elQueryEngineForT.getSubClassAxiom(left, cl1);
 				lastExpression = left;
 				lastName = cl1;
@@ -368,20 +370,20 @@ public class consoleLearner {
 		lastName = (OWLClass) axiom.getSuperClass();
 
 		if (learnerDecompL) {
-			axiom = elLearner.decomposeLeft(lastExpression, lastName);
+			axiom = baseLearner.decomposeLeft(lastExpression, lastName);
 
 			lastExpression = axiom.getSubClass();
 			lastName = (OWLClass) axiom.getSuperClass();
 		}
 
 		if (learnerBranch) {
-			axiom = elLearner.branchLeft(lastExpression, lastName);
+			axiom = baseLearner.branchLeft(lastExpression, lastName);
 			lastExpression = axiom.getSubClass();
 			lastName = (OWLClass) axiom.getSuperClass();
 		}
 
 		if (learnerUnsat) {
-			axiom = elLearner.unsaturateLeft(lastExpression, lastName);
+			axiom = baseLearner.unsaturateLeft(lastExpression, lastName);
 		}
 
 		return axiom;
@@ -394,27 +396,27 @@ public class consoleLearner {
 		lastExpression = axiom.getSuperClass();
 
 		if (learnerDecompR) {//do decomposition before saturation to try to get a smaller tree and do less saturation steps
-			axiom = elLearner.decomposeRight(lastName, lastExpression);
+			axiom = baseLearner.decomposeRight(lastName, lastExpression);
 
 			lastName = (OWLClass) axiom.getSubClass();
 			lastExpression = axiom.getSuperClass();
 		}
 
 		if (learnerSat) {
-			axiom = elLearner.saturateRight(lastName, lastExpression);
+			axiom = baseLearner.saturateRight(lastName, lastExpression);
 			lastName = (OWLClass) axiom.getSubClass();
 			lastExpression = axiom.getSuperClass();
 		}
 
 		if (learnerDecompR) {//do decomposition after saturation to capture the case an inserted concept
 							 //allows a subtree to be removed
-			axiom = elLearner.decomposeRight(lastName, lastExpression);
+			axiom = baseLearner.decomposeRight(lastName, lastExpression);
 
 			lastName = (OWLClass) axiom.getSubClass();
 			lastExpression = axiom.getSuperClass();
 		}
 		if (learnerMerge) {
-			axiom = elLearner.mergeRight(lastName, lastExpression);
+			axiom = baseLearner.mergeRight(lastName, lastExpression);
 
 		}
 
@@ -579,37 +581,37 @@ public class consoleLearner {
 		OWLClassExpression right = counterexample.getSuperClass();
 
 		if (oracleMerge) {
-			newCounterexampleAxiom = elOracle.mergeLeft(left, right, MERGE_BOUND);
+			newCounterexampleAxiom = baseOracle.mergeLeft(left, right, MERGE_BOUND);
 			left = newCounterexampleAxiom.getSubClass();
 			right = newCounterexampleAxiom.getSuperClass();
 		}
 
 		if (oracleSaturate) {
-			newCounterexampleAxiom = elOracle.saturateLeft(left, right, SATURATION_BOUND);
+			newCounterexampleAxiom = baseOracle.saturateLeft(left, right, SATURATION_BOUND);
 			left = newCounterexampleAxiom.getSubClass();
 			right = newCounterexampleAxiom.getSuperClass();
 		}
 
 		if (oracleBranch) {
-			newCounterexampleAxiom = elOracle.branchRight(left, right, BRANCH_BOUND);
+			newCounterexampleAxiom = baseOracle.branchRight(left, right, BRANCH_BOUND);
 			left = newCounterexampleAxiom.getSubClass();
 			right = newCounterexampleAxiom.getSuperClass();
 		}
 
 		if (oracleLeftCompose) {
-			newCounterexampleAxiom = elOracle.composeLeft(left, right, COMPOSE_LEFT_BOUND);
+			newCounterexampleAxiom = baseOracle.composeLeft(left, right, COMPOSE_LEFT_BOUND);
 			left = newCounterexampleAxiom.getSubClass();
 			right = newCounterexampleAxiom.getSuperClass();
 		}
 
 		if (oracleRightCompose) {
-			newCounterexampleAxiom = elOracle.composeRight(left, right, COMPOSE_RIGHT_BOUND);
+			newCounterexampleAxiom = baseOracle.composeRight(left, right, COMPOSE_RIGHT_BOUND);
 			left = newCounterexampleAxiom.getSubClass();
 			right = newCounterexampleAxiom.getSuperClass();
 		}
 
 		if (oracleUnsaturate) {
-			newCounterexampleAxiom = elOracle.unsaturateRight(left, right, UNSATURATE_BOUND);
+			newCounterexampleAxiom = baseOracle.unsaturateRight(left, right, UNSATURATE_BOUND);
 		}
 
 		return newCounterexampleAxiom;

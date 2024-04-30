@@ -3,6 +3,7 @@ package org.analysis.axioms;
 import org.analysis.OntologyManipulator;
 import org.analysis.Result;
 import org.exactlearner.engine.ELEngine;
+import org.exactlearner.parser.OWLParserImpl;
 import org.experiments.Configuration;
 import org.experiments.logger.SmartLogger;
 import org.experiments.task.ExperimentTask;
@@ -41,7 +42,7 @@ public class AxiomsAnalyser {
         Set<OWLAxiom> falseAxioms = new HashSet<>();
         Set<OWLAxiom> unknownAxioms = new HashSet<>();
         Set<OWLAxiom> logicInconsistentAxioms = new HashSet<>();
-        var parser = OntologyManipulator.getParser(ontology);
+        var parser = new OWLParserImpl(ontology);
         int trueCounter;
         int falseCounter;
         int unknownCounter;

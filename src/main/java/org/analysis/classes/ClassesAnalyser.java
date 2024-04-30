@@ -3,6 +3,7 @@ package org.analysis.classes;
 import org.analysis.OntologyManipulator;
 import org.analysis.Result;
 import org.exactlearner.engine.ELEngine;
+import org.exactlearner.parser.OWLParserImpl;
 import org.experiments.Configuration;
 import org.experiments.logger.SmartLogger;
 import org.experiments.task.ExperimentTask;
@@ -36,7 +37,7 @@ public class ClassesAnalyser {
     }
 
     private static void runExperiment3(String model, String ontology, String system) {
-        var parser = OntologyManipulator.getParser(ontology);
+        var parser = new OWLParserImpl(ontology);
         var classesNames = parser.getClassesNamesAsString();
         var confusionMatrix = createConfusionMatrix(classesNames, model, ontology, system);
         // Calculate metrics
@@ -99,7 +100,7 @@ public class ClassesAnalyser {
         } catch (OWLOntologyCreationException e) {
             throw new RuntimeException(e);
         }
-        var classesArray = classesNames.stream().filter(s -> !s.contains("owl:Thin")).toList();
+        var classesArray = classesNames.stream().filter(s -> !s.contains("Thin")).toList();
         for (String className1 : classesArray) {
             for (String className2 : classesArray) {
                 String message = className1 + " SubClassOf " + className2;
