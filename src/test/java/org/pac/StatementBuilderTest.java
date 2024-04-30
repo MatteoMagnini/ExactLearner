@@ -2,6 +2,7 @@ package org.pac;
 
 import org.analysis.OntologyManipulator;
 import org.exactlearner.parser.OWLParser;
+import org.exactlearner.parser.OWLParserImpl;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -16,7 +17,7 @@ public class StatementBuilderTest {
     @Test
     public void testAnimalStatementChecker() {
         // ANIMALS ONTOLOGY
-        OWLParser parser = OntologyManipulator.getParser("src/main/resources/ontologies/small/animals.owl");
+        OWLParser parser = new OWLParserImpl("src/main/resources/ontologies/small/animals.owl");
         classesNames = parser.getClassesNamesAsString();
         objectDataPropertiesNames = parser.getObjectProperties().stream().map(Object::toString).map(s -> s.split("#")[1].replace(">", "")).collect(Collectors.toSet());
         StatementBuilder statementBuilder = new StatementBuilderImpl(0,classesNames, objectDataPropertiesNames);
@@ -30,7 +31,7 @@ public class StatementBuilderTest {
     @Test
     public void testGenerationsStatementChecker() {
         // GENeRATIONS ONTOLOGY
-        OWLParser parser = OntologyManipulator.getParser("src/main/resources/ontologies/small/generations(large).owl");
+        OWLParser parser = new OWLParserImpl("src/main/resources/ontologies/small/generations(large).owl");
         classesNames = parser.getClassesNamesAsString();
         objectDataPropertiesNames = parser.getObjectProperties().stream().map(Object::toString).map(s -> s.split("#")[1].replace(">", "")).collect(Collectors.toSet());
         StatementBuilder statementBuilder = new StatementBuilderImpl(0,classesNames, objectDataPropertiesNames);
@@ -41,7 +42,7 @@ public class StatementBuilderTest {
     @Test
     public void testCellStatementChecker() {
         // FAMILIES ONTOLOGY
-        OWLParser parser = OntologyManipulator.getParser("src/main/resources/ontologies/small/cell.owl");
+        OWLParser parser = new OWLParserImpl("src/main/resources/ontologies/small/cell.owl");
         classesNames = parser.getClassesNamesAsString();
         objectDataPropertiesNames = parser.getObjectProperties().stream().map(Object::toString).map(s -> s.split("#")[1].replace(">", "")).collect(Collectors.toSet());
         StatementBuilder statementBuilder = new StatementBuilderImpl(0,classesNames, objectDataPropertiesNames);
@@ -52,7 +53,7 @@ public class StatementBuilderTest {
     @Test
     public void testUniversityStatementChecker() {
         // UNIVERSITY ONTOLOGY
-        OWLParser parser = OntologyManipulator.getParser("src/main/resources/ontologies/small/university.owl");
+        OWLParser parser = new OWLParserImpl("src/main/resources/ontologies/small/university.owl");
         classesNames = parser.getClassesNamesAsString();
         objectDataPropertiesNames = parser.getObjectProperties().stream().map(Object::toString).map(s -> s.split("#")[1].replace(">", "")).collect(Collectors.toSet());
         StatementBuilder statementBuilder = new StatementBuilderImpl(0,classesNames, objectDataPropertiesNames);
@@ -63,7 +64,7 @@ public class StatementBuilderTest {
     @Test
     public void testFootballStatementChecker() {
         // FOOTBALL ONTOLOGY
-        OWLParser parser = OntologyManipulator.getParser("src/main/resources/ontologies/small/football.owl");
+        OWLParser parser = new OWLParserImpl("src/main/resources/ontologies/small/football.owl");
         classesNames = parser.getClassesNamesAsString();
         objectDataPropertiesNames = parser.getObjectProperties().stream().map(Object::toString).map(s -> s.split("#")[1].replace(">", "")).collect(Collectors.toSet());
         StatementBuilder statementBuilder = new StatementBuilderImpl(0,classesNames, objectDataPropertiesNames);

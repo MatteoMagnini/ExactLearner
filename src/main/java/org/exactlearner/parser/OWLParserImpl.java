@@ -12,9 +12,17 @@ import java.util.stream.Collectors;
 public class OWLParserImpl implements OWLParser {
     private OWLOntology owl;
 
-    public OWLParserImpl(String pathOfFile) throws OWLOntologyCreationException {
+    public OWLParserImpl(String pathOfFile) {
         System.out.println("Parsing file: " + pathOfFile);
-        loadFile(pathOfFile);
+        try {
+            loadFile(pathOfFile);
+        } catch (OWLOntologyCreationException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public OWLParserImpl(OWLOntology owl) {
+        this.owl = owl;
     }
 
     private void loadFile(String pathOfFile) throws OWLOntologyCreationException {

@@ -77,14 +77,6 @@ public class OntologyManipulator {
         }
     }
 
-    public static OWLParserImpl getParser(String ontologyFilePath) {
-        try {
-            return new OWLParserImpl(ontologyFilePath);
-        } catch (OWLOntologyCreationException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
     public static Set<OWLAxiom> filterUnusedAxioms(Set<OWLAxiom> axioms) {
         return axioms.stream().filter(axiom -> axiom.isOfType(AxiomType.SUBCLASS_OF)
                         || axiom.isOfType(AxiomType.EQUIVALENT_CLASSES)
