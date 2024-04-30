@@ -22,7 +22,7 @@ public class ELLearnerTest {
     private OWLOntology hypothesisOntology = null;
     private ELEngine elQueryEngineForT = null;
     private ELEngine elQueryEngineForH = null;
-    private ELLearner elLearner = null;
+    private BaseLearner baseLearner = null;
      
 
 
@@ -36,7 +36,7 @@ public class ELLearnerTest {
         elQueryEngineForH = new ELEngine(hypothesisOntology);
         elQueryEngineForT = new ELEngine(targetOntology);
 
-        elLearner = new ELLearner(elQueryEngineForT, elQueryEngineForH, metrics);
+        baseLearner = new Learner(elQueryEngineForT, elQueryEngineForH, metrics);
         
     }
 
@@ -56,7 +56,7 @@ public class ELLearnerTest {
         OWLSubClassOfAxiom mergedAxiom= df.getOWLSubClassOfAxiom(A, df.getOWLObjectIntersectionOf(df.getOWLObjectSomeValuesFrom(R, df.getOWLObjectIntersectionOf(B,C)),df.getOWLObjectSomeValuesFrom(R,A)));
         man.addAxiom(targetOntology, mergedAxiom);
         try {
-            axiom = elLearner.mergeRight(left, right);
+            axiom = baseLearner.mergeRight(left, right);
             System.out.println("Merged: " + axiom);
             if(!axiom.equals(mergedAxiom))
                 fail("Did not merge.");
@@ -98,7 +98,7 @@ public class ELLearnerTest {
 
         try
         {
-            axiom = elLearner.unsaturateLeft(ABCDEF, A);
+            axiom = baseLearner.unsaturateLeft(ABCDEF, A);
 
             // Expected
             // B \sqsubseteq A
@@ -148,10 +148,10 @@ public class ELLearnerTest {
         try
         {
             // Try two decompositions
-            axiom = elLearner.decomposeLeft(ArB, C);
+            axiom = baseLearner.decomposeLeft(ArB, C);
             System.out.println("Decompose left: " + axiom);
 
-            axiom = elLearner.decomposeRight(E, FrG);
+            axiom = baseLearner.decomposeRight(E, FrG);
             System.out.println("Decompose right: " + axiom);
         }
         catch(Exception e)
@@ -192,7 +192,7 @@ public class ELLearnerTest {
 
         try
         {
-            axiom = elLearner.saturateRight(A, BC);
+            axiom = baseLearner.saturateRight(A, BC);
 
             // Expected
             // A \sqsubseteq A \sqcap B \sqcap C \sqcap D \sqcap E \sqcap F
@@ -222,7 +222,7 @@ public class ELLearnerTest {
         OWLSubClassOfAxiom mergedAxiom= df.getOWLSubClassOfAxiom(A, df.getOWLObjectIntersectionOf(df.getOWLObjectSomeValuesFrom(R, df.getOWLObjectIntersectionOf(B,C)),df.getOWLObjectSomeValuesFrom(R,A)));
         man.addAxiom(targetOntology, mergedAxiom);
         try {
-            axiom = elLearner.mergeRight(left, right);
+            axiom = baseLearner.mergeRight(left, right);
             System.out.println("Merged: " + axiom);
             if(!axiom.equals(mergedAxiom))
                 fail("Did not merge.");
@@ -254,7 +254,7 @@ public class ELLearnerTest {
         //System.out.println("Expected: " + branchedAxiom);
         man.addAxiom(targetOntology, branchedAxiom);
         try {
-            axiom = elLearner.branchLeft(left, right);
+            axiom = baseLearner.branchLeft(left, right);
             System.out.println("Branched: " + axiom);
             if(!axiom.equals(branchedAxiom))
                 fail("Did not branch.");

@@ -2,32 +2,27 @@ package org.exactlearner.oracle;
 
 import static org.junit.Assert.fail;
 
+import org.analysis.OntologyManipulator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.semanticweb.owlapi.apibinding.OWLManager;
-import org.semanticweb.owlapi.model.IRI;
-import org.semanticweb.owlapi.model.OWLClass;
-import org.semanticweb.owlapi.model.OWLClassExpression;
-import org.semanticweb.owlapi.model.OWLDataFactory;
-import org.semanticweb.owlapi.model.OWLObjectProperty;
-import org.semanticweb.owlapi.model.OWLOntology;
-import org.semanticweb.owlapi.model.OWLOntologyManager;
-import org.semanticweb.owlapi.model.OWLSubClassOfAxiom;
+import org.semanticweb.owlapi.model.*;
 import org.exactlearner.engine.ELEngine;
+
+import java.util.HashSet;
 
 public class ELOracleTest {
 
-     
-     
     private final OWLOntologyManager man = OWLManager.createOWLOntologyManager();
     private OWLOntology targetOntology = null;
     private OWLOntology hypothesisOntology = null;
     private ELEngine elQueryEngineForT = null;
     private ELEngine elQueryEngineForH = null;
     //private ELLearner elLearner = null;
-    private ELOracle elOracle = null;
+    private BaseOracle baseOracle = null;
 
 
     @Before
@@ -41,7 +36,7 @@ public class ELOracleTest {
         elQueryEngineForT = new ELEngine(targetOntology);
 
          
-        elOracle = new ELOracle(elQueryEngineForT, elQueryEngineForH);
+        baseOracle = new Oracle(elQueryEngineForT, elQueryEngineForH);
     }
 
  
@@ -49,20 +44,22 @@ public class ELOracleTest {
     public void branchRight() {
         OWLDataFactory df = man.getOWLDataFactory();
 
-        OWLClass A = df.getOWLClass(IRI.create(":A"));
-        OWLClass left = A;
-        OWLClass B = df.getOWLClass(IRI.create(":B"));
-        OWLObjectProperty R = df.getOWLObjectProperty(IRI.create(":r"));
-        OWLClass C = df.getOWLClass(IRI.create(":C"));
+        OWLClass A = df.getOWLClass(IRI.create(":Cat"));
+        OWLClass B = df.getOWLClass(IRI.create(":Vertebrate"));
+        OWLObjectProperty R = df.getOWLObjectProperty(IRI.create(":produce_milk"));
+        OWLClass C = df.getOWLClass(IRI.create(":Mammal"));
         OWLClassExpression right = df.getOWLObjectIntersectionOf(df.getOWLObjectSomeValuesFrom(R, df.getOWLObjectIntersectionOf(B,C)));
         OWLSubClassOfAxiom axiom= df.getOWLSubClassOfAxiom(A, df.getOWLObjectIntersectionOf(df.getOWLObjectSomeValuesFrom(R, B), df.getOWLObjectSomeValuesFrom(R,C)));
         man.addAxiom(targetOntology, axiom);
         try {
-            OWLSubClassOfAxiom newCounterexampleAxiom = elOracle.branchRight(left, right, 2);
+            OWLSubClassOfAxiom newCounterexampleAxiom = baseOracle.branchRight(A, right, 2);
             man.removeAxiom(targetOntology, axiom);
             System.out.println("Branched: " + axiom);
-            if(!axiom.equals(newCounterexampleAxiom))
-                fail("Did not branch.");
+            var set = new HashSet<OWLAxiom>();
+            set.add(newCounterexampleAxiom);
+            set.add(axiom);
+            System.out.println(OntologyManipulator.parseAxioms(set));
+            Assert.assertEquals(axiom, newCounterexampleAxiom);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -104,7 +101,7 @@ public class ELOracleTest {
         try
         {
         	//							  left, right, chance
-        	axiom = elOracle.unsaturateRight(A, ABCDEF, 1);
+        	axiom = baseOracle.unsaturateRight(A, ABCDEF, 1);
         	System.out.println("Unsaturated: " + axiom);
         }
         catch(Exception e)
@@ -142,7 +139,7 @@ public class ELOracleTest {
         try
         {
         	//						   left, right, chance
-        	axiom = elOracle.saturateLeft(A_, C, 1);
+        	axiom = baseOracle.saturateLeft(A_, C, 1);
         	System.out.println("Saturate left: " + axiom);
         }
         catch(Exception e)
@@ -170,7 +167,7 @@ public class ELOracleTest {
         man.addAxiom(targetOntology, axiom); 
         
         try {
-        	axiom = elOracle.mergeLeft(left, A, 1); 
+        	axiom = baseOracle.mergeLeft(left, A, 1);
             System.out.println("Merge left: " + axiom);
         } catch (Exception e) {
         	System.out.println("Error in merge left \n");
@@ -214,9 +211,9 @@ public class ELOracleTest {
         
         try
         {
-        	axiom = elOracle.composeLeft(ArB, C, 1);
+        	axiom = baseOracle.composeLeft(ArB, C, 1);
         	System.out.println("Compose left: " + axiom);
-        	axiom = elOracle.composeRight(C, ErF, 1);
+        	axiom = baseOracle.composeRight(C, ErF, 1);
         	System.out.println("Compose right: " + axiom);
         }
         catch(Exception e)
