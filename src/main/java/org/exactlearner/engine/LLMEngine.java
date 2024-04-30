@@ -1,6 +1,5 @@
 package org.exactlearner.engine;
 
-import org.analysis.OntologyManipulator;
 import org.analysis.Result;
 import org.exactlearner.parser.OWLParserImpl;
 import org.experiments.Environment;
@@ -18,7 +17,8 @@ import java.util.ArrayList;
 import java.util.Set;
 
 public class LLMEngine implements BaseEngine {
-    private final String ontology;
+    private final OWLOntology ontology;
+    private String ontologyName = "";
     private final String model;
     private final String system;
     private final Integer maxTokens;
@@ -26,25 +26,25 @@ public class LLMEngine implements BaseEngine {
     private final OWLParserImpl parser;
     private final OWLReasoner reasoner;
 
-    public LLMEngine(String ontology, String model, String system, Integer maxTokens) {
+    public LLMEngine(OWLOntology ontology, String model, String system, Integer maxTokens) {
         this.ontology = ontology;
         this.system = system;
         this.model = model;
         this.maxTokens = maxTokens;
         this.manager = OWLManager.createOWLOntologyManager();
-        this.parser = OntologyManipulator.getParser(ontology);
+        this.parser = new OWLParserImpl(ontology);
         this.reasoner = new ElkReasonerFactory().createReasoner(parser.getOwl());
     }
 
-    public Boolean isSubClassOf(OWLClass classA, OWLClass classB) {
-        var classes = new ArrayList<OWLClass>();
-        classes.add(classA);
-        classes.add(classB);
-        var classesAsString = classes.stream()
-                .map(OWLClass::toString)
-                .map(s -> s.substring(s.indexOf("#") + 1, s.length() - 1)).toList();
-
-        return runTaskAndGetResult(classesAsString.get(0) + "SubClassOf: " + classesAsString.get(1));
+    public LLMEngine(String ontology, String model, String system, Integer maxTokens) {
+        this.ontologyName = ontology;
+        this.system = system;
+        this.model = model;
+        this.maxTokens = maxTokens;
+        this.manager = OWLManager.createOWLOntologyManager();
+        this.parser = new OWLParserImpl(ontologyName);
+        this.ontology = parser.getOwl();
+        this.reasoner = new ElkReasonerFactory().createReasoner(parser.getOwl());
     }
 
     @Override
@@ -62,8 +62,9 @@ public class LLMEngine implements BaseEngine {
         } else {
             throw new IllegalStateException("Invalid model.");
         }
-        Task task = new ExperimentTask("statementsQuerying", model, ontology, message, system, work);
+        Task task = new ExperimentTask("statementsQuerying", model, ontologyName, message, system, work);
         Environment.run(task);
+
         return new Result(task.getFileName()).isTrue();
     }
 
@@ -82,38 +83,14 @@ public class LLMEngine implements BaseEngine {
         return manager.getOWLDataFactory().getOWLObjectIntersectionOf(mySet);
     }
 
-    private Boolean entailedSubclass(OWLSubClassOfAxiom subclassAxiom) {
-
-        OWLClassExpression left = subclassAxiom.getSubClass();
-        OWLClassExpression right = subclassAxiom.getSuperClass();
-        boolean workaround = false;
-
-        OWLClass leftName;
-        if (left.isAnonymous()) {
-            leftName = manager.getOWLDataFactory().getOWLClass(IRI.create("#temp001"));
-        } else {
-            leftName = left.asOWLClass();
-        }
-
-        OWLClass rightName;
-        if (right.isAnonymous()) {
-            rightName = manager.getOWLDataFactory().getOWLClass(IRI.create("#temp002"));
-        } else {
-            rightName = right.asOWLClass();
-        }
-
-        String sx = leftName.toString().substring(leftName.toString().indexOf("#") + 1, leftName.toString().length() - 1);
-        String dx = rightName.toString().substring(rightName.toString().indexOf("#") + 1, rightName.toString().length() - 1);
-
-        workaround = runTaskAndGetResult(sx + "SubClassOf: " + dx);
-        return workaround;
-    }
-
+    @Override
     public Boolean entailed(OWLAxiom ax) {
+        ManchesterOWLSyntaxOWLObjectRendererImpl renderer = new ManchesterOWLSyntaxOWLObjectRendererImpl();
         if (ax.isOfType(AxiomType.EQUIVALENT_CLASSES)) {
             OWLEquivalentClassesAxiom eax = (OWLEquivalentClassesAxiom) ax;
             for (OWLSubClassOfAxiom sax : eax.asOWLSubClassOfAxioms()) {
-                if (!entailedSubclass(sax)) {
+                var query = renderer.render(sax).replaceAll("\r", " ").replaceAll("\n", " ");
+                if (!runTaskAndGetResult(query)) {
                     return false;
                 }
             }
@@ -121,15 +98,17 @@ public class LLMEngine implements BaseEngine {
         }
 
         if (ax.isOfType(AxiomType.SUBCLASS_OF)) {
-            ManchesterOWLSyntaxOWLObjectRendererImpl renderer = new ManchesterOWLSyntaxOWLObjectRendererImpl();
+            //return entailedSubclass((OWLSubClassOfAxiom) ax);
             var query = renderer.render(ax).replaceAll("\r", " ").replaceAll("\n", " ");
-            return runTaskAndGetResult(query);
+            var bool = runTaskAndGetResult(query);
+            return bool;
         }
 
         throw new RuntimeException("Axiom type not supported " + ax.toString());
 
     }
 
+    @Override
     public Boolean entailed(Set<OWLAxiom> axioms) {
         for (OWLAxiom ax : axioms) {
             if (!entailed(ax)) {
@@ -139,6 +118,7 @@ public class LLMEngine implements BaseEngine {
         return true;
     }
 
+    @Override
     public OWLOntology getOntology() {
         return parser.getOwl();
     }
