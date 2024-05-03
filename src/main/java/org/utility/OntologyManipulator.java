@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
 public class OntologyManipulator {
 
     public static OWLAxiom createAxiomFromString(String query, OWLOntology ontology) {
-        query = query.replace("SubClassOf", "SubClassOf:");
+        //query = query.replace("SubClassOf", "SubClassOf:");
         OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
         ManchesterOWLSyntaxEditorParser parser = getManchesterOWLSyntaxEditorParser(ontology, manager, query);
         OWLAxiom axiom = null;

@@ -19,4 +19,10 @@ public interface BaseEngine {
     Boolean entailed(Set<OWLAxiom> s);
 
     OWLOntology getOntology();
+
+    Set<OWLClass> getSuperClasses(OWLClassExpression superclass, boolean direct);
+
+    void disposeOfReasoner();
+
+   void applyChange(OWLOntologyChange change);
 }

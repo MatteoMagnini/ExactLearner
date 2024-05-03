@@ -6,6 +6,7 @@ import org.experiments.Environment;
 import org.experiments.logger.SmartLogger;
 import org.experiments.task.ExperimentTask;
 import org.experiments.task.Task;
+import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.utility.YAMLConfigLoader;
 import org.experiments.workload.OllamaWorkload;
 import org.experiments.workload.OpenAIWorkload;
@@ -35,11 +36,10 @@ public class AskStatement {
     }
 
     private void askStatement(Integer seed, String model, String ontology, String system, int maxTokens, String type) {
-        var parser = new OWLParserImpl(ontology);
+        var parser = new OWLParserImpl(ontology, OWLManager.createOWLOntologyManager());
         var builder = new StatementBuilderImpl(seed,parser.getClassesNamesAsString(), parser.getObjectProperties().stream().map(Object::toString).map(s -> s.split("#")[1].replace(">", "")).collect(Collectors.toSet()));
         //epsilon and gamma = 0.01
-        var a = builder.getAllStatements();
-        Pac pac = new Pac(builder.getNumberOfStatements(), 0.2, 0.1);
+        Pac pac = new Pac(builder.getNumberOfStatements(), 0.05, 0.1, 2);
         for (int i = 1; i <= pac.getTrainingSamples(); i++) {
             System.out.println("Training samples done: " + i + "/" + pac.getTrainingSamples());
             Runnable work;

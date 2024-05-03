@@ -14,6 +14,8 @@ import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 import uk.ac.manchester.cs.owl.owlapi.mansyntaxrenderer.ManchesterOWLSyntaxOWLObjectRendererImpl;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -41,7 +43,7 @@ public class AxiomsAnalyser {
         Set<OWLAxiom> falseAxioms = new HashSet<>();
         Set<OWLAxiom> unknownAxioms = new HashSet<>();
         Set<OWLAxiom> logicInconsistentAxioms = new HashSet<>();
-        var parser = new OWLParserImpl(ontology);
+        var parser = new OWLParserImpl(ontology, OWLManager.createOWLOntologyManager());
         int trueCounter;
         int falseCounter;
         int unknownCounter;
@@ -53,7 +55,8 @@ public class AxiomsAnalyser {
                 // load result
                 String fileName = new ExperimentTask("axiomsQuerying", model, ontology, stringAxiom, system, () -> {
                 }).getFileName();
-                Result result = new Result(fileName);
+                Result result = null;
+                result = new Result(fileName);
                 if (result.isTrue()) {
                     trueAxioms.add(axiom);
                 } else if (result.isFalse()) {

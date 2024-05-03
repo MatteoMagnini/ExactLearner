@@ -1,8 +1,9 @@
 package org.exactlearner.learner;
 
-import org.exactlearner.console.consoleLearner;
+import org.exactlearner.engine.BaseEngine;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLClassExpression;
+import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLSubClassOfAxiom;
 
 public interface BaseLearner {
@@ -32,5 +33,5 @@ public interface BaseLearner {
 
     int getNumberRightDecomposition();
 
-    void minimiseHypothesis(consoleLearner consoleLearner);
+    void minimiseHypothesis(BaseEngine elQueryEngineForH, OWLOntology hypothesisOntology);
 }
