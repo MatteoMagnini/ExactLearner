@@ -4,6 +4,7 @@ import static org.junit.Assert.fail;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.exactlearner.engine.BaseEngine;
 import org.junit.Before;
 import org.junit.Test;
 import org.semanticweb.owlapi.apibinding.OWLManager;
@@ -20,8 +21,8 @@ public class ELLearnerTest {
     private final OWLOntologyManager man = OWLManager.createOWLOntologyManager();
     private OWLOntology targetOntology = null;
     private OWLOntology hypothesisOntology = null;
-    private ELEngine elQueryEngineForT = null;
-    private ELEngine elQueryEngineForH = null;
+    private BaseEngine elQueryEngineForT = null;
+    private BaseEngine elQueryEngineForH = null;
     private BaseLearner baseLearner = null;
      
 

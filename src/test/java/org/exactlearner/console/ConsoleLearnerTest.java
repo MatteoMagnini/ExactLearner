@@ -8,7 +8,7 @@ import java.util.Arrays;
 import org.junit.Test;
 import org.junit.Before;
 
-public class consoleLearnerTest {
+public class ConsoleLearnerTest {
 
 	@Before
 	public void setUp() throws Exception {

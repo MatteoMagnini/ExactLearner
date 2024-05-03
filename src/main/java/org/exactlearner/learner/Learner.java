@@ -1,13 +1,10 @@
 package org.exactlearner.learner;
-
-import org.exactlearner.console.consoleLearner;
 import org.exactlearner.engine.BaseEngine;
 import org.exactlearner.tree.ELEdge;
 import org.exactlearner.tree.ELNode;
 import org.exactlearner.tree.ELTree;
 import org.exactlearner.utils.Metrics;
 import org.semanticweb.owlapi.model.*;
-
 import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeSet;
@@ -499,8 +496,8 @@ public class Learner implements BaseLearner {
     }
 
     @Override
-    public void minimiseHypothesis(consoleLearner consoleLearner) {
-        Set<OWLAxiom> tmpaxiomsH = consoleLearner.elQueryEngineForH.getOntology().getAxioms();
+    public void minimiseHypothesis(BaseEngine elQueryEngineForH, OWLOntology hypothesisOntology) {
+        Set<OWLAxiom> tmpaxiomsH = elQueryEngineForH.getOntology().getAxioms();
         Iterator<OWLAxiom> ineratorMinH = tmpaxiomsH.iterator();
 
         if (tmpaxiomsH.size() > 1) {
@@ -512,28 +509,28 @@ public class Learner implements BaseLearner {
                     OWLClassExpression left = axiom.getSubClass();
                     OWLClassExpression right = axiom.getSuperClass();
 
-                    if (consoleLearner.elQueryEngineForH
-                            .entailed(consoleLearner.elQueryEngineForH.getSubClassAxiom(right, left))) {
-                        RemoveAxiom removedAxiom = new RemoveAxiom(consoleLearner.elQueryEngineForH.getOntology(),
+                    if (elQueryEngineForH
+                            .entailed(elQueryEngineForH.getSubClassAxiom(right, left))) {
+                        RemoveAxiom removedAxiom = new RemoveAxiom(elQueryEngineForH.getOntology(),
                                 checkedAxiom);
-                        consoleLearner.elQueryEngineForH.applyChange(removedAxiom);
-                        checkedAxiom = consoleLearner.elQueryEngineForH.getOWLEquivalentClassesAxiom(left, right);
+                        elQueryEngineForH.applyChange(removedAxiom);
+                        checkedAxiom = elQueryEngineForH.getOWLEquivalentClassesAxiom(left, right);
 
-                        AddAxiom addAxiomtoH = new AddAxiom(consoleLearner.hypothesisOntology, checkedAxiom);
+                        AddAxiom addAxiomtoH = new AddAxiom(hypothesisOntology, checkedAxiom);
 
-                        consoleLearner.elQueryEngineForH.applyChange(addAxiomtoH);
+                        elQueryEngineForH.applyChange(addAxiomtoH);
                     }
                 }
-                RemoveAxiom removedAxiom = new RemoveAxiom(consoleLearner.elQueryEngineForH.getOntology(),
+                RemoveAxiom removedAxiom = new RemoveAxiom(elQueryEngineForH.getOntology(),
                         checkedAxiom);
-                consoleLearner.elQueryEngineForH.applyChange(removedAxiom);
+                elQueryEngineForH.applyChange(removedAxiom);
 
-                if (!consoleLearner.elQueryEngineForH.entailed(checkedAxiom)) {
+                if (!elQueryEngineForH.entailed(checkedAxiom)) {
                     // minimize and put it back
                     checkedAxiom = minimizeAxiom(checkedAxiom);
 
-                    AddAxiom addAxiomtoH = new AddAxiom(consoleLearner.hypothesisOntology, checkedAxiom);
-                    consoleLearner.elQueryEngineForH.applyChange(addAxiomtoH);
+                    AddAxiom addAxiomtoH = new AddAxiom(hypothesisOntology, checkedAxiom);
+                    elQueryEngineForH.applyChange(addAxiomtoH);
                 }
 
             }

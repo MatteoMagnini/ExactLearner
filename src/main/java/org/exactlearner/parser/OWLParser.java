@@ -16,4 +16,5 @@ public interface OWLParser {
 
     Set<OWLObjectProperty> getObjectProperties();
 
+    Set<String> getObjectPropertiesAsString();
 }

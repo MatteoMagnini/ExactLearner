@@ -12,6 +12,8 @@ import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.nio.file.FileSystems;
 import java.util.Arrays;
 import java.util.Set;
@@ -36,7 +38,7 @@ public class ClassesAnalyser {
     }
 
     private static void runExperiment3(String model, String ontology, String system) {
-        var parser = new OWLParserImpl(ontology);
+        var parser = new OWLParserImpl(ontology, OWLManager.createOWLOntologyManager());
         var classesNames = parser.getClassesNamesAsString();
         var confusionMatrix = createConfusionMatrix(classesNames, model, ontology, system);
         // Calculate metrics
@@ -106,7 +108,8 @@ public class ClassesAnalyser {
                 //queries.put(new Pair<>(model, ontology), message);
                 String fileName = new ExperimentTask("classesQuerying", model, ontology, message, system, () -> {
                 }).getFileName();
-                Result result = new Result(fileName);
+                Result result = null;
+                result = new Result(fileName);
                 if (result.isTrue()) {
                     if (engine.entailed(createAxiomFromString(message, owl))) {
                         matrixCFU[0][0]++;

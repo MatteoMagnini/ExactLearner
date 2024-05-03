@@ -3,6 +3,7 @@ package org.exactlearner.parser;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 
 public class OWLParserTest {
@@ -12,7 +13,7 @@ public class OWLParserTest {
 
     @Before
     public void setUp() throws OWLOntologyCreationException {
-        parser = new OWLParserImpl("src/main/resources/ontologies/small/animals.owl");
+        parser = new OWLParserImpl("src/main/resources/ontologies/small/animals.owl", OWLManager.createOWLOntologyManager());
         if (parser.getClasses().isEmpty()) {
             Assert.fail("FAILED TO LOAD ANIMAL.OWL");
         }

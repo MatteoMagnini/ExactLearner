@@ -30,7 +30,7 @@ public class ClassesResultsReaderTest {
         Yaml yaml = new Yaml();
         Configuration config;
         try {
-            config = yaml.loadAs(new FileInputStream("src/main/java/org/experiments/classesQueryingConf.yml"), Configuration.class);
+            config = yaml.loadAs(new FileInputStream("src/main/java/org/configurations/classesQueryingConf.yml"), Configuration.class);
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }

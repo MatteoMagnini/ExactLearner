@@ -1,8 +1,8 @@
 package org.exactlearner.engine;
 
-import org.experiments.Result;
 import org.exactlearner.parser.OWLParserImpl;
 import org.experiments.Environment;
+import org.experiments.Result;
 import org.experiments.task.ExperimentTask;
 import org.experiments.task.Task;
 import org.experiments.workload.OllamaWorkload;
@@ -10,9 +10,13 @@ import org.experiments.workload.OpenAIWorkload;
 import org.semanticweb.elk.owlapi.ElkReasonerFactory;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.*;
+import org.semanticweb.owlapi.reasoner.NodeSet;
 import org.semanticweb.owlapi.reasoner.OWLReasoner;
 import uk.ac.manchester.cs.owl.owlapi.mansyntaxrenderer.ManchesterOWLSyntaxOWLObjectRendererImpl;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Set;
 
 public class LLMEngine implements BaseEngine {
@@ -25,23 +29,23 @@ public class LLMEngine implements BaseEngine {
     private final OWLParserImpl parser;
     private final OWLReasoner reasoner;
 
-    public LLMEngine(OWLOntology ontology, String model, String system, Integer maxTokens) {
+    public LLMEngine(OWLOntology ontology, String model, String system, Integer maxTokens, OWLOntologyManager manager) {
         this.ontology = ontology;
         this.system = system;
         this.model = model;
         this.maxTokens = maxTokens;
-        this.manager = OWLManager.createOWLOntologyManager();
+        this.manager = manager;
         this.parser = new OWLParserImpl(ontology);
         this.reasoner = new ElkReasonerFactory().createReasoner(parser.getOwl());
     }
 
-    public LLMEngine(String ontology, String model, String system, Integer maxTokens) {
+    public LLMEngine(String ontology, String model, String system, Integer maxTokens, OWLOntologyManager manager) {
         this.ontologyName = ontology;
         this.system = system;
         this.model = model;
         this.maxTokens = maxTokens;
-        this.manager = OWLManager.createOWLOntologyManager();
-        this.parser = new OWLParserImpl(ontologyName);
+        this.manager = manager;
+        this.parser = new OWLParserImpl(ontologyName, manager);
         this.ontology = parser.getOwl();
         this.reasoner = new ElkReasonerFactory().createReasoner(parser.getOwl());
     }
@@ -65,6 +69,7 @@ public class LLMEngine implements BaseEngine {
         Environment.run(task);
 
         return new Result(task.getFileName()).isTrue();
+
     }
 
     @Override
@@ -80,6 +85,11 @@ public class LLMEngine implements BaseEngine {
     @Override
     public OWLClassExpression getOWLObjectIntersectionOf(Set<OWLClassExpression> mySet) {
         return manager.getOWLDataFactory().getOWLObjectIntersectionOf(mySet);
+    }
+
+    public Set<OWLClass> getSuperClasses(OWLClassExpression superclass, boolean direct) {
+        NodeSet<OWLClass> superClasses = reasoner.getSuperClasses(superclass, direct);
+        return superClasses.getFlattened();
     }
 
     @Override
@@ -120,5 +130,16 @@ public class LLMEngine implements BaseEngine {
     @Override
     public OWLOntology getOntology() {
         return parser.getOwl();
+    }
+
+    @Override
+    public void disposeOfReasoner() {
+        System.out.flush();
+        reasoner.dispose();
+    }
+
+    @Override
+    public void applyChange(OWLOntologyChange change) {
+        manager.applyChange(change);
     }
 }

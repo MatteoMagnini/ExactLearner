@@ -36,8 +36,8 @@ public class LLMLearnerTest {
 
         targetOntology = man.createOntology();
         hypothesisOntology = man.createOntology();
-        var config = new YAMLConfigLoader().getConfig("src/main/java/org/pac/statementsQueryingConf.yml", Configuration.class);
-        elQueryEngineForT = new LLMEngine(targetOntology, config.getModels().get(3), config.getSystem(), config.getMaxTokens());
+        var config = new YAMLConfigLoader().getConfig("src/main/java/org/configurations/statementsQueryingConf.yml", Configuration.class);
+        elQueryEngineForT = new LLMEngine(targetOntology, config.getModels().get(2), config.getSystem(), config.getMaxTokens(),man);
         elQueryEngineForH = new ELEngine(hypothesisOntology);
         baseLearner = new Learner(elQueryEngineForT, elQueryEngineForH, metrics);
 
@@ -49,7 +49,7 @@ public class LLMLearnerTest {
         OWLClass A = df.getOWLClass(IRI.create(":Cat"));
         OWLClass B = df.getOWLClass(IRI.create(":Mammal"));
         OWLObjectProperty R = df.getOWLObjectProperty(IRI.create(":has_legs"));
-        OWLClass C = df.getOWLClass(IRI.create(":Feline"));
+        OWLClass C = df.getOWLClass(IRI.create(":Man"));
         OWLClassExpression right = df.getOWLObjectIntersectionOf(df.getOWLObjectSomeValuesFrom(R, C), df.getOWLObjectSomeValuesFrom(R, B), df.getOWLObjectSomeValuesFrom(R,A));
         OWLSubClassOfAxiom axiom;
         OWLSubClassOfAxiom mergedAxiom= df.getOWLSubClassOfAxiom(A, df.getOWLObjectIntersectionOf(df.getOWLObjectSomeValuesFrom(R, df.getOWLObjectIntersectionOf(B,C)),df.getOWLObjectSomeValuesFrom(R,A)));
@@ -212,13 +212,13 @@ public class LLMLearnerTest {
         OWLDataFactory df = man.getOWLDataFactory();
 
 
-        OWLClass A = df.getOWLClass(IRI.create(":Cat"));
-        OWLClass B = df.getOWLClass(IRI.create(":Animal"));
-        OWLObjectProperty R = df.getOWLObjectProperty(IRI.create(":has_legs"));
-        OWLClass C = df.getOWLClass(IRI.create(":Mammal"));
-        OWLClassExpression right = df.getOWLObjectIntersectionOf(df.getOWLObjectSomeValuesFrom(R, C), df.getOWLObjectSomeValuesFrom(R, B), df.getOWLObjectSomeValuesFrom(R,A));
+        OWLClass A = df.getOWLClass(IRI.create(":Person"));
+        OWLClass B = df.getOWLClass(IRI.create(":Female"));
+        OWLObjectProperty R = df.getOWLObjectProperty(IRI.create(":has_parent"));
+        OWLClass C = df.getOWLClass(IRI.create(":Parent"));
+        OWLClassExpression right = df.getOWLObjectIntersectionOf(df.getOWLObjectSomeValuesFrom(R, C), df.getOWLObjectSomeValuesFrom(R, B));
         OWLSubClassOfAxiom axiom;
-        OWLSubClassOfAxiom mergedAxiom= df.getOWLSubClassOfAxiom(A, df.getOWLObjectIntersectionOf(df.getOWLObjectSomeValuesFrom(R, df.getOWLObjectIntersectionOf(B,C)),df.getOWLObjectSomeValuesFrom(R,A)));
+        OWLSubClassOfAxiom mergedAxiom= df.getOWLSubClassOfAxiom(A, df.getOWLObjectIntersectionOf(df.getOWLObjectSomeValuesFrom(R, df.getOWLObjectIntersectionOf(B,C))));
         man.addAxiom(targetOntology, mergedAxiom);
         try {
             axiom = baseLearner.mergeRight(A, right);

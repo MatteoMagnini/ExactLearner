@@ -153,6 +153,7 @@ public class ELEngine implements BaseEngine {
      * @return The superclasses of the specified class expression If there was a
      * problem parsing the class expression.
      */
+    @Override
     public Set<OWLClass> getSuperClasses(OWLClassExpression superclass, boolean direct) {
         NodeSet<OWLClass> superClasses = myReasoner.getSuperClasses(superclass, direct);
         return superClasses.getFlattened();

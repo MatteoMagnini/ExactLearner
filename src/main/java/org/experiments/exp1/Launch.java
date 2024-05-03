@@ -1,6 +1,8 @@
-package org.experiments;
+package org.experiments.exp1;
 
 import org.configurations.Configuration;
+import org.experiments.Environment;
+import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.utility.OntologyManipulator;
 import org.exactlearner.parser.OWLParserImpl;
 import org.experiments.logger.SmartLogger;
@@ -29,7 +31,7 @@ public class Launch {
     }
 
     private static void runExperiment(String model, String ontology, String system, int maxTokens, String type) {
-        var parser = new OWLParserImpl(ontology);
+        var parser = new OWLParserImpl(ontology, OWLManager.createOWLOntologyManager());
         var classesNames = parser.getClassesNamesAsString();
         var axioms = parser.getAxioms();
         var filteredManchesterSyntaxAxioms = OntologyManipulator.parseAxioms(axioms);

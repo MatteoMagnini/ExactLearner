@@ -36,7 +36,7 @@ public class AxiomsResultsReaderTest{
     private AxiomsResultsReader axiomsResultsReader;
     @Before
     public void setUp() {
-        var config = new YAMLConfigLoader().getConfig("src/main/java/org/experiments/axiomsQueryingConf.yml", Configuration.class);
+        var config = new YAMLConfigLoader().getConfig("src/main/java/org/configurations//axiomsQueryingConf.yml", Configuration.class);
 
         type = config.getType();
         model = config.getModels().get(0);

@@ -12,10 +12,10 @@ import java.util.stream.Collectors;
 public class OWLParserImpl implements OWLParser {
     private OWLOntology owl;
 
-    public OWLParserImpl(String pathOfFile) {
+    public OWLParserImpl(String pathOfFile, OWLOntologyManager manager) {
         System.out.println("Parsing file: " + pathOfFile);
         try {
-            loadFile(pathOfFile);
+            loadFile(pathOfFile, manager);
         } catch (OWLOntologyCreationException e) {
             throw new RuntimeException(e);
         }
@@ -25,8 +25,7 @@ public class OWLParserImpl implements OWLParser {
         this.owl = owl;
     }
 
-    private void loadFile(String pathOfFile) throws OWLOntologyCreationException {
-        OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
+    private void loadFile(String pathOfFile, OWLOntologyManager manager) throws OWLOntologyCreationException {
         owl = manager.loadOntologyFromOntologyDocument(new File(pathOfFile));
     }
 
@@ -59,6 +58,15 @@ public class OWLParserImpl implements OWLParser {
     public Set<OWLObjectProperty> getObjectProperties() {
         return owl.getObjectPropertiesInSignature();
     }
+
+    @Override
+    public Set<String> getObjectPropertiesAsString() {
+        return owl.getObjectPropertiesInSignature().stream()
+                .map(Object::toString)
+                .map(s -> s.split("#")[1].replace(">", ""))
+                .collect(Collectors.toSet());
+    }
+
 
 
 }
