@@ -49,13 +49,12 @@ public class LaunchLLMLeaner {
 
     private OWLParserImpl parser;
     private OWLOntology targetOntology = null;
-    public OWLOntology hypothesisOntology = null;
+    private OWLOntology hypothesisOntology = null;
     private BaseEngine elQueryEngineForT = null;
     private BaseEngine elQueryEngineForH = null;
     private Learner learner = null;
     private Oracle refactor = null;
 
-    Configuration config;
     private String model;
     private String system;
     private Integer maxTokens;
@@ -69,10 +68,11 @@ public class LaunchLLMLeaner {
     }
 
     private void loadConfiguration(String[] args) {
-        config = new YAMLConfigLoader().getConfig(args[0], Configuration.class);
-        model = config.getModels().get(0);
+        Configuration config = new YAMLConfigLoader().getConfig(args[0], Configuration.class);
+        //choose configuration from file here:
+        model = config.getModels().get(0); //mistral
         system = config.getSystem();
-        ontology = config.getOntologies().get(0);
+        ontology = config.getOntologies().get(0); //animals
         maxTokens = config.getMaxTokens();
     }
 
@@ -414,7 +414,7 @@ public class LaunchLLMLeaner {
     }
 
     private OWLSubClassOfAxiom getCounterExampleSubClassOf(OWLSubClassOfAxiom counterexample) throws Exception {
-        OWLSubClassOfAxiom newCounterexampleAxiom = counterexample;
+        OWLSubClassOfAxiom newCounterexampleAxiom;
         OWLClassExpression left = counterexample.getSubClass();
         OWLClassExpression right = counterexample.getSuperClass();
 
