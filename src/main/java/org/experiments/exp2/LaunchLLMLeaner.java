@@ -62,22 +62,34 @@ public class LaunchLLMLeaner {
     private int conceptNumber;
     private int roleNumber;
 
+    private double epsilon = 0.1;
+    private double delta = 0.2;
+    private int hypothesisSize = 10;
+
     public static void main(String[] args) {
         Logger.getRootLogger().setLevel(Level.OFF);
         new LaunchLLMLeaner().run(args);
     }
 
-    private void loadConfiguration(String[] args) {
-        Configuration config = new YAMLConfigLoader().getConfig(args[0], Configuration.class);
+    private void loadConfiguration(String fileName) {
+        Configuration config = new YAMLConfigLoader().getConfig(fileName, Configuration.class);
         //choose configuration from file here:
         model = config.getModels().get(0); //mistral
         system = config.getSystem();
         ontology = config.getOntologies().get(0); //animals
         maxTokens = config.getMaxTokens();
+        hypothesisSize = OntologyManipulator.computeOntologySize(ontology);
     }
 
     public void run(String[] args) {
-        loadConfiguration(args);
+        String configurationFile = args[1];
+        if (args.length > 2) {
+            epsilon = Double.parseDouble(args[2]);
+        }
+        if (args.length > 3) {
+            delta = Double.parseDouble(args[3]);
+        }
+        loadConfiguration(configurationFile);
         try {
             setupOntologies();
             computeConceptAndRoleNumbers();
@@ -147,7 +159,7 @@ public class LaunchLLMLeaner {
         StatementBuilder builder = new StatementBuilderImpl(seed, parser.getClassesNamesAsString(), parser.getObjectPropertiesAsString());
 
         // Initialize PAC with epsilon and gamma values
-        Pac pac = new Pac(builder.getNumberOfStatements(), 0.05, 0.05, 2);
+        Pac pac = new Pac(builder.getNumberOfStatements(), epsilon, delta, hypothesisSize);
 
         // Iterate over PAC training samples
         for (int i = 1; i <= pac.getTrainingSamples(); i++) {

@@ -19,6 +19,17 @@ import java.util.stream.Collectors;
 
 public class OntologyManipulator {
 
+    public static int computeOntologySize(String ontologyFileName) {
+        OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
+        OWLOntology ontology = null;
+        try {
+            ontology = manager.loadOntologyFromOntologyDocument(new File(ontologyFileName));
+        } catch (OWLOntologyCreationException e) {
+            throw new RuntimeException(e);
+        }
+        return OntologyManipulator.filterUnusedAxioms(ontology.getAxioms()).size();
+    }
+
     public static OWLAxiom createAxiomFromString(String query, OWLOntology ontology) {
         //query = query.replace("SubClassOf", "SubClassOf:");
         OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
