@@ -45,7 +45,7 @@ public class LaunchLLMLeaner {
     private File hypoFile;
     private String ontologyFolderH="";
 
-    private OWLSubClassOfAxiom lastCE = null;
+    private OWLSubClassOfAxiom counterExample = null;
     private OWLClassExpression lastExpression = null;
     private OWLClass lastName = null;
 
@@ -55,7 +55,7 @@ public class LaunchLLMLeaner {
     private BaseEngine elQueryEngineForT = null;
     private BaseEngine elQueryEngineForH = null;
     private Learner learner = null;
-    private Oracle refactor = null;
+    private Oracle oracle = null;
 
     private String model;
     private String system;
@@ -85,10 +85,10 @@ public class LaunchLLMLeaner {
 
     public void run(String[] args) {
         String configurationFile = args[0];
-        if (args.length > 2) {
+        if (args.length > 1) {
             epsilon = Double.parseDouble(args[1]);
         }
-        if (args.length > 3) {
+        if (args.length > 2) {
             delta = Double.parseDouble(args[2]);
         }
         loadConfiguration(configurationFile);
@@ -100,7 +100,7 @@ public class LaunchLLMLeaner {
             elQueryEngineForH = new ELEngine(hypothesisOntology);
 
             learner = new Learner(elQueryEngineForT, elQueryEngineForH, myMetrics);
-            refactor = new Oracle(elQueryEngineForT, elQueryEngineForH);
+            oracle = new Oracle(elQueryEngineForH, elQueryEngineForH);
 
             runLearningExperiment(args);
         } catch (Throwable e) {
@@ -125,7 +125,7 @@ public class LaunchLLMLeaner {
         saveOWLFile(hypothesisOntology, hypoFile);
         validation();
         printStats(timeStart, timeEnd, args, true,
-                targetFile, myMetrics, learner, refactor, conceptNumber, roleNumber, targetOntology, hypothesisOntology);
+                targetFile, myMetrics, learner, oracle, conceptNumber, roleNumber, targetOntology, hypothesisOntology);
     }
 
     private void validation() throws Exception {
@@ -154,7 +154,7 @@ public class LaunchLLMLeaner {
 
     private void runLearner(BaseEngine elQueryEngineForT) throws Throwable {
         // Computes inclusions of the form A implies B
-        precomputation(elQueryEngineForT);
+        // precomputation(elQueryEngineForT);
 
         // Initialize the statement builder
         int seed = 1; // Seed for random number generator can be generated randomly
@@ -171,25 +171,25 @@ public class LaunchLLMLeaner {
             myMetrics.setEquivCount(myMetrics.getEquivCount() + 1);
 
             // Get the last counterexample
-            lastCE = getCounterExample(builder);
+            counterExample = getCounterExample(builder);
 
             // If no counterexample found, break the loop
-            if (lastCE == null) {
+            if (counterExample == null) {
                 System.out.println("No counterexample found");
                 break;
             }
 
             // Add the last counterexample to axiomsT
-            axiomsT.add(lastCE);
+            axiomsT.add(counterExample);
 
             // Update size of the largest counterexample
-            int size = myMetrics.getSizeOfCounterexample(lastCE);
+            int size = myMetrics.getSizeOfCounterexample(counterExample);
             if (size > myMetrics.getSizeOfLargestCounterExample()) {
                 myMetrics.setSizeOfLargestCounterExample(size);
             }
 
             // Decompose the last counterexample
-            lastCE = learner.decompose(lastCE.getSubClass(), lastCE.getSuperClass());
+            counterExample = learner.decompose(counterExample.getSubClass(), counterExample.getSuperClass());
 
             // Check if transformation can be applied
             checkTransformations();
@@ -212,22 +212,22 @@ public class LaunchLLMLeaner {
                 Set<OWLClassExpression> mySet = new HashSet<>(ax.getSuperClass().asConjunctSet());
                 mySet.addAll(lastExpression.asConjunctSet());
                 lastExpression = elQueryEngineForT.getOWLObjectIntersectionOf(mySet);
-                lastCE = elQueryEngineForT.getSubClassAxiom(lastName, lastExpression);
+                counterExample = elQueryEngineForT.getSubClassAxiom(lastName, lastExpression);
                 break; // Assuming only one axiom needs to be processed
             }
         }
-        lastCE = computeEssentialRightCounterexample();
-        addHypothesis(lastCE);
+        counterExample = computeEssentialRightCounterexample();
+        addHypothesis(counterExample);
     }
 
     private void processLeftHandSideTransformations() throws Exception {
-        lastCE = computeEssentialLeftCounterexample();
-        addHypothesis(lastCE);
+        counterExample = computeEssentialLeftCounterexample();
+        addHypothesis(counterExample);
     }
 
     private void handleNoTransformation() {
-        addHypothesis(lastCE);
-        System.out.println("Not an EL Terminology:" + lastCE.getSubClass() + " SubclassOf " + lastCE.getSuperClass());
+        addHypothesis(counterExample);
+        System.out.println("Not an EL Terminology:" + counterExample.getSubClass() + " SubclassOf " + counterExample.getSuperClass());
     }
 
     private void addHypothesis(OWLAxiom addedAxiom) {
@@ -235,12 +235,12 @@ public class LaunchLLMLeaner {
     }
 
     private Boolean canTransformELrhs() {
-        OWLSubClassOfAxiom counterexample = lastCE;
+        OWLSubClassOfAxiom counterexample = counterExample;
         OWLClassExpression left = counterexample.getSubClass();
         OWLClassExpression right = counterexample.getSuperClass();
         for (OWLClass cl1 : left.getClassesInSignature()) {
-            if (refactor.isCounterExample(cl1, right)) {
-                lastCE = elQueryEngineForT.getSubClassAxiom(cl1, right);
+            if (oracle.isCounterExample(cl1, right)) {
+                counterExample = elQueryEngineForT.getSubClassAxiom(cl1, right);
                 lastExpression = right;
                 lastName = cl1;
                 return true;
@@ -250,12 +250,12 @@ public class LaunchLLMLeaner {
     }
 
     private Boolean canTransformELlhs() {
-        OWLSubClassOfAxiom counterexample = lastCE;
+        OWLSubClassOfAxiom counterexample = counterExample;
         OWLClassExpression left = counterexample.getSubClass();
         OWLClassExpression right = counterexample.getSuperClass();
         for (OWLClass cl1 : right.getClassesInSignature()) {
-            if (refactor.isCounterExample(left, cl1)) {
-                lastCE = elQueryEngineForT.getSubClassAxiom(left, cl1);
+            if (oracle.isCounterExample(left, cl1)) {
+                counterExample = elQueryEngineForT.getSubClassAxiom(left, cl1);
                 lastExpression = left;
                 lastName = cl1;
                 return true;
@@ -265,7 +265,7 @@ public class LaunchLLMLeaner {
     }
 
     private OWLSubClassOfAxiom computeEssentialLeftCounterexample() throws Exception {
-        OWLSubClassOfAxiom axiom = lastCE;
+        OWLSubClassOfAxiom axiom = counterExample;
 
         lastExpression = axiom.getSubClass();
         lastName = (OWLClass) axiom.getSuperClass();
@@ -284,7 +284,7 @@ public class LaunchLLMLeaner {
     }
 
     private OWLSubClassOfAxiom computeEssentialRightCounterexample() throws Exception {
-        OWLSubClassOfAxiom axiom = lastCE;
+        OWLSubClassOfAxiom axiom = counterExample;
 
         lastName = (OWLClass) axiom.getSubClass();
         lastExpression = axiom.getSuperClass();
@@ -350,7 +350,7 @@ public class LaunchLLMLeaner {
             ontology = "ontology.owl";
         }
         ontologyFolder = "results" + fileSeparator + "ontologies" + fileSeparator + "target_" + ontology;
-        ontologyFolderH = "results" + fileSeparator + "ontologies" + fileSeparator + "learned_" + ontology;
+        ontologyFolderH = "results" + fileSeparator + "ontologies" + fileSeparator + "learned_" + model + "_" + ontology;
     }
 
     private void loadTargetOntology() throws OWLOntologyCreationException, IOException {
@@ -393,30 +393,26 @@ public class LaunchLLMLeaner {
     }
 
     private OWLSubClassOfAxiom getCounterExample(StatementBuilder builder) throws Exception {
-
         var s = builder.chooseRandomStatement();
+        // check if it is a valid counterexample according to the LLM
+        while (!elQueryEngineForH.entailed(OntologyManipulator.createAxiomFromString(s, targetOntology))) {
+            s = builder.chooseRandomStatement();
+        }
         var selectedAxiom = OntologyManipulator.createAxiomFromString(s, targetOntology);
-
         if (!selectedAxiom.isOfType(AxiomType.SUBCLASS_OF) && !selectedAxiom.isOfType(AxiomType.EQUIVALENT_CLASSES)) {
             throw new Exception("Unknown axiom type: " + selectedAxiom.getAxiomType() + "You must delete unknown axioms FIRST!");
         }
-
         if (selectedAxiom.isOfType(AxiomType.SUBCLASS_OF)) {
             if (!elQueryEngineForH.entailed(selectedAxiom)) {
-
                 OWLSubClassOfAxiom counterexample = (OWLSubClassOfAxiom) selectedAxiom;
-
                 return getCounterExampleSubClassOf(counterexample);
             }
         }
-
         if (selectedAxiom.isOfType(AxiomType.EQUIVALENT_CLASSES)) {
             OWLEquivalentClassesAxiom equivCounterexample = (OWLEquivalentClassesAxiom) selectedAxiom;
             Set<OWLSubClassOfAxiom> eqsubclassaxioms = equivCounterexample.asOWLSubClassOfAxioms();
-
             for (OWLSubClassOfAxiom subClassAxiom : eqsubclassaxioms) {
                 if (!elQueryEngineForH.entailed(subClassAxiom)) {
-
                     return getCounterExampleSubClassOf(subClassAxiom);
                 }
             }
@@ -430,27 +426,27 @@ public class LaunchLLMLeaner {
         OWLClassExpression left = counterexample.getSubClass();
         OWLClassExpression right = counterexample.getSuperClass();
 
-        newCounterexampleAxiom = refactor.mergeLeft(left, right, 1.0);
+        newCounterexampleAxiom = oracle.mergeLeft(left, right, 1.0);
         left = newCounterexampleAxiom.getSubClass();
         right = newCounterexampleAxiom.getSuperClass();
 
-        newCounterexampleAxiom = refactor.saturateLeft(left, right, 1.0);
+        newCounterexampleAxiom = oracle.saturateLeft(left, right, 1.0);
         left = newCounterexampleAxiom.getSubClass();
         right = newCounterexampleAxiom.getSuperClass();
 
-        newCounterexampleAxiom = refactor.branchRight(left, right, 1.0);
+        newCounterexampleAxiom = oracle.branchRight(left, right, 1.0);
         left = newCounterexampleAxiom.getSubClass();
         right = newCounterexampleAxiom.getSuperClass();
 
-        newCounterexampleAxiom = refactor.composeLeft(left, right, 1.0);
+        newCounterexampleAxiom = oracle.composeLeft(left, right, 1.0);
         left = newCounterexampleAxiom.getSubClass();
         right = newCounterexampleAxiom.getSuperClass();
 
-        newCounterexampleAxiom = refactor.composeRight(left, right, 1.0);
+        newCounterexampleAxiom = oracle.composeRight(left, right, 1.0);
         left = newCounterexampleAxiom.getSubClass();
         right = newCounterexampleAxiom.getSuperClass();
 
-        newCounterexampleAxiom = refactor.unsaturateRight(left, right, 1.0);
+        newCounterexampleAxiom = oracle.unsaturateRight(left, right, 1.0);
 
         return newCounterexampleAxiom;
     }

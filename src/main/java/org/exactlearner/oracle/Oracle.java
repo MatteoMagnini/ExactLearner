@@ -68,31 +68,6 @@ public class Oracle implements BaseOracle {
         return myEngineForT.getSubClassAxiom(myClass, myExpression);
     }
 
-//	private Boolean unsaturating(double bound) throws Exception {
-//		boolean flag = false;
-//		 
-//		for (int i = 0; i < rightTree.getMaxLevel(); i++) {
-//			for (ELNode nod : rightTree.getNodesOnLevel(i + 1)) {
-//				OWLClassExpression cls = nod.transformToDescription();
-//				for (OWLClass cl1 : cls.getClassesInSignature()) {
-//					if ((random.nextDouble() < bound)
-//							&& (nod.getLabel().contains(cl1) && !cl1.toString().contains("Thing"))) {
-//						nod.remove(cl1);
-//
-//						if (!myEngineForH
-//								.entailed(myEngineForH.getSubClassAxiom(leftTree.transformToClassExpression(), 
-//										rightTree.transformToClassExpression()))) {
-//							flag = true;
-//							unsaturationCounter++;
-//						} else {
-//							nod.extendLabel(cl1);
-//						}
-//					}
-//				}
-//			}
-//		}
-//		return flag;
-//	}
 
     /**
      * @param expression class expression on the left of an inclusion
@@ -125,31 +100,6 @@ public class Oracle implements BaseOracle {
         myExpression = leftTree.transformToClassExpression();
         return myEngineForT.getSubClassAxiom(myExpression, myClass);
     }
-
-//	private Boolean saturating(double bound) throws Exception {
-//
-//		boolean flag = false;
-//		 
-//		for (int i = 0; i < leftTree.getMaxLevel(); i++) {
-//			for (ELNode nod : leftTree.getNodesOnLevel(i + 1)) {
-//				for (OWLClass cl1 : myEngineForT.getClassesInSignature()) {
-//					if ((random.nextDouble() < bound) && !nod.getLabel().contains(cl1)) {
-//						nod.extendLabel(cl1);
-//
-//						if (!myEngineForH
-//								.entailed(myEngineForH.getSubClassAxiom(leftTree.transformToClassExpression(), 
-//										rightTree.transformToClassExpression()))) {						
-//							flag = true;
-//							saturationCounter++;
-//						} else {
-//							nod.remove(cl1);
-//						}
-//					}
-//				}
-//			}
-//		}
-//		return flag;
-//	}
 
     @Override
     public OWLSubClassOfAxiom mergeLeft(OWLClassExpression expression, OWLClassExpression cl, double bound)
@@ -274,59 +224,6 @@ public class Oracle implements BaseOracle {
         return myEngineForT.getSubClassAxiom(myClass, myExpression);
     }
 
-//	private Boolean branching(OWLClassExpression cl, OWLClassExpression expression, double bound) throws Exception {
-//
-//		boolean flag = false;
-//		ELTree tree = new ELTree(expression);
-//		for (int i = 0; i < tree.getMaxLevel(); i++) {
-//			for (ELNode nod : tree.getNodesOnLevel(i + 1)) {
-//				if (!nod.getEdges().isEmpty()) {
-//
-//					for (int j = 0; j < nod.getEdges().size(); j++) {
-//						if (nod.getEdges().get(j).getNode().getLabel().size() > 1) {
-//							Iterator<OWLClass> iterator1 = nod.getEdges().get(j).getNode().getLabel().iterator();
-//							
-//							while(iterator1.hasNext()) {
-//								OWLClass lab =iterator1.next();
-//								ELTree oldTree = new ELTree(tree.transformToClassExpression());
-//								ELTree newSubtree = new ELTree(
-//										nod.getEdges().get(j).getNode().transformToDescription());
-//								Iterator<OWLClass> iterator = newSubtree.getRootNode().getLabel().iterator();
-//								 
-//								while(iterator.hasNext()) {
-//									iterator.next();
-//									iterator.remove();
-//									 
-//								}
-//								newSubtree.getRootNode().extendLabel(lab);
-//								ELEdge newEdge = new ELEdge(nod.getEdges().get(j).getLabel(), newSubtree.getRootNode());
-//								nod.getEdges().add(newEdge);
-//								 
-//								iterator1.remove();
-//								if ((random.nextDouble() < bound) && 
-//										!myEngineForT.entailed(
-//												myEngineForT.getSubClassAxiom(tree.transformToClassExpression(), 
-//														oldTree.transformToClassExpression())) //if the branched tree is in fact a weaker expression
-//												&&
-//										!myEngineForH.entailed(
-//										myEngineForH.getSubClassAxiom(cl, tree.transformToClassExpression()))) {
-//									myExpression = tree.transformToClassExpression();
-//									myClass = cl;
-//									flag = true;
-//									branchCounter++;
-//								} else {
-//									tree = oldTree;
-//								}
-//							}
-//						}
-//
-//					}
-//
-//				}
-//			}
-//		}
-//		return flag;
-//	}
 
     @Override
     public OWLSubClassOfAxiom composeLeft(OWLClassExpression expression, OWLClassExpression cl, double bound)
@@ -374,39 +271,6 @@ public class Oracle implements BaseOracle {
                             tree = oldTree;
                         }
                     }
-
-                    // Set<OWLEquivalentClassesAxiom> myEqAxiomSet = myEngineForT.getOntology()
-                    // .getEquivalentClassesAxioms(c);
-                    //
-                    // for (OWLEquivalentClassesAxiom myEqAxiom : myEqAxiomSet) {
-                    // if (!nod.getLabel().contains(c)) {
-                    // break;
-                    // }
-                    //
-                    // Set<OWLClassExpression> myExpSet = myEqAxiom.getClassExpressions();
-                    // for (OWLClassExpression exp : myExpSet) {
-                    // if (!nod.getLabel().contains(c)) {
-                    // break;
-                    // }
-                    // ELTree oldTree = new ELTree(tree.transformToClassExpression());
-                    // ELTree newSubtree = new ELTree(exp);
-                    // nod.getEdges().addAll(newSubtree.getRootNode().getEdges());
-                    // nod.extendLabel(newSubtree.getRootNode().getLabel());
-                    // nod.remove(c);
-                    // if ((random.nextDouble() < bound) && !myEngineForH
-                    // .entailed(myEngineForH.getSubClassAxiom(tree.transformToClassExpression(),
-                    // cl))) {
-                    // myExpression = tree.transformToClassExpression();
-                    // myClass = cl;
-                    // flag = true;
-                    //
-                    // leftCompositionCounter++;
-                    // } else {
-                    // tree = oldTree;
-                    // }
-                    // }
-                    // }
-                    //
                 }
 
             }

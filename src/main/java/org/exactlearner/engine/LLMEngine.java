@@ -113,7 +113,8 @@ public class LLMEngine implements BaseEngine {
             return bool;
         }
 
-        throw new RuntimeException("Axiom type not supported " + ax.toString());
+        //throw new RuntimeException("Axiom type not supported " + ax.toString());
+        return false;
 
     }
 
