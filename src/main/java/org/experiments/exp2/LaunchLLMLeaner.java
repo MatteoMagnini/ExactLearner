@@ -314,7 +314,12 @@ public class LaunchLLMLeaner {
             // need to remove prefixes
             manSyntaxFormat.clearPrefixes();
         }
-
+        // Put the file inside the result/ontologies folder
+        File filePath = new File("results/ontologies");
+        if (!filePath.exists()) {
+            filePath.mkdirs();
+        }
+        file = new File(filePath, file.getName());
         myManager.saveOntology(ontology, manSyntaxFormat, IRI.create(file.toURI()));
     }
 
