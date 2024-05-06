@@ -1,1 +1,0 @@
-( Team and FootballPlayer ) SubClassOf: Game, \nTrue

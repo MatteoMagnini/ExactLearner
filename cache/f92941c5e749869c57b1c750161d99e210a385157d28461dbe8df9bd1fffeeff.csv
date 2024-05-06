@@ -1,1 +1,0 @@
-( hasParent some Person ) SubClassOf: GrandMother, \nTrue

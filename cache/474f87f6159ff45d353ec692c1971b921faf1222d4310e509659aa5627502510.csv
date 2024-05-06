@@ -1,1 +1,0 @@
-( Manager and BallGame ) SubClassOf: Player, True.

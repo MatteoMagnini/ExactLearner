@@ -1,1 +1,0 @@
-( hasSibling some Female ) SubClassOf: Mother, True.

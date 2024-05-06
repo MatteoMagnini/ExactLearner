@@ -1,1 +1,0 @@
-GrandMother EquivalentTo Person and (hasChild some  (Person and (hasChild some Person))) and (hasSex value FemaleSex), \nTrue

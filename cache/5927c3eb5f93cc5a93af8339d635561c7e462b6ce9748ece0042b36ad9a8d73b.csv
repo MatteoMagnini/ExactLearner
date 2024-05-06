@@ -1,1 +1,0 @@
-( SclerenchymaCell and PlantCell ) SubClassOf: Neuron, \nFalse

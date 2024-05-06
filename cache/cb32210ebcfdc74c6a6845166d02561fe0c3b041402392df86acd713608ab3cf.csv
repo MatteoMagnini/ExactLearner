@@ -1,1 +1,0 @@
-Daughter EquivalentTo Person and (hasParent some Person) and (hasSex value FemaleSex), \nTrue

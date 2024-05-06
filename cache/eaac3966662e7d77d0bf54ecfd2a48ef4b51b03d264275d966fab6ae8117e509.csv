@@ -1,1 +1,0 @@
-( PlantCell and CirculatingCell ) SubClassOf: MatureCell, True.

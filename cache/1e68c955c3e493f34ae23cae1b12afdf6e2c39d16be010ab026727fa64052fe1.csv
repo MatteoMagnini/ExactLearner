@@ -1,1 +1,0 @@
-Game SubClassOf: ( plays_for some Football ),  True.

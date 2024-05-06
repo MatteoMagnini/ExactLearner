@@ -1,1 +1,0 @@
-( hasChild some Child ) SubClassOf: owl:Thin, True.

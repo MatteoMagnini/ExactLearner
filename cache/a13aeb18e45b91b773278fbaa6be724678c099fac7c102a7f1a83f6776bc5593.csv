@@ -1,1 +1,0 @@
-( AnimalCell and ElectricallyActiveCell ) SubClassOf: Cell,  True\n

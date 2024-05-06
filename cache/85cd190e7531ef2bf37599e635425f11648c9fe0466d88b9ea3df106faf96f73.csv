@@ -1,1 +1,0 @@
-Parent EquivalentTo Person and (hasChild some Person), True.

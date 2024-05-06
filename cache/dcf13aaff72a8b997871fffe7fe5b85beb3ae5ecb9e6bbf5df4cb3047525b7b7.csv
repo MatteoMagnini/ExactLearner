@@ -1,1 +1,0 @@
-( ChondroCyte and StructuralCell ) SubClassOf: CellByOrganism, True.

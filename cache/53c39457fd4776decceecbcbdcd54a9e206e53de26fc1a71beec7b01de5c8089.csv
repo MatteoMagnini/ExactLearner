@@ -1,1 +1,0 @@
-( Manager and FootballPlayer ) SubClassOf: Team,  False.

@@ -1,1 +1,0 @@
-( hasSex some Parent ) SubClassOf: Woman,  False.

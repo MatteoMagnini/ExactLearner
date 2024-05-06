@@ -1,1 +1,0 @@
-( Cell and MatureCell ) SubClassOf: Neuron,  False.

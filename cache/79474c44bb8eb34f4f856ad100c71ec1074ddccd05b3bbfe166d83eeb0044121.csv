@@ -1,1 +1,0 @@
-( CellByClass and ElectricallyActiveCell ) SubClassOf: CellByOrganism, \nTrue

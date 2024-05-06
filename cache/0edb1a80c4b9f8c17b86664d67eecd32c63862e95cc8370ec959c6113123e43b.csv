@@ -1,1 +1,0 @@
-( InMatureCell and ElectricallyActiveCell ) SubClassOf: Neuron,  True.

@@ -1,1 +1,0 @@
-( CirculatingCell and Cell ) SubClassOf: Neuron, \nTrue

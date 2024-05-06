@@ -1,1 +1,0 @@
-( hasParent some Mother ) SubClassOf: Sex, \nTrue

@@ -1,1 +1,0 @@
-( hasChild some Parent ) SubClassOf: GrandParent, \nTrue

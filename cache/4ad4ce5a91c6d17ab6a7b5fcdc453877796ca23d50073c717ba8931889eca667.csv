@@ -1,1 +1,0 @@
-( PlantCell and SclerenchymaCell ) SubClassOf: ElectricallyActiveCell, \nTrue

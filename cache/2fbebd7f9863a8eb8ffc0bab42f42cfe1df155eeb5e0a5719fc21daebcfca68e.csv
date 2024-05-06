@@ -1,1 +1,0 @@
-Player SubClassOf: ( managed_by some BallGame ), \nTrue

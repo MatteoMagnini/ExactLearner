@@ -1,1 +1,0 @@
-( LeafCell and Neuron ) SubClassOf: StructuralCell, \nTrue

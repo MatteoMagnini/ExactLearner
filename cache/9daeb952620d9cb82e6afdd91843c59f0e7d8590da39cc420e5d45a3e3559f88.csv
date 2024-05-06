@@ -1,1 +1,0 @@
-( hasParent some owl:Thin ) SubClassOf: Man,  False.

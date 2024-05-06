@@ -1,1 +1,0 @@
-( plays_for some Player ) SubClassOf: owl:Thin, \nTrue

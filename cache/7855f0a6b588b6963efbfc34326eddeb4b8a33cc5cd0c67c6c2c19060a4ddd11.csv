@@ -1,1 +1,0 @@
-BallGame SubClassOf: ( managed_by some Team ),  False.

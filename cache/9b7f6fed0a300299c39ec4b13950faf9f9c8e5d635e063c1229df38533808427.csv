@@ -1,1 +1,0 @@
-( AnimalCell and MatureCell ) SubClassOf: CellByClass, \nTrue

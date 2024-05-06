@@ -1,1 +1,0 @@
-( PlantCell and ChondroCyte ) SubClassOf: CellByOrganism, True.

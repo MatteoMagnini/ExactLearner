@@ -1,1 +1,0 @@
-( hasParent some Parent ) SubClassOf: GrandFather,  False for

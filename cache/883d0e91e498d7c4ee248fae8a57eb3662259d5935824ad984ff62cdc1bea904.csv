@@ -1,1 +1,0 @@
-( Neuron and PlantCell ) SubClassOf: Cell, \nTrue

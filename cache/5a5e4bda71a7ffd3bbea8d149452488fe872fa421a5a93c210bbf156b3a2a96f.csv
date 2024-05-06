@@ -1,1 +1,0 @@
-( CellByClass and AnimalCell ) SubClassOf: ElectricallyActiveCell,  False.

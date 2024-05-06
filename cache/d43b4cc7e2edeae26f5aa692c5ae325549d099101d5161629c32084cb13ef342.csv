@@ -1,1 +1,0 @@
-( managed_by some Manager ) SubClassOf: Player,  False.

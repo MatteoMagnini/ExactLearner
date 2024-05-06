@@ -1,1 +1,0 @@
-( hasChild some Male ) SubClassOf: GrandFather, \nFalse

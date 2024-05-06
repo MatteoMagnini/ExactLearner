@@ -1,1 +1,0 @@
-Animal SubClassOf: ( lives_in some Leg ), \nTrue

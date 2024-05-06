@@ -1,1 +1,0 @@
-( InMatureCell and Neuron ) SubClassOf: MatureCell, True.

@@ -1,1 +1,0 @@
-( hasSex some Man ) SubClassOf: Sister,  False.

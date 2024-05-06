@@ -1,1 +1,0 @@
-( CellByDevelopmentStage and ElectricallyActiveCell ) SubClassOf: Cell, \nTrue

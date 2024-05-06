@@ -1,1 +1,0 @@
-( MatureCell and Cell ) SubClassOf: ChondroCyte, True.

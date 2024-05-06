@@ -1,1 +1,0 @@
-( lives_in some Plant ) SubClassOf: Meat, \nFalse

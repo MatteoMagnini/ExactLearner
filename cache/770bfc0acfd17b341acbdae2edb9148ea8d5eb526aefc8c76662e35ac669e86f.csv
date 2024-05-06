@@ -1,1 +1,0 @@
-( InMatureCell and CellByOrganism ) SubClassOf: CellByClass, \nTrue

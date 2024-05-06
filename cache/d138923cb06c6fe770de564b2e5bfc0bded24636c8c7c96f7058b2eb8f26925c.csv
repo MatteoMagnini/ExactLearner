@@ -1,1 +1,0 @@
-( StructuralCell and ElectricallyActiveCell ) SubClassOf: CellByClass,  True.

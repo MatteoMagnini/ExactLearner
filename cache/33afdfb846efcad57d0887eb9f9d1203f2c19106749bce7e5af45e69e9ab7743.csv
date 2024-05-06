@@ -1,1 +1,0 @@
-( StructuralCell and SclerenchymaCell ) SubClassOf: LeafCell, \nTrue

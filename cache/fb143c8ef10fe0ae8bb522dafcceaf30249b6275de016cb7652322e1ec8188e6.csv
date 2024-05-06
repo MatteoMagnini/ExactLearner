@@ -1,1 +1,0 @@
-( hasParent some Sister ) SubClassOf: Male, True

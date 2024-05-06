@@ -1,1 +1,0 @@
-( AnimalCell and SclerenchymaCell ) SubClassOf: CellByDevelopmentStage, \nFalse

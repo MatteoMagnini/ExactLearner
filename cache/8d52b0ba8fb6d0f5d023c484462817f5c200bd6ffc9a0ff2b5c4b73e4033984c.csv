@@ -1,1 +1,0 @@
-( hasSibling some Man ) SubClassOf: Person,  False.

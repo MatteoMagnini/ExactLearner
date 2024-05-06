@@ -1,1 +1,0 @@
-( PhotoreceptorCell and AnimalCell ) SubClassOf: CellByDevelopmentStage, \nFalse

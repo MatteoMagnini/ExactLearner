@@ -1,1 +1,0 @@
-( InMatureCell and CellByClass ) SubClassOf: CellByDevelopmentStage,  False.

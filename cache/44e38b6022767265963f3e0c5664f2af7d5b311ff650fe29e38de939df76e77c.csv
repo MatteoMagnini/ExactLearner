@@ -1,1 +1,0 @@
-( LeafCell and CellByClass ) SubClassOf: StructuralCell, \nTrue

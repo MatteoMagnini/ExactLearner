@@ -1,1 +1,0 @@
-( MatureCell and CellByDevelopmentStage ) SubClassOf: LeafCell,  False.

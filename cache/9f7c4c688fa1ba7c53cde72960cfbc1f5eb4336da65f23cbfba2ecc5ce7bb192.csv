@@ -1,1 +1,0 @@
-( ChondroCyte and AnimalCell ) SubClassOf: LeafCell, \nFalse

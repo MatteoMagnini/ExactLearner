@@ -1,1 +1,0 @@
-( StructuralCell and PlantCell ) SubClassOf: CellByOrganism, \nTrue

@@ -1,1 +1,0 @@
-( hasSibling some GrandParent ) SubClassOf: Parent, \nFalse

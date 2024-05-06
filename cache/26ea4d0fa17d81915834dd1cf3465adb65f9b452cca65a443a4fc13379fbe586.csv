@@ -1,1 +1,0 @@
-( SclerenchymaCell and ElectricallyActiveCell ) SubClassOf: CirculatingCell, \nFalse

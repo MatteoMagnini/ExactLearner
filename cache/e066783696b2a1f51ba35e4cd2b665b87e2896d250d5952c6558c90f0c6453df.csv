@@ -1,1 +1,0 @@
-( manages some Professor ) SubClassOf: Teacher,  True.

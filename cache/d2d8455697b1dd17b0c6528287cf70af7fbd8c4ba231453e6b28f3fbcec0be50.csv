@@ -1,1 +1,0 @@
-( Manager and FootballTeam ) SubClassOf: BallGame, True

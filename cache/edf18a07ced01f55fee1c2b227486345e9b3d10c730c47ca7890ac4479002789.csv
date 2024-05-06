@@ -1,1 +1,0 @@
-( PhotosyntheticCell and CellByClass ) SubClassOf: Cell,  True.

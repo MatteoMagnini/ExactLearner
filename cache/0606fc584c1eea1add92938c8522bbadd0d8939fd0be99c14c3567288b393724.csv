@@ -1,1 +1,0 @@
-( InMatureCell and ChondroCyte ) SubClassOf: CellByDevelopmentStage, \nTrue

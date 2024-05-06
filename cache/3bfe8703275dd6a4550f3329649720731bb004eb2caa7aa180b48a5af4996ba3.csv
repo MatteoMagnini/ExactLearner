@@ -1,1 +1,0 @@
-( Person and FootballPlayer ) SubClassOf: BallGame, \nTrue

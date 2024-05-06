@@ -1,1 +1,0 @@
-Parent SubClassOf: ( hasChild some Person ),  True.

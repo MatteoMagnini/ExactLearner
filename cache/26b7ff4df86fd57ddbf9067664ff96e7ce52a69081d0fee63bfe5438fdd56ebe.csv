@@ -1,1 +1,0 @@
-( has_part some Cat ) SubClassOf: Vertebrate, \nTrue

@@ -1,1 +1,0 @@
-( CellByClass and InMatureCell ) SubClassOf: CirculatingCell, \nTrue

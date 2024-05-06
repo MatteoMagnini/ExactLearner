@@ -1,1 +1,0 @@
-( PlantCell and StructuralCell ) SubClassOf: Neuron, \nFalse

@@ -1,1 +1,0 @@
-( CellByDevelopmentStage and Cell ) SubClassOf: CellByClass, \nTrue

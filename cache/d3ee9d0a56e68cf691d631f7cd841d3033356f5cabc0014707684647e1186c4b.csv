@@ -1,1 +1,0 @@
-( CirculatingCell and AnimalCell ) SubClassOf: MatureCell, \nTrue

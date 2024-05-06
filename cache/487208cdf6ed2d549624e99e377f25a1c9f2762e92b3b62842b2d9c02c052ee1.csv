@@ -1,1 +1,0 @@
-( Person and Player ) SubClassOf: owl:Thin, True.

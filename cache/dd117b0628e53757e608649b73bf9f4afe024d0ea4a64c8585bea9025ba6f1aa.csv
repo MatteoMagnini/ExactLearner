@@ -1,1 +1,0 @@
-( CirculatingCell and CellByClass ) SubClassOf: Neuron,  False.

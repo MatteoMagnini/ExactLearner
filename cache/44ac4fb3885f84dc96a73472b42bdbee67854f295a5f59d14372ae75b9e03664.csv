@@ -1,1 +1,0 @@
-( hasSibling some Father ) SubClassOf: Man, True

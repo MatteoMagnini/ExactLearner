@@ -1,1 +1,0 @@
-( managed_by some BallGame ) SubClassOf: Game,  False.

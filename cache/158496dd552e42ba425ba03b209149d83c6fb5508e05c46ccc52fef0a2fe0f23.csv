@@ -1,1 +1,0 @@
-Sister EquivalentTo Person and (hasSibling some Person) and (hasSex value FemaleSex), True.

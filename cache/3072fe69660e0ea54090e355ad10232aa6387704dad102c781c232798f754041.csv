@@ -1,1 +1,0 @@
-GrandParent EquivalentTo Person and (hasChild some  (Person and (hasChild some Person))), \nTrue

@@ -1,1 +1,0 @@
-( hasParent some Father ) SubClassOf: Man,  False.

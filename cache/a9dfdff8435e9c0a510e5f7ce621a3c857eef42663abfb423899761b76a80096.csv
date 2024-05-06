@@ -1,1 +1,0 @@
-( hasSibling some Male ) SubClassOf: Son,  False.

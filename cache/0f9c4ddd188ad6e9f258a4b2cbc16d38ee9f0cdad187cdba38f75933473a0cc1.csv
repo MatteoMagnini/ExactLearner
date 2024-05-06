@@ -1,1 +1,0 @@
-( SclerenchymaCell and MatureCell ) SubClassOf: LeafCell, \nFalse

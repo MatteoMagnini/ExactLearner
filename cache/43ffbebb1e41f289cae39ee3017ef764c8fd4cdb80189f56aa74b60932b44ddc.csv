@@ -1,1 +1,0 @@
-( SclerenchymaCell and PhotosyntheticCell ) SubClassOf: Cell,  True.

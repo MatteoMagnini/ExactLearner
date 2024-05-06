@@ -1,1 +1,0 @@
-Football SubClassOf: ( managed_by some Player ),  False.

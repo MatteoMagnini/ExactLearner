@@ -1,1 +1,0 @@
-FootballTeam SubClassOf: ( plays_for some owl:Thin ), \nTrue

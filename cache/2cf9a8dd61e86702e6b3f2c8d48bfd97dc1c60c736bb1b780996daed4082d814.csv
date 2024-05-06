@@ -1,1 +1,0 @@
-( hasParent some Male ) SubClassOf: Woman, \nFalse

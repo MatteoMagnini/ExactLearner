@@ -1,1 +1,0 @@
-Player SubClassOf: ( plays_for some BallGame ), \nTrue

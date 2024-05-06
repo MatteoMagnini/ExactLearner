@@ -1,1 +1,0 @@
-( PhotosyntheticCell and Cell ) SubClassOf: StructuralCell, \nTrue

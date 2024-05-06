@@ -1,1 +1,0 @@
-( hasSibling some Male ) SubClassOf: Man,  True.

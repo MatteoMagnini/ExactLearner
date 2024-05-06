@@ -1,1 +1,0 @@
-( hasChild some GrandMother ) SubClassOf: GrandFather,  False.

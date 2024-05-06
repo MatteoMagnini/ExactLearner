@@ -1,1 +1,0 @@
-( CirculatingCell and Neuron ) SubClassOf: ElectricallyActiveCell,  True.

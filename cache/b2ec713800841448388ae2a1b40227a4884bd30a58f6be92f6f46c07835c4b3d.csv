@@ -1,1 +1,0 @@
-Teacher SubClassOf: ( employed_by some Module ),  False.

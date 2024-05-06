@@ -1,1 +1,0 @@
-( PlantCell and CellByDevelopmentStage ) SubClassOf: CellByClass,  True.

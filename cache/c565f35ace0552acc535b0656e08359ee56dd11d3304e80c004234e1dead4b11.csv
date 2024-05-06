@@ -1,1 +1,0 @@
-( AnimalCell and CellByOrganism ) SubClassOf: CellByClass, True.
