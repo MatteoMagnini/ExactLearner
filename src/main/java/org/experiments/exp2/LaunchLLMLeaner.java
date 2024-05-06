@@ -32,6 +32,8 @@ import static org.utility.StatsPrinter.printStats;
 
 public class LaunchLLMLeaner {
 
+    private final static String fileSeparator = System.getProperty("file.separator");
+
     private File targetFile;
     private static final OWLOntologyManager myManager = OWLManager.createOWLOntologyManager();
     private final OWLObjectRenderer myRenderer = new ManchesterOWLSyntaxOWLObjectRendererImpl();
@@ -82,12 +84,12 @@ public class LaunchLLMLeaner {
     }
 
     public void run(String[] args) {
-        String configurationFile = args[1];
+        String configurationFile = args[0];
         if (args.length > 2) {
-            epsilon = Double.parseDouble(args[2]);
+            epsilon = Double.parseDouble(args[1]);
         }
         if (args.length > 3) {
-            delta = Double.parseDouble(args[3]);
+            delta = Double.parseDouble(args[2]);
         }
         loadConfiguration(configurationFile);
         try {
@@ -122,7 +124,7 @@ public class LaunchLLMLeaner {
         long timeEnd = System.currentTimeMillis();
         saveOWLFile(hypothesisOntology, hypoFile);
         validation();
-        printStats(timeStart, timeEnd, args, false,
+        printStats(timeStart, timeEnd, args, true,
                 targetFile, myMetrics, learner, refactor, conceptNumber, roleNumber, targetOntology, hypothesisOntology);
     }
 
@@ -314,12 +316,6 @@ public class LaunchLLMLeaner {
             // need to remove prefixes
             manSyntaxFormat.clearPrefixes();
         }
-        // Put the file inside the result/ontologies folder
-        File filePath = new File("results/ontologies");
-        if (!filePath.exists()) {
-            filePath.mkdirs();
-        }
-        file = new File(filePath, file.getName());
         myManager.saveOntology(ontology, manSyntaxFormat, IRI.create(file.toURI()));
     }
 
@@ -353,9 +349,8 @@ public class LaunchLLMLeaner {
             // Fallback if the format is unexpected
             ontology = "ontology.owl";
         }
-
-        ontologyFolder += ontology;
-        ontologyFolderH += "hypo_" + ontology;
+        ontologyFolder = "results" + fileSeparator + "ontologies" + fileSeparator + "target_" + ontology;
+        ontologyFolderH = "results" + fileSeparator + "ontologies" + fileSeparator + "learned_" + ontology;
     }
 
     private void loadTargetOntology() throws OWLOntologyCreationException, IOException {
