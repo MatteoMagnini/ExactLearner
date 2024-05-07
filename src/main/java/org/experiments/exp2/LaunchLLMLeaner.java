@@ -33,37 +33,33 @@ import static org.utility.StatsPrinter.printStats;
 public class LaunchLLMLeaner {
 
     private final static String fileSeparator = System.getProperty("file.separator");
-
     private File targetFile;
     private static final OWLOntologyManager myManager = OWLManager.createOWLOntologyManager();
     private final OWLObjectRenderer myRenderer = new ManchesterOWLSyntaxOWLObjectRendererImpl();
     private final Metrics myMetrics = new Metrics(myRenderer);
-
     private Set<OWLAxiom> axiomsT = new HashSet<>();
     private String ontologyFolder="";
     private String ontology="";
     private File hypoFile;
     private String ontologyFolderH="";
-
     private OWLSubClassOfAxiom counterExample = null;
     private OWLClassExpression lastExpression = null;
     private OWLClass lastName = null;
-
     private OWLParserImpl parser;
     private OWLOntology targetOntology = null;
     private OWLOntology hypothesisOntology = null;
+    private BaseEngine llmQueryEngineForT = null;
     private BaseEngine elQueryEngineForT = null;
+    private BaseEngine llmQueryEngineForH = null;
     private BaseEngine elQueryEngineForH = null;
+
     private Learner learner = null;
     private Oracle oracle = null;
-
     private String model;
     private String system;
     private Integer maxTokens;
-
     private int conceptNumber;
     private int roleNumber;
-
     private double epsilon = 0.1;
     private double delta = 0.2;
     private int hypothesisSize = 10;
@@ -96,11 +92,13 @@ public class LaunchLLMLeaner {
             setupOntologies();
             computeConceptAndRoleNumbers();
 
-            elQueryEngineForT = new LLMEngine(targetOntology, model, system, maxTokens, myManager);
+            elQueryEngineForT = new ELEngine(targetOntology);
+            llmQueryEngineForH = new LLMEngine(hypothesisOntology, model, system, maxTokens, myManager);
+            llmQueryEngineForT = new LLMEngine(targetOntology, model, system, maxTokens, myManager);
             elQueryEngineForH = new ELEngine(hypothesisOntology);
 
-            learner = new Learner(elQueryEngineForT, elQueryEngineForH, myMetrics);
-            oracle = new Oracle(elQueryEngineForH, elQueryEngineForH);
+            learner = new Learner(llmQueryEngineForT, elQueryEngineForH, myMetrics);
+            oracle = new Oracle(llmQueryEngineForT, llmQueryEngineForH);
 
             runLearningExperiment(args);
         } catch (Throwable e) {
@@ -120,7 +118,7 @@ public class LaunchLLMLeaner {
 
     private void runLearningExperiment(String[] args) throws Throwable {
         long timeStart = System.currentTimeMillis();
-        runLearner(elQueryEngineForT);
+        runLearner();
         long timeEnd = System.currentTimeMillis();
         saveOWLFile(hypothesisOntology, hypoFile);
         validation();
@@ -136,7 +134,7 @@ public class LaunchLLMLeaner {
 
     private void validateLearnedOntology() throws Exception {
         if (!elQueryEngineForH.entailed(axiomsT)) {
-            throw new Exception("Something went horribly wrong!");
+            // throw new Exception("Something went horribly wrong!");
         }
     }
 
@@ -152,9 +150,9 @@ public class LaunchLLMLeaner {
                 .collect(Collectors.toSet());
     }
 
-    private void runLearner(BaseEngine elQueryEngineForT) throws Throwable {
+    private void runLearner() throws Throwable {
         // Computes inclusions of the form A implies B
-        // precomputation(elQueryEngineForT);
+        precomputation(llmQueryEngineForT);
 
         // Initialize the statement builder
         int seed = 1; // Seed for random number generator can be generated randomly
@@ -394,16 +392,15 @@ public class LaunchLLMLeaner {
 
     private OWLSubClassOfAxiom getCounterExample(StatementBuilder builder) throws Exception {
         var s = builder.chooseRandomStatement();
-        // check if it is a valid counterexample according to the LLM
-        while (!elQueryEngineForH.entailed(OntologyManipulator.createAxiomFromString(s, targetOntology))) {
-            s = builder.chooseRandomStatement();
+        if (s.isEmpty()) {
+            return null;
         }
-        var selectedAxiom = OntologyManipulator.createAxiomFromString(s, targetOntology);
+        var selectedAxiom = OntologyManipulator.createAxiomFromString(s.get(), targetOntology);
         if (!selectedAxiom.isOfType(AxiomType.SUBCLASS_OF) && !selectedAxiom.isOfType(AxiomType.EQUIVALENT_CLASSES)) {
             throw new Exception("Unknown axiom type: " + selectedAxiom.getAxiomType() + "You must delete unknown axioms FIRST!");
         }
         if (selectedAxiom.isOfType(AxiomType.SUBCLASS_OF)) {
-            if (!elQueryEngineForH.entailed(selectedAxiom)) {
+            if (!elQueryEngineForH.entailed(selectedAxiom) && elQueryEngineForT.entailed(selectedAxiom)) {
                 OWLSubClassOfAxiom counterexample = (OWLSubClassOfAxiom) selectedAxiom;
                 return getCounterExampleSubClassOf(counterexample);
             }
@@ -412,41 +409,41 @@ public class LaunchLLMLeaner {
             OWLEquivalentClassesAxiom equivCounterexample = (OWLEquivalentClassesAxiom) selectedAxiom;
             Set<OWLSubClassOfAxiom> eqsubclassaxioms = equivCounterexample.asOWLSubClassOfAxioms();
             for (OWLSubClassOfAxiom subClassAxiom : eqsubclassaxioms) {
-                if (!elQueryEngineForH.entailed(subClassAxiom)) {
+                if (!elQueryEngineForH.entailed(subClassAxiom) && elQueryEngineForT.entailed(selectedAxiom)) {
                     return getCounterExampleSubClassOf(subClassAxiom);
                 }
             }
         }
-        return null;//NO Counter example
-        //throw new Exception("No counterexample found");
+        return getCounterExample(builder);
     }
 
     private OWLSubClassOfAxiom getCounterExampleSubClassOf(OWLSubClassOfAxiom counterexample) throws Exception {
         OWLSubClassOfAxiom newCounterexampleAxiom;
         OWLClassExpression left = counterexample.getSubClass();
         OWLClassExpression right = counterexample.getSuperClass();
+        double p = 0;
 
-        newCounterexampleAxiom = oracle.mergeLeft(left, right, 1.0);
+        newCounterexampleAxiom = oracle.mergeLeft(left, right, p);
         left = newCounterexampleAxiom.getSubClass();
         right = newCounterexampleAxiom.getSuperClass();
 
-        newCounterexampleAxiom = oracle.saturateLeft(left, right, 1.0);
+        newCounterexampleAxiom = oracle.saturateLeft(left, right, p);
         left = newCounterexampleAxiom.getSubClass();
         right = newCounterexampleAxiom.getSuperClass();
 
-        newCounterexampleAxiom = oracle.branchRight(left, right, 1.0);
+        newCounterexampleAxiom = oracle.branchRight(left, right, p);
         left = newCounterexampleAxiom.getSubClass();
         right = newCounterexampleAxiom.getSuperClass();
 
-        newCounterexampleAxiom = oracle.composeLeft(left, right, 1.0);
+        newCounterexampleAxiom = oracle.composeLeft(left, right, p);
         left = newCounterexampleAxiom.getSubClass();
         right = newCounterexampleAxiom.getSuperClass();
 
-        newCounterexampleAxiom = oracle.composeRight(left, right, 1.0);
+        newCounterexampleAxiom = oracle.composeRight(left, right, p);
         left = newCounterexampleAxiom.getSubClass();
         right = newCounterexampleAxiom.getSuperClass();
 
-        newCounterexampleAxiom = oracle.unsaturateRight(left, right, 1.0);
+        newCounterexampleAxiom = oracle.unsaturateRight(left, right, p);
 
         return newCounterexampleAxiom;
     }

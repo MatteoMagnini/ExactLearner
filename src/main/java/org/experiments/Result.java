@@ -16,7 +16,7 @@ public class Result {
             reader = new FileReader(filepath);
             BufferedReader bufferedReader = new BufferedReader(reader);
             String line = bufferedReader.readLine();
-            query =line.split(",")[0];
+            query = line.split(",")[0];
             response = line.split(",")[1];
             bufferedReader.close();
         } catch (IOException e) {

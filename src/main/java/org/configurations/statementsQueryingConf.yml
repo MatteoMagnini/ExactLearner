@@ -1,5 +1,4 @@
 models:
-  - "mistral"
   - "mixtral"
   - "llama2"
   - "llama2:13b"

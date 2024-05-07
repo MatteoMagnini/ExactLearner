@@ -44,14 +44,17 @@ public class AskStatement {
             System.out.println("Training samples done: " + i + "/" + pac.getTrainingSamples());
             Runnable work;
             var s = builder.chooseRandomStatement();
+            if (s.isEmpty()) {
+                throw new IllegalStateException("No statement available.");
+            }
             if (OllamaWorkload.supportedModels.contains(model)) {
-                work = new OllamaWorkload(model, system, s, maxTokens);
+                work = new OllamaWorkload(model, system, s.get(), maxTokens);
             } else if (OpenAIWorkload.supportedModels.contains(model)) {
-                work = new OpenAIWorkload(model, system, s, maxTokens);
+                work = new OpenAIWorkload(model, system, s.get(), maxTokens);
             } else {
                 throw new IllegalStateException("Invalid model.");
             }
-            Task task = new ExperimentTask(type, model, ontology, s, system, work);
+            Task task = new ExperimentTask(type, model, ontology, s.get(), system, work);
             Environment.run(task);
         }
     }

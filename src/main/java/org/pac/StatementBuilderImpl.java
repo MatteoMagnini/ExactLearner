@@ -12,6 +12,8 @@ public class StatementBuilderImpl implements StatementBuilder {
     private final Set<String> generatedStatementsType2 = new HashSet<>();
     private final Set<String> generatedStatementsType3 = new HashSet<>();
     private final Random rand;
+    private Set<String> allStatements;
+
 
     public StatementBuilderImpl(Integer seed, Set<String> classes, Set<String> objectProperties) {
         rand = new Random(seed);
@@ -24,6 +26,7 @@ public class StatementBuilderImpl implements StatementBuilder {
         createStatementsType1();
         createStatementsType2();
         createStatementsType3();
+        initialiseAllStatements();
     }
 
     // Type 1: (A ∩ B) ⊑ C
@@ -54,29 +57,35 @@ public class StatementBuilderImpl implements StatementBuilder {
 
 
     @Override
-    public String chooseRandomStatement() {
-        try {
-            return uniformPick().get();
-        } catch (RuntimeException e) {
-            throw new RuntimeException("No statements found");
-        }
+    public Optional<String> chooseRandomStatement() {
+        return uniformPick();
     }
 
     private Optional<String> uniformPick() {
-        return getAllStatements().stream().skip(rand.nextInt(getAllStatements().size())).findFirst();
+        if (getAllStatements().size() == 0) {
+            return Optional.empty();
+        }
+        int index = rand.nextInt(getAllStatements().size());
+        // remove from the statement set and return it
+        String statement = (String) getAllStatements().toArray()[index];
+        allStatements.remove(statement);
+        return Optional.of(statement);
     }
 
     @Override
     public Integer getNumberOfStatements() {
-        return getAllStatements().size();
+        return generatedStatementsType1.size() + generatedStatementsType2.size() + generatedStatementsType3.size();
     }
 
-    @Override
-    public Set<String> getAllStatements() {
+    private void initialiseAllStatements() {
         Set<String> allStatements = new HashSet<>();
         allStatements.addAll(generatedStatementsType1);
         allStatements.addAll(generatedStatementsType2);
         allStatements.addAll(generatedStatementsType3);
+        this.allStatements = allStatements;
+    }
+
+    public Set<String> getAllStatements() {
         return allStatements;
     }
 

@@ -116,11 +116,9 @@ public class ELEngine implements BaseEngine {
             OWLEquivalentClassesAxiom eax = (OWLEquivalentClassesAxiom) ax;
             for (OWLSubClassOfAxiom sax : eax.asOWLSubClassOfAxioms()) {
                 if (!entailedEQ(sax)) {
-
                     return false;
                 }
             }
-
             return true;
         }
 
