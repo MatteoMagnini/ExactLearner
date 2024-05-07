@@ -1,8 +1,8 @@
 models:
+  - "mistral"
   - "mixtral"
   - "llama2"
   - "llama2:13b"
-  #- "gpt-3.5-turbo"
 ontologies:
   - "src/main/resources/ontologies/small/animals.owl"
   - "src/main/resources/ontologies/small/university.owl"
@@ -13,4 +13,3 @@ system: >
   Answer with True or False.
 maxTokens: 2
 type: "statementsQuerying"
-#You will be proposed Manchester Syntax Statements about the real world were we live, Answer with just True or False.

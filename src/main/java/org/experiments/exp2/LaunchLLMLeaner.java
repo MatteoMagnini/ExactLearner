@@ -1,5 +1,4 @@
 package org.experiments.exp2;
-
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.configurations.Configuration;
@@ -20,14 +19,13 @@ import org.semanticweb.owlapi.model.*;
 import org.utility.OntologyManipulator;
 import org.utility.YAMLConfigLoader;
 import uk.ac.manchester.cs.owl.owlapi.mansyntaxrenderer.ManchesterOWLSyntaxOWLObjectRendererImpl;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
-
 import static org.utility.StatsPrinter.printStats;
 
 public class LaunchLLMLeaner {
@@ -39,7 +37,7 @@ public class LaunchLLMLeaner {
     private final Metrics myMetrics = new Metrics(myRenderer);
     private Set<OWLAxiom> axiomsT = new HashSet<>();
     private String ontologyFolder="";
-    private String ontology="";
+    private List<String> ontologies;
     private File hypoFile;
     private String ontologyFolderH="";
     private OWLSubClassOfAxiom counterExample = null;
@@ -52,17 +50,16 @@ public class LaunchLLMLeaner {
     private BaseEngine elQueryEngineForT = null;
     private BaseEngine llmQueryEngineForH = null;
     private BaseEngine elQueryEngineForH = null;
-
     private Learner learner = null;
     private Oracle oracle = null;
-    private String model;
+    private List<String> models;
     private String system;
     private Integer maxTokens;
     private int conceptNumber;
     private int roleNumber;
     private double epsilon = 0.1;
     private double delta = 0.2;
-    private int hypothesisSize = 10;
+    private List<Integer> hypothesisSizes;
 
     public static void main(String[] args) {
         Logger.getRootLogger().setLevel(Level.OFF);
@@ -72,11 +69,11 @@ public class LaunchLLMLeaner {
     private void loadConfiguration(String fileName) {
         Configuration config = new YAMLConfigLoader().getConfig(fileName, Configuration.class);
         //choose configuration from file here:
-        model = config.getModels().get(0); //mistral
+        models = config.getModels(); //mistral
         system = config.getSystem();
-        ontology = config.getOntologies().get(0); //animals
+        ontologies = config.getOntologies(); //animals
         maxTokens = config.getMaxTokens();
-        hypothesisSize = OntologyManipulator.computeOntologySize(ontology);
+        hypothesisSizes = ontologies.stream().map(OntologyManipulator::computeOntologySize).collect(Collectors.toList());
     }
 
     public void run(String[] args) {
@@ -89,18 +86,19 @@ public class LaunchLLMLeaner {
         }
         loadConfiguration(configurationFile);
         try {
-            setupOntologies();
-            computeConceptAndRoleNumbers();
-
-            elQueryEngineForT = new ELEngine(targetOntology);
-            llmQueryEngineForH = new LLMEngine(hypothesisOntology, model, system, maxTokens, myManager);
-            llmQueryEngineForT = new LLMEngine(targetOntology, model, system, maxTokens, myManager);
-            elQueryEngineForH = new ELEngine(hypothesisOntology);
-
-            learner = new Learner(llmQueryEngineForT, elQueryEngineForH, myMetrics);
-            oracle = new Oracle(llmQueryEngineForT, llmQueryEngineForH);
-
-            runLearningExperiment(args);
+            for (String ontology : ontologies) {
+                for (String model : models) {
+                    setupOntology(ontology, model);
+                    computeConceptAndRoleNumbers();
+                    elQueryEngineForT = new ELEngine(targetOntology);
+                    llmQueryEngineForH = new LLMEngine(hypothesisOntology, model, system, maxTokens, myManager);
+                    llmQueryEngineForT = new LLMEngine(targetOntology, model, system, maxTokens, myManager);
+                    elQueryEngineForH = new ELEngine(hypothesisOntology);
+                    learner = new Learner(llmQueryEngineForT, elQueryEngineForH, myMetrics);
+                    oracle = new Oracle(llmQueryEngineForT, llmQueryEngineForH);
+                    runLearningExperiment(args, hypothesisSizes.get(ontologies.indexOf(ontology)));
+                }
+            }
         } catch (Throwable e) {
             e.printStackTrace();
             System.out.println("error" + e);
@@ -116,9 +114,9 @@ public class LaunchLLMLeaner {
         myManager.removeOntology(targetOntology);
     }
 
-    private void runLearningExperiment(String[] args) throws Throwable {
+    private void runLearningExperiment(String[] args, int hypothesisSize) throws Throwable {
         long timeStart = System.currentTimeMillis();
-        runLearner();
+        runLearner(hypothesisSize);
         long timeEnd = System.currentTimeMillis();
         saveOWLFile(hypothesisOntology, hypoFile);
         validation();
@@ -150,7 +148,7 @@ public class LaunchLLMLeaner {
                 .collect(Collectors.toSet());
     }
 
-    private void runLearner() throws Throwable {
+    private void runLearner(int hypothesisSize) throws Throwable {
         // Computes inclusions of the form A implies B
         precomputation(llmQueryEngineForT);
 
@@ -317,11 +315,11 @@ public class LaunchLLMLeaner {
         myManager.saveOntology(ontology, manSyntaxFormat, IRI.create(file.toURI()));
     }
 
-    private void setupOntologies() {
+    private void setupOntology(String ontology, String model) {
         try {
             System.out.println("Trying to load targetOntology");
-            loadTargetOntology();
-            getOntologyName();
+            loadTargetOntology(ontology);
+            setUpOntologyFolders(model);
             saveTargetOntology();
             loadHypothesisOntology();
 
@@ -336,22 +334,23 @@ public class LaunchLLMLeaner {
         }
     }
 
-    private void getOntologyName() {
+    private void setUpOntologyFolders(String model) {
         String ontologyID = targetOntology.getOntologyID().toString();
         int lastSlashIndex = ontologyID.lastIndexOf('/');
         int extensionIndex = ontologyID.lastIndexOf(".owl");
+        String name = "";
 
         if (lastSlashIndex != -1 && extensionIndex != -1) {
-            ontology = ontologyID.substring(lastSlashIndex + 1, extensionIndex) + ".owl";
+            name = ontologyID.substring(lastSlashIndex + 1, extensionIndex) + ".owl";
         } else {
-            // Fallback if the format is unexpected
-            ontology = "ontology.owl";
+            System.out.println("Could not get ontology name. Exiting...");
+            System.exit(1);
         }
-        ontologyFolder = "results" + fileSeparator + "ontologies" + fileSeparator + "target_" + ontology;
-        ontologyFolderH = "results" + fileSeparator + "ontologies" + fileSeparator + "learned_" + model + "_" + ontology;
+        ontologyFolder = "results" + fileSeparator + "ontologies" + fileSeparator + "target_" + name;
+        ontologyFolderH = "results" + fileSeparator + "ontologies" + fileSeparator + "learned_" + model + "_" + name;
     }
 
-    private void loadTargetOntology() throws OWLOntologyCreationException, IOException {
+    private void loadTargetOntology(String ontology) throws OWLOntologyCreationException, IOException {
         targetFile = new File(ontology);
         targetOntology = myManager.loadOntologyFromOntologyDocument(targetFile);
         parser = new OWLParserImpl(targetOntology);
