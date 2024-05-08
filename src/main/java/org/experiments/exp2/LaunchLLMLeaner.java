@@ -33,8 +33,8 @@ public class LaunchLLMLeaner {
     private final static String fileSeparator = System.getProperty("file.separator");
     private File targetFile;
     private static final OWLOntologyManager myManager = OWLManager.createOWLOntologyManager();
-    private final OWLObjectRenderer myRenderer = new ManchesterOWLSyntaxOWLObjectRendererImpl();
-    private final Metrics myMetrics = new Metrics(myRenderer);
+    private static final OWLObjectRenderer myRenderer = new ManchesterOWLSyntaxOWLObjectRendererImpl();
+    private Metrics myMetrics = new Metrics(myRenderer);
     private Set<OWLAxiom> axiomsT = new HashSet<>();
     private String ontologyFolder="";
     private List<String> ontologies;
@@ -69,9 +69,9 @@ public class LaunchLLMLeaner {
     private void loadConfiguration(String fileName) {
         Configuration config = new YAMLConfigLoader().getConfig(fileName, Configuration.class);
         //choose configuration from file here:
-        models = config.getModels(); //mistral
+        models = config.getModels();
         system = config.getSystem();
-        ontologies = config.getOntologies(); //animals
+        ontologies = config.getOntologies();
         maxTokens = config.getMaxTokens();
         hypothesisSizes = ontologies.stream().map(OntologyManipulator::computeOntologySize).collect(Collectors.toList());
     }
@@ -87,9 +87,10 @@ public class LaunchLLMLeaner {
         loadConfiguration(configurationFile);
         try {
             for (String ontology : ontologies) {
+                System.out.println("\nRunning experiment for " + ontology);
                 for (String model : models) {
-                    setupOntology(ontology, model);
-                    computeConceptAndRoleNumbers();
+                    System.out.println("\nRunning experiment for " + model + "\n");
+                    setup(ontology, model);
                     elQueryEngineForT = new ELEngine(targetOntology);
                     llmQueryEngineForH = new LLMEngine(hypothesisOntology, model, system, maxTokens, myManager);
                     llmQueryEngineForT = new LLMEngine(targetOntology, model, system, maxTokens, myManager);
@@ -98,12 +99,33 @@ public class LaunchLLMLeaner {
                     oracle = new Oracle(llmQueryEngineForT, llmQueryEngineForH);
                     runLearningExperiment(args, hypothesisSizes.get(ontologies.indexOf(ontology)));
                 }
+                System.out.println("\nFinished experiment for " + ontology + "\n");
             }
         } catch (Throwable e) {
             e.printStackTrace();
             System.out.println("error" + e);
         } finally {
             cleaningUp();
+        }
+    }
+
+    private void setup(String ontology, String model) {
+        try {
+            myMetrics = new Metrics(myRenderer);
+            System.out.println("Trying to load targetOntology");
+            loadTargetOntology(ontology);
+            setUpOntologyFolders(model);
+            saveTargetOntology();
+            loadHypothesisOntology();
+            System.out.println(targetOntology);
+            System.out.println("Loaded successfully.");
+            System.out.println();
+            System.out.flush();
+            computeConceptAndRoleNumbers();
+        } catch (OWLOntologyCreationException e) {
+            System.out.println("Could not load targetOntology: " + e.getMessage());
+        } catch (IOException | OWLException e) {
+            e.printStackTrace();
         }
     }
 
@@ -313,25 +335,6 @@ public class LaunchLLMLeaner {
             manSyntaxFormat.clearPrefixes();
         }
         myManager.saveOntology(ontology, manSyntaxFormat, IRI.create(file.toURI()));
-    }
-
-    private void setupOntology(String ontology, String model) {
-        try {
-            System.out.println("Trying to load targetOntology");
-            loadTargetOntology(ontology);
-            setUpOntologyFolders(model);
-            saveTargetOntology();
-            loadHypothesisOntology();
-
-            System.out.println(targetOntology);
-            System.out.println("Loaded successfully.");
-            System.out.println();
-            System.out.flush();
-        } catch (OWLOntologyCreationException e) {
-            System.out.println("Could not load targetOntology: " + e.getMessage());
-        } catch (IOException | OWLException e) {
-            e.printStackTrace();
-        }
     }
 
     private void setUpOntologyFolders(String model) {
