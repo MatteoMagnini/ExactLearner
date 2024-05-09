@@ -10,6 +10,6 @@ ontologies:
   - "src/main/resources/ontologies/small/football.owl"
   - "src/main/resources/ontologies/small/cell.owl"
 system: >
-  Answer with True or False.
+  Answer with True when you're extremely confident or False.
 maxTokens: 2
 type: "statementsQuerying"
