@@ -7,13 +7,15 @@ public class Pac {
     private Long nTrainingSamples;
     private Integer numberOfExamples;
     private Double hypothesisSpace;
+    private Integer hypothesisSize;
 
     public Pac(Integer numberOfExamples, Double epsilon, Double delta, Integer hypothesisSize) {
         this.epsilon = epsilon;
         this.delta = delta;
+        this.hypothesisSize = hypothesisSize;
         this.numberOfExamples = numberOfExamples;
         this.hypothesisSpace = Math.pow(numberOfExamples,hypothesisSize);
-        nTrainingSamples = Math.round((Math.log(hypothesisSpace) - Math.log(delta)) / epsilon);
+        nTrainingSamples = Math.round((hypothesisSize*Math.log(numberOfExamples) - Math.log(delta)) / epsilon);
     }
 
     public double getEpsilon() {
@@ -22,7 +24,7 @@ public class Pac {
 
     public void setEpsilon(Double epsilon) {
         this.epsilon = epsilon;
-        nTrainingSamples = Math.round(numberOfExamples * (Math.log(2) - Math.log(delta)) / epsilon);
+        nTrainingSamples = Math.round((hypothesisSize*Math.log(numberOfExamples) - Math.log(delta)) / epsilon);
     }
 
     public double getDelta() {
@@ -31,7 +33,7 @@ public class Pac {
 
     public void setDelta(Double delta) {
         this.delta = delta;
-        nTrainingSamples = Math.round(numberOfExamples * (Math.log(2) - Math.log(delta)) / epsilon);
+        nTrainingSamples = Math.round((hypothesisSize*Math.log(numberOfExamples) - Math.log(delta)) / epsilon);
     }
 
     public Double getHypothesisSpace() {
@@ -40,6 +42,7 @@ public class Pac {
 
     public void setHypothesisSpace(Double hypothesisSpace) {
         this.hypothesisSpace = hypothesisSpace;
+        nTrainingSamples = Math.round((Math.log(hypothesisSpace) - Math.log(delta)) / epsilon);
     }
 
     public long getTrainingSamples() {
@@ -52,6 +55,6 @@ public class Pac {
 
     public void setNumberOfExamples(Integer numberOfExamples) {
         this.numberOfExamples = numberOfExamples;
-        nTrainingSamples = Math.round(numberOfExamples * (Math.log(2) - Math.log(delta)) / epsilon);
+        nTrainingSamples = Math.round((hypothesisSize*Math.log(numberOfExamples) - Math.log(delta)) / epsilon);
     }
 }
