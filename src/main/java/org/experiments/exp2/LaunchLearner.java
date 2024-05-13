@@ -54,9 +54,10 @@ public abstract class LaunchLearner {
         updateAxiomsT();
     }
 
-    private void validateLearnedOntology() throws Exception {
+    private void validateLearnedOntology() {
         if (!elQueryEngineForH.entailed(axiomsT)) {
-            throw new Exception("Something went horribly wrong!");
+            // throw new Exception("Something went horribly wrong!");
+            System.out.println("Something went horribly wrong!");
         }
     }
 

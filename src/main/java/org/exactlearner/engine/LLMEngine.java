@@ -68,7 +68,7 @@ public class LLMEngine implements BaseEngine {
         Task task = new ExperimentTask("statementsQuerying", model, ontologyName, message, system, work);
         Environment.run(task);
 
-        return new Result(task.getFileName()).isTrue();
+        return new Result(task.getFileName()).isStricltyTrue();
 
     }
 
