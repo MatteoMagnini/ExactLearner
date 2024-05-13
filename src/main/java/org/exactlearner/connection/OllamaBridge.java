@@ -21,8 +21,9 @@ public class OllamaBridge extends BasicBridge {
         BasicBridge.url = defaultURL;
     }
 
-    public OllamaBridge(String host, int port, String model) {
+    public OllamaBridge(String host, int port, String model, int maxTokens) {
         super();
+        this.maxTokens = maxTokens;
         BasicBridge.model = model;
         BasicBridge.url = "http://" + host + ":" + port + "/api/generate";
     }

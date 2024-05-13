@@ -12,7 +12,7 @@ public class OllamaWorkload implements BaseWorkload {
     private final String system;
     private final String query;
     private final int maxTokens;
-    public static final List<String> supportedModels = List.of("mistral", "mixtral", "llama2", "llama2:13b");
+    public static final List<String> supportedModels = List.of("mistral", "mixtral", "llama2", "llama2:13b","llama2:70b","megadolphin","llama3","llava-llama3","llama3:70b","llama3-chatqa","dolphin-llama3");
 
     public OllamaWorkload(String model, String system, String query,  int maxTokens) {
         this.model = model;
@@ -23,7 +23,8 @@ public class OllamaWorkload implements BaseWorkload {
 
     @Override
     public void run() {
-        OllamaBridge bridge = new OllamaBridge(model, maxTokens);
+        OllamaBridge bridge = new OllamaBridge("127.0.0.1",11434, model,maxTokens);
+        //OllamaBridge bridge =  new OllamaBridge(model,maxTokens);
         checkConnection(bridge);
         String response = bridge.ask(query, system);
         // Sleep for 100 milliseconds to avoid overloading the Ollama bridge and retrying the request

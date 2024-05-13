@@ -12,4 +12,6 @@ public interface StatementBuilder {
     Integer getNumberOfStatements();
 
     Set<String> getAllStatements();
+
+    void removeStatement(String statement);
 }

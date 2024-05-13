@@ -6,6 +6,7 @@ import org.exactlearner.learner.Learner;
 import org.exactlearner.oracle.Oracle;
 import org.exactlearner.parser.OWLParserImpl;
 import org.exactlearner.utils.Metrics;
+import org.pac.StatementBuilder;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.io.OWLObjectRenderer;
 import org.semanticweb.owlapi.model.*;
@@ -25,12 +26,14 @@ public abstract class LaunchLearner {
     File targetFile;
     String ontologyFolder = "";
     BaseEngine llmQueryEngineForT;
-    //BaseEngine elQueryEngineForT;
-    //BaseEngine llmQueryEngineForH;
     BaseEngine elQueryEngineForH;
+    //BaseEngine llmQueryEngineForH;
+    //BaseEngine llmQueryEngineForH;
+    //BaseEngine llmQueryEngineForH;
     OWLClassExpression lastExpression;
     OWLSubClassOfAxiom counterExample;
-    OWLOntology targetOntology;
+    StatementBuilder builder;
+    OWLOntology groundTruthOntology;
     OWLOntology hypothesisOntology;
     Learner learner;
     File hypoFile;
@@ -53,7 +56,7 @@ public abstract class LaunchLearner {
 
     private void validateLearnedOntology() throws Exception {
         if (!elQueryEngineForH.entailed(axiomsT)) {
-            // throw new Exception("Something went horribly wrong!");
+            throw new Exception("Something went horribly wrong!");
         }
     }
 
@@ -63,15 +66,16 @@ public abstract class LaunchLearner {
     }
 
     void cleaningUp() {
-        elQueryEngineForH.disposeOfReasoner();
         llmQueryEngineForT.disposeOfReasoner();
         //llmQueryEngineForH.disposeOfReasoner();
+        elQueryEngineForH.disposeOfReasoner();
+        //llmQueryEngineForH.disposeOfReasoner();
         myManager.removeOntology(hypothesisOntology);
-        myManager.removeOntology(targetOntology);
+        myManager.removeOntology(groundTruthOntology);
     }
 
     private void updateAxiomsT() {
-        axiomsT = targetOntology.getAxioms().stream()
+        axiomsT = groundTruthOntology.getAxioms().stream()
                 .filter(axe -> (!axe.toString().contains("Thing") && (axe.isOfType(AxiomType.SUBCLASS_OF)
                         || axe.isOfType(AxiomType.EQUIVALENT_CLASSES))))
                 .collect(Collectors.toSet());
@@ -88,13 +92,13 @@ public abstract class LaunchLearner {
     }
 
     private void processRightHandSideTransformations() throws Exception {
+        counterExample = computeEssentialRightCounterexample();
         for (OWLSubClassOfAxiom ax : elQueryEngineForH.getOntology().getSubClassAxiomsForSubClass(lastName)) {
             if (ax.getSubClass().getClassExpressionType() == ClassExpressionType.OWL_CLASS && ax.getSubClass().equals(lastName)) {
                 Set<OWLClassExpression> mySet = new HashSet<>(ax.getSuperClass().asConjunctSet());
                 mySet.addAll(lastExpression.asConjunctSet());
                 lastExpression = llmQueryEngineForT.getOWLObjectIntersectionOf(mySet);
                 counterExample = llmQueryEngineForT.getSubClassAxiom(lastName, lastExpression);
-                break; // Assuming only one axiom needs to be processed
             }
         }
         counterExample = computeEssentialRightCounterexample();
@@ -187,13 +191,13 @@ public abstract class LaunchLearner {
         return axiom;
     }
 
-    void precomputation(BaseEngine elQueryEngineForT) {
-        int i = elQueryEngineForT.getClassesInSignature().size();
+    void precomputation() {
+        int i = llmQueryEngineForT.getClassesInSignature().size();
         myMetrics.setMembCount(myMetrics.getMembCount() + i * (i - 1));
-        for (OWLClass cl1 : elQueryEngineForT.getClassesInSignature()) {
-            Set<OWLClass> implied = elQueryEngineForT.getSuperClasses(cl1, true);
+        for (OWLClass cl1 : llmQueryEngineForT.getClassesInSignature().stream().filter(s -> !s.toString().toLowerCase().contains("thin")).collect(Collectors.toSet())) {
+            Set<OWLClass> implied = llmQueryEngineForT.getSuperClasses(cl1, true).stream().filter(s -> !s.toString().toLowerCase().contains("thin")).collect(Collectors.toSet());
             for (OWLClass cl2 : implied) {
-                OWLSubClassOfAxiom addedAxiom = elQueryEngineForT.getSubClassAxiom(cl1, cl2);
+                OWLSubClassOfAxiom addedAxiom = llmQueryEngineForT.getSubClassAxiom(cl1, cl2);
                 addHypothesis(addedAxiom);
             }
         }
@@ -201,12 +205,16 @@ public abstract class LaunchLearner {
 
     void loadTargetOntology(String ontology) throws OWLOntologyCreationException, IOException {
         targetFile = new File(ontology);
-        targetOntology = myManager.loadOntologyFromOntologyDocument(targetFile);
-        parser = new OWLParserImpl(targetOntology);
+        groundTruthOntology = myManager.loadOntologyFromOntologyDocument(targetFile);
+        for (OWLAxiom axe : groundTruthOntology.getAxioms())
+            if (axe.isOfType(AxiomType.SUBCLASS_OF) || axe.isOfType(AxiomType.EQUIVALENT_CLASSES)) {
+                axiomsT.add(axe);
+            }
+        parser = new OWLParserImpl(groundTruthOntology);
     }
 
     void saveTargetOntology() throws OWLOntologyStorageException, IOException {
-        OWLOntologyFormat format = myManager.getOntologyFormat(targetOntology);
+        OWLOntologyFormat format = myManager.getOntologyFormat(groundTruthOntology);
         ManchesterOWLSyntaxOntologyFormat manSyntaxFormat = new ManchesterOWLSyntaxOntologyFormat();
         if (format.isPrefixOWLOntologyFormat()) {
             manSyntaxFormat.copyPrefixesFrom(format.asPrefixOWLOntologyFormat());
@@ -217,7 +225,7 @@ public abstract class LaunchLearner {
             newFile.delete();
         }
         newFile.createNewFile();
-        myManager.saveOntology(targetOntology, manSyntaxFormat, IRI.create(newFile.toURI()));
+        myManager.saveOntology(groundTruthOntology, manSyntaxFormat, IRI.create(newFile.toURI()));
     }
 
     void loadHypothesisOntology() throws OWLOntologyCreationException, IOException {
@@ -231,7 +239,7 @@ public abstract class LaunchLearner {
     }
 
     void setUpOntologyFolders(String model) {
-        String ontologyID = targetOntology.getOntologyID().toString();
+        String ontologyID = groundTruthOntology.getOntologyID().toString();
         int lastSlashIndex = ontologyID.lastIndexOf('/');
         int extensionIndex = ontologyID.lastIndexOf(".owl");
         String name = "";

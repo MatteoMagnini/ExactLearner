@@ -63,7 +63,7 @@ public class LLMEngine implements BaseEngine {
         } else if (OpenAIWorkload.supportedModels.contains(model)) {
             work = new OpenAIWorkload(model, system, message, maxTokens);
         } else {
-            throw new IllegalStateException("Invalid model.");
+            throw new IllegalStateException("Invalid model " + model);
         }
         Task task = new ExperimentTask("statementsQuerying", model, ontologyName, message, system, work);
         Environment.run(task);
@@ -109,12 +109,10 @@ public class LLMEngine implements BaseEngine {
         if (ax.isOfType(AxiomType.SUBCLASS_OF)) {
             //return entailedSubclass((OWLSubClassOfAxiom) ax);
             var query = renderer.render(ax).replaceAll("\r", " ").replaceAll("\n", " ");
-            var bool = runTaskAndGetResult(query);
-            return bool;
+            return runTaskAndGetResult(query);
         }
 
-        //throw new RuntimeException("Axiom type not supported " + ax.toString());
-        return false;
+        throw new RuntimeException("Axiom type not supported " + ax);
 
     }
 

@@ -17,7 +17,7 @@ public class StatementBuilderImpl implements StatementBuilder {
 
     public StatementBuilderImpl(Integer seed, Set<String> classes, Set<String> objectProperties) {
         rand = new Random(seed);
-        this.classes = classes.stream().filter(s-> !s.contains("Thin")).collect(java.util.stream.Collectors.toSet());
+        this.classes = classes.stream().filter(s-> !s.toLowerCase().contains("thin")).collect(java.util.stream.Collectors.toSet());
         this.objectProperties = objectProperties;
         generateStatements();
     }
@@ -62,14 +62,17 @@ public class StatementBuilderImpl implements StatementBuilder {
     }
 
     private Optional<String> uniformPick() {
-        if (getAllStatements().size() == 0) {
+        if (getAllStatements().isEmpty()) {
             return Optional.empty();
         }
         int index = rand.nextInt(getAllStatements().size());
         // remove from the statement set and return it
         String statement = (String) getAllStatements().toArray()[index];
-        allStatements.remove(statement);
         return Optional.of(statement);
+    }
+
+    public void removeStatement(String statement){
+        allStatements.remove(statement);
     }
 
     @Override
