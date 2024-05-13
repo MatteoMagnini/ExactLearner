@@ -8,15 +8,11 @@ import org.experiments.task.Task;
 import org.experiments.workload.OllamaWorkload;
 import org.experiments.workload.OpenAIWorkload;
 import org.semanticweb.elk.owlapi.ElkReasonerFactory;
-import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.*;
 import org.semanticweb.owlapi.reasoner.NodeSet;
 import org.semanticweb.owlapi.reasoner.OWLReasoner;
 import uk.ac.manchester.cs.owl.owlapi.mansyntaxrenderer.ManchesterOWLSyntaxOWLObjectRendererImpl;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.Set;
 
 public class LLMEngine implements BaseEngine {
@@ -68,7 +64,7 @@ public class LLMEngine implements BaseEngine {
         Task task = new ExperimentTask("statementsQuerying", model, ontologyName, message, system, work);
         Environment.run(task);
 
-        return new Result(task.getFileName()).isStricltyTrue();
+        return new Result(task.getFileName()).isStrictlyTrue();
 
     }
 

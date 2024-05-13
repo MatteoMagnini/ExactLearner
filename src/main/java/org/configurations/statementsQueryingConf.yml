@@ -1,15 +1,16 @@
 models:
   - "mistral"
-  - "mixtral"
-  - "llama2"
-  - "llama2:13b"
+  #- "mixtral"
+  #- "llama2"
+  #- "llama2:13b"
 ontologies:
   - "src/main/resources/ontologies/small/animals.owl"
-  - "src/main/resources/ontologies/small/university.owl"
-  - "src/main/resources/ontologies/small/generations(large).owl"
-  - "src/main/resources/ontologies/small/football.owl"
-  - "src/main/resources/ontologies/small/cell.owl"
+  #- "src/main/resources/ontologies/small/university.owl"
+  #- "src/main/resources/ontologies/small/generations(large).owl"
+  #- "src/main/resources/ontologies/small/football.owl"
+  #- "src/main/resources/ontologies/small/cell.owl"
 system: >
   Answer with True when you're extremely confident or False.
+  Usually if the axiom is very long then it's False.
 maxTokens: 2
 type: "statementsQuerying"

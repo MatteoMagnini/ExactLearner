@@ -29,8 +29,8 @@ public class Result {
         this.response = response;
     }
 
-    public boolean isStricltyTrue() {
-        return response.toLowerCase(Locale.ROOT).replace("[^a-zA-Z0-9]", "").equals("true");
+    public boolean isStrictlyTrue() {
+        return response.toLowerCase(Locale.ROOT).replace(".","").trim().equals("true");
     }
 
     public boolean isTrue() {

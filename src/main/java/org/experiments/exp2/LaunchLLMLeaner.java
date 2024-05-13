@@ -114,7 +114,7 @@ public class LaunchLLMLeaner extends LaunchLearner {
 
     private void runLearner(int hypothesisSize) throws Throwable {
         // Computes inclusions of the form A implies B
-        precomputation();
+        // precomputation();
         int i= 0;
         while (true) {
             myMetrics.setEquivCount(myMetrics.getEquivCount() + 1);
