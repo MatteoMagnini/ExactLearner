@@ -1,4 +1,5 @@
 package org.experiments.exp2;
+import org.analysis.exp2.ResultAnalyzer;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.configurations.Configuration;
@@ -71,6 +72,7 @@ public class LaunchLLMLeaner extends LaunchLearner {
                     oracle = new Oracle(llmQueryEngineForT, elQueryEngineForH);
                     runLearningExperiment(args, hypothesisSizes.get(ontologies.indexOf(ontology)));
                     cleaningUp();
+                    launchResultAnalyzer(args);
                 }
                 System.out.println("\nFinished experiment for " + ontology + "\n");
             }
@@ -78,6 +80,11 @@ public class LaunchLLMLeaner extends LaunchLearner {
             e.printStackTrace();
             System.out.println("error" + e);
         }
+    }
+
+    private void launchResultAnalyzer(String[] args) {
+        new ResultAnalyzer(args).run();
+
     }
 
     private void setup(String ontology, String model) {
