@@ -1,5 +1,4 @@
 package org.experiments.exp2;
-
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.configurations.Configuration;
@@ -14,7 +13,6 @@ import org.pac.StatementBuilderImpl;
 import org.semanticweb.owlapi.model.*;
 import org.utility.OntologyManipulator;
 import org.utility.YAMLConfigLoader;
-
 import java.io.IOException;
 import java.util.List;
 import java.util.Set;
@@ -65,8 +63,8 @@ public class LaunchLLMLeaner extends LaunchLearner {
                 for (String model : models) {
                     System.out.println("\nRunning experiment for " + model + "\n");
                     setup(ontology, model.replace(":", "-"));
-                    //elQueryEngineForT = new ELEngine(groundTruthOntology);
-                    //llmQueryEngineForH = new LLMEngine(hypothesisOntology, model, system, maxTokens, myManager);
+                    elQueryEngineForT = new ELEngine(groundTruthOntology);
+                    llmQueryEngineForH = new LLMEngine(hypothesisOntology, model, system, maxTokens, myManager);
                     llmQueryEngineForT = new LLMEngine(groundTruthOntology, model, system, maxTokens, myManager);
                     elQueryEngineForH = new ELEngine(hypothesisOntology);
                     learner = new Learner(llmQueryEngineForT, elQueryEngineForH, myMetrics);
@@ -114,7 +112,7 @@ public class LaunchLLMLeaner extends LaunchLearner {
 
     private void runLearner(int hypothesisSize) throws Throwable {
         // Computes inclusions of the form A implies B
-        // precomputation();
+        precomputation();
         int i= 0;
         while (true) {
             myMetrics.setEquivCount(myMetrics.getEquivCount() + 1);
@@ -150,23 +148,21 @@ public class LaunchLLMLeaner extends LaunchLearner {
         // Initialize the statement builder
         this.builder = new StatementBuilderImpl(seed, parser.getClassesNamesAsString(), parser.getObjectPropertiesAsString());
         // Initialize PAC with epsilon and gamma values
-        Pac pac = new Pac(builder.getNumberOfStatements(), epsilon, delta, hypothesisSize);
+        Pac pac = new Pac(builder.getNumberOfStatements(), epsilon, delta, hypothesisSize, builder.getAllStatements());
+        int iterations = 0;
         // Iterate over PAC training samples
-        for (int i = 1; i <= pac.getTrainingSamples(); i++) {
-            System.out.println("PAC Training sample: " + i + " out of " + pac.getTrainingSamples());
+        while (pac.getPacStatementsSize() > 0) {
+            System.out.println("PAC Training sample: " + ++iterations + " out of " + pac.getNumberOfExamples());
             // Get the last counterexample
-            var s = builder.chooseRandomStatement();
-            if (s.isEmpty()) {
-                System.out.println("Found every counterexample! - PAC Algorithm completed");
+            String statement = pac.getRandomStatement();
+            if (statement == null) {
+                System.out.println("PAC Algorithm completed");
                 return null;
             }
-
-            var selectedAxiom = OntologyManipulator.createAxiomFromString(s.get(), groundTruthOntology);
-
+            var selectedAxiom = OntologyManipulator.createAxiomFromString(statement, groundTruthOntology);
             if (selectedAxiom.isOfType(AxiomType.SUBCLASS_OF)) {
                 if (!elQueryEngineForH.entailed(selectedAxiom) && llmQueryEngineForT.entailed(selectedAxiom)) {
                     OWLSubClassOfAxiom counterexample = (OWLSubClassOfAxiom) selectedAxiom;
-                    //builder.removeStatement(s.get());
                     return getCounterExampleSubClassOf(counterexample);
                 }
             } else if (selectedAxiom.isOfType(AxiomType.EQUIVALENT_CLASSES)) {
@@ -174,14 +170,12 @@ public class LaunchLLMLeaner extends LaunchLearner {
                 Set<OWLSubClassOfAxiom> eqSubClassAxioms = equivCounterexample.asOWLSubClassOfAxioms();
                 for (OWLSubClassOfAxiom subClassAxiom : eqSubClassAxioms) {
                     if (!elQueryEngineForH.entailed(subClassAxiom) && llmQueryEngineForT.entailed(selectedAxiom)) {
-                        //builder.removeStatement(s.get());
                         return getCounterExampleSubClassOf(subClassAxiom);
                     }
                 }
             } else {
                 throw new Exception("Unknown axiom type: " + selectedAxiom.getAxiomType() + "You must delete unknown axioms FIRST!");
             }
-
         }
         return null;
     }

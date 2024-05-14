@@ -30,7 +30,7 @@ public class Result {
     }
 
     public boolean isStrictlyTrue() {
-        return response.toLowerCase(Locale.ROOT).replace(".","").trim().equals("true");
+        return response.toLowerCase(Locale.ROOT).replace(".","").replace("\\n","").trim().equals("true");
     }
 
     public boolean isTrue() {

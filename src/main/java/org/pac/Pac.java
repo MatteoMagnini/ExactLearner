@@ -1,60 +1,49 @@
 package org.pac;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class Pac {
 
     private Double epsilon;
     private Double delta;
-    private Long nTrainingSamples;
-    private Integer numberOfExamples;
-    private Double hypothesisSpace;
-    private Integer hypothesisSize;
+    private Long numberOfExamples;
 
-    public Pac(Integer numberOfExamples, Double epsilon, Double delta, Integer hypothesisSize) {
+    private Set<String> pacStatements;
+
+    public Pac(Integer numberOfExamples, Double epsilon, Double delta, Integer hypothesisSize, Set<String> allStatements) {
         this.epsilon = epsilon;
         this.delta = delta;
-        this.hypothesisSize = hypothesisSize;
-        this.numberOfExamples = numberOfExamples;
-        this.hypothesisSpace = Math.pow(numberOfExamples,hypothesisSize);
-        nTrainingSamples = Math.round((hypothesisSize*Math.log(numberOfExamples) - Math.log(delta)) / epsilon);
+        this.numberOfExamples = Math.round((hypothesisSize*Math.log(numberOfExamples) - Math.log(delta)) / epsilon);
+        // Select a random subset of size numberOfExamples from allStatements
+        this.pacStatements = new HashSet<>(allStatements);
+        this.pacStatements = this.pacStatements.stream().limit(this.numberOfExamples).collect(Collectors.toSet());
     }
 
     public double getEpsilon() {
         return epsilon;
     }
 
-    public void setEpsilon(Double epsilon) {
-        this.epsilon = epsilon;
-        nTrainingSamples = Math.round((hypothesisSize*Math.log(numberOfExamples) - Math.log(delta)) / epsilon);
-    }
-
     public double getDelta() {
         return delta;
     }
 
-    public void setDelta(Double delta) {
-        this.delta = delta;
-        nTrainingSamples = Math.round((hypothesisSize*Math.log(numberOfExamples) - Math.log(delta)) / epsilon);
-    }
-
-    public Double getHypothesisSpace() {
-        return hypothesisSpace;
-    }
-
-    public void setHypothesisSpace(Double hypothesisSpace) {
-        this.hypothesisSpace = hypothesisSpace;
-        nTrainingSamples = Math.round((Math.log(hypothesisSpace) - Math.log(delta)) / epsilon);
-    }
-
-    public long getTrainingSamples() {
-        return nTrainingSamples;
-    }
-
-    public int getNumberOfExamples() {
+    public long getNumberOfExamples() {
         return numberOfExamples;
     }
 
-    public void setNumberOfExamples(Integer numberOfExamples) {
-        this.numberOfExamples = numberOfExamples;
-        nTrainingSamples = Math.round((hypothesisSize*Math.log(numberOfExamples) - Math.log(delta)) / epsilon);
+    public Set<String> getPacStatements() {
+        return pacStatements;
     }
+
+    public int getPacStatementsSize() {
+        return pacStatements.size();
+    }
+
+    public String getRandomStatement() {
+        String statement = pacStatements.stream().findAny().orElse(null);
+        pacStatements.remove(statement);
+        return statement;
+    }
+
 }

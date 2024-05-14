@@ -25,11 +25,11 @@ public abstract class LaunchLearner {
     int roleNumber;
     File targetFile;
     String ontologyFolder = "";
+    BaseEngine elQueryEngineForT;
     BaseEngine llmQueryEngineForT;
     BaseEngine elQueryEngineForH;
-    //BaseEngine llmQueryEngineForH;
-    //BaseEngine llmQueryEngineForH;
-    //BaseEngine llmQueryEngineForH;
+    BaseEngine llmQueryEngineForH;
+
     OWLClassExpression lastExpression;
     OWLSubClassOfAxiom counterExample;
     StatementBuilder builder;
@@ -195,8 +195,8 @@ public abstract class LaunchLearner {
     void precomputation() {
         int i = llmQueryEngineForT.getClassesInSignature().size();
         myMetrics.setMembCount(myMetrics.getMembCount() + i * (i - 1));
-        for (OWLClass cl1 : llmQueryEngineForT.getClassesInSignature().stream().filter(s -> !s.toString().toLowerCase().contains("thin")).collect(Collectors.toSet())) {
-            Set<OWLClass> implied = llmQueryEngineForT.getSuperClasses(cl1, true).stream().filter(s -> !s.toString().toLowerCase().contains("thin")).collect(Collectors.toSet());
+        for (OWLClass cl1 : llmQueryEngineForT.getClassesInSignature()) {
+            Set<OWLClass> implied = llmQueryEngineForT.getSuperClasses(cl1, true);
             for (OWLClass cl2 : implied) {
                 OWLSubClassOfAxiom addedAxiom = llmQueryEngineForT.getSubClassAxiom(cl1, cl2);
                 addHypothesis(addedAxiom);

@@ -1,8 +1,9 @@
 models:
-  - "mistral"
-  #- "mixtral"
+  #- "mistral"
+  - "mixtral"
   #- "llama2"
   #- "llama2:13b"
+  #- "llama3"
 ontologies:
   - "src/main/resources/ontologies/small/animals.owl"
   #- "src/main/resources/ontologies/small/university.owl"
@@ -10,7 +11,12 @@ ontologies:
   #- "src/main/resources/ontologies/small/football.owl"
   #- "src/main/resources/ontologies/small/cell.owl"
 system: >
-  Answer with True when you're extremely confident or False.
-  Usually if the axiom is very long then it's False.
+  You have to classify the following statement provided in Manchester Syntax.
+  Answer with only True or False.
+  The ontology may contain animals, environments, parts of the body and other entities.
+  Parts of the body are not subclasses of animals.
+  Almost always, statements with more than five entities are False.
+  Take your time to analyze the statement and answer correctly.
+  If you are not sure, answer False.
 maxTokens: 2
 type: "statementsQuerying"

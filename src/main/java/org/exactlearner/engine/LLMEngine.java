@@ -103,7 +103,6 @@ public class LLMEngine implements BaseEngine {
         }
 
         if (ax.isOfType(AxiomType.SUBCLASS_OF)) {
-            //return entailedSubclass((OWLSubClassOfAxiom) ax);
             var query = renderer.render(ax).replaceAll("\r", " ").replaceAll("\n", " ");
             return runTaskAndGetResult(query);
         }

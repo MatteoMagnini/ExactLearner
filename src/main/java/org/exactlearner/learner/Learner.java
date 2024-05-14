@@ -460,6 +460,7 @@ public class Learner implements BaseLearner {
     }
 
     // at the moment duplicated
+    // @Todo: @Riccardo please check if this is correct.
     private Boolean isCounterExample(OWLClassExpression left, OWLClassExpression right) {
         return myEngineForT.entailed(myEngineForT.getSubClassAxiom(left, right))
                 && !myEngineForH.entailed(myEngineForH.getSubClassAxiom(left, right));
