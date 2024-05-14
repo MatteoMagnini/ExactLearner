@@ -1,6 +1,6 @@
 package org.analysis;
 
-import org.analysis.classes.ClassesResultsReader;
+import org.analysis.exp1.classes.ClassesResultsReader;
 import org.configurations.Configuration;
 import org.experiments.Environment;
 import org.experiments.logger.SmartLogger;

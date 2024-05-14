@@ -1,4 +1,4 @@
-package org.analysis.axioms;
+package org.analysis.exp1.axioms;
 
 import org.analysis.common.JenaQueryExecutor;
 

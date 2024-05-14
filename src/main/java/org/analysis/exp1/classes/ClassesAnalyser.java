@@ -1,4 +1,4 @@
-package org.analysis.classes;
+package org.analysis.exp1.classes;
 
 import org.experiments.Result;
 import org.exactlearner.engine.ELEngine;

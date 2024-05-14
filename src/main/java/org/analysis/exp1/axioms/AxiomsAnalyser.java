@@ -1,4 +1,4 @@
-package org.analysis.axioms;
+package org.analysis.exp1.axioms;
 
 import org.experiments.Result;
 import org.exactlearner.engine.ELEngine;

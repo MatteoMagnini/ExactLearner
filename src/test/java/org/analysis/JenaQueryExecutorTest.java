@@ -1,6 +1,6 @@
 package org.analysis;
 
-import org.analysis.classes.JenaQueryClassesExecutor;
+import org.analysis.exp1.classes.JenaQueryClassesExecutor;
 import org.configurations.Configuration;
 import org.junit.Before;
 import org.junit.Test;

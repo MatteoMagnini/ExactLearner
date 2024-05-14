@@ -1,4 +1,4 @@
-package org.analysis.classes;
+package org.analysis.exp1.classes;
 
 import org.analysis.common.JenaQueryExecutor;
 

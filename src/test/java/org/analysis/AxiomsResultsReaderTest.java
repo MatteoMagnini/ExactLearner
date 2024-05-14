@@ -1,6 +1,6 @@
 package org.analysis;
 
-import org.analysis.axioms.AxiomsResultsReader;
+import org.analysis.exp1.axioms.AxiomsResultsReader;
 import org.coode.owlapi.manchesterowlsyntax.ManchesterOWLSyntaxEditorParser;
 import org.configurations.Configuration;
 import org.experiments.Environment;
