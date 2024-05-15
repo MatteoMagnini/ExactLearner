@@ -52,22 +52,17 @@ public class ResultAnalyzer {
             if (expectedReasoner.isEntailed(ax)) confusionMatrix[0][0]++;
             else confusionMatrix[0][1]++;
         }
-        for (var cls : predictedClasses) {
-            if (expectedClasses.contains(cls)) confusionMatrix[0][0]++;
-            else confusionMatrix[0][1]++;
-        }
+
 
         for (var ax : expectedAxioms) {
             if (predictedReasoner.isEntailed(ax)) confusionMatrix[0][0]++;
             else confusionMatrix[1][0]++;
         }
-        for (var cls : expectedClasses) {
-            if (predictedClasses.contains(cls)) confusionMatrix[0][0]++;
-            else confusionMatrix[1][0]++;
-        }
+
         System.out.println("Ontology "+ expectedOntology.getOntologyID().getOntologyIRI());
         System.out.println("RECALL:" + Metrics.calculateRecall(confusionMatrix));
         System.out.println("PRECISION:" + Metrics.calculatePrecision(confusionMatrix));
+        System.out.println("F1-Score:" + Metrics.calculateF1Score(confusionMatrix));
         System.out.println("##############################################################");
     }
 
