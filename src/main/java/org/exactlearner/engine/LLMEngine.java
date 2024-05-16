@@ -13,17 +13,19 @@ import org.semanticweb.owlapi.reasoner.NodeSet;
 import org.semanticweb.owlapi.reasoner.OWLReasoner;
 import uk.ac.manchester.cs.owl.owlapi.mansyntaxrenderer.ManchesterOWLSyntaxOWLObjectRendererImpl;
 
+import java.util.Arrays;
 import java.util.Set;
 
 public class LLMEngine implements BaseEngine {
     private final OWLOntology ontology;
-    private String ontologyName = "";
-    private final String model;
-    private final String system;
-    private final Integer maxTokens;
+    String ontologyName = "";
+    final String model;
+    final String system;
+    final Integer maxTokens;
     private final OWLOntologyManager manager;
     private final OWLParserImpl parser;
     private final OWLReasoner reasoner;
+
 
     public LLMEngine(OWLOntology ontology, String model, String system, Integer maxTokens, OWLOntologyManager manager) {
         this.ontology = ontology;
@@ -53,6 +55,7 @@ public class LLMEngine implements BaseEngine {
 
 
     public Boolean runTaskAndGetResult(String message) {
+        message = message.replace("  ", " ");
         Runnable work;
         if (OllamaWorkload.supportedModels.contains(model)) {
             work = new OllamaWorkload(model, system, message, maxTokens);
@@ -65,7 +68,6 @@ public class LLMEngine implements BaseEngine {
         Environment.run(task);
 
         return new Result(task.getFileName()).isStrictlyTrue();
-
     }
 
     @Override
