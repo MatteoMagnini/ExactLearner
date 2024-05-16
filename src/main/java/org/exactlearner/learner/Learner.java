@@ -372,7 +372,8 @@ public class Learner implements BaseLearner {
 
 
                                 myMetrics.setMembCount(myMetrics.getMembCount() + 1);
-
+                                // @TODO
+                                // Decompose the statement and ask multiples queries then merge again.
                                 if (!myEngineForT.entailed(myEngineForT.getSubClassAxiom(
                                         tree.transformToClassExpression(), tmp.transformToClassExpression())) // if
                                         // the
@@ -462,8 +463,8 @@ public class Learner implements BaseLearner {
     // at the moment duplicated
     // @Todo: @Riccardo please check if this is correct.
     private Boolean isCounterExample(OWLClassExpression left, OWLClassExpression right) {
-        return myEngineForT.entailed(myEngineForT.getSubClassAxiom(left, right))
-                && !myEngineForH.entailed(myEngineForH.getSubClassAxiom(left, right));
+        return !myEngineForH.entailed(myEngineForH.getSubClassAxiom(left, right)) &&
+                myEngineForT.entailed(myEngineForT.getSubClassAxiom(left, right));
     }
 
     @Override

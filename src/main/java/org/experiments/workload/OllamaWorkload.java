@@ -23,7 +23,8 @@ public class OllamaWorkload implements BaseWorkload {
 
     @Override
     public void run() {
-        OllamaBridge bridge = new OllamaBridge("clusters.almaai.unibo.it",11434, model,maxTokens);
+        //clusters.almaai.unibo.it
+        OllamaBridge bridge = new OllamaBridge("127.0.0.1",11434, model,maxTokens);
         //OllamaBridge bridge =  new OllamaBridge(model,maxTokens);
         checkConnection(bridge);
         String response = bridge.ask(query, system);

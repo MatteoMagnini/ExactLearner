@@ -1,10 +1,13 @@
 package org.experiments.exp2;
+
 import org.analysis.exp2.ResultAnalyzer;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.configurations.Configuration;
 import org.exactlearner.engine.ELEngine;
+import org.exactlearner.engine.EnrichedLLMEngine;
 import org.exactlearner.engine.LLMEngine;
+import org.exactlearner.engine.NLPLLMEngine;
 import org.exactlearner.learner.Learner;
 import org.exactlearner.oracle.Oracle;
 import org.exactlearner.utils.Metrics;
@@ -14,6 +17,7 @@ import org.pac.StatementBuilderImpl;
 import org.semanticweb.owlapi.model.*;
 import org.utility.OntologyManipulator;
 import org.utility.YAMLConfigLoader;
+
 import java.io.IOException;
 import java.util.List;
 import java.util.Set;
@@ -35,6 +39,7 @@ public class LaunchLLMLeaner extends LaunchLearner {
 
     public static void main(String[] args) {
         Logger.getRootLogger().setLevel(Level.OFF);
+        //new ResultAnalyzer("llama3","src/main/resources/ontologies/small/animals.owl").run();
         new LaunchLLMLeaner().run(args);
     }
 
@@ -59,40 +64,58 @@ public class LaunchLLMLeaner extends LaunchLearner {
         SmartLogger.checkCachedFiles();
         loadConfiguration(configurationFile);
         try {
-            for (String ontology : ontologies) {
-                System.out.println("\nRunning experiment for " + ontology);
-                for (String model : models) {
-                    System.out.println("\nRunning experiment for " + model + "\n");
-                    setup(ontology, model.replace(":", "-"));
-                    elQueryEngineForT = new ELEngine(groundTruthOntology);
-                    llmQueryEngineForH = new LLMEngine(hypothesisOntology, model, system, maxTokens, myManager);
-                    llmQueryEngineForT = new LLMEngine(groundTruthOntology, model, system, maxTokens, myManager);
-                    elQueryEngineForH = new ELEngine(hypothesisOntology);
-                    learner = new Learner(llmQueryEngineForT, elQueryEngineForH, myMetrics);
-                    oracle = new Oracle(llmQueryEngineForT, elQueryEngineForH);
-                    runLearningExperiment(args, hypothesisSizes.get(ontologies.indexOf(ontology)));
-                    cleaningUp();
-                    launchResultAnalyzer(args);
+            for (int i = 1; i <= 3; i++) {
+                for (String ontology : ontologies) {
+                    System.out.println("\nRunning experiment for " + ontology);
+                    for (String model : models) {
+                        System.out.println("\nRunning experiment for " + model + "\n");
+                        setup(i, ontology, model.replace(":", "-"));
+                        //elQueryEngineForT = new ELEngine(groundTruthOntology);
+                        //llmQueryEngineForH = new LLMEngine(hypothesisOntology, model, system, maxTokens, myManager,true);
+                        switch (i) {
+                            case 1:
+                                llmQueryEngineForT = new LLMEngine(groundTruthOntology, model, system, maxTokens, myManager);
+                                break;
+                            case 2:
+                                llmQueryEngineForT = new EnrichedLLMEngine(groundTruthOntology, model, system, maxTokens, myManager);
+                                break;
+                            case 3:
+                                llmQueryEngineForT = new NLPLLMEngine(groundTruthOntology, model, system, maxTokens, myManager);
+                                break;
+                            default:
+                                throw new IllegalStateException("Unexpected value: " + i);
+                        }
+                        elQueryEngineForH = new ELEngine(hypothesisOntology);
+                        learner = new Learner(llmQueryEngineForT, elQueryEngineForH, myMetrics);
+                        oracle = new Oracle(llmQueryEngineForT, elQueryEngineForH);
+                        runLearningExperiment(args, hypothesisSizes.get(ontologies.indexOf(ontology)));
+                        cleaningUp();
+                    }
+                    System.out.println("\nFinished experiment for " + ontology + "\n");
                 }
-                System.out.println("\nFinished experiment for " + ontology + "\n");
             }
+
         } catch (Throwable e) {
             e.printStackTrace();
             System.out.println("error" + e);
         }
+
+        //Result analysis
+        for (int i = 1; i <= 3; i++) {
+            for (String ontology : ontologies) {
+                for (String model : models) {
+                    new ResultAnalyzer(model, ontology, i).run();
+                }
+            }
+        }
     }
 
-    private void launchResultAnalyzer(String[] args) {
-        new ResultAnalyzer(args).run();
-
-    }
-
-    private void setup(String ontology, String model) {
+    private void setup(Integer i, String ontology, String model) {
         try {
             myMetrics = new Metrics(myRenderer);
             System.out.println("Trying to load groundTruthOntology");
             loadTargetOntology(ontology);
-            setUpOntologyFolders(model);
+            setUpOntologyFolders(i, model);
             saveTargetOntology();
             loadHypothesisOntology();
             System.out.println(groundTruthOntology);
@@ -120,7 +143,7 @@ public class LaunchLLMLeaner extends LaunchLearner {
     private void runLearner(int hypothesisSize) throws Throwable {
         // Computes inclusions of the form A implies B
         precomputation();
-        int i= 0;
+        int i = 0;
         while (true) {
             myMetrics.setEquivCount(myMetrics.getEquivCount() + 1);
             counterExample = getCounterExample(hypothesisSize);
@@ -143,6 +166,7 @@ public class LaunchLLMLeaner extends LaunchLearner {
 
             // Check if transformation can be applied
             checkTransformations();
+            //addHypothesis(counterExample);
         }
 
     }
@@ -162,6 +186,7 @@ public class LaunchLLMLeaner extends LaunchLearner {
             System.out.println("PAC Training sample: " + ++iterations + " out of " + pac.getNumberOfExamples());
             // Get the last counterexample
             String statement = pac.getRandomStatement();
+
             if (statement == null) {
                 System.out.println("PAC Algorithm completed");
                 return null;

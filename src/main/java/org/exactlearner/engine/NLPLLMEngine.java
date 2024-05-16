@@ -37,7 +37,7 @@ public class NLPLLMEngine extends LLMEngine {
             if (Character.isUpperCase(message.charAt(0))) {
                 return message;
             } else {
-                return "something that " + message;
+                return "something that " + message.replace("_"," ");
             }
         }
     }

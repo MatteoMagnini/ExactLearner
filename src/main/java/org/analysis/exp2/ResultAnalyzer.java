@@ -17,19 +17,32 @@ public class ResultAnalyzer {
     private OWLOntology predictedOntology;
     private OWLOntology expectedOntology;
     private final String fileSeparator = FileSystems.getDefault().getSeparator();
-    private final Configuration config;
+    private final String model;
+    private final String onto;
+    private String engine="";
+    public ResultAnalyzer(String model, String onto, Integer i) {
+        this.model = model;
+        this.onto = onto;
+        switch (i) {
+            case 1:
+                this.engine = "manchester_";
+                break;
+            case 2:
+                this.engine = "enriched_manchester_";
+                break;
+            case 3:
+                this.engine = "nlp_";
+                break;
+            default:
+                System.out.println("Invalid engine. Exiting...");
+                System.exit(1);
+        }
 
-    public ResultAnalyzer(String[] args) {
-        this.config = new YAMLConfigLoader().getConfig(args[0], Configuration.class);
     }
 
     public void run() {
-        for (var model : config.getModels()) {
-            for (var onto : config.getOntologies()) {
-                readOntologies(model, onto);
-                compareOntologies();
-            }
-        }
+        readOntologies(model, onto);
+        compareOntologies();
     }
 
     private void compareOntologies() {
@@ -53,13 +66,13 @@ public class ResultAnalyzer {
             else confusionMatrix[0][1]++;
         }
 
-
         for (var ax : expectedAxioms) {
             if (predictedReasoner.isEntailed(ax)) confusionMatrix[0][0]++;
             else confusionMatrix[1][0]++;
         }
 
-        System.out.println("Ontology "+ expectedOntology.getOntologyID().getOntologyIRI());
+        System.out.println("Ontology predicted:"+ predictedOntology.toString());
+        System.out.println("Model "+ model);
         System.out.println("RECALL:" + Metrics.calculateRecall(confusionMatrix));
         System.out.println("PRECISION:" + Metrics.calculatePrecision(confusionMatrix));
         System.out.println("F1-Score:" + Metrics.calculateF1Score(confusionMatrix));
@@ -80,7 +93,7 @@ public class ResultAnalyzer {
         OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
         try {
             expectedOntology = manager.loadOntologyFromOntologyDocument(new File("results" + fileSeparator + "ontologies" + fileSeparator + "target_" + name));
-            predictedOntology = manager.loadOntologyFromOntologyDocument(new File("results" + fileSeparator + "ontologies" + fileSeparator + "learned_" + model + "_" + name));
+            predictedOntology = manager.loadOntologyFromOntologyDocument(new File("results" + fileSeparator + "ontologies" + fileSeparator + engine +"learned_" + model.replace(":","-") + "_" + name));
         } catch (OWLOntologyCreationException e) {
             System.out.println("ERROR IN READING OWL FILE; CHECK IF LLM LEARNER THROWS SOME ERRORS!!!");
             throw new RuntimeException(e);

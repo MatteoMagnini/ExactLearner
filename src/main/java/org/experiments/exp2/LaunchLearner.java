@@ -17,7 +17,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 public abstract class LaunchLearner {
 
@@ -51,7 +50,6 @@ public abstract class LaunchLearner {
     void validation() throws Exception {
         validateLearnedOntology();
         printVictoryMessage();
-        updateAxiomsT();
     }
 
     private void validateLearnedOntology() {
@@ -73,13 +71,6 @@ public abstract class LaunchLearner {
         //llmQueryEngineForH.disposeOfReasoner();
         myManager.removeOntology(hypothesisOntology);
         myManager.removeOntology(groundTruthOntology);
-    }
-
-    private void updateAxiomsT() {
-        axiomsT = groundTruthOntology.getAxioms().stream()
-                .filter(axe -> (!axe.toString().contains("Thing") && (axe.isOfType(AxiomType.SUBCLASS_OF)
-                        || axe.isOfType(AxiomType.EQUIVALENT_CLASSES))))
-                .collect(Collectors.toSet());
     }
 
     void checkTransformations() throws Exception {
@@ -207,7 +198,7 @@ public abstract class LaunchLearner {
     void loadTargetOntology(String ontology) throws OWLOntologyCreationException, IOException {
         targetFile = new File(ontology);
         groundTruthOntology = myManager.loadOntologyFromOntologyDocument(targetFile);
-        for (OWLAxiom axe : groundTruthOntology.getAxioms())
+        for (OWLAxiom axe : groundTruthOntology.getLogicalAxioms())
             if (axe.isOfType(AxiomType.SUBCLASS_OF) || axe.isOfType(AxiomType.EQUIVALENT_CLASSES)) {
                 axiomsT.add(axe);
             }
@@ -239,7 +230,22 @@ public abstract class LaunchLearner {
         hypothesisOntology = myManager.loadOntologyFromOntologyDocument(hypoFile);
     }
 
-    void setUpOntologyFolders(String model) {
+    void setUpOntologyFolders(Integer i, String model) {
+        var engine = "";
+        switch (i) {
+            case 1:
+                engine = "manchester_";
+                break;
+            case 2:
+                engine = "enriched_manchester_";
+                break;
+            case 3:
+                engine = "nlp_";
+                break;
+            default:
+                System.out.println("Invalid engine. Exiting...");
+                System.exit(1);
+        }
         String ontologyID = groundTruthOntology.getOntologyID().toString();
         int lastSlashIndex = ontologyID.lastIndexOf('/');
         int extensionIndex = ontologyID.lastIndexOf(".owl");
@@ -252,7 +258,7 @@ public abstract class LaunchLearner {
             System.exit(1);
         }
         ontologyFolder = "results" + fileSeparator + "ontologies" + fileSeparator + "target_" + name;
-        ontologyFolderH = "results" + fileSeparator + "ontologies" + fileSeparator + "learned_" + model + "_" + name;
+        ontologyFolderH = "results" + fileSeparator + "ontologies" + fileSeparator + engine + "learned_" + model + "_" + name;
     }
 
     void computeConceptAndRoleNumbers() throws IOException {
