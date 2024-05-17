@@ -64,7 +64,7 @@ public class LaunchLLMLeaner extends LaunchLearner {
         SmartLogger.checkCachedFiles();
         loadConfiguration(configurationFile);
         try {
-            for (int i = 1; i <= 3; i++) {
+            for (int i = 1; i <= 2; i++) {
                 for (String ontology : ontologies) {
                     System.out.println("\nRunning experiment for " + ontology);
                     for (String model : models) {
@@ -76,10 +76,10 @@ public class LaunchLLMLeaner extends LaunchLearner {
                             case 1:
                                 llmQueryEngineForT = new LLMEngine(groundTruthOntology, model, system, maxTokens, myManager);
                                 break;
-                            case 2:
+                            case 3:
                                 llmQueryEngineForT = new EnrichedLLMEngine(groundTruthOntology, model, system, maxTokens, myManager);
                                 break;
-                            case 3:
+                            case 2:
                                 llmQueryEngineForT = new NLPLLMEngine(groundTruthOntology, model, system, maxTokens, myManager);
                                 break;
                             default:

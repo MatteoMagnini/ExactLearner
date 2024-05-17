@@ -86,6 +86,7 @@ public class ResultAnalyzer {
 
         if (lastSlashIndex != -1 && extensionIndex != -1) {
             name = onto.substring(lastSlashIndex + 1, extensionIndex) + ".owl";
+            name = name.replaceAll("\\(.*\\)", "");
         } else {
             System.out.println("Could not get ontology name. Exiting...");
             System.exit(1);
