@@ -49,7 +49,7 @@ public class ConsoleLearnerTest {
 		Logger.getRootLogger().setLevel(Level.OFF);
 		String path = "src/main/resources/ontologies/small/";
 
-		String[] ontologies = { "animals.owl", "football.owl", "cell.owl", "generations.owl", "university.owl" };
+		String[] ontologies = { "animals.owl", "football.owl", "cl.owl", "generations.owl", "university.owl" };
 		runDoIt(path, ontologies);
 	}
 

@@ -9,11 +9,11 @@ ontologies:
   - "src/main/resources/ontologies/small/animals_inferred.owl"
   - "src/main/resources/ontologies/small/university.owl"
   - "src/main/resources/ontologies/small/university_inferred.owl"
-  - "src/main/resources/ontologies/small/generations(large).owl"
+  - "src/main/resources/ontologies/small/generations.owl"
   - "src/main/resources/ontologies/small/generations_inferred.owl"
   - "src/main/resources/ontologies/small/football.owl"
   - "src/main/resources/ontologies/small/football_inferred.owl"
-  - "src/main/resources/ontologies/small/cell.owl"
+  - "src/main/resources/ontologies/small/cl.owl"
   - "src/main/resources/ontologies/small/cell_inferred.owl"
 system: >
   Answer with True or False.

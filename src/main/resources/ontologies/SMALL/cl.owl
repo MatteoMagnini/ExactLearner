@@ -1,0 +1,216 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://obo.sourceforge.net/cl.owl#"
+     xml:base="http://obo.sourceforge.net/cl.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:cl="http://obo.sourceforge.net/cl.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://obo.sourceforge.net/cl.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#comment"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://obo.sourceforge.net/cl.owl#AnimalCell -->
+
+    <owl:Class rdf:about="http://obo.sourceforge.net/cl.owl#AnimalCell">
+        <rdfs:subClassOf rdf:resource="http://obo.sourceforge.net/cl.owl#CellByOrganism"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.sourceforge.net/cl.owl#Cell -->
+
+    <owl:Class rdf:about="http://obo.sourceforge.net/cl.owl#Cell">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Extract from OBO Cell Type Ontology</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.sourceforge.net/cl.owl#CellByClass -->
+
+    <owl:Class rdf:about="http://obo.sourceforge.net/cl.owl#CellByClass">
+        <rdfs:subClassOf rdf:resource="http://obo.sourceforge.net/cl.owl#Cell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.sourceforge.net/cl.owl#CellByDevelopmentStage -->
+
+    <owl:Class rdf:about="http://obo.sourceforge.net/cl.owl#CellByDevelopmentStage">
+        <rdfs:subClassOf rdf:resource="http://obo.sourceforge.net/cl.owl#Cell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.sourceforge.net/cl.owl#CellByOrganism -->
+
+    <owl:Class rdf:about="http://obo.sourceforge.net/cl.owl#CellByOrganism">
+        <rdfs:subClassOf rdf:resource="http://obo.sourceforge.net/cl.owl#Cell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.sourceforge.net/cl.owl#ChondroBlast -->
+
+    <owl:Class rdf:about="http://obo.sourceforge.net/cl.owl#ChondroBlast">
+        <rdfs:subClassOf rdf:resource="http://obo.sourceforge.net/cl.owl#InMatureCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.sourceforge.net/cl.owl#ChondroCyte -->
+
+    <owl:Class rdf:about="http://obo.sourceforge.net/cl.owl#ChondroCyte">
+        <rdfs:subClassOf rdf:resource="http://obo.sourceforge.net/cl.owl#MatureCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.sourceforge.net/cl.owl#CirculatingCell -->
+
+    <owl:Class rdf:about="http://obo.sourceforge.net/cl.owl#CirculatingCell">
+        <rdfs:subClassOf rdf:resource="http://obo.sourceforge.net/cl.owl#CellByClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.sourceforge.net/cl.owl#ElectricallyActiveCell -->
+
+    <owl:Class rdf:about="http://obo.sourceforge.net/cl.owl#ElectricallyActiveCell">
+        <rdfs:subClassOf rdf:resource="http://obo.sourceforge.net/cl.owl#CellByClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.sourceforge.net/cl.owl#Erythrocyte -->
+
+    <owl:Class rdf:about="http://obo.sourceforge.net/cl.owl#Erythrocyte">
+        <rdfs:subClassOf rdf:resource="http://obo.sourceforge.net/cl.owl#CirculatingCell"/>
+        <rdfs:subClassOf rdf:resource="http://obo.sourceforge.net/cl.owl#MatureCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.sourceforge.net/cl.owl#InMatureCell -->
+
+    <owl:Class rdf:about="http://obo.sourceforge.net/cl.owl#InMatureCell">
+        <rdfs:subClassOf rdf:resource="http://obo.sourceforge.net/cl.owl#CellByDevelopmentStage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.sourceforge.net/cl.owl#LeafCell -->
+
+    <owl:Class rdf:about="http://obo.sourceforge.net/cl.owl#LeafCell">
+        <rdfs:subClassOf rdf:resource="http://obo.sourceforge.net/cl.owl#MatureCell"/>
+        <rdfs:subClassOf rdf:resource="http://obo.sourceforge.net/cl.owl#PhotosyntheticCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.sourceforge.net/cl.owl#MatureCell -->
+
+    <owl:Class rdf:about="http://obo.sourceforge.net/cl.owl#MatureCell">
+        <rdfs:subClassOf rdf:resource="http://obo.sourceforge.net/cl.owl#CellByDevelopmentStage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.sourceforge.net/cl.owl#MioBlast -->
+
+    <owl:Class rdf:about="http://obo.sourceforge.net/cl.owl#MioBlast">
+        <rdfs:subClassOf rdf:resource="http://obo.sourceforge.net/cl.owl#InMatureCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.sourceforge.net/cl.owl#Miocyte -->
+
+    <owl:Class rdf:about="http://obo.sourceforge.net/cl.owl#Miocyte">
+        <rdfs:subClassOf rdf:resource="http://obo.sourceforge.net/cl.owl#MatureCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.sourceforge.net/cl.owl#Neuron -->
+
+    <owl:Class rdf:about="http://obo.sourceforge.net/cl.owl#Neuron">
+        <rdfs:subClassOf rdf:resource="http://obo.sourceforge.net/cl.owl#ElectricallyActiveCell"/>
+        <rdfs:subClassOf rdf:resource="http://obo.sourceforge.net/cl.owl#MatureCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.sourceforge.net/cl.owl#Osteocyte -->
+
+    <owl:Class rdf:about="http://obo.sourceforge.net/cl.owl#Osteocyte">
+        <rdfs:subClassOf rdf:resource="http://obo.sourceforge.net/cl.owl#MatureCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.sourceforge.net/cl.owl#PhotoreceptorCell -->
+
+    <owl:Class rdf:about="http://obo.sourceforge.net/cl.owl#PhotoreceptorCell">
+        <rdfs:subClassOf rdf:resource="http://obo.sourceforge.net/cl.owl#MatureCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.sourceforge.net/cl.owl#PhotosyntheticCell -->
+
+    <owl:Class rdf:about="http://obo.sourceforge.net/cl.owl#PhotosyntheticCell">
+        <rdfs:subClassOf rdf:resource="http://obo.sourceforge.net/cl.owl#CellByClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.sourceforge.net/cl.owl#PlantCell -->
+
+    <owl:Class rdf:about="http://obo.sourceforge.net/cl.owl#PlantCell">
+        <rdfs:subClassOf rdf:resource="http://obo.sourceforge.net/cl.owl#CellByOrganism"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.sourceforge.net/cl.owl#SclerenchymaCell -->
+
+    <owl:Class rdf:about="http://obo.sourceforge.net/cl.owl#SclerenchymaCell">
+        <rdfs:subClassOf rdf:resource="http://obo.sourceforge.net/cl.owl#MatureCell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://obo.sourceforge.net/cl.owl#StructuralCell -->
+
+    <owl:Class rdf:about="http://obo.sourceforge.net/cl.owl#StructuralCell">
+        <rdfs:subClassOf rdf:resource="http://obo.sourceforge.net/cl.owl#CellByClass"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.0.0.1450) http://owlapi.sourceforge.net -->
