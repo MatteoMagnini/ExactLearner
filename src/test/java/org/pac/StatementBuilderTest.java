@@ -28,7 +28,7 @@ public class StatementBuilderTest {
     @Test
     public void testGenerationsStatementChecker() {
         // GENeRATIONS ONTOLOGY
-        OWLParser parser = new OWLParserImpl("src/main/resources/ontologies/small/generations(large).owl",OWLManager.createOWLOntologyManager());
+        OWLParser parser = new OWLParserImpl("src/main/resources/ontologies/small/generations.owl",OWLManager.createOWLOntologyManager());
         classesNames = parser.getClassesNamesAsString();
         objectDataPropertiesNames = parser.getObjectPropertiesAsString();
         StatementBuilder statementBuilder = new StatementBuilderImpl(0,classesNames, objectDataPropertiesNames);
@@ -39,7 +39,7 @@ public class StatementBuilderTest {
     @Test
     public void testCellStatementChecker() {
         // FAMILIES ONTOLOGY
-        OWLParser parser = new OWLParserImpl("src/main/resources/ontologies/small/cell.owl", OWLManager.createOWLOntologyManager());
+        OWLParser parser = new OWLParserImpl("src/main/resources/ontologies/small/cl.owl", OWLManager.createOWLOntologyManager());
         classesNames = parser.getClassesNamesAsString();
         objectDataPropertiesNames = parser.getObjectPropertiesAsString();
         StatementBuilder statementBuilder = new StatementBuilderImpl(0,classesNames, objectDataPropertiesNames);
