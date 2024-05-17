@@ -6,17 +6,11 @@ models:
   #- "llama3"
 ontologies:
   - "src/main/resources/ontologies/small/animals.owl"
-  #- "src/main/resources/ontologies/small/university.owl"
-  #- "src/main/resources/ontologies/small/generations(large).owl"
-  #- "src/main/resources/ontologies/small/football.owl"
-  #- "src/main/resources/ontologies/small/cell.owl"
+  - "src/main/resources/ontologies/small/university.owl"
+  - "src/main/resources/ontologies/small/generations(large).owl"
+  - "src/main/resources/ontologies/small/football.owl"
+  - "src/main/resources/ontologies/small/cell.owl"
 system: >
-  You have to classify the following statement provided in Manchester Syntax.
   Answer with only True or False.
-  The ontology may contain animals, environments, parts of the body and other entities.
-  Parts of the body are not subclasses of animals.
-  Almost always, statements with more than five entities are False.
-  Take your time to analyze the statement and answer correctly.
-  If you are not sure, answer False.
 maxTokens: 2
 type: "statementsQuerying"
