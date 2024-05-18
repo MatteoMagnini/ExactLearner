@@ -84,10 +84,10 @@ public class ResultAnalyzer {
             if (predictedReasoner.isEntailed(ax)) confusionMatrix[0][0]++;
             else confusionMatrix[1][0]++;
         }
-
-        System.out.println("Ontology" + onto);
-        System.out.println("Model "+ model);
-        System.out.println("LLM Engine "+ engine.replace("_",""));
+        var tmp_onto = onto.replace("src/main/resources/ontologies/small/","").replace("src/main/resources/ontologies/medium/","");
+        System.out.println("Ontology: " + tmp_onto);
+        System.out.println("Model: "+ model);
+        System.out.println("LLM Engine "+ engine.replace("_"," "));
         System.out.println("RECALL:" + Metrics.calculateRecall(confusionMatrix));
         System.out.println("PRECISION:" + Metrics.calculatePrecision(confusionMatrix));
         System.out.println("F1-Score:" + Metrics.calculateF1Score(confusionMatrix));
