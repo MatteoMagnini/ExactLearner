@@ -64,7 +64,7 @@ public class LaunchLLMLeaner extends LaunchLearner {
         SmartLogger.checkCachedFiles();
         loadConfiguration(configurationFile);
         try {
-            for (int i = 1; i <= 2; i++) {
+            for (int i = 1; i <= 3; i++) {
                 for (String ontology : ontologies) {
                     System.out.println("\nRunning experiment for " + ontology);
                     for (String model : models) {
@@ -76,10 +76,10 @@ public class LaunchLLMLeaner extends LaunchLearner {
                             case 1:
                                 llmQueryEngineForT = new LLMEngine(groundTruthOntology, model, system, maxTokens, myManager);
                                 break;
-                            case 3:
-                                llmQueryEngineForT = new EnrichedLLMEngine(groundTruthOntology, model, system, maxTokens, myManager);
-                                break;
                             case 2:
+                                // llmQueryEngineForT = new EnrichedLLMEngine(groundTruthOntology, model, system, maxTokens, myManager);
+                                break;
+                            case 3:
                                 llmQueryEngineForT = new NLPLLMEngine(groundTruthOntology, model, system, maxTokens, myManager);
                                 break;
                             default:
@@ -179,7 +179,7 @@ public class LaunchLLMLeaner extends LaunchLearner {
         // Initialize the statement builder
         this.builder = new StatementBuilderImpl(seed, parser.getClassesNamesAsString(), parser.getObjectPropertiesAsString());
         // Initialize PAC with epsilon and gamma values
-        Pac pac = new Pac(builder.getNumberOfStatements(), epsilon, delta, hypothesisSize, builder.getAllStatements());
+        Pac pac = new Pac(builder.getNumberOfStatements(), epsilon, delta, hypothesisSize, builder.getAllStatements(), seed);
         int iterations = 0;
         // Iterate over PAC training samples
         while (pac.getPacStatementsSize() > 0) {

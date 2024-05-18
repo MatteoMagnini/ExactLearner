@@ -1,7 +1,7 @@
 package org.pac;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Pac {
 
@@ -11,13 +11,16 @@ public class Pac {
 
     private Set<String> pacStatements;
 
-    public Pac(Integer numberOfExamples, Double epsilon, Double delta, Integer hypothesisSize, Set<String> allStatements) {
+    public Pac(Integer numberOfExamples, Double epsilon, Double delta, Integer hypothesisSize, Set<String> allStatements, int seed) {
         this.epsilon = epsilon;
         this.delta = delta;
         this.numberOfExamples = Math.round((hypothesisSize*Math.log(numberOfExamples) - Math.log(delta)) / epsilon);
         // Select a random subset of size numberOfExamples from allStatements
+        // using the seed to ensure reproducibility
         this.pacStatements = new HashSet<>(allStatements);
-        this.pacStatements = this.pacStatements.stream().limit(this.numberOfExamples).collect(Collectors.toSet());
+        List<Integer> indices = IntStream.range(0, allStatements.size()).boxed().collect(Collectors.toList());
+        Collections.shuffle(indices, new Random(seed));
+        this.pacStatements = indices.stream().limit(this.numberOfExamples).map(i -> (String) allStatements.toArray()[i]).collect(Collectors.toSet());
     }
 
     public double getEpsilon() {

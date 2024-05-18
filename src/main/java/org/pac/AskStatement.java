@@ -39,7 +39,7 @@ public class AskStatement {
         var parser = new OWLParserImpl(ontology, OWLManager.createOWLOntologyManager());
         var builder = new StatementBuilderImpl(seed,parser.getClassesNamesAsString(), parser.getObjectProperties().stream().map(Object::toString).map(s -> s.split("#")[1].replace(">", "")).collect(Collectors.toSet()));
         //epsilon and gamma = 0.01
-        Pac pac = new Pac(builder.getNumberOfStatements(), 0.05, 0.1, 2, builder.getAllStatements());
+        Pac pac = new Pac(builder.getNumberOfStatements(), 0.05, 0.1, 2, builder.getAllStatements(), seed);
         for (int i = 1; i <= pac.getNumberOfExamples(); i++) {
             System.out.println("Training samples done: " + i + "/" + pac.getNumberOfExamples());
             Runnable work;

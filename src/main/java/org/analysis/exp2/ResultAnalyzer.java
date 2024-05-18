@@ -71,7 +71,7 @@ public class ResultAnalyzer {
             else confusionMatrix[1][0]++;
         }
 
-        System.out.println("Ontology predicted:"+ predictedOntology.toString());
+        System.out.println("Ontology name:" + onto);
         System.out.println("Model "+ model);
         System.out.println("RECALL:" + Metrics.calculateRecall(confusionMatrix));
         System.out.println("PRECISION:" + Metrics.calculatePrecision(confusionMatrix));
