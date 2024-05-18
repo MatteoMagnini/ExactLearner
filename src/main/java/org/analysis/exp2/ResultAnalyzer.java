@@ -14,12 +14,26 @@ import java.io.File;
 import java.nio.file.FileSystems;
 
 public class ResultAnalyzer {
+
+    public static void main(String[] args){
+        Configuration config = new YAMLConfigLoader().getConfig(args[0], Configuration.class);
+        //Result analysis
+        for (int i = 1; i <= 3; i++) {
+            for (String ontology : config.getOntologies()) {
+                for (String model : config.getModels()) {
+                    new ResultAnalyzer(model, ontology, i).run();
+                }
+            }
+        }
+    }
+
     private OWLOntology predictedOntology;
     private OWLOntology expectedOntology;
     private final String fileSeparator = FileSystems.getDefault().getSeparator();
     private final String model;
     private final String onto;
     private String engine="";
+
     public ResultAnalyzer(String model, String onto, Integer i) {
         this.model = model;
         this.onto = onto;
@@ -71,8 +85,9 @@ public class ResultAnalyzer {
             else confusionMatrix[1][0]++;
         }
 
-        System.out.println("Ontology predicted:"+ predictedOntology.toString());
+        System.out.println("Ontology" + onto);
         System.out.println("Model "+ model);
+        System.out.println("LLM Engine "+ engine.replace("_",""));
         System.out.println("RECALL:" + Metrics.calculateRecall(confusionMatrix));
         System.out.println("PRECISION:" + Metrics.calculatePrecision(confusionMatrix));
         System.out.println("F1-Score:" + Metrics.calculateF1Score(confusionMatrix));

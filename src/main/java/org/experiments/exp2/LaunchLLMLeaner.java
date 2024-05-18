@@ -99,15 +99,6 @@ public class LaunchLLMLeaner extends LaunchLearner {
             e.printStackTrace();
             System.out.println("error" + e);
         }
-
-        //Result analysis
-        for (int i = 1; i <= 3; i++) {
-            for (String ontology : ontologies) {
-                for (String model : models) {
-                    new ResultAnalyzer(model, ontology, i).run();
-                }
-            }
-        }
     }
 
     private void setup(Integer i, String ontology, String model) {
