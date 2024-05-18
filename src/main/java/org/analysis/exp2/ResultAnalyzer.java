@@ -14,12 +14,26 @@ import java.io.File;
 import java.nio.file.FileSystems;
 
 public class ResultAnalyzer {
+
+    public static void main(String[] args){
+        Configuration config = new YAMLConfigLoader().getConfig(args[0], Configuration.class);
+        //Result analysis
+        for (int i = 1; i <= 3; i++) {
+            for (String ontology : config.getOntologies()) {
+                for (String model : config.getModels()) {
+                    new ResultAnalyzer(model, ontology, i).run();
+                }
+            }
+        }
+    }
+
     private OWLOntology predictedOntology;
     private OWLOntology expectedOntology;
     private final String fileSeparator = FileSystems.getDefault().getSeparator();
     private final String model;
     private final String onto;
     private String engine="";
+
     public ResultAnalyzer(String model, String onto, Integer i) {
         this.model = model;
         this.onto = onto;
@@ -70,9 +84,10 @@ public class ResultAnalyzer {
             if (predictedReasoner.isEntailed(ax)) confusionMatrix[0][0]++;
             else confusionMatrix[1][0]++;
         }
-
-        System.out.println("Ontology name:" + onto);
-        System.out.println("Model "+ model);
+        var tmp_onto = onto.replace("src/main/resources/ontologies/small/","").replace("src/main/resources/ontologies/medium/","");
+        System.out.println("Ontology: " + tmp_onto);
+        System.out.println("Model: "+ model);
+        System.out.println("LLM Engine "+ engine.replace("_"," "));
         System.out.println("RECALL:" + Metrics.calculateRecall(confusionMatrix));
         System.out.println("PRECISION:" + Metrics.calculatePrecision(confusionMatrix));
         System.out.println("F1-Score:" + Metrics.calculateF1Score(confusionMatrix));
