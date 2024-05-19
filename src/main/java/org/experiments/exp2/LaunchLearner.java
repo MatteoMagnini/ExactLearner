@@ -246,6 +246,9 @@ public abstract class LaunchLearner {
         String ontologyID = groundTruthOntology.getOntologyID().toString();
         int lastSlashIndex = ontologyID.lastIndexOf('/');
         int extensionIndex = ontologyID.lastIndexOf(".owl");
+        if (extensionIndex == -1) {
+            extensionIndex = ontologyID.lastIndexOf(">");
+        }
         String name = "";
 
         if (lastSlashIndex != -1 && extensionIndex != -1) {
