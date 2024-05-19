@@ -10,11 +10,11 @@ ontologies:
   - "src/main/resources/ontologies/small/generations.owl"
   - "src/main/resources/ontologies/small/football.owl"
   - "src/main/resources/ontologies/small/cl.owl"
+  - "src/main/resources/ontologies/large/galen2.owl"
   - "src/main/resources/ontologies/medium/biosphere.owl"
   - "src/main/resources/ontologies/medium/fungal_anatomy.owl"
   - "src/main/resources/ontologies/medium/infectious_disease.owl"
   - "src/main/resources/ontologies/medium/space.owl"
-  - "src/main/resources/ontologies/large/galen2.owl"
 system: >
   You have to classify the following statement provided in Manchester Syntax or natural language.
   Answer with only True or False.
