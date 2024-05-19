@@ -18,7 +18,7 @@ public class ResultAnalyzer {
     public static void main(String[] args){
         Configuration config = new YAMLConfigLoader().getConfig(args[0], Configuration.class);
         //Result analysis
-        for (int i = 1; i <= 3; i++) {
+        for (int i = 1; i <= 2; i++) {
             for (String ontology : config.getOntologies()) {
                 for (String model : config.getModels()) {
                     new ResultAnalyzer(model, ontology, i).run();
@@ -33,6 +33,8 @@ public class ResultAnalyzer {
     private final String model;
     private final String onto;
     private String engine="";
+    private static final String tfType = "true_false";
+    private static final String richType = "rich_prompt";
 
     public ResultAnalyzer(String model, String onto, Integer i) {
         this.model = model;
@@ -42,9 +44,6 @@ public class ResultAnalyzer {
                 this.engine = "manchester_";
                 break;
             case 2:
-                this.engine = "enriched_manchester_";
-                break;
-            case 3:
                 this.engine = "nlp_";
                 break;
             default:
@@ -109,7 +108,7 @@ public class ResultAnalyzer {
         OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
         try {
             expectedOntology = manager.loadOntologyFromOntologyDocument(new File("results" + fileSeparator + "ontologies" + fileSeparator + "target_" + name));
-            predictedOntology = manager.loadOntologyFromOntologyDocument(new File("results" + fileSeparator + "ontologies" + fileSeparator + engine +"learned_" + model.replace(":","-") + "_" + name));
+            predictedOntology = manager.loadOntologyFromOntologyDocument(new File("results" + fileSeparator + "ontologies" + fileSeparator + richType + fileSeparator + engine +"learned_" + model.replace(":","-") + "_" + name));
         } catch (OWLOntologyCreationException e) {
             System.out.println("ERROR IN READING OWL FILE; CHECK IF LLM LEARNER THROWS SOME ERRORS!!!");
             throw new RuntimeException(e);

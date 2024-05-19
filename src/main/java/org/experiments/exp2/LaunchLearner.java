@@ -237,9 +237,6 @@ public abstract class LaunchLearner {
                 engine = "manchester_";
                 break;
             case 2:
-                engine = "enriched_manchester_";
-                break;
-            case 3:
                 engine = "nlp_";
                 break;
             default:

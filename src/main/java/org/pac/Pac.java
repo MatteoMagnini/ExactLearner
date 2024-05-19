@@ -17,7 +17,6 @@ public class Pac {
         this.numberOfExamples = Math.round((hypothesisSize*Math.log(numberOfExamples) - Math.log(delta)) / epsilon);
         // Select a random subset of size numberOfExamples from allStatements
         // using the seed to ensure reproducibility
-        this.pacStatements = new HashSet<>(allStatements);
         List<Integer> indices = IntStream.range(0, allStatements.size()).boxed().collect(Collectors.toList());
         Collections.shuffle(indices, new Random(seed));
         this.pacStatements = indices.stream().limit(this.numberOfExamples).map(i -> (String) allStatements.toArray()[i]).collect(Collectors.toSet());
