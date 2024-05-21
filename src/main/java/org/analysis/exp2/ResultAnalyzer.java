@@ -3,116 +3,124 @@ package org.analysis.exp2;
 import org.analysis.common.Metrics;
 import org.configurations.Configuration;
 import org.semanticweb.HermiT.Reasoner;
-import org.semanticweb.elk.owlapi.ElkReasonerFactory;
 import org.semanticweb.owlapi.apibinding.OWLManager;
-import org.semanticweb.owlapi.model.OWLOntology;
-import org.semanticweb.owlapi.model.OWLOntologyCreationException;
-import org.semanticweb.owlapi.model.OWLOntologyManager;
+import org.semanticweb.owlapi.model.*;
 import org.utility.YAMLConfigLoader;
 
 import java.io.File;
 import java.nio.file.FileSystems;
+import java.nio.file.Path;
+import java.util.Set;
 
 public class ResultAnalyzer {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Configuration config = new YAMLConfigLoader().getConfig(args[0], Configuration.class);
-        //Result analysis
-        for (int i = 1; i <= 2; i++) {
-            for (String ontology : config.getOntologies()) {
-                for (String model : config.getModels()) {
-                    new ResultAnalyzer(model, ontology, i).run();
-                }
-            }
-        }
+        config.getOntologies().forEach(ontology -> config.getModels().forEach(model -> new ResultAnalyzer(model, ontology).run()));
     }
 
-    private OWLOntology predictedOntology;
-    private OWLOntology expectedOntology;
-    private final String fileSeparator = FileSystems.getDefault().getSeparator();
+    private final OWLOntology nlpPredictedOntology;
+    private final OWLOntology predictedOntology;
+    private final OWLOntology expectedOntology;
+    //private final OWLOntology enrichedPredictedOntology;
+    //private final OWLOntology enrichedNlpPredictedOntology;
+
     private final String model;
-    private final String onto;
-    private String engine="";
-    private static final String tfType = "true_false";
-    private static final String richType = "rich_prompt";
+    private final String ontology;
+    private static final String TF_TYPE = "true_false";
+    private static final String RICH_TYPE = "rich_prompt";
 
-    public ResultAnalyzer(String model, String onto, Integer i) {
+    public ResultAnalyzer(String model, String ontology) {
         this.model = model;
-        this.onto = onto;
-        switch (i) {
-            case 1:
-                this.engine = "manchester_";
-                break;
-            case 2:
-                this.engine = "nlp_";
-                break;
-            default:
-                System.out.println("Invalid engine. Exiting...");
-                System.exit(1);
-        }
-
+        this.ontology = ontology;
+        this.expectedOntology = loadOntology();
+        this.predictedOntology = loadOntology(TF_TYPE, "manchester_", model);
+        this.nlpPredictedOntology = loadOntology(TF_TYPE, "nlp_", model);
+        //this.enrichedPredictedOntology = loadOntology(RICH_TYPE, "manchester_", model);
+        //this.enrichedNlpPredictedOntology = loadOntology(RICH_TYPE, "nlp_", model);
     }
 
     public void run() {
-        readOntologies(model, onto);
         compareOntologies();
     }
 
     private void compareOntologies() {
-        ///COMPARE T with H
-
-        //CONFUSION MATRIX
-        //      PREDICTED
-        // E         T   F
-        // X     T   TP  FN
-        // P     F   FP  TN
-        var expectedAxioms = expectedOntology.getLogicalAxioms();
-        var predictedAxioms = predictedOntology.getLogicalAxioms();
-        var expectedClasses = expectedOntology.getClassesInSignature();
-        var predictedClasses = predictedOntology.getClassesInSignature();
         int[][] confusionMatrix = new int[3][3];
-        var expectedReasoner = new Reasoner(expectedOntology);
-        var predictedReasoner = new Reasoner(predictedOntology);
+        int[][] nlpConfusionMatrix = new int[3][3];
+        int[][] enrichedConfusionMatrix = new int[3][3];
+        int[][] enrichedNlpConfusionMatrix = new int[3][3];
 
-        for (var ax : predictedAxioms) {
-            if (expectedReasoner.isEntailed(ax)) confusionMatrix[0][0]++;
-            else confusionMatrix[0][1]++;
-        }
+        Reasoner expectedReasoner = new Reasoner(expectedOntology);
+        Reasoner predictedReasoner = new Reasoner(predictedOntology);
+        Reasoner nlpPredictedReasoner = new Reasoner(nlpPredictedOntology);
+        //Reasoner enrichedPredictedReasoner = new Reasoner(enrichedPredictedOntology);
+        //Reasoner enrichedNlpPredictedReasoner = new Reasoner(enrichedNlpPredictedOntology);
 
-        for (var ax : expectedAxioms) {
-            if (predictedReasoner.isEntailed(ax)) confusionMatrix[0][0]++;
-            else confusionMatrix[1][0]++;
-        }
-        var tmp_onto = onto.replace("src/main/resources/ontologies/small/","").replace("src/main/resources/ontologies/medium/","");
-        System.out.println("Ontology: " + tmp_onto);
-        System.out.println("Model: "+ model);
-        System.out.println("LLM Engine "+ engine.replace("_"," "));
-        System.out.println("RECALL:" + Metrics.calculateRecall(confusionMatrix));
-        System.out.println("PRECISION:" + Metrics.calculatePrecision(confusionMatrix));
-        System.out.println("F1-Score:" + Metrics.calculateF1Score(confusionMatrix));
+        updateConfusionMatrix(predictedOntology.getLogicalAxioms(), expectedOntology.getLogicalAxioms(), predictedReasoner, expectedReasoner, confusionMatrix);
+        //updateConfusionMatrix(enrichedPredictedOntology.getLogicalAxioms(), expectedOntology.getLogicalAxioms(), enrichedPredictedReasoner, expectedReasoner, enrichedConfusionMatrix);
+        updateConfusionMatrix(nlpPredictedOntology.getLogicalAxioms(), expectedOntology.getLogicalAxioms(), nlpPredictedReasoner, expectedReasoner, nlpConfusionMatrix);
+        //updateConfusionMatrix(enrichedNlpPredictedOntology.getLogicalAxioms(), expectedOntology.getLogicalAxioms(), enrichedNlpPredictedReasoner, expectedReasoner, enrichedNlpConfusionMatrix);
+
+        printResults(confusionMatrix, nlpConfusionMatrix, enrichedConfusionMatrix, enrichedNlpConfusionMatrix);
+    }
+
+    private void updateConfusionMatrix(Set<OWLLogicalAxiom> predictedAxioms, Set<OWLLogicalAxiom> expectedAxioms, Reasoner predictedReasoner, Reasoner expectedReasoner, int[][] confusionMatrix) {
+        predictedAxioms.forEach(ax -> {
+            if (expectedReasoner.isEntailed(ax)) {
+                confusionMatrix[0][0]++;
+            } else {
+                confusionMatrix[0][1]++;
+            }
+        });
+
+        expectedAxioms.forEach(ax -> {
+            if (predictedReasoner.isEntailed(ax)) {
+                confusionMatrix[0][0]++;
+            } else {
+                confusionMatrix[1][0]++;
+            }
+        });
+    }
+
+    private void printResults(int[][] confusionMatrix, int[][] nlpConfusionMatrix, int[][] enrichedConfusionMatrix, int[][] enrichedNlpConfusionMatrix) {
+        String ontologyName = Path.of(ontology).getFileName().toString().replaceAll("\\(.*\\)", "");
+
+        System.out.printf("Ontology: %s%n", ontologyName);
+        System.out.printf("Model: %s%n", model);
+        printMetrics("M.Syntax", confusionMatrix);
+        printMetrics("NLP", nlpConfusionMatrix);
+        //printMetrics("Enriched prompt M.Syntax", enrichedConfusionMatrix);
+        //printMetrics("Enriched prompt NLP", enrichedNlpConfusionMatrix);
         System.out.println("##############################################################");
     }
 
-    private void readOntologies(String model, String onto) {
-        int lastSlashIndex = onto.lastIndexOf('/');
-        int extensionIndex = onto.lastIndexOf(".owl");
-        String name = "";
+    private void printMetrics(String label, int[][] confusionMatrix) {
+        System.out.printf("%s RECALL: %.2f%n", label, Metrics.calculateRecall(confusionMatrix));
+        System.out.printf("%s PRECISION: %.2f%n", label, Metrics.calculatePrecision(confusionMatrix));
+        System.out.printf("%s F1-Score: %.2f%n", label, Metrics.calculateF1Score(confusionMatrix));
+    }
 
-        if (lastSlashIndex != -1 && extensionIndex != -1) {
-            name = onto.substring(lastSlashIndex + 1, extensionIndex) + ".owl";
-            name = name.replaceAll("\\(.*\\)", "");
-        } else {
-            System.out.println("Could not get ontology name. Exiting...");
-            System.exit(1);
-        }
+    private OWLOntology loadOntology(String type, String enginePrefix, String model) {
+        String ontologyName = Path.of(ontology).getFileName().toString().replaceAll("\\(.*\\)", "");
+        String path = String.format("results%1$sontologies%1$s%2$s%1$s%3$slearned_%4$s_%5$s",
+                FileSystems.getDefault().getSeparator(), type, enginePrefix, model.replace(":", "-"), ontologyName);
+        return loadOntologyFromFile(path);
+    }
+
+    private OWLOntology loadOntology() {
+        String ontologyName = Path.of(ontology).getFileName().toString().replaceAll("\\(.*\\)", "");
+        String path = String.format("results%1$sontologies%1$s%2$s_%3$s",
+                FileSystems.getDefault().getSeparator(), "target", ontologyName);
+        return loadOntologyFromFile(path);
+    }
+
+    private OWLOntology loadOntologyFromFile(String path) {
         OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
         try {
-            expectedOntology = manager.loadOntologyFromOntologyDocument(new File("results" + fileSeparator + "ontologies" + fileSeparator + "target_" + name));
-            predictedOntology = manager.loadOntologyFromOntologyDocument(new File("results" + fileSeparator + "ontologies" + fileSeparator + richType + fileSeparator + engine +"learned_" + model.replace(":","-") + "_" + name));
+            return manager.loadOntologyFromOntologyDocument(new File(path));
         } catch (OWLOntologyCreationException e) {
-            System.out.println("ERROR IN READING OWL FILE; CHECK IF LLM LEARNER THROWS SOME ERRORS!!!");
+            System.err.println("ERROR IN READING OWL FILE; CHECK IF LLM LEARNER THROWS SOME ERRORS!!!");
             throw new RuntimeException(e);
         }
-
     }
 }
