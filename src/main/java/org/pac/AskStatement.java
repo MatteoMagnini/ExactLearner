@@ -37,24 +37,23 @@ public class AskStatement {
 
     private void askStatement(Integer seed, String model, String ontology, String system, int maxTokens, String type) {
         var parser = new OWLParserImpl(ontology, OWLManager.createOWLOntologyManager());
-        var builder = new StatementBuilderImpl(seed,parser.getClassesNamesAsString(), parser.getObjectProperties().stream().map(Object::toString).map(s -> s.split("#")[1].replace(">", "")).collect(Collectors.toSet()));
         //epsilon and gamma = 0.01
-        Pac pac = new Pac(builder.getNumberOfStatements(), 0.05, 0.1, 2, builder.getAllStatements(), seed);
-        for (int i = 1; i <= pac.getNumberOfExamples(); i++) {
-            System.out.println("Training samples done: " + i + "/" + pac.getNumberOfExamples());
+        Pac pac = new Pac(parser.getClassesNamesAsString(), parser.getObjectProperties().stream().map(Object::toString).map(s -> s.split("#")[1].replace(">", "")).collect(Collectors.toSet()), 0.05, 0.1, 2, seed);
+        for (int i = 1; i <= pac.getNumberOfSamples(); i++) {
+            System.out.println("Training samples done: " + i + "/" + pac.getNumberOfSamples());
             Runnable work;
-            var s = builder.chooseRandomStatement();
+            var s = pac.getRandomStatement();
             if (s.isEmpty()) {
                 throw new IllegalStateException("No statement available.");
             }
             if (OllamaWorkload.supportedModels.contains(model)) {
-                work = new OllamaWorkload(model, system, s.get(), maxTokens);
+                work = new OllamaWorkload(model, system, s, maxTokens);
             } else if (OpenAIWorkload.supportedModels.contains(model)) {
-                work = new OpenAIWorkload(model, system, s.get(), maxTokens);
+                work = new OpenAIWorkload(model, system, s, maxTokens);
             } else {
                 throw new IllegalStateException("Invalid model.");
             }
-            Task task = new ExperimentTask(type, model, ontology, s.get(), system, work);
+            Task task = new ExperimentTask(type, model, ontology, s, system, work);
             Environment.run(task);
         }
     }

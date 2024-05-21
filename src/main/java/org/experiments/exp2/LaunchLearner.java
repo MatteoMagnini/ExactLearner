@@ -6,7 +6,6 @@ import org.exactlearner.learner.Learner;
 import org.exactlearner.oracle.Oracle;
 import org.exactlearner.parser.OWLParserImpl;
 import org.exactlearner.utils.Metrics;
-import org.pac.StatementBuilder;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.io.OWLObjectRenderer;
 import org.semanticweb.owlapi.model.*;
@@ -31,7 +30,6 @@ public abstract class LaunchLearner {
 
     OWLClassExpression lastExpression;
     OWLSubClassOfAxiom counterExample;
-    StatementBuilder builder;
     OWLOntology groundTruthOntology;
     OWLOntology hypothesisOntology;
     Learner learner;

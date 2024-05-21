@@ -1,11 +1,9 @@
 package org.experiments.exp2;
 
-import org.analysis.exp2.ResultAnalyzer;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.configurations.Configuration;
 import org.exactlearner.engine.ELEngine;
-import org.exactlearner.engine.EnrichedLLMEngine;
 import org.exactlearner.engine.LLMEngine;
 import org.exactlearner.engine.NLPLLMEngine;
 import org.exactlearner.learner.Learner;
@@ -13,7 +11,6 @@ import org.exactlearner.oracle.Oracle;
 import org.exactlearner.utils.Metrics;
 import org.experiments.logger.SmartLogger;
 import org.pac.Pac;
-import org.pac.StatementBuilderImpl;
 import org.semanticweb.owlapi.model.*;
 import org.utility.OntologyManipulator;
 import org.utility.YAMLConfigLoader;
@@ -70,17 +67,12 @@ public class LaunchLLMLeaner extends LaunchLearner {
                     for (String model : models) {
                         System.out.println("\nRunning experiment for " + model + "\n");
                         setup(i, ontology, model.replace(":", "-"));
-                        //elQueryEngineForT = new ELEngine(groundTruthOntology);
-                        //llmQueryEngineForH = new LLMEngine(hypothesisOntology, model, system, maxTokens, myManager,true);
                         switch (i) {
-                            case 1:
-                                llmQueryEngineForT = new LLMEngine(groundTruthOntology, model, system, maxTokens, myManager);
-                                break;
-                            case 2:
-                                llmQueryEngineForT = new NLPLLMEngine(groundTruthOntology, model, system, maxTokens, myManager);
-                                break;
-                            default:
-                                throw new IllegalStateException("Unexpected value: " + i);
+                            case 1 ->
+                                    llmQueryEngineForT = new LLMEngine(groundTruthOntology, model, system, maxTokens, myManager);
+                            case 2 ->
+                                    llmQueryEngineForT = new NLPLLMEngine(groundTruthOntology, model, system, maxTokens, myManager);
+                            default -> throw new IllegalStateException("Unexpected value: " + i);
                         }
                         elQueryEngineForH = new ELEngine(hypothesisOntology);
                         learner = new Learner(llmQueryEngineForT, elQueryEngineForH, myMetrics);
@@ -129,14 +121,15 @@ public class LaunchLLMLeaner extends LaunchLearner {
     }
 
     private void runLearner(int hypothesisSize) throws Throwable {
+        int numberOfCounterExamples = 0;
+        int seed = 0;
         // Computes inclusions of the form A implies B
         precomputation();
-        int i = 0;
+        Pac pac = new Pac(parser.getClassesNamesAsString(), parser.getObjectPropertiesAsString(), epsilon, delta, hypothesisSize, seed);
         while (true) {
             myMetrics.setEquivCount(myMetrics.getEquivCount() + 1);
-            counterExample = getCounterExample(hypothesisSize);
-            i++;
-            System.out.println("Counterexample number: " + i);
+            counterExample = getCounterExample(pac);
+            System.out.println("Counterexample number: " + ++numberOfCounterExamples);
             if (counterExample == null) {
                 System.out.println("No counterexample found, closing...");
                 break;
@@ -160,18 +153,9 @@ public class LaunchLLMLeaner extends LaunchLearner {
     }
 
 
-    private OWLSubClassOfAxiom getCounterExample(int hypothesisSize) throws Exception {
-
-        // Seed for random number generator can be generated randomly
-        int seed = 1;
-        // Initialize the statement builder
-        this.builder = new StatementBuilderImpl(seed, parser.getClassesNamesAsString(), parser.getObjectPropertiesAsString());
-        // Initialize PAC with epsilon and gamma values
-        Pac pac = new Pac(builder.getNumberOfStatements(), epsilon, delta, hypothesisSize, builder.getAllStatements(), seed);
-        int iterations = 0;
-        // Iterate over PAC training samples
-        while (pac.getPacStatementsSize() > 0) {
-            System.out.println("PAC Training sample: " + ++iterations + " out of " + pac.getNumberOfExamples());
+    private OWLSubClassOfAxiom getCounterExample(Pac pac) throws Exception {
+        while (pac.getNumberOfProvidedSamples() < pac.getNumberOfSamples()) {
+            System.out.println("PAC Training sample: " + (int) pac.getNumberOfProvidedSamples() + " out of " + pac.getNumberOfSamples());
             // Get the last counterexample
             String statement = pac.getRandomStatement();
 
