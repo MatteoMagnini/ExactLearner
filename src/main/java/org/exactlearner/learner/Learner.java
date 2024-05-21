@@ -312,14 +312,18 @@ public class Learner implements BaseLearner {
             for (ELNode nod : rightTree.getNodesOnLevel(i + 1)) {
                 for (OWLClass cl1 : myEngineForT.getClassesInSignature()) {
                     if (!nod.getLabel().contains(cl1) && (!cl1.equals(cl) || !nod.isRoot())) {
-                        nod.extendLabel(cl1);
-                        myMetrics.setMembCount(myMetrics.getMembCount() + 1);
-                        if (myEngineForT.entailed(myEngineForT.getSubClassAxiom(leftTree.transformToClassExpression(),
-                                rightTree.transformToClassExpression()))) {
-                            saturationCounter++;
-                        } else {
-                            nod.remove(cl1);
+                        if (myEngineForT.entailed(myEngineForT.getSubClassAxiom(leftTree.transformToClassExpression(), cl1))) {
+                            nod.extendLabel(cl1);
+                            myMetrics.setMembCount(myMetrics.getMembCount() + 1);
+                            if (myEngineForT.entailed(myEngineForT.getSubClassAxiom(leftTree.transformToClassExpression(),
+                                    rightTree.transformToClassExpression()))) {
+                                saturationCounter++;
+                            } else {
+                                nod.remove(cl1);
+                            }
                         }
+
+
                     }
                 }
             }
@@ -372,28 +376,26 @@ public class Learner implements BaseLearner {
 
 
                                 myMetrics.setMembCount(myMetrics.getMembCount() + 1);
-                                // @TODO
-                                // Decompose the statement and ask multiples queries then merge again.
-                                if (!myEngineForT.entailed(myEngineForT.getSubClassAxiom(
-                                        tree.transformToClassExpression(), tmp.transformToClassExpression())) // if
-                                        // the
-                                        // merged
-                                        // tree
-                                        // is
-                                        // in
-                                        // fact
-                                        // a
-                                        // stronger
-                                        // expression
-                                        && myEngineForT.entailed(
-                                        myEngineForT.getSubClassAxiom(cl, tmp.transformToClassExpression()))) {
-                                    myExpression = tmp.transformToClassExpression();
-                                    myClass = cl;
-                                    mergeCounter++;
+                                for (int x = 1; x < tmp.getMaxLevel(); x++) {
+                                    for (ELNode n1 : tmp.getNodesOnLevel(x)) {
+                                        //if every class in the label of the current label is entailed by the class
+                                        if (n1.getLabel().stream().allMatch(c -> myEngineForT.
+                                                entailed(myEngineForT.getSubClassAxiom(cl, c)))) {
+                                            if (!myEngineForT.entailed(myEngineForT.getSubClassAxiom(
+                                                    tree.transformToClassExpression(), tmp.transformToClassExpression()))
+                                                    // if the merged tree is in fact a stronger expression
+                                                    && myEngineForT.entailed(
+                                                    myEngineForT.getSubClassAxiom(cl, tmp.transformToClassExpression()))) {
+                                                myExpression = tmp.transformToClassExpression();
+                                                myClass = cl;
+                                                mergeCounter++;
 
-                                    return true;
-
+                                                return true;
+                                            }
+                                        }
+                                    }
                                 }
+
                             }
                         }
                     }
