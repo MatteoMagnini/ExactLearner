@@ -1,6 +1,6 @@
 models:
   - "mistral"
-  #- "mixtral"
+  - "mixtral"
   - "llama2"
   - "llama2:13b"
   - "llama3"

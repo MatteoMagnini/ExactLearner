@@ -1,9 +1,9 @@
 models:
-  #- "mistral"
+  - "mistral"
   - "mixtral"
-  #- "llama2"
-  #- "llama2:13b"
-  #- "llama3"
+  - "llama2"
+  - "llama2:13b"
+  - "llama3"
 ontologies:
   - "src/main/resources/ontologies/small/animals.owl"
   - "src/main/resources/ontologies/small/university.owl"
