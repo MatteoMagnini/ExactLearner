@@ -2,6 +2,7 @@ package org.utility;
 
 import org.apache.jena.atlas.lib.Pair;
 import org.coode.owlapi.manchesterowlsyntax.ManchesterOWLSyntaxEditorParser;
+import org.exactlearner.parser.OWLParserImpl;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.expression.OWLEntityChecker;
 import org.semanticweb.owlapi.expression.ParserException;
@@ -111,4 +112,25 @@ public class OntologyManipulator {
         return "results" + separator + "axiomsQuerying" + separator + model.replace(":", "-") + '_' + shortOntology;
     }
 
+    public static Set<String> getAllPossibleAxiomsCombinations(OWLOntology expectedOntology) {
+        var parser = new OWLParserImpl(expectedOntology);
+        var classes = parser.getClassesNamesAsString().stream().filter(s -> !s.toLowerCase().contains("thin")).distinct().toList();
+        var properties = parser.getObjectPropertiesAsString();
+        /*There are three types of statements:
+        1. (A ∩ B) ⊑ C
+        2. B ⊑ ∃R.A
+        3. ∃R.A ⊑ B
+        * Generate all possible combinations of these statements
+         */
+        var statement1 = classes.stream().flatMap(c1 -> classes.stream().flatMap(c2 -> classes.stream().map(c3 -> "( " + c1 + " and " + c2 + " ) SubClassOf: " + c3)))
+                .collect(Collectors.toSet());
+        var statement2 = classes.stream().flatMap(c1 -> properties.stream().flatMap(p -> classes.stream().map(c2 -> c1 + " SubClassOf: " + p + " some " + c2)))
+                .collect(Collectors.toSet());
+        var statement3 = classes.stream().flatMap(c1 -> properties.stream().flatMap(p -> classes.stream().map(c2 -> p + " some " + c1 + " SubClassOf: " + c2)))
+                .collect(Collectors.toSet());
+        //check empty set
+        statement1.addAll(statement2);
+        statement1.addAll(statement3);
+        return statement1;
+    }
 }

@@ -4,10 +4,10 @@ import org.analysis.common.Metrics;
 import org.configurations.Configuration;
 import org.semanticweb.HermiT.Reasoner;
 import org.semanticweb.owlapi.apibinding.OWLManager;
-import org.semanticweb.owlapi.model.OWLLogicalAxiom;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
+import org.utility.OntologyManipulator;
 import org.utility.YAMLConfigLoader;
 
 import java.io.File;
@@ -21,7 +21,7 @@ public class ResultAnalyzer {
 
     public static void main(String[] args) {
         Configuration config = new YAMLConfigLoader().getConfig(args[0], Configuration.class);
-        config.getOntologies().forEach(ontology -> config.getModels().forEach(model -> new ResultAnalyzer(model.replace(":","-"), ontology).run()));
+        config.getOntologies().forEach(ontology -> config.getModels().forEach(model -> new ResultAnalyzer(model.replace(":", "-"), ontology).run()));
     }
 
     private final OWLOntology nlpPredictedOntology;
@@ -29,6 +29,7 @@ public class ResultAnalyzer {
     private final OWLOntology expectedOntology;
     private final OWLOntology enrichedPredictedOntology;
     private final OWLOntology enrichedNlpPredictedOntology;
+    private final Set<String> allPossibleAxioms;
 
     private final String model;
     private final String ontology;
@@ -43,6 +44,7 @@ public class ResultAnalyzer {
         this.nlpPredictedOntology = loadOntology(TF_TYPE, "nlp_", model);
         this.enrichedPredictedOntology = loadOntology(RICH_TYPE, "manchester_", model);
         this.enrichedNlpPredictedOntology = loadOntology(RICH_TYPE, "nlp_", model);
+        this.allPossibleAxioms = OntologyManipulator.getAllPossibleAxiomsCombinations(expectedOntology);
     }
 
     public void run() {
@@ -61,28 +63,27 @@ public class ResultAnalyzer {
         Reasoner enrichedPredictedReasoner = new Reasoner(enrichedPredictedOntology);
         Reasoner enrichedNlpPredictedReasoner = new Reasoner(enrichedNlpPredictedOntology);
 
-        updateConfusionMatrix(predictedOntology.getLogicalAxioms(), expectedOntology.getLogicalAxioms(), predictedReasoner, expectedReasoner, confusionMatrix);
-        updateConfusionMatrix(enrichedPredictedOntology.getLogicalAxioms(), expectedOntology.getLogicalAxioms(), enrichedPredictedReasoner, expectedReasoner, enrichedConfusionMatrix);
-        updateConfusionMatrix(nlpPredictedOntology.getLogicalAxioms(), expectedOntology.getLogicalAxioms(), nlpPredictedReasoner, expectedReasoner, nlpConfusionMatrix);
-        updateConfusionMatrix(enrichedNlpPredictedOntology.getLogicalAxioms(), expectedOntology.getLogicalAxioms(), enrichedNlpPredictedReasoner, expectedReasoner, enrichedNlpConfusionMatrix);
+        updateConfusionMatrix(predictedReasoner, expectedReasoner, confusionMatrix);
+        updateConfusionMatrix(enrichedPredictedReasoner, expectedReasoner, enrichedConfusionMatrix);
+        updateConfusionMatrix(nlpPredictedReasoner, expectedReasoner, nlpConfusionMatrix);
+        updateConfusionMatrix(enrichedNlpPredictedReasoner, expectedReasoner, enrichedNlpConfusionMatrix);
 
         printResults(confusionMatrix, nlpConfusionMatrix, enrichedConfusionMatrix, enrichedNlpConfusionMatrix);
     }
 
-    private void updateConfusionMatrix(Set<OWLLogicalAxiom> predictedAxioms, Set<OWLLogicalAxiom> expectedAxioms, Reasoner predictedReasoner, Reasoner expectedReasoner, int[][] confusionMatrix) {
-        predictedAxioms.forEach(ax -> {
-            if (expectedReasoner.isEntailed(ax)) {
-                confusionMatrix[0][0]++;
-            } else {
-                confusionMatrix[0][1]++;
-            }
-        });
+    private void updateConfusionMatrix(Reasoner predictedReasoner, Reasoner expectedReasoner, int[][] confusionMatrix) {
 
-        expectedAxioms.forEach(ax -> {
-            if (predictedReasoner.isEntailed(ax)) {
-                confusionMatrix[0][0]++;
+        allPossibleAxioms.forEach(ax -> {
+            System.out.println("CHECKING "+ ax.toLowerCase());
+            var axiom = OntologyManipulator.createAxiomFromString(ax, expectedOntology);
+            if (expectedReasoner.isEntailed(axiom) && predictedReasoner.isEntailed(axiom)) {
+                confusionMatrix[0][0]++; //TP
+            } else if (expectedReasoner.isEntailed(axiom) && !predictedReasoner.isEntailed(axiom)) {
+                confusionMatrix[1][0]++; //FN
+            } else if (predictedReasoner.isEntailed(axiom) && !expectedReasoner.isEntailed(axiom)) {
+                confusionMatrix[0][1]++; //FP
             } else {
-                confusionMatrix[1][0]++;
+                confusionMatrix[1][1]++; //TN
             }
         });
     }
@@ -104,7 +105,7 @@ public class ResultAnalyzer {
         FileWriter fw;
         var s = FileSystems.getDefault().getSeparator();
         try {
-            File f = new File("results"+s+"summaryFiles"+s+ontologyName+"-"+model+".txt");
+            File f = new File("results" + s + "summaryFiles" + s + ontologyName + "-" + model + ".txt");
             f.createNewFile();
             fw = new FileWriter(f.getPath());
             String result = calculateMetrics(confusionMatrix);
