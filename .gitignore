@@ -3,9 +3,12 @@ cache2
 table1.tex
 table2.tex
 table3.tex
-results
+results/*
+!results/ontologies/rich_prompt/*
+!results/ontologies/true_false/*
 warnings.txt
 logging_file_name.txt
+
 
 ##############################
 ## Java

@@ -1,0 +1,536 @@
+Prefix: : <http://sweet.jpl.nasa.gov/1.1/biosphere.owl#>
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: biosphere: <http://sweet.jpl.nasa.gov/1.1/biosphere.owl#>
+
+
+
+Ontology: <http://sweet.jpl.nasa.gov/1.1/biosphere.owl>
+
+
+Annotations: 
+    owl:versionInfo "1.0"
+
+AnnotationProperty: owl:versionInfo
+
+    
+Class: VegetationCover
+
+    SubClassOf: 
+        Vegetation
+    
+    
+Class: Microalgae
+
+    SubClassOf: 
+        MicrobiotaTaxonomy
+    
+    
+Class: Fungi
+
+    SubClassOf: 
+        Plant
+    
+    
+Class: Arachnid
+
+    SubClassOf: 
+        Animal
+    
+    
+Class: VegetationSpecies
+
+    SubClassOf: 
+        Vegetation
+    
+    
+Class: Livestock
+
+    SubClassOf: 
+        Animal
+    
+    
+Class: Sponge
+
+    SubClassOf: 
+        Animal
+    
+    
+Class: Flatworm
+
+    SubClassOf: 
+        Animal
+    
+    
+Class: Diatom
+
+    SubClassOf: 
+        MicrobiotaTaxonomy
+    
+    
+Class: FungiTaxonomy
+
+    SubClassOf: 
+        Fungi
+    
+    
+Class: MarinePlant
+
+    SubClassOf: 
+        Plant
+    
+    
+Class: Moss
+
+    SubClassOf: 
+        Plant
+    
+    
+Class: Vertebrate
+
+    SubClassOf: 
+        Animal
+    
+    
+Class: Radiolarian
+
+    SubClassOf: 
+        MicrobiotaTaxonomy
+    
+    
+Class: Human
+
+    SubClassOf: 
+        Mammal
+    
+    
+Class: MarineMicrobiota
+
+    SubClassOf: 
+        MarinePlant
+    
+    
+Class: Animal
+
+    SubClassOf: 
+        LivingThing
+    
+    
+Class: Flagellate
+
+    SubClassOf: 
+        MicrobiotaTaxonomy
+    
+    
+Class: Poultry
+
+    SubClassOf: 
+        Animal
+    
+    
+Class: MarineMammal
+
+    SubClassOf: 
+        MarineAnimal
+    
+    
+Class: Amphibian
+
+    SubClassOf: 
+        Animal
+    
+    
+Class: Millipede
+
+    SubClassOf: 
+        Animal
+    
+    
+Class: Plankton
+
+    SubClassOf: 
+        MicrobiotaTaxonomy
+    
+    
+Class: Roundworm
+
+    SubClassOf: 
+        Animal
+    
+    
+Class: Microphyte
+
+    SubClassOf: 
+        Plant
+    
+    
+Class: SlimeMold
+
+    SubClassOf: 
+        FungiTaxonomy
+    
+    
+Class: Microbiota
+
+    SubClassOf: 
+        Plant
+    
+    
+Class: MicrobiotaTaxonomy
+
+    SubClassOf: 
+        Microbiota
+    
+    
+Class: Coccolithophore
+
+    SubClassOf: 
+        MicrobiotaTaxonomy
+    
+    
+Class: Lichen
+
+    SubClassOf: 
+        Plant
+    
+    
+Class: Leaf
+
+    SubClassOf: 
+        Plant
+    
+    
+Class: Pollen
+
+    SubClassOf: 
+        Vegetation
+    
+    
+Class: Mushroom
+
+    SubClassOf: 
+        FungiTaxonomy
+    
+    
+Class: Fish
+
+    SubClassOf: 
+        Animal,
+        MarineAnimal
+    
+    
+Class: Reptile
+
+    SubClassOf: 
+        Animal
+    
+    
+Class: MarineAnimal
+
+    
+Class: Macroalgae
+
+    SubClassOf: 
+        Plant
+    
+    
+Class: Foraminifer
+
+    SubClassOf: 
+        MicrobiotaTaxonomy
+    
+    
+Class: Dairy
+
+    SubClassOf: 
+        Animal
+    
+    
+Class: Liverwort
+
+    SubClassOf: 
+        Plant
+    
+    
+Class: Crustacean
+
+    SubClassOf: 
+        Animal
+    
+    
+Class: Canopy
+
+    SubClassOf: 
+        Vegetation
+    
+    
+Class: Coral
+
+    SubClassOf: 
+        Animal
+    
+    
+Class: ExoticVegetation
+
+    SubClassOf: 
+        Vegetation
+    
+    
+Class: Macrophyte
+
+    SubClassOf: 
+        Vegetation
+    
+    
+Class: SegmentedWorm
+
+    SubClassOf: 
+        Animal
+    
+    
+Class: LivingThing
+
+    
+Class: Bird
+
+    SubClassOf: 
+        Animal
+    
+    
+Class: Fern
+
+    SubClassOf: 
+        Plant
+    
+    
+Class: DominantSpecies
+
+    SubClassOf: 
+        Vegetation
+    
+    
+Class: BlueGreenAlgae
+
+    SubClassOf: 
+        MicrobiotaTaxonomy
+    
+    
+Class: EvergreenVegetation
+
+    SubClassOf: 
+        Vegetation
+    
+    
+Class: TreeRing
+
+    SubClassOf: 
+        Vegetation
+    
+    
+Class: Vegetation
+
+    SubClassOf: 
+        Plant
+    
+    
+Class: ExoticSpecies
+
+    SubClassOf: 
+        Animal
+    
+    
+Class: Litter
+
+    SubClassOf: 
+        Vegetation
+    
+    
+Class: Crown
+
+    SubClassOf: 
+        Vegetation
+    
+    
+Class: Jellyfish
+
+    SubClassOf: 
+        MarineAnimal
+    
+    
+Class: Invertebrate
+
+    SubClassOf: 
+        Animal
+    
+    
+Class: Anemone
+
+    SubClassOf: 
+        Animal
+    
+    
+Class: Ciliate
+
+    SubClassOf: 
+        MicrobiotaTaxonomy
+    
+    
+Class: Zooplankton
+
+    SubClassOf: 
+        Animal
+    
+    
+Class: FloweringPlant
+
+    SubClassOf: 
+        Plant
+    
+    
+Class: Sporozoan
+
+    SubClassOf: 
+        FungiTaxonomy
+    
+    
+Class: IndigenousVegetation
+
+    SubClassOf: 
+        Vegetation
+    
+    
+Class: Nutrient
+
+    SubClassOf: 
+        Vegetation
+    
+    
+Class: IndigenousSpecies
+
+    SubClassOf: 
+        Animal
+    
+    
+Class: MarineInvertebrate
+
+    SubClassOf: 
+        MarineAnimal
+    
+    
+Class: Conifer
+
+    SubClassOf: 
+        Plant
+    
+    
+Class: Yeast
+
+    SubClassOf: 
+        FungiTaxonomy
+    
+    
+Class: Mammal
+
+    SubClassOf: 
+        Animal
+    
+    
+Class: Protist
+
+    SubClassOf: 
+        MicrobiotaTaxonomy
+    
+    
+Class: Centipede
+
+    SubClassOf: 
+        Animal
+    
+    
+Class: Crop
+
+    SubClassOf: 
+        Plant
+    
+    
+Class: Algae
+
+    SubClassOf: 
+        Plant
+    
+    
+Class: Arthropod
+
+    SubClassOf: 
+        Animal
+    
+    
+Class: MarineBird
+
+    SubClassOf: 
+        MarineAnimal
+    
+    
+Class: Chlorophyll
+
+    SubClassOf: 
+        Microbiota
+    
+    
+Class: Mollusk
+
+    SubClassOf: 
+        Animal
+    
+    
+Class: Echinoderm
+
+    SubClassOf: 
+        Animal
+    
+    
+Class: Plant
+
+    SubClassOf: 
+        LivingThing
+    
+    
+Class: Amoebae
+
+    SubClassOf: 
+        MicrobiotaTaxonomy
+    
+    
+Class: Insect
+
+    SubClassOf: 
+        Animal
+    
+    
+Class: Mold
+
+    SubClassOf: 
+        FungiTaxonomy
+    
+    
+Class: Bacteria
+
+    SubClassOf: 
+        MicrobiotaTaxonomy
+    
+    
+Class: DeciduousVegetation
+
+    SubClassOf: 
+        Vegetation
+    
+    
+Class: Phytoplankton
+
+    SubClassOf: 
+        MicrobiotaTaxonomy
+    
+    

@@ -4,10 +4,15 @@ import org.analysis.common.Metrics;
 import org.configurations.Configuration;
 import org.semanticweb.HermiT.Reasoner;
 import org.semanticweb.owlapi.apibinding.OWLManager;
-import org.semanticweb.owlapi.model.*;
+import org.semanticweb.owlapi.model.OWLLogicalAxiom;
+import org.semanticweb.owlapi.model.OWLOntology;
+import org.semanticweb.owlapi.model.OWLOntologyCreationException;
+import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.utility.YAMLConfigLoader;
 
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
 import java.util.Set;
@@ -16,14 +21,14 @@ public class ResultAnalyzer {
 
     public static void main(String[] args) {
         Configuration config = new YAMLConfigLoader().getConfig(args[0], Configuration.class);
-        config.getOntologies().forEach(ontology -> config.getModels().forEach(model -> new ResultAnalyzer(model, ontology).run()));
+        config.getOntologies().forEach(ontology -> config.getModels().forEach(model -> new ResultAnalyzer(model.replace(":","-"), ontology).run()));
     }
 
     private final OWLOntology nlpPredictedOntology;
     private final OWLOntology predictedOntology;
     private final OWLOntology expectedOntology;
-    //private final OWLOntology enrichedPredictedOntology;
-    //private final OWLOntology enrichedNlpPredictedOntology;
+    private final OWLOntology enrichedPredictedOntology;
+    private final OWLOntology enrichedNlpPredictedOntology;
 
     private final String model;
     private final String ontology;
@@ -36,8 +41,8 @@ public class ResultAnalyzer {
         this.expectedOntology = loadOntology();
         this.predictedOntology = loadOntology(TF_TYPE, "manchester_", model);
         this.nlpPredictedOntology = loadOntology(TF_TYPE, "nlp_", model);
-        //this.enrichedPredictedOntology = loadOntology(RICH_TYPE, "manchester_", model);
-        //this.enrichedNlpPredictedOntology = loadOntology(RICH_TYPE, "nlp_", model);
+        this.enrichedPredictedOntology = loadOntology(RICH_TYPE, "manchester_", model);
+        this.enrichedNlpPredictedOntology = loadOntology(RICH_TYPE, "nlp_", model);
     }
 
     public void run() {
@@ -53,13 +58,13 @@ public class ResultAnalyzer {
         Reasoner expectedReasoner = new Reasoner(expectedOntology);
         Reasoner predictedReasoner = new Reasoner(predictedOntology);
         Reasoner nlpPredictedReasoner = new Reasoner(nlpPredictedOntology);
-        //Reasoner enrichedPredictedReasoner = new Reasoner(enrichedPredictedOntology);
-        //Reasoner enrichedNlpPredictedReasoner = new Reasoner(enrichedNlpPredictedOntology);
+        Reasoner enrichedPredictedReasoner = new Reasoner(enrichedPredictedOntology);
+        Reasoner enrichedNlpPredictedReasoner = new Reasoner(enrichedNlpPredictedOntology);
 
         updateConfusionMatrix(predictedOntology.getLogicalAxioms(), expectedOntology.getLogicalAxioms(), predictedReasoner, expectedReasoner, confusionMatrix);
-        //updateConfusionMatrix(enrichedPredictedOntology.getLogicalAxioms(), expectedOntology.getLogicalAxioms(), enrichedPredictedReasoner, expectedReasoner, enrichedConfusionMatrix);
+        updateConfusionMatrix(enrichedPredictedOntology.getLogicalAxioms(), expectedOntology.getLogicalAxioms(), enrichedPredictedReasoner, expectedReasoner, enrichedConfusionMatrix);
         updateConfusionMatrix(nlpPredictedOntology.getLogicalAxioms(), expectedOntology.getLogicalAxioms(), nlpPredictedReasoner, expectedReasoner, nlpConfusionMatrix);
-        //updateConfusionMatrix(enrichedNlpPredictedOntology.getLogicalAxioms(), expectedOntology.getLogicalAxioms(), enrichedNlpPredictedReasoner, expectedReasoner, enrichedNlpConfusionMatrix);
+        updateConfusionMatrix(enrichedNlpPredictedOntology.getLogicalAxioms(), expectedOntology.getLogicalAxioms(), enrichedNlpPredictedReasoner, expectedReasoner, enrichedNlpConfusionMatrix);
 
         printResults(confusionMatrix, nlpConfusionMatrix, enrichedConfusionMatrix, enrichedNlpConfusionMatrix);
     }
@@ -89,9 +94,33 @@ public class ResultAnalyzer {
         System.out.printf("Model: %s%n", model);
         printMetrics("M.Syntax", confusionMatrix);
         printMetrics("NLP", nlpConfusionMatrix);
-        //printMetrics("Enriched prompt M.Syntax", enrichedConfusionMatrix);
-        //printMetrics("Enriched prompt NLP", enrichedNlpConfusionMatrix);
+        printMetrics("Enriched prompt M.Syntax", enrichedConfusionMatrix);
+        printMetrics("Enriched prompt NLP", enrichedNlpConfusionMatrix);
         System.out.println("##############################################################");
+        generateSummaryFilesForLatexTable(ontologyName, model, confusionMatrix, nlpConfusionMatrix, enrichedConfusionMatrix, enrichedNlpConfusionMatrix);
+    }
+
+    private void generateSummaryFilesForLatexTable(String ontologyName, String model, int[][] confusionMatrix, int[][] nlpConfusionMatrix, int[][] enrichedConfusionMatrix, int[][] enrichedNlpConfusionMatrix) {
+        FileWriter fw;
+        var s = FileSystems.getDefault().getSeparator();
+        try {
+            File f = new File("results"+s+"summaryFiles"+s+ontologyName+"-"+model+".txt");
+            f.createNewFile();
+            fw = new FileWriter(f.getPath());
+            String result = calculateMetrics(confusionMatrix);
+            result = result.concat(" " + calculateMetrics(nlpConfusionMatrix));
+            result = result.concat(" " + calculateMetrics(enrichedConfusionMatrix));
+            result = result.concat(" " + calculateMetrics(enrichedNlpConfusionMatrix));
+            fw.write(result);
+            fw.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    private String calculateMetrics(int[][] confusionMatrix) {
+        return Metrics.calculateRecall(confusionMatrix) + " " + Metrics.calculatePrecision(confusionMatrix) + " " + Metrics.calculateF1Score(confusionMatrix);
     }
 
     private void printMetrics(String label, int[][] confusionMatrix) {

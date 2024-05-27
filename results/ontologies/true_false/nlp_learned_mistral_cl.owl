@@ -1,0 +1,154 @@
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+
+
+Ontology: 
+
+Class: <http://obo.sourceforge.net/cl.owl#SclerenchymaCell>
+
+    SubClassOf: 
+        <http://obo.sourceforge.net/cl.owl#MatureCell>
+    
+    
+Class: <http://obo.sourceforge.net/cl.owl#LeafCell>
+
+    SubClassOf: 
+        <http://obo.sourceforge.net/cl.owl#MatureCell>
+    
+    
+Class: <http://obo.sourceforge.net/cl.owl#PhotosyntheticCell>
+
+    EquivalentTo: 
+        <http://obo.sourceforge.net/cl.owl#CellByClass>
+    
+    
+Class: <http://obo.sourceforge.net/cl.owl#Erythrocyte>
+
+    EquivalentTo: 
+        <http://obo.sourceforge.net/cl.owl#CirculatingCell>,
+        <http://obo.sourceforge.net/cl.owl#Cell>
+         and <http://obo.sourceforge.net/cl.owl#MatureCell>
+    
+    
+Class: <http://obo.sourceforge.net/cl.owl#CirculatingCell>
+
+    EquivalentTo: 
+        <http://obo.sourceforge.net/cl.owl#Erythrocyte>
+    
+    
+Class: <http://obo.sourceforge.net/cl.owl#PlantCell>
+
+    SubClassOf: 
+        <http://obo.sourceforge.net/cl.owl#CellByOrganism>
+    
+    
+Class: <http://obo.sourceforge.net/cl.owl#CellByClass>
+
+    EquivalentTo: 
+        <http://obo.sourceforge.net/cl.owl#PhotosyntheticCell>
+    
+    SubClassOf: 
+        <http://obo.sourceforge.net/cl.owl#Cell>
+    
+    
+Class: <http://obo.sourceforge.net/cl.owl#MatureCell>
+
+    EquivalentTo: 
+        <http://obo.sourceforge.net/cl.owl#AnimalCell>
+         and <http://obo.sourceforge.net/cl.owl#CellByOrganism>,
+        <http://obo.sourceforge.net/cl.owl#PhotosyntheticCell>
+         and <http://obo.sourceforge.net/cl.owl#StructuralCell>
+    
+    SubClassOf: 
+        <http://obo.sourceforge.net/cl.owl#CellByDevelopmentStage>
+    
+    
+Class: <http://obo.sourceforge.net/cl.owl#AnimalCell>
+
+    SubClassOf: 
+        <http://obo.sourceforge.net/cl.owl#CellByOrganism>
+    
+    
+Class: <http://obo.sourceforge.net/cl.owl#Cell>
+
+    
+Class: <http://obo.sourceforge.net/cl.owl#Miocyte>
+
+    SubClassOf: 
+        <http://obo.sourceforge.net/cl.owl#MatureCell>
+    
+    
+Class: <http://obo.sourceforge.net/cl.owl#InMatureCell>
+
+    SubClassOf: 
+        <http://obo.sourceforge.net/cl.owl#CellByDevelopmentStage>
+    
+    
+Class: <http://obo.sourceforge.net/cl.owl#Osteocyte>
+
+    EquivalentTo: 
+        <http://obo.sourceforge.net/cl.owl#CellByClass>
+         and <http://obo.sourceforge.net/cl.owl#MatureCell>,
+        <http://obo.sourceforge.net/cl.owl#Cell>
+         and <http://obo.sourceforge.net/cl.owl#ElectricallyActiveCell>
+         and <http://obo.sourceforge.net/cl.owl#MatureCell>
+    
+    
+Class: <http://obo.sourceforge.net/cl.owl#ChondroBlast>
+
+    SubClassOf: 
+        <http://obo.sourceforge.net/cl.owl#InMatureCell>
+    
+    
+Class: <http://obo.sourceforge.net/cl.owl#MioBlast>
+
+    SubClassOf: 
+        <http://obo.sourceforge.net/cl.owl#InMatureCell>
+    
+    
+Class: <http://obo.sourceforge.net/cl.owl#CellByDevelopmentStage>
+
+    SubClassOf: 
+        <http://obo.sourceforge.net/cl.owl#Cell>
+    
+    
+Class: <http://obo.sourceforge.net/cl.owl#PhotoreceptorCell>
+
+    SubClassOf: 
+        <http://obo.sourceforge.net/cl.owl#Neuron>
+    
+    
+Class: <http://obo.sourceforge.net/cl.owl#CellByOrganism>
+
+    SubClassOf: 
+        <http://obo.sourceforge.net/cl.owl#Cell>
+    
+    
+Class: <http://obo.sourceforge.net/cl.owl#ElectricallyActiveCell>
+
+    SubClassOf: 
+        <http://obo.sourceforge.net/cl.owl#CellByClass>
+    
+    
+Class: <http://obo.sourceforge.net/cl.owl#StructuralCell>
+
+    SubClassOf: 
+        <http://obo.sourceforge.net/cl.owl#CellByClass>
+    
+    
+Class: <http://obo.sourceforge.net/cl.owl#Neuron>
+
+    SubClassOf: 
+        <http://obo.sourceforge.net/cl.owl#MatureCell>
+    
+    
+Class: <http://obo.sourceforge.net/cl.owl#ChondroCyte>
+
+    SubClassOf: 
+        <http://obo.sourceforge.net/cl.owl#AnimalCell>
+    
+    
