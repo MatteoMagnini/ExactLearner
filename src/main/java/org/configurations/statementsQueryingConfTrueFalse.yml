@@ -6,11 +6,11 @@ models:
   #- "llama3"
 ontologies:
   - "src/main/resources/ontologies/small/animals.owl"
-  #- "src/main/resources/ontologies/small/university.owl"
-  #- "src/main/resources/ontologies/small/generations.owl"
-  #- "src/main/resources/ontologies/small/football.owl"
-  #- "src/main/resources/ontologies/small/cl.owl"
-  #- "src/main/resources/ontologies/medium/biosphere.owl"
+  - "src/main/resources/ontologies/small/university.owl"
+  - "src/main/resources/ontologies/small/generations.owl"
+  - "src/main/resources/ontologies/small/football.owl"
+  - "src/main/resources/ontologies/small/cl.owl"
+  - "src/main/resources/ontologies/medium/biosphere.owl"
   #- "src/main/resources/ontologies/large/galen.owl"
 system: >
   Answer with only True or False.
