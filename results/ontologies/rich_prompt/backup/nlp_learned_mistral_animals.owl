@@ -11,6 +11,9 @@ Ontology:
 ObjectProperty: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#lays>
 
     
+ObjectProperty: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#eats>
+
+    
 ObjectProperty: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#lives_in>
 
     
@@ -19,6 +22,13 @@ Class: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Egg>
     
 Class: owl:Thing
 
+    
+Class: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Meat>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Animal>
+         and owl:Thing
+    
     
 Class: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Carnivore>
 
@@ -29,7 +39,10 @@ Class: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Carnivore>
 Class: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Animal>
 
     EquivalentTo: 
-        <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Vertebrate>
+        <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Vertebrate>,
+        <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Mammal>
+         and <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Vertebrate>
+         and owl:Thing
     
     
 Class: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Reptile>
@@ -37,6 +50,9 @@ Class: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Reptile>
     SubClassOf: 
         <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Carnivore>
     
+    
+Class: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Plant>
+
     
 Class: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Vertebrate>
 
@@ -67,6 +83,10 @@ Class: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Herbivore>
 
     SubClassOf: 
         <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Animal>
+         and owl:Thing
+         and (<http://www.semanticweb.org/ontologies/2014/3/animals.owl#eats> some 
+            (<http://www.semanticweb.org/ontologies/2014/3/animals.owl#Plant>
+             and owl:Thing))
     
     
 Class: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Elephant>

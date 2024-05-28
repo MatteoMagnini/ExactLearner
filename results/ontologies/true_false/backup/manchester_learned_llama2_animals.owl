@@ -25,10 +25,6 @@ Class: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Egg>
     EquivalentTo: 
         owl:Thing
          and (<http://www.semanticweb.org/ontologies/2014/3/animals.owl#lives_in> some owl:Thing),
-        owl:Thing
-         and (<http://www.semanticweb.org/ontologies/2014/3/animals.owl#lays> some owl:Thing),
-        owl:Thing
-         and (<http://www.semanticweb.org/ontologies/2014/3/animals.owl#has_part> some owl:Thing),
         <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Animal>
          and <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Backbone>
          and <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Bird>
@@ -54,7 +50,6 @@ Class: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Egg>
              and <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Carnivore>
              and <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Cat>
              and <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Egg>
-             and <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Elephant>
              and <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Fish>
              and <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Herbivore>
              and <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Leg>
@@ -81,7 +76,8 @@ Class: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Egg>
              and <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Plant>
              and <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Vertebrate>
              and <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Water>
-             and <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Wing>))
+             and <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Wing>
+             and owl:Thing))
          and (<http://www.semanticweb.org/ontologies/2014/3/animals.owl#lives_in> some 
             (<http://www.semanticweb.org/ontologies/2014/3/animals.owl#Animal>
              and <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Backbone>
@@ -98,8 +94,11 @@ Class: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Egg>
              and <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Plant>
              and <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Vertebrate>
              and <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Water>
-             and <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Wing>
-             and owl:Thing)),
+             and <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Wing>)),
+        owl:Thing
+         and (<http://www.semanticweb.org/ontologies/2014/3/animals.owl#lays> some owl:Thing),
+        owl:Thing
+         and (<http://www.semanticweb.org/ontologies/2014/3/animals.owl#has_part> some owl:Thing),
         owl:Thing
          and (<http://www.semanticweb.org/ontologies/2014/3/animals.owl#eats> some owl:Thing)
     

@@ -17,6 +17,9 @@ ObjectProperty: <http://www.semanticweb.org/ontologies/2014/3/university.owl#emp
 ObjectProperty: <http://www.semanticweb.org/ontologies/2014/3/university.owl#teaches>
 
     
+Class: <http://www.semanticweb.org/ontologies/2014/3/university.owl#University>
+
+    
 Class: owl:Thing
 
     
@@ -51,6 +54,12 @@ Class: <http://www.semanticweb.org/ontologies/2014/3/university.owl#Module>
     
 Class: <http://www.semanticweb.org/ontologies/2014/3/university.owl#Person>
 
+    SubClassOf: 
+        owl:Thing
+         and (<http://www.semanticweb.org/ontologies/2014/3/university.owl#employed_by> some 
+            (<http://www.semanticweb.org/ontologies/2014/3/university.owl#Person>
+             and owl:Thing))
+    
     
 Class: <http://www.semanticweb.org/ontologies/2014/3/university.owl#Researcher>
 

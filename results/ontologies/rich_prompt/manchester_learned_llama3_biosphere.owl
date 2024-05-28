@@ -30,7 +30,9 @@ Class: <http://sweet.jpl.nasa.gov/1.1/biosphere.owl#Fungi>
 Class: <http://sweet.jpl.nasa.gov/1.1/biosphere.owl#Arachnid>
 
     SubClassOf: 
-        <http://sweet.jpl.nasa.gov/1.1/biosphere.owl#Animal>
+        <http://sweet.jpl.nasa.gov/1.1/biosphere.owl#Insect>
+         and <http://sweet.jpl.nasa.gov/1.1/biosphere.owl#LivingThing>
+         and <http://sweet.jpl.nasa.gov/1.1/biosphere.owl#MarineInvertebrate>
     
     
 Class: <http://sweet.jpl.nasa.gov/1.1/biosphere.owl#VegetationSpecies>
@@ -54,7 +56,8 @@ Class: <http://sweet.jpl.nasa.gov/1.1/biosphere.owl#Sponge>
 Class: <http://sweet.jpl.nasa.gov/1.1/biosphere.owl#Flatworm>
 
     SubClassOf: 
-        <http://sweet.jpl.nasa.gov/1.1/biosphere.owl#Animal>
+        <http://sweet.jpl.nasa.gov/1.1/biosphere.owl#Invertebrate>
+         and <http://sweet.jpl.nasa.gov/1.1/biosphere.owl#LivingThing>
     
     
 Class: <http://sweet.jpl.nasa.gov/1.1/biosphere.owl#FungiTaxonomy>
@@ -388,7 +391,7 @@ Class: <http://sweet.jpl.nasa.gov/1.1/biosphere.owl#Crustacean>
     
 Class: <http://sweet.jpl.nasa.gov/1.1/biosphere.owl#Canopy>
 
-    SubClassOf: 
+    EquivalentTo: 
         <http://sweet.jpl.nasa.gov/1.1/biosphere.owl#Vegetation>
     
     
@@ -476,6 +479,7 @@ Class: <http://sweet.jpl.nasa.gov/1.1/biosphere.owl#Vegetation>
 
     EquivalentTo: 
         <http://sweet.jpl.nasa.gov/1.1/biosphere.owl#DominantSpecies>,
+        <http://sweet.jpl.nasa.gov/1.1/biosphere.owl#Canopy>,
         <http://sweet.jpl.nasa.gov/1.1/biosphere.owl#Nutrient>,
         <http://sweet.jpl.nasa.gov/1.1/biosphere.owl#IndigenousVegetation>,
         <http://sweet.jpl.nasa.gov/1.1/biosphere.owl#TreeRing>,
@@ -488,16 +492,18 @@ Class: <http://sweet.jpl.nasa.gov/1.1/biosphere.owl#Vegetation>
         <http://sweet.jpl.nasa.gov/1.1/biosphere.owl#VegetationSpecies>
     
     
+Class: <http://sweet.jpl.nasa.gov/1.1/biosphere.owl#ExoticSpecies>
+
+    SubClassOf: 
+        <http://sweet.jpl.nasa.gov/1.1/biosphere.owl#Fish>
+         and <http://sweet.jpl.nasa.gov/1.1/biosphere.owl#LivingThing>
+         and <http://sweet.jpl.nasa.gov/1.1/biosphere.owl#Protist>
+    
+    
 Class: <http://sweet.jpl.nasa.gov/1.1/biosphere.owl#Litter>
 
     EquivalentTo: 
         <http://sweet.jpl.nasa.gov/1.1/biosphere.owl#Vegetation>
-    
-    
-Class: <http://sweet.jpl.nasa.gov/1.1/biosphere.owl#ExoticSpecies>
-
-    SubClassOf: 
-        <http://sweet.jpl.nasa.gov/1.1/biosphere.owl#Animal>
     
     
 Class: <http://sweet.jpl.nasa.gov/1.1/biosphere.owl#Crown>

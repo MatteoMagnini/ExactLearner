@@ -8,6 +8,9 @@ Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 Ontology: 
 
+ObjectProperty: <http://www.owl-ontologies.com/generations.owl#hasSex>
+
+    
 Class: <http://www.owl-ontologies.com/generations.owl#GrandMother>
 
     SubClassOf: 
@@ -39,14 +42,14 @@ Class: <http://www.owl-ontologies.com/generations.owl#Father>
         <http://www.owl-ontologies.com/generations.owl#Man>
     
     
-Class: <http://www.owl-ontologies.com/generations.owl#Person>
-
-    
 Class: <http://www.owl-ontologies.com/generations.owl#Child>
 
     SubClassOf: 
         <http://www.owl-ontologies.com/generations.owl#Person>
     
+    
+Class: <http://www.owl-ontologies.com/generations.owl#Person>
+
     
 Class: <http://www.owl-ontologies.com/generations.owl#Parent>
 
@@ -70,16 +73,19 @@ Class: <http://www.owl-ontologies.com/generations.owl#Man>
     
 Class: <http://www.owl-ontologies.com/generations.owl#Daughter>
 
+    EquivalentTo: 
+        <http://www.owl-ontologies.com/generations.owl#Child>
+         and <http://www.owl-ontologies.com/generations.owl#Female>
+    
     SubClassOf: 
-        <http://www.owl-ontologies.com/generations.owl#OffSpring>,
-        <http://www.owl-ontologies.com/generations.owl#Woman>
+        <http://www.owl-ontologies.com/generations.owl#OffSpring>
     
     
 Class: <http://www.owl-ontologies.com/generations.owl#Mother>
 
-    SubClassOf: 
-        <http://www.owl-ontologies.com/generations.owl#Woman>,
+    EquivalentTo: 
         <http://www.owl-ontologies.com/generations.owl#Parent>
+         and <http://www.owl-ontologies.com/generations.owl#Woman>
     
     
 Class: <http://www.owl-ontologies.com/generations.owl#GrandParent>

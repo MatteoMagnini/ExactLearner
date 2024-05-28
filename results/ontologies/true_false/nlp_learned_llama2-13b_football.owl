@@ -49,10 +49,13 @@ Class: <http://www.semanticweb.org/ontologies/2014/3/football.owl#Player>
          and (<http://www.semanticweb.org/ontologies/2014/3/football.owl#managed_by> some 
             (<http://www.semanticweb.org/ontologies/2014/3/football.owl#FootballPlayer>
              and <http://www.semanticweb.org/ontologies/2014/3/football.owl#Game>))
-         and (<http://www.semanticweb.org/ontologies/2014/3/football.owl#plays> some 
-            (<http://www.semanticweb.org/ontologies/2014/3/football.owl#BallGame>
+         and (<http://www.semanticweb.org/ontologies/2014/3/football.owl#managed_by> some 
+            (<http://www.semanticweb.org/ontologies/2014/3/football.owl#FootballPlayer>
              and <http://www.semanticweb.org/ontologies/2014/3/football.owl#Game>
              and owl:Thing))
+         and (<http://www.semanticweb.org/ontologies/2014/3/football.owl#plays> some 
+            (<http://www.semanticweb.org/ontologies/2014/3/football.owl#BallGame>
+             and <http://www.semanticweb.org/ontologies/2014/3/football.owl#Game>))
          and (<http://www.semanticweb.org/ontologies/2014/3/football.owl#plays_for> some 
             (<http://www.semanticweb.org/ontologies/2014/3/football.owl#Football>
              and <http://www.semanticweb.org/ontologies/2014/3/football.owl#Game>))

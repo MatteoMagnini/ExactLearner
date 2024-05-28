@@ -30,13 +30,12 @@ Class: <http://obo.sourceforge.net/cl.owl#PhotosyntheticCell>
 Class: <http://obo.sourceforge.net/cl.owl#Erythrocyte>
 
     SubClassOf: 
-        <http://obo.sourceforge.net/cl.owl#CirculatingCell>,
         <http://obo.sourceforge.net/cl.owl#MatureCell>
     
     
 Class: <http://obo.sourceforge.net/cl.owl#CirculatingCell>
 
-    SubClassOf: 
+    EquivalentTo: 
         <http://obo.sourceforge.net/cl.owl#CellByClass>
     
     
@@ -48,6 +47,9 @@ Class: <http://obo.sourceforge.net/cl.owl#PlantCell>
     
 Class: <http://obo.sourceforge.net/cl.owl#CellByClass>
 
+    EquivalentTo: 
+        <http://obo.sourceforge.net/cl.owl#CirculatingCell>
+    
     SubClassOf: 
         <http://obo.sourceforge.net/cl.owl#Cell>
     

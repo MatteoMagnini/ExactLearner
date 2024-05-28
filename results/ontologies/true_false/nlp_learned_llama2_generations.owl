@@ -79,6 +79,7 @@ Class: <http://www.owl-ontologies.com/generations.owl#GrandMother>
              and <http://www.owl-ontologies.com/generations.owl#OffSpring>
              and <http://www.owl-ontologies.com/generations.owl#Parent>
              and <http://www.owl-ontologies.com/generations.owl#Person>
+             and <http://www.owl-ontologies.com/generations.owl#Sex>
              and <http://www.owl-ontologies.com/generations.owl#Sibling>
              and <http://www.owl-ontologies.com/generations.owl#Sister>
              and <http://www.owl-ontologies.com/generations.owl#Son>
@@ -161,10 +162,10 @@ Class: <http://www.owl-ontologies.com/generations.owl#Child>
 Class: <http://www.owl-ontologies.com/generations.owl#Person>
 
     
-Class: <http://www.owl-ontologies.com/generations.owl#Parent>
+Class: <http://www.owl-ontologies.com/generations.owl#Brother>
 
     
-Class: <http://www.owl-ontologies.com/generations.owl#Brother>
+Class: <http://www.owl-ontologies.com/generations.owl#Parent>
 
     
 Class: <http://www.owl-ontologies.com/generations.owl#Man>

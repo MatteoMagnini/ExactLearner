@@ -8,6 +8,9 @@ Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 Ontology: 
 
+ObjectProperty: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#lays>
+
+    
 ObjectProperty: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#lives_in>
 
     
@@ -24,16 +27,23 @@ Class: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Carnivore>
     
 Class: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Animal>
 
+    EquivalentTo: 
+        <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Vertebrate>
+    
     
 Class: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Reptile>
 
     SubClassOf: 
         <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Carnivore>
+         and owl:Thing
+         and (<http://www.semanticweb.org/ontologies/2014/3/animals.owl#lives_in> some 
+            (<http://www.semanticweb.org/ontologies/2014/3/animals.owl#Vertebrate>
+             and owl:Thing))
     
     
 Class: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Vertebrate>
 
-    SubClassOf: 
+    EquivalentTo: 
         <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Animal>
     
     
@@ -73,6 +83,9 @@ Class: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Bird>
     SubClassOf: 
         <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Vertebrate>
     
+    
+Class: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Backbone>
+
     
 Class: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Wing>
 
