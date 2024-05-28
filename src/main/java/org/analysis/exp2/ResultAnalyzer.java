@@ -105,7 +105,7 @@ public class ResultAnalyzer {
         FileWriter fw;
         var s = FileSystems.getDefault().getSeparator();
         try {
-            File f = new File("results" + s + "summaryFiles" + s + ontologyName + "-" + model + ".txt");
+            File f = new File("analysis" + s + ontologyName + "-" + model + ".txt");
             f.createNewFile();
             fw = new FileWriter(f.getPath());
             String result = calculateMetrics(confusionMatrix);

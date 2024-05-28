@@ -68,7 +68,7 @@
 
     <!-- http://ontology.dumontierlab.com/24HourBloodPressure -->
 
-    <owl:Class rdf:about="http://ontology.dumontierlab.com/24HourBloodPressure">
+    <owl:Class rdf:about="http://ontology.dumontierlab.com/_24HourBloodPressure">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">24 hour blood pressure</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://ontology.dumontierlab.com/BloodPressure"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A study recording the blood pressure at intervals during a 24-hour period.</rdfs:comment>

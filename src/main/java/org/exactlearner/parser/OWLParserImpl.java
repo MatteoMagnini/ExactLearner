@@ -45,7 +45,7 @@ public class OWLParserImpl implements OWLParser {
         }
         return this.getClasses().get().stream()
                 .map(OWLClass::toString)
-                .map(s -> s.substring(s.indexOf("#") + 1, s.length() - 1))
+                .map(s -> s.substring(s.indexOf("#") + 1, s.length() - 1)).map(s -> s.substring(s.lastIndexOf("/") + 1))
                 .collect(Collectors.toSet());
     }
 
