@@ -11,6 +11,7 @@ ontologies:
   - "src/main/resources/ontologies/small/football.owl"
   - "src/main/resources/ontologies/small/cl.owl"
   - "src/main/resources/ontologies/medium/biosphere.owl"
+  #- "src/main/resources/ontologies/large/bio-primitive.owl"
   #- "src/main/resources/ontologies/large/el-galen.owl"
 system: >
   You need to classify the following statements as True or False. The statements will be provided in either OWL Manchester Syntax or in a form of natural language question. 
