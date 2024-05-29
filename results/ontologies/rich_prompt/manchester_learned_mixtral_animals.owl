@@ -1,0 +1,87 @@
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+
+
+Ontology: 
+
+Class: owl:Thing
+
+    
+Class: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Meat>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Mammal>
+         and owl:Thing
+    
+    
+Class: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Carnivore>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Animal>
+    
+    
+Class: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Animal>
+
+    
+Class: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Reptile>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Carnivore>
+         and <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Vertebrate>
+    
+    
+Class: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Vertebrate>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Animal>
+    
+    
+Class: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Cat>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Carnivore>,
+        <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Mammal>
+    
+    
+Class: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Fish>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Vertebrate>
+    
+    
+Class: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Mammal>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Vertebrate>
+    
+    
+Class: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Herbivore>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Animal>
+    
+    
+Class: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Elephant>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Mammal>,
+        <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Herbivore>
+    
+    
+Class: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Bird>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Vertebrate>
+    
+    
+Class: <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Wing>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/ontologies/2014/3/animals.owl#Mammal>
+         and owl:Thing
+    
+    
