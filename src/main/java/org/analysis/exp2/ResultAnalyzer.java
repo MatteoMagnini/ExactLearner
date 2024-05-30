@@ -121,13 +121,14 @@ public class ResultAnalyzer {
     }
 
     private String calculateMetrics(int[][] confusionMatrix) {
-        return Metrics.calculateRecall(confusionMatrix) + " " + Metrics.calculatePrecision(confusionMatrix) + " " + Metrics.calculateF1Score(confusionMatrix);
+        return Metrics.calculateAccuracy(confusionMatrix) + " " + Metrics.calculateRecall(confusionMatrix) + " " + Metrics.calculatePrecision(confusionMatrix) + " " + Metrics.calculateF1Score(confusionMatrix);
     }
 
     private void printMetrics(String label, int[][] confusionMatrix) {
         System.out.printf("%s RECALL: %.2f%n", label, Metrics.calculateRecall(confusionMatrix));
         System.out.printf("%s PRECISION: %.2f%n", label, Metrics.calculatePrecision(confusionMatrix));
         System.out.printf("%s F1-Score: %.2f%n", label, Metrics.calculateF1Score(confusionMatrix));
+        System.out.printf("%s Accuracy: %.2f%n", label, Metrics.calculateAccuracy(confusionMatrix));
     }
 
     private OWLOntology loadOntology(String type, String enginePrefix, String model) {
