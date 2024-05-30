@@ -11,10 +11,10 @@ Ontology:
 ObjectProperty: <http://www.owl-ontologies.com/generations.owl#hasChild>
 
     
-ObjectProperty: <http://www.owl-ontologies.com/generations.owl#hasParent>
+ObjectProperty: <http://www.owl-ontologies.com/generations.owl#hasSibling>
 
     
-ObjectProperty: <http://www.owl-ontologies.com/generations.owl#hasSex>
+ObjectProperty: <http://www.owl-ontologies.com/generations.owl#hasParent>
 
     
 Class: <http://www.owl-ontologies.com/generations.owl#GrandMother>
@@ -23,8 +23,11 @@ Class: <http://www.owl-ontologies.com/generations.owl#GrandMother>
         <http://www.owl-ontologies.com/generations.owl#GrandParent>
          and <http://www.owl-ontologies.com/generations.owl#Mother>
          and owl:Thing
-         and (<http://www.owl-ontologies.com/generations.owl#hasSex> some 
-            (<http://www.owl-ontologies.com/generations.owl#OffSpring>
+         and (<http://www.owl-ontologies.com/generations.owl#hasChild> some 
+            (<http://www.owl-ontologies.com/generations.owl#GrandParent>
+             and <http://www.owl-ontologies.com/generations.owl#Woman>))
+         and (<http://www.owl-ontologies.com/generations.owl#hasParent> some 
+            (<http://www.owl-ontologies.com/generations.owl#GrandMother>
              and owl:Thing))
     
     
@@ -35,12 +38,8 @@ Class: <http://www.owl-ontologies.com/generations.owl#Son>
 
     SubClassOf: 
         <http://www.owl-ontologies.com/generations.owl#Man>
-         and <http://www.owl-ontologies.com/generations.owl#OffSpring>
          and owl:Thing
          and (<http://www.owl-ontologies.com/generations.owl#hasChild> some 
-            (<http://www.owl-ontologies.com/generations.owl#Parent>
-             and owl:Thing))
-         and (<http://www.owl-ontologies.com/generations.owl#hasParent> some 
             (<http://www.owl-ontologies.com/generations.owl#Parent>
              and owl:Thing))
     
@@ -48,8 +47,11 @@ Class: <http://www.owl-ontologies.com/generations.owl#Son>
 Class: <http://www.owl-ontologies.com/generations.owl#Female>
 
     EquivalentTo: 
+        <http://www.owl-ontologies.com/generations.owl#Person>
+         and <http://www.owl-ontologies.com/generations.owl#Sex>
+         and <http://www.owl-ontologies.com/generations.owl#Woman>
+         and owl:Thing,
         <http://www.owl-ontologies.com/generations.owl#Woman>
-         and owl:Thing
     
     
 Class: <http://www.owl-ontologies.com/generations.owl#Father>
@@ -61,11 +63,34 @@ Class: <http://www.owl-ontologies.com/generations.owl#Father>
     
 Class: <http://www.owl-ontologies.com/generations.owl#Child>
 
-    SubClassOf: 
-        <http://www.owl-ontologies.com/generations.owl#OffSpring>
-         and owl:Thing
-         and (<http://www.owl-ontologies.com/generations.owl#hasParent> some 
+    EquivalentTo: 
+        owl:Thing
+         and (<http://www.owl-ontologies.com/generations.owl#hasChild> some 
             (<http://www.owl-ontologies.com/generations.owl#Person>
+             and owl:Thing)),
+        <http://www.owl-ontologies.com/generations.owl#Child>
+         and <http://www.owl-ontologies.com/generations.owl#OffSpring>
+         and <http://www.owl-ontologies.com/generations.owl#Person>
+         and owl:Thing
+         and (<http://www.owl-ontologies.com/generations.owl#hasChild> some 
+            (<http://www.owl-ontologies.com/generations.owl#OffSpring>
+             and <http://www.owl-ontologies.com/generations.owl#Parent>
+             and <http://www.owl-ontologies.com/generations.owl#Person>
+             and owl:Thing))
+         and (<http://www.owl-ontologies.com/generations.owl#hasParent> some 
+            (<http://www.owl-ontologies.com/generations.owl#OffSpring>
+             and <http://www.owl-ontologies.com/generations.owl#Parent>
+             and <http://www.owl-ontologies.com/generations.owl#Person>
+             and owl:Thing))
+         and (<http://www.owl-ontologies.com/generations.owl#hasSibling> some 
+            (<http://www.owl-ontologies.com/generations.owl#OffSpring>
+             and <http://www.owl-ontologies.com/generations.owl#Parent>
+             and <http://www.owl-ontologies.com/generations.owl#Person>
+             and owl:Thing))
+         and (<http://www.owl-ontologies.com/generations.owl#hasSibling> some 
+            (<http://www.owl-ontologies.com/generations.owl#OffSpring>
+             and <http://www.owl-ontologies.com/generations.owl#Person>
+             and <http://www.owl-ontologies.com/generations.owl#Sibling>
              and owl:Thing))
     
     
@@ -81,8 +106,12 @@ Class: <http://www.owl-ontologies.com/generations.owl#Parent>
 Class: <http://www.owl-ontologies.com/generations.owl#Brother>
 
     SubClassOf: 
-        <http://www.owl-ontologies.com/generations.owl#Sibling>,
         <http://www.owl-ontologies.com/generations.owl#Man>
+         and <http://www.owl-ontologies.com/generations.owl#Sibling>
+         and owl:Thing
+         and (<http://www.owl-ontologies.com/generations.owl#hasParent> some 
+            (<http://www.owl-ontologies.com/generations.owl#Parent>
+             and owl:Thing))
     
     
 Class: <http://www.owl-ontologies.com/generations.owl#Man>
@@ -93,26 +122,25 @@ Class: <http://www.owl-ontologies.com/generations.owl#Man>
     
 Class: <http://www.owl-ontologies.com/generations.owl#Daughter>
 
-    SubClassOf: 
+    EquivalentTo: 
         <http://www.owl-ontologies.com/generations.owl#Child>
-         and <http://www.owl-ontologies.com/generations.owl#Woman>
+         and <http://www.owl-ontologies.com/generations.owl#Female>
     
     
 Class: <http://www.owl-ontologies.com/generations.owl#Mother>
 
     SubClassOf: 
-        <http://www.owl-ontologies.com/generations.owl#Female>
-         and <http://www.owl-ontologies.com/generations.owl#Parent>
-         and owl:Thing
-         and (<http://www.owl-ontologies.com/generations.owl#hasChild> some 
-            (<http://www.owl-ontologies.com/generations.owl#Parent>
-             and owl:Thing))
+        <http://www.owl-ontologies.com/generations.owl#Woman>,
+        <http://www.owl-ontologies.com/generations.owl#Parent>
     
     
 Class: <http://www.owl-ontologies.com/generations.owl#GrandParent>
 
     SubClassOf: 
-        <http://www.owl-ontologies.com/generations.owl#Parent>
+        <http://www.owl-ontologies.com/generations.owl#Child>
+         and <http://www.owl-ontologies.com/generations.owl#Parent>
+         and owl:Thing
+         and (<http://www.owl-ontologies.com/generations.owl#hasChild> some <http://www.owl-ontologies.com/generations.owl#GrandParent>)
     
     
 Class: <http://www.owl-ontologies.com/generations.owl#Sex>
@@ -133,8 +161,8 @@ Class: <http://www.owl-ontologies.com/generations.owl#OffSpring>
     
 Class: <http://www.owl-ontologies.com/generations.owl#Woman>
 
-    SubClassOf: 
-        <http://www.owl-ontologies.com/generations.owl#Person>
+    EquivalentTo: 
+        <http://www.owl-ontologies.com/generations.owl#Female>
     
     
 Class: <http://www.owl-ontologies.com/generations.owl#Male>

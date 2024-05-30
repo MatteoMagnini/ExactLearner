@@ -9,7 +9,6 @@ import org.exactlearner.engine.NLPLLMEngine;
 import org.exactlearner.learner.Learner;
 import org.exactlearner.oracle.Oracle;
 import org.exactlearner.utils.Metrics;
-import org.experiments.logger.SmartLogger;
 import org.pac.Pac;
 import org.semanticweb.owlapi.model.*;
 import org.utility.OntologyManipulator;
@@ -20,7 +19,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import static org.utility.StatsPrinter.printStats;
+import static org.utility.StatsPrinter.*;
 
 public class LaunchLLMLeaner extends LaunchLearner {
 
@@ -29,6 +28,9 @@ public class LaunchLLMLeaner extends LaunchLearner {
     private String system;
     private Integer maxTokens;
     private List<Integer> hypothesisSizes;
+    private double totalCE = 0;
+    private double totalMembershipQ = 0;
+    private double totalEquivalenceQ = 0;
 
     private double epsilon = 0.1;
     private double delta = 0.2;
@@ -58,7 +60,7 @@ public class LaunchLLMLeaner extends LaunchLearner {
         if (args.length > 2) {
             delta = Double.parseDouble(args[2]);
         }
-        SmartLogger.checkCachedFiles();
+        //SmartLogger.checkCachedFiles();
         loadConfiguration(configurationFile);
         try {
             for (int i = 1; i <= 2; i++) {
@@ -88,6 +90,21 @@ public class LaunchLLMLeaner extends LaunchLearner {
             e.printStackTrace();
             System.out.println("error" + e);
         }
+        printAverageStats();
+    }
+
+    private void printAverageStats() {
+        double divider = 2*ontologies.size() * models.size();
+        System.out.println("% of left decompositions: " + 100 * totalLDecomp / divider + "%");
+        System.out.println("% of right decompositions: " + 100 * totalRDecomp / divider + "%");
+        System.out.println("% of mergings: " + 100 * totalMerge / divider + "%");
+        System.out.println("% of branchings: " + 100 * totalBranch / divider + "%");
+        System.out.println("% of saturations: " + 100 * totalSat / divider + "%");
+        System.out.println("% of unsaturations: " + 100 * totalDesat / divider + "%");
+
+        System.out.println("Average n° membership queries compared to Pac Samples: " + totalMembershipQ / divider);
+        System.out.println("Average n° equivalence queries compared to Pac Samples: " + totalEquivalenceQ / divider);
+        System.out.println("Average n° CE compared to Pac Samples: " + totalCE / divider);
     }
 
     private void setup(Integer i, String ontology, String model) {
@@ -126,14 +143,16 @@ public class LaunchLLMLeaner extends LaunchLearner {
         // Computes inclusions of the form A implies B
         precomputation();
         Pac pac = new Pac(parser.getClassesNamesAsString(), parser.getObjectPropertiesAsString(), epsilon, delta, hypothesisSize, seed);
+        long totalPacSamples = pac.getNumberOfSamples();
         while (true) {
             myMetrics.setEquivCount(myMetrics.getEquivCount() + 1);
             counterExample = getCounterExample(pac);
-            System.out.println("Counterexample number: " + ++numberOfCounterExamples);
             if (counterExample == null) {
                 System.out.println("No counterexample found, closing...");
                 break;
             }
+            System.out.println("Counterexample number: " + ++numberOfCounterExamples);
+            // Update the total number of counterexamples
             // Add the last counterexample to axiomsT
 
             // Update size of the largest counterexample
@@ -149,7 +168,9 @@ public class LaunchLLMLeaner extends LaunchLearner {
             checkTransformations();
             //addHypothesis(counterExample);
         }
-
+        totalCE += (double) numberOfCounterExamples / (double) totalPacSamples;
+        totalMembershipQ += (double) myMetrics.getMembCount() / (double) totalPacSamples;
+        totalEquivalenceQ += (double) myMetrics.getEquivCount() / (double) totalPacSamples;
     }
 
 
