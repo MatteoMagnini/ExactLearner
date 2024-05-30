@@ -16,10 +16,10 @@ ontologies:
 system: >
   You need to classify the following statements as True or False. The statements will be provided in either OWL Manchester Syntax or in a form of natural language question. 
   Follow strictly these guidelines:
-  1. Respond with only True or False.
-  2. Entities from different categories are not in a subclass relationship.
-  3. Statements or question containing numerous entities are most probably False.
-  4. Take a deep breath before answering.
-  5. If you are unsure about the classification, respond with False.
+  1. Answer with only True or False;
+  2. Entities from different categories are not in a subclass relationship;
+  3. Statements or question containing numerous entities are most probably False;
+  4. Take a deep breath before answering;
+  5. If you are unsure about the classification, answer with False.
 maxTokens: 2
 type: "statementsQuerying"
