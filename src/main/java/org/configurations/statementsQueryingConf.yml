@@ -14,7 +14,7 @@ ontologies:
   - "src/main/resources/ontologies/large/bio-primitive.owl"
   #- "src/main/resources/ontologies/large/el-galen.owl"
 system: >
-  You need to classify the following statements as True or False. The statements will be provided in either OWL Manchester Syntax or in a form of natural language question. 
+  You need to classify the following statements as True or False. The statement will be provided in either Manchester OWL syntax or natural language.
   Follow strictly these guidelines:
   1. Answer with only True or False;
   2. Entities from different categories are not in a subclass relationship;
