@@ -19,7 +19,7 @@ system: >
   1. Respond with only True or False.
   2. Entities from different categories are not in a subclass relationship.
   3. Statements or question containing numerous entities are most probably False.
-  4. Carefully analyze the statement or the question to ensure the accuracy of your classification.
+  4. Take a deep breath before answering.
   5. If you are unsure about the classification, respond with False.
 maxTokens: 2
 type: "statementsQuerying"
