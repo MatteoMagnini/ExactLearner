@@ -25,9 +25,10 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.nio.file.FileSystems;
-import java.util.Arrays;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class ClassesAnalyser {
 
@@ -53,6 +54,14 @@ public class ClassesAnalyser {
         }
     }
 
+    public static int[] getColumn(int[][] array, int index){
+        int[] column = new int[array.length]; // Here I assume a rectangular 2D array!
+        for(int i=0; i<column.length; i++){
+            column[i] = array[i][index];
+        }
+        return column;
+    }
+
     private static void runExperiment3(String model, String ontology, String system) {
         var parser = loadOntology(ontology);
         var classesNames = parser.getClassesNamesAsString();
@@ -64,6 +73,15 @@ public class ClassesAnalyser {
         double recall = calculateRecall(confusionMatrix);
         double logLoss = calculateLogLoss(confusionMatrix);
         double matthewsCorrelationCoefficient = calculateMatthewsCorrelationCoefficient(confusionMatrix);
+
+        // Chi squared test
+        double[][] expectedAndObserved = getExpectedAndObserved(classesNames, model, ontology, system);
+        double[] expected = expectedAndObserved[0];
+        long[] observed = Arrays.stream(expectedAndObserved[1]).mapToLong(i -> (long) i).toArray();
+        var chiSquare = new org.apache.commons.math3.stat.inference.ChiSquareTest();
+        double pValue = chiSquare.chiSquareTest(expected, observed);
+        System.out.println("Chi squared test p-value: " + pValue);
+
 
         // Print results
         System.out.println("Accuracy: " + accuracy);
@@ -93,9 +111,9 @@ public class ClassesAnalyser {
         String resultFileName = "results" + separator + "classesQuerying" + separator + model.replace(":","-") + '_' + shortOntology;
         SmartLogger.disableFileLogging();
         SmartLogger.enableFileLogging(resultFileName, false);
-        SmartLogger.log("Accuracy; F1 Score; Precision; Recall; Log Loss; Matthews MCC\n");
+        SmartLogger.log("Pvalue; Accuracy; F1 Score; Precision; Recall; Log Loss; Matthews MCC\n");
         // Approximate the values to 2 decimal places
-        SmartLogger.log(String.format("%.2f; %.2f; %.2f; %.2f; %.2f; %.2f\n", accuracy, f1Score, precision, recall, logLoss, matthewsCorrelationCoefficient));
+        SmartLogger.log(String.format("%.2f; %.2f; %.2f; %.2f; %.2f; %.2f; %.2f\n", pValue, accuracy, f1Score, precision, recall, logLoss, matthewsCorrelationCoefficient));
         SmartLogger.disableFileLogging();
     }
 
@@ -159,6 +177,43 @@ public class ClassesAnalyser {
         } else {
             return numerator / denominator;
         }
+    }
+
+
+    private static double[][] getExpectedAndObserved(Set<String> classesNames, String model, String ontology, String system) {
+        var manager = OWLManager.createOWLOntologyManager();
+        ELEngine engine;
+        OWLOntology owl;
+        try {
+            owl = manager.loadOntologyFromOntologyDocument(new File(ontology));
+            engine = new ELEngine(owl);
+        } catch (OWLOntologyCreationException e) {
+            throw new RuntimeException(e);
+        }
+        var classesArray = classesNames.stream().filter(s -> !s.contains("owl:Thin")).toList();
+        int i = 0;
+        double[][] result = new double[2][classesArray.size()*classesArray.size()];
+        for (String className1 : classesArray) {
+            for (String className2 : classesArray) {
+                String message = className1 + " SubClassOf " + className2;
+                //queries.put(new Pair<>(model, ontology), message);
+                String fileName = new ExperimentTask("classesQuerying", model, ontology, message, system, () -> {
+                }).getFileName();
+                Result singleResult = new Result(fileName);
+                if (singleResult.isTrue()) {
+                    result[0][i] = 1;
+                } else {
+                    result[0][i] = 0.0000001;
+                }
+                if (engine.entailed(createAxiomFromString(message, owl))) {
+                    result[1][i] = 1;
+                } else {
+                    result[1][i] = 0.0000001;
+                }
+                i++;
+            }
+        }
+        return result;
     }
 
     private static int[][] createConfusionMatrix(Set<String> classesNames, String model, String ontology, String system) {
