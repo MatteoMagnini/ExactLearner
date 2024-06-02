@@ -1,6 +1,7 @@
 package org.analysis;
 
 import org.apache.jena.atlas.lib.Pair;
+import org.apache.jena.base.Sys;
 import org.coode.owlapi.manchesterowlsyntax.ManchesterOWLSyntaxEditorParser;
 import org.exactlearner.engine.ELEngine;
 import org.exactlearner.parser.OWLParser;
@@ -75,14 +76,24 @@ public class ClassesAnalyser {
         double matthewsCorrelationCoefficient = calculateMatthewsCorrelationCoefficient(confusionMatrix);
 
         // Chi squared test
-        double[][] expectedAndObserved = getExpectedAndObserved(classesNames, model, ontology, system);
-        double[] expected = expectedAndObserved[0];
-        long[] observed = Arrays.stream(expectedAndObserved[1]).mapToLong(i -> (long) i).toArray();
         var chiSquare = new org.apache.commons.math3.stat.inference.ChiSquareTest();
-        double pValue = chiSquare.chiSquareTest(expected, observed);
+        int degreeOfFreedom;
+        if (confusionMatrix[0][2] == 0 && confusionMatrix[1][2] == 0) {
+            degreeOfFreedom = 1;
+        } else {
+            degreeOfFreedom = 2;
+        }
+        long[][] newConfusionMatrix = new long[2][degreeOfFreedom + 1];
+        for (int i = 0; i < newConfusionMatrix.length; i++) {
+            for (int j = 0; j < newConfusionMatrix[i].length; j++) {
+                newConfusionMatrix[i][j] = confusionMatrix[i][j];
+            }
+        }
+        double pValue = chiSquare.chiSquareTest(newConfusionMatrix);
+        double testValue = chiSquare.chiSquare(newConfusionMatrix);
+        System.out.println("Chi squared test degree: " + degreeOfFreedom);
         System.out.println("Chi squared test p-value: " + pValue);
-
-
+        System.out.println("Chi squared test value: " + testValue);
         // Print results
         System.out.println("Accuracy: " + accuracy);
         System.out.println("Precision: " + precision);
@@ -111,9 +122,9 @@ public class ClassesAnalyser {
         String resultFileName = "results" + separator + "classesQuerying" + separator + model.replace(":","-") + '_' + shortOntology;
         SmartLogger.disableFileLogging();
         SmartLogger.enableFileLogging(resultFileName, false);
-        SmartLogger.log("Pvalue; Accuracy; F1 Score; Precision; Recall; Log Loss; Matthews MCC\n");
+        SmartLogger.log("Degree; Pvalue; TestValue; Accuracy; F1 Score; Precision; Recall; Log Loss; Matthews MCC\n");
         // Approximate the values to 2 decimal places
-        SmartLogger.log(String.format("%.2f; %.2f; %.2f; %.2f; %.2f; %.2f; %.2f\n", pValue, accuracy, f1Score, precision, recall, logLoss, matthewsCorrelationCoefficient));
+        SmartLogger.log(String.format("%d; %.2f; %.2f; %.2f; %.2f; %.2f; %.2f; %.2f; %.2f\n", degreeOfFreedom, pValue, testValue, accuracy, f1Score, precision, recall, logLoss, matthewsCorrelationCoefficient));
         SmartLogger.disableFileLogging();
     }
 
@@ -177,43 +188,6 @@ public class ClassesAnalyser {
         } else {
             return numerator / denominator;
         }
-    }
-
-
-    private static double[][] getExpectedAndObserved(Set<String> classesNames, String model, String ontology, String system) {
-        var manager = OWLManager.createOWLOntologyManager();
-        ELEngine engine;
-        OWLOntology owl;
-        try {
-            owl = manager.loadOntologyFromOntologyDocument(new File(ontology));
-            engine = new ELEngine(owl);
-        } catch (OWLOntologyCreationException e) {
-            throw new RuntimeException(e);
-        }
-        var classesArray = classesNames.stream().filter(s -> !s.contains("owl:Thin")).toList();
-        int i = 0;
-        double[][] result = new double[2][classesArray.size()*classesArray.size()];
-        for (String className1 : classesArray) {
-            for (String className2 : classesArray) {
-                String message = className1 + " SubClassOf " + className2;
-                //queries.put(new Pair<>(model, ontology), message);
-                String fileName = new ExperimentTask("classesQuerying", model, ontology, message, system, () -> {
-                }).getFileName();
-                Result singleResult = new Result(fileName);
-                if (singleResult.isTrue()) {
-                    result[0][i] = 1;
-                } else {
-                    result[0][i] = 0.0000001;
-                }
-                if (engine.entailed(createAxiomFromString(message, owl))) {
-                    result[1][i] = 1;
-                } else {
-                    result[1][i] = 0.0000001;
-                }
-                i++;
-            }
-        }
-        return result;
     }
 
     private static int[][] createConfusionMatrix(Set<String> classesNames, String model, String ontology, String system) {

@@ -17,6 +17,7 @@ metrics_short = ["A", "P", "R"]
 # Each ontology has 3 metrics: accuracy, precision, recall.
 # So in total we have 5 * 3 = 15 columns.
 table = "\\begin{table*}[]\n\\centering\n\\resizebox{\\textwidth}{!}{\n"
+table += "\\rowcolors{2}{EFEFEF}{white}\n"
 table += "\\begin{tabular}{ccc|ccc|ccc|ccc|ccc}\n"
 table += "\\hline\n"
 for ontology in ontologies:
@@ -40,6 +41,16 @@ for i, model in enumerate(models):
         results_file = os.sep.join([results_path, f"{model.replace(':', '-')}_{short_ontology}.csv"])
         results_values = pd.read_csv(results_file, sep=";", header=0)
         results_values.columns = [x.strip() for x in results_values.columns]
+
+        p_value = float(results_values['Pvalue'][0].replace(',','.'))
+        if p_value < 0.05:
+            if i % 2 == 0:
+                table += '\\rowcolor[HTML]{EFEFEF}\n'
+            else:
+                table += '\\rowcolor[HTML]{FFFFFF}\n'
+        else:
+            table += '\\rowcolor[HTML]{FFEB9C}\n'
+
         for metric in metrics:
             value = float(results_values[metric][0].replace(",", ".").strip())
             # Do not show the 0 in .## format
