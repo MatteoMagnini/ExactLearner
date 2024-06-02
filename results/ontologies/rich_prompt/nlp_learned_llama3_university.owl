@@ -8,26 +8,24 @@ Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 Ontology: 
 
+ObjectProperty: <http://www.semanticweb.org/ontologies/2014/3/university.owl#employed_by>
+
+    
 ObjectProperty: <http://www.semanticweb.org/ontologies/2014/3/university.owl#teaches>
 
     
 Class: owl:Thing
 
     
-Class: <http://www.semanticweb.org/ontologies/2014/3/university.owl#University>
-
-    SubClassOf: 
-        owl:Thing
-         and (<http://www.semanticweb.org/ontologies/2014/3/university.owl#teaches> some 
-            (<http://www.semanticweb.org/ontologies/2014/3/university.owl#Person>
-             and owl:Thing))
-    
-    
 Class: <http://www.semanticweb.org/ontologies/2014/3/university.owl#Professor>
 
     SubClassOf: 
-        <http://www.semanticweb.org/ontologies/2014/3/university.owl#Teacher>,
         <http://www.semanticweb.org/ontologies/2014/3/university.owl#Researcher>
+         and <http://www.semanticweb.org/ontologies/2014/3/university.owl#Teacher>
+         and owl:Thing
+         and (<http://www.semanticweb.org/ontologies/2014/3/university.owl#employed_by> some 
+            (<http://www.semanticweb.org/ontologies/2014/3/university.owl#Teacher>
+             and owl:Thing))
     
     
 Class: <http://www.semanticweb.org/ontologies/2014/3/university.owl#Teacher>
@@ -35,9 +33,6 @@ Class: <http://www.semanticweb.org/ontologies/2014/3/university.owl#Teacher>
     SubClassOf: 
         <http://www.semanticweb.org/ontologies/2014/3/university.owl#Person>
     
-    
-Class: <http://www.semanticweb.org/ontologies/2014/3/university.owl#Module>
-
     
 Class: <http://www.semanticweb.org/ontologies/2014/3/university.owl#Person>
 

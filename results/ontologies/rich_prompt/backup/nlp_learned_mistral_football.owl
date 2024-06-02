@@ -8,13 +8,13 @@ Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 Ontology: 
 
-ObjectProperty: <http://www.semanticweb.org/ontologies/2014/3/football.owl#plays>
-
-    
-Class: owl:Thing
-
-    
 Class: <http://www.semanticweb.org/ontologies/2014/3/football.owl#Manager>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/ontologies/2014/3/football.owl#Person>
+    
+    
+Class: <http://www.semanticweb.org/ontologies/2014/3/football.owl#Player>
 
     SubClassOf: 
         <http://www.semanticweb.org/ontologies/2014/3/football.owl#Person>
@@ -22,14 +22,6 @@ Class: <http://www.semanticweb.org/ontologies/2014/3/football.owl#Manager>
     
 Class: <http://www.semanticweb.org/ontologies/2014/3/football.owl#Team>
 
-    
-Class: <http://www.semanticweb.org/ontologies/2014/3/football.owl#Player>
-
-    EquivalentTo: 
-        <http://www.semanticweb.org/ontologies/2014/3/football.owl#FootballPlayer>,
-        <http://www.semanticweb.org/ontologies/2014/3/football.owl#FootballPlayer>
-         and <http://www.semanticweb.org/ontologies/2014/3/football.owl#Person>
-    
     
 Class: <http://www.semanticweb.org/ontologies/2014/3/football.owl#FootballTeam>
 
@@ -42,7 +34,7 @@ Class: <http://www.semanticweb.org/ontologies/2014/3/football.owl#Game>
     
 Class: <http://www.semanticweb.org/ontologies/2014/3/football.owl#FootballPlayer>
 
-    EquivalentTo: 
+    SubClassOf: 
         <http://www.semanticweb.org/ontologies/2014/3/football.owl#Player>
     
     

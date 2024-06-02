@@ -16,9 +16,9 @@ Class: <http://obo.sourceforge.net/cl.owl#SclerenchymaCell>
     
 Class: <http://obo.sourceforge.net/cl.owl#LeafCell>
 
-    EquivalentTo: 
-        <http://obo.sourceforge.net/cl.owl#Cell>
-         and <http://obo.sourceforge.net/cl.owl#CellByDevelopmentStage>
+    SubClassOf: 
+        <http://obo.sourceforge.net/cl.owl#PhotosyntheticCell>,
+        <http://obo.sourceforge.net/cl.owl#MatureCell>
     
     
 Class: <http://obo.sourceforge.net/cl.owl#PhotosyntheticCell>
@@ -30,12 +30,13 @@ Class: <http://obo.sourceforge.net/cl.owl#PhotosyntheticCell>
 Class: <http://obo.sourceforge.net/cl.owl#Erythrocyte>
 
     SubClassOf: 
+        <http://obo.sourceforge.net/cl.owl#CirculatingCell>,
         <http://obo.sourceforge.net/cl.owl#MatureCell>
     
     
 Class: <http://obo.sourceforge.net/cl.owl#CirculatingCell>
 
-    EquivalentTo: 
+    SubClassOf: 
         <http://obo.sourceforge.net/cl.owl#CellByClass>
     
     
@@ -47,18 +48,13 @@ Class: <http://obo.sourceforge.net/cl.owl#PlantCell>
     
 Class: <http://obo.sourceforge.net/cl.owl#CellByClass>
 
-    EquivalentTo: 
-        <http://obo.sourceforge.net/cl.owl#CirculatingCell>
-    
     SubClassOf: 
         <http://obo.sourceforge.net/cl.owl#Cell>
     
     
 Class: <http://obo.sourceforge.net/cl.owl#MatureCell>
 
-    EquivalentTo: 
-        <http://obo.sourceforge.net/cl.owl#CellByClass>
-         and <http://obo.sourceforge.net/cl.owl#PhotosyntheticCell>,
+    SubClassOf: 
         <http://obo.sourceforge.net/cl.owl#CellByDevelopmentStage>
     
     
@@ -79,9 +75,8 @@ Class: <http://obo.sourceforge.net/cl.owl#Miocyte>
     
 Class: <http://obo.sourceforge.net/cl.owl#InMatureCell>
 
-    EquivalentTo: 
+    SubClassOf: 
         <http://obo.sourceforge.net/cl.owl#CellByDevelopmentStage>
-         and <http://obo.sourceforge.net/cl.owl#LeafCell>
     
     
 Class: <http://obo.sourceforge.net/cl.owl#Osteocyte>
@@ -90,13 +85,13 @@ Class: <http://obo.sourceforge.net/cl.owl#Osteocyte>
         <http://obo.sourceforge.net/cl.owl#MatureCell>
     
     
-Class: <http://obo.sourceforge.net/cl.owl#ChondroBlast>
+Class: <http://obo.sourceforge.net/cl.owl#MioBlast>
 
     SubClassOf: 
         <http://obo.sourceforge.net/cl.owl#InMatureCell>
     
     
-Class: <http://obo.sourceforge.net/cl.owl#MioBlast>
+Class: <http://obo.sourceforge.net/cl.owl#ChondroBlast>
 
     SubClassOf: 
         <http://obo.sourceforge.net/cl.owl#InMatureCell>
@@ -104,8 +99,8 @@ Class: <http://obo.sourceforge.net/cl.owl#MioBlast>
     
 Class: <http://obo.sourceforge.net/cl.owl#CellByDevelopmentStage>
 
-    EquivalentTo: 
-        <http://obo.sourceforge.net/cl.owl#MatureCell>
+    SubClassOf: 
+        <http://obo.sourceforge.net/cl.owl#Cell>
     
     
 Class: <http://obo.sourceforge.net/cl.owl#PhotoreceptorCell>

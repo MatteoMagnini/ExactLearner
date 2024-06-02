@@ -8,9 +8,6 @@ Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 Ontology: 
 
-ObjectProperty: <http://www.owl-ontologies.com/generations.owl#hasSex>
-
-    
 Class: <http://www.owl-ontologies.com/generations.owl#GrandMother>
 
     SubClassOf: 
@@ -73,12 +70,10 @@ Class: <http://www.owl-ontologies.com/generations.owl#Man>
     
 Class: <http://www.owl-ontologies.com/generations.owl#Daughter>
 
-    EquivalentTo: 
-        <http://www.owl-ontologies.com/generations.owl#Child>
-         and <http://www.owl-ontologies.com/generations.owl#Female>
-    
     SubClassOf: 
-        <http://www.owl-ontologies.com/generations.owl#OffSpring>
+        <http://www.owl-ontologies.com/generations.owl#Child>
+         and <http://www.owl-ontologies.com/generations.owl#OffSpring>
+         and <http://www.owl-ontologies.com/generations.owl#Woman>
     
     
 Class: <http://www.owl-ontologies.com/generations.owl#Mother>

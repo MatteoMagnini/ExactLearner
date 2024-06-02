@@ -10,6 +10,12 @@ import java.io.File;
 import java.util.Arrays;
 
 public class StatsPrinter {
+    public static double totalSat = 0;
+    public static double totalDesat = 0;
+    public static double totalRDecomp = 0;
+    public static double totalLDecomp = 0;
+    public static double totalMerge = 0;
+    public static double totalBranch = 0;
 
     public static void printStat(String description, String value, boolean verb) {
         if (verb) {
@@ -49,6 +55,21 @@ public class StatsPrinter {
     }
 
     private static void printLearnerStats(Learner baseLearner, boolean verb) {
+        var lComp = baseLearner.getNumberLeftDecomposition();
+        var tComp = baseLearner.getNumberRightDecomposition();
+        var merge = baseLearner.getNumberMerging();
+        var branch = baseLearner.getNumberBranching();
+        var sat = baseLearner.getNumberSaturations();
+        var unsat = baseLearner.getNumberUnsaturations();
+        var totalOps = lComp + tComp + merge + branch + sat + unsat;
+        if(totalOps != 0){
+            totalLDecomp += (double) lComp / totalOps;
+            totalRDecomp += (double) tComp / totalOps;
+            totalMerge += (double) merge / totalOps;
+            totalBranch += (double) branch / totalOps;
+            totalSat += (double) sat / totalOps;
+            totalDesat += (double) unsat / totalOps;
+        }
         printStat("\nLearner Stats:", verb);
         printStat("Total left decompositions: ", baseLearner.getNumberLeftDecomposition(), verb);
         printStat("Total right decompositions: ", baseLearner.getNumberRightDecomposition(), verb);
