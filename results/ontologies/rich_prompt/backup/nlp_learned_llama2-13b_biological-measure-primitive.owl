@@ -70,9 +70,8 @@ Class: <http://ontology.dumontierlab.com/HighRemission>
     
 Class: <http://ontology.dumontierlab.com/WeigthDifference>
 
-    EquivalentTo: 
-        <http://ontology.dumontierlab.com/WeightMeasure>,
-        <http://ontology.dumontierlab.com/WeightLoss>
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/WeightMeasure>
     
     
 Class: <http://ontology.dumontierlab.com/GeneExpressionDifference>
@@ -274,7 +273,6 @@ Class: <http://ontology.dumontierlab.com/BodyMassIndexMeasure>
 
     SubClassOf: 
         <http://ontology.dumontierlab.com/BiophysicalMeasure>
-         and <http://ontology.dumontierlab.com/TaxonomicMeasure>
     
     
 Class: <http://ontology.dumontierlab.com/IncreasedGeneExpression>
@@ -333,7 +331,7 @@ Class: <http://ontology.dumontierlab.com/HighMontgomeryAsbergDepressionRating>
     
 Class: <http://ontology.dumontierlab.com/WeightLoss>
 
-    EquivalentTo: 
+    SubClassOf: 
         <http://ontology.dumontierlab.com/WeigthDifference>
     
     
@@ -441,9 +439,6 @@ Class: <http://ontology.dumontierlab.com/DrugEfficacy>
     
 Class: <http://ontology.dumontierlab.com/WeightMeasure>
 
-    EquivalentTo: 
-        <http://ontology.dumontierlab.com/WeigthDifference>
-    
     SubClassOf: 
         <http://ontology.dumontierlab.com/BiophysicalMeasure>
     
