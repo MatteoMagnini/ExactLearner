@@ -1,0 +1,1185 @@
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+
+
+Ontology: 
+
+Class: <http://ontology.dumontierlab.com/ChildDepressionScore>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/ChildDepressionMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/MolecularMeasure>
+
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/BiologicalMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/RemissionFrequency>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/ASAAMeasure>
+         and <http://ontology.dumontierlab.com/AsthmaFrequency>
+         and <http://ontology.dumontierlab.com/ClinicalOutcomeMeasure>
+         and <http://ontology.dumontierlab.com/DepressionMeasure>
+         and <http://ontology.dumontierlab.com/DiseaseFrequency>
+         and <http://ontology.dumontierlab.com/ERVisitFrequency>
+         and <http://ontology.dumontierlab.com/HighReductionInChildDepressionScore>
+         and <http://ontology.dumontierlab.com/HighReductionInHamiltonDepressionScore>
+         and <http://ontology.dumontierlab.com/PharmacodynamicMeasure>
+         and <http://ontology.dumontierlab.com/PulmonaryFunctionMeasure>
+         and <http://ontology.dumontierlab.com/RemissionMeasure>
+         and <http://ontology.dumontierlab.com/SideEffectFrequency>,
+        <http://ontology.dumontierlab.com/DrugEfficacyMeasure>
+         and <http://ontology.dumontierlab.com/PopulationVariation>,
+        <http://ontology.dumontierlab.com/DrugEfficacy>
+         and <http://ontology.dumontierlab.com/MolecularMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/SatietyFrequency>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/SatietyMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/ModerateReductionInHamiltonAnxietyScore>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/ASAAMeasure>
+         and <http://ontology.dumontierlab.com/AnxietyMeasure>
+         and <http://ontology.dumontierlab.com/BiologicalMeasure>
+         and <http://ontology.dumontierlab.com/ClinicalOutcomeMeasure>
+         and <http://ontology.dumontierlab.com/CognitiveMeasure>
+         and <http://ontology.dumontierlab.com/DepressionMeasure>
+         and <http://ontology.dumontierlab.com/DrugEfficacyMeasure>
+         and <http://ontology.dumontierlab.com/ExerciseResponse>
+         and <http://ontology.dumontierlab.com/HamiltonAnxietyScoreDifference>
+         and <http://ontology.dumontierlab.com/MolecularMeasure>
+         and <http://ontology.dumontierlab.com/PharmacodynamicMeasure>
+         and <http://ontology.dumontierlab.com/RemissionMeasure>
+         and <http://ontology.dumontierlab.com/SideEffectFrequency>
+         and <http://ontology.dumontierlab.com/SideEffectMeasure>
+         and <http://ontology.dumontierlab.com/TaxonomicMeasure>,
+        <http://ontology.dumontierlab.com/DiseaseSusceptibilityOdds>
+         and <http://ontology.dumontierlab.com/GeneExpression>
+    
+    
+Class: <http://ontology.dumontierlab.com/ASAAConcentrationIncrease>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/HighRemission>
+         and <http://ontology.dumontierlab.com/ZeroRemission>
+    
+    
+Class: <http://ontology.dumontierlab.com/ERVisitFrequency>
+
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/ClinicalOutcomeMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/ForcedExperiatoryVolume>
+
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/PulmonaryFunctionMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/DailyBloodPressure>
+
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/BloodPressure>
+    
+    
+Class: <http://ontology.dumontierlab.com/HighRemission>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/ASAAConcentrationDecrease>
+         and <http://ontology.dumontierlab.com/ASAAMeasure>
+         and <http://ontology.dumontierlab.com/AnxietyMeasure>
+         and <http://ontology.dumontierlab.com/CognitiveMeasure>
+         and <http://ontology.dumontierlab.com/DepressionMeasure>
+         and <http://ontology.dumontierlab.com/GeneExpressionMeasure>
+         and <http://ontology.dumontierlab.com/HighReductionInChildDepressionScore>
+         and <http://ontology.dumontierlab.com/LowHamiltonDepressionScore>
+         and <http://ontology.dumontierlab.com/MolecularMeasure>
+         and <http://ontology.dumontierlab.com/PulmonaryFunctionMeasure>
+         and <http://ontology.dumontierlab.com/RemissionFrequency>
+         and <http://ontology.dumontierlab.com/SatietyDecrease>
+         and <http://ontology.dumontierlab.com/TissueMeasure>,
+        <http://ontology.dumontierlab.com/RemissionMeasure>
+         and <http://ontology.dumontierlab.com/ZeroRemission>
+    
+    
+Class: <http://ontology.dumontierlab.com/WeigthDifference>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/ASAAMeasure>
+         and <http://ontology.dumontierlab.com/BiophysicalMeasure>
+         and <http://ontology.dumontierlab.com/DepressionMeasure>
+         and <http://ontology.dumontierlab.com/ExerciseResponse>
+         and <http://ontology.dumontierlab.com/GenotypeMeasure>
+         and <http://ontology.dumontierlab.com/LipidProfile>
+         and <http://ontology.dumontierlab.com/MetabolicMeasure>
+         and <http://ontology.dumontierlab.com/MolecularMeasure>
+         and <http://ontology.dumontierlab.com/PharmacodynamicMeasure>
+         and <http://ontology.dumontierlab.com/PulmonaryFunctionMeasure>
+         and <http://ontology.dumontierlab.com/SatietyMeasure>
+         and <http://ontology.dumontierlab.com/TaxonomicMeasure>
+         and <http://ontology.dumontierlab.com/TissueMeasure>
+         and <http://ontology.dumontierlab.com/WeightMeasure>,
+        <http://ontology.dumontierlab.com/WeightLoss>
+    
+    
+Class: <http://ontology.dumontierlab.com/GeneExpressionDifference>
+
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/GeneExpressionMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/ExerciseResponse>
+
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/BiophysicalMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/NeoplasmFrequency>
+
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/DiseaseFrequency>
+    
+    
+Class: <http://ontology.dumontierlab.com/GenotypeMeasure>
+
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/BiologicalMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/HighReductionInMontgomeryAsbergDepressionRating>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/DrugEfficacy>
+         and <http://ontology.dumontierlab.com/HamiltonDepressionMeasure>,
+        <http://ontology.dumontierlab.com/ASAAMeasure>
+         and <http://ontology.dumontierlab.com/ClinicalOutcomeMeasure>
+         and <http://ontology.dumontierlab.com/DepressionMeasure>
+         and <http://ontology.dumontierlab.com/HamiltonDepressionMeasure>
+         and <http://ontology.dumontierlab.com/HighMontgomeryAsbergDepressionRating>
+         and <http://ontology.dumontierlab.com/MontgomeryAsbergDepressionMeasure>
+         and <http://ontology.dumontierlab.com/MontgomeryAsbergDepressionRating>
+         and <http://ontology.dumontierlab.com/MontgomeryAsbergDepressionRatingDifference>
+         and <http://ontology.dumontierlab.com/PharmacodynamicMeasure>
+         and <http://ontology.dumontierlab.com/SideEffectFrequency>
+         and <http://ontology.dumontierlab.com/SideEffectMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/QualityOfLife>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/AsthmaFrequency>
+         and <http://ontology.dumontierlab.com/CognitiveMeasure>,
+        <http://ontology.dumontierlab.com/ASAAMeasure>
+         and <http://ontology.dumontierlab.com/ClinicalOutcomeMeasure>
+         and <http://ontology.dumontierlab.com/SideEffectMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/AirwayResponsivenessUsingMethacholine>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/ASAAMeasure>
+         and <http://ontology.dumontierlab.com/BiologicalMeasure>
+         and <http://ontology.dumontierlab.com/BiophysicalMeasure>
+         and <http://ontology.dumontierlab.com/ClinicalOutcomeMeasure>
+         and <http://ontology.dumontierlab.com/Dose>
+         and <http://ontology.dumontierlab.com/HigherDiseaseSusceptibiltyOdds>
+         and <http://ontology.dumontierlab.com/PharmacodynamicMeasure>
+         and <http://ontology.dumontierlab.com/PopulationVariation>
+         and <http://ontology.dumontierlab.com/PulmonaryFunctionMeasure>
+         and <http://ontology.dumontierlab.com/TaxonomicMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/HighReductionInHamiltonAnxietyScore>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/HamiltonAnxietyScoreDifference>
+    
+    
+Class: <http://ontology.dumontierlab.com/ModerateHamiltonDepressionScore>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/ASAAMeasure>
+         and <http://ontology.dumontierlab.com/BiologicalMeasure>
+         and <http://ontology.dumontierlab.com/ChildDepressionMeasure>
+         and <http://ontology.dumontierlab.com/ChildDepressionScore>
+         and <http://ontology.dumontierlab.com/ClinicalOutcomeMeasure>
+         and <http://ontology.dumontierlab.com/DepressionMeasure>
+         and <http://ontology.dumontierlab.com/HamiltonDepressionMeasure>
+         and <http://ontology.dumontierlab.com/HamiltonDepressionScore>
+    
+    
+Class: <http://ontology.dumontierlab.com/LowReductionInChildDepressionScore>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/ChildDepressionScoreDifference>
+    
+    
+Class: <http://ontology.dumontierlab.com/BodyMassIndexDifference>
+
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/BodyMassIndexMeasure>
+         and <http://ontology.dumontierlab.com/SideEffectMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/HighHamiltonDepressionScore>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/HamiltonDepressionScore>
+    
+    
+Class: <http://ontology.dumontierlab.com/HigherDiseaseSusceptibiltyOdds>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/HomocysteineLevel>
+         and <http://ontology.dumontierlab.com/IncreasedGeneExpression>,
+        <http://ontology.dumontierlab.com/ASAAMeasure>
+         and <http://ontology.dumontierlab.com/BiologicalMeasure>
+         and <http://ontology.dumontierlab.com/ClinicalOutcomeMeasure>
+         and <http://ontology.dumontierlab.com/DiseaseFrequency>
+         and <http://ontology.dumontierlab.com/DiseaseSusceptibilityOdds>
+         and <http://ontology.dumontierlab.com/PharmacodynamicMeasure>
+         and <http://ontology.dumontierlab.com/PopulationVariation>
+         and <http://ontology.dumontierlab.com/SideEffectMeasure>
+         and <http://ontology.dumontierlab.com/SideEffectRate>
+         and <http://ontology.dumontierlab.com/TaxonomicMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/ForcedVitalCapacity>
+
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/HamiltonDepressionMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/HamiltonDepressionMeasure>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/ASAAMeasure>
+         and <http://ontology.dumontierlab.com/MetabolicMeasure>,
+        <http://ontology.dumontierlab.com/HamiltonDepressionScore>
+    
+    
+Class: <http://ontology.dumontierlab.com/PlasmaDrugConcentration>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/ASAAMeasure>
+         and <http://ontology.dumontierlab.com/BiologicalMeasure>
+         and <http://ontology.dumontierlab.com/BiophysicalMeasure>
+         and <http://ontology.dumontierlab.com/MetabolicMeasure>
+         and <http://ontology.dumontierlab.com/MolecularMeasure>
+         and <http://ontology.dumontierlab.com/PharmacodynamicMeasure>
+         and <http://ontology.dumontierlab.com/PharmacokineticMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/ElectrocardiogramQTInterval>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/ASAAMeasure>
+         and <http://ontology.dumontierlab.com/BiologicalMeasure>
+         and <http://ontology.dumontierlab.com/BiophysicalMeasure>
+         and <http://ontology.dumontierlab.com/PharmacodynamicMeasure>
+         and <http://ontology.dumontierlab.com/PopulationVariation>
+         and <http://ontology.dumontierlab.com/SideEffectMeasure>
+         and <http://ontology.dumontierlab.com/TaxonomicMeasure>
+         and <http://ontology.dumontierlab.com/TissueMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/PharmacokineticMeasure>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/DrugClearance>,
+        <http://ontology.dumontierlab.com/DoseFrequency>,
+        <http://ontology.dumontierlab.com/ASAAMeasure>
+         and <http://ontology.dumontierlab.com/BiologicalMeasure>
+         and <http://ontology.dumontierlab.com/DrugClearance>
+         and <http://ontology.dumontierlab.com/MolecularMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/LowMontgomeryAsbergDepressionRating>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/MontgomeryAsbergDepressionRating>
+    
+    
+Class: <http://ontology.dumontierlab.com/RemissionMeasure>
+
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/DrugEfficacyMeasure>
+         and <http://ontology.dumontierlab.com/PulmonaryFunctionMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/BiologicalMeasure>
+
+    
+Class: <http://ontology.dumontierlab.com/GeneExpressionMeasure>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/ASAAMeasure>
+         and <http://ontology.dumontierlab.com/BiologicalMeasure>
+         and <http://ontology.dumontierlab.com/GeneExpression>
+         and <http://ontology.dumontierlab.com/MolecularMeasure>
+         and <http://ontology.dumontierlab.com/PharmacodynamicMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/CellCount>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/LowRemission>
+         and <http://ontology.dumontierlab.com/ModerateRemission>
+    
+    
+Class: <http://ontology.dumontierlab.com/ASAAMeasure>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/ClinicalOutcomeMeasure>
+         and <http://ontology.dumontierlab.com/ExerciseResponse>
+         and <http://ontology.dumontierlab.com/GenotypeMeasure>
+         and <http://ontology.dumontierlab.com/MolecularMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/PopulationVariation>
+
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/GenotypeMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/MetabolicMeasure>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/MolecularMeasure>
+         and <http://ontology.dumontierlab.com/SideEffectMeasure>,
+        <http://ontology.dumontierlab.com/MolecularMeasure>
+         and <http://ontology.dumontierlab.com/PharmacokineticMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/TaxonomicMeasure>
+
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/BiologicalMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/LowRemission>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/ASAAMeasure>
+         and <http://ontology.dumontierlab.com/AirwayResponsivenessUsingMethacholine>
+         and <http://ontology.dumontierlab.com/DiseaseFrequency>
+         and <http://ontology.dumontierlab.com/DoseFrequency>
+         and <http://ontology.dumontierlab.com/DrugClearance>
+         and <http://ontology.dumontierlab.com/GeneExpressionMeasure>
+         and <http://ontology.dumontierlab.com/NeoplasmFrequency>
+         and <http://ontology.dumontierlab.com/QualityOfLife>
+         and <http://ontology.dumontierlab.com/RemissionFrequency>
+         and <http://ontology.dumontierlab.com/SideEffectRate>
+         and <http://ontology.dumontierlab.com/TissueMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/DrugClearance>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/PharmacokineticMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/ASAAConcentrationDifference>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/ASAAConcentrationDecrease>,
+        <http://ontology.dumontierlab.com/ASAAConcentration>
+         and <http://ontology.dumontierlab.com/ASAAMeasure>
+         and <http://ontology.dumontierlab.com/AnxietyMeasure>
+         and <http://ontology.dumontierlab.com/BiologicalMeasure>
+         and <http://ontology.dumontierlab.com/BiophysicalMeasure>
+         and <http://ontology.dumontierlab.com/GenotypeMeasure>
+         and <http://ontology.dumontierlab.com/MolecularMeasure>
+         and <http://ontology.dumontierlab.com/PharmacodynamicMeasure>
+         and <http://ontology.dumontierlab.com/PharmacokineticMeasure>
+         and <http://ontology.dumontierlab.com/PopulationVariation>
+         and <http://ontology.dumontierlab.com/PulmonaryFunctionMeasure>
+         and <http://ontology.dumontierlab.com/SatietyMeasure>
+         and <http://ontology.dumontierlab.com/SideEffectMeasure>
+         and <http://ontology.dumontierlab.com/TaxonomicMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/MontgomeryAsbergDepressionRatingDifference>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/MontgomeryAsbergDepressionMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/ASAAConcentrationDecrease>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/ASAAConcentrationDifference>
+    
+    
+Class: <http://ontology.dumontierlab.com/ModerateMontgomeryAsbergDepressionRating>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/MontgomeryAsbergDepressionRating>
+    
+    
+Class: <http://ontology.dumontierlab.com/BodyMassIndexMeasure>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/ASAAMeasure>
+         and <http://ontology.dumontierlab.com/BiophysicalMeasure>
+         and <http://ontology.dumontierlab.com/BodyMassIndex>
+         and <http://ontology.dumontierlab.com/TaxonomicMeasure>,
+        <http://ontology.dumontierlab.com/BodyMassIndex>
+    
+    
+Class: <http://ontology.dumontierlab.com/IncreasedGeneExpression>
+
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/GeneExpressionDifference>
+    
+    
+Class: <http://ontology.dumontierlab.com/PathogenCount>
+
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/TissueMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/SimilarDiseaseSusceptibilityOdds>
+
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/DiseaseSusceptibilityOdds>
+    
+    
+Class: <http://ontology.dumontierlab.com/SatietyDifference>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/SatietyDecrease>,
+        <http://ontology.dumontierlab.com/SatietyMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/DiseaseFrequency>
+
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/ClinicalOutcomeMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/MontgomeryAsbergDepressionMeasure>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/MontgomeryAsbergDepressionRatingDifference>,
+        <http://ontology.dumontierlab.com/MontgomeryAsbergDepressionRating>,
+        <http://ontology.dumontierlab.com/DepressionMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/CognitiveMeasure>
+
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/BiologicalMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/ModerateReductionInMontgomeryAsbergDepressionRating>
+
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/MontgomeryAsbergDepressionRatingDifference>
+    
+    
+Class: <http://ontology.dumontierlab.com/HighMontgomeryAsbergDepressionRating>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/ASAAMeasure>
+         and <http://ontology.dumontierlab.com/ChildDepressionMeasure>
+         and <http://ontology.dumontierlab.com/ClinicalOutcomeMeasure>
+         and <http://ontology.dumontierlab.com/DepressionMeasure>
+         and <http://ontology.dumontierlab.com/MontgomeryAsbergDepressionMeasure>
+         and <http://ontology.dumontierlab.com/MontgomeryAsbergDepressionRating>
+    
+    
+Class: <http://ontology.dumontierlab.com/WeightLoss>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/WeigthDifference>
+    
+    
+Class: <http://ontology.dumontierlab.com/Gender>
+
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/TaxonomicMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/HamiltonAnxietyScore>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/AnxietyMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/SatietyDecrease>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/SatietyDifference>
+    
+    
+Class: <http://ontology.dumontierlab.com/Weigth>
+
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/WeightMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/Race>
+
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/TaxonomicMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/WeigthGain>
+
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/WeigthDifference>
+    
+    
+Class: <http://ontology.dumontierlab.com/AsthmaFrequency>
+
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/DiseaseFrequency>
+         and <http://ontology.dumontierlab.com/ERVisitFrequency>
+    
+    
+Class: <http://ontology.dumontierlab.com/DecreasedGeneExpression>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/GeneExpressionDifference>
+         and <http://ontology.dumontierlab.com/GenotypeMeasure>
+         and <http://ontology.dumontierlab.com/LowRemission>
+    
+    
+Class: <http://ontology.dumontierlab.com/PharmacodynamicMeasure>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/DrugEfficacyMeasure>,
+        <http://ontology.dumontierlab.com/ASAAMeasure>
+         and <http://ontology.dumontierlab.com/BiologicalMeasure>
+         and <http://ontology.dumontierlab.com/BiophysicalMeasure>
+         and <http://ontology.dumontierlab.com/DrugEfficacyMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/ModerateRemission>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/ASAAConcentrationDecrease>
+         and <http://ontology.dumontierlab.com/GeneExpression>,
+        <http://ontology.dumontierlab.com/ASAAMeasure>
+         and <http://ontology.dumontierlab.com/AnxietyMeasure>
+         and <http://ontology.dumontierlab.com/AsthmaFrequency>
+         and <http://ontology.dumontierlab.com/BiologicalMeasure>
+         and <http://ontology.dumontierlab.com/BoneMineralDensity>
+         and <http://ontology.dumontierlab.com/ClinicalOutcomeMeasure>
+         and <http://ontology.dumontierlab.com/CognitiveMeasure>
+         and <http://ontology.dumontierlab.com/DecreasedGeneExpression>
+         and <http://ontology.dumontierlab.com/DepressionMeasure>
+         and <http://ontology.dumontierlab.com/DrugEfficacy>
+         and <http://ontology.dumontierlab.com/HamiltonDepressionMeasure>
+         and <http://ontology.dumontierlab.com/HighReductionInChildDepressionScore>
+         and <http://ontology.dumontierlab.com/HighReductionInHamiltonAnxietyScore>
+         and <http://ontology.dumontierlab.com/HighReductionInHamiltonDepressionScore>
+         and <http://ontology.dumontierlab.com/IncreasedGeneExpression>
+         and <http://ontology.dumontierlab.com/LowHamiltonDepressionScore>
+         and <http://ontology.dumontierlab.com/LowMontgomeryAsbergDepressionRating>
+         and <http://ontology.dumontierlab.com/LowReductionInChildDepressionScore>
+         and <http://ontology.dumontierlab.com/LowReductionInHamiltonAnxietyScore>
+         and <http://ontology.dumontierlab.com/LowReductionInHamiltonDepressionScore>
+         and <http://ontology.dumontierlab.com/LowRemission>
+         and <http://ontology.dumontierlab.com/ModerateHamiltonDepressionScore>
+         and <http://ontology.dumontierlab.com/ModerateMontgomeryAsbergDepressionRating>
+         and <http://ontology.dumontierlab.com/ModerateReductionInChildDepressionScore>
+         and <http://ontology.dumontierlab.com/ModerateReductionInHamiltonAnxietyScore>
+         and <http://ontology.dumontierlab.com/ModerateReductionInHamiltonDepressionScore>
+         and <http://ontology.dumontierlab.com/PharmacodynamicMeasure>
+         and <http://ontology.dumontierlab.com/PulmonaryFunctionMeasure>
+         and <http://ontology.dumontierlab.com/QualityOfLife>
+         and <http://ontology.dumontierlab.com/RemissionFrequency>
+         and <http://ontology.dumontierlab.com/RemissionMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/MontgomeryAsbergDepressionRating>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/LowMontgomeryAsbergDepressionRating>,
+        <http://ontology.dumontierlab.com/MontgomeryAsbergDepressionMeasure>,
+        <http://ontology.dumontierlab.com/ModerateMontgomeryAsbergDepressionRating>
+    
+    
+Class: <http://ontology.dumontierlab.com/TissueMeasure>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/ASAAMeasure>
+         and <http://ontology.dumontierlab.com/BiologicalMeasure>
+         and <http://ontology.dumontierlab.com/BiophysicalMeasure>
+         and <http://ontology.dumontierlab.com/GeneExpressionMeasure>
+         and <http://ontology.dumontierlab.com/MolecularMeasure>
+         and <http://ontology.dumontierlab.com/ReninAngiotensinSystemMeasure>
+         and <http://ontology.dumontierlab.com/TaxonomicMeasure>,
+        <http://ontology.dumontierlab.com/ReninAngiotensinSystemMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/HighReductionInChildDepressionScore>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/ChildDepressionScoreDifference>
+    
+    
+Class: <http://ontology.dumontierlab.com/ZeroRemission>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/HamiltonDepressionScoreDifference>
+         and <http://ontology.dumontierlab.com/LowHamiltonDepressionScore>
+    
+    
+Class: <http://ontology.dumontierlab.com/DoseFrequency>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/PharmacokineticMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/HamiltonAnxietyScoreDifference>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/HighReductionInHamiltonAnxietyScore>,
+        <http://ontology.dumontierlab.com/AnxietyMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/DrugEfficacy>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/ZeroDrugEfficacy>
+    
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/DrugEfficacyMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/WeightMeasure>
+
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/BiophysicalMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/CoagulationProfile>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/BiologicalMeasure>
+         and <http://ontology.dumontierlab.com/BiophysicalMeasure>
+         and <http://ontology.dumontierlab.com/BloodSerumProteinCount>
+         and <http://ontology.dumontierlab.com/GenotypeMeasure>
+         and <http://ontology.dumontierlab.com/MolecularMeasure>
+         and <http://ontology.dumontierlab.com/PharmacodynamicMeasure>
+         and <http://ontology.dumontierlab.com/TissueMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/LowReductionInHamiltonDepressionScore>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/ASAAMeasure>
+         and <http://ontology.dumontierlab.com/ChildDepressionMeasure>
+         and <http://ontology.dumontierlab.com/ClinicalOutcomeMeasure>
+         and <http://ontology.dumontierlab.com/CognitiveMeasure>
+         and <http://ontology.dumontierlab.com/DepressionMeasure>
+         and <http://ontology.dumontierlab.com/HamiltonDepressionMeasure>
+         and <http://ontology.dumontierlab.com/HamiltonDepressionScoreDifference>
+         and <http://ontology.dumontierlab.com/LowHamiltonDepressionScore>
+         and <http://ontology.dumontierlab.com/PharmacodynamicMeasure>
+         and <http://ontology.dumontierlab.com/SideEffectMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/BloodPressure>
+
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/BiophysicalMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/PulmonaryFunctionMeasure>
+
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/BiophysicalMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/SatietyIncrease>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/DoseFrequency>
+         and <http://ontology.dumontierlab.com/Satiety>
+    
+    
+Class: <http://ontology.dumontierlab.com/DiseaseSusceptibilityOdds>
+
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/ClinicalOutcomeMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/LowHamiltonDepressionScore>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/HamiltonDepressionScore>
+    
+    
+Class: <http://ontology.dumontierlab.com/BoneMineralDensity>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/ASAAMeasure>
+         and <http://ontology.dumontierlab.com/BiologicalMeasure>
+         and <http://ontology.dumontierlab.com/BiophysicalMeasure>
+         and <http://ontology.dumontierlab.com/ClinicalOutcomeMeasure>
+         and <http://ontology.dumontierlab.com/GenotypeMeasure>
+         and <http://ontology.dumontierlab.com/MetabolicMeasure>
+         and <http://ontology.dumontierlab.com/MolecularMeasure>
+         and <http://ontology.dumontierlab.com/RemissionMeasure>
+         and <http://ontology.dumontierlab.com/TaxonomicMeasure>
+         and <http://ontology.dumontierlab.com/TissueMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/NormalGeneExpression>
+
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/GeneExpressionDifference>
+    
+    
+Class: <http://ontology.dumontierlab.com/ReninAngiotensinSystemMeasure>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/TissueMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/BloodSerumProteinCount>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/ASAAMeasure>
+         and <http://ontology.dumontierlab.com/BiologicalMeasure>
+         and <http://ontology.dumontierlab.com/BiophysicalMeasure>
+         and <http://ontology.dumontierlab.com/MetabolicMeasure>
+         and <http://ontology.dumontierlab.com/MolecularMeasure>
+         and <http://ontology.dumontierlab.com/PharmacodynamicMeasure>
+         and <http://ontology.dumontierlab.com/PharmacokineticMeasure>
+         and <http://ontology.dumontierlab.com/PopulationVariation>
+         and <http://ontology.dumontierlab.com/SideEffectMeasure>
+         and <http://ontology.dumontierlab.com/TissueMeasure>
+         and <http://ontology.dumontierlab.com/WeightMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/HamiltonDepressionScore>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/HighHamiltonDepressionScore>,
+        <http://ontology.dumontierlab.com/LowHamiltonDepressionScore>,
+        <http://ontology.dumontierlab.com/HamiltonDepressionMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/AnxietyMeasure>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/HamiltonAnxietyScore>,
+        <http://ontology.dumontierlab.com/ASAAMeasure>
+         and <http://ontology.dumontierlab.com/ClinicalOutcomeMeasure>
+         and <http://ontology.dumontierlab.com/CognitiveMeasure>
+         and <http://ontology.dumontierlab.com/SideEffectMeasure>,
+        <http://ontology.dumontierlab.com/HamiltonAnxietyScoreDifference>
+    
+    
+Class: <http://ontology.dumontierlab.com/SideEffectRate>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/ASAAMeasure>
+         and <http://ontology.dumontierlab.com/ChildDepressionMeasure>
+         and <http://ontology.dumontierlab.com/ExerciseResponse>
+         and <http://ontology.dumontierlab.com/GeneExpressionDifference>
+         and <http://ontology.dumontierlab.com/LowReductionInHamiltonDepressionScore>
+         and <http://ontology.dumontierlab.com/SatietyDecrease>
+         and <http://ontology.dumontierlab.com/SideEffectMeasure>
+         and <http://ontology.dumontierlab.com/TaxonomicMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/DepressionMeasure>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/MontgomeryAsbergDepressionMeasure>,
+        <http://ontology.dumontierlab.com/ASAAMeasure>
+         and <http://ontology.dumontierlab.com/ClinicalOutcomeMeasure>
+         and <http://ontology.dumontierlab.com/CognitiveMeasure>
+         and <http://ontology.dumontierlab.com/HighReductionInHamiltonDepressionScore>
+         and <http://ontology.dumontierlab.com/LowHamiltonDepressionScore>
+         and <http://ontology.dumontierlab.com/LowReductionInHamiltonDepressionScore>
+         and <http://ontology.dumontierlab.com/MontgomeryAsbergDepressionMeasure>
+         and <http://ontology.dumontierlab.com/SideEffectMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/GeneExpression>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/GeneExpressionMeasure>
+         and <http://ontology.dumontierlab.com/TaxonomicMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/SatietyMeasure>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/ASAAMeasure>
+         and <http://ontology.dumontierlab.com/BiologicalMeasure>
+         and <http://ontology.dumontierlab.com/BiophysicalMeasure>
+         and <http://ontology.dumontierlab.com/CognitiveMeasure>
+         and <http://ontology.dumontierlab.com/GeneExpressionMeasure>
+         and <http://ontology.dumontierlab.com/MetabolicMeasure>
+         and <http://ontology.dumontierlab.com/MolecularMeasure>
+         and <http://ontology.dumontierlab.com/PharmacodynamicMeasure>
+         and <http://ontology.dumontierlab.com/Satiety>
+         and <http://ontology.dumontierlab.com/TaxonomicMeasure>
+         and <http://ontology.dumontierlab.com/TissueMeasure>
+         and <http://ontology.dumontierlab.com/ZeroDrugEfficacy>,
+        <http://ontology.dumontierlab.com/Satiety>,
+        <http://ontology.dumontierlab.com/SatietyFrequency>,
+        <http://ontology.dumontierlab.com/SatietyDifference>
+    
+    
+Class: <http://ontology.dumontierlab.com/Dose>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/BiologicalMeasure>
+         and <http://ontology.dumontierlab.com/BloodPressure>
+         and <http://ontology.dumontierlab.com/BoneMineralDensity>
+         and <http://ontology.dumontierlab.com/DrugClearance>
+         and <http://ontology.dumontierlab.com/DrugEfficacy>
+         and <http://ontology.dumontierlab.com/GeneExpressionDifference>
+         and <http://ontology.dumontierlab.com/GeneExpressionMeasure>
+         and <http://ontology.dumontierlab.com/IncreasedGeneExpression>
+         and <http://ontology.dumontierlab.com/MolecularMeasure>
+         and <http://ontology.dumontierlab.com/PharmacodynamicMeasure>
+         and <http://ontology.dumontierlab.com/PharmacokineticMeasure>
+         and <http://ontology.dumontierlab.com/PopulationVariation>
+         and <http://ontology.dumontierlab.com/WeightMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/LowerDiseaseSusceptibilityOdds>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/LowDrugEfficacy>
+         and <http://ontology.dumontierlab.com/SimilarDiseaseSusceptibilityOdds>
+    
+    
+Class: <http://ontology.dumontierlab.com/SideEffectFrequency>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/ASAAMeasure>
+         and <http://ontology.dumontierlab.com/AsthmaFrequency>
+         and <http://ontology.dumontierlab.com/BiologicalMeasure>
+         and <http://ontology.dumontierlab.com/CognitiveMeasure>
+         and <http://ontology.dumontierlab.com/ERVisitFrequency>
+         and <http://ontology.dumontierlab.com/MyocardialInfarctionFrequency>
+         and <http://ontology.dumontierlab.com/PharmacodynamicMeasure>
+         and <http://ontology.dumontierlab.com/PopulationVariation>
+         and <http://ontology.dumontierlab.com/PulmonaryFunctionMeasure>
+         and <http://ontology.dumontierlab.com/SatietyDecrease>
+         and <http://ontology.dumontierlab.com/SideEffectMeasure>,
+        <http://ontology.dumontierlab.com/ExerciseResponse>
+         and <http://ontology.dumontierlab.com/HamiltonAnxietyScore>
+    
+    
+Class: <http://ontology.dumontierlab.com/MyocardialInfarctionFrequency>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/ASAAMeasure>
+         and <http://ontology.dumontierlab.com/BiologicalMeasure>
+         and <http://ontology.dumontierlab.com/BiophysicalMeasure>
+         and <http://ontology.dumontierlab.com/ClinicalOutcomeMeasure>
+         and <http://ontology.dumontierlab.com/DiseaseFrequency>
+         and <http://ontology.dumontierlab.com/ERVisitFrequency>
+         and <http://ontology.dumontierlab.com/SideEffectFrequency>
+         and <http://ontology.dumontierlab.com/SideEffectMeasure>
+         and <http://ontology.dumontierlab.com/TaxonomicMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/ZeroDrugEfficacy>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/DrugEfficacy>
+    
+    
+Class: <http://ontology.dumontierlab.com/Satiety>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/SatietyMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/ClinicalOutcomeMeasure>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/ASAAMeasure>
+         and <http://ontology.dumontierlab.com/BiologicalMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/LipidProfile>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/MetabolicMeasure>
+         and <http://ontology.dumontierlab.com/MolecularMeasure>
+         and <http://ontology.dumontierlab.com/TissueMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/BodyMassIndexDecrease>
+
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/BodyMassIndexDifference>
+    
+    
+Class: <http://ontology.dumontierlab.com/HighDrugEfficacy>
+
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/DrugEfficacy>
+    
+    
+Class: <http://ontology.dumontierlab.com/BodyMassIndexIncrease>
+
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/BodyMassIndexDifference>
+    
+    
+Class: <http://ontology.dumontierlab.com/HighReductionInHamiltonDepressionScore>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/HamiltonDepressionScoreDifference>
+    
+    
+Class: <http://ontology.dumontierlab.com/_24HourBloodPressure>
+
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/DailyBloodPressure>
+         and <http://ontology.dumontierlab.com/SideEffectMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/BodyMassIndex>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/BodyMassIndexMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/DrugEfficacyMeasure>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/PharmacodynamicMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/BiophysicalMeasure>
+
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/BiologicalMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/ChildDepressionScoreDifference>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/ASAAMeasure>
+         and <http://ontology.dumontierlab.com/ChildDepressionMeasure>
+         and <http://ontology.dumontierlab.com/ChildDepressionScore>
+         and <http://ontology.dumontierlab.com/ClinicalOutcomeMeasure>
+         and <http://ontology.dumontierlab.com/SideEffectMeasure>
+         and <http://ontology.dumontierlab.com/TaxonomicMeasure>,
+        <http://ontology.dumontierlab.com/ModerateReductionInChildDepressionScore>,
+        <http://ontology.dumontierlab.com/LowReductionInChildDepressionScore>,
+        <http://ontology.dumontierlab.com/HighReductionInChildDepressionScore>
+    
+    
+Class: <http://ontology.dumontierlab.com/LowReductionInHamiltonAnxietyScore>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/ASAAMeasure>
+         and <http://ontology.dumontierlab.com/AnxietyMeasure>
+         and <http://ontology.dumontierlab.com/BiologicalMeasure>
+         and <http://ontology.dumontierlab.com/ClinicalOutcomeMeasure>
+         and <http://ontology.dumontierlab.com/CognitiveMeasure>
+         and <http://ontology.dumontierlab.com/ExerciseResponse>
+         and <http://ontology.dumontierlab.com/HamiltonAnxietyScore>
+         and <http://ontology.dumontierlab.com/HamiltonAnxietyScoreDifference>
+         and <http://ontology.dumontierlab.com/PharmacodynamicMeasure>
+         and <http://ontology.dumontierlab.com/RemissionMeasure>
+         and <http://ontology.dumontierlab.com/SideEffectFrequency>
+         and <http://ontology.dumontierlab.com/SideEffectMeasure>
+         and <http://ontology.dumontierlab.com/TaxonomicMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/ChildDepressionMeasure>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/ChildDepressionScore>,
+        <http://ontology.dumontierlab.com/ASAAMeasure>
+         and <http://ontology.dumontierlab.com/ChildDepressionScore>
+         and <http://ontology.dumontierlab.com/ClinicalOutcomeMeasure>
+         and <http://ontology.dumontierlab.com/DepressionMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/HamiltonDepressionScoreDifference>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/HighReductionInHamiltonDepressionScore>,
+        <http://ontology.dumontierlab.com/ModerateReductionInHamiltonDepressionScore>,
+        <http://ontology.dumontierlab.com/ASAAMeasure>
+         and <http://ontology.dumontierlab.com/ChildDepressionMeasure>
+         and <http://ontology.dumontierlab.com/ChildDepressionScore>
+         and <http://ontology.dumontierlab.com/ChildDepressionScoreDifference>
+         and <http://ontology.dumontierlab.com/ClinicalOutcomeMeasure>
+         and <http://ontology.dumontierlab.com/DepressionMeasure>
+         and <http://ontology.dumontierlab.com/HamiltonDepressionMeasure>
+         and <http://ontology.dumontierlab.com/RemissionMeasure>
+         and <http://ontology.dumontierlab.com/SideEffectMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/HighRemissionOddsRatio>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/ASAAMeasure>
+         and <http://ontology.dumontierlab.com/AsthmaFrequency>
+         and <http://ontology.dumontierlab.com/BiologicalMeasure>
+         and <http://ontology.dumontierlab.com/BiophysicalMeasure>
+         and <http://ontology.dumontierlab.com/ClinicalOutcomeMeasure>
+         and <http://ontology.dumontierlab.com/CognitiveMeasure>
+         and <http://ontology.dumontierlab.com/DepressionMeasure>
+         and <http://ontology.dumontierlab.com/DiseaseFrequency>
+         and <http://ontology.dumontierlab.com/DrugEfficacy>
+         and <http://ontology.dumontierlab.com/ExerciseResponse>
+         and <http://ontology.dumontierlab.com/GeneExpressionMeasure>
+         and <http://ontology.dumontierlab.com/GenotypeMeasure>
+         and <http://ontology.dumontierlab.com/HamiltonDepressionMeasure>
+         and <http://ontology.dumontierlab.com/HighReductionInChildDepressionScore>
+         and <http://ontology.dumontierlab.com/HighReductionInHamiltonAnxietyScore>
+         and <http://ontology.dumontierlab.com/HighRemission>
+         and <http://ontology.dumontierlab.com/MolecularMeasure>
+         and <http://ontology.dumontierlab.com/PharmacodynamicMeasure>
+         and <http://ontology.dumontierlab.com/PulmonaryFunctionMeasure>
+         and <http://ontology.dumontierlab.com/RemissionFrequency>
+         and <http://ontology.dumontierlab.com/RemissionMeasure>
+         and <http://ontology.dumontierlab.com/RemissionOddsRatio>
+         and <http://ontology.dumontierlab.com/TaxonomicMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/LowDrugEfficacy>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/ASAAConcentrationDecrease>
+         and <http://ontology.dumontierlab.com/Dose>,
+        <http://ontology.dumontierlab.com/ASAAConcentrationDecrease>
+         and <http://ontology.dumontierlab.com/BiologicalMeasure>
+         and <http://ontology.dumontierlab.com/ClinicalOutcomeMeasure>
+         and <http://ontology.dumontierlab.com/CoagulationProfile>
+         and <http://ontology.dumontierlab.com/CognitiveMeasure>
+         and <http://ontology.dumontierlab.com/DecreasedGeneExpression>
+         and <http://ontology.dumontierlab.com/DrugEfficacy>
+         and <http://ontology.dumontierlab.com/GeneExpressionDifference>
+         and <http://ontology.dumontierlab.com/HigherDiseaseSusceptibiltyOdds>
+         and <http://ontology.dumontierlab.com/LowReductionInHamiltonDepressionScore>
+         and <http://ontology.dumontierlab.com/LowRemission>
+         and <http://ontology.dumontierlab.com/LowRemissionOddsRatio>
+         and <http://ontology.dumontierlab.com/PharmacodynamicMeasure>
+         and <http://ontology.dumontierlab.com/SatietyDecrease>
+         and <http://ontology.dumontierlab.com/WeightLoss>
+    
+    
+Class: <http://ontology.dumontierlab.com/ErythromycinClearanceMeasure>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/ModerateRemission>
+         and <http://ontology.dumontierlab.com/PharmacokineticMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/LowReductionInMontgomeryAsbergDepressionRating>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/HighReductionInMontgomeryAsbergDepressionRating>
+         and <http://ontology.dumontierlab.com/SatietyFrequency>
+    
+    
+Class: <http://ontology.dumontierlab.com/ModerateReductionInChildDepressionScore>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/ChildDepressionScoreDifference>
+    
+    
+Class: <http://ontology.dumontierlab.com/ASAAConcentration>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/ASAAMeasure>
+         and <http://ontology.dumontierlab.com/AnxietyMeasure>
+         and <http://ontology.dumontierlab.com/BiologicalMeasure>
+         and <http://ontology.dumontierlab.com/CoagulationProfile>
+         and <http://ontology.dumontierlab.com/CognitiveMeasure>
+         and <http://ontology.dumontierlab.com/ElectrocardiogramQTInterval>
+         and <http://ontology.dumontierlab.com/ExerciseResponse>
+         and <http://ontology.dumontierlab.com/PharmacodynamicMeasure>
+         and <http://ontology.dumontierlab.com/PlasmaDrugConcentration>
+         and <http://ontology.dumontierlab.com/PulmonaryFunctionMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/ModerateReductionInHamiltonDepressionScore>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/HamiltonDepressionScoreDifference>
+    
+    
+Class: <http://ontology.dumontierlab.com/SimilarRemissionOddsRatio>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/HighRemission>
+         and <http://ontology.dumontierlab.com/IncreasedGeneExpression>
+    
+    
+Class: <http://ontology.dumontierlab.com/EventFreeSurvivalTime>
+
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/ClinicalOutcomeMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/LowRemissionOddsRatio>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/ASAAMeasure>
+         and <http://ontology.dumontierlab.com/AnxietyMeasure>
+         and <http://ontology.dumontierlab.com/AsthmaFrequency>
+         and <http://ontology.dumontierlab.com/ClinicalOutcomeMeasure>
+         and <http://ontology.dumontierlab.com/CognitiveMeasure>
+         and <http://ontology.dumontierlab.com/DiseaseFrequency>
+         and <http://ontology.dumontierlab.com/GenotypeMeasure>
+         and <http://ontology.dumontierlab.com/LowRemission>
+         and <http://ontology.dumontierlab.com/MolecularMeasure>
+         and <http://ontology.dumontierlab.com/PharmacodynamicMeasure>
+         and <http://ontology.dumontierlab.com/PharmacokineticMeasure>
+         and <http://ontology.dumontierlab.com/PopulationVariation>
+         and <http://ontology.dumontierlab.com/PulmonaryFunctionMeasure>
+         and <http://ontology.dumontierlab.com/RemissionFrequency>
+         and <http://ontology.dumontierlab.com/RemissionMeasure>
+         and <http://ontology.dumontierlab.com/RemissionOddsRatio>
+    
+    
+Class: <http://ontology.dumontierlab.com/SideEffectMeasure>
+
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/ClinicalOutcomeMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/HomocysteineLevel>
+
+    SubClassOf: 
+        <http://ontology.dumontierlab.com/TissueMeasure>
+    
+    
+Class: <http://ontology.dumontierlab.com/RemissionOddsRatio>
+
+    EquivalentTo: 
+        <http://ontology.dumontierlab.com/ASAAMeasure>
+         and <http://ontology.dumontierlab.com/BiologicalMeasure>
+         and <http://ontology.dumontierlab.com/ClinicalOutcomeMeasure>
+         and <http://ontology.dumontierlab.com/DepressionMeasure>
+         and <http://ontology.dumontierlab.com/LowRemissionOddsRatio>
+         and <http://ontology.dumontierlab.com/PharmacodynamicMeasure>
+         and <http://ontology.dumontierlab.com/RemissionMeasure>
+         and <http://ontology.dumontierlab.com/ZeroRemission>
+    
+    
