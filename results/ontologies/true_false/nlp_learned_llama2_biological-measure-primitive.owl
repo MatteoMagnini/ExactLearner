@@ -1683,32 +1683,32 @@ Class: <http://ontology.dumontierlab.com/BodyMassIndexIncrease>
          and <http://ontology.dumontierlab.com/ASAAConcentrationIncrease>
          and <http://ontology.dumontierlab.com/AirwayResponsivenessUsingMethacholine>
          and <http://ontology.dumontierlab.com/BodyMassIndexDifference>
-         and <http://ontology.dumontierlab.com/CellCount>
          and <http://ontology.dumontierlab.com/ChildDepressionScore>
          and <http://ontology.dumontierlab.com/DailyBloodPressure>
+         and <http://ontology.dumontierlab.com/DepressionMeasure>
          and <http://ontology.dumontierlab.com/ERVisitFrequency>
          and <http://ontology.dumontierlab.com/ForcedExperiatoryVolume>
          and <http://ontology.dumontierlab.com/ForcedVitalCapacity>
          and <http://ontology.dumontierlab.com/GeneExpressionDifference>
-         and <http://ontology.dumontierlab.com/GeneExpressionMeasure>
          and <http://ontology.dumontierlab.com/HamiltonDepressionMeasure>
          and <http://ontology.dumontierlab.com/HighHamiltonDepressionScore>
          and <http://ontology.dumontierlab.com/HighReductionInHamiltonAnxietyScore>
          and <http://ontology.dumontierlab.com/HighReductionInMontgomeryAsbergDepressionRating>
          and <http://ontology.dumontierlab.com/HighRemission>
          and <http://ontology.dumontierlab.com/HigherDiseaseSusceptibiltyOdds>
+         and <http://ontology.dumontierlab.com/LowMontgomeryAsbergDepressionRating>
          and <http://ontology.dumontierlab.com/LowReductionInChildDepressionScore>
-         and <http://ontology.dumontierlab.com/MetabolicMeasure>
+         and <http://ontology.dumontierlab.com/LowRemission>
          and <http://ontology.dumontierlab.com/ModerateHamiltonDepressionScore>
          and <http://ontology.dumontierlab.com/ModerateReductionInHamiltonAnxietyScore>
          and <http://ontology.dumontierlab.com/MolecularMeasure>
          and <http://ontology.dumontierlab.com/MontgomeryAsbergDepressionRatingDifference>
          and <http://ontology.dumontierlab.com/NeoplasmFrequency>
          and <http://ontology.dumontierlab.com/PharmacokineticMeasure>
-         and <http://ontology.dumontierlab.com/PlasmaDrugConcentration>
          and <http://ontology.dumontierlab.com/QualityOfLife>
-         and <http://ontology.dumontierlab.com/RemissionMeasure>
+         and <http://ontology.dumontierlab.com/RemissionOddsRatio>
          and <http://ontology.dumontierlab.com/SatietyFrequency>
+         and <http://ontology.dumontierlab.com/TaxonomicMeasure>
          and <http://ontology.dumontierlab.com/WeigthDifference>
     
     

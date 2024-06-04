@@ -69,8 +69,7 @@ Class: owl:Thing
 Class: <http://www.semanticweb.org/ontologies/2014/3/university.owl#Project>
 
     EquivalentTo: 
-        <http://www.semanticweb.org/ontologies/2014/3/university.owl#Module>
-         and <http://www.semanticweb.org/ontologies/2014/3/university.owl#Person>
+        <http://www.semanticweb.org/ontologies/2014/3/university.owl#Person>
          and <http://www.semanticweb.org/ontologies/2014/3/university.owl#Professor>
          and <http://www.semanticweb.org/ontologies/2014/3/university.owl#Researcher>
          and <http://www.semanticweb.org/ontologies/2014/3/university.owl#Teacher>
@@ -115,7 +114,6 @@ Class: <http://www.semanticweb.org/ontologies/2014/3/university.owl#Person>
          and <http://www.semanticweb.org/ontologies/2014/3/university.owl#Project>
          and <http://www.semanticweb.org/ontologies/2014/3/university.owl#Researcher>
          and <http://www.semanticweb.org/ontologies/2014/3/university.owl#Teacher>
-         and <http://www.semanticweb.org/ontologies/2014/3/university.owl#University>
          and owl:Thing,
         <http://www.semanticweb.org/ontologies/2014/3/university.owl#Researcher>
     
