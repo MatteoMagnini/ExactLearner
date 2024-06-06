@@ -1,6 +1,25 @@
 import os
 from collections import defaultdict
 
+PRETTY_ONTOLOGY_NAMES = {
+    "animals.owl": "Animals",
+    "university.owl": "University",
+    "cl.owl": "Cell",
+    "generations.owl": "Generations",
+    "biosphere.owl": "Biosphere",
+    "football.owl": "Football",
+    "biological-measure-primitive.owl": "Bio-primitive",
+}
+
+PRETTY_MODEL_NAMES = {
+    "llama2:13b": "Llama2 (13b)",
+    "llama2": "Llama2 (7b)",
+    "llama3": "Llama3 (8b)",
+    "mistral": "Mistral (7b)",
+    "mixtral": "Mixtral (47b)",
+}
+
+
 def read_metrics_from_file(file_path):
     print(f"Reading metrics from file: {file_path}")
     with open(file_path, 'r') as file:
@@ -10,37 +29,49 @@ def read_metrics_from_file(file_path):
         print(f"Split metrics: {metrics}")
         return metrics
 
+
 def generate_latex_table(ontology_name, model_metrics):
     print(f"Generating LaTeX table for {ontology_name}")
     table = []
-    table.append("\\begin{table}[h!]")
+    table.append("\\begin{table*}[]")
     table.append("\\centering")
-    table.append(f"\\caption{{Metrics for {ontology_name}}}")
-    table.append("\\begin{tabular}{|l|l|c|c|c|c|}")
+    table.append("\\resizebox{\\textwidth}{!}{")
+    table.append("\\begin{tabular}{|p{2cm}|p{3cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|}")
     table.append("\\hline")
-    table.append("Model & Metric Type & Accuracy & Recall & Precision & F1-Score \\\\")
+    table.append("\\multicolumn{1}{|c|}{\\textbf{Model}} & \\multicolumn{1}{|c|}{\\textbf{Prompt \& Query}} & \\multicolumn{1}{c|}{\\textbf{Accuracy}} & \\multicolumn{1}{c|}{\\textbf{Recall}} & \\multicolumn{1}{c|}{\\textbf{Precision}} & \\multicolumn{1}{c|}{\\textbf{F1-Score}} \\\\")
     table.append("\\hline")
 
-    metric_types = ["M.Syntax", "NLP", "Enriched M.Syntax", "Enriched NLP"]
+    metric_types = ["M. OWL Syntax", "Natural Language", "E. M. OWL Syntax", "E. Natural Language"]
 
-    for model, metrics in model_metrics.items():
+    for j, (model, metrics) in enumerate(model_metrics.items()):
         for i in range(0, len(metrics), 4):
-            row = metrics[i:i+4]
+            row = metrics[i:i + 4]
             metric_type = metric_types[i // 4]
             print(f"Metrics for {model} - {metric_type}: {row}")
             if i == 0:
-                table.append(f"\\multirow{{4}}{{*}}{{{model}}} & {metric_type} & " + " & ".join(map(str, row)) + " \\\\ \\cline{2-6}")
-            elif metric_type == "Enriched NLP":
-                table.append(f"& {metric_type} & " + " & ".join(map(str, row)) + " \\\\ \\cline{1-6}")
+                x = "\\rowcolor[HTML]{EFEFEF}"
+                table.append(f"\\multirow{{4}}{{*}}{{{PRETTY_MODEL_NAMES[model]}}} & {x} {metric_type} & " + " & ".join(
+                    map(str, row)) + " \\\\ \\cline{2-6}")
+            elif metric_type == "E. Natural Language":
+                x = "\\rowcolor[HTML]{FFFFFF}"
+                table.append(f"& {x} {metric_type} & " + " & ".join(map(str, row)) + " \\\\ \\cline{1-6}")
             else:
-                table.append(f"& {metric_type} & " + " & ".join(map(str, row)) + " \\\\ \\cline{2-6}")
+                x = ""
+                if i == 4:
+                    x = "\\rowcolor[HTML]{FFFFFF}"
+                if i == 8:
+                    x = "\\rowcolor[HTML]{EFEFEF}"
+                table.append(f"& {x} {metric_type} & " + " & ".join(map(str, row)) + " \\\\ \\cline{2-6}")
+            if i == 12 and j != len(model_metrics) - 1:
+                table.append("\\hline")
 
-    table.append("\\end{tabular}")
-    table.append("\\end{table}")
-
+    table.append("\\end{tabular}}")
+    table.append(f"\\caption{{Metrics for {ontology_name} ontology}}")
+    table.append("\\end{table*}")
     latex_table = "\n".join(table)
     print(f"Generated LaTeX table:\n{latex_table}")
     return latex_table
+
 
 def calculate_averages(metrics_dict, group_by):
     print(f"Calculating averages grouped by {group_by}...")
@@ -60,12 +91,13 @@ def calculate_averages(metrics_dict, group_by):
 
     return averages
 
+
 def generate_average_latex_table(averages, caption, headers):
     print(f"Generating LaTeX table for {caption}")
     table = []
     table.append("\\begin{table}[h!]")
     table.append("\\centering")
-    table.append(f"\\caption{{{caption}}}")
+    table.append("\\resizebox{\\columnwidth}{!}{")
     table.append("\\begin{tabular}{|l|c|c|c|c|}")
     table.append("\\hline")
     table.append(" & ".join(headers) + " \\\\")
@@ -75,12 +107,14 @@ def generate_average_latex_table(averages, caption, headers):
         table.append(f"{group_key} & " + " & ".join(map(str, avg_metrics[:4])) + " \\\\")
         table.append("\\hline")
 
-    table.append("\\end{tabular}")
+    table.append("\\end{tabular}}")
+    table.append(f"\\caption{{{caption}}}")
     table.append("\\end{table}")
 
     latex_table = "\n".join(table)
     print(f"Generated LaTeX table for {caption}:\n{latex_table}")
     return latex_table
+
 
 def main():
     results_dir = "./analysis/"
@@ -90,10 +124,11 @@ def main():
 
     ontology_metrics = defaultdict(lambda: defaultdict(list))
 
-    for file_name in os.listdir(results_dir):
+    for file_name in sorted(os.listdir(results_dir)):
         if file_name.endswith(".txt"):
             print(f"Processing file: {file_name}")
             file_path = os.path.join(results_dir, file_name)
+            file_name = file_name.replace('-13b', '_13b')
             parts = file_name.replace('.txt', '').split('-')
             ontology_name = '-'.join(parts[:-1])
             model = parts[-1]
@@ -102,16 +137,16 @@ def main():
             metrics = read_metrics_from_file(file_path)
             metrics = [round(metric, 3) for metric in metrics]
 
-            metric_types = ["M.Syntax", "NLP", "Enriched M.Syntax", "Enriched NLP"]
+            metric_types = ["M. OWL Syntax", "Natural Language", "E. M. OWL Syntax", "E. Natural Language"]
             for i, metric_type in enumerate(metric_types):
                 key = (ontology_name, model, metric_type)
-                metrics_dict[key].append(metrics[i*4:i*4+4])
+                metrics_dict[key].append(metrics[i * 4:i * 4 + 4])
 
             ontology_metrics[ontology_name][model].extend(metrics)
             print(f"Finished processing file: {file_name}\n")
 
-    for ontology_name, model_metrics in ontology_metrics.items():
-        latex_table = generate_latex_table(ontology_name, model_metrics)
+    for ontology_name, model_metrics in sorted(ontology_metrics.items()):
+        latex_table = generate_latex_table(PRETTY_ONTOLOGY_NAMES[ontology_name], model_metrics)
         all_tables.append(latex_table)
 
     # Calculate and generate average tables
@@ -126,22 +161,14 @@ def main():
         print(f"Finished generating LaTeX table for average metrics by {headers[0].lower()}\n")
 
     # Combine all tables into a single LaTeX document
-    combined_latex_content = [
-        "\\documentclass{article}",
-        "\\usepackage{geometry}",
-        "\\geometry{a4paper}",
-        "\\usepackage{multirow}",
-        "\\begin{document}"
-    ]
-    combined_latex_content.extend(all_tables)
-    combined_latex_content.append("\\end{document}")
 
     latex_file_path = os.path.join("./results/latex-tables/", "combined_metrics.tex")
     print(f"Writing combined LaTeX tables to file: {latex_file_path}")
     os.makedirs(os.path.dirname(latex_file_path), exist_ok=True)
     with open(latex_file_path, 'w') as latex_file:
-        latex_file.write("\n".join(combined_latex_content))
+        latex_file.write("\n".join(all_tables))
     print("Finished writing combined LaTeX file")
+
 
 if __name__ == "__main__":
     main()

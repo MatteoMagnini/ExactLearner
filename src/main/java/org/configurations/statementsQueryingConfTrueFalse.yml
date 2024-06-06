@@ -1,6 +1,6 @@
 models:
   - "mistral"
-  #- "mixtral"
+  - "mixtral"
   - "llama2"
   - "llama2:13b"
   - "llama3"
@@ -11,8 +11,7 @@ ontologies:
   - "src/main/resources/ontologies/small/football.owl"
   - "src/main/resources/ontologies/small/cl.owl"
   - "src/main/resources/ontologies/medium/biosphere.owl"
-  #- "src/main/resources/ontologies/medium/bio-primitive.owl"
-  #- "src/main/resources/ontologies/large/el-galen.owl"
+  - "src/main/resources/ontologies/medium/biological-measure-primitive.owl"
 system: >
   Answer with only True or False.
 maxTokens: 2
