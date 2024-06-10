@@ -230,34 +230,34 @@ public class Learner implements BaseLearner {
 
                             }
                         }
+                    }
 
-                        if (nod.isRoot()) {
-                            ELTree newSubtree = new ELTree(nod.getEdges().get(j).getNode().transformToDescription());
-                            ELEdge newEdge = new ELEdge(nod.getEdges().get(j).getLabel(), newSubtree.getRootNode());
-                            int l = nod.getEdges().size();
-                            for (int k = 0; k < l; k++)
-                                nod.getEdges().remove(k);
-                            nod.getEdges().add(newEdge);
-                            if (!myEngineForT.entailed(myEngineForT.getSubClassAxiom(tree.transformToClassExpression(),
-                                    oldTree.transformToClassExpression()))) {// we are removing things with top, this
-                                // check is to avoid loop
-                                for (OWLClass cls : myEngineForT.getClassesInSignature()) {
-                                    myMetrics.setMembCount(myMetrics.getMembCount() + 3);
-                                    if (myEngineForT.entailed(myEngineForT.getSubClassAxiom(cl, cls))
-                                            && !myEngineForT.entailed(myEngineForT.getSubClassAxiom(cls, cl))
-                                            && isCounterExample(cls, nod.transformToDescription())) {
+                    if (nod.isRoot()) {
+                        ELTree newSubtree = new ELTree(nod.getEdges().get(j).getNode().transformToDescription());
+                        ELEdge newEdge = new ELEdge(nod.getEdges().get(j).getLabel(), newSubtree.getRootNode());
+                        int l = nod.getEdges().size();
+                        for (int k = 0; k < l; k++)
+                            nod.getEdges().remove(k);
+                        nod.getEdges().add(newEdge);
+                        if (!myEngineForT.entailed(myEngineForT.getSubClassAxiom(tree.transformToClassExpression(),
+                                oldTree.transformToClassExpression()))) {// we are removing things with top, this
+                            // check is to avoid loop
+                            for (OWLClass cls : myEngineForT.getClassesInSignature()) {
+                                myMetrics.setMembCount(myMetrics.getMembCount() + 3);
+                                if (myEngineForT.entailed(myEngineForT.getSubClassAxiom(cl, cls))
+                                        && !myEngineForT.entailed(myEngineForT.getSubClassAxiom(cls, cl))
+                                        && isCounterExample(cls, nod.transformToDescription())) {
 
-                                        myExpression = nod.transformToDescription();
-                                        myClass = cls;
-                                        rightDecompositionCounter++;
+                                    myExpression = nod.transformToDescription();
+                                    myClass = cls;
+                                    rightDecompositionCounter++;
 
-                                        return true;
-                                    }
+                                    return true;
                                 }
                             }
                         }
-                        tree = oldTree;
                     }
+                    tree = oldTree;
                 }
             }
         }
