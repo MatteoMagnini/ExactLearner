@@ -52,7 +52,6 @@ public class Launch {
             for (String className : classesNames) {
                 for (String className2 : classesNames) {
                     String message = className + " SubClassOf " + className2;
-                    //queries.put(new Pair<>(model, ontology), message);
                     runModel(model, ontology, system, maxTokens, type, message);
                 }
             }
@@ -79,15 +78,6 @@ public class Launch {
         }
         Task task = new ExperimentTask(type, model, ontology, message, system, work);
         Environment.run(task);
-        //moveFile(type, model, ontology, message, system);
-    }
-
-    private static void moveFile(String type, String model, String ontology, String message, String system) {
-        File f = new File("cache/" + SHA256Hash.sha256(type + model + ontology + message + system) + ".csv");
-        var ontName = ontology.split("/")[5].replace(".owl", "");
-        if (!new File("cache/" + type + "-" + model + "-" + ontName).exists())
-            new File("cache/" + type + "-" + model + "-" + ontName).mkdir();
-        f.renameTo(new File("cache/" + type + "-" + model + "-" + ontName + "/" + f.getName()));
     }
 
     private static Set<String> parseAxioms(Set<OWLAxiom> axioms) {

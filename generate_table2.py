@@ -1,4 +1,4 @@
-# Read from the configuration file and generate the table 3 in the paper
+# Read from the configuration file and generate the table 2 in the paper
 import os
 import yaml
 import pandas as pd
@@ -11,7 +11,7 @@ results_path = os.sep.join(["results", "axiomsQuerying"])
 answer_values = ["True", "False", "Unknown", "Logic Inconsistent Axioms"]
 short_answer_values = ["T", "F", "U", "L"]
 
-# Generate the table 3
+# Generate the table
 # We have 5 models (rows) and 5 ontologies (columns).
 # We omit the models names column.
 # Each ontology has 4 possible answers: True, False, Unknown, Logic Inconsistent Axioms.

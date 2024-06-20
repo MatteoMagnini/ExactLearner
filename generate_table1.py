@@ -1,4 +1,4 @@
-# Read from the configuration file and generate the table 3 in the paper
+# Read from the configuration file and generate the table 1 in the paper
 import os
 import yaml
 import pandas as pd
@@ -11,7 +11,7 @@ results_path = os.sep.join(["results", "axiomsQuerying"])
 answer_values = ["True", "False", "Unknown"]
 short_answer_values = ["T", "F", "U"]
 
-# Generate the table 3
+# Generate the table
 # We have 5 models (rows) and 5 ontologies (columns).
 # Each ontology has 3 possible answers: True, False, Unknown.
 # So in total we have 1 + 5 * 3 = 16 columns.
