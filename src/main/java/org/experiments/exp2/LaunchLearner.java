@@ -214,6 +214,10 @@ public abstract class LaunchLearner {
         if (newFile.exists()) {
             newFile.delete();
         }
+        // Create ontologies directory if it does not exist
+        if (!newFile.getParentFile().exists()) {
+            newFile.getParentFile().mkdirs();
+        }
         newFile.createNewFile();
         myManager.saveOntology(groundTruthOntology, manSyntaxFormat, IRI.create(newFile.toURI()));
     }

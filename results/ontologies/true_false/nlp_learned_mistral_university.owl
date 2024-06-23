@@ -11,9 +11,6 @@ Ontology:
 ObjectProperty: <http://www.semanticweb.org/ontologies/2014/3/university.owl#manages>
 
     
-ObjectProperty: <http://www.semanticweb.org/ontologies/2014/3/university.owl#employed_by>
-
-    
 ObjectProperty: <http://www.semanticweb.org/ontologies/2014/3/university.owl#teaches>
 
     
@@ -25,13 +22,11 @@ Class: <http://www.semanticweb.org/ontologies/2014/3/university.owl#University>
             (<http://www.semanticweb.org/ontologies/2014/3/university.owl#Person>
              and <http://www.semanticweb.org/ontologies/2014/3/university.owl#Researcher>
              and owl:Thing)),
-        <http://www.semanticweb.org/ontologies/2014/3/university.owl#Professor>
-         and <http://www.semanticweb.org/ontologies/2014/3/university.owl#Teacher>
-         and <http://www.semanticweb.org/ontologies/2014/3/university.owl#University>
+        <http://www.semanticweb.org/ontologies/2014/3/university.owl#University>
          and owl:Thing
-         and (<http://www.semanticweb.org/ontologies/2014/3/university.owl#teaches> some <http://www.semanticweb.org/ontologies/2014/3/university.owl#Researcher>)
          and (<http://www.semanticweb.org/ontologies/2014/3/university.owl#teaches> some 
-            (<http://www.semanticweb.org/ontologies/2014/3/university.owl#Project>
+            (<http://www.semanticweb.org/ontologies/2014/3/university.owl#Person>
+             and <http://www.semanticweb.org/ontologies/2014/3/university.owl#Researcher>
              and owl:Thing))
     
     
@@ -40,15 +35,6 @@ Class: owl:Thing
     
 Class: <http://www.semanticweb.org/ontologies/2014/3/university.owl#Project>
 
-    
-Class: <http://www.semanticweb.org/ontologies/2014/3/university.owl#Module>
-
-    SubClassOf: 
-        owl:Thing
-         and (<http://www.semanticweb.org/ontologies/2014/3/university.owl#manages> some 
-            (<http://www.semanticweb.org/ontologies/2014/3/university.owl#Project>
-             and owl:Thing))
-    
     
 Class: <http://www.semanticweb.org/ontologies/2014/3/university.owl#Professor>
 
@@ -59,24 +45,32 @@ Class: <http://www.semanticweb.org/ontologies/2014/3/university.owl#Professor>
          and <http://www.semanticweb.org/ontologies/2014/3/university.owl#Teacher>
          and <http://www.semanticweb.org/ontologies/2014/3/university.owl#University>
          and owl:Thing
-         and (<http://www.semanticweb.org/ontologies/2014/3/university.owl#manages> some 
-            (<http://www.semanticweb.org/ontologies/2014/3/university.owl#Module>
-             and <http://www.semanticweb.org/ontologies/2014/3/university.owl#Person>
-             and <http://www.semanticweb.org/ontologies/2014/3/university.owl#Researcher>
-             and <http://www.semanticweb.org/ontologies/2014/3/university.owl#Teacher>
-             and <http://www.semanticweb.org/ontologies/2014/3/university.owl#University>))
          and (<http://www.semanticweb.org/ontologies/2014/3/university.owl#teaches> some 
             (<http://www.semanticweb.org/ontologies/2014/3/university.owl#Person>
              and <http://www.semanticweb.org/ontologies/2014/3/university.owl#Researcher>
-             and <http://www.semanticweb.org/ontologies/2014/3/university.owl#Teacher>
-             and <http://www.semanticweb.org/ontologies/2014/3/university.owl#University>))
+             and <http://www.semanticweb.org/ontologies/2014/3/university.owl#Teacher>))
     
     
 Class: <http://www.semanticweb.org/ontologies/2014/3/university.owl#Teacher>
 
     EquivalentTo: 
         <http://www.semanticweb.org/ontologies/2014/3/university.owl#Person>
-         and <http://www.semanticweb.org/ontologies/2014/3/university.owl#Professor>
+         and <http://www.semanticweb.org/ontologies/2014/3/university.owl#Professor>,
+        <http://www.semanticweb.org/ontologies/2014/3/university.owl#University>
+         and owl:Thing
+         and (<http://www.semanticweb.org/ontologies/2014/3/university.owl#teaches> some 
+            (<http://www.semanticweb.org/ontologies/2014/3/university.owl#Person>
+             and <http://www.semanticweb.org/ontologies/2014/3/university.owl#Researcher>
+             and owl:Thing))
+    
+    
+Class: <http://www.semanticweb.org/ontologies/2014/3/university.owl#Module>
+
+    SubClassOf: 
+        owl:Thing
+         and (<http://www.semanticweb.org/ontologies/2014/3/university.owl#manages> some 
+            (<http://www.semanticweb.org/ontologies/2014/3/university.owl#Project>
+             and owl:Thing))
     
     
 Class: <http://www.semanticweb.org/ontologies/2014/3/university.owl#Person>
@@ -86,9 +80,5 @@ Class: <http://www.semanticweb.org/ontologies/2014/3/university.owl#Researcher>
 
     SubClassOf: 
         <http://www.semanticweb.org/ontologies/2014/3/university.owl#Person>
-         and owl:Thing
-         and (<http://www.semanticweb.org/ontologies/2014/3/university.owl#employed_by> some 
-            (<http://www.semanticweb.org/ontologies/2014/3/university.owl#Project>
-             and owl:Thing))
     
     

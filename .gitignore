@@ -99,3 +99,7 @@ nb-configuration.xml
 ## CUSTOM
 ##############################
 src/main/resources/openai-key.json
+
+
+
+[1] M. R. C. Duarte, B. Konev, A. Ozaki, Exactlearner: A tool for exact learning of ℰℒ ontologies, in KR 2018.

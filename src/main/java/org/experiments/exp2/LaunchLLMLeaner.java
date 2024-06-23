@@ -9,6 +9,7 @@ import org.exactlearner.engine.NLPLLMEngine;
 import org.exactlearner.learner.Learner;
 import org.exactlearner.oracle.Oracle;
 import org.exactlearner.utils.Metrics;
+import org.experiments.logger.SmartLogger;
 import org.pac.Pac;
 import org.semanticweb.owlapi.model.*;
 import org.utility.OntologyManipulator;
@@ -32,8 +33,8 @@ public class LaunchLLMLeaner extends LaunchLearner {
     private double totalMembershipQ = 0;
     private double totalEquivalenceQ = 0;
 
-    private double epsilon = 0.1;
-    private double delta = 0.2;
+    private double epsilon = 0.2;
+    private double delta = 0.1;
 
 
     public static void main(String[] args) {
@@ -60,7 +61,7 @@ public class LaunchLLMLeaner extends LaunchLearner {
         if (args.length > 2) {
             delta = Double.parseDouble(args[2]);
         }
-        //SmartLogger.checkCachedFiles();
+        SmartLogger.checkCachedFiles();
         loadConfiguration(configurationFile);
         try {
             for (int i = 1; i <= 2; i++) {

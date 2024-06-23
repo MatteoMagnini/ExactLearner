@@ -37,7 +37,6 @@ public class AskStatement {
 
     private void askStatement(Integer seed, String model, String ontology, String system, int maxTokens, String type) {
         var parser = new OWLParserImpl(ontology, OWLManager.createOWLOntologyManager());
-        //epsilon and gamma = 0.01
         Pac pac = new Pac(parser.getClassesNamesAsString(), parser.getObjectProperties().stream().map(Object::toString).map(s -> s.split("#")[1].replace(">", "")).collect(Collectors.toSet()), 0.05, 0.1, 2, seed);
         for (int i = 1; i <= pac.getNumberOfSamples(); i++) {
             System.out.println("Training samples done: " + i + "/" + pac.getNumberOfSamples());

@@ -42,9 +42,10 @@ Class: <http://obo.sourceforge.net/cl.owl#CirculatingCell>
     EquivalentTo: 
         <http://obo.sourceforge.net/cl.owl#Cell>
          and <http://obo.sourceforge.net/cl.owl#CellByDevelopmentStage>,
-        <http://obo.sourceforge.net/cl.owl#CellByClass>,
         <http://obo.sourceforge.net/cl.owl#Cell>
-         and <http://obo.sourceforge.net/cl.owl#CellByOrganism>
+         and <http://obo.sourceforge.net/cl.owl#CellByOrganism>,
+        <http://obo.sourceforge.net/cl.owl#Cell>
+         and <http://obo.sourceforge.net/cl.owl#CellByClass>
     
     
 Class: <http://obo.sourceforge.net/cl.owl#PlantCell>
@@ -58,20 +59,23 @@ Class: <http://obo.sourceforge.net/cl.owl#PlantCell>
          and <http://obo.sourceforge.net/cl.owl#PhotosyntheticCell>
          and <http://obo.sourceforge.net/cl.owl#StructuralCell>,
         <http://obo.sourceforge.net/cl.owl#Cell>
-         and <http://obo.sourceforge.net/cl.owl#CellByClass>
+         and <http://obo.sourceforge.net/cl.owl#MatureCell>
     
     
 Class: <http://obo.sourceforge.net/cl.owl#CellByClass>
 
     EquivalentTo: 
-        <http://obo.sourceforge.net/cl.owl#PhotosyntheticCell>,
-        <http://obo.sourceforge.net/cl.owl#CirculatingCell>
+        <http://obo.sourceforge.net/cl.owl#PhotosyntheticCell>
+    
+    SubClassOf: 
+        <http://obo.sourceforge.net/cl.owl#Cell>
     
     
 Class: <http://obo.sourceforge.net/cl.owl#MatureCell>
 
     EquivalentTo: 
-        <http://obo.sourceforge.net/cl.owl#CellByDevelopmentStage>
+        <http://obo.sourceforge.net/cl.owl#Cell>
+         and <http://obo.sourceforge.net/cl.owl#CirculatingCell>
     
     
 Class: <http://obo.sourceforge.net/cl.owl#AnimalCell>
@@ -116,8 +120,7 @@ Class: <http://obo.sourceforge.net/cl.owl#MioBlast>
 Class: <http://obo.sourceforge.net/cl.owl#CellByDevelopmentStage>
 
     EquivalentTo: 
-        <http://obo.sourceforge.net/cl.owl#InMatureCell>,
-        <http://obo.sourceforge.net/cl.owl#MatureCell>
+        <http://obo.sourceforge.net/cl.owl#InMatureCell>
     
     SubClassOf: 
         <http://obo.sourceforge.net/cl.owl#Cell>
@@ -154,9 +157,8 @@ Class: <http://obo.sourceforge.net/cl.owl#StructuralCell>
     
 Class: <http://obo.sourceforge.net/cl.owl#Neuron>
 
-    EquivalentTo: 
-        <http://obo.sourceforge.net/cl.owl#CellByClass>
-         and <http://obo.sourceforge.net/cl.owl#ElectricallyActiveCell>
+    SubClassOf: 
+        <http://obo.sourceforge.net/cl.owl#ElectricallyActiveCell>
     
     
 Class: <http://obo.sourceforge.net/cl.owl#ChondroCyte>

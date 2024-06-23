@@ -235,10 +235,10 @@ public class Learner implements BaseLearner {
                     if (nod.isRoot()) {
                         ELTree newSubtree = new ELTree(nod.getEdges().get(j).getNode().transformToDescription());
                         ELEdge newEdge = new ELEdge(nod.getEdges().get(j).getLabel(), newSubtree.getRootNode());
-                        int l = nod.getEdges().size();
-                        for (int k = 0; k < l; k++)
-                            nod.getEdges().remove(k);
-                        nod.getEdges().add(newEdge);
+                        if (nod.getEdges().size() > 1) {
+                            nod.getEdges().removeAll(nod.getEdges());
+                            nod.getEdges().add(newEdge);
+                        }
                         if (!myEngineForT.entailed(myEngineForT.getSubClassAxiom(tree.transformToClassExpression(),
                                 oldTree.transformToClassExpression()))) {// we are removing things with top, this
                             // check is to avoid loop

@@ -123,7 +123,6 @@ Class: <http://obo.sourceforge.net/cl.owl#Miocyte>
          and <http://obo.sourceforge.net/cl.owl#MatureCell>
          and <http://obo.sourceforge.net/cl.owl#MioBlast>
          and <http://obo.sourceforge.net/cl.owl#Neuron>
-         and <http://obo.sourceforge.net/cl.owl#Osteocyte>
          and <http://obo.sourceforge.net/cl.owl#PhotoreceptorCell>
          and <http://obo.sourceforge.net/cl.owl#SclerenchymaCell>
          and <http://obo.sourceforge.net/cl.owl#StructuralCell>
@@ -132,7 +131,6 @@ Class: <http://obo.sourceforge.net/cl.owl#Miocyte>
 Class: <http://obo.sourceforge.net/cl.owl#InMatureCell>
 
     EquivalentTo: 
-        <http://obo.sourceforge.net/cl.owl#ChondroBlast>,
         <http://obo.sourceforge.net/cl.owl#MioBlast>,
         <http://obo.sourceforge.net/cl.owl#CellByDevelopmentStage>
     
@@ -146,7 +144,19 @@ Class: <http://obo.sourceforge.net/cl.owl#Osteocyte>
 Class: <http://obo.sourceforge.net/cl.owl#ChondroBlast>
 
     EquivalentTo: 
-        <http://obo.sourceforge.net/cl.owl#InMatureCell>
+        <http://obo.sourceforge.net/cl.owl#AnimalCell>
+         and <http://obo.sourceforge.net/cl.owl#Cell>
+         and <http://obo.sourceforge.net/cl.owl#CellByClass>
+         and <http://obo.sourceforge.net/cl.owl#CellByDevelopmentStage>
+         and <http://obo.sourceforge.net/cl.owl#CellByOrganism>
+         and <http://obo.sourceforge.net/cl.owl#ChondroCyte>
+         and <http://obo.sourceforge.net/cl.owl#CirculatingCell>
+         and <http://obo.sourceforge.net/cl.owl#InMatureCell>
+         and <http://obo.sourceforge.net/cl.owl#LeafCell>
+         and <http://obo.sourceforge.net/cl.owl#MioBlast>
+         and <http://obo.sourceforge.net/cl.owl#Miocyte>
+         and <http://obo.sourceforge.net/cl.owl#SclerenchymaCell>
+         and <http://obo.sourceforge.net/cl.owl#StructuralCell>
     
     
 Class: <http://obo.sourceforge.net/cl.owl#MioBlast>
