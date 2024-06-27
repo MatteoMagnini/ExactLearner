@@ -11,7 +11,7 @@ public class Environment {
         String filename = task.getFileName();
         // If filename is already present in the cache, then skip the task
         if (isFileInCache(filename)) {
-            System.out.println("Task " + task.getTaskName() + " is already present in the cache.");
+            //System.out.println("Task " + task.getTaskName() + " is already present in the cache.");
         } else {
             // Enable file logging
             try {
