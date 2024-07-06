@@ -13,6 +13,7 @@ public class OllamaWorkload implements BaseWorkload {
     private final String query;
     private final int maxTokens;
     public static final List<String> supportedModels = List.of("mistral", "mixtral", "llama2", "llama2:13b","llama2:70b","megadolphin","llama3","llava-llama3","llama3:70b","llama3-chatqa","dolphin-llama3");
+    public static final int timeout = 1000 * 60; // 1 minute
 
     public OllamaWorkload(String model, String system, String query,  int maxTokens) {
         this.model = model;
@@ -33,7 +34,7 @@ public class OllamaWorkload implements BaseWorkload {
             int maxRetries = 2; // So the total number of retries is 3
             for (int i = 0; i < maxRetries; i++) {
                 try {
-                    Thread.sleep(100);
+                    Thread.sleep(timeout);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

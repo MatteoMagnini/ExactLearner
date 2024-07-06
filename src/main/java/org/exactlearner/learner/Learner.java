@@ -7,10 +7,7 @@ import org.exactlearner.tree.ELTree;
 import org.exactlearner.utils.Metrics;
 import org.semanticweb.owlapi.model.*;
 
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 public class Learner implements BaseLearner {
 
@@ -191,14 +188,13 @@ public class Learner implements BaseLearner {
         saturateHypothesisRight(myClass, myExpression);
         // Check if a pair of myClass and myExpression has been previously found
         // In this case there is a loop and we should stop
-        HashSet<Pair<OWLClass, OWLClassExpression>> visited = new HashSet<>();
-        int i = 0;
+        List<Pair<OWLClass, OWLClassExpression>> visited = new ArrayList<>();
+        visited.add(new Pair<>(myClass, myExpression));
         while (decomposingRight(myClass, myExpression)) {
             if (visited.contains(new Pair<>(myClass, myExpression))) {
                 break;
             }
             visited.add(new Pair<>(myClass, myExpression));
-            i++;
         }
         return myEngineForT.getSubClassAxiom(myClass, myExpression);
     }
@@ -260,9 +256,6 @@ public class Learner implements BaseLearner {
                                         && !myEngineForT.entailed(myEngineForT.getSubClassAxiom(cls, cl))
                                         && isCounterExample(cls, nod.transformToDescription())) {
 
-                                    if (myExpression.equals(nod.transformToDescription()) && myClass.equals(cls)) {
-                                        return false;
-                                    }
                                     myExpression = nod.transformToDescription();
                                     myClass = cls;
                                     rightDecompositionCounter++;

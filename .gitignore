@@ -3,9 +3,11 @@ cache2
 table1.tex
 table2.tex
 table3.tex
-results/*
-!results/ontologies/rich_prompt/*
-!results/ontologies/true_false/*
+results/axiomsQuerying
+results/classesQuerying
+results/latex-tables
+results/old
+results/ontologies/*.owl
 warnings.txt
 logging_file_name.txt
 
