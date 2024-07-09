@@ -15,23 +15,19 @@ public class Metrics {
     public static double calculatePrecision(int[][] confusionMatrix) {
         int tp = confusionMatrix[0][0];
         int fp = confusionMatrix[1][0];
-        return (double) tp / (tp + fp);
+        return (tp + fp) > 0 ? (double) tp / (tp + fp) : 0.0;
     }
 
     public static double calculateRecall(int[][] confusionMatrix) {
         int tp = confusionMatrix[0][0];
         int fn = confusionMatrix[0][1] + confusionMatrix[0][2];
-        return (double) tp / (tp + fn);
+        return (tp + fn) > 0 ? (double) tp / (tp + fn) : 0.0;
     }
 
     public static double calculateF1Score(int[][] confusionMatrix) {
         double precision = calculatePrecision(confusionMatrix);
         double recall = calculateRecall(confusionMatrix);
-        if (precision + recall == 0) {
-            return 0.0; // Avoid division by zero
-        } else {
-            return 2.0 * (precision * recall) / (precision + recall);
-        }
+        return (precision + recall) > 0 ? 2 * precision * recall / (precision + recall) : 0.0;
     }
 
     public static double calculateLogLoss(int[][] confusionMatrix) {
