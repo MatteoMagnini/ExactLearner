@@ -1,6 +1,7 @@
 package org.analysis.exp2;
 
 import org.analysis.common.Metrics;
+import org.apache.jena.base.Sys;
 import org.configurations.Configuration;
 import org.semanticweb.HermiT.Reasoner;
 import org.semanticweb.owlapi.apibinding.OWLManager;
@@ -15,7 +16,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
+
+import static java.lang.Thread.sleep;
 
 public class ResultAnalyzer {
 
@@ -29,7 +34,9 @@ public class ResultAnalyzer {
     private final OWLOntology expectedOntology;
     private final OWLOntology enrichedPredictedOntology;
     private final OWLOntology enrichedNlpPredictedOntology;
-    private final Set<String> allPossibleAxioms;
+    private final List<String> allPossibleAxioms;
+
+    private final List<Boolean> inferredAxiomsByExpectedOntology = new ArrayList<>();
 
     private final String model;
     private final String ontology;
@@ -44,14 +51,20 @@ public class ResultAnalyzer {
         this.nlpPredictedOntology = loadOntology(TF_TYPE, "nlp_", model);
         this.enrichedPredictedOntology = loadOntology(RICH_TYPE, "manchester_", model);
         this.enrichedNlpPredictedOntology = loadOntology(RICH_TYPE, "nlp_", model);
-        this.allPossibleAxioms = OntologyManipulator.getAllPossibleAxiomsCombinations(expectedOntology);
+        this.allPossibleAxioms = OntologyManipulator.getAllPossibleAxiomsCombinations(expectedOntology).stream().sorted().toList();
     }
 
     public void run() {
-        compareOntologies();
+        try {
+            compareOntologies();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
-    private void compareOntologies() {
+    private void compareOntologies() throws InterruptedException {
+        System.out.println("Evaluation using Ontology " + ontology + " and Model " + model + "...");
+        long startingTime = System.currentTimeMillis();
         int[][] confusionMatrix = new int[3][3];
         int[][] nlpConfusionMatrix = new int[3][3];
         int[][] enrichedConfusionMatrix = new int[3][3];
@@ -63,29 +76,35 @@ public class ResultAnalyzer {
         Reasoner enrichedPredictedReasoner = new Reasoner(enrichedPredictedOntology);
         Reasoner enrichedNlpPredictedReasoner = new Reasoner(enrichedNlpPredictedOntology);
 
-        updateConfusionMatrix(predictedReasoner, expectedReasoner, confusionMatrix);
-        updateConfusionMatrix(enrichedPredictedReasoner, expectedReasoner, enrichedConfusionMatrix);
-        updateConfusionMatrix(nlpPredictedReasoner, expectedReasoner, nlpConfusionMatrix);
-        updateConfusionMatrix(enrichedNlpPredictedReasoner, expectedReasoner, enrichedNlpConfusionMatrix);
+        // Precompute a boolean array of all inferred axioms for the expected ontology
+        allPossibleAxioms.forEach(ax -> {
+            var axiom = OntologyManipulator.createAxiomFromString(ax, expectedOntology);
+            inferredAxiomsByExpectedOntology.add(expectedReasoner.isEntailed(axiom));
+        });
+
+        updateConfusionMatrix(predictedReasoner, confusionMatrix);
+        updateConfusionMatrix(enrichedPredictedReasoner, enrichedConfusionMatrix);
+        updateConfusionMatrix(nlpPredictedReasoner, nlpConfusionMatrix);
+        updateConfusionMatrix(enrichedNlpPredictedReasoner, enrichedNlpConfusionMatrix);
 
         printResults(confusionMatrix, nlpConfusionMatrix, enrichedConfusionMatrix, enrichedNlpConfusionMatrix);
+        System.out.println("Evaluation completed in " + (System.currentTimeMillis() - startingTime) / 1000 + " seconds.");
+        System.out.println("Waiting for 2 minutes to cool down...");
+        sleep(1000 * 60 * 2);
     }
 
-    private void updateConfusionMatrix(Reasoner predictedReasoner, Reasoner expectedReasoner, int[][] confusionMatrix) {
-
+    private void updateConfusionMatrix(Reasoner predictedReasoner, int[][] confusionMatrix) {
+        List<Boolean> inferredAxiomsByPredictedOntology = new ArrayList<>();
         allPossibleAxioms.forEach(ax -> {
-            System.out.println("CHECKING "+ ax.toLowerCase());
             var axiom = OntologyManipulator.createAxiomFromString(ax, expectedOntology);
-            if (expectedReasoner.isEntailed(axiom) && predictedReasoner.isEntailed(axiom)) {
-                confusionMatrix[0][0]++; //TP
-            } else if (expectedReasoner.isEntailed(axiom) && !predictedReasoner.isEntailed(axiom)) {
-                confusionMatrix[1][0]++; //FN
-            } else if (predictedReasoner.isEntailed(axiom) && !expectedReasoner.isEntailed(axiom)) {
-                confusionMatrix[0][1]++; //FP
-            } else {
-                confusionMatrix[1][1]++; //TN
-            }
+            inferredAxiomsByPredictedOntology.add(predictedReasoner.isEntailed(axiom));
         });
+        // Update confusion matrix
+        for (int i = 0; i < inferredAxiomsByExpectedOntology.size(); i++) {
+            int row = inferredAxiomsByExpectedOntology.get(i) ? 1 : 0;
+            int col = inferredAxiomsByPredictedOntology.get(i) ? 1 : 0;
+            confusionMatrix[row][col]++;
+        }
     }
 
     private void printResults(int[][] confusionMatrix, int[][] nlpConfusionMatrix, int[][] enrichedConfusionMatrix, int[][] enrichedNlpConfusionMatrix) {
