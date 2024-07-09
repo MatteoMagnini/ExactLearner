@@ -79,7 +79,7 @@ public class Pac {
         return statement;
     }
 
-    private double computeInstanceSpaceSize() {
+    public double computeInstanceSpaceSize() {
         return pow(this.classes.size(), 3) + 2 * (pow(this.classes.size(), 2) * this.objectProperties.size());
     }
 

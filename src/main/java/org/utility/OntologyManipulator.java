@@ -3,18 +3,23 @@ package org.utility;
 import org.apache.jena.atlas.lib.Pair;
 import org.coode.owlapi.manchesterowlsyntax.ManchesterOWLSyntaxEditorParser;
 import org.exactlearner.parser.OWLParserImpl;
+import org.semanticweb.HermiT.Reasoner;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.expression.OWLEntityChecker;
 import org.semanticweb.owlapi.expression.ParserException;
 import org.semanticweb.owlapi.expression.ShortFormEntityChecker;
 import org.semanticweb.owlapi.model.*;
-import org.semanticweb.owlapi.util.BidirectionalShortFormProviderAdapter;
-import org.semanticweb.owlapi.util.SimpleShortFormProvider;
+import org.semanticweb.owlapi.reasoner.InferenceType;
+import org.semanticweb.owlapi.reasoner.OWLReasoner;
+import org.semanticweb.owlapi.reasoner.OWLReasonerFactory;
+import org.semanticweb.owlapi.util.*;
 import uk.ac.manchester.cs.owl.owlapi.OWLDataFactoryImpl;
 import uk.ac.manchester.cs.owl.owlapi.mansyntaxrenderer.ManchesterOWLSyntaxOWLObjectRendererImpl;
 
 import java.io.File;
 import java.nio.file.FileSystems;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -29,6 +34,25 @@ public class OntologyManipulator {
             throw new RuntimeException(e);
         }
         return OntologyManipulator.filterUnusedAxioms(ontology.getAxioms()).size();
+    }
+
+    public static OWLOntology getInferredOntology(String ontologyName) throws OWLOntologyCreationException {
+        OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
+        OWLOntology ontology = manager.loadOntologyFromOntologyDocument(new File(ontologyName));
+        OWLReasonerFactory reasonerFactory = new Reasoner.ReasonerFactory();
+        OWLReasoner reasoner = reasonerFactory.createReasoner(ontology);
+        // Precompute inferences
+        reasoner.precomputeInferences(InferenceType.CLASS_HIERARCHY, InferenceType.OBJECT_PROPERTY_HIERARCHY);
+        // Generate inferred axioms
+        List<InferredAxiomGenerator<? extends OWLAxiom>> generators = new ArrayList<>();
+        generators.add(new InferredSubClassAxiomGenerator());
+        generators.add(new InferredEquivalentClassAxiomGenerator());
+        // Create the inferred ontology
+        InferredOntologyGenerator iog = new InferredOntologyGenerator(reasoner, generators);
+        OWLOntology inferredOntology = manager.createOntology();
+        iog.fillOntology(manager, inferredOntology);
+        manager.addAxioms(inferredOntology, ontology.getAxioms());
+        return inferredOntology;
     }
 
     public static OWLAxiom createAxiomFromString(String query, OWLOntology ontology) {
@@ -112,25 +136,19 @@ public class OntologyManipulator {
         return "results" + separator + "axiomsQuerying" + separator + model.replace(":", "-") + '_' + shortOntology;
     }
 
-    public static Set<String> getAllPossibleAxiomsCombinations(OWLOntology expectedOntology) {
-        var parser = new OWLParserImpl(expectedOntology);
-        var classes = parser.getClassesNamesAsString().stream().filter(s -> !s.toLowerCase().contains("thin")).distinct().toList();
-        var properties = parser.getObjectPropertiesAsString();
+    public static String axiomToString(OWLAxiom axiom) {
+        return new ManchesterOWLSyntaxOWLObjectRendererImpl().render(axiom).replace("SubClassOf", "SubClassOf:");
+    }
+
+    public static Boolean isAxiomInTheRightFormat(String axiom) {
         /*There are three types of statements:
-        1. (A ∩ B) ⊑ C
-        2. B ⊑ ∃R.A
-        3. ∃R.A ⊑ B
-        * Generate all possible combinations of these statements
-         */
-        var statement1 = classes.stream().flatMap(c1 -> classes.stream().flatMap(c2 -> classes.stream().map(c3 -> "( " + c1 + " and " + c2 + " ) SubClassOf: " + c3)))
-                .collect(Collectors.toSet());
-        var statement2 = classes.stream().flatMap(c1 -> properties.stream().flatMap(p -> classes.stream().map(c2 -> c1 + " SubClassOf: " + p + " some " + c2)))
-                .collect(Collectors.toSet());
-        var statement3 = classes.stream().flatMap(c1 -> properties.stream().flatMap(p -> classes.stream().map(c2 -> p + " some " + c1 + " SubClassOf: " + c2)))
-                .collect(Collectors.toSet());
-        //check empty set
-        statement1.addAll(statement2);
-        statement1.addAll(statement3);
-        return statement1;
+        1. (A ∩ B) ⊑ C --- "( " + c1 + " and " + c2 + " ) SubClassOf: " + c3
+        2. B ⊑ ∃R.A --- c1 + " SubClassOf: " + p + " some " + c2
+        3. ∃R.A ⊑ B --- p + " some " + c1 + " SubClassOf: " + c2
+        */
+        String word = "[a-zA-Z0-9_]+";
+        return axiom.matches("\\( " + word + " and " + word + " \\) SubClassOf: " + word)
+                || axiom.matches(word + " SubClassOf: " + word + " some " + word)
+                || axiom.matches(word + " some " + word + " SubClassOf: " + word);
     }
 }
