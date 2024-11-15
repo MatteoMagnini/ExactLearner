@@ -1,12 +1,9 @@
 package org.experiments.logger;
 
-import java.io.File;
-import java.io.IOException;
-import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.*;
 import java.util.logging.FileHandler;
 import java.util.logging.Handler;
 import java.util.logging.Logger;
@@ -19,6 +16,8 @@ public class SmartLogger {
     private static final String FILE_EXTENSION = ".csv";
     private static final String WARNING_FILE = "warnings.txt";
 
+    private static final Set<String> deletionSet = new HashSet<>();
+
     public static String getFullFileName(String filename) {
         return CACHE_DIR + System.getProperty("file.separator") + filename + FILE_EXTENSION;
     }
@@ -28,7 +27,7 @@ public class SmartLogger {
     }
 
     public static void log(String message) {
-        logger.info(message);
+        logger.info(message+"\n");
     }
 
     public static void removeFileFromCache(String filename) {
@@ -58,7 +57,7 @@ public class SmartLogger {
         }
         try {
             // Create a new FileHandler with a custom formatter
-            Handler fileHandler = new FileHandler(getFullFileName(filename, cache));
+            Handler fileHandler = new FileHandler(getFullFileName(filename, cache), true);
             fileHandler.setFormatter(new SimpleFormatter() {
                 @Override
                 public String format(java.util.logging.LogRecord record) {
@@ -109,6 +108,28 @@ public class SmartLogger {
     }
 
     /**
+     * Check if the query is already present in the cache
+     *
+     * @param filename the name of the file to check
+     * @param query the query to check
+     * @return true if the query is present in the cache, false otherwise
+     */
+    public static boolean isQueryInCache(String filename, String query) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(getFullFileName(filename)))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] columns = line.split(",");
+                if (columns.length == 2 && columns[0].trim().equals(query.trim())) {
+                    return true;
+                }
+            }
+        } catch (IOException e) {
+            System.err.println("Error reading file: " + e.getMessage());
+        }
+        return false;
+    }
+
+    /**
      * Check cache's files integrity
      * If a file does not contain the answer, then remove it from the cache.
      * If the answer does not contain "True" or "False", then append the file name to the warning file.
@@ -117,46 +138,64 @@ public class SmartLogger {
         File cacheDir = new File(CACHE_DIR);
         if (cacheDir.exists()) {
             List<File> directories = Arrays.stream(Objects.requireNonNull(cacheDir.listFiles())).toList();
-            ArrayList<String> warnings = new ArrayList<>();
             if (!directories.isEmpty()) {
                 directories.parallelStream().forEach(dir -> {
-                    if(dir.isDirectory()){
+                    if (dir.isDirectory()) {
                         var files = Arrays.stream(Objects.requireNonNull(dir.listFiles())).toList();
-                        files.parallelStream().forEach(file -> {
-                            warnings.addAll(readFilesAndCheckForError(file));
-                        });
-                    }else{
-                        warnings.addAll(readFilesAndCheckForError(dir));
+                        files.parallelStream().forEach(SmartLogger::fixCachedFile);
+                    } else {
+                        fixCachedFile(dir);
                     }
                 });
-            }
-            if (!warnings.isEmpty()) {
-                try {
-                    java.nio.file.Files.write(java.nio.file.Paths.get(WARNING_FILE), warnings);
-                } catch (IOException e) {
-                    System.err.println("Error writing warnings file: " + e.getMessage());
-                }
             }
         }
     }
 
-    private static ArrayList<String> readFilesAndCheckForError(File file) {
-        ArrayList<String> warnings = new ArrayList<>();
+    /**
+     * Fix the file by removing empty lines and lines with empty second column
+     * If the file is empty, then remove it
+     *
+     * @param file the file to fix
+     */
+    private static void fixCachedFile(File file) {
+        Path path = file.toPath();
+
         try {
-            String content = java.nio.file.Files.readString(file.toPath());
-            if (content.isEmpty()) {
-                log("Error: " + file.getName() + " is empty.");
-                file.delete();
-            } else if (!content.contains(",") || content.split(",")[1].trim().isEmpty()) {
-                log("Error: " + file.getName() + " does not contain an answer.");
-                file.delete();
-            } else if (!content.contains("True") && !content.contains("False")) {
-                log("Warning: " + file.getName() + " does not contain a valid answer.");
-                warnings.add(file.getName());
+            if (Files.size(path) == 0) {
+                Files.delete(path);
+                System.out.println("Removed empty file: " + file.getName());
+                return;
             }
         } catch (IOException e) {
             System.err.println("Error reading file: " + e.getMessage());
+            return;
         }
-        return warnings;
+
+        List<String> cleanedLines = new ArrayList<>();
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] columns = line.split(",");
+
+                if (columns.length >= 2 && !columns[1].trim().isEmpty()) {
+                    cleanedLines.add(line);
+                }
+            }
+        } catch (IOException e) {
+            System.err.println("Error reading file: " + e.getMessage());
+            return;
+        }
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
+            for (String cleanedLine : cleanedLines) {
+                writer.write(cleanedLine);
+                writer.newLine();
+            }
+            System.out.println("Fixed file: " + file.getName());
+        } catch (IOException e) {
+            System.err.println("Error writing file: " + e.getMessage());
+        }
     }
+
 }

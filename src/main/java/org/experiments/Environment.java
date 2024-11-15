@@ -3,14 +3,17 @@ package org.experiments;
 import org.experiments.logger.SmartLogger;
 import org.experiments.task.Task;
 import static org.experiments.logger.SmartLogger.isFileInCache;
+import static org.experiments.logger.SmartLogger.isQueryInCache;
 
 public class Environment {
 
     public static void run(Task task) {
         // Setup logging
         String filename = task.getFileName();
+        String query = task.getQuery();
+
         // If filename is already present in the cache, then skip the task
-        if (isFileInCache(filename)) {
+        if (isFileInCache(filename) && isQueryInCache(filename, query)) {
             //System.out.println("Task " + task.getTaskName() + " is already present in the cache.");
         } else {
             // Enable file logging

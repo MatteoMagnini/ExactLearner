@@ -43,7 +43,8 @@ public class ExperimentTask implements Task {
     }
 
     public String getFileName() {
-        return SHA256Hash(taskName + modelName + ontology + query + system);
+        // return SHA256Hash(taskName + modelName + ontology + query + system);
+        return modelName + "_" + ontology;
     }
 
     public String getSystem() {
