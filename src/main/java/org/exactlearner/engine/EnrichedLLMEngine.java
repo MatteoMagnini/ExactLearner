@@ -7,8 +7,8 @@ import java.util.Arrays;
 
 public class EnrichedLLMEngine extends LLMEngine {
 
-    public EnrichedLLMEngine(OWLOntology ontology, String model, String system, Integer maxTokens, OWLOntologyManager manager) {
-        super(ontology, model, system, maxTokens, manager);
+    public EnrichedLLMEngine(OWLOntology ontology, String ontologyName, String model, String system, Integer maxTokens, OWLOntologyManager manager) {
+        super(ontology, ontologyName, model, system, maxTokens, manager);
     }
 
     @Override

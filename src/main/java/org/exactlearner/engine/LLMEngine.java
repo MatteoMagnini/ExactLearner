@@ -17,6 +17,8 @@ import java.util.Arrays;
 import java.util.Set;
 
 public class LLMEngine implements BaseEngine {
+
+    private final String queryFormat = "manchester";
     private final OWLOntology ontology;
     String ontologyName = "";
     final String model;
@@ -27,24 +29,14 @@ public class LLMEngine implements BaseEngine {
     private final OWLReasoner reasoner;
 
 
-    public LLMEngine(OWLOntology ontology, String model, String system, Integer maxTokens, OWLOntologyManager manager) {
+    public LLMEngine(OWLOntology ontology, String ontologyName, String model, String system, Integer maxTokens, OWLOntologyManager manager) {
         this.ontology = ontology;
+        this.ontologyName = ontologyName;
         this.system = system;
         this.model = model;
         this.maxTokens = maxTokens;
         this.manager = manager;
         this.parser = new OWLParserImpl(ontology);
-        this.reasoner = new ElkReasonerFactory().createReasoner(parser.getOwl());
-    }
-
-    public LLMEngine(String ontology, String model, String system, Integer maxTokens, OWLOntologyManager manager) {
-        this.ontologyName = ontology;
-        this.system = system;
-        this.model = model;
-        this.maxTokens = maxTokens;
-        this.manager = manager;
-        this.parser = new OWLParserImpl(ontologyName, manager);
-        this.ontology = parser.getOwl();
         this.reasoner = new ElkReasonerFactory().createReasoner(parser.getOwl());
     }
 
@@ -64,7 +56,7 @@ public class LLMEngine implements BaseEngine {
         } else {
             throw new IllegalStateException("Invalid model " + model);
         }
-        Task task = new ExperimentTask("statementsQuerying", model, ontologyName, message, system, work);
+        Task task = new ExperimentTask("statementsQuerying", model, queryFormat, ontologyName, message, system, work);
         Environment.run(task);
 
         return new Result(task.getFileName()).isStrictlyTrue();

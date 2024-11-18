@@ -232,19 +232,8 @@ public abstract class LaunchLearner {
         hypothesisOntology = myManager.loadOntologyFromOntologyDocument(hypoFile);
     }
 
-    void setUpOntologyFolders(Integer i, String model) {
-        var engine = "";
-        switch (i) {
-            case 1:
-                engine = "manchester_";
-                break;
-            case 2:
-                engine = "nlp_";
-                break;
-            default:
-                System.out.println("Invalid engine. Exiting...");
-                System.exit(1);
-        }
+    void setUpOntologyFolders(String format, String model) {
+        String engine = format + "_";
         String ontologyID = groundTruthOntology.getOntologyID().toString();
         int lastSlashIndex = ontologyID.lastIndexOf('/');
         int extensionIndex = ontologyID.lastIndexOf(".owl");

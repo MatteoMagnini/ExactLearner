@@ -25,12 +25,12 @@ public class Launch {
         for (String model : config.getModels()) {
             for (String ontology : config.getOntologies()) {
                 System.out.println("Running experiment for model: " + model + " and ontology: " + ontology);
-                runExperiment(model, ontology, config.getSystem(), config.getMaxTokens(), config.getType());
+                runExperiment(model, config.getQueryFormat(), ontology, config.getSystem(), config.getMaxTokens(), config.getType());
             }
         }
     }
 
-    private static void runExperiment(String model, String ontology, String system, int maxTokens, String type) {
+    private static void runExperiment(String model, String queryFormat, String ontology, String system, int maxTokens, String type) {
         var parser = new OWLParserImpl(ontology, OWLManager.createOWLOntologyManager());
         var classesNames = parser.getClassesNamesAsString();
         var axioms = parser.getAxioms();
@@ -41,21 +41,21 @@ public class Launch {
                 for (String className2 : classesNames) {
                     String message = className + " SubClassOf " + className2;
                     //queries.put(new Pair<>(model, ontology), message);
-                    runModel(model, ontology, system, maxTokens, type, message);
+                    runModel(model, queryFormat, ontology, system, maxTokens, type, message);
                 }
             }
         } else if (type.equals("axiomsQuerying")) {
             for (String axiom : filteredManchesterSyntaxAxioms) {
                 // Remove carriage return and line feed characters
                 axiom = axiom.replaceAll("\r", " ").replaceAll("\n", " ");
-                runModel(model, ontology, system, maxTokens, type, axiom);
+                runModel(model, queryFormat, ontology, system, maxTokens, type, axiom);
             }
         } else {
             throw new IllegalStateException("Invalid type of experiment.");
         }
     }
 
-    private static void runModel(String model, String ontology, String system, int maxTokens, String type, String message) {
+    private static void runModel(String model, String queryFormat, String ontology, String system, int maxTokens, String type, String message) {
 
         Runnable work = null;
         if (OllamaWorkload.supportedModels.contains(model)) {
@@ -65,7 +65,7 @@ public class Launch {
         } else {
             throw new IllegalStateException("Invalid model.");
         }
-        Task task = new ExperimentTask(type, model, ontology, message, system, work);
+        Task task = new ExperimentTask(type, model, queryFormat, ontology, message, system, work);
         Environment.run(task);
         //moveFile(type, model, ontology, message, system);
     }

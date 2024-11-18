@@ -37,7 +37,7 @@ public class LLMLearnerTest {
         targetOntology = man.createOntology();
         hypothesisOntology = man.createOntology();
         var config = new YAMLConfigLoader().getConfig("src/main/java/org/configurations/statementsQueryingConf.yml", Configuration.class);
-        elQueryEngineForT = new LLMEngine(targetOntology, config.getModels().get(2), config.getSystem(), config.getMaxTokens(),man);
+        elQueryEngineForT = new LLMEngine(targetOntology, config.getOntologies().get(0), config.getModels().get(2), config.getSystem(), config.getMaxTokens(), man);
         elQueryEngineForH = new ELEngine(hypothesisOntology);
         baseLearner = new Learner(elQueryEngineForT, elQueryEngineForH, metrics);
 

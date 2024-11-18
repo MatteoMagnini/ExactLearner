@@ -29,8 +29,8 @@ public class LLMOracleTest {
         targetOntology = man.createOntology();
         hypothesisOntology = man.createOntology();
         var config = new YAMLConfigLoader().getConfig("src/main/java/org/pac/statementsQueryingConf.yml", Configuration.class);
-        elQueryEngineForH = new LLMEngine(hypothesisOntology, config.getModels().get(3), config.getSystem(), config.getMaxTokens(),man);
-        elQueryEngineForT = new LLMEngine(targetOntology, config.getModels().get(3), config.getSystem(), config.getMaxTokens(),man);
+        elQueryEngineForH = new LLMEngine(hypothesisOntology, config.getOntologies().get(0), config.getModels().get(3), config.getSystem(), config.getMaxTokens(),man);
+        elQueryEngineForT = new LLMEngine(targetOntology, config.getOntologies().get(0), config.getModels().get(3), config.getSystem(), config.getMaxTokens(),man);
         baseOracle = new Oracle(elQueryEngineForT, elQueryEngineForH);
 
     }

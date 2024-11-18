@@ -10,14 +10,10 @@ import org.utility.YAMLConfigLoader;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
-
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.nio.file.FileSystems;
 import java.util.Arrays;
 import java.util.Set;
-
 import static org.analysis.common.Metrics.*;
 import static org.utility.OntologyManipulator.*;
 
@@ -31,16 +27,16 @@ public class ClassesAnalyser {
         for (String model : config.getModels()) {
             for (String ontology : config.getOntologies()) {
                 System.out.println("Analysing experiment for model: " + model + " and ontology: " + ontology);
-                runExperiment3(model, ontology, config.getSystem());
+                runExperiment3(model, config.getQueryFormat(), ontology, config.getSystem());
                 //runAnalysis(model, ontology, config.getSystem(), config.getType());
             }
         }
     }
 
-    private static void runExperiment3(String model, String ontology, String system) {
+    private static void runExperiment3(String model, String queryFormat, String ontology, String system) {
         var parser = new OWLParserImpl(ontology, OWLManager.createOWLOntologyManager());
         var classesNames = parser.getClassesNamesAsString();
-        var confusionMatrix = createConfusionMatrix(classesNames, model, ontology, system);
+        var confusionMatrix = createConfusionMatrix(classesNames, model, queryFormat, ontology, system);
         // Calculate metrics
         double accuracy = calculateAccuracy(confusionMatrix);
         double f1Score = calculateF1Score(confusionMatrix);
@@ -83,7 +79,7 @@ public class ClassesAnalyser {
         SmartLogger.disableFileLogging();
     }
 
-    private static int[][] createConfusionMatrix(Set<String> classesNames, String model, String ontology, String system) {
+    private static int[][] createConfusionMatrix(Set<String> classesNames, String model, String queryFormat, String ontology, String system) {
         var manager = OWLManager.createOWLOntologyManager();
         var matrixCFU = new int[2][3];
         // Populate the confusion matrix with zeros
@@ -106,7 +102,7 @@ public class ClassesAnalyser {
             for (String className2 : classesArray) {
                 String message = className1 + " SubClassOf " + className2;
                 //queries.put(new Pair<>(model, ontology), message);
-                String fileName = new ExperimentTask("classesQuerying", model, ontology, message, system, () -> {
+                String fileName = new ExperimentTask("classesQuerying", model, queryFormat, ontology, message, system, () -> {
                 }).getFileName();
                 Result result = null;
                 result = new Result(fileName);

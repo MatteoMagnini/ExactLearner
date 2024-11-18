@@ -14,5 +14,7 @@ ontologies:
   - "src/main/resources/ontologies/medium/biological-measure-primitive.owl"
 system: >
   Answer with only True or False.
+queryFormat: >
+  nlp
 maxTokens: 2
 type: "statementsQuerying"

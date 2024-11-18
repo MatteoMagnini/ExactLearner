@@ -28,14 +28,14 @@ public class AskStatement {
             for (String model : config.getModels()) {
                 for (String ontology : config.getOntologies()) {
                     System.out.println("Seed: " + seed+". Asking statements for model: " + model + " and ontology: " + ontology);
-                    askStatement(seed,model, ontology, config.getSystem(), config.getMaxTokens(), config.getType());
+                    askStatement(seed, model, config.getQueryFormat(), ontology, config.getSystem(), config.getMaxTokens(), config.getType());
                 }
             }
         }
 
     }
 
-    private void askStatement(Integer seed, String model, String ontology, String system, int maxTokens, String type) {
+    private void askStatement(Integer seed, String model, String queryFormat, String ontology, String system, int maxTokens, String type) {
         var parser = new OWLParserImpl(ontology, OWLManager.createOWLOntologyManager());
         Pac pac = new Pac(parser.getClassesNamesAsString(), parser.getObjectProperties().stream().map(Object::toString).map(s -> s.split("#")[1].replace(">", "")).collect(Collectors.toSet()), 0.05, 0.1, 2, seed);
         for (int i = 1; i <= pac.getNumberOfSamples(); i++) {
@@ -52,7 +52,7 @@ public class AskStatement {
             } else {
                 throw new IllegalStateException("Invalid model.");
             }
-            Task task = new ExperimentTask(type, model, ontology, s, system, work);
+            Task task = new ExperimentTask(type, model, queryFormat, ontology, s, system, work);
             Environment.run(task);
         }
     }

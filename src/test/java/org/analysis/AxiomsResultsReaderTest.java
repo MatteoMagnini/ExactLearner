@@ -33,6 +33,7 @@ public class AxiomsResultsReaderTest{
     private String model;
     private String ontology;
     private String system;
+    private String queryFormat;
     private AxiomsResultsReader axiomsResultsReader;
     @Before
     public void setUp() {
@@ -42,6 +43,7 @@ public class AxiomsResultsReaderTest{
         model = config.getModels().get(0);
         ontology = config.getOntologies().get(0);
         system = config.getSystem();
+        queryFormat = config.getQueryFormat();
         maxTokens = config.getMaxTokens();
 
         runSomeTask();
@@ -50,12 +52,12 @@ public class AxiomsResultsReaderTest{
     private void runSomeTask() {
         String axiom = "Bird SubClassOf (has_part some Leg) and (has_part some Wing)";//TRUE
         var work = new OllamaWorkload(model, system, axiom, maxTokens);
-        Task task = new ExperimentTask(type, model, ontology, axiom, system, work);
+        Task task = new ExperimentTask(type, model, queryFormat, ontology, axiom, system, work);
         Environment.run(task);
 
         axiom = "Reptile SubClassOf Carnivore and (lays some Egg)";//FALSE
         work = new OllamaWorkload(model, system, axiom, maxTokens);
-        task = new ExperimentTask(type, model, ontology, axiom, system, work);
+        task = new ExperimentTask(type, model, queryFormat, ontology, axiom, system, work);
         Environment.run(task);
     }
     @Test

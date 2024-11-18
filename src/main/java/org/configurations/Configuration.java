@@ -9,6 +9,8 @@ public class Configuration {
     private int maxTokens;
     private String type;
 
+    private String queryFormat;
+
     public String getType() {
         return type;
     }
@@ -49,12 +51,21 @@ public class Configuration {
         this.maxTokens = maxTokens;
     }
 
+    public String getQueryFormat() {
+        return queryFormat.trim();
+    }
+
+    public void setQueryFormat(String queryFormat) {
+        this.queryFormat = queryFormat.trim();
+    }
+
     public String toString() {
         return "Configuration{" +
                 "models=" + models +
                 ", ontologies=" + ontologies +
                 ", system='" + system + '\'' +
                 ", maxTokens=" + maxTokens +
+                ", queryFormat=" + queryFormat +
                 ", type='" + type + '\'' +
                 '}';
     }

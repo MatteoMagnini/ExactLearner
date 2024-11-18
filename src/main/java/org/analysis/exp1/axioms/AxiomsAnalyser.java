@@ -13,12 +13,8 @@ import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 import uk.ac.manchester.cs.owl.owlapi.mansyntaxrenderer.ManchesterOWLSyntaxOWLObjectRendererImpl;
-
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
-
 import static org.utility.OntologyManipulator.filterUnusedAxioms;
 import static org.utility.OntologyManipulator.getOntologyShortName;
 
@@ -33,12 +29,12 @@ public class AxiomsAnalyser {
         for (String model : config.getModels()) {
             for (String ontology : config.getOntologies()) {
                 System.out.println("Analysing experiment for model: " + model + " and ontology: " + ontology);
-                runAnalysis(model, ontology, config.getSystem(), config.getType());
+                runAnalysis(model, config.getQueryFormat(), ontology, config.getSystem(), config.getType());
             }
         }
     }
 
-    private static void runAnalysis(String model, String ontology, String system, String type) {
+    private static void runAnalysis(String model, String queryFormat, String ontology, String system, String type) {
         Set<OWLAxiom> trueAxioms = new HashSet<>();
         Set<OWLAxiom> falseAxioms = new HashSet<>();
         Set<OWLAxiom> unknownAxioms = new HashSet<>();
@@ -53,7 +49,7 @@ public class AxiomsAnalyser {
                 // Remove carriage return and line feed characters
                 var stringAxiom = new ManchesterOWLSyntaxOWLObjectRendererImpl().render(axiom).replaceAll("\r", " ").replaceAll("\n", " ");
                 // load result
-                String fileName = new ExperimentTask("axiomsQuerying", model, ontology, stringAxiom, system, () -> {
+                String fileName = new ExperimentTask("axiomsQuerying", model, queryFormat, ontology, stringAxiom, system, () -> {
                 }).getFileName();
                 Result result = null;
                 result = new Result(fileName);

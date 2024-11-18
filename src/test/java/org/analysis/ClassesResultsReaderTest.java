@@ -23,6 +23,7 @@ public class ClassesResultsReaderTest {
     private String ontology;
     private String system;
     private String query;
+    private String queryFormat;
     private ClassesResultsReader classesResultsReader;
 
     @Before
@@ -39,6 +40,7 @@ public class ClassesResultsReaderTest {
         model = config.getModels().get(0);
         ontology = config.getOntologies().get(0);
         system = config.getSystem();
+        queryFormat = config.getQueryFormat();
         maxTokens = config.getMaxTokens();
 
         runSomeTask();
@@ -47,12 +49,12 @@ public class ClassesResultsReaderTest {
     private void runSomeTask() {
         String message = "Mammal SubClassOf Animal";
         var work = new OllamaWorkload(model, system, message, maxTokens);
-        Task task = new ExperimentTask(type, model, ontology, message, system, work);
+        Task task = new ExperimentTask(type, model, queryFormat, ontology, message, system, work);
         Environment.run(task);
 
         message = "Backbone SubClassOf Bird";
         work = new OllamaWorkload(model, system, message, maxTokens);
-        task = new ExperimentTask(type, model, ontology, message, system, work);
+        task = new ExperimentTask(type, model, queryFormat, ontology, message, system, work);
         Environment.run(task);
     }
 

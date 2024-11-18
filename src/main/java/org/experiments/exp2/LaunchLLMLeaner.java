@@ -27,6 +27,8 @@ public class LaunchLLMLeaner extends LaunchLearner {
     private List<String> ontologies;
     private List<String> models;
     private String system;
+
+    private String queryFormat;
     private Integer maxTokens;
     private List<Integer> hypothesisSizes;
     private double totalCE = 0;
@@ -48,6 +50,7 @@ public class LaunchLLMLeaner extends LaunchLearner {
         //choose configuration from file here:
         models = config.getModels();
         system = config.getSystem();
+        queryFormat = config.getQueryFormat();
         ontologies = config.getOntologies();
         maxTokens = config.getMaxTokens();
         hypothesisSizes = ontologies.stream().map(OntologyManipulator::computeOntologySize).collect(Collectors.toList());
@@ -64,27 +67,26 @@ public class LaunchLLMLeaner extends LaunchLearner {
         SmartLogger.checkCachedFiles();
         loadConfiguration(configurationFile);
         try {
-            for (int i = 1; i <= 2; i++) {
-                for (String ontology : ontologies) {
-                    System.out.println("\nRunning experiment for " + ontology);
-                    for (String model : models) {
-                        System.out.println("\nRunning experiment for " + model + "\n");
-                        setup(i, ontology, model.replace(":", "-"));
-                        switch (i) {
-                            case 1 ->
-                                    llmQueryEngineForT = new LLMEngine(groundTruthOntology, model, system, maxTokens, myManager);
-                            case 2 ->
-                                    llmQueryEngineForT = new NLPLLMEngine(groundTruthOntology, model, system, maxTokens, myManager);
-                            default -> throw new IllegalStateException("Unexpected value: " + i);
-                        }
-                        elQueryEngineForH = new ELEngine(hypothesisOntology);
-                        learner = new Learner(llmQueryEngineForT, elQueryEngineForH, myMetrics);
-                        oracle = new Oracle(llmQueryEngineForT, elQueryEngineForH);
-                        runLearningExperiment(args, hypothesisSizes.get(ontologies.indexOf(ontology)));
-                        cleaningUp();
+            for (String ontology : ontologies) {
+                System.out.println("\nRunning experiment for " + ontology);
+                for (String model : models) {
+                    System.out.println("\nRunning experiment for " + model + "\n");
+                    setup(ontology, model.replace(":", "-"));
+                    String ontologyShortName = ontology.substring(ontology.lastIndexOf("/") + 1, ontology.lastIndexOf("."));
+                    switch (queryFormat) {
+                        case "manchester" ->
+                                llmQueryEngineForT = new LLMEngine(groundTruthOntology, ontologyShortName, model, system, maxTokens, myManager);
+                        case "nlp" ->
+                                llmQueryEngineForT = new NLPLLMEngine(groundTruthOntology, ontologyShortName, model, system, maxTokens, myManager);
+                        default -> throw new IllegalStateException("Unexpected value: " + queryFormat);
                     }
-                    System.out.println("\nFinished experiment for " + ontology + "\n");
+                    elQueryEngineForH = new ELEngine(hypothesisOntology);
+                    learner = new Learner(llmQueryEngineForT, elQueryEngineForH, myMetrics);
+                    oracle = new Oracle(llmQueryEngineForT, elQueryEngineForH);
+                    runLearningExperiment(args, hypothesisSizes.get(ontologies.indexOf(ontology)));
+                    cleaningUp();
                 }
+                System.out.println("\nFinished experiment for " + ontology + "\n");
             }
 
         } catch (Throwable e) {
@@ -108,12 +110,12 @@ public class LaunchLLMLeaner extends LaunchLearner {
         System.out.println("Average n° CE compared to Pac Samples: " + totalCE / divider);
     }
 
-    private void setup(Integer i, String ontology, String model) {
+    private void setup(String ontology, String model) {
         try {
             myMetrics = new Metrics(myRenderer);
             System.out.println("Trying to load groundTruthOntology");
             loadTargetOntology(ontology);
-            setUpOntologyFolders(i, model);
+            setUpOntologyFolders(queryFormat, model);
             saveTargetOntology();
             loadHypothesisOntology();
             System.out.println(groundTruthOntology);
@@ -142,7 +144,7 @@ public class LaunchLLMLeaner extends LaunchLearner {
         int numberOfCounterExamples = 0;
         int seed = 0;
         // Computes inclusions of the form A implies B
-        precomputation();
+        // precomputation();
         Pac pac = new Pac(parser.getClassesNamesAsString(), parser.getObjectPropertiesAsString(), epsilon, delta, hypothesisSize, seed);
         long totalPacSamples = pac.getNumberOfSamples();
         while (true) {

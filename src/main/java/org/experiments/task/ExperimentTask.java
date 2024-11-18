@@ -6,15 +6,18 @@ public class ExperimentTask implements Task {
 
     private final String taskName;
     private final String modelName;
+
+    private final String queryFormat;
     private final String ontology;
     private final String query;
     private final String system;
 
     private Runnable workload;
 
-    public ExperimentTask(String taskName, String modelName, String ontology, String query, String system, Runnable workload) {
+    public ExperimentTask(String taskName, String modelName, String queryFormat, String ontology, String query, String system, Runnable workload) {
         this.taskName = taskName;
         this.modelName = modelName;
+        this.queryFormat = queryFormat;
         this.ontology = ontology;
         this.query = query;
         this.workload = workload;
@@ -44,7 +47,13 @@ public class ExperimentTask implements Task {
 
     public String getFileName() {
         // return SHA256Hash(taskName + modelName + ontology + query + system);
-        return modelName + "_" + ontology;
+        String systemType;
+        if (system.equals("Answer with only True or False.")) {
+            systemType = "base";
+        } else {
+            systemType = "advanced";
+        }
+        return modelName + "_" + queryFormat + "_" + systemType + "_" + ontology;
     }
 
     public String getSystem() {
@@ -57,11 +66,11 @@ public class ExperimentTask implements Task {
     }
 
     public int hashCode() {
-        return taskName.hashCode() + modelName.hashCode() + ontology.hashCode() + query.hashCode() + system.hashCode();
+        return taskName.hashCode() + modelName.hashCode() + ontology.hashCode() + query.hashCode() + queryFormat.hashCode() + system.hashCode();
     }
 
     public String toString() {
-        return "Task:\n\tName: " + taskName + "\n\tModel: " + modelName + "\n\tOntology: " + ontology + "\n\tQuery: " + query + "\n\tSystem: " + system;
+        return "Task:\n\tName: " + taskName + "\n\tModel: " + modelName + "\n\tOntology: " + ontology + "\n\tFormat: " + queryFormat + "\n\tQuery: " + query + "\n\tSystem: " + system;
     }
 
     public boolean equals(Object obj) {

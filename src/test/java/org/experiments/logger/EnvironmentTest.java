@@ -24,7 +24,7 @@ public class EnvironmentTest {
     @Test
     public void testSimpleTaskInEnvironment() throws IOException {
         String taskName = "Task1";
-        Task task = new ExperimentTask(taskName, ollamaModelName, "Dummy", "", "",() -> {
+        Task task = new ExperimentTask(taskName, ollamaModelName, "manchester", "Dummy", "", "",() -> {
             SmartLogger.log("This is a simple task.");
         });
         Environment.run(task);
@@ -38,7 +38,7 @@ public class EnvironmentTest {
     public void testOllamaRealTaskInEnvironment() {
         String taskName = "Task2";
         var workload = new OllamaWorkload(ollamaModelName, "", query, 10);
-        Task task = new ExperimentTask(taskName, ollamaModelName, "Dummy", query, "",workload);
+        Task task = new ExperimentTask(taskName, ollamaModelName, "manchester", "Dummy", query, "",workload);
         Environment.run(task);
         assertTrue(SmartLogger.isFileInCache(task.getFileName()));
         SmartLogger.removeFileFromCache(task.getFileName());
@@ -48,7 +48,7 @@ public class EnvironmentTest {
     public void testOpenAIRealTaskInEnvironment() {
         String taskName = "Task2";
         var workload = new OpenAIWorkload(openAIModelName, "user", query, 30);
-        Task task = new ExperimentTask(taskName, openAIModelName, "Dummy", query, "user", workload);
+        Task task = new ExperimentTask(taskName, openAIModelName, "manchester", "Dummy", query, "user", workload);
         Environment.run(task);
         assertTrue(SmartLogger.isFileInCache(task.getFileName()));
         SmartLogger.removeFileFromCache(task.getFileName());
@@ -58,7 +58,7 @@ public class EnvironmentTest {
     public void testMultipleTaskInEnvironment() {
         List<String> taskNames = List.of("Task3", "Task4", "Task5");
         for (String taskName : taskNames) {
-            Task task = new ExperimentTask(taskName, ollamaModelName, "Dummy", query, "",() -> {
+            Task task = new ExperimentTask(taskName, ollamaModelName, "manchester","Dummy", query, "",() -> {
                 OllamaBridge bridge = new OllamaBridge(ollamaModelName);
                 String response = bridge.ask(query,"");
                 SmartLogger.log(query + ", " + response);
