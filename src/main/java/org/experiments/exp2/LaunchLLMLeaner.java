@@ -179,7 +179,7 @@ public class LaunchLLMLeaner extends LaunchLearner {
 
     private OWLSubClassOfAxiom getCounterExample(Pac pac) throws Exception {
         while (pac.getNumberOfProvidedSamples() < pac.getNumberOfSamples()) {
-            System.out.println("PAC Training sample: " + (int) pac.getNumberOfProvidedSamples() + " out of " + pac.getNumberOfSamples());
+            System.out.println("PAC Training sample: " + (int) (pac.getNumberOfProvidedSamples() + 1) + " out of " + pac.getNumberOfSamples());
             // Get the last counterexample
             String statement = pac.getRandomStatement();
 

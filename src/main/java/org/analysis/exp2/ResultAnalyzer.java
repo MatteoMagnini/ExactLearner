@@ -1,9 +1,6 @@
 package org.analysis.exp2;
 import org.analysis.common.Metrics;
-import org.apache.jena.base.Sys;
 import org.configurations.Configuration;
-import org.exactlearner.parser.OWLParserImpl;
-import org.pac.Pac;
 import org.semanticweb.HermiT.Reasoner;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.OWLOntology;
@@ -92,8 +89,8 @@ public class ResultAnalyzer {
 
         printResults(confusionMatrix, nlpConfusionMatrix, enrichedConfusionMatrix, enrichedNlpConfusionMatrix);
         System.out.println("Evaluation completed in " + (System.currentTimeMillis() - startingTime) / 1000 + " seconds.");
-        System.out.println("Waiting for 2 minutes to cool down...");
-        sleep(1000 * 60 * 2);
+        //System.out.println("Waiting for 2 minutes to cool down...");
+        //sleep(1000 * 60 * 2);
     }
 
     private void updateConfusionMatrix(Reasoner predictedReasoner, int[][] confusionMatrix) {
@@ -104,8 +101,8 @@ public class ResultAnalyzer {
         });
         // Update confusion matrix
         for (int i = 0; i < inferredAxiomsByExpectedOntology.size(); i++) {
-            int row = inferredAxiomsByExpectedOntology.get(i) ? 1 : 0;
-            int col = inferredAxiomsByPredictedOntology.get(i) ? 1 : 0;
+            int row = inferredAxiomsByExpectedOntology.get(i) ? 0 : 1;
+            int col = inferredAxiomsByPredictedOntology.get(i) ? 0 : 1;
             confusionMatrix[row][col]++;
         }
     }

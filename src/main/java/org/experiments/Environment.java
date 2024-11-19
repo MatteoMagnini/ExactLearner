@@ -14,7 +14,7 @@ public class Environment {
 
         // If filename is already present in the cache, then skip the task
         if (isFileInCache(filename) && isQueryInCache(filename, query)) {
-            //System.out.println("Task " + task.getTaskName() + " is already present in the cache.");
+            System.out.println("Task " + task + " is already present in the cache.");
         } else {
             // Enable file logging
             try {
@@ -26,7 +26,7 @@ public class Environment {
             task.run();
             // Disable file logging
             SmartLogger.disableFileLogging();
-            SmartLogger.log("Task " + task.getTaskName() + " is completed.");
+            SmartLogger.log(task.getTaskName() + " is completed.");
         }
     }
 }

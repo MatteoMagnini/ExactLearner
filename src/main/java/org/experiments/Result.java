@@ -2,12 +2,13 @@ package org.experiments;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 
 public class Result {
 
-    private final String query;
-    private final String response;
+    private final Map<String, String> queriesAndResponses = new HashMap<>();
 
     public Result(String filename) {
         FileReader reader = null;
@@ -15,42 +16,46 @@ public class Result {
             String filepath = "cache" + System.getProperty("file.separator") + filename + ".csv";
             reader = new FileReader(filepath);
             BufferedReader bufferedReader = new BufferedReader(reader);
-            String line = bufferedReader.readLine();
-            query = line.split(",")[0];
-            response = line.split(",")[1];
+            // for each line in the file, split the line into query and response and add it to the map
+            bufferedReader.lines().forEach(line -> {
+                String[] queryAndResponse = line.split(",");
+                queriesAndResponses.put(queryAndResponse[0], queryAndResponse[1]);
+            });
             bufferedReader.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
-    public Result(String query, String response) {
-        this.query = query;
-        this.response = response;
+    public String getResponse(String query) {
+        if (queriesAndResponses.containsKey(query)) {
+            return queriesAndResponses.get(query);
+        } else {
+            throw new IllegalArgumentException("Query not found in the cache");
+        }
     }
 
-    public boolean isStrictlyTrue() {
+    public boolean isStrictlyTrue(String query) {
+        String response = getResponse(query);
         return response.toLowerCase(Locale.ROOT).replace(".","").replace("\\n","").trim().equals("true");
     }
 
-    public boolean isTrue() {
+    public boolean isTrue(String query) {
+        String response = getResponse(query);
         boolean containsTrue = response.toLowerCase(Locale.ROOT).contains("true");
         boolean containsFalse = response.toLowerCase(Locale.ROOT).contains("false");
         return containsTrue && !containsFalse;
     }
 
-    public boolean isFalse() {
+    public boolean isFalse(String query) {
+        String response = getResponse(query);
         boolean containsTrue = response.toLowerCase(Locale.ROOT).contains("true");
         boolean containsFalse = response.toLowerCase(Locale.ROOT).contains("false");
         return !containsTrue && containsFalse;
     }
 
-    public boolean isUnknown() {
-        return !isTrue() && !isFalse();
-    }
-
-    public String getQuery() {
-        return query;
+    public boolean isUnknown(String query) {
+        return !isTrue(query) && !isFalse(query);
     }
 
 }

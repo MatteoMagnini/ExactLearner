@@ -106,13 +106,13 @@ public class ClassesAnalyser {
                 }).getFileName();
                 Result result = null;
                 result = new Result(fileName);
-                if (result.isTrue()) {
+                if (result.isTrue(message)) {
                     if (engine.entailed(createAxiomFromString(message, owl))) {
                         matrixCFU[0][0]++;
                     } else {
                         matrixCFU[1][0]++;
                     }
-                } else if (result.isFalse()) {
+                } else if (result.isFalse(message)) {
                     if (engine.entailed(createAxiomFromString(message, owl))) {
                         matrixCFU[0][1]++;
                     } else {

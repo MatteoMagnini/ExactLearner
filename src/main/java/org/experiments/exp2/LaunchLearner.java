@@ -46,7 +46,7 @@ public abstract class LaunchLearner {
     Metrics myMetrics = new Metrics(myRenderer);
 
     void validation() throws Exception {
-        validateLearnedOntology();
+        // validateLearnedOntology();
         printVictoryMessage();
     }
 

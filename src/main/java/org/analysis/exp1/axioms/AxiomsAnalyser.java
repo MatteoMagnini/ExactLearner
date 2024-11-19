@@ -53,9 +53,9 @@ public class AxiomsAnalyser {
                 }).getFileName();
                 Result result = null;
                 result = new Result(fileName);
-                if (result.isTrue()) {
+                if (result.isTrue(stringAxiom)) {
                     trueAxioms.add(axiom);
-                } else if (result.isFalse()) {
+                } else if (result.isFalse(stringAxiom)) {
                     falseAxioms.add(axiom);
                 } else {
                     unknownAxioms.add(axiom);

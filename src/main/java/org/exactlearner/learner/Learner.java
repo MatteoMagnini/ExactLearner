@@ -284,9 +284,17 @@ public class Learner implements BaseLearner {
         myExpression = leftTree.transformToClassExpression();
         myClass = (OWLClass) rightTree.transformToClassExpression();
         for (int i = 0; i < leftTree.getMaxLevel(); i++) {
-            for (ELNode nod : leftTree.getNodesOnLevel(i + 1)) {
+            Set<ELNode> nodes = leftTree.getNodesOnLevel(i + 1);
+            // Set to (sorted) list to ensure reproducible results
+            List<ELNode> nodesList = new ArrayList<>(nodes);
+            nodesList.sort(Comparator.comparing(ELNode::toString));
+            for (ELNode nod : nodesList) {
                 OWLClassExpression cls = nod.transformToDescription();
-                for (OWLClass cl1 : cls.getClassesInSignature()) {
+                Set<OWLClass> classes = cls.getClassesInSignature();
+                // Set to (sorted) list to ensure reproducible results
+                List<OWLClass> classesList = new ArrayList<>(classes);
+                classesList.sort(Comparator.comparing(OWLClass::toString));
+                for (OWLClass cl1 : classesList) {
                     if (nod.getLabel().contains(cl1) && !cl1.toString().contains("Thing")) {
                         nod.remove(cl1);
                         myMetrics.setMembCount(myMetrics.getMembCount() + 1);
@@ -441,16 +449,7 @@ public class Learner implements BaseLearner {
                                 nod.getEdges().get(j).getNode().remove(lab);
                                 myMetrics.setMembCount(myMetrics.getMembCount() + 1);
                                 if (!myEngineForT.entailed(myEngineForT.getSubClassAxiom(
-                                        tree.transformToClassExpression(), oldTree.transformToClassExpression())) // if
-                                        // the
-                                        // branched
-                                        // tree
-                                        // is
-                                        // in
-                                        // fact
-                                        // a
-                                        // weaker
-                                        // expression
+                                        tree.transformToClassExpression(), oldTree.transformToClassExpression()))
                                         && myEngineForT.entailed(
                                         myEngineForT.getSubClassAxiom(tree.transformToClassExpression(), cl))) {
                                     myExpression = tree.transformToClassExpression();

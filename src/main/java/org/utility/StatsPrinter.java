@@ -50,7 +50,7 @@ public class StatsPrinter {
         printStat("Total equivalence queries: ", myMetrics.getEquivCount(), verb);
 
         printLearnerStats(baseLearner, verb);
-        printOracleStats(baseOracle, verb);
+        // printOracleStats(baseOracle, verb);
         printOntologySizes(targetOntology, hypothesisOntology, myMetrics, verb, conceptNumber, roleNumber);
     }
 
