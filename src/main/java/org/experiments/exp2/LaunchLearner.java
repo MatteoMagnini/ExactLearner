@@ -232,8 +232,7 @@ public abstract class LaunchLearner {
         hypothesisOntology = myManager.loadOntologyFromOntologyDocument(hypoFile);
     }
 
-    void setUpOntologyFolders(String format, String model) {
-        String engine = format + "_";
+    void setUpOntologyFolders(String format, String system, String model) {
         String ontologyID = groundTruthOntology.getOntologyID().toString();
         int lastSlashIndex = ontologyID.lastIndexOf('/');
         int extensionIndex = ontologyID.lastIndexOf(".owl");
@@ -243,13 +242,17 @@ public abstract class LaunchLearner {
         String name = "";
 
         if (lastSlashIndex != -1 && extensionIndex != -1) {
-            name = ontologyID.substring(lastSlashIndex + 1, extensionIndex) + ".owl";
+            name = ontologyID.substring(lastSlashIndex + 1, extensionIndex);
         } else {
             System.out.println("Could not get ontology name. Exiting...");
             System.exit(1);
         }
-        ontologyFolder = "results" + fileSeparator + "ontologies" + fileSeparator + "target_" + name;
-        ontologyFolderH = "results" + fileSeparator + "ontologies" + fileSeparator + engine + "learned_" + model + "_" + name;
+        String systemType = "advanced";
+        if (system.trim().equals("Answer with only True or False.")) {
+            systemType = "simple";
+        }
+        ontologyFolder = "results" + fileSeparator + "ontologies" + fileSeparator + "target_" + name + ".owl";
+        ontologyFolderH = "results" + fileSeparator + "ontologies" + fileSeparator + name + "_" + model + "_" + format + "_" + systemType + ".owl";
     }
 
     void computeConceptAndRoleNumbers() throws IOException {

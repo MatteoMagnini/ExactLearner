@@ -115,7 +115,7 @@ public class LaunchLLMLeaner extends LaunchLearner {
             myMetrics = new Metrics(myRenderer);
             System.out.println("Trying to load groundTruthOntology");
             loadTargetOntology(ontology);
-            setUpOntologyFolders(queryFormat, model);
+            setUpOntologyFolders(queryFormat, system, model);
             saveTargetOntology();
             loadHypothesisOntology();
             System.out.println(groundTruthOntology);
