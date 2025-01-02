@@ -1,0 +1,374 @@
+teaches some Researcher SubClassOf Professor, True
+teaches some Researcher SubClassOf University, True
+Researcher SubClassOf University, True
+Researcher SubClassOf Project, True
+Researcher SubClassOf Project and University, True
+Researcher SubClassOf Module, True
+Researcher SubClassOf Module and Project and University, True
+Researcher SubClassOf Professor, True
+Researcher SubClassOf Module and Professor and Project and University, True
+Researcher SubClassOf Teacher, True
+Researcher SubClassOf Module and Professor and Project and Teacher and University, True
+Researcher SubClassOf Person, True
+Researcher SubClassOf Module and Person and Professor and Project and Teacher and University, Here is
+manages some Project SubClassOf Person, False
+Project SubClassOf Professor, True
+Project SubClassOf University, True
+Project SubClassOf Module, True
+Project SubClassOf Module and University, True
+Project SubClassOf Module and Professor and University, True
+Project SubClassOf Teacher, True
+Project SubClassOf Module and Professor and Teacher and University, True
+Project SubClassOf Person, True
+Project SubClassOf Module and Person and Professor and Teacher and University, True
+Project SubClassOf Researcher, True
+Project SubClassOf Module and Person and Professor and Researcher and Teacher and University, True
+teaches some Project SubClassOf University, False
+Teacher and University SubClassOf Researcher, True
+Teacher and University SubClassOf Project, False
+Teacher and University SubClassOf Module, False
+Teacher and University SubClassOf Professor, True
+University SubClassOf Professor, True
+University SubClassOf Project, True
+University SubClassOf Professor and Project, True
+University SubClassOf Module, True
+University SubClassOf Module and Professor and Project, True
+University SubClassOf Teacher, True
+University SubClassOf Module and Professor and Project and Teacher, True
+University SubClassOf Person, True
+University SubClassOf Module and Person and Professor and Project and Teacher, True
+University SubClassOf Researcher, True
+University SubClassOf Module and Person and Professor and Project and Researcher and Teacher, True
+Professor and Teacher SubClassOf Researcher, True
+Professor and Teacher SubClassOf University, True
+Professor SubClassOf University, True
+Professor SubClassOf Project, True
+Professor SubClassOf Project and University, True
+Professor SubClassOf Module, True
+Professor SubClassOf Module and Project and University, True
+Professor SubClassOf Teacher, True
+Professor SubClassOf Module and Project and Teacher and University, True
+Professor SubClassOf Person, True
+Professor SubClassOf Module and Person and Project and Teacher and University, True
+Professor SubClassOf Researcher, True
+Professor SubClassOf Module and Person and Project and Researcher and Teacher and University, True
+teaches some Researcher SubClassOf Person, True
+Thing SubClassOf teaches some (Module and Person and Professor and Project and Researcher and Teacher and University), True
+(teaches some Module) and (teaches some (Person and Professor and Project and Researcher and Teacher and University)) SubClassOf teaches some (Module and Person and Professor and Project and Researcher and Teacher and University), True
+teaches some (Module and Person and Professor and Project and Researcher and Teacher and University) SubClassOf teaches some (Module and Person and Professor and Project and Researcher and Teacher and University), True
+teaches some (Person and Professor and Project and Researcher and Teacher and University) SubClassOf University, True
+teaches some (Professor and Project and Researcher and Teacher and University) SubClassOf University, True
+teaches some (Project and Researcher and Teacher and University) SubClassOf University, True
+teaches some (Researcher and Teacher and University) SubClassOf University, True
+teaches some (Teacher and University) SubClassOf University, True
+teaches some University SubClassOf University, True
+teaches some Thing SubClassOf University, True
+Person and Teacher SubClassOf University, False
+Person SubClassOf teaches some Project, True
+Person SubClassOf University, False
+Person SubClassOf Project, True
+Person SubClassOf Module, True
+Person SubClassOf Module and Project, True
+Person SubClassOf Professor, True
+Person SubClassOf Module and Professor and Project, True
+Person SubClassOf Teacher, True
+Person SubClassOf Module and Professor and Project and Teacher, True
+Person SubClassOf Researcher, True
+Person SubClassOf Module and Professor and Project and Researcher and Teacher, True
+manages some University SubClassOf Person, True
+manages some University SubClassOf University, True
+University SubClassOf University, True
+Thing SubClassOf Thing and (manages some (Module and Person and Professor and Project and Researcher and Teacher and University and Thing)), True
+Thing and (manages some Module) and (manages some (Person and Professor and Project and Researcher and Teacher and University and Thing)) SubClassOf Thing and (manages some (Module and Person and Professor and Project and Researcher and Teacher and University and Thing)), True
+Thing and (manages some (Module and Person and Professor and Project and Researcher and Teacher and University and Thing)) SubClassOf Thing and (manages some (Module and Person and Professor and Project and Researcher and Teacher and University and Thing)), True
+Thing and (manages some (Person and Professor and Project and Researcher and Teacher and University and Thing)) SubClassOf University, True
+Thing and (manages some (Professor and Project and Researcher and Teacher and University and Thing)) SubClassOf University, True
+Thing and (manages some (Project and Researcher and Teacher and University and Thing)) SubClassOf University, True
+Thing and (manages some (Researcher and Teacher and University and Thing)) SubClassOf University, True
+Thing and (manages some (Teacher and University and Thing)) SubClassOf University, True
+Thing and (manages some (University and Thing)) SubClassOf University, True
+Thing and (manages some Thing) SubClassOf University, True
+Researcher SubClassOf teaches some Teacher, True
+University SubClassOf teaches some Teacher, True
+University and (teaches some Teacher) SubClassOf University and (teaches some Teacher), True
+Module SubClassOf Teacher, True
+Module SubClassOf University, True
+Module SubClassOf Teacher and University, True
+Module SubClassOf Project, True
+Module SubClassOf Project and Teacher and University, True
+Module SubClassOf Professor, True
+Module SubClassOf Professor and Project and Teacher and University, True
+Module SubClassOf Person, True
+Module SubClassOf Person and Professor and Project and Teacher and University, True
+Module SubClassOf Researcher, True
+Module SubClassOf Person and Professor and Project and Researcher and Teacher and University, True
+University SubClassOf teaches some Professor, True
+University and (teaches some Professor) SubClassOf University and (teaches some Professor), True
+Teacher SubClassOf Professor, True
+Teacher SubClassOf University, True
+Teacher SubClassOf Professor and University, True
+Teacher SubClassOf Project, True
+Teacher SubClassOf Professor and Project and University, True
+Teacher SubClassOf Module, True
+Teacher SubClassOf Module and Professor and Project and University, True
+Teacher SubClassOf Person, True
+Teacher SubClassOf Module and Person and Professor and Project and University, True
+Teacher SubClassOf Researcher, True
+Teacher SubClassOf Module and Person and Professor and Project and Researcher and University, True
+Teacher SubClassOf manages some Researcher, True
+University SubClassOf manages some Researcher, True
+University and (manages some Researcher) SubClassOf University and (manages some Researcher), True
+University SubClassOf Project and University and (manages some Researcher), True
+University SubClassOf Module and Project and University and (manages some Researcher), True
+University SubClassOf Module and Professor and Project and University and (manages some Researcher), True
+University SubClassOf Module and Professor and Project and Teacher and University and (manages some Researcher), True
+University SubClassOf Module and Person and Professor and Project and Teacher and University and (manages some Researcher), True
+University SubClassOf Module and Person and Professor and Project and Researcher and Teacher and University and (manages some Researcher), True
+University SubClassOf Module and Person and Professor and Project and Researcher and Teacher and University and (manages some (Researcher and University)), True
+University SubClassOf Module and Person and Professor and Project and Researcher and Teacher and University and (manages some (Project and Researcher and University)), True
+University SubClassOf Module and Person and Professor and Project and Researcher and Teacher and University and (manages some (Module and Project and Researcher and University)), True
+University SubClassOf Module and Person and Professor and Project and Researcher and Teacher and University and (manages some (Module and Professor and Project and Researcher and University)), True
+University SubClassOf Module and Person and Professor and Project and Researcher and Teacher and University and (manages some (Module and Professor and Project and Researcher and Teacher and University)), True
+University SubClassOf Module and Person and Professor and Project and Researcher and Teacher and University and (manages some (Module and Person and Professor and Project and Researcher and Teacher and University)), True
+Module and Person and Professor and Project and Researcher and Teacher and University and Thing and (manages some (Module and Person and Professor and Project and Researcher and Teacher and University)) SubClassOf Module and Person and Professor and Project and Researcher and Teacher and University and Thing and (manages some (Module and Person and Professor and Project and Researcher and Teacher and University)), True
+Module and Person and Professor and Project and Researcher and Teacher and University and Thing and (manages some (Module and Person and Professor and Project and Researcher and Teacher and University and Thing)) SubClassOf Module and Person and Professor and Project and Researcher and Teacher and University and Thing and (manages some (Module and Person and Professor and Project and Researcher and Teacher and University and Thing)), True
+Professor SubClassOf employed_by some Professor, True
+University SubClassOf employed_by some Professor, True
+Thing and (employed_by some Professor) SubClassOf Thing and (employed_by some Professor), True
+University SubClassOf Project and Thing and (employed_by some Professor), True
+University SubClassOf Module and Project and Thing and (employed_by some Professor), True
+University SubClassOf Module and Professor and Project and Thing and (employed_by some Professor), True
+University SubClassOf Module and Professor and Project and Teacher and Thing and (employed_by some Professor), True
+University SubClassOf Module and Person and Professor and Project and Teacher and Thing and (employed_by some Professor), True
+University SubClassOf Module and Person and Professor and Project and Researcher and Teacher and Thing and (employed_by some Professor), True
+University SubClassOf Module and Person and Professor and Project and Researcher and Teacher and Thing and (employed_by some (Professor and University)), True
+University SubClassOf Module and Person and Professor and Project and Researcher and Teacher and Thing and (employed_by some (Professor and Project and University)), True
+University SubClassOf Module and Person and Professor and Project and Researcher and Teacher and Thing and (employed_by some (Module and Professor and Project and University)), True
+University SubClassOf Module and Person and Professor and Project and Researcher and Teacher and Thing and (employed_by some (Module and Professor and Project and Teacher and University)), True
+University SubClassOf Module and Person and Professor and Project and Researcher and Teacher and Thing and (employed_by some (Module and Person and Professor and Project and Teacher and University)), True
+University SubClassOf Module and Person and Professor and Project and Researcher and Teacher and Thing and (employed_by some (Module and Person and Professor and Project and Researcher and Teacher and University)), True
+Module and Person and Professor and Project and Researcher and Teacher and University and Thing and (employed_by some (Module and Person and Professor and Project and Researcher and Teacher and University)) SubClassOf Module and Person and Professor and Project and Researcher and Teacher and University and Thing and (employed_by some (Module and Person and Professor and Project and Researcher and Teacher and University)), True
+Module and Person and Professor and Project and Researcher and Teacher and University and Thing and (employed_by some (Module and Person and Professor and Project and Researcher and Teacher and University and Thing)) SubClassOf Module and Person and Professor and Project and Researcher and Teacher and University and Thing and (employed_by some (Module and Person and Professor and Project and Researcher and Teacher and University and Thing)) and (manages some (Module and Person and Professor and Project and Researcher and Teacher and University and Thing)), True
+employed_by some Professor SubClassOf Project, False
+employed_by some Researcher SubClassOf Module, True
+employed_by some Researcher SubClassOf University, False
+employed_by some Researcher SubClassOf Project, True
+Thing SubClassOf Thing and (employed_by some (Module and Person and Professor and Project and Researcher and Teacher and University and Thing)), True
+Thing and (employed_by some Module) and (employed_by some (Person and Professor and Project and Researcher and Teacher and University and Thing)) SubClassOf Thing and (employed_by some (Module and Person and Professor and Project and Researcher and Teacher and University and Thing)), True
+Thing and (employed_by some (Module and Person and Professor and Project and Researcher and Teacher and University and Thing)) SubClassOf Thing and (employed_by some (Module and Person and Professor and Project and Researcher and Teacher and University and Thing)), True
+Thing and (employed_by some (Person and Professor and Project and Researcher and Teacher and University and Thing)) SubClassOf Project, True
+Thing and (employed_by some (Professor and Project and Researcher and Teacher and University and Thing)) SubClassOf Project, True
+Thing and (employed_by some (Project and Researcher and Teacher and University and Thing)) SubClassOf Project, True
+Thing and (employed_by some (Researcher and Teacher and University and Thing)) SubClassOf Project, True
+Thing and (employed_by some (Teacher and University and Thing)) SubClassOf Project, True
+Thing and (employed_by some (University and Thing)) SubClassOf Project, True
+Thing and (employed_by some Thing) SubClassOf Project, True
+Person SubClassOf teaches some Researcher, True
+University SubClassOf teaches some Researcher, True
+University and (teaches some Researcher) SubClassOf University and (teaches some Researcher), True
+University SubClassOf Project and University and (teaches some Researcher), True
+University SubClassOf Module and Project and University and (teaches some Researcher), True
+University SubClassOf Module and Professor and Project and University and (teaches some Researcher), True
+University SubClassOf Module and Professor and Project and Teacher and University and (teaches some Researcher), True
+University SubClassOf Module and Person and Professor and Project and Teacher and University and (teaches some Researcher), True
+University SubClassOf Module and Person and Professor and Project and Researcher and Teacher and University and (teaches some Researcher), True
+University SubClassOf Module and Person and Professor and Project and Researcher and Teacher and University and (teaches some (Researcher and University)), True
+University SubClassOf Module and Person and Professor and Project and Researcher and Teacher and University and (teaches some (Project and Researcher and University)), True
+University SubClassOf Module and Person and Professor and Project and Researcher and Teacher and University and (teaches some (Module and Project and Researcher and University)), True
+University SubClassOf Module and Person and Professor and Project and Researcher and Teacher and University and (teaches some (Module and Professor and Project and Researcher and University)), True
+University SubClassOf Module and Person and Professor and Project and Researcher and Teacher and University and (teaches some (Module and Professor and Project and Researcher and Teacher and University)), True
+University SubClassOf Module and Person and Professor and Project and Researcher and Teacher and University and (teaches some (Module and Person and Professor and Project and Researcher and Teacher and University)), True
+Module and Person and Professor and Project and Researcher and Teacher and University and Thing and (teaches some (Module and Person and Professor and Project and Researcher and Teacher and University)) SubClassOf Module and Person and Professor and Project and Researcher and Teacher and University and Thing and (teaches some (Module and Person and Professor and Project and Researcher and Teacher and University)), True
+Module and Person and Professor and Project and Researcher and Teacher and University and Thing and (employed_by some (Module and Person and Professor and Project and Researcher and Teacher and University and Thing)) SubClassOf Module and Person and Professor and Project and Researcher and Teacher and University and Thing and (employed_by some (Module and Person and Professor and Project and Researcher and Teacher and University and Thing)) and (manages some (Module and Person and Professor and Project and Researcher and Teacher and University and Thing)) and (teaches some (Module and Person and Professor and Project and Researcher and Teacher and University and Thing)), True
+Can something that teaches some Researcher be considered a subcategory of 'Professor'?, True
+Can something that teaches some Researcher be considered a subcategory of 'University'?, True
+Can Researcher be considered a subcategory of 'University'?, False
+Can Thing be considered a subcategory of 'something that teaches some Researcher'?, True
+Can Researcher be considered a subcategory of 'Project'?, False
+Can Researcher be considered a subcategory of 'Module'?, False
+Can Researcher be considered a subcategory of 'Professor'?, False
+Can Researcher be considered a subcategory of 'Teacher'?, False
+Can Researcher be considered a subcategory of 'Person'?, True
+Can Thing be considered a subcategory of 'Person'?, False
+Can something that manages some Project be considered a subcategory of 'Person'?, False
+Can Project be considered a subcategory of 'Professor'?, False
+Can something that teaches some Project be considered a subcategory of 'University'?, True
+Can Project be considered a subcategory of 'University'?, False
+Can Thing be considered a subcategory of 'something that teaches some Project'?, False
+Can Thing be considered a subcategory of 'University'?, False
+Can Thing be considered a subcategory of 'Project'?, False
+Can Thing be considered a subcategory of 'Module'?, False
+Can Thing be considered a subcategory of 'Professor'?, False
+Can Thing be considered a subcategory of 'Teacher'?, False
+Can Thing be considered a subcategory of 'Researcher'?, False
+Can Project be considered a subcategory of 'Module'?, True
+Can Teacher that is also University be considered a subcategory of 'Researcher'?, False
+Can Teacher that is also University be considered a subcategory of 'Person'?, True
+Can Teacher that is also University be considered a subcategory of 'Project'?, False
+Can Teacher that is also University be considered a subcategory of 'Module'?, False
+Can Teacher that is also University be considered a subcategory of 'Professor'?, False
+Can University be considered a subcategory of 'Person'?, False
+Can Teacher be considered a subcategory of 'Person'?, True
+Can Teacher be considered a subcategory of 'University'?, False
+Can Teacher be considered a subcategory of 'Project'?, False
+Can Teacher be considered a subcategory of 'Module'?, True
+Can Teacher be considered a subcategory of 'Module that is also Person'?, True
+Can Teacher be considered a subcategory of 'Professor'?, True
+Can Teacher be considered a subcategory of 'Module that is also Person that is also Professor'?, True
+Can Teacher be considered a subcategory of 'Researcher'?, True
+Can Teacher be considered a subcategory of 'Module that is also Person that is also Professor that is also Researcher'?, True
+Can Person that is also Project be considered a subcategory of 'Researcher'?, True
+Can Person that is also Project be considered a subcategory of 'University'?, False
+Can Person that is also Project be considered a subcategory of 'Professor'?, False
+Can Person that is also Project be considered a subcategory of 'Teacher'?, False
+Can Project be considered a subcategory of 'Researcher'?, False
+Can Person be considered a subcategory of 'Researcher'?, False
+Can something that teaches some Researcher be considered a subcategory of 'Person'?, True
+Can Thing be considered a subcategory of 'something that teaches some (Person that is also Researcher)'?, False
+Can Person that is also Researcher be considered a subcategory of 'University'?, False
+Can Person that is also Researcher be considered a subcategory of 'Project'?, False
+Can Person that is also Researcher be considered a subcategory of 'Module'?, False
+Can Person that is also Researcher be considered a subcategory of 'Professor'?, True
+Can Person be considered a subcategory of 'Professor'?, False
+Can Module that is also Project be considered a subcategory of 'Researcher'?, False
+Can Person that is also Teacher be considered a subcategory of 'University'?, False
+Can Person be considered a subcategory of 'something that teaches some Project'?, False
+Can Researcher that is also University be considered a subcategory of 'Teacher'?, False
+Can something that manages some University be considered a subcategory of 'Person'?, False
+Can Person be considered a subcategory of 'Module'?, False
+Can Person that is also Researcher be considered a subcategory of 'Teacher'?, False
+Can Researcher be considered a subcategory of 'something that teaches some Teacher'?, False
+Can University be considered a subcategory of 'something that teaches some Professor'?, True
+Can University be considered a subcategory of 'Project'?, False
+Can University be considered a subcategory of 'Module'?, False
+Can University be considered a subcategory of 'Professor'?, False
+Can University be considered a subcategory of 'Teacher'?, False
+Can University be considered a subcategory of 'Researcher'?, False
+Can something that teaches some Professor be considered a subcategory of 'something that teaches some Professor'?, True
+Can Module be considered a subcategory of 'Professor'?, False
+Can University be considered a subcategory of 'University'?, False
+Can something that manages some Module be considered a subcategory of 'Teacher'?, True
+Can something that manages some Module be considered a subcategory of 'University'?, False
+Can something that manages some Module be considered a subcategory of 'Project'?, True
+Can Module be considered a subcategory of 'Project'?, False
+Can Thing be considered a subcategory of 'something that manages some Module'?, False
+Can Module be considered a subcategory of 'University'?, False
+Can Module be considered a subcategory of 'Teacher'?, False
+Can Module be considered a subcategory of 'Person'?, False
+Can Module be considered a subcategory of 'Researcher'?, False
+Can something that manages some Thing be considered a subcategory of 'Project'?, True
+Can something that teaches some University be considered a subcategory of 'Project'?, False
+Can Professor that is also University be considered a subcategory of 'Module'?, False
+Can Teacher be considered a subcategory of 'something that manages some Researcher'?, True
+Can University be considered a subcategory of 'something that manages some Researcher'?, True
+Can Thing that is also something that (manages some Researcher) be considered a subcategory of 'Thing that is also something that (manages some Researcher)'?, False
+Can Professor be considered a subcategory of 'Researcher'?, True
+Can Professor be considered a subcategory of 'University'?, False
+Can Professor be considered a subcategory of 'Project'?, False
+Can Professor be considered a subcategory of 'Module'?, True
+Can Professor be considered a subcategory of 'Module that is also Researcher'?, True
+Can Professor be considered a subcategory of 'Teacher'?, True
+Can Professor be considered a subcategory of 'Module that is also Researcher that is also Teacher'?, True
+Can Professor be considered a subcategory of 'Person'?, True
+Can Professor be considered a subcategory of 'Module that is also Person that is also Researcher that is also Teacher'?, True
+Can Project that is also Teacher be considered a subcategory of 'University'?, False
+Can something that teaches some Module be considered a subcategory of 'Researcher'?, True
+Can something that teaches some Module be considered a subcategory of 'University'?, True
+Can Thing be considered a subcategory of 'Thing that is also something that (teaches some (Module that is also Thing))'?, True
+Can Module that is also Thing be considered a subcategory of 'University'?, False
+Can Module that is also Thing be considered a subcategory of 'Project'?, True
+Can Professor be considered a subcategory of 'something that employed_by some Professor'?, True
+Can University be considered a subcategory of 'something that employed_by some Professor'?, TRUE
+Can Thing that is also something that (employed_by some Professor) be considered a subcategory of 'Thing that is also something that (employed_by some Professor)'?, False
+Can Thing that is also something that (employed_by some (Professor that is also Thing)) be considered a subcategory of 'Thing that is also something that (employed_by some (Professor that is also Thing))'?, False
+Can University be considered a subcategory of 'Professor that is also Thing'?, False
+Can Project be considered a subcategory of 'Professor that is also Thing'?, False
+Can Module be considered a subcategory of 'Professor that is also Thing'?, False
+Can Person be considered a subcategory of 'Professor that is also Thing'?, False
+Can Thing that is also something that (employed_by some (Professor that is also Thing)) be considered a subcategory of 'Thing that is also something that (employed_by some (Professor that is also Thing)) that is also something that (teaches some (Professor that is also Thing))'?, False
+Can Thing that is also something that (employed_by some (Professor that is also Project that is also Thing)) be considered a subcategory of 'Thing that is also something that (employed_by some (Professor that is also Project that is also Thing)) that is also something that (teaches some (Professor that is also Thing))'?, False
+Can University be considered a subcategory of 'Professor that is also Project that is also Thing'?, False
+Can Project be considered a subcategory of 'Professor that is also Project that is also Thing'?, False
+Can Module be considered a subcategory of 'Professor that is also Project that is also Thing'?, False
+Can Person be considered a subcategory of 'Professor that is also Project that is also Thing'?, False
+Can something that employed_by some Professor be considered a subcategory of 'Project'?, True
+Can something that employed_by some Professor be considered a subcategory of 'University'?, True
+Can Thing be considered a subcategory of 'Thing that is also something that (employed_by some (Module that is also Person that is also Professor that is also Project that is also Researcher that is also Teacher that is also Thing))'?, True
+Can Module that is also Person that is also Professor that is also Project that is also Researcher that is also Teacher that is also Thing be considered a subcategory of 'University'?, False
+Can Thing that is also something that (employed_by some Module) that is also something that (employed_by some (Person that is also Professor that is also Project that is also Researcher that is also Teacher that is also Thing)) be considered a subcategory of 'Thing that is also something that (employed_by some (Module that is also Person that is also Professor that is also Project that is also Researcher that is also Teacher that is also Thing))'?, False
+Can Thing that is also something that (employed_by some Module) that is also something that (employed_by some (Person that is also Professor that is also Project that is also Researcher that is also Teacher that is also Thing)) be considered a subcategory of 'University'?, False
+Can Thing that is also something that (employed_by some (Module that is also Person that is also Professor that is also Project that is also Researcher that is also Teacher that is also Thing)) be considered a subcategory of 'Thing that is also something that (employed_by some (Module that is also Person that is also Professor that is also Project that is also Researcher that is also Teacher that is also Thing))'?, True
+Can Thing that is also something that (employed_by some (Person that is also Professor that is also Project that is also Researcher that is also Teacher that is also Thing)) be considered a subcategory of 'University'?, True
+Can Thing that is also something that (employed_by some (Professor that is also Project that is also Researcher that is also Teacher that is also Thing)) be considered a subcategory of 'University'?, True
+Can Thing that is also something that (employed_by some (Project that is also Researcher that is also Teacher that is also Thing)) be considered a subcategory of 'University'?, True
+Can Thing that is also something that (employed_by some (Researcher that is also Teacher that is also Thing)) be considered a subcategory of 'University'?, False
+Can Thing that is also something that (employed_by some (Project that is also Teacher that is also Thing)) be considered a subcategory of 'University'?, False
+Can Thing that is also something that (employed_by some (Project that is also Researcher that is also Thing)) be considered a subcategory of 'University'?, False
+Can something that employed_by some Researcher be considered a subcategory of 'Module'?, False
+Can Person be considered a subcategory of 'something that teaches some Researcher'?, False
+Can something that employed_by some Module be considered a subcategory of 'Module'?, True
+Can something that employed_by some Module be considered a subcategory of 'University'?, False
+Can something that employed_by some Module be considered a subcategory of 'Project'?, True
+Can Thing be considered a subcategory of 'Thing that is also something that (employed_by some (Module that is also Project that is also Thing))'?, False
+Can Module that is also Project that is also Thing be considered a subcategory of 'University'?, False
+Can Module that is also Project that is also Thing be considered a subcategory of 'Professor'?, False
+Can Module that is also Project that is also Thing be considered a subcategory of 'Teacher'?, False
+Can Module that is also Project that is also Thing be considered a subcategory of 'Person'?, False
+Can Module that is also Project that is also Thing be considered a subcategory of 'Researcher'?, False
+Can Thing that is also something that (employed_by some Module) that is also something that (employed_by some (Project that is also Thing)) be considered a subcategory of 'Thing that is also something that (employed_by some (Module that is also Project that is also Thing))'?, True
+Can Thing that is also something that (employed_by some (Module that is also Project that is also Thing)) be considered a subcategory of 'Thing that is also something that (employed_by some (Module that is also Project that is also Thing))'?, False
+Can Thing that is also something that (employed_by some (Module that is also Project that is also Thing)) be considered a subcategory of 'Project'?, False
+Can Thing that is also something that (employed_by some (Project that is also Thing)) be considered a subcategory of 'Project'?, True
+Can Thing that is also something that (employed_by some Thing) be considered a subcategory of 'Project'?, True
+Can Project be considered a subcategory of 'something that manages some Person'?, True
+Can Project be considered a subcategory of 'Teacher'?, False
+Can Project be considered a subcategory of 'Person'?, False
+Can University be considered a subcategory of 'something that manages some Person'?, True
+Can Thing that is also something that (manages some Person) be considered a subcategory of 'Thing that is also something that (manages some Person)'?, False
+Can Project that is also Thing that is also something that (manages some Person) be considered a subcategory of 'Project that is also Thing that is also something that (manages some Person)'?, False
+Can Project that is also University that is also Thing that is also something that (employed_by some (Professor that is also Project that is also Thing)) be considered a subcategory of 'Project that is also University that is also Thing that is also something that (employed_by some (Professor that is also Project that is also Thing)) that is also something that (manages some Person) that is also something that (teaches some Professor) that is also something that (teaches some (Professor that is also Thing))'?, False
+Can Module that is also Project that is also University that is also Thing that is also something that (employed_by some (Professor that is also Project that is also Thing)) be considered a subcategory of 'Module that is also Project that is also University that is also Thing that is also something that (employed_by some (Professor that is also Project that is also Thing)) that is also something that (manages some Person) that is also something that (teaches some Professor) that is also something that (teaches some (Professor that is also Thing))'?, False
+Can Professor be considered a subcategory of 'something that teaches some Researcher'?, True
+Can Project be considered a subcategory of 'something that teaches some Researcher'?, TRUE
+Can Thing that is also something that (teaches some Researcher) be considered a subcategory of 'Thing that is also something that (teaches some Researcher)'?, False
+Can Project be considered a subcategory of 'Project'?, False
+Can Module be considered a subcategory of 'Thing that is also something that (teaches some Researcher)'?, True
+Can Module be considered a subcategory of 'Module'?, False
+Can Thing that is also something that (teaches some (Researcher that is also Thing)) be considered a subcategory of 'Thing that is also something that (teaches some (Researcher that is also Thing))'?, True
+Can University be considered a subcategory of 'Researcher that is also Thing'?, False
+Can Project be considered a subcategory of 'Researcher that is also Thing'?, False
+Can Module be considered a subcategory of 'Researcher that is also Thing'?, True
+Can Module that is also Researcher be considered a subcategory of 'University'?, False
+Can Teacher be considered a subcategory of 'something that teaches some Teacher'?, True
+Can Project be considered a subcategory of 'something that teaches some Teacher'?, True
+Can Thing that is also something that (teaches some Teacher) be considered a subcategory of 'Thing that is also something that (teaches some Teacher)'?, False
+Can Module be considered a subcategory of 'Thing that is also something that (teaches some Teacher)'?, True
+Can Person be considered a subcategory of 'Teacher'?, False
+Can Thing that is also something that (teaches some (Teacher that is also Thing)) be considered a subcategory of 'Thing that is also something that (teaches some (Teacher that is also Thing))'?, False
+Can Person be considered a subcategory of 'Teacher that is also Thing'?, False
+Can Project that is also Researcher that is also Thing that is also something that (teaches some (Teacher that is also Thing)) be considered a subcategory of 'Project that is also Researcher that is also Thing that is also something that (teaches some (Teacher that is also Thing))'?, True
+Can Module that is also Project that is also Researcher that is also Thing that is also something that (teaches some (Teacher that is also Thing)) be considered a subcategory of 'Module that is also Project that is also Researcher that is also Thing that is also something that (teaches some (Teacher that is also Thing))'?, False
+Can Project that is also Researcher be considered a subcategory of 'University'?, False
+Can something that teaches some Researcher be considered a subcategory of 'Researcher'?, True
+Can Thing be considered a subcategory of 'Thing that is also something that (teaches some (Module that is also Person that is also Professor that is also Project that is also Researcher that is also Teacher that is also Thing))'?, True
+Can Thing that is also something that (teaches some Module) that is also something that (teaches some (Person that is also Professor that is also Project that is also Researcher that is also Teacher that is also Thing)) be considered a subcategory of 'Thing that is also something that (teaches some (Module that is also Person that is also Professor that is also Project that is also Researcher that is also Teacher that is also Thing))'?, False.
+Can Thing that is also something that (teaches some Module) that is also something that (teaches some (Person that is also Professor that is also Project that is also Researcher that is also Teacher that is also Thing)) be considered a subcategory of 'University'?, True
+Can Thing that is also something that (teaches some Module) that is also something that (teaches some Person) that is also something that (teaches some (Professor that is also Project that is also Researcher that is also Teacher that is also Thing)) be considered a subcategory of 'Thing that is also something that (teaches some Module) that is also something that (teaches some (Person that is also Professor that is also Project that is also Researcher that is also Teacher that is also Thing))'?, False
+Can Thing that is also something that (teaches some Module) that is also something that (teaches some Person) that is also something that (teaches some (Professor that is also Project that is also Researcher that is also Teacher that is also Thing)) be considered a subcategory of 'University'?, False
+Can Thing that is also something that (teaches some Module) that is also something that (teaches some (Person that is also Professor that is also Project that is also Researcher that is also Teacher that is also Thing)) be considered a subcategory of 'Thing that is also something that (teaches some Module) that is also something that (teaches some (Person that is also Professor that is also Project that is also Researcher that is also Teacher that is also Thing))'?, False
+Can Thing that is also something that (teaches some Thing) that is also something that (teaches some (Person that is also Professor that is also Project that is also Researcher that is also Teacher that is also Thing)) be considered a subcategory of 'University'?, False
+Can Thing that is also something that (teaches some Module) that is also something that (teaches some (Professor that is also Project that is also Researcher that is also Teacher that is also Thing)) be considered a subcategory of 'University'?, False
+Can Thing that is also something that (teaches some Module) that is also something that (teaches some (Person that is also Project that is also Researcher that is also Teacher that is also Thing)) be considered a subcategory of 'University'?, False
+Can Thing that is also something that (teaches some Module) that is also something that (teaches some (Person that is also Professor that is also Researcher that is also Teacher that is also Thing)) be considered a subcategory of 'University'?, False
+Can Thing that is also something that (teaches some Module) that is also something that (teaches some (Person that is also Professor that is also Project that is also Teacher that is also Thing)) be considered a subcategory of 'University'?, False
+Can Thing that is also something that (teaches some Module) that is also something that (teaches some (Person that is also Professor that is also Project that is also Researcher that is also Thing)) be considered a subcategory of 'University'?, False
+Can Person be considered a subcategory of 'something that manages some Researcher'?, False
+Can Person be considered a subcategory of 'something that manages some Person'?, False
+Can Person be considered a subcategory of 'something that employed_by some Person'?, True
+Can Person be considered a subcategory of 'University'?, False
+Can Person be considered a subcategory of 'Project'?, False
+Can University that is also something that (employed_by some Person) be considered a subcategory of 'University that is also something that (employed_by some Person)'?, False
+Can Person be considered a subcategory of 'Person'?, True
+Can University that is also Thing that is also something that (employed_by some Person) be considered a subcategory of 'University that is also Thing that is also something that (employed_by some Person)'?, False
+Can Project that is also University that is also Thing that is also something that (employed_by some Person) be considered a subcategory of 'Project that is also University that is also Thing that is also something that (employed_by some Person)'?, False
+Can Module that is also Project that is also University that is also Thing that is also something that (employed_by some Person) be considered a subcategory of 'Module that is also Project that is also University that is also Thing that is also something that (employed_by some Person)'?, False

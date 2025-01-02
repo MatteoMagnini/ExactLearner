@@ -1,0 +1,1736 @@
+Can Animal that is also Backbone be considered a subcategory of 'Carnivore'?, \nFalse
+Can something that eats some Carnivore be considered a subcategory of 'Fish'?, \nFalse
+Can something that has_part some Reptile be considered a subcategory of 'Egg'?, \nFalse
+Can Meat be considered a subcategory of 'Water'?, \nFalse
+Can something that lives_in some Backbone be considered a subcategory of 'Reptile'?, \nFalse
+Can Carnivore that is also Vertebrate be considered a subcategory of 'Egg'?, \nFalse
+Can something that eats some Bird be considered a subcategory of 'Cat'?, \nFalse
+Can Backbone be considered a subcategory of 'something that has_part some Leg'?, \nFalse
+Can Backbone that is also Fish be considered a subcategory of 'Carnivore'?, \nFalse
+Can Carnivore that is also Herbivore be considered a subcategory of 'Fish'?, \nFalse
+Can Meat that is also Reptile be considered a subcategory of 'Water'?, \nFalse
+Can Cat that is also Water be considered a subcategory of 'Leg'?, \nFalse
+Can Carnivore that is also Leg be considered a subcategory of 'Egg'?, \nFalse
+Can Meat be considered a subcategory of 'Egg'?, \nFalse
+Can Meat that is also Plant be considered a subcategory of 'Backbone'?, \nFalse
+Can Animal that is also Backbone be considered a subcategory of 'Water'?, \nFalse
+Can something that eats some Water be considered a subcategory of 'Carnivore'?, \nTrue
+Can something that eats some Water be considered a subcategory of 'Egg'?, \nFalse
+Can something that eats some Water be considered a subcategory of 'Meat'?, \nFalse
+Can Water be considered a subcategory of 'Carnivore'?, \nFalse
+Can Thing be considered a subcategory of 'something that eats some Water'?, \nTrue
+Can Water be considered a subcategory of 'Egg'?, \nFalse
+Can Water be considered a subcategory of 'Meat'?, \nFalse
+Can Water be considered a subcategory of 'Animal'?, \nFalse
+Can Water be considered a subcategory of 'Reptile'?, \nFalse
+Can Water be considered a subcategory of 'Plant'?, \nFalse
+Can Water be considered a subcategory of 'Vertebrate'?, \nFalse
+Can Water be considered a subcategory of 'Cat'?, \nFalse
+Can Water be considered a subcategory of 'Fish'?, \nFalse
+Can Water be considered a subcategory of 'Mammal'?, \nFalse
+Can Water be considered a subcategory of 'Herbivore'?, \nFalse
+Can Water be considered a subcategory of 'Leg'?, \nFalse
+Can Water be considered a subcategory of 'Elephant'?, \nFalse
+Can Water be considered a subcategory of 'Bird'?, \nFalse
+Can Water be considered a subcategory of 'Backbone'?, \nFalse
+Can Water be considered a subcategory of 'Wing'?, \nFalse
+Can something that eats some Thing be considered a subcategory of 'Carnivore'?, \nFalse
+Can Meat be considered a subcategory of 'Elephant'?, \nFalse
+Can Vertebrate that is also Water be considered a subcategory of 'Leg'?, \nFalse
+Can Carnivore that is also Reptile be considered a subcategory of 'Fish'?, \nFalse
+Can Bird be considered a subcategory of 'something that lays some Backbone'?, \nFalse
+Can Backbone that is also Fish be considered a subcategory of 'Water'?, \nFalse
+Can Elephant that is also Water be considered a subcategory of 'Vertebrate'?, \nFalse
+Can Reptile that is also Wing be considered a subcategory of 'Egg'?, \nFalse
+Can Backbone that is also Meat be considered a subcategory of 'Elephant'?, \nFalse
+Can Backbone that is also Water be considered a subcategory of 'Reptile'?, \nFalse
+Can Fish that is also Leg be considered a subcategory of 'Vertebrate'?, \nFalse
+Can Egg that is also Mammal be considered a subcategory of 'Backbone'?, \nFalse
+Can Egg that is also Leg be considered a subcategory of 'Vertebrate'?, \nFalse
+Can something that has_part some Cat be considered a subcategory of 'Water'?, \nFalse
+Can Meat that is also Vertebrate be considered a subcategory of 'Carnivore'?, \nFalse
+Can Backbone that is also Leg be considered a subcategory of 'Egg'?, \nFalse
+Can Mammal that is also Vertebrate be considered a subcategory of 'Wing'?, \nFalse
+Can Cat that is also Mammal be considered a subcategory of 'Backbone'?, \nFalse
+Can Bird that is also Vertebrate be considered a subcategory of 'Leg'?, \nFalse
+Can Cat that is also Egg be considered a subcategory of 'Mammal'?, \nFalse
+Can Animal be considered a subcategory of 'something that lays some Vertebrate'?, \nTrue
+Can Animal be considered a subcategory of 'Egg'?, \nFalse
+Can Animal be considered a subcategory of 'Meat'?, \nFalse
+Can Animal be considered a subcategory of 'Carnivore'?, \nFalse
+Can Animal be considered a subcategory of 'Water'?, \nFalse
+Can Animal be considered a subcategory of 'Reptile'?, \nFalse
+Can Animal be considered a subcategory of 'Plant'?, \nFalse
+Can Animal be considered a subcategory of 'Vertebrate'?, \nTrue
+Can Animal be considered a subcategory of 'Cat'?, \nFalse
+Can Animal be considered a subcategory of 'Fish'?, \nFalse
+Can Animal be considered a subcategory of 'Mammal'?, \nTrue
+Can Animal be considered a subcategory of 'Mammal that is also Vertebrate'?, \nFalse
+Can Animal be considered a subcategory of 'Herbivore'?, \nFalse
+Can Animal be considered a subcategory of 'Leg'?, \nFalse
+Can Animal be considered a subcategory of 'Elephant'?, \nFalse
+Can Animal be considered a subcategory of 'Bird'?, \nFalse
+Can Animal be considered a subcategory of 'Backbone'?, \nFalse
+Can Animal be considered a subcategory of 'Wing'?, \nFalse
+Can Animal that is also Elephant be considered a subcategory of 'Water'?, \nFalse
+Can Reptile that is also Vertebrate be considered a subcategory of 'Carnivore'?, \nFalse
+Can Leg that is also Water be considered a subcategory of 'Egg'?, \nFalse
+Can Animal that is also Mammal be considered a subcategory of 'Wing'?, \nFalse
+Can Animal that is also Cat be considered a subcategory of 'Backbone'?, \nFalse
+Can something that lays some Vertebrate be considered a subcategory of 'Leg'?, \nFalse
+Can Cat that is also Egg be considered a subcategory of 'Carnivore'?, \nFalse
+Can Animal that is also Leg be considered a subcategory of 'Bird'?, \nFalse
+Can something that has_part some Reptile be considered a subcategory of 'Elephant'?, \nFalse
+Can something that lives_in some Leg be considered a subcategory of 'Leg'?, \nFalse
+Can Mammal that is also Vertebrate be considered a subcategory of 'Egg'?, \nFalse
+Can Bird that is also Vertebrate be considered a subcategory of 'Wing'?, \nFalse
+Can Bird that is also Carnivore be considered a subcategory of 'Backbone'?, \nFalse
+Can something that lays some Wing be considered a subcategory of 'Herbivore'?, \nFalse
+Can Cat that is also Wing be considered a subcategory of 'Elephant'?, \nFalse
+Can Elephant that is also Water be considered a subcategory of 'Meat'?, \nFalse
+Can something that lays some Vertebrate be considered a subcategory of 'Reptile'?, \nFalse
+Can Cat that is also Elephant be considered a subcategory of 'Leg'?, \nFalse
+Can something that lives_in some Fish be considered a subcategory of 'Backbone'?, \nFalse
+Can something that has_part some Animal be considered a subcategory of 'Carnivore'?, \nFalse
+Can Backbone that is also Bird be considered a subcategory of 'Wing'?, \nFalse
+Can Fish that is also Plant be considered a subcategory of 'Water'?, \nFalse
+Can Egg that is also Mammal be considered a subcategory of 'Cat'?, \nFalse
+Can Fish that is also Wing be considered a subcategory of 'Egg'?, \nFalse
+Can something that has_part some Backbone be considered a subcategory of 'Reptile'?, \nFalse
+Can Herbivore that is also Plant be considered a subcategory of 'Backbone'?, \nFalse
+Can Egg that is also Elephant be considered a subcategory of 'Vertebrate'?, \nFalse
+Can Fish that is also Reptile be considered a subcategory of 'Plant'?, \nFalse
+Can Bird that is also Meat be considered a subcategory of 'Herbivore'?, \nFalse
+Can Animal that is also Plant be considered a subcategory of 'Carnivore'?, \nFalse
+Can something that lays some Water be considered a subcategory of 'Plant'?, \nFalse
+Can something that has_part some Plant be considered a subcategory of 'Backbone'?, \nFalse
+Can Backbone that is also Leg be considered a subcategory of 'Wing'?, \nFalse
+Can Fish that is also Vertebrate be considered a subcategory of 'Water'?, \nFalse
+Can Animal that is also Mammal be considered a subcategory of 'Backbone'?, \nFalse
+Can something that lays some Fish be considered a subcategory of 'Fish'?, \nTrue
+Can something that lays some Fish be considered a subcategory of 'Egg'?, \nFalse
+Can something that lays some Fish be considered a subcategory of 'Meat'?, \nFalse
+Can something that lays some Fish be considered a subcategory of 'Carnivore'?, \nFalse
+Can something that lays some Fish be considered a subcategory of 'Water'?, \nTrue
+Can Fish be considered a subcategory of 'Water'?, \nFalse
+Can Thing be considered a subcategory of 'something that lays some Fish'?, \nFalse
+Can Thing be considered a subcategory of 'Egg'?, \nFalse
+Can Thing be considered a subcategory of 'Meat'?, \nFalse
+Can Thing be considered a subcategory of 'Carnivore'?, \nFalse
+Can Thing be considered a subcategory of 'Water'?, \nFalse
+Can Thing be considered a subcategory of 'Animal'?, \nFalse
+Can Thing be considered a subcategory of 'Reptile'?, \nFalse
+Can Thing be considered a subcategory of 'Plant'?, \nFalse
+Can Thing be considered a subcategory of 'Vertebrate'?, \nFalse
+Can Thing be considered a subcategory of 'Cat'?, \nFalse
+Can Thing be considered a subcategory of 'Fish'?, \nFalse
+Can Thing be considered a subcategory of 'Mammal'?, \nFalse
+Can Thing be considered a subcategory of 'Herbivore'?, \nFalse
+Can Thing be considered a subcategory of 'Leg'?, \nFalse
+Can Thing be considered a subcategory of 'Elephant'?, \nFalse
+Can Thing be considered a subcategory of 'Bird'?, \nFalse
+Can Thing be considered a subcategory of 'Backbone'?, \nFalse
+Can Thing be considered a subcategory of 'Wing'?, \nFalse
+Can Fish be considered a subcategory of 'Egg'?, \nFalse
+Can Fish be considered a subcategory of 'Meat'?, \nFalse
+Can Fish be considered a subcategory of 'Carnivore'?, \nFalse
+Can Fish be considered a subcategory of 'Animal'?, \nTrue
+Can Animal that is also Elephant be considered a subcategory of 'Carnivore'?, \nFalse
+Can Leg that is also Water be considered a subcategory of 'Wing'?, \nFalse
+Can Animal that is also Fish be considered a subcategory of 'Water'?, \nFalse
+Can Animal that is also Leg be considered a subcategory of 'Cat'?, \nFalse
+Can something that lays some Vertebrate be considered a subcategory of 'Egg'?, \nFalse
+Can Bird be considered a subcategory of 'Backbone'?, \nFalse
+Can something that lives_in some Plant be considered a subcategory of 'Cat'?, \nFalse
+Can something that eats some Wing be considered a subcategory of 'Plant'?, \nFalse
+Can Plant that is also Reptile be considered a subcategory of 'Elephant'?, \nFalse
+Can Backbone that is also Bird be considered a subcategory of 'Carnivore'?, \nFalse
+Can Fish be considered a subcategory of 'something that has_part some Vertebrate'?, \nFalse
+Can Vertebrate that is also Wing be considered a subcategory of 'Egg'?, \nFalse
+Can Wing be considered a subcategory of 'something that lays some Herbivore'?, \nTrue
+Can Wing be considered a subcategory of 'Egg'?, \nFalse
+Can Wing be considered a subcategory of 'Meat'?, \nFalse
+Can Wing be considered a subcategory of 'Carnivore'?, \nFalse
+Can Wing be considered a subcategory of 'Water'?, \nFalse
+Can Wing be considered a subcategory of 'Animal'?, \nFalse
+Can Wing be considered a subcategory of 'Reptile'?, \nFalse
+Can Wing be considered a subcategory of 'Plant'?, \nFalse
+Can Wing be considered a subcategory of 'Vertebrate'?, \nTrue
+Can Wing be considered a subcategory of 'Cat'?, \nFalse
+Can Wing be considered a subcategory of 'Fish'?, \nFalse
+Can Wing be considered a subcategory of 'Mammal'?, \nFalse
+Can Wing be considered a subcategory of 'Herbivore'?, \nFalse
+Can Wing be considered a subcategory of 'Leg'?, \nFalse
+Can Wing be considered a subcategory of 'Elephant'?, \nFalse
+Can Wing be considered a subcategory of 'Bird'?, \nTrue
+Can Wing be considered a subcategory of 'Bird that is also Vertebrate'?, \nTrue
+Can Wing be considered a subcategory of 'Backbone'?, \nFalse
+Can Bird that is also Plant be considered a subcategory of 'Backbone'?, \nFalse
+Can Water be considered a subcategory of 'something that has_part some Animal'?, \nFalse
+Can Elephant that is also Wing be considered a subcategory of 'Plant'?, \nFalse
+Can Bird that is also Water be considered a subcategory of 'Meat'?, \nFalse
+Can Bird that is also Meat be considered a subcategory of 'Carnivore'?, \nFalse
+Can Egg be considered a subcategory of 'something that has_part some Vertebrate'?, \nFalse
+Can something that lays some Elephant be considered a subcategory of 'Carnivore'?, \nFalse
+Can Egg that is also Water be considered a subcategory of 'Animal'?, \nFalse
+Can something that lives_in some Plant be considered a subcategory of 'Backbone'?, \nFalse
+Can something that eats some Egg be considered a subcategory of 'Vertebrate'?, \nFalse
+Can Carnivore be considered a subcategory of 'something that lays some Plant'?, \nFalse
+Can Backbone that is also Bird be considered a subcategory of 'Herbivore'?, \nFalse
+Can Fish that is also Plant be considered a subcategory of 'Carnivore'?, \nFalse
+Can Wing be considered a subcategory of 'something that lays some Wing'?, \nTrue
+Can Egg be considered a subcategory of 'something that lays some Wing'?, \nTrue
+Can something that lays some (Vertebrate that is also Wing) be considered a subcategory of 'something that lays some (Vertebrate that is also Wing)'?, \nTrue
+Can Egg be considered a subcategory of 'Vertebrate that is also Wing'?, \nFalse
+Can Meat be considered a subcategory of 'Vertebrate that is also Wing'?, \nFalse
+Can Carnivore be considered a subcategory of 'Vertebrate that is also Wing'?, \nFalse
+Can Water be considered a subcategory of 'Vertebrate that is also Wing'?, \nFalse
+Can Animal be considered a subcategory of 'Vertebrate that is also Wing'?, \nFalse
+Can Reptile be considered a subcategory of 'Vertebrate that is also Wing'?, \nFalse
+Can Plant be considered a subcategory of 'Vertebrate that is also Wing'?, \nFalse
+Can Vertebrate be considered a subcategory of 'Vertebrate that is also Wing'?, \nFalse
+Can Cat be considered a subcategory of 'Vertebrate that is also Wing'?, \nFalse
+Can Fish be considered a subcategory of 'Vertebrate that is also Wing'?, \nFalse
+Can Mammal be considered a subcategory of 'Vertebrate that is also Wing'?, \nFalse
+Can Herbivore be considered a subcategory of 'Vertebrate that is also Wing'?, \nFalse
+Can Leg be considered a subcategory of 'Vertebrate that is also Wing'?, \nFalse
+Can Elephant be considered a subcategory of 'Vertebrate that is also Wing'?, \nFalse
+Can Bird be considered a subcategory of 'Vertebrate that is also Wing'?, \nTrue
+Can Bird be considered a subcategory of 'Egg'?, \nFalse
+Can Bird be considered a subcategory of 'Meat'?, \nFalse
+Can Bird be considered a subcategory of 'Carnivore'?, \nFalse
+Can Bird be considered a subcategory of 'Water'?, \nFalse
+Can Bird be considered a subcategory of 'Animal'?, \nTrue
+Can Bird be considered a subcategory of 'Animal that is also Vertebrate that is also Wing'?, \nTrue
+Can Bird be considered a subcategory of 'Reptile'?, \nFalse
+Can Bird be considered a subcategory of 'Plant'?, \nFalse
+Can Bird be considered a subcategory of 'Cat'?, \nFalse
+Can Bird be considered a subcategory of 'Fish'?, \nFalse
+Can Bird be considered a subcategory of 'Mammal'?, \nFalse
+Can Bird be considered a subcategory of 'Herbivore'?, \nFalse
+Can Bird be considered a subcategory of 'Leg'?, \nFalse
+Can Bird be considered a subcategory of 'Elephant'?, \nFalse
+Can Plant that is also Water be considered a subcategory of 'Cat'?, \nFalse
+Can Cat be considered a subcategory of 'something that eats some Egg'?, \nFalse
+Can Leg that is also Wing be considered a subcategory of 'Egg'?, \nFalse
+Can Backbone that is also Herbivore be considered a subcategory of 'Wing'?, \nFalse
+Can something that lays some Cat be considered a subcategory of 'Elephant'?, \nFalse
+Can something that lays some Animal be considered a subcategory of 'Reptile'?, \nFalse
+Can Plant that is also Vertebrate be considered a subcategory of 'Fish'?, \nFalse
+Can Fish that is also Mammal be considered a subcategory of 'Wing'?, \nFalse
+Can something that eats some Fish be considered a subcategory of 'Meat'?, \nFalse
+Can Animal that is also Carnivore be considered a subcategory of 'Mammal'?, \nTrue
+Can Animal that is also Carnivore be considered a subcategory of 'Egg'?, \nFalse
+Can Animal that is also Carnivore be considered a subcategory of 'Meat'?, \nFalse
+Can Animal that is also Carnivore be considered a subcategory of 'Water'?, \nFalse
+Can Animal that is also Carnivore be considered a subcategory of 'Reptile'?, \nFalse
+Can Animal that is also Carnivore be considered a subcategory of 'Plant'?, \nFalse
+Can Animal that is also Carnivore be considered a subcategory of 'Cat'?, \nFalse
+Can Animal that is also Carnivore be considered a subcategory of 'Fish'?, \nFalse
+Can Carnivore be considered a subcategory of 'Mammal'?, \nTrue
+Can Carnivore be considered a subcategory of 'Egg'?, \nFalse
+Can Carnivore be considered a subcategory of 'Meat'?, \nFalse
+Can Carnivore be considered a subcategory of 'Water'?, \nFalse
+Can Carnivore be considered a subcategory of 'Animal'?, \nTrue
+Can Carnivore be considered a subcategory of 'Animal that is also Mammal'?, \nFalse
+Can Carnivore be considered a subcategory of 'Reptile'?, \nFalse
+Can Carnivore be considered a subcategory of 'Plant'?, \nFalse
+Can Carnivore be considered a subcategory of 'Vertebrate'?, \nFalse
+Can Carnivore be considered a subcategory of 'Cat'?, \nTrue
+Can Carnivore be considered a subcategory of 'Cat that is also Mammal'?, \nTrue
+Can Carnivore be considered a subcategory of 'Fish'?, \nFalse
+Can Carnivore be considered a subcategory of 'Herbivore'?, \nFalse
+Can Carnivore be considered a subcategory of 'Leg'?, \nFalse
+Can Carnivore be considered a subcategory of 'Elephant'?, \nFalse
+Can Carnivore be considered a subcategory of 'Bird'?, \nFalse
+Can Carnivore be considered a subcategory of 'Backbone'?, \nFalse
+Can Carnivore be considered a subcategory of 'Wing'?, \nFalse
+Can Carnivore be considered a subcategory of 'Animal that is also Cat that is also Mammal'?, \nTrue
+Can Meat that is also Vertebrate be considered a subcategory of 'Animal'?, \nTrue
+Can Meat that is also Vertebrate be considered a subcategory of 'Egg'?, \nFalse
+Can Meat that is also Vertebrate be considered a subcategory of 'Water'?, \nFalse
+Can Vertebrate be considered a subcategory of 'Animal'?, \nTrue
+Can Vertebrate be considered a subcategory of 'Egg'?, \nFalse
+Can Vertebrate be considered a subcategory of 'Meat'?, \nFalse
+Can Vertebrate be considered a subcategory of 'Carnivore'?, \nFalse
+Can Vertebrate be considered a subcategory of 'Water'?, \nFalse
+Can Vertebrate be considered a subcategory of 'Reptile'?, \nFalse
+Can Vertebrate be considered a subcategory of 'Plant'?, \nFalse
+Can Vertebrate be considered a subcategory of 'Cat'?, \nFalse
+Can Vertebrate be considered a subcategory of 'Fish'?, \nFalse
+Can Vertebrate be considered a subcategory of 'Mammal'?, \nFalse
+Can Vertebrate be considered a subcategory of 'Herbivore'?, \nFalse
+Can Vertebrate be considered a subcategory of 'Leg'?, \nFalse
+Can Vertebrate be considered a subcategory of 'Elephant'?, \nFalse
+Can Vertebrate be considered a subcategory of 'Bird'?, \nFalse
+Can Vertebrate be considered a subcategory of 'Backbone'?, \nFalse
+Can Vertebrate be considered a subcategory of 'Wing'?, \nFalse
+Can Animal that is also Egg be considered a subcategory of 'Elephant'?, \nFalse
+Can Water that is also Wing be considered a subcategory of 'Meat'?, \nFalse
+Can Animal that is also Wing be considered a subcategory of 'Leg'?, \nFalse
+Can Bird that is also Plant be considered a subcategory of 'Fish'?, \nFalse
+Can Elephant that is also Plant be considered a subcategory of 'Water'?, \nFalse
+Can Elephant that is also Fish be considered a subcategory of 'Meat'?, \nFalse
+Can Animal that is also Cat be considered a subcategory of 'Mammal'?, \nTrue
+Can Animal that is also Cat be considered a subcategory of 'Egg'?, \nFalse
+Can Animal that is also Cat be considered a subcategory of 'Meat'?, \nFalse
+Can Animal that is also Cat be considered a subcategory of 'Carnivore'?, \nTrue
+Can Cat be considered a subcategory of 'Carnivore'?, \nTrue
+Can Cat be considered a subcategory of 'Egg'?, \nFalse
+Can Cat be considered a subcategory of 'Meat'?, \nFalse
+Can Cat be considered a subcategory of 'Water'?, \nFalse
+Can Cat be considered a subcategory of 'Animal'?, \nTrue
+Can Cat be considered a subcategory of 'Animal that is also Carnivore'?, \nFalse
+Can Cat be considered a subcategory of 'Reptile'?, \nFalse
+Can Cat be considered a subcategory of 'Plant'?, \nFalse
+Can Cat be considered a subcategory of 'Vertebrate'?, \nTrue
+Can Cat be considered a subcategory of 'Carnivore that is also Vertebrate'?, \nTrue
+Can Cat be considered a subcategory of 'Fish'?, \nFalse
+Can Cat be considered a subcategory of 'Mammal'?, \nTrue
+Can Cat be considered a subcategory of 'Carnivore that is also Mammal that is also Vertebrate'?, \nTrue
+Can Cat be considered a subcategory of 'Herbivore'?, \nFalse
+Can Cat be considered a subcategory of 'Leg'?, \nFalse
+Can Cat be considered a subcategory of 'Elephant'?, \nFalse
+Can Cat be considered a subcategory of 'Bird'?, \nFalse
+Can Cat be considered a subcategory of 'Backbone'?, \nFalse
+Can Cat be considered a subcategory of 'Wing'?, \nFalse
+Can Cat be considered a subcategory of 'Animal that is also Carnivore that is also Mammal that is also Vertebrate'?, \nTrue
+Can Backbone that is also Plant be considered a subcategory of 'Bird'?, \nFalse
+Can Egg that is also Fish be considered a subcategory of 'Elephant'?, \nFalse
+Can Fish that is also Herbivore be considered a subcategory of 'Leg'?, \nFalse
+Can Cat that is also Herbivore be considered a subcategory of 'Fish'?, \nFalse
+Can something that has_part some Vertebrate be considered a subcategory of 'Elephant'?, \nFalse
+Can Carnivore that is also Leg be considered a subcategory of 'Meat'?, \nTrue
+Can Leg be considered a subcategory of 'Meat'?, \nFalse
+Can Mammal that is also Meat be considered a subcategory of 'Animal'?, \nTrue
+Can Mammal that is also Meat be considered a subcategory of 'Egg'?, \nFalse
+Can Mammal that is also Meat be considered a subcategory of 'Carnivore'?, \nFalse
+Can Mammal that is also Meat be considered a subcategory of 'Water'?, \nFalse
+Can Meat be considered a subcategory of 'Animal'?, \nTrue
+Can Meat be considered a subcategory of 'Carnivore'?, \nFalse
+Can Meat be considered a subcategory of 'Reptile'?, \nFalse
+Can Meat be considered a subcategory of 'Plant'?, \nFalse
+Can Meat be considered a subcategory of 'Vertebrate'?, \nFalse
+Can Meat be considered a subcategory of 'Cat'?, \nFalse
+Can Meat be considered a subcategory of 'Fish'?, \nFalse
+Can Meat be considered a subcategory of 'Mammal'?, \nTrue
+Can Meat be considered a subcategory of 'Animal that is also Mammal'?, \nTrue
+Can Meat be considered a subcategory of 'Herbivore'?, \nFalse
+Can Meat be considered a subcategory of 'Leg'?, \nFalse
+Can Meat be considered a subcategory of 'Bird'?, \nFalse
+Can Meat be considered a subcategory of 'Backbone'?, \nFalse
+Can Meat be considered a subcategory of 'Wing'?, \nFalse
+Can Animal that is also Cat be considered a subcategory of 'Bird'?, \nFalse
+Can Cat be considered a subcategory of 'something that lives_in some Bird'?, \nFalse
+Can Leg that is also Wing be considered a subcategory of 'Reptile'?, \nFalse
+Can Backbone that is also Elephant be considered a subcategory of 'Egg'?, \nFalse
+Can Backbone that is also Mammal be considered a subcategory of 'Animal'?, \nTrue
+Can Backbone that is also Mammal be considered a subcategory of 'Egg'?, \nFalse
+Can Backbone that is also Mammal be considered a subcategory of 'Meat'?, \nFalse
+Can Backbone that is also Mammal be considered a subcategory of 'Carnivore'?, \nFalse
+Can Backbone that is also Mammal be considered a subcategory of 'Water'?, \nFalse
+Can Mammal be considered a subcategory of 'Animal'?, \nTrue
+Can Mammal be considered a subcategory of 'Egg'?, \nFalse
+Can Mammal be considered a subcategory of 'Meat'?, \nFalse
+Can Mammal be considered a subcategory of 'Carnivore'?, \nFalse
+Can Mammal be considered a subcategory of 'Water'?, \nFalse
+Can Mammal be considered a subcategory of 'Reptile'?, \nFalse
+Can Mammal be considered a subcategory of 'Plant'?, \nFalse
+Can Mammal be considered a subcategory of 'Vertebrate'?, \nTrue
+Can Mammal be considered a subcategory of 'Animal that is also Vertebrate'?, \nTrue
+Can Mammal be considered a subcategory of 'Cat'?, \nFalse
+Can Mammal be considered a subcategory of 'Fish'?, \nFalse
+Can Mammal be considered a subcategory of 'Herbivore'?, \nFalse
+Can Mammal be considered a subcategory of 'Leg'?, \nFalse
+Can Mammal be considered a subcategory of 'Elephant'?, \nFalse
+Can Mammal be considered a subcategory of 'Bird'?, \nFalse
+Can Mammal be considered a subcategory of 'Backbone'?, \nFalse
+Can Mammal be considered a subcategory of 'Wing'?, \nFalse
+Can Animal that is also Fish be considered a subcategory of 'Bird'?, \nFalse
+Can Leg be considered a subcategory of 'something that lays some Reptile'?, \nFalse
+Can something that has_part some Bird be considered a subcategory of 'Bird'?, \nTrue
+Can something that has_part some Bird be considered a subcategory of 'Egg'?, \nFalse
+Can something that has_part some Bird be considered a subcategory of 'Meat'?, \nFalse
+Can something that has_part some Bird be considered a subcategory of 'Carnivore'?, \nFalse
+Can something that has_part some Bird be considered a subcategory of 'Water'?, \nFalse
+Can something that has_part some Bird be considered a subcategory of 'Animal'?, \nFalse
+Can something that has_part some Bird be considered a subcategory of 'Reptile'?, \nFalse
+Can something that has_part some Bird be considered a subcategory of 'Plant'?, \nFalse
+Can something that has_part some Bird be considered a subcategory of 'Vertebrate'?, \nFalse
+Can something that has_part some Bird be considered a subcategory of 'Cat'?, \nFalse
+Can something that has_part some Bird be considered a subcategory of 'Fish'?, \nFalse
+Can something that has_part some Bird be considered a subcategory of 'Mammal'?, \nFalse
+Can something that has_part some Bird be considered a subcategory of 'Herbivore'?, \nFalse
+Can something that has_part some Bird be considered a subcategory of 'Leg'?, \nFalse
+Can something that has_part some Bird be considered a subcategory of 'Elephant'?, \nFalse
+Can Bird be considered a subcategory of 'Bird'?, \nFalse
+Can Thing be considered a subcategory of 'something that has_part some (Animal that is also Bird that is also Vertebrate that is also Wing)'?, \nTrue
+Can Animal that is also Bird that is also Vertebrate that is also Wing be considered a subcategory of 'Egg'?, \nFalse
+Can Animal that is also Bird that is also Vertebrate that is also Wing be considered a subcategory of 'Meat'?, \nFalse
+Can Animal that is also Bird that is also Vertebrate that is also Wing be considered a subcategory of 'Carnivore'?, \nFalse
+Can Animal that is also Bird that is also Vertebrate that is also Wing be considered a subcategory of 'Water'?, \nFalse
+Can Animal that is also Bird that is also Vertebrate that is also Wing be considered a subcategory of 'Reptile'?, \nFalse
+Can Animal that is also Bird that is also Vertebrate that is also Wing be considered a subcategory of 'Plant'?, \nFalse
+Can Animal that is also Bird that is also Vertebrate that is also Wing be considered a subcategory of 'Cat'?, \nFalse
+Can Animal that is also Bird that is also Vertebrate that is also Wing be considered a subcategory of 'Fish'?, \nFalse
+Can Animal that is also Bird that is also Vertebrate that is also Wing be considered a subcategory of 'Mammal'?, \nFalse
+Can Animal that is also Bird that is also Vertebrate that is also Wing be considered a subcategory of 'Herbivore'?, \nFalse
+Can Animal that is also Bird that is also Vertebrate that is also Wing be considered a subcategory of 'Leg'?, \nFalse
+Can Animal that is also Bird that is also Vertebrate that is also Wing be considered a subcategory of 'Elephant'?, \nFalse
+Can Animal that is also Bird that is also Vertebrate that is also Wing be considered a subcategory of 'Backbone'?, \nFalse
+Can something that (has_part some Animal) that is also something that (has_part some (Bird that is also Vertebrate that is also Wing)) be considered a subcategory of 'something that has_part some (Animal that is also Bird that is also Vertebrate that is also Wing)'?, \nTrue
+Can something that has_part some (Animal that is also Bird that is also Vertebrate that is also Wing) be considered a subcategory of 'something that has_part some (Animal that is also Bird that is also Vertebrate that is also Wing)'?, \nTrue
+Can something that has_part some (Bird that is also Vertebrate that is also Wing) be considered a subcategory of 'Bird'?, \nTrue
+Can something that has_part some (Vertebrate that is also Wing) be considered a subcategory of 'Bird'?, \nFalse
+Can something that has_part some (Bird that is also Wing) be considered a subcategory of 'Bird'?, \nFalse
+Can something that has_part some (Bird that is also Vertebrate) be considered a subcategory of 'Bird'?, \nTrue
+Can Cat that is also Meat be considered a subcategory of 'Water'?, \nFalse
+Can Elephant be considered a subcategory of 'Plant'?, \nFalse
+Can Mammal that is also Plant be considered a subcategory of 'Bird'?, \nFalse
+Can Bird that is also Mammal be considered a subcategory of 'Fish'?, \nFalse
+Can Meat that is also Plant be considered a subcategory of 'Elephant'?, \nFalse
+Can Egg be considered a subcategory of 'Water'?, \nFalse
+Can Vertebrate be considered a subcategory of 'something that lays some Leg'?, \nFalse
+Can something that lives_in some Egg be considered a subcategory of 'Reptile'?, \nTrue
+Can something that lives_in some Egg be considered a subcategory of 'Egg'?, \nFalse
+Can something that lives_in some Egg be considered a subcategory of 'Meat'?, \nFalse
+Can something that lives_in some Egg be considered a subcategory of 'Carnivore'?, \nFalse
+Can something that lives_in some Egg be considered a subcategory of 'Water'?, \nFalse
+Can something that lives_in some Egg be considered a subcategory of 'Animal'?, \nTrue
+Can Egg be considered a subcategory of 'Animal'?, \nFalse
+Can Thing be considered a subcategory of 'something that lives_in some Egg'?, \nFalse
+Can Egg be considered a subcategory of 'Meat'?, \nFalse
+Can Egg be considered a subcategory of 'Carnivore'?, \nFalse
+Can Egg be considered a subcategory of 'Reptile'?, \nFalse
+Can Egg be considered a subcategory of 'Plant'?, \nFalse
+Can Egg be considered a subcategory of 'Vertebrate'?, \nFalse
+Can Egg be considered a subcategory of 'Cat'?, \nFalse
+Can Egg be considered a subcategory of 'Fish'?, \nFalse
+Can Egg be considered a subcategory of 'Mammal'?, \nFalse
+Can Egg be considered a subcategory of 'Herbivore'?, \nFalse
+Can Egg be considered a subcategory of 'Leg'?, \nFalse
+Can Egg be considered a subcategory of 'Elephant'?, \nFalse
+Can Egg be considered a subcategory of 'Bird'?, \nFalse
+Can Egg be considered a subcategory of 'Backbone'?, \nFalse
+Can Egg be considered a subcategory of 'Wing'?, \nFalse
+Can something that lives_in some Thing be considered a subcategory of 'Animal'?, \nFalse
+Can Herbivore be considered a subcategory of 'something that lays some Mammal'?, \nFalse
+Can Animal that is also Wing be considered a subcategory of 'Meat'?, \nFalse
+Can Egg that is also Fish be considered a subcategory of 'Water'?, \nFalse
+Can Fish that is also Leg be considered a subcategory of 'Reptile'?, \nFalse
+Can something that has_part some Animal be considered a subcategory of 'Leg'?, \nFalse
+Can Plant be considered a subcategory of 'Fish'?, \nFalse
+Can Bird that is also Carnivore be considered a subcategory of 'Fish'?, \nFalse
+Can Meat that is also Plant be considered a subcategory of 'Bird'?, \nFalse
+Can Fish that is also Vertebrate be considered a subcategory of 'Reptile'?, \nFalse
+Can Leg that is also Plant be considered a subcategory of 'Mammal'?, \nFalse
+Can Elephant that is also Fish be considered a subcategory of 'Mammal'?, \nFalse
+Can Bird that is also Cat be considered a subcategory of 'Fish'?, \nFalse
+Can Plant that is also Reptile be considered a subcategory of 'Bird'?, \nFalse
+Can Animal be considered a subcategory of 'something that has_part some Bird'?, \nFalse
+Can something that has_part some Wing be considered a subcategory of 'Elephant'?, \nFalse
+Can Carnivore that is also Reptile be considered a subcategory of 'Egg'?, \nFalse
+Can Elephant that is also Water be considered a subcategory of 'Leg'?, \nFalse
+Can Carnivore be considered a subcategory of 'something that lays some Bird'?, \nFalse
+Can Carnivore be considered a subcategory of 'something that eats some Water'?, \nFalse
+Can Egg that is also Elephant be considered a subcategory of 'Mammal'?, \nFalse
+Can Vertebrate be considered a subcategory of 'something that has_part some Bird'?, \nFalse
+Can Bird be considered a subcategory of 'something that eats some Reptile'?, \nFalse
+Can Backbone that is also Elephant be considered a subcategory of 'Leg'?, \nFalse
+Can Egg be considered a subcategory of 'something that lives_in some Elephant'?, \nFalse
+Can Meat that is also Wing be considered a subcategory of 'Herbivore'?, \nFalse
+Can Reptile be considered a subcategory of 'something that eats some Carnivore'?, \nTrue
+Can Reptile be considered a subcategory of 'Egg'?, \nFalse
+Can Reptile be considered a subcategory of 'Meat'?, \nFalse
+Can Reptile be considered a subcategory of 'Carnivore'?, \nFalse
+Can Reptile be considered a subcategory of 'Water'?, \nFalse
+Can Reptile be considered a subcategory of 'Animal'?, \nTrue
+Can Reptile be considered a subcategory of 'Plant'?, \nFalse
+Can Reptile be considered a subcategory of 'Vertebrate'?, \nTrue
+Can Reptile be considered a subcategory of 'Animal that is also Vertebrate'?, \nTrue
+Can Reptile be considered a subcategory of 'Cat'?, \nFalse
+Can Reptile be considered a subcategory of 'Fish'?, \nFalse
+Can Reptile be considered a subcategory of 'Mammal'?, \nFalse
+Can Reptile be considered a subcategory of 'Herbivore'?, \nFalse
+Can Reptile be considered a subcategory of 'Leg'?, \nFalse
+Can Reptile be considered a subcategory of 'Elephant'?, \nFalse
+Can Reptile be considered a subcategory of 'Bird'?, \nFalse
+Can Reptile be considered a subcategory of 'Backbone'?, \nFalse
+Can Reptile be considered a subcategory of 'Wing'?, \nFalse
+Can Elephant that is also Plant be considered a subcategory of 'Fish'?, \nFalse
+Can Leg be considered a subcategory of 'something that has_part some Leg'?, \nTrue
+Can Leg be considered a subcategory of 'Egg'?, \nFalse
+Can Leg be considered a subcategory of 'Carnivore'?, \nFalse
+Can Leg be considered a subcategory of 'Water'?, \nFalse
+Can Leg be considered a subcategory of 'Animal'?, \nFalse
+Can Leg be considered a subcategory of 'Reptile'?, \nFalse
+Can Leg be considered a subcategory of 'Plant'?, \nFalse
+Can Leg be considered a subcategory of 'Vertebrate'?, \nFalse
+Can Leg be considered a subcategory of 'Cat'?, \nFalse
+Can Leg be considered a subcategory of 'Fish'?, \nFalse
+Can Leg be considered a subcategory of 'Mammal'?, \nFalse
+Can Leg be considered a subcategory of 'Herbivore'?, \nFalse
+Can Leg be considered a subcategory of 'Elephant'?, \nFalse
+Can Leg be considered a subcategory of 'Bird'?, \nFalse
+Can Leg be considered a subcategory of 'Backbone'?, \nFalse
+Can Leg be considered a subcategory of 'Wing'?, \nFalse
+Can Egg be considered a subcategory of 'something that has_part some Leg'?, \nFalse
+Can Meat be considered a subcategory of 'something that has_part some Leg'?, \nFalse
+Can Carnivore be considered a subcategory of 'something that has_part some Leg'?, \nFalse
+Can Water be considered a subcategory of 'something that has_part some Leg'?, \nFalse
+Can Animal be considered a subcategory of 'something that has_part some Leg'?, \nTrue
+Can something that has_part some Leg be considered a subcategory of 'something that has_part some Leg'?, \nFalse
+Can Animal be considered a subcategory of 'Animal'?, \nFalse
+Can Plant be considered a subcategory of 'Leg'?, \nFalse
+Can Fish be considered a subcategory of 'Leg'?, \nFalse
+Can Herbivore be considered a subcategory of 'Leg'?, \nFalse
+Can Elephant be considered a subcategory of 'Leg'?, \nFalse
+Can Backbone be considered a subcategory of 'Leg'?, \nFalse
+Can Animal be considered a subcategory of 'Vertebrate that is also something that (has_part some Leg)'?, \nTrue
+Can Animal be considered a subcategory of 'Mammal that is also Vertebrate that is also something that (has_part some Leg)'?, \nTrue
+Can Animal be considered a subcategory of 'Mammal that is also Vertebrate that is also something that (has_part some (Leg that is also Vertebrate))'?, \nTrue
+Can Animal be considered a subcategory of 'Mammal that is also Vertebrate that is also something that (has_part some (Leg that is also Mammal that is also Vertebrate))'?, \nTrue
+Can Animal that is also Mammal that is also Vertebrate that is also something that (has_part some (Leg that is also Mammal that is also Vertebrate)) be considered a subcategory of 'Animal that is also Mammal that is also Vertebrate that is also something that (has_part some (Leg that is also Mammal that is also Vertebrate))'?, \nTrue
+Can Egg be considered a subcategory of 'Leg that is also Mammal that is also Vertebrate'?, \nFalse
+Can Meat be considered a subcategory of 'Leg that is also Mammal that is also Vertebrate'?, \nFalse
+Can Carnivore be considered a subcategory of 'Leg that is also Mammal that is also Vertebrate'?, \nTrue
+Can Plant be considered a subcategory of 'something that lays some Elephant'?, \nFalse
+Can Elephant that is also Water be considered a subcategory of 'Reptile'?, \nFalse
+Can Animal that is also Herbivore be considered a subcategory of 'Cat'?, \nFalse
+Can Meat be considered a subcategory of 'something that lays some Water'?, \nFalse
+Can Vertebrate be considered a subcategory of 'something that has_part some Egg'?, \nFalse
+Can Elephant that is also Herbivore be considered a subcategory of 'Cat'?, \nFalse
+Can Backbone that is also Elephant be considered a subcategory of 'Reptile'?, \nFalse
+Can Herbivore be considered a subcategory of 'something that has_part some Fish'?, \nFalse
+Can something that lives_in some Leg be considered a subcategory of 'Animal'?, \nFalse
+Can Reptile be considered a subcategory of 'something that lays some Water'?, \nFalse
+Can Animal that is also Backbone be considered a subcategory of 'Elephant'?, \nFalse
+Can something that eats some Water be considered a subcategory of 'Water'?, \nFalse
+Can something that lays some Herbivore be considered a subcategory of 'Mammal'?, \nFalse
+Can Elephant that is also Meat be considered a subcategory of 'Egg'?, \nFalse
+Can Mammal that is also Water be considered a subcategory of 'Reptile'?, \nFalse
+Can Carnivore be considered a subcategory of 'something that lives_in some Fish'?, \nFalse
+Can Cat that is also Egg be considered a subcategory of 'Fish'?, \nFalse
+Can Elephant that is also Water be considered a subcategory of 'Carnivore'?, \nFalse
+Can Wing be considered a subcategory of 'something that lives_in some Leg'?, \nFalse
+Can Wing be considered a subcategory of 'something that has_part some Elephant'?, \nFalse
+Can Cat be considered a subcategory of 'something that lives_in some Fish'?, \nFalse
+Can Animal be considered a subcategory of 'something that has_part some Elephant'?, \nFalse
+Can something that has_part some Herbivore be considered a subcategory of 'Water'?, \nFalse
+Can Herbivore that is also Reptile be considered a subcategory of 'Elephant'?, \nFalse
+Can something that lives_in some Animal be considered a subcategory of 'Meat'?, \nFalse
+Can Plant that is also Reptile be considered a subcategory of 'Carnivore'?, \nFalse
+Can Carnivore be considered a subcategory of 'something that eats some Carnivore'?, \nFalse
+Can Egg that is also Elephant be considered a subcategory of 'Fish'?, \nFalse
+Can Vertebrate be considered a subcategory of 'something that lives_in some Elephant'?, \nFalse
+Can Elephant that is also Herbivore be considered a subcategory of 'Water'?, \nFalse
+Can Wing be considered a subcategory of 'something that eats some Leg'?, \nTrue
+Can Egg be considered a subcategory of 'something that eats some Leg'?, \nFalse
+Can Meat be considered a subcategory of 'something that eats some Leg'?, \nFalse
+Can Carnivore be considered a subcategory of 'something that eats some Leg'?, \nTrue
+Can something that eats some Leg be considered a subcategory of 'something that eats some Leg'?, \nTrue
+Can Carnivore be considered a subcategory of 'Animal that is also something that (eats some Leg)'?, \nTrue
+Can Carnivore be considered a subcategory of 'Animal that is also Cat that is also something that (eats some Leg)'?, \nTrue
+Can Carnivore be considered a subcategory of 'Animal that is also Cat that is also Mammal that is also something that (eats some Leg)'?, \nTrue
+Can Carnivore be considered a subcategory of 'Carnivore'?, \nFalse
+Can Carnivore be considered a subcategory of 'Animal that is also Cat that is also Mammal that is also something that (eats some (Animal that is also Leg))'?, \nFalse
+Can Carnivore be considered a subcategory of 'Animal that is also Cat that is also Mammal that is also something that (eats some (Cat that is also Leg))'?, \nTrue
+Can Carnivore be considered a subcategory of 'Animal that is also Cat that is also Mammal that is also something that (eats some (Cat that is also Leg that is also Mammal))'?, \nTrue
+Can Animal that is also Cat that is also Mammal that is also Meat that is also something that (eats some (Cat that is also Leg that is also Mammal)) be considered a subcategory of 'Animal that is also Cat that is also Mammal that is also Meat that is also something that (eats some (Cat that is also Leg that is also Mammal))'?, \nTrue
+Can Egg be considered a subcategory of 'Cat that is also Leg that is also Mammal'?, \nFalse
+Can Meat be considered a subcategory of 'Cat that is also Leg that is also Mammal'?, \nFalse
+Can Water be considered a subcategory of 'Cat that is also Leg that is also Mammal'?, \nFalse
+Can Animal be considered a subcategory of 'Cat that is also Leg that is also Mammal'?, \nFalse
+Can Reptile be considered a subcategory of 'Cat that is also Leg that is also Mammal'?, \nFalse
+Can Plant be considered a subcategory of 'Cat that is also Leg that is also Mammal'?, \nFalse
+Can Vertebrate be considered a subcategory of 'Cat that is also Leg that is also Mammal'?, \nFalse
+Can Fish be considered a subcategory of 'Cat that is also Leg that is also Mammal'?, \nFalse
+Can Mammal be considered a subcategory of 'Cat that is also Leg that is also Mammal'?, \nFalse
+Can Herbivore be considered a subcategory of 'Cat that is also Leg that is also Mammal'?, \nFalse
+Can Leg be considered a subcategory of 'Cat that is also Leg that is also Mammal'?, \nFalse
+Can Elephant be considered a subcategory of 'Cat that is also Leg that is also Mammal'?, \nFalse
+Can Bird be considered a subcategory of 'Cat that is also Leg that is also Mammal'?, \nFalse
+Can Backbone be considered a subcategory of 'Cat that is also Leg that is also Mammal'?, \nFalse
+Can Wing be considered a subcategory of 'Cat that is also Leg that is also Mammal'?, \nFalse
+Can Animal that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also something that (eats some (Cat that is also Leg that is also Mammal)) be considered a subcategory of 'Animal that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also something that (eats some (Cat that is also Leg that is also Mammal))'?, \nTrue
+Can Carnivore be considered a subcategory of 'Animal that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also something that (eats some (Animal that is also Cat that is also Leg that is also Mammal))'?, \nTrue
+Can Animal that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also something that (eats some (Animal that is also Cat that is also Leg that is also Mammal that is also Meat)) be considered a subcategory of 'Animal that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also something that (eats some (Animal that is also Cat that is also Leg that is also Mammal that is also Meat))'?, \nTrue
+Can Egg be considered a subcategory of 'Animal that is also Cat that is also Leg that is also Mammal that is also Meat'?, \nFalse
+Can Meat be considered a subcategory of 'Animal that is also Cat that is also Leg that is also Mammal that is also Meat'?, \nTrue
+Can Herbivore that is also Leg be considered a subcategory of 'Reptile'?, \nFalse
+Can Reptile be considered a subcategory of 'something that eats some Mammal'?, \nFalse
+Can Plant be considered a subcategory of 'something that has_part some Meat'?, \nFalse
+Can Vertebrate that is also Wing be considered a subcategory of 'Cat'?, \nFalse
+Can Elephant be considered a subcategory of 'something that lays some Animal'?, \nFalse
+Can Animal that is also Reptile be considered a subcategory of 'Plant'?, \nFalse
+Can Meat be considered a subcategory of 'something that has_part some Backbone'?, \nTrue
+Can Egg be considered a subcategory of 'something that has_part some Backbone'?, \nFalse
+Can something that has_part some Backbone be considered a subcategory of 'something that has_part some Backbone'?, \nTrue
+Can Plant be considered a subcategory of 'Backbone'?, \nFalse
+Can Fish be considered a subcategory of 'Backbone'?, \nFalse
+Can Herbivore be considered a subcategory of 'Backbone'?, \nFalse
+Can Elephant be considered a subcategory of 'Backbone'?, \nFalse
+Can Meat be considered a subcategory of 'Animal that is also something that (has_part some Backbone)'?, \nFalse
+Can Meat be considered a subcategory of 'Mammal that is also something that (has_part some Backbone)'?, \nTrue
+Can Meat be considered a subcategory of 'Meat'?, \nFalse
+Can Meat be considered a subcategory of 'Mammal that is also something that (has_part some (Animal that is also Backbone))'?, \nFalse
+Can Meat be considered a subcategory of 'Mammal that is also something that (has_part some (Backbone that is also Mammal))'?, \nTrue
+Can Animal that is also Mammal that is also something that (has_part some (Backbone that is also Mammal)) be considered a subcategory of 'Animal that is also Mammal that is also something that (has_part some (Backbone that is also Mammal))'?, \nTrue
+Can Egg be considered a subcategory of 'Backbone that is also Mammal'?, \nFalse
+Can Meat be considered a subcategory of 'Backbone that is also Mammal'?, \nFalse
+Can Carnivore be considered a subcategory of 'Backbone that is also Mammal'?, \nFalse
+Can Water be considered a subcategory of 'Backbone that is also Mammal'?, \nFalse
+Can Animal be considered a subcategory of 'Backbone that is also Mammal'?, \nFalse
+Can Reptile be considered a subcategory of 'Backbone that is also Mammal'?, \nFalse
+Can Plant be considered a subcategory of 'Backbone that is also Mammal'?, \nFalse
+Can Vertebrate be considered a subcategory of 'Backbone that is also Mammal'?, \nFalse
+Can Cat be considered a subcategory of 'Backbone that is also Mammal'?, \nFalse
+Can Fish be considered a subcategory of 'Backbone that is also Mammal'?, \nFalse
+Can Mammal be considered a subcategory of 'Backbone that is also Mammal'?, \nFalse
+Can Herbivore be considered a subcategory of 'Backbone that is also Mammal'?, \nFalse
+Can Leg be considered a subcategory of 'Backbone that is also Mammal'?, \nFalse
+Can Elephant be considered a subcategory of 'Backbone that is also Mammal'?, \nFalse
+Can Bird be considered a subcategory of 'Backbone that is also Mammal'?, \nFalse
+Can Backbone be considered a subcategory of 'Backbone that is also Mammal'?, \nFalse
+Can Wing be considered a subcategory of 'Backbone that is also Mammal'?, \nFalse
+Can Animal that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also something that (has_part some (Backbone that is also Mammal)) be considered a subcategory of 'Animal that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also something that (has_part some (Backbone that is also Mammal))'?, \nTrue
+Can Meat be considered a subcategory of 'Animal that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also something that (has_part some (Animal that is also Backbone that is also Mammal))'?, \nTrue
+Can Animal that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also something that (has_part some (Animal that is also Backbone that is also Mammal)) be considered a subcategory of 'Animal that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also something that (has_part some (Animal that is also Backbone that is also Mammal))'?, \nFalse
+Can Animal be considered a subcategory of 'Animal that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also something that (has_part some (Animal that is also Backbone that is also Mammal))'?, \nFalse
+Can Mammal be considered a subcategory of 'Animal that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also something that (has_part some (Animal that is also Backbone that is also Mammal))'?, \nFalse
+Can Egg be considered a subcategory of 'Animal that is also Backbone that is also Mammal'?, \nFalse
+Can Meat be considered a subcategory of 'Animal that is also Backbone that is also Mammal'?, \nTrue
+Can Leg be considered a subcategory of 'something that lays some Plant'?, \nTrue
+Can Egg be considered a subcategory of 'something that lays some Plant'?, \nFalse
+Can Meat be considered a subcategory of 'something that lays some Plant'?, \nFalse
+Can Water be considered a subcategory of 'something that lays some Plant'?, \nFalse
+Can Animal be considered a subcategory of 'something that lays some Plant'?, \nFalse
+Can Reptile be considered a subcategory of 'something that lays some Plant'?, \nFalse
+Can Plant be considered a subcategory of 'something that lays some Plant'?, \nFalse
+Can Vertebrate be considered a subcategory of 'something that lays some Plant'?, \nFalse
+Can Cat be considered a subcategory of 'something that lays some Plant'?, \nFalse
+Can Fish be considered a subcategory of 'something that lays some Plant'?, \nFalse
+Can Mammal be considered a subcategory of 'something that lays some Plant'?, \nFalse
+Can Herbivore be considered a subcategory of 'something that lays some Plant'?, \nFalse
+Can something that lays some Plant be considered a subcategory of 'something that lays some Plant'?, \nTrue
+Can Fish be considered a subcategory of 'Plant'?, \nFalse
+Can Herbivore be considered a subcategory of 'Plant'?, \nTrue
+Can Herbivore be considered a subcategory of 'Egg'?, \nFalse
+Can Herbivore be considered a subcategory of 'Meat'?, \nFalse
+Can Herbivore be considered a subcategory of 'Carnivore'?, \nFalse
+Can Herbivore be considered a subcategory of 'Water'?, \nFalse
+Can Herbivore be considered a subcategory of 'Animal'?, \nTrue
+Can Herbivore be considered a subcategory of 'Animal that is also Plant'?, \nFalse
+Can Herbivore be considered a subcategory of 'Reptile'?, \nFalse
+Can Herbivore be considered a subcategory of 'Vertebrate'?, \nFalse
+Can Herbivore be considered a subcategory of 'Cat'?, \nFalse
+Can Herbivore be considered a subcategory of 'Fish'?, \nFalse
+Can Herbivore be considered a subcategory of 'Mammal'?, \nFalse
+Can Herbivore be considered a subcategory of 'Elephant'?, \nFalse
+Can Herbivore be considered a subcategory of 'Bird'?, \nFalse
+Can Herbivore be considered a subcategory of 'Wing'?, \nFalse
+Can Carnivore that is also Elephant be considered a subcategory of 'Herbivore'?, \nFalse
+Can Egg be considered a subcategory of 'something that has_part some Meat'?, \nFalse
+Can Animal that is also Wing be considered a subcategory of 'Cat'?, \nFalse
+Can Mammal that is also Meat be considered a subcategory of 'Plant'?, \nFalse
+Can something that lives_in some Bird be considered a subcategory of 'Plant'?, \nFalse
+Can Backbone be considered a subcategory of 'something that has_part some Cat'?, \nFalse
+Can something that lives_in some Wing be considered a subcategory of 'Vertebrate'?, \nFalse
+Can Plant be considered a subcategory of 'Herbivore'?, \nFalse
+Can Vertebrate that is also Wing be considered a subcategory of 'Backbone'?, \nFalse
+Can Elephant be considered a subcategory of 'something that lays some Cat'?, \nFalse
+Can something that lays some Bird be considered a subcategory of 'Plant'?, \nFalse
+Can Herbivore that is also Wing be considered a subcategory of 'Meat'?, \nFalse
+Can Cat be considered a subcategory of 'something that lays some Vertebrate'?, \nFalse
+Can Egg be considered a subcategory of 'something that has_part some Herbivore'?, \nFalse
+Can Egg that is also Leg be considered a subcategory of 'Meat'?, \nFalse
+Can Carnivore be considered a subcategory of 'something that eats some Mammal'?, \nTrue
+Can Egg be considered a subcategory of 'something that eats some Mammal'?, \nFalse
+Can Meat be considered a subcategory of 'something that eats some Mammal'?, \nFalse
+Can something that eats some (Animal that is also Mammal) be considered a subcategory of 'something that eats some (Animal that is also Mammal)'?, \nTrue
+Can Egg be considered a subcategory of 'Animal that is also Mammal'?, \nFalse
+Can Water be considered a subcategory of 'Animal that is also Mammal'?, \nFalse
+Can Animal be considered a subcategory of 'Animal that is also Mammal'?, \nFalse
+Can Reptile be considered a subcategory of 'Animal that is also Mammal'?, \nFalse
+Can Plant be considered a subcategory of 'Animal that is also Mammal'?, \nFalse
+Can Vertebrate be considered a subcategory of 'Animal that is also Mammal'?, \nTrue
+Can Backbone be considered a subcategory of 'something that has_part some Backbone'?, \nTrue
+Can Backbone be considered a subcategory of 'Egg'?, \nFalse
+Can Backbone be considered a subcategory of 'Meat'?, \nFalse
+Can Backbone be considered a subcategory of 'Carnivore'?, \nFalse
+Can Backbone be considered a subcategory of 'Water'?, \nFalse
+Can Backbone be considered a subcategory of 'Animal'?, \nFalse
+Can Backbone be considered a subcategory of 'Reptile'?, \nFalse
+Can Backbone be considered a subcategory of 'Plant'?, \nFalse
+Can Backbone be considered a subcategory of 'Vertebrate'?, \nTrue
+Can Backbone be considered a subcategory of 'Cat'?, \nFalse
+Can Backbone be considered a subcategory of 'Fish'?, \nFalse
+Can Backbone be considered a subcategory of 'Mammal'?, \nFalse
+Can Backbone be considered a subcategory of 'Herbivore'?, \nFalse
+Can Backbone be considered a subcategory of 'Elephant'?, \nFalse
+Can Backbone be considered a subcategory of 'Bird'?, \nFalse
+Can Backbone be considered a subcategory of 'Wing'?, \nFalse
+Can something that lives_in some Wing be considered a subcategory of 'Meat'?, \nTrue
+Can something that lives_in some Wing be considered a subcategory of 'Egg'?, \nFalse
+Can Thing be considered a subcategory of 'something that lives_in some (Animal that is also Bird that is also Mammal that is also Vertebrate that is also Wing)'?, \nFalse
+Can Animal that is also Bird that is also Mammal that is also Vertebrate that is also Wing be considered a subcategory of 'Egg'?, \nFalse
+Can Animal that is also Bird that is also Mammal that is also Vertebrate that is also Wing be considered a subcategory of 'Meat'?, \nFalse
+Can Animal that is also Bird that is also Mammal that is also Vertebrate that is also Wing be considered a subcategory of 'Carnivore'?, \nFalse
+Can Animal that is also Bird that is also Mammal that is also Vertebrate that is also Wing be considered a subcategory of 'Water'?, \nFalse
+Can Animal that is also Bird that is also Mammal that is also Vertebrate that is also Wing be considered a subcategory of 'Reptile'?, \nFalse
+Can Animal that is also Bird that is also Mammal that is also Vertebrate that is also Wing be considered a subcategory of 'Plant'?, \nFalse
+Can Animal that is also Bird that is also Mammal that is also Vertebrate that is also Wing be considered a subcategory of 'Cat'?, \nFalse
+Can Animal that is also Bird that is also Mammal that is also Vertebrate that is also Wing be considered a subcategory of 'Fish'?, \nFalse
+Can Animal that is also Bird that is also Mammal that is also Vertebrate that is also Wing be considered a subcategory of 'Herbivore'?, \nFalse
+Can Animal that is also Bird that is also Mammal that is also Vertebrate that is also Wing be considered a subcategory of 'Leg'?, \nFalse
+Can Animal that is also Bird that is also Mammal that is also Vertebrate that is also Wing be considered a subcategory of 'Elephant'?, \nFalse
+Can Animal that is also Bird that is also Mammal that is also Vertebrate that is also Wing be considered a subcategory of 'Backbone'?, \nFalse
+Can something that (lives_in some Animal) that is also something that (lives_in some (Bird that is also Mammal that is also Vertebrate that is also Wing)) be considered a subcategory of 'something that lives_in some (Animal that is also Bird that is also Mammal that is also Vertebrate that is also Wing)'?, \nTrue
+Can something that lives_in some (Animal that is also Bird that is also Mammal that is also Vertebrate that is also Wing) be considered a subcategory of 'something that lives_in some (Animal that is also Bird that is also Mammal that is also Vertebrate that is also Wing)'?, \nFalse
+Can something that lives_in some (Animal that is also Bird that is also Mammal that is also Vertebrate that is also Wing) be considered a subcategory of 'Meat'?, \nFalse
+Can something that lives_in some (Bird that is also Mammal that is also Vertebrate that is also Wing) be considered a subcategory of 'Meat'?, \nFalse
+Can something that lives_in some (Animal that is also Mammal that is also Vertebrate that is also Wing) be considered a subcategory of 'Meat'?, \nFalse
+Can something that lives_in some (Animal that is also Bird that is also Vertebrate that is also Wing) be considered a subcategory of 'Meat'?, \nTrue
+Can something that lives_in some (Animal that is also Bird that is also Wing) be considered a subcategory of 'Meat'?, \nFalse
+Can something that lives_in some (Animal that is also Bird that is also Vertebrate) be considered a subcategory of 'Meat'?, \nTrue
+Can Mammal be considered a subcategory of 'something that lays some Vertebrate'?, \nFalse
+Can Plant be considered a subcategory of 'something that eats some Mammal'?, \nFalse
+Can Elephant be considered a subcategory of 'something that lives_in some Herbivore'?, \nFalse
+Can something that lays some Herbivore be considered a subcategory of 'Backbone'?, \nFalse
+Can Meat be considered a subcategory of 'something that eats some Animal'?, \nTrue
+Can Egg be considered a subcategory of 'something that eats some Animal'?, \nTrue
+Can something that eats some (Animal that is also Vertebrate) be considered a subcategory of 'something that eats some (Animal that is also Vertebrate)'?, \nTrue
+Can Egg be considered a subcategory of 'Animal that is also Vertebrate'?, \nFalse
+Can Water be considered a subcategory of 'Animal that is also Vertebrate'?, \nFalse
+Can Plant be considered a subcategory of 'Animal that is also Vertebrate'?, \nFalse
+Can Herbivore be considered a subcategory of 'Animal that is also Vertebrate'?, \nFalse
+Can Leg be considered a subcategory of 'Animal that is also Vertebrate'?, \nFalse
+Can Elephant be considered a subcategory of 'Animal that is also Vertebrate'?, \nTrue
+Can Elephant be considered a subcategory of 'Egg'?, \nFalse
+Can Elephant be considered a subcategory of 'Meat'?, \nFalse
+Can Elephant be considered a subcategory of 'Carnivore'?, \nFalse
+Can Elephant be considered a subcategory of 'Water'?, \nFalse
+Can Elephant be considered a subcategory of 'Reptile'?, \nFalse
+Can Elephant be considered a subcategory of 'Cat'?, \nFalse
+Can Elephant be considered a subcategory of 'Fish'?, \nFalse
+Can Elephant be considered a subcategory of 'Mammal'?, \nTrue
+Can Elephant be considered a subcategory of 'Animal that is also Mammal that is also Vertebrate'?, \nTrue
+Can Elephant be considered a subcategory of 'Herbivore'?, \nTrue
+Can Elephant be considered a subcategory of 'Animal that is also Herbivore that is also Mammal that is also Vertebrate'?, \nTrue
+Can Elephant be considered a subcategory of 'Bird'?, \nFalse
+Can Elephant be considered a subcategory of 'Wing'?, \nFalse
+Can something that has_part some Wing be considered a subcategory of 'Cat'?, \nFalse
+Can Bird be considered a subcategory of 'something that eats some Vertebrate'?, \nFalse
+Can Animal that is also Water be considered a subcategory of 'Bird'?, \nFalse
+Can Herbivore that is also Wing be considered a subcategory of 'Cat'?, \nFalse
+Can something that lives_in some Water be considered a subcategory of 'Plant'?, \nTrue
+Can something that lives_in some Water be considered a subcategory of 'Egg'?, \nFalse
+Can something that lives_in some Water be considered a subcategory of 'Meat'?, \nFalse
+Can something that lives_in some Water be considered a subcategory of 'Carnivore'?, \nTrue
+Can Thing be considered a subcategory of 'something that lives_in some Water'?, \nTrue
+Can something that lives_in some Thing be considered a subcategory of 'Carnivore'?, \nFalse
+Can Carnivore that is also Meat be considered a subcategory of 'Egg'?, \nFalse
+Can Elephant be considered a subcategory of 'something that lays some Wing'?, \nFalse
+Can Reptile that is also Vertebrate be considered a subcategory of 'Leg'?, \nFalse
+Can Meat be considered a subcategory of 'something that has_part some Cat'?, \nTrue
+Can Egg be considered a subcategory of 'something that has_part some Cat'?, \nFalse
+Can something that has_part some (Cat that is also Meat) be considered a subcategory of 'something that has_part some (Cat that is also Meat)'?, \nTrue
+Can Egg be considered a subcategory of 'Cat that is also Meat'?, \nFalse
+Can Water be considered a subcategory of 'Cat that is also Meat'?, \nFalse
+Can Animal be considered a subcategory of 'Cat that is also Meat'?, \nFalse
+Can Reptile be considered a subcategory of 'Cat that is also Meat'?, \nFalse
+Can Plant be considered a subcategory of 'Cat that is also Meat'?, \nFalse
+Can Vertebrate be considered a subcategory of 'Cat that is also Meat'?, \nFalse
+Can Fish be considered a subcategory of 'Cat that is also Meat'?, \nFalse
+Can Mammal be considered a subcategory of 'Cat that is also Meat'?, \nFalse
+Can Herbivore be considered a subcategory of 'Cat that is also Meat'?, \nFalse
+Can Leg be considered a subcategory of 'Cat that is also Meat'?, \nFalse
+Can Elephant be considered a subcategory of 'Cat that is also Meat'?, \nFalse
+Can Bird be considered a subcategory of 'Cat that is also Meat'?, \nFalse
+Can Backbone be considered a subcategory of 'Cat that is also Meat'?, \nFalse
+Can Wing be considered a subcategory of 'Cat that is also Meat'?, \nFalse
+Can Meat be considered a subcategory of 'Animal that is also something that (has_part some (Cat that is also Meat))'?, \nFalse
+Can Meat be considered a subcategory of 'Mammal that is also something that (has_part some (Cat that is also Meat))'?, \nFalse
+Can Meat be considered a subcategory of 'something that has_part some (Animal that is also Cat that is also Meat)'?, \nFalse
+Can Meat be considered a subcategory of 'something that has_part some (Cat that is also Mammal that is also Meat)'?, \nTrue
+Can something that has_part some (Carnivore that is also Cat that is also Mammal that is also Meat) be considered a subcategory of 'something that has_part some (Carnivore that is also Cat that is also Mammal that is also Meat)'?, \nTrue
+Can Egg be considered a subcategory of 'Carnivore that is also Cat that is also Mammal that is also Meat'?, \nFalse
+Can Water be considered a subcategory of 'Carnivore that is also Cat that is also Mammal that is also Meat'?, \nFalse
+Can Animal be considered a subcategory of 'Carnivore that is also Cat that is also Mammal that is also Meat'?, \nFalse
+Can Reptile be considered a subcategory of 'Carnivore that is also Cat that is also Mammal that is also Meat'?, \nFalse
+Can Plant be considered a subcategory of 'Carnivore that is also Cat that is also Mammal that is also Meat'?, \nFalse
+Can Vertebrate be considered a subcategory of 'Carnivore that is also Cat that is also Mammal that is also Meat'?, \nFalse
+Can Fish be considered a subcategory of 'Carnivore that is also Cat that is also Mammal that is also Meat'?, \nFalse
+Can Mammal be considered a subcategory of 'Carnivore that is also Cat that is also Mammal that is also Meat'?, \nFalse
+Can Herbivore be considered a subcategory of 'Carnivore that is also Cat that is also Mammal that is also Meat'?, \nFalse
+Can Leg be considered a subcategory of 'Carnivore that is also Cat that is also Mammal that is also Meat'?, \nTrue
+Can Fish be considered a subcategory of 'something that eats some Bird'?, \nFalse
+Can Bird be considered a subcategory of 'something that has_part some Mammal'?, \nFalse
+Can Herbivore that is also Wing be considered a subcategory of 'Backbone'?, \nFalse
+Can Backbone be considered a subcategory of 'something that eats some Cat'?, \nTrue
+Can Egg be considered a subcategory of 'something that eats some Cat'?, \nFalse
+Can Meat be considered a subcategory of 'something that eats some Cat'?, \nFalse
+Can Carnivore be considered a subcategory of 'something that eats some Cat'?, \nTrue
+Can something that eats some (Cat that is also Meat) be considered a subcategory of 'something that eats some (Cat that is also Meat)'?, \nFalse
+Can Animal be considered a subcategory of 'something that eats some (Cat that is also Meat)'?, \nTrue
+Can Animal be considered a subcategory of 'Vertebrate that is also something that (eats some (Cat that is also Meat))'?, \nTrue
+Can Animal be considered a subcategory of 'Mammal that is also Vertebrate that is also something that (eats some (Cat that is also Meat))'?, \nFalse
+Can Animal be considered a subcategory of 'Vertebrate that is also something that (eats some (Cat that is also Meat that is also Vertebrate))'?, \nFalse
+Can Animal be considered a subcategory of 'Vertebrate that is also something that (eats some (Cat that is also Mammal that is also Meat))'?, \nTrue
+Can Animal that is also Vertebrate that is also something that (eats some (Cat that is also Mammal that is also Meat)) be considered a subcategory of 'Animal that is also Vertebrate that is also something that (eats some (Cat that is also Mammal that is also Meat))'?, \nTrue
+Can Egg be considered a subcategory of 'Cat that is also Mammal that is also Meat'?, \nFalse
+Can Water be considered a subcategory of 'Cat that is also Mammal that is also Meat'?, \nFalse
+Can Animal be considered a subcategory of 'Cat that is also Mammal that is also Meat'?, \nFalse
+Can Reptile be considered a subcategory of 'Cat that is also Mammal that is also Meat'?, \nFalse
+Can Plant be considered a subcategory of 'Cat that is also Mammal that is also Meat'?, \nFalse
+Can Vertebrate be considered a subcategory of 'Cat that is also Mammal that is also Meat'?, \nFalse
+Can Fish be considered a subcategory of 'Cat that is also Mammal that is also Meat'?, \nFalse
+Can Mammal be considered a subcategory of 'Cat that is also Mammal that is also Meat'?, \nTrue
+Can something that lives_in some Wing be considered a subcategory of 'Plant'?, \nTrue
+Can something that lives_in some Wing be considered a subcategory of 'Water'?, \nFalse
+Can something that lives_in some Wing be considered a subcategory of 'Reptile'?, \nTrue
+Can Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate be considered a subcategory of 'Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also something that (lives_in some (Animal that is also Backbone that is also Bird that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also Wing))'?, \nFalse
+Can Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate be considered a subcategory of 'Egg'?, \nFalse
+Can Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate be considered a subcategory of 'Water'?, \nFalse
+Can Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate be considered a subcategory of 'Reptile'?, \nFalse
+Can Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate be considered a subcategory of 'Plant'?, \nFalse
+Can Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate be considered a subcategory of 'Fish'?, \nFalse
+Can Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate be considered a subcategory of 'Herbivore'?, \nFalse
+Can Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate be considered a subcategory of 'Elephant'?, \nFalse
+Can Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate be considered a subcategory of 'Bird'?, \nFalse
+Can Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate be considered a subcategory of 'Wing'?, \nFalse
+Can Animal that is also Backbone that is also Bird that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also Wing be considered a subcategory of 'Egg'?, \nFalse
+Can Animal that is also Backbone that is also Bird that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also Wing be considered a subcategory of 'Water'?, \nFalse
+Can Animal that is also Backbone that is also Bird that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also Wing be considered a subcategory of 'Reptile'?, \nFalse
+Can Animal that is also Backbone that is also Bird that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also Wing be considered a subcategory of 'Plant'?, \nFalse
+Can Animal that is also Backbone that is also Bird that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also Wing be considered a subcategory of 'Fish'?, \nFalse
+Can Animal that is also Backbone that is also Bird that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also Wing be considered a subcategory of 'Herbivore'?, \nFalse
+Can Animal that is also Backbone that is also Bird that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also Wing be considered a subcategory of 'Elephant'?, \nFalse
+Can Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also something that (lives_in some Animal) that is also something that (lives_in some (Backbone that is also Bird that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also Wing)) be considered a subcategory of 'Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also something that (lives_in some (Animal that is also Backbone that is also Bird that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also Wing))'?, \nTrue
+Can Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also something that (lives_in some (Animal that is also Backbone that is also Bird that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also Wing)) be considered a subcategory of 'Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also something that (lives_in some (Animal that is also Backbone that is also Bird that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also Wing))'?, \nFalse
+Can Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also something that (lives_in some (Animal that is also Backbone that is also Bird that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also Wing)) be considered a subcategory of 'Reptile'?, \nFalse
+Can Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also something that (lives_in some (Animal that is also Backbone that is also Bird that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also Wing)) be considered a subcategory of 'Reptile'?, \nFalse
+Can Animal that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also something that (lives_in some (Animal that is also Backbone that is also Bird that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also Wing)) be considered a subcategory of 'Reptile'?, \nFalse
+Can Animal that is also Backbone that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also something that (lives_in some (Animal that is also Backbone that is also Bird that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also Wing)) be considered a subcategory of 'Reptile'?, \nFalse
+Can Animal that is also Backbone that is also Carnivore that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also something that (lives_in some (Animal that is also Backbone that is also Bird that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also Wing)) be considered a subcategory of 'Reptile'?, \nFalse
+Can Animal that is also Backbone that is also Carnivore that is also Cat that is also Mammal that is also Meat that is also Vertebrate that is also something that (lives_in some (Animal that is also Backbone that is also Bird that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also Wing)) be considered a subcategory of 'Reptile'?, \nFalse
+Can Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Meat that is also Vertebrate that is also something that (lives_in some (Animal that is also Backbone that is also Bird that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also Wing)) be considered a subcategory of 'Reptile'?, \nFalse
+Can Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Vertebrate that is also something that (lives_in some (Animal that is also Backbone that is also Bird that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also Wing)) be considered a subcategory of 'Reptile'?, \nFalse
+Can Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also something that (lives_in some (Animal that is also Backbone that is also Bird that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also Wing)) be considered a subcategory of 'Reptile'?, \nFalse
+Can Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also something that (lives_in some (Backbone that is also Bird that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also Wing)) be considered a subcategory of 'Reptile'?, \nFalse
+Can Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also something that (lives_in some (Animal that is also Bird that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also Wing)) be considered a subcategory of 'Reptile'?, \nFalse
+Can Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also something that (lives_in some (Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also Wing)) be considered a subcategory of 'Reptile'?, \nFalse
+Can Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also something that (lives_in some (Animal that is also Backbone that is also Bird that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also Wing)) be considered a subcategory of 'Reptile'?, \nFalse
+Can Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also something that (lives_in some (Animal that is also Backbone that is also Bird that is also Carnivore that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also Wing)) be considered a subcategory of 'Reptile'?, \nFalse
+Can Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also something that (lives_in some (Animal that is also Backbone that is also Bird that is also Carnivore that is also Cat that is also Mammal that is also Meat that is also Vertebrate that is also Wing)) be considered a subcategory of 'Reptile'?, \nFalse
+Can Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also something that (lives_in some (Animal that is also Backbone that is also Bird that is also Carnivore that is also Cat that is also Leg that is also Meat that is also Vertebrate that is also Wing)) be considered a subcategory of 'Reptile'?, \nFalse
+Can Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also something that (lives_in some (Animal that is also Backbone that is also Bird that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Vertebrate that is also Wing)) be considered a subcategory of 'Reptile'?, \nFalse
+Can Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also something that (lives_in some (Animal that is also Backbone that is also Bird that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Wing)) be considered a subcategory of 'Reptile'?, \nFalse
+Can Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate that is also something that (lives_in some (Animal that is also Backbone that is also Bird that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate)) be considered a subcategory of 'Reptile'?, \nFalse
+Can something that lays some Backbone be considered a subcategory of 'Plant'?, \nFalse
+Can Fish that is also Water be considered a subcategory of 'Herbivore'?, \nFalse
+Can Herbivore be considered a subcategory of 'something that lives_in some Meat'?, \nFalse
+Can something that has_part some Meat be considered a subcategory of 'Animal'?, \nTrue
+Can something that has_part some Meat be considered a subcategory of 'Egg'?, \nFalse
+Can something that has_part some Meat be considered a subcategory of 'Meat'?, \nFalse
+Can something that has_part some Meat be considered a subcategory of 'Carnivore'?, \nTrue
+Can Thing be considered a subcategory of 'something that has_part some (Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate)'?, \nFalse
+Can something that (has_part some Animal) that is also something that (has_part some (Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate)) be considered a subcategory of 'something that has_part some (Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate)'?, \nTrue
+Can something that has_part some (Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate) be considered a subcategory of 'something that has_part some (Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate)'?, \nTrue
+Can something that has_part some (Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate) be considered a subcategory of 'Carnivore'?, \nTrue
+Can something that has_part some (Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate) be considered a subcategory of 'Carnivore'?, \nFalse
+Can something that has_part some (Backbone that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate) be considered a subcategory of 'Carnivore'?, \nTrue
+Can something that has_part some (Backbone that is also Leg that is also Mammal that is also Meat that is also Vertebrate) be considered a subcategory of 'Carnivore'?, \nFalse
+Can something that has_part some (Backbone that is also Cat that is also Mammal that is also Meat that is also Vertebrate) be considered a subcategory of 'Carnivore'?, \nTrue
+Can something that has_part some (Backbone that is also Cat that is also Meat that is also Vertebrate) be considered a subcategory of 'Carnivore'?, \nTrue
+Can something that has_part some (Backbone that is also Cat that is also Vertebrate) be considered a subcategory of 'Carnivore'?, \nTrue
+Can something that has_part some (Backbone that is also Cat) be considered a subcategory of 'Carnivore'?, \nTrue
+Can Backbone that is also Meat be considered a subcategory of 'Bird'?, \nFalse
+Can Leg be considered a subcategory of 'something that lives_in some Cat'?, \nFalse
+Can Mammal that is also Meat be considered a subcategory of 'Fish'?, \nFalse
+Can Egg that is also Water be considered a subcategory of 'Herbivore'?, \nFalse
+Can something that eats some Reptile be considered a subcategory of 'Meat'?, \nTrue
+Can something that eats some Reptile be considered a subcategory of 'Egg'?, \nFalse
+Can Thing be considered a subcategory of 'something that eats some (Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Reptile that is also Vertebrate)'?, \nFalse
+Can Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Reptile that is also Vertebrate be considered a subcategory of 'Egg'?, \nFalse
+Can Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Reptile that is also Vertebrate be considered a subcategory of 'Water'?, \nFalse
+Can Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Reptile that is also Vertebrate be considered a subcategory of 'Plant'?, \nFalse
+Can Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Reptile that is also Vertebrate be considered a subcategory of 'Fish'?, \nFalse
+Can Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Reptile that is also Vertebrate be considered a subcategory of 'Herbivore'?, \nFalse
+Can Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Reptile that is also Vertebrate be considered a subcategory of 'Elephant'?, \nFalse
+Can Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Reptile that is also Vertebrate be considered a subcategory of 'Bird'?, \nFalse
+Can Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Reptile that is also Vertebrate be considered a subcategory of 'Wing'?, \nFalse
+Can something that (eats some Animal) that is also something that (eats some (Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Reptile that is also Vertebrate)) be considered a subcategory of 'something that eats some (Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Reptile that is also Vertebrate)'?, \nFalse
+Can something that (eats some Animal) that is also something that (eats some (Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Reptile that is also Vertebrate)) be considered a subcategory of 'Meat'?, \nFalse
+Can something that eats some (Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Reptile that is also Vertebrate) be considered a subcategory of 'something that eats some (Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Reptile that is also Vertebrate)'?, \nFalse
+Can something that eats some (Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Reptile that is also Vertebrate) be considered a subcategory of 'Meat'?, \nFalse
+Can something that eats some (Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Reptile that is also Vertebrate) be considered a subcategory of 'Meat'?, \nFalse
+Can something that eats some (Animal that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Reptile that is also Vertebrate) be considered a subcategory of 'Meat'?, \nFalse
+Can something that eats some (Animal that is also Backbone that is also Cat that is also Leg that is also Mammal that is also Meat that is also Reptile that is also Vertebrate) be considered a subcategory of 'Meat'?, \nTrue
+Can something that eats some (Animal that is also Backbone that is also Leg that is also Mammal that is also Meat that is also Reptile that is also Vertebrate) be considered a subcategory of 'Meat'?, \nFalse
+Can something that eats some (Animal that is also Backbone that is also Cat that is also Mammal that is also Meat that is also Reptile that is also Vertebrate) be considered a subcategory of 'Meat'?, \nFalse
+Can something that eats some (Animal that is also Backbone that is also Cat that is also Leg that is also Meat that is also Reptile that is also Vertebrate) be considered a subcategory of 'Meat'?, \nTrue
+Can something that eats some (Animal that is also Backbone that is also Cat that is also Leg that is also Reptile that is also Vertebrate) be considered a subcategory of 'Meat'?, \nFalse
+Can something that eats some (Animal that is also Backbone that is also Cat that is also Leg that is also Meat that is also Vertebrate) be considered a subcategory of 'Meat'?, \nTrue
+Can something that eats some (Animal that is also Backbone that is also Cat that is also Leg that is also Meat) be considered a subcategory of 'Meat'?, \nTrue
+Can Fish that is also Water be considered a subcategory of 'Bird'?, \nFalse
+Can something that has_part some Herbivore be considered a subcategory of 'Cat'?, \nFalse
+Can Egg that is also Leg be considered a subcategory of 'Wing'?, \nTrue
+Can Egg that is also Leg be considered a subcategory of 'Water'?, \nFalse
+Can Egg that is also Leg be considered a subcategory of 'Reptile'?, \nFalse
+Can Egg that is also Leg be considered a subcategory of 'Plant'?, \nFalse
+Can Egg that is also Leg be considered a subcategory of 'Fish'?, \nFalse
+Can Egg that is also Leg be considered a subcategory of 'Herbivore'?, \nFalse
+Can Egg that is also Leg be considered a subcategory of 'Elephant'?, \nFalse
+Can Egg that is also Leg be considered a subcategory of 'Bird'?, \nFalse
+Can Backbone that is also Bird be considered a subcategory of 'Plant'?, \nFalse
+Can Egg that is also Water be considered a subcategory of 'Wing'?, \nFalse
+Can Carnivore be considered a subcategory of 'something that has_part some Herbivore'?, \nFalse
+Can Backbone that is also Reptile be considered a subcategory of 'Bird'?, \nFalse
+Can something that lives_in some Animal be considered a subcategory of 'Animal'?, \nFalse
+Can something that has_part some Carnivore be considered a subcategory of 'Bird'?, \nFalse
+Can Carnivore that is also Leg be considered a subcategory of 'Herbivore'?, \nFalse
+Can something that lays some Reptile be considered a subcategory of 'Reptile'?, \nTrue
+Can something that lays some Reptile be considered a subcategory of 'Egg'?, \nFalse
+Can something that lays some Reptile be considered a subcategory of 'Meat'?, \nTrue
+Can Thing be considered a subcategory of 'something that lays some (Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Reptile that is also Vertebrate)'?, \nFalse
+Can something that (lays some Animal) that is also something that (lays some (Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Reptile that is also Vertebrate)) be considered a subcategory of 'something that lays some (Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Reptile that is also Vertebrate)'?, \nFalse
+Can something that (lays some Animal) that is also something that (lays some (Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Reptile that is also Vertebrate)) be considered a subcategory of 'Meat'?, \nTrue
+Can something that (lays some Animal) that is also something that (lays some Backbone) that is also something that (lays some (Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Reptile that is also Vertebrate)) be considered a subcategory of 'something that (lays some Animal) that is also something that (lays some (Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Reptile that is also Vertebrate))'?, \nFalse
+Can something that (lays some Animal) that is also something that (lays some Backbone) that is also something that (lays some (Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Reptile that is also Vertebrate)) be considered a subcategory of 'Meat'?, \nFalse
+Can something that (lays some Animal) that is also something that (lays some (Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Reptile that is also Vertebrate)) be considered a subcategory of 'something that (lays some Animal) that is also something that (lays some (Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Reptile that is also Vertebrate))'?, \nTrue
+Can something that (lays some Thing) that is also something that (lays some (Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Reptile that is also Vertebrate)) be considered a subcategory of 'Meat'?, \nFalse
+Can something that (lays some Animal) that is also something that (lays some (Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Reptile that is also Vertebrate)) be considered a subcategory of 'Meat'?, \nFalse
+Can something that (lays some Animal) that is also something that (lays some (Backbone that is also Cat that is also Leg that is also Mammal that is also Meat that is also Reptile that is also Vertebrate)) be considered a subcategory of 'Meat'?, \nFalse
+Can something that (lays some Animal) that is also something that (lays some (Backbone that is also Carnivore that is also Leg that is also Mammal that is also Meat that is also Reptile that is also Vertebrate)) be considered a subcategory of 'Meat'?, \nTrue
+Can something that (lays some Animal) that is also something that (lays some (Backbone that is also Carnivore that is also Mammal that is also Meat that is also Reptile that is also Vertebrate)) be considered a subcategory of 'Meat'?, \nFalse
+Can something that (lays some Animal) that is also something that (lays some (Backbone that is also Carnivore that is also Leg that is also Meat that is also Reptile that is also Vertebrate)) be considered a subcategory of 'Meat'?, \nTrue
+Can something that (lays some Animal) that is also something that (lays some (Backbone that is also Carnivore that is also Leg that is also Reptile that is also Vertebrate)) be considered a subcategory of 'Meat'?, \nFalse
+Can something that (lays some Animal) that is also something that (lays some (Backbone that is also Carnivore that is also Leg that is also Meat that is also Vertebrate)) be considered a subcategory of 'Meat'?, \nTrue
+Can something that (lays some Animal) that is also something that (lays some (Backbone that is also Carnivore that is also Leg that is also Meat)) be considered a subcategory of 'Meat'?, \nTrue
+Can something that lives_in some Cat be considered a subcategory of 'Fish'?, \nFalse
+Can Carnivore that is also Cat be considered a subcategory of 'Plant'?, \nFalse
+Can something that lays some Herbivore be considered a subcategory of 'Plant'?, \nTrue
+Can something that lays some Herbivore be considered a subcategory of 'Egg'?, \nFalse
+Can something that lays some Herbivore be considered a subcategory of 'Meat'?, \nFalse
+Can something that lays some Herbivore be considered a subcategory of 'Carnivore'?, \nFalse
+Can something that lays some Herbivore be considered a subcategory of 'Water'?, \nFalse
+Can something that lays some Herbivore be considered a subcategory of 'Animal'?, \nTrue
+Can Carnivore that is also Reptile be considered a subcategory of 'Elephant'?, \nFalse
+Can something that eats some Backbone be considered a subcategory of 'Fish'?, \nFalse
+Can Carnivore that is also Mammal be considered a subcategory of 'Plant'?, \nFalse
+Can Carnivore that is also Meat be considered a subcategory of 'Plant'?, \nFalse
+Can Carnivore that is also Elephant be considered a subcategory of 'Bird'?, \nFalse
+Can Backbone that is also Mammal be considered a subcategory of 'Reptile'?, \nFalse
+Can something that lives_in some Fish be considered a subcategory of 'Fish'?, \nTrue
+Can something that lives_in some Fish be considered a subcategory of 'Egg'?, \nFalse
+Can something that lives_in some Fish be considered a subcategory of 'Meat'?, \nFalse
+Can something that lives_in some Fish be considered a subcategory of 'Carnivore'?, \nFalse
+Can something that lives_in some Fish be considered a subcategory of 'Water'?, \nFalse
+Can something that lives_in some Fish be considered a subcategory of 'Animal'?, \nFalse
+Can something that lives_in some Fish be considered a subcategory of 'Reptile'?, \nFalse
+Can something that lives_in some Fish be considered a subcategory of 'Plant'?, \nFalse
+Can something that lives_in some Fish be considered a subcategory of 'Vertebrate'?, \nTrue
+Can Fish be considered a subcategory of 'Vertebrate'?, \nTrue
+Can Thing be considered a subcategory of 'something that lives_in some (Animal that is also Backbone that is also Carnivore that is also Cat that is also Fish that is also Leg that is also Mammal that is also Meat that is also Vertebrate)'?, \nFalse
+Can Animal that is also Backbone that is also Carnivore that is also Cat that is also Fish that is also Leg that is also Mammal that is also Meat that is also Vertebrate be considered a subcategory of 'Egg'?, \nFalse
+Can Animal that is also Backbone that is also Carnivore that is also Cat that is also Fish that is also Leg that is also Mammal that is also Meat that is also Vertebrate be considered a subcategory of 'Water'?, \nFalse
+Can Animal that is also Backbone that is also Carnivore that is also Cat that is also Fish that is also Leg that is also Mammal that is also Meat that is also Vertebrate be considered a subcategory of 'Reptile'?, \nFalse
+Can Animal that is also Backbone that is also Carnivore that is also Cat that is also Fish that is also Leg that is also Mammal that is also Meat that is also Vertebrate be considered a subcategory of 'Plant'?, \nFalse
+Can Animal that is also Backbone that is also Carnivore that is also Cat that is also Fish that is also Leg that is also Mammal that is also Meat that is also Vertebrate be considered a subcategory of 'Herbivore'?, \nFalse
+Can Animal that is also Backbone that is also Carnivore that is also Cat that is also Fish that is also Leg that is also Mammal that is also Meat that is also Vertebrate be considered a subcategory of 'Elephant'?, \nFalse
+Can Animal that is also Backbone that is also Carnivore that is also Cat that is also Fish that is also Leg that is also Mammal that is also Meat that is also Vertebrate be considered a subcategory of 'Bird'?, \nFalse
+Can Animal that is also Backbone that is also Carnivore that is also Cat that is also Fish that is also Leg that is also Mammal that is also Meat that is also Vertebrate be considered a subcategory of 'Wing'?, \nFalse
+Can something that (lives_in some Animal) that is also something that (lives_in some (Backbone that is also Carnivore that is also Cat that is also Fish that is also Leg that is also Mammal that is also Meat that is also Vertebrate)) be considered a subcategory of 'something that lives_in some (Animal that is also Backbone that is also Carnivore that is also Cat that is also Fish that is also Leg that is also Mammal that is also Meat that is also Vertebrate)'?, \nTrue
+Can something that lives_in some (Animal that is also Backbone that is also Carnivore that is also Cat that is also Fish that is also Leg that is also Mammal that is also Meat that is also Vertebrate) be considered a subcategory of 'something that lives_in some (Animal that is also Backbone that is also Carnivore that is also Cat that is also Fish that is also Leg that is also Mammal that is also Meat that is also Vertebrate)'?, \nFalse
+Can something that lives_in some (Animal that is also Backbone that is also Carnivore that is also Cat that is also Fish that is also Leg that is also Mammal that is also Meat that is also Vertebrate) be considered a subcategory of 'Vertebrate'?, \nFalse
+Can something that lives_in some (Backbone that is also Carnivore that is also Cat that is also Fish that is also Leg that is also Mammal that is also Meat that is also Vertebrate) be considered a subcategory of 'Vertebrate'?, \nFalse
+Can something that lives_in some (Animal that is also Carnivore that is also Cat that is also Fish that is also Leg that is also Mammal that is also Meat that is also Vertebrate) be considered a subcategory of 'Vertebrate'?, \nFalse
+Can something that lives_in some (Animal that is also Backbone that is also Cat that is also Fish that is also Leg that is also Mammal that is also Meat that is also Vertebrate) be considered a subcategory of 'Vertebrate'?, \nFalse
+Can something that lives_in some (Animal that is also Backbone that is also Carnivore that is also Fish that is also Leg that is also Mammal that is also Meat that is also Vertebrate) be considered a subcategory of 'Vertebrate'?, \nFalse
+Can something that lives_in some (Animal that is also Backbone that is also Carnivore that is also Cat that is also Leg that is also Mammal that is also Meat that is also Vertebrate) be considered a subcategory of 'Vertebrate'?, \nTrue
+Can something that lives_in some (Animal that is also Backbone that is also Carnivore that is also Cat that is also Mammal that is also Meat that is also Vertebrate) be considered a subcategory of 'Vertebrate'?, \nTrue
+Can something that lives_in some (Animal that is also Backbone that is also Carnivore that is also Cat that is also Meat that is also Vertebrate) be considered a subcategory of 'Vertebrate'?, \nTrue
+Can something that lives_in some (Animal that is also Backbone that is also Carnivore that is also Cat that is also Vertebrate) be considered a subcategory of 'Vertebrate'?, \nTrue
+Can something that lives_in some (Animal that is also Backbone that is also Carnivore that is also Cat) be considered a subcategory of 'Vertebrate'?, \nTrue
+Can Bird that is also Wing be considered a subcategory of 'Water'?, \nFalse
+Can Mammal be considered a subcategory of 'something that eats some Water'?, \nFalse
+Can Fish be considered a subcategory of 'something that lives_in some Egg'?, \nFalse
+Can something that lays some Meat be considered a subcategory of 'Reptile'?, \nFalse
+Can something that lays some Water be considered a subcategory of 'Vertebrate'?, \nFalse
+Can something that lives_in some Carnivore be considered a subcategory of 'Water'?, \nFalse
+Can Herbivore that is also Vertebrate be considered a subcategory of 'Fish'?, \nFalse
+Can Backbone that is also Vertebrate be considered a subcategory of 'Plant'?, \nFalse
+Can Plant that is also Water be considered a subcategory of 'Fish'?, \nFalse
+Can Water be considered a subcategory of 'something that lives_in some Fish'?, \nFalse
+Can Backbone that is also Fish be considered a subcategory of 'Reptile'?, \nFalse
+Can Cat be considered a subcategory of 'something that eats some Water'?, \nFalse
+Can something that lays some Water be considered a subcategory of 'Carnivore'?, \nFalse
+Can Egg be considered a subcategory of 'something that lives_in some Egg'?, \nFalse
+Can something that eats some Herbivore be considered a subcategory of 'Wing'?, \nFalse
+Can Carnivore that is also Fish be considered a subcategory of 'Elephant'?, \nFalse
+Can Cat that is also Mammal be considered a subcategory of 'Wing'?, \nFalse
+Can Cat that is also Plant be considered a subcategory of 'Herbivore'?, \nFalse
+Can Meat that is also Reptile be considered a subcategory of 'Wing'?, \nFalse
+Can Herbivore be considered a subcategory of 'something that lays some Water'?, \nFalse
+Can Egg that is also Wing be considered a subcategory of 'Water'?, \nFalse
+Can Cat that is also Egg be considered a subcategory of 'Water'?, \nFalse
+Can Carnivore that is also Mammal be considered a subcategory of 'Wing'?, \nFalse
+Can Backbone that is also Plant be considered a subcategory of 'Wing'?, \nFalse
+Can Carnivore that is also Herbivore be considered a subcategory of 'Water'?, \nFalse
+Can Meat that is also Reptile be considered a subcategory of 'Egg'?, \nFalse
+Can Herbivore that is also Reptile be considered a subcategory of 'Egg'?, \nFalse
+Can something that lays some Meat be considered a subcategory of 'Plant'?, \nFalse
+Can Animal that is also Vertebrate be considered a subcategory of 'Plant'?, \nFalse
+Can Elephant be considered a subcategory of 'something that has_part some Plant'?, \nFalse
+Can Animal that is also Elephant be considered a subcategory of 'Wing'?, \nFalse
+Can Cat that is also Vertebrate be considered a subcategory of 'Herbivore'?, \nFalse
+Can something that lays some Egg be considered a subcategory of 'Animal'?, \nTrue
+Can something that lays some Egg be considered a subcategory of 'Egg'?, \nTrue
+Can Egg be considered a subcategory of 'Egg'?, \nFalse
+Can Thing be considered a subcategory of 'something that lays some Egg'?, \nTrue
+Can something that lays some Thing be considered a subcategory of 'Egg'?, \nFalse
+Can something that eats some Animal be considered a subcategory of 'Wing'?, \nFalse
+Can Carnivore that is also Vertebrate be considered a subcategory of 'Herbivore'?, \nFalse
+Can Cat that is also Plant be considered a subcategory of 'Water'?, \nFalse
+Can Elephant that is also Reptile be considered a subcategory of 'Egg'?, \nFalse
+Can something that eats some Animal be considered a subcategory of 'Egg'?, \nFalse
+Can Fish be considered a subcategory of 'Wing'?, \nFalse
+Can something that lays some Egg be considered a subcategory of 'Plant'?, \nFalse
+Can something that has_part some Plant be considered a subcategory of 'Cat'?, \nFalse
+Can Bird be considered a subcategory of 'something that lives_in some Herbivore'?, \nFalse
+Can Egg that is also Plant be considered a subcategory of 'Vertebrate'?, \nFalse
+Can Fish that is also Water be considered a subcategory of 'Plant'?, \nFalse
+Can Bird be considered a subcategory of 'something that eats some Cat'?, \nFalse
+Can Backbone that is also Fish be considered a subcategory of 'Plant'?, \nFalse
+Can something that eats some Animal be considered a subcategory of 'Herbivore'?, \nFalse
+Can Animal be considered a subcategory of 'something that lives_in some Cat'?, \nFalse
+Can Bird that is also Water be considered a subcategory of 'Herbivore'?, \nFalse
+Can Vertebrate that is also Water be considered a subcategory of 'Reptile'?, \nFalse
+Can something that eats some Meat be considered a subcategory of 'Egg'?, \nFalse
+Can Backbone that is also Carnivore be considered a subcategory of 'Wing'?, \nFalse
+Can Fish be considered a subcategory of 'something that lives_in some Cat'?, \nFalse
+Can Meat that is also Vertebrate be considered a subcategory of 'Plant'?, \nFalse
+Can something that eats some Meat be considered a subcategory of 'Reptile'?, \nFalse
+Can Plant that is also Water be considered a subcategory of 'Meat'?, \nFalse
+Can Backbone that is also Cat be considered a subcategory of 'Wing'?, \nFalse
+Can something that has_part some Herbivore be considered a subcategory of 'Fish'?, \nFalse
+Can Animal be considered a subcategory of 'something that eats some Backbone'?, \nFalse
+Can Elephant be considered a subcategory of 'something that lays some Plant'?, \nFalse
+Can Carnivore be considered a subcategory of 'something that lives_in some Egg'?, \nFalse
+Can Fish be considered a subcategory of 'something that eats some Backbone'?, \nFalse
+Can Wing be considered a subcategory of 'something that lives_in some Plant'?, \nFalse
+Can Water be considered a subcategory of 'something that lives_in some Carnivore'?, \nFalse
+Can Cat be considered a subcategory of 'something that lives_in some Wing'?, \nFalse
+Animal and Backbone SubClassOf Carnivore, \nFalse
+eats some Carnivore SubClassOf Fish, False
+has_part some Reptile SubClassOf Egg, False
+Meat SubClassOf Water, False
+lives_in some Backbone SubClassOf Reptile, \nTrue
+lives_in some Backbone SubClassOf Egg, \nTrue
+Backbone SubClassOf Egg, \nFalse
+Thing SubClassOf lives_in some Backbone, \nFalse
+Thing SubClassOf Egg, \nTrue
+eats some Bird SubClassOf Cat, \nFalse
+Backbone SubClassOf has_part some Leg, \nFalse
+Backbone and Fish SubClassOf Carnivore, \nTrue
+Backbone and Fish SubClassOf Meat, \nTrue
+Fish SubClassOf Meat, False
+Backbone SubClassOf Meat, \nFalse
+Carnivore and Herbivore SubClassOf Fish, False
+Meat and Reptile SubClassOf Water, False
+Cat and Water SubClassOf Leg, \nTrue
+Cat and Water SubClassOf Meat, False
+Cat and Water SubClassOf Carnivore, False
+Cat and Water SubClassOf Animal, False
+Cat and Water SubClassOf Reptile, False
+Cat and Water SubClassOf Plant, False
+Cat and Water SubClassOf Vertebrate, \nTrue
+Cat SubClassOf Vertebrate, \nTrue
+Cat SubClassOf Egg, False
+Cat SubClassOf Meat, False
+Cat SubClassOf Carnivore, True
+Cat SubClassOf Carnivore and Vertebrate, True
+Cat SubClassOf Water, False
+Cat SubClassOf Animal, False
+Cat SubClassOf Reptile, \nFalse
+Cat SubClassOf Plant, \nFalse
+Cat SubClassOf Fish, \nFalse
+Cat SubClassOf Mammal, False
+Cat SubClassOf Herbivore, False
+Cat SubClassOf Leg, False
+Cat SubClassOf Elephant, False
+Cat SubClassOf Bird, False
+Cat SubClassOf Backbone, False
+Cat SubClassOf Wing, False
+Meat and Plant SubClassOf Backbone, \nTrue
+Meat and Plant SubClassOf Carnivore, False
+Meat and Plant SubClassOf Water, \nFalse
+Meat and Plant SubClassOf Animal, \nTrue
+Meat SubClassOf Animal, True
+Meat SubClassOf Egg, False
+Meat SubClassOf Carnivore, False
+Meat SubClassOf Reptile, False
+Meat SubClassOf Plant, \nFalse
+Meat SubClassOf Vertebrate, \nTrue
+Meat SubClassOf Animal and Vertebrate, True
+Meat SubClassOf Cat, False
+Meat SubClassOf Fish, \nFalse
+Meat SubClassOf Mammal, \nTrue
+Meat SubClassOf Animal and Mammal and Vertebrate, \nTrue
+Meat SubClassOf Herbivore, False
+Meat SubClassOf Leg, \nTrue
+Meat SubClassOf Animal and Leg and Mammal and Vertebrate, \nTrue
+Meat SubClassOf Elephant, False
+Meat SubClassOf Bird, False
+Meat SubClassOf Backbone, \nFalse
+Meat SubClassOf Wing, False
+Animal and Backbone SubClassOf Water, False
+eats some Water SubClassOf Carnivore, \nTrue
+eats some Water SubClassOf Meat, \nFalse
+Water SubClassOf Carnivore, False
+Egg and Thing SubClassOf Egg and Thing and (eats some (Egg and Water and Thing)), \nTrue
+Egg and Water and Thing SubClassOf Meat, \nFalse
+Egg and Water and Thing SubClassOf Carnivore, \nTrue
+Water and Thing SubClassOf Carnivore, False
+Egg and Thing SubClassOf Carnivore, \nFalse
+lives_in some Backbone SubClassOf Meat, \nFalse
+lives_in some Backbone SubClassOf Carnivore, \nTrue
+Backbone SubClassOf Carnivore, \nTrue
+Backbone SubClassOf Water, \nFalse
+Backbone SubClassOf Animal, False
+Backbone SubClassOf Reptile, False
+Backbone SubClassOf Plant, \nTrue
+Backbone SubClassOf Carnivore and Plant, \nFalse
+Backbone SubClassOf Vertebrate, \nTrue
+Backbone SubClassOf Carnivore and Vertebrate, \nTrue
+Backbone SubClassOf Cat, False
+Backbone SubClassOf Fish, \nFalse
+Backbone SubClassOf Mammal, \nTrue
+Backbone SubClassOf Carnivore and Mammal and Vertebrate, \nTrue
+Backbone SubClassOf Herbivore, \nFalse
+Backbone SubClassOf Leg, False
+Backbone SubClassOf Elephant, False
+Backbone SubClassOf Bird, False
+Backbone SubClassOf Wing, \nTrue
+Backbone SubClassOf Carnivore and Mammal and Vertebrate and Wing, \nTrue
+Backbone SubClassOf Carnivore and Mammal and Plant and Vertebrate and Wing, \nHere
+Vertebrate and Water SubClassOf Leg, \nTrue
+Vertebrate and Water SubClassOf Meat, False
+Vertebrate and Water SubClassOf Animal, \nTrue
+Vertebrate SubClassOf Animal, \nTrue
+Vertebrate SubClassOf Egg, False
+Vertebrate SubClassOf Meat, False
+Vertebrate SubClassOf Carnivore, \nTrue
+Vertebrate SubClassOf Animal and Carnivore, \nTrue
+Vertebrate SubClassOf Water, \nFalse
+Vertebrate SubClassOf Reptile, \nTrue
+Vertebrate SubClassOf Animal and Carnivore and Reptile, \nTrue
+Vertebrate SubClassOf Plant, \nFalse
+Vertebrate SubClassOf Cat, False
+Vertebrate SubClassOf Fish, \nFalse
+Vertebrate SubClassOf Mammal, \nTrue
+Vertebrate SubClassOf Animal and Carnivore and Mammal and Reptile, \nTrue
+Vertebrate SubClassOf Herbivore, False
+Vertebrate SubClassOf Leg, False
+Vertebrate SubClassOf Elephant, \nFalse
+Vertebrate SubClassOf Bird, \nFalse
+Vertebrate SubClassOf Backbone, \nTrue
+Vertebrate SubClassOf Animal and Backbone and Carnivore and Mammal and Reptile, \nHere
+Vertebrate SubClassOf Wing, \nTrue
+Vertebrate SubClassOf Animal and Carnivore and Mammal and Reptile and Wing, \nHere
+Carnivore and Reptile SubClassOf Fish, False
+Bird SubClassOf lays some Backbone, \nFalse
+Backbone and Fish SubClassOf Water, \nFalse
+Elephant and Water SubClassOf Vertebrate, \nTrue
+Elephant and Water SubClassOf Meat, False
+Elephant and Water SubClassOf Animal, \nTrue
+Water SubClassOf Animal, \nFalse
+Elephant SubClassOf Animal, \nTrue
+Elephant SubClassOf Egg, False
+Elephant SubClassOf Meat, False
+Elephant SubClassOf Carnivore, \nFalse
+Elephant SubClassOf Water, False
+Elephant SubClassOf Reptile, False
+Elephant SubClassOf Plant, \nFalse
+Elephant SubClassOf Vertebrate, \nTrue
+Elephant SubClassOf Animal and Vertebrate, \nTrue
+Elephant SubClassOf Cat, \nFalse
+Elephant SubClassOf Fish, \nFalse
+Elephant SubClassOf Mammal, True
+Elephant SubClassOf Animal and Mammal and Vertebrate, \nTrue
+Elephant SubClassOf Herbivore, True
+Elephant SubClassOf Animal and Herbivore and Mammal and Vertebrate, \nTrue
+Elephant SubClassOf Leg, False
+Elephant SubClassOf Bird, \nFalse
+Elephant SubClassOf Backbone, False
+Elephant SubClassOf Wing, \nFalse
+Backbone and Meat SubClassOf Elephant, \nFalse
+Fish and Leg SubClassOf Vertebrate, \nFalse
+Egg and Mammal SubClassOf Backbone, \nTrue
+Egg and Mammal SubClassOf Meat, \nFalse
+Egg and Mammal SubClassOf Carnivore, False
+Egg and Mammal SubClassOf Water, \nFalse
+Egg and Mammal SubClassOf Animal, \nTrue
+Egg SubClassOf Animal, \nFalse
+Mammal SubClassOf Animal, \nTrue
+Mammal SubClassOf Egg, \nFalse
+Mammal SubClassOf Meat, \nFalse
+Mammal SubClassOf Carnivore, \nFalse
+Mammal SubClassOf Water, \nFalse
+Mammal SubClassOf Reptile, \nFalse
+Mammal SubClassOf Plant, \nFalse
+Mammal SubClassOf Vertebrate, \nTrue
+Mammal SubClassOf Animal and Vertebrate, \nTrue
+Mammal SubClassOf Cat, \nFalse
+Mammal SubClassOf Fish, False
+Mammal SubClassOf Herbivore, \nFalse
+Mammal SubClassOf Leg, \nFalse
+Mammal SubClassOf Elephant, \nFalse
+Mammal SubClassOf Bird, \nFalse
+Mammal SubClassOf Backbone, False
+Mammal SubClassOf Wing, False
+Egg and Leg SubClassOf Vertebrate, \nFalse
+has_part some Cat SubClassOf Water, \nTrue
+has_part some Cat SubClassOf Meat, \nTrue
+Egg and Thing SubClassOf Egg and Thing and (has_part some (Animal and Carnivore and Cat and Egg and Mammal and Reptile and Vertebrate and Thing)), \nTrue
+Animal and Carnivore and Cat and Egg and Mammal and Reptile and Vertebrate and Thing SubClassOf Meat, \nHere
+Animal and Carnivore and Cat and Egg and Mammal and Reptile and Vertebrate and Thing SubClassOf Water, \nHere
+Animal and Carnivore and Cat and Egg and Mammal and Reptile and Vertebrate and Thing SubClassOf Plant, \nHere
+Animal and Carnivore and Cat and Egg and Mammal and Reptile and Vertebrate and Thing SubClassOf Fish, \nHere
+Animal and Carnivore and Cat and Egg and Mammal and Reptile and Vertebrate and Thing SubClassOf Herbivore, \nHere
+Animal and Carnivore and Cat and Egg and Mammal and Reptile and Vertebrate and Thing SubClassOf Leg, \nHere
+Animal and Carnivore and Cat and Egg and Mammal and Reptile and Vertebrate and Thing SubClassOf Elephant, \nHere
+Animal and Carnivore and Cat and Egg and Mammal and Reptile and Vertebrate and Thing SubClassOf Bird, \nHere
+Animal and Carnivore and Cat and Egg and Mammal and Reptile and Vertebrate and Thing SubClassOf Backbone, \nHere
+Animal and Carnivore and Cat and Egg and Mammal and Reptile and Vertebrate and Thing SubClassOf Wing, \nHere
+Egg and Thing and (has_part some Animal) and (has_part some (Carnivore and Cat and Egg and Mammal and Reptile and Vertebrate and Thing)) SubClassOf Egg and Thing and (has_part some (Animal and Carnivore and Cat and Egg and Mammal and Reptile and Vertebrate and Thing)), \nTrue
+Egg and Thing and (has_part some (Animal and Carnivore and Cat and Egg and Mammal and Reptile and Vertebrate and Thing)) SubClassOf Egg and Thing and (has_part some (Animal and Carnivore and Cat and Egg and Mammal and Reptile and Vertebrate and Thing)), \nTrue
+Thing and (has_part some (Animal and Carnivore and Cat and Egg and Mammal and Reptile and Vertebrate and Thing)) SubClassOf Meat, \nTrue
+Thing and (has_part some (Carnivore and Cat and Egg and Mammal and Reptile and Vertebrate and Thing)) SubClassOf Meat, \nTrue
+Thing and (has_part some (Cat and Egg and Mammal and Reptile and Vertebrate and Thing)) SubClassOf Meat, \nTrue
+Thing and (has_part some (Egg and Mammal and Reptile and Vertebrate and Thing)) SubClassOf Meat, \nTrue
+Thing and (has_part some (Mammal and Reptile and Vertebrate and Thing)) SubClassOf Meat, \nTrue
+Thing and (has_part some (Reptile and Vertebrate and Thing)) SubClassOf Meat, \nTrue
+Thing and (has_part some (Vertebrate and Thing)) SubClassOf Meat, \nTrue
+Thing and (has_part some Thing) SubClassOf Meat, \nTrue
+Mammal and Vertebrate SubClassOf Wing, \nFalse
+Cat and Mammal SubClassOf Backbone, \nTrue
+Cat and Mammal SubClassOf Meat, False
+Cat and Mammal SubClassOf Water, False
+Cat and Mammal SubClassOf Plant, \nFalse
+Cat and Mammal SubClassOf Fish, \nFalse
+Cat and Mammal SubClassOf Herbivore, False
+Cat and Mammal SubClassOf Leg, \nTrue
+Bird and Vertebrate SubClassOf Leg, \nTrue
+Bird and Vertebrate SubClassOf Meat, \nFalse
+Bird and Vertebrate SubClassOf Water, \nFalse
+Bird and Vertebrate SubClassOf Plant, \nFalse
+Bird and Vertebrate SubClassOf Cat, \nFalse
+Bird and Vertebrate SubClassOf Fish, \nFalse
+Bird and Vertebrate SubClassOf Herbivore, \nFalse
+Bird SubClassOf Leg, \nTrue
+Bird SubClassOf Egg, \nFalse
+Bird SubClassOf Meat, \nFalse
+Bird SubClassOf Carnivore, \nFalse
+Bird SubClassOf Water, \nFalse
+Bird SubClassOf Animal, \nFalse
+Bird SubClassOf Reptile, \nFalse
+Bird SubClassOf Plant, False
+Bird SubClassOf Vertebrate, \nTrue
+Bird SubClassOf Leg and Vertebrate, \nTrue
+Bird SubClassOf Cat, \nFalse
+Bird SubClassOf Fish, False
+Bird SubClassOf Mammal, \nFalse
+Bird SubClassOf Herbivore, \nFalse
+Bird SubClassOf Elephant, \nFalse
+Bird SubClassOf Backbone, \nTrue
+Bird SubClassOf Backbone and Leg and Vertebrate, \nTrue
+Bird SubClassOf Wing, \nTrue
+Bird SubClassOf Backbone and Leg and Vertebrate and Wing, \nTrue
+Animal SubClassOf lays some Vertebrate, \nTrue
+Animal SubClassOf Meat, False
+Animal SubClassOf Carnivore, \nTrue
+Animal SubClassOf Egg, \nFalse
+Animal SubClassOf Water, False
+Animal SubClassOf Reptile, \nTrue
+Animal SubClassOf Carnivore and Reptile, \nTrue
+Animal SubClassOf Plant, \nFalse
+Animal SubClassOf Vertebrate, \nTrue
+Animal SubClassOf Carnivore and Reptile and Vertebrate, \nTrue
+Animal SubClassOf Cat, \nFalse
+Animal SubClassOf Fish, False
+Animal SubClassOf Mammal, \nTrue
+Animal SubClassOf Carnivore and Mammal and Reptile and Vertebrate, \nTrue
+Animal SubClassOf Herbivore, \nTrue
+Animal SubClassOf Carnivore and Herbivore and Mammal and Reptile and Vertebrate, \nTrue
+Animal SubClassOf Leg, False
+Animal SubClassOf Elephant, \nFalse
+Animal SubClassOf Bird, False
+Animal SubClassOf Backbone, \nTrue
+Animal SubClassOf Backbone and Carnivore and Herbivore and Mammal and Reptile and Vertebrate, \nHere
+Animal SubClassOf Wing, \nFalse
+Animal and Elephant SubClassOf Water, \nFalse
+Animal and Mammal SubClassOf Wing, \nFalse
+Animal and Cat SubClassOf Backbone, \nTrue
+Animal and Cat SubClassOf Meat, False
+Animal and Cat SubClassOf Water, False
+Animal and Cat SubClassOf Plant, \nFalse
+Animal and Cat SubClassOf Fish, \nFalse
+Animal and Cat SubClassOf Elephant, \nFalse
+Animal and Cat SubClassOf Bird, False
+Animal SubClassOf Backbone and Carnivore, \nTrue
+Animal SubClassOf Backbone and Carnivore and Reptile, \nTrue
+Animal SubClassOf Backbone and Carnivore and Reptile and Vertebrate, \nTrue
+Animal SubClassOf Backbone and Carnivore and Mammal and Reptile and Vertebrate, \nTrue
+lays some Vertebrate SubClassOf Leg, \nTrue
+lays some Vertebrate SubClassOf Meat, False
+lays some Vertebrate SubClassOf Carnivore, \nTrue
+Egg and Thing SubClassOf Egg and Thing and (lays some (Animal and Backbone and Carnivore and Egg and Herbivore and Mammal and Reptile and Vertebrate and Wing and Thing)), \nTrue
+Animal and Backbone and Carnivore and Egg and Herbivore and Mammal and Reptile and Vertebrate and Wing and Thing SubClassOf Meat, \nHere
+Animal and Backbone and Carnivore and Egg and Herbivore and Mammal and Reptile and Vertebrate and Wing and Thing SubClassOf Water, \nHere
+Animal and Backbone and Carnivore and Egg and Herbivore and Mammal and Reptile and Vertebrate and Wing and Thing SubClassOf Plant, \nHere
+Animal and Backbone and Carnivore and Egg and Herbivore and Mammal and Reptile and Vertebrate and Wing and Thing SubClassOf Cat, \nHere
+Animal and Backbone and Carnivore and Egg and Herbivore and Mammal and Reptile and Vertebrate and Wing and Thing SubClassOf Fish, \nHere
+Animal and Backbone and Carnivore and Egg and Herbivore and Mammal and Reptile and Vertebrate and Wing and Thing SubClassOf Leg, \nHere
+Animal and Backbone and Carnivore and Egg and Herbivore and Mammal and Reptile and Vertebrate and Wing and Thing SubClassOf Elephant, \nHere
+Animal and Backbone and Carnivore and Egg and Herbivore and Mammal and Reptile and Vertebrate and Wing and Thing SubClassOf Bird, \nHere
+Egg and Thing and (lays some Animal) and (lays some (Backbone and Carnivore and Egg and Herbivore and Mammal and Reptile and Vertebrate and Wing and Thing)) SubClassOf Egg and Thing and (lays some (Animal and Backbone and Carnivore and Egg and Herbivore and Mammal and Reptile and Vertebrate and Wing and Thing)), \nTrue
+Egg and Thing and (lays some (Animal and Backbone and Carnivore and Egg and Herbivore and Mammal and Reptile and Vertebrate and Wing and Thing)) SubClassOf Egg and Thing and (lays some (Animal and Backbone and Carnivore and Egg and Herbivore and Mammal and Reptile and Vertebrate and Wing and Thing)), \nTrue
+Thing and (lays some (Animal and Backbone and Carnivore and Egg and Herbivore and Mammal and Reptile and Vertebrate and Wing and Thing)) SubClassOf Carnivore, \nFalse
+Egg and Thing and (lays some (Backbone and Carnivore and Egg and Herbivore and Mammal and Reptile and Vertebrate and Wing and Thing)) SubClassOf Carnivore, \nTrue
+Egg and Thing and (lays some (Carnivore and Egg and Herbivore and Mammal and Reptile and Vertebrate and Wing and Thing)) SubClassOf Carnivore, \nTrue
+Egg and Thing and (lays some (Egg and Herbivore and Mammal and Reptile and Vertebrate and Wing and Thing)) SubClassOf Carnivore, \nTrue
+Egg and Thing and (lays some (Herbivore and Mammal and Reptile and Vertebrate and Wing and Thing)) SubClassOf Carnivore, \nTrue
+Egg and Thing and (lays some (Mammal and Reptile and Vertebrate and Wing and Thing)) SubClassOf Carnivore, \nFalse
+Egg and Thing and (lays some (Herbivore and Reptile and Vertebrate and Wing and Thing)) SubClassOf Carnivore, \nFalse
+Egg and Thing and (lays some (Herbivore and Mammal and Vertebrate and Wing and Thing)) SubClassOf Carnivore, \nFalse
+Egg and Thing and (lays some (Herbivore and Mammal and Reptile and Wing and Thing)) SubClassOf Carnivore, \nFalse
+Egg and Thing and (lays some (Herbivore and Mammal and Reptile and Vertebrate and Thing)) SubClassOf Carnivore, \nTrue
+Animal and Leg SubClassOf Bird, \nFalse
+has_part some Reptile SubClassOf Elephant, False
+lives_in some Leg SubClassOf Leg, \nTrue
+lives_in some Leg SubClassOf Meat, \nFalse
+lives_in some Leg SubClassOf Carnivore, \nTrue
+Leg SubClassOf Carnivore, False
+Egg and Thing SubClassOf Egg and Thing and (lives_in some (Egg and Leg and Thing)), \nTrue
+Egg and Leg and Thing SubClassOf Meat, \nTrue
+Leg and Thing SubClassOf Meat, \nFalse
+Egg and Thing SubClassOf Meat, \nFalse
+lays some Wing SubClassOf Herbivore, \nFalse
+Cat and Wing SubClassOf Elephant, \nFalse
+lays some Vertebrate SubClassOf Reptile, \nTrue
+lays some Vertebrate SubClassOf Water, False
+lays some Vertebrate SubClassOf Animal, \nTrue
+Carnivore and Egg and Thing SubClassOf Carnivore and Egg and Thing and (lays some (Animal and Backbone and Carnivore and Egg and Herbivore and Mammal and Reptile and Vertebrate and Wing and Thing)), \nTrue
+Carnivore and Egg and Thing and (lays some Animal) and (lays some (Backbone and Carnivore and Egg and Herbivore and Mammal and Reptile and Vertebrate and Wing and Thing)) SubClassOf Carnivore and Egg and Thing and (lays some (Animal and Backbone and Carnivore and Egg and Herbivore and Mammal and Reptile and Vertebrate and Wing and Thing)), \nHere
+Carnivore and Egg and Thing and (lays some Animal) and (lays some (Backbone and Carnivore and Egg and Herbivore and Mammal and Reptile and Vertebrate and Wing and Thing)) SubClassOf Animal, \nTrue
+Carnivore and Egg and Thing and (lays some Animal) and (lays some Backbone) and (lays some (Carnivore and Egg and Herbivore and Mammal and Reptile and Vertebrate and Wing and Thing)) SubClassOf Carnivore and Egg and Thing and (lays some Animal) and (lays some (Backbone and Carnivore and Egg and Herbivore and Mammal and Reptile and Vertebrate and Wing and Thing)), \nTrue
+Carnivore and Egg and Thing and (lays some Animal) and (lays some (Backbone and Carnivore and Egg and Herbivore and Mammal and Reptile and Vertebrate and Wing and Thing)) SubClassOf Carnivore and Egg and Thing and (lays some Animal) and (lays some (Backbone and Carnivore and Egg and Herbivore and Mammal and Reptile and Vertebrate and Wing and Thing)), \nTrue
+Egg and Thing and (lays some Animal) and (lays some (Backbone and Carnivore and Egg and Herbivore and Mammal and Reptile and Vertebrate and Wing and Thing)) SubClassOf Animal, \nFalse
+Carnivore and Thing and (lays some Animal) and (lays some (Backbone and Carnivore and Egg and Herbivore and Mammal and Reptile and Vertebrate and Wing and Thing)) SubClassOf Animal, \nTrue
+Carnivore and Thing and (lays some Thing) and (lays some (Backbone and Carnivore and Egg and Herbivore and Mammal and Reptile and Vertebrate and Wing and Thing)) SubClassOf Animal, \nTrue
+Carnivore and Thing and (lays some Thing) and (lays some (Carnivore and Egg and Herbivore and Mammal and Reptile and Vertebrate and Wing and Thing)) SubClassOf Animal, \nTrue
+Carnivore and Thing and (lays some Thing) and (lays some (Egg and Herbivore and Mammal and Reptile and Vertebrate and Wing and Thing)) SubClassOf Animal, \nTrue
+Carnivore and Thing and (lays some Thing) and (lays some (Herbivore and Mammal and Reptile and Vertebrate and Wing and Thing)) SubClassOf Animal, \nTrue
+Carnivore and Thing and (lays some Thing) and (lays some (Mammal and Reptile and Vertebrate and Wing and Thing)) SubClassOf Animal, \nTrue
+Carnivore and Thing and (lays some Thing) and (lays some (Reptile and Vertebrate and Wing and Thing)) SubClassOf Animal, \nTrue
+Carnivore and Thing and (lays some Thing) and (lays some (Vertebrate and Wing and Thing)) SubClassOf Animal, \nTrue
+Carnivore and Thing and (lays some Thing) and (lays some (Wing and Thing)) SubClassOf Animal, \nTrue
+Carnivore and Thing and (lays some Thing) SubClassOf Animal, \nTrue
+lives_in some Fish SubClassOf Backbone, \nTrue
+lives_in some Fish SubClassOf Meat, \nFalse
+lives_in some Fish SubClassOf Carnivore, False
+lives_in some Fish SubClassOf Water, \nTrue
+Fish SubClassOf Water, \nFalse
+Egg and Thing SubClassOf Egg and Thing and (lives_in some (Egg and Fish and Thing)), \nTrue
+Egg and Fish and Thing SubClassOf Meat, \nFalse
+Egg and Fish and Thing SubClassOf Carnivore, \nFalse
+Egg and Fish and Thing SubClassOf Water, \nFalse
+Egg and Fish and Thing SubClassOf Animal, \nTrue
+Fish and Thing SubClassOf Animal, \nTrue
+Thing SubClassOf Animal, \nTrue
+Fish and Plant SubClassOf Water, False
+Egg and Mammal SubClassOf Cat, \nTrue
+Egg and Mammal SubClassOf Plant, \nFalse
+Egg SubClassOf Cat, \nFalse
+Fish and Reptile SubClassOf Plant, \nFalse
+lays some Water SubClassOf Plant, \nTrue
+lays some Water SubClassOf Water, False
+Water SubClassOf Plant, False
+Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing SubClassOf Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing and (lays some (Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Water and Wing and Thing)), \nHere
+Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing SubClassOf Water, \nHere
+Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing SubClassOf Plant, \nHere
+Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing SubClassOf Fish, \nHere
+Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing SubClassOf Elephant, \nHere
+Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing SubClassOf Bird, \nHere
+Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Water and Wing and Thing SubClassOf Plant, \nHere
+Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Water and Wing and Thing SubClassOf Fish, \nHere
+Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Water and Wing and Thing SubClassOf Elephant, \nHere
+Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Water and Wing and Thing SubClassOf Bird, \nHere
+Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing and (lays some Animal) and (lays some (Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Water and Wing and Thing)) SubClassOf Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing and (lays some (Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Water and Wing and Thing)), Here are
+Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing and (lays some Animal) and (lays some (Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Water and Wing and Thing)) SubClassOf Plant, \nHere
+Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing and (lays some (Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Water and Wing and Thing)) SubClassOf Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing and (lays some (Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Water and Wing and Thing)), \nHere
+Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing and (lays some (Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Water and Wing and Thing)) SubClassOf Plant, \nHere
+Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing and (lays some (Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Water and Wing and Thing)) SubClassOf Plant, \nHere
+Animal and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing and (lays some (Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Water and Wing and Thing)) SubClassOf Plant, \nHere
+Animal and Backbone and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing and (lays some (Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Water and Wing and Thing)) SubClassOf Plant, \nHere
+Animal and Backbone and Carnivore and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing and (lays some (Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Water and Wing and Thing)) SubClassOf Plant, \nHere
+Animal and Backbone and Carnivore and Cat and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing and (lays some (Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Water and Wing and Thing)) SubClassOf Plant, \nHere
+Animal and Backbone and Carnivore and Cat and Egg and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing and (lays some (Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Water and Wing and Thing)) SubClassOf Plant, \nHere
+Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Mammal and Meat and Reptile and Vertebrate and Wing and Thing and (lays some (Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Water and Wing and Thing)) SubClassOf Plant, \nHere
+Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Meat and Reptile and Vertebrate and Wing and Thing and (lays some (Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Water and Wing and Thing)) SubClassOf Plant, \nHere
+Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Reptile and Vertebrate and Wing and Thing and (lays some (Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Water and Wing and Thing)) SubClassOf Plant, \nHere
+Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Vertebrate and Wing and Thing and (lays some (Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Water and Wing and Thing)) SubClassOf Plant, \nHere
+Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Wing and Thing and (lays some (Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Water and Wing and Thing)) SubClassOf Plant, \nHere
+Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Thing and (lays some (Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Water and Wing and Thing)) SubClassOf Plant, \nHere
+Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing and (lays some (Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Water and Wing and Thing)) SubClassOf Plant, \nHere
+Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing and (lays some (Animal and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Water and Wing and Thing)) SubClassOf Plant, \nHere
+Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing and (lays some (Animal and Backbone and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Water and Wing and Thing)) SubClassOf Plant, \nHere
+Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing and (lays some (Animal and Backbone and Carnivore and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Water and Wing and Thing)) SubClassOf Plant, \nHere
+Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing and (lays some (Animal and Backbone and Carnivore and Cat and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Water and Wing and Thing)) SubClassOf Plant, \nHere
+Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing and (lays some (Animal and Backbone and Carnivore and Cat and Egg and Leg and Mammal and Meat and Reptile and Vertebrate and Water and Wing and Thing)) SubClassOf Plant, \nHere
+Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing and (lays some (Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Mammal and Meat and Reptile and Vertebrate and Water and Wing and Thing)) SubClassOf Plant, \nHere
+Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing and (lays some (Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Meat and Reptile and Vertebrate and Water and Wing and Thing)) SubClassOf Plant, \nHere
+Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing and (lays some (Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Reptile and Vertebrate and Water and Wing and Thing)) SubClassOf Plant, \nHere
+Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing and (lays some (Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Vertebrate and Water and Wing and Thing)) SubClassOf Plant, \nHere
+Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing and (lays some (Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Water and Wing and Thing)) SubClassOf Plant, \nHere
+Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing and (lays some (Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing)) SubClassOf Plant, \nHere
+Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing and (lays some (Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Water and Thing)) SubClassOf Plant, \nHere
+Fish and Vertebrate SubClassOf Water, \nFalse
+lays some Fish SubClassOf Fish, True
+lays some Fish SubClassOf Water, False
+lays some Fish SubClassOf Plant, \nFalse
+Fish SubClassOf Fish, \nTrue
+Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing SubClassOf Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing and (lays some (Animal and Backbone and Carnivore and Cat and Egg and Fish and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing)), \nHere
+Animal and Backbone and Carnivore and Cat and Egg and Fish and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing SubClassOf Water, \nHere
+Animal and Backbone and Carnivore and Cat and Egg and Fish and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing SubClassOf Plant, \nHere
+Animal and Backbone and Carnivore and Cat and Egg and Fish and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing SubClassOf Elephant, \nHere
+Animal and Backbone and Carnivore and Cat and Egg and Fish and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing SubClassOf Bird, \nHere
+Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing and (lays some Animal) and (lays some (Backbone and Carnivore and Cat and Egg and Fish and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing)) SubClassOf Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing and (lays some (Animal and Backbone and Carnivore and Cat and Egg and Fish and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing)), Here is
+Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing and (lays some Animal) and (lays some (Backbone and Carnivore and Cat and Egg and Fish and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing)) SubClassOf Fish, \nHere
+Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing and (lays some (Animal and Backbone and Carnivore and Cat and Egg and Fish and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing)) SubClassOf Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing and (lays some (Animal and Backbone and Carnivore and Cat and Egg and Fish and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing)), \nHere
+Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing and (lays some (Animal and Backbone and Carnivore and Cat and Egg and Fish and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing)) SubClassOf Fish, \nHere
+Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing and (lays some (Animal and Backbone and Carnivore and Cat and Egg and Fish and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing)) SubClassOf Fish, \nHere
+Animal and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing and (lays some (Animal and Backbone and Carnivore and Cat and Egg and Fish and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing)) SubClassOf Fish, \nHere
+Animal and Backbone and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing and (lays some (Animal and Backbone and Carnivore and Cat and Egg and Fish and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing)) SubClassOf Fish, \nTrue
+Animal and Backbone and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing and (lays some (Animal and Backbone and Carnivore and Cat and Egg and Fish and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing)) SubClassOf Fish, \nHere
+Animal and Backbone and Cat and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing and (lays some (Animal and Backbone and Carnivore and Cat and Egg and Fish and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing)) SubClassOf Fish, \nHere
+Animal and Backbone and Cat and Egg and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing and (lays some (Animal and Backbone and Carnivore and Cat and Egg and Fish and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing)) SubClassOf Fish, \nTrue
+Animal and Backbone and Cat and Egg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing and (lays some (Animal and Backbone and Carnivore and Cat and Egg and Fish and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing)) SubClassOf Fish, \nHere
+Animal and Backbone and Cat and Egg and Leg and Meat and Reptile and Vertebrate and Wing and Thing and (lays some (Animal and Backbone and Carnivore and Cat and Egg and Fish and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing)) SubClassOf Fish, \nHere
+Animal and Backbone and Cat and Egg and Leg and Mammal and Reptile and Vertebrate and Wing and Thing and (lays some (Animal and Backbone and Carnivore and Cat and Egg and Fish and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing)) SubClassOf Fish, \nHere
+Animal and Backbone and Cat and Egg and Leg and Mammal and Meat and Vertebrate and Wing and Thing and (lays some (Animal and Backbone and Carnivore and Cat and Egg and Fish and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing)) SubClassOf Fish, \nTrue
+Animal and Backbone and Cat and Egg and Leg and Mammal and Meat and Wing and Thing and (lays some (Animal and Backbone and Carnivore and Cat and Egg and Fish and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing)) SubClassOf Fish, \nTrue
+Animal and Backbone and Cat and Egg and Leg and Mammal and Meat and Thing and (lays some (Animal and Backbone and Carnivore and Cat and Egg and Fish and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing)) SubClassOf Fish, \nHere
+Animal and Backbone and Cat and Egg and Leg and Mammal and Meat and Wing and Thing and (lays some (Backbone and Carnivore and Cat and Egg and Fish and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing)) SubClassOf Fish, \nHere
+Animal and Backbone and Cat and Egg and Leg and Mammal and Meat and Wing and Thing and (lays some (Animal and Carnivore and Cat and Egg and Fish and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing)) SubClassOf Fish, \nHere
+Animal and Backbone and Cat and Egg and Leg and Mammal and Meat and Wing and Thing and (lays some (Animal and Backbone and Cat and Egg and Fish and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing)) SubClassOf Fish, \nTrue
+Animal and Backbone and Cat and Egg and Leg and Mammal and Meat and Wing and Thing and (lays some (Animal and Backbone and Egg and Fish and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing)) SubClassOf Fish, \nHere
+Animal and Backbone and Cat and Egg and Leg and Mammal and Meat and Wing and Thing and (lays some (Animal and Backbone and Cat and Fish and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing)) SubClassOf Fish, \nTrue
+Animal and Backbone and Cat and Egg and Leg and Mammal and Meat and Wing and Thing and (lays some (Animal and Backbone and Cat and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing)) SubClassOf Fish, \nHere
+Animal and Backbone and Cat and Egg and Leg and Mammal and Meat and Wing and Thing and (lays some (Animal and Backbone and Cat and Fish and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing)) SubClassOf Fish, \nHere
+Animal and Backbone and Cat and Egg and Leg and Mammal and Meat and Wing and Thing and (lays some (Animal and Backbone and Cat and Fish and Herbivore and Mammal and Meat and Reptile and Vertebrate and Wing and Thing)) SubClassOf Fish, \nHere
+Animal and Backbone and Cat and Egg and Leg and Mammal and Meat and Wing and Thing and (lays some (Animal and Backbone and Cat and Fish and Herbivore and Leg and Meat and Reptile and Vertebrate and Wing and Thing)) SubClassOf Fish, \nHere
+Animal and Backbone and Cat and Egg and Leg and Mammal and Meat and Wing and Thing and (lays some (Animal and Backbone and Cat and Fish and Herbivore and Leg and Mammal and Reptile and Vertebrate and Wing and Thing)) SubClassOf Fish, \nHere
+Animal and Backbone and Cat and Egg and Leg and Mammal and Meat and Wing and Thing and (lays some (Animal and Backbone and Cat and Fish and Herbivore and Leg and Mammal and Meat and Vertebrate and Wing and Thing)) SubClassOf Fish, \nHere
+Animal and Backbone and Cat and Egg and Leg and Mammal and Meat and Wing and Thing and (lays some (Animal and Backbone and Cat and Fish and Herbivore and Leg and Mammal and Meat and Reptile and Wing and Thing)) SubClassOf Fish, \nHere
+Animal and Backbone and Cat and Egg and Leg and Mammal and Meat and Wing and Thing and (lays some (Animal and Backbone and Cat and Fish and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Thing)) SubClassOf Fish, \nHere
+Animal and Fish SubClassOf Water, \nFalse
+eats some Wing SubClassOf Plant, \nTrue
+eats some Wing SubClassOf Water, \nFalse
+Wing SubClassOf Plant, \nTrue
+Wing SubClassOf Egg, \nTrue
+Wing SubClassOf Egg and Plant, \nTrue
+Wing SubClassOf Meat, \nFalse
+Wing SubClassOf Carnivore, \nTrue
+Wing SubClassOf Carnivore and Egg and Plant, \nTrue
+Wing SubClassOf Water, \nFalse
+Wing SubClassOf Animal, False
+Wing SubClassOf Reptile, \nFalse
+Wing SubClassOf Vertebrate, \nTrue
+Wing SubClassOf Carnivore and Egg and Plant and Vertebrate, \nHere
+Wing SubClassOf Cat, \nFalse
+Wing SubClassOf Fish, \nFalse
+Wing SubClassOf Mammal, \nTrue
+Wing SubClassOf Carnivore and Egg and Mammal and Plant, \nFalse
+Wing SubClassOf Herbivore, \nFalse
+Wing SubClassOf Leg, \nTrue
+Wing SubClassOf Carnivore and Egg and Leg and Plant, \nFalse
+Wing SubClassOf Elephant, False
+Wing SubClassOf Bird, \nTrue
+Wing SubClassOf Bird and Carnivore and Egg and Plant, \nHere
+Wing SubClassOf Backbone, \nTrue
+Wing SubClassOf Backbone and Carnivore and Egg and Plant, \nTrue
+Wing SubClassOf Backbone and Carnivore and Egg and Plant and Vertebrate, \nHere
+Wing SubClassOf Backbone and Carnivore and Egg and Mammal and Plant, \nHere
+Wing SubClassOf Backbone and Carnivore and Egg and Leg and Plant, \nHere
+Wing SubClassOf Backbone and Bird and Carnivore and Egg and Plant, \nTrue
+Plant and Reptile SubClassOf Elephant, \nFalse
+Fish SubClassOf has_part some Vertebrate, \nFalse
+Wing SubClassOf lays some Herbivore, \nFalse
+Water SubClassOf has_part some Animal, \nFalse
+Egg SubClassOf has_part some Vertebrate, \nFalse
+Carnivore SubClassOf lays some Plant, False
+Wing SubClassOf lays some Wing, \nFalse
+Cat SubClassOf eats some Egg, False
+lays some Cat SubClassOf Elephant, \nFalse
+Plant and Vertebrate SubClassOf Fish, \nFalse
+Animal and Egg SubClassOf Elephant, False
+Bird and Plant SubClassOf Fish, \nFalse
+Elephant and Plant SubClassOf Water, \nFalse
+Egg and Fish SubClassOf Elephant, \nFalse
+Cat and Herbivore SubClassOf Fish, \nFalse
+has_part some Vertebrate SubClassOf Elephant, \nFalse
+Cat SubClassOf lives_in some Bird, \nFalse
+Leg SubClassOf lays some Reptile, \nFalse
+Cat and Meat SubClassOf Water, False
+Bird and Mammal SubClassOf Fish, \nFalse
+Meat and Plant SubClassOf Elephant, \nFalse
+Egg SubClassOf Water, \nFalse
+Vertebrate SubClassOf lays some Leg, False
+Herbivore SubClassOf lays some Mammal, \nFalse
+Egg and Fish SubClassOf Water, \nFalse
+Plant SubClassOf Fish, \nFalse
+Bird and Carnivore SubClassOf Fish, \nFalse
+Bird and Cat SubClassOf Fish, False
+Animal SubClassOf has_part some Bird, \nTrue
+Egg SubClassOf has_part some Bird, \nTrue
+Egg and (has_part some Bird) SubClassOf Egg and (has_part some Bird), \nTrue
+Egg SubClassOf Meat, \nFalse
+Egg SubClassOf Carnivore, \nFalse
+Egg SubClassOf Reptile, False
+Egg SubClassOf Plant, \nFalse
+Egg SubClassOf Vertebrate, False
+Egg SubClassOf Fish, \nFalse
+Egg SubClassOf Mammal, \nFalse
+Egg SubClassOf Herbivore, \nFalse
+Egg SubClassOf Leg, \nFalse
+Egg SubClassOf Elephant, \nFalse
+Egg SubClassOf Bird, \nTrue
+Egg SubClassOf Bird and Egg and (has_part some Bird), \nTrue
+Egg SubClassOf Backbone, \nFalse
+Egg SubClassOf Wing, \nFalse
+Egg SubClassOf Egg, \nTrue
+Egg SubClassOf Bird and Egg and (has_part some (Bird and Egg)), \nTrue
+Bird and Egg and Thing and (has_part some (Bird and Egg)) SubClassOf Bird and Egg and Thing and (has_part some (Bird and Egg)), \nTrue
+Bird and Egg and Meat and Thing and (has_part some (Bird and Egg)) SubClassOf Bird and Egg and Meat and Thing and (has_part some (Bird and Egg)), \nTrue
+Bird and Carnivore and Egg and Meat and Thing and (has_part some (Bird and Egg)) SubClassOf Bird and Carnivore and Egg and Meat and Thing and (has_part some (Bird and Egg)), \nTrue
+has_part some Wing SubClassOf Elephant, \nTrue
+has_part some Wing SubClassOf Water, \nFalse
+has_part some Wing SubClassOf Fish, False
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing SubClassOf Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)), \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing SubClassOf Water, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing SubClassOf Fish, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing SubClassOf Elephant, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing and (has_part some Animal) and (has_part some (Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)), \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing and (has_part some Animal) and (has_part some (Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Elephant, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)), \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Elephant, \nHere
+Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Elephant, \nHere
+Animal and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Elephant, \nHere
+Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Elephant, \nHere
+Animal and Backbone and Bird and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Elephant, \nHere
+Animal and Backbone and Bird and Carnivore and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Elephant, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Elephant, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Elephant, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Elephant, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Meat and Plant and Reptile and Vertebrate and Wing and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Elephant, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Plant and Reptile and Vertebrate and Wing and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Elephant, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Elephant, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Vertebrate and Wing and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Elephant, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Wing and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Elephant, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Elephant, \nTrue
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Thing and (has_part some (Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Elephant, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Thing and (has_part some (Animal and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Elephant, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Thing and (has_part some (Animal and Backbone and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Elephant, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Thing and (has_part some (Animal and Backbone and Bird and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Elephant, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Elephant, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Elephant, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Elephant, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Elephant, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Elephant, \nTrue
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Elephant, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Meat and Reptile and Vertebrate and Wing and Thing)) SubClassOf Elephant, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Meat and Plant and Vertebrate and Wing and Thing)) SubClassOf Elephant, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Meat and Plant and Reptile and Wing and Thing)) SubClassOf Elephant, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Herbivore and Leg and Meat and Plant and Reptile and Vertebrate and Thing)) SubClassOf Elephant, \nHere
+Carnivore SubClassOf lays some Bird, \nFalse
+Carnivore SubClassOf eats some Water, False
+Bird SubClassOf eats some Reptile, False
+Egg SubClassOf lives_in some Elephant, \nFalse
+Reptile SubClassOf eats some Carnivore, False
+Elephant and Plant SubClassOf Fish, False
+Plant SubClassOf lays some Elephant, \nFalse
+Meat SubClassOf lays some Water, \nFalse
+Herbivore SubClassOf has_part some Fish, \nFalse
+Reptile SubClassOf lays some Water, False
+eats some Water SubClassOf Water, False
+Carnivore SubClassOf lives_in some Fish, \nFalse
+Cat and Egg SubClassOf Fish, False
+Wing SubClassOf lives_in some Leg, \nFalse
+Cat SubClassOf lives_in some Fish, \nTrue
+Egg SubClassOf lives_in some Fish, False
+Meat SubClassOf lives_in some Fish, False
+Water SubClassOf lives_in some Fish, False
+Animal SubClassOf lives_in some Fish, \nTrue
+Egg and (lives_in some Fish) SubClassOf Egg and (lives_in some Fish), \nFalse
+Carnivore SubClassOf Animal, \nTrue
+Animal SubClassOf Animal, \nTrue
+Reptile SubClassOf Animal, \nTrue
+Herbivore SubClassOf Animal, \nTrue
+Backbone SubClassOf Egg and (lives_in some Fish), \nTrue
+Carnivore SubClassOf Backbone, \nTrue
+Plant SubClassOf Backbone, \nFalse
+Plant SubClassOf Egg and (lives_in some Fish), \nTrue
+Plant SubClassOf Egg, \nFalse
+Plant SubClassOf Meat, False
+Plant SubClassOf Carnivore, \nFalse
+Plant SubClassOf Water, False
+Plant SubClassOf Animal, \nFalse
+Plant SubClassOf Reptile, \nFalse
+Plant SubClassOf Plant, \nTrue
+Plant SubClassOf Vertebrate, \nFalse
+Plant SubClassOf Cat, \nFalse
+Plant SubClassOf Mammal, \nFalse
+Plant SubClassOf Herbivore, \nFalse
+Plant SubClassOf Leg, \nFalse
+Plant SubClassOf Elephant, \nFalse
+Plant SubClassOf Bird, \nFalse
+Plant SubClassOf Wing, \nFalse
+Carnivore SubClassOf Fish, \nFalse
+Water SubClassOf Fish, \nFalse
+Reptile SubClassOf Fish, \nFalse
+Herbivore SubClassOf Fish, False
+Leg SubClassOf Fish, \nFalse
+Plant SubClassOf Egg and (lives_in some (Fish and Plant)), \nTrue
+Egg and Thing and (lives_in some (Fish and Plant)) SubClassOf Egg and Thing and (lives_in some (Fish and Plant)), \nTrue
+Egg SubClassOf Fish and Plant, \nFalse
+Meat SubClassOf Fish and Plant, \nFalse
+Carnivore SubClassOf Fish and Plant, False
+Water SubClassOf Fish and Plant, False
+Animal SubClassOf Fish and Plant, \nFalse
+Reptile SubClassOf Fish and Plant, \nFalse
+Plant SubClassOf Fish and Plant, \nTrue
+has_part some Herbivore SubClassOf Water, \nTrue
+Herbivore SubClassOf Water, False
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing SubClassOf Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)), \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing SubClassOf Water, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing and (has_part some Animal) and (has_part some (Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)), \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing and (has_part some Animal) and (has_part some (Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Water, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)), \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Water, \nHere
+Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Water, \nHere
+Animal and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Water, \nHere
+Animal and Backbone and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Water, \nHere
+Animal and Backbone and Bird and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Water, \nHere
+Animal and Backbone and Bird and Carnivore and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Water, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Water, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Water, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Water, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Water, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Water, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Meat and Plant and Reptile and Vertebrate and Wing and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Water, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Plant and Reptile and Vertebrate and Wing and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Water, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Water, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Vertebrate and Wing and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Water, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Wing and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Water, \nTrue
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Water, \nTrue
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Thing and (has_part some (Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Water, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Thing and (has_part some (Animal and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Water, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Thing and (has_part some (Animal and Backbone and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Water, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Thing and (has_part some (Animal and Backbone and Bird and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Water, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Water, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Water, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Water, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Water, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Water, \nTrue
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Mammal and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Water, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Leg and Meat and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Water, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Leg and Mammal and Plant and Reptile and Vertebrate and Wing and Thing)) SubClassOf Water, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Leg and Mammal and Meat and Reptile and Vertebrate and Wing and Thing)) SubClassOf Water, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Leg and Mammal and Meat and Plant and Vertebrate and Wing and Thing)) SubClassOf Water, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Leg and Mammal and Meat and Plant and Reptile and Wing and Thing)) SubClassOf Water, \nHere
+Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Herbivore and Leg and Mammal and Meat and Plant and Reptile and Thing and (has_part some (Animal and Backbone and Bird and Carnivore and Cat and Egg and Elephant and Fish and Leg and Mammal and Meat and Plant and Reptile and Vertebrate and Thing)) SubClassOf Water, \nHere
+Carnivore SubClassOf eats some Carnivore, \nTrue
+Egg SubClassOf eats some Carnivore, False
+Meat SubClassOf eats some Carnivore, False
+Egg and (eats some Carnivore) SubClassOf Egg and (eats some Carnivore), \nTrue
+Carnivore SubClassOf Meat, False
+Carnivore SubClassOf Water, \nFalse
+Carnivore SubClassOf Animal and Egg and (eats some Carnivore), \nTrue
+Carnivore SubClassOf Reptile, \nTrue
+Carnivore SubClassOf Animal and Egg and Reptile and (eats some Carnivore), \nTrue
+Carnivore SubClassOf Plant, False
+Carnivore SubClassOf Vertebrate, \nTrue
+Carnivore SubClassOf Animal and Egg and Reptile and Vertebrate and (eats some Carnivore), \nTrue
+Carnivore SubClassOf Cat, False
+Carnivore SubClassOf Mammal, \nTrue
+Carnivore SubClassOf Animal and Egg and Mammal and Reptile and Vertebrate and (eats some Carnivore), \nTrue
+Carnivore SubClassOf Herbivore, \nFalse
+Carnivore SubClassOf Leg, False
+Carnivore SubClassOf Elephant, \nFalse
+Carnivore SubClassOf Bird, \nFalse
+Carnivore SubClassOf Animal and Backbone and Egg and Mammal and Reptile and Vertebrate and (eats some Carnivore), \nHere
+Carnivore SubClassOf Wing, False
+Carnivore SubClassOf Egg, False
+Carnivore SubClassOf Animal and Egg and Mammal and Reptile and Vertebrate and (eats some (Animal and Carnivore)), \nTrue
+Carnivore SubClassOf Animal and Egg and Mammal and Reptile and Vertebrate and (eats some (Animal and Carnivore and Reptile)), \nTrue
+Carnivore SubClassOf Animal and Egg and Mammal and Reptile and Vertebrate and (eats some (Animal and Carnivore and Reptile and Vertebrate)), \nTrue
+Carnivore SubClassOf Animal and Egg and Mammal and Reptile and Vertebrate and (eats some (Animal and Carnivore and Mammal and Reptile and Vertebrate)), \nTrue
+Carnivore SubClassOf Animal and Egg and Mammal and Reptile and Vertebrate and (eats some (Animal and Backbone and Carnivore and Mammal and Reptile and Vertebrate)), \nTrue
+Animal and Egg and Mammal and Reptile and Vertebrate and Thing and (eats some (Animal and Backbone and Carnivore and Mammal and Reptile and Vertebrate)) SubClassOf Animal and Egg and Mammal and Reptile and Vertebrate and Thing and (eats some (Animal and Backbone and Carnivore and Mammal and Reptile and Vertebrate)), \nHere
+Carnivore SubClassOf Carnivore, \nTrue
+Reptile SubClassOf Carnivore, False
+Reptile SubClassOf Animal and Egg and Mammal and Reptile and Vertebrate and Thing and (eats some (Animal and Backbone and Carnivore and Mammal and Reptile and Vertebrate)), \nHere
+Mammal SubClassOf Animal and Egg and Mammal and Reptile and Vertebrate and Thing and (eats some (Animal and Backbone and Carnivore and Mammal and Reptile and Vertebrate)), \nHere
+Animal and Egg and Mammal and Meat and Reptile and Vertebrate and Thing and (eats some (Animal and Backbone and Carnivore and Mammal and Reptile and Vertebrate)) SubClassOf Animal and Egg and Mammal and Meat and Reptile and Vertebrate and Thing and (eats some (Animal and Backbone and Carnivore and Mammal and Reptile and Vertebrate)), \nHere
+Reptile SubClassOf Animal and Egg and Mammal and Meat and Reptile and Vertebrate and Thing and (eats some (Animal and Backbone and Carnivore and Mammal and Reptile and Vertebrate)), \nHere
+Mammal SubClassOf Animal and Egg and Mammal and Meat and Reptile and Vertebrate and Thing and (eats some (Animal and Backbone and Carnivore and Mammal and Reptile and Vertebrate)), \nHere
+Carnivore SubClassOf Animal and Backbone and Egg and Mammal and Meat and Reptile and Vertebrate and Thing and (eats some (Animal and Backbone and Carnivore and Mammal and Reptile and Vertebrate)), \nHere
+Animal and Carnivore and Egg and Mammal and Meat and Reptile and Vertebrate and Thing and (eats some (Animal and Backbone and Carnivore and Mammal and Reptile and Vertebrate)) SubClassOf Animal and Carnivore and Egg and Mammal and Meat and Reptile and Vertebrate and Thing and (eats some (Animal and Backbone and Carnivore and Mammal and Reptile and Vertebrate)), \nHere
+Reptile SubClassOf Animal and Carnivore and Egg and Mammal and Meat and Reptile and Vertebrate and Thing and (eats some (Animal and Backbone and Carnivore and Mammal and Reptile and Vertebrate)), \nHere
+Mammal SubClassOf Animal and Carnivore and Egg and Mammal and Meat and Reptile and Vertebrate and Thing and (eats some (Animal and Backbone and Carnivore and Mammal and Reptile and Vertebrate)), \nHere
+Vertebrate SubClassOf lives_in some Elephant, \nFalse
+Elephant SubClassOf lays some Animal, \nTrue
+Egg SubClassOf lays some Animal, False
+Meat SubClassOf lays some Animal, \nTrue
+Egg and (lays some Animal) SubClassOf Egg and (lays some Animal), \nFalse
+Meat SubClassOf Meat, \nFalse
+Animal SubClassOf Egg and (lays some Animal), \nTrue
+Backbone SubClassOf Egg and (lays some Animal), \nTrue
+Plant SubClassOf Egg and (lays some Animal), False
+Mammal SubClassOf Egg and (lays some Animal), \nFalse
+Backbone SubClassOf Backbone, \nTrue
+Backbone SubClassOf Carnivore and Egg and (lays some Animal), \nTrue
+Backbone SubClassOf Carnivore and Egg and Plant and (lays some Animal), \nTrue
+Backbone SubClassOf Carnivore and Egg and Plant and Vertebrate and (lays some Animal), \nHere
+Backbone SubClassOf Carnivore and Egg and Mammal and Plant and (lays some Animal), \nTrue
+Backbone SubClassOf Carnivore and Egg and Mammal and Plant and Wing and (lays some Animal), \nTrue
+Backbone SubClassOf Carnivore and Egg and Mammal and Plant and Wing and (lays some (Animal and Carnivore)), \nHere
+Backbone SubClassOf Carnivore and Egg and Mammal and Plant and Wing and (lays some (Animal and Plant)), \nHere
+Backbone SubClassOf Carnivore and Egg and Mammal and Plant and Wing and (lays some (Animal and Vertebrate)), \nTrue
+Backbone SubClassOf Carnivore and Egg and Mammal and Plant and Wing and (lays some (Animal and Mammal and Vertebrate)), \nHere
+Backbone SubClassOf Carnivore and Egg and Mammal and Plant and Wing and (lays some (Animal and Backbone and Vertebrate)), \nHere
+Backbone SubClassOf Carnivore and Egg and Mammal and Plant and Wing and (lays some (Animal and Vertebrate and Wing)), \nHere
+Carnivore and Egg and Mammal and Plant and Wing and Thing and (lays some (Animal and Vertebrate)) SubClassOf Carnivore and Egg and Mammal and Plant and Wing and Thing and (lays some (Animal and Vertebrate)), \nTrue
+Carnivore and Egg and Mammal and Meat and Plant and Vertebrate and Wing and Thing and (lays some (Animal and Vertebrate)) SubClassOf Carnivore and Egg and Mammal and Meat and Plant and Vertebrate and Wing and Thing and (lays some (Animal and Vertebrate)), \nHere
+Plant SubClassOf Carnivore and Egg and Mammal and Meat and Plant and Vertebrate and Wing and Thing and (lays some (Animal and Vertebrate)), \nHere
+Mammal SubClassOf Carnivore and Egg and Mammal and Meat and Plant and Vertebrate and Wing and Thing and (lays some (Animal and Vertebrate)), \nHere
+Backbone SubClassOf Carnivore and Egg and Mammal and Meat and Plant and Vertebrate and Wing and Thing and (lays some (Animal and Carnivore and Vertebrate)), \nHere
+Backbone SubClassOf Carnivore and Egg and Mammal and Meat and Plant and Vertebrate and Wing and Thing and (lays some (Animal and Plant and Vertebrate)), \nHere
+Backbone SubClassOf Carnivore and Egg and Mammal and Meat and Plant and Vertebrate and Wing and Thing and (lays some (Animal and Mammal and Vertebrate)), \nHere
+Backbone SubClassOf Carnivore and Egg and Mammal and Meat and Plant and Vertebrate and Wing and Thing and (lays some (Animal and Backbone and Vertebrate)), \nHere
+Backbone SubClassOf Carnivore and Egg and Mammal and Meat and Plant and Vertebrate and Wing and Thing and (lays some (Animal and Vertebrate and Wing)), \nHere
+Carnivore and Egg and Mammal and Meat and Plant and Vertebrate and Water and Wing and Thing and (lays some (Animal and Vertebrate)) SubClassOf Carnivore and Egg and Mammal and Meat and Plant and Vertebrate and Water and Wing and Thing and (lays some (Animal and Vertebrate)), \nHere
+Plant SubClassOf Carnivore and Egg and Mammal and Meat and Plant and Vertebrate and Water and Wing and Thing and (lays some (Animal and Vertebrate)), \nHere
+Mammal SubClassOf Carnivore and Egg and Mammal and Meat and Plant and Vertebrate and Water and Wing and Thing and (lays some (Animal and Vertebrate)), \nHere
+Elephant SubClassOf lives_in some Herbivore, \nTrue
+Egg SubClassOf lives_in some Herbivore, \nTrue
+Egg and (lives_in some Herbivore) SubClassOf Egg and (lives_in some Herbivore), \nTrue
+Egg SubClassOf Bird and Egg and (lives_in some Herbivore), \nTrue
+Egg SubClassOf Bird and Egg and (lives_in some (Egg and Herbivore)), \nTrue
+Egg SubClassOf Bird and Egg and (lives_in some (Bird and Egg and Herbivore)), \nTrue
+Bird and Egg and Thing and (lives_in some (Bird and Egg and Herbivore)) SubClassOf Bird and Egg and Thing and (lives_in some (Bird and Egg and Herbivore)), \nTrue
+Bird and Carnivore and Egg and Meat and Water and Thing and (has_part some (Bird and Egg)) SubClassOf Bird and Carnivore and Egg and Meat and Water and Thing and (has_part some (Bird and Egg)) and (lives_in some (Bird and Egg and Herbivore)), \nHere
+Animal and Bird and Carnivore and Egg and Meat and Water and Thing and (has_part some (Bird and Egg)) SubClassOf Animal and Bird and Carnivore and Egg and Meat and Water and Thing and (has_part some (Bird and Egg)) and (lives_in some (Bird and Egg and Herbivore)), \nTrue

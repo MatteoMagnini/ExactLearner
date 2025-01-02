@@ -1,9 +1,11 @@
 models:
   - "mistral"
   - "mixtral"
-  # - "llama2"
+#  - "llama2"
   - "llama2:13b"
   - "llama3"
+#   - "llama3.1"
+#   - "llama3.1:70b"
 ontologies:
 #  - "src/main/resources/ontologies/small/animals.owl"
 #  - "src/main/resources/ontologies/small/university.owl"
@@ -13,8 +15,12 @@ ontologies:
   - "src/main/resources/ontologies/medium/biosphere.owl"
   - "src/main/resources/ontologies/medium/biological-measure-primitive.owl"
 system: >
-  Answer with only True or False.
+  You need to classify the following statements as True or False. The statement will be provided in either Manchester OWL syntax or natural language. Strictly follow these guidelines:
+  1. answer with only True or False;
+  2. entities with has part relation are not in a subclass relation;
+  3. take a deep breath before answering;
+  4. if you are unsure about the classification, answer with False.
 queryFormat: >
-  nlp
+  manchester
 maxTokens: 2
 type: "statementsQuerying"

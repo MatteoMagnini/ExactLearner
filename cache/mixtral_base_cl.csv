@@ -1,0 +1,1883 @@
+Neuron and StructuralCell SubClassOf Erythrocyte,  False.
+ElectricallyActiveCell and StructuralCell SubClassOf Erythrocyte,  False.
+CellByDevelopmentStage and InMatureCell SubClassOf Osteocyte,  True\n
+CellByDevelopmentStage and InMatureCell SubClassOf SclerenchymaCell,  True\n
+InMatureCell SubClassOf SclerenchymaCell,  False.
+CellByDevelopmentStage SubClassOf SclerenchymaCell,  True.
+CellByDevelopmentStage SubClassOf LeafCell,  False.
+CellByDevelopmentStage SubClassOf Erythrocyte,  True.
+CellByDevelopmentStage SubClassOf Erythrocyte and SclerenchymaCell,  False.
+CellByDevelopmentStage SubClassOf PhotosyntheticCell,  False.
+CellByDevelopmentStage SubClassOf CirculatingCell,  True.
+CellByDevelopmentStage SubClassOf CirculatingCell and SclerenchymaCell,  False.
+CellByDevelopmentStage SubClassOf PlantCell,  True.
+CellByDevelopmentStage SubClassOf PlantCell and SclerenchymaCell,  False,
+CellByDevelopmentStage SubClassOf CellByClass,  False.
+CellByDevelopmentStage SubClassOf MatureCell,  True.
+CellByDevelopmentStage SubClassOf MatureCell and SclerenchymaCell,  True.
+CellByDevelopmentStage SubClassOf AnimalCell,  True.
+CellByDevelopmentStage SubClassOf AnimalCell and MatureCell and SclerenchymaCell,  True\n
+CellByDevelopmentStage SubClassOf Cell,  True.
+CellByDevelopmentStage SubClassOf AnimalCell and Cell and MatureCell and SclerenchymaCell,  True\n
+CellByDevelopmentStage SubClassOf Miocyte,  True.
+CellByDevelopmentStage SubClassOf AnimalCell and Cell and MatureCell and Miocyte and SclerenchymaCell,  True for
+CellByDevelopmentStage SubClassOf InMatureCell,  True\n
+CellByDevelopmentStage SubClassOf AnimalCell and Cell and InMatureCell and MatureCell and SclerenchymaCell,  True,
+CellByDevelopmentStage SubClassOf Osteocyte,  True.
+CellByDevelopmentStage SubClassOf AnimalCell and Cell and InMatureCell and MatureCell and Osteocyte and SclerenchymaCell,  True for
+CellByDevelopmentStage SubClassOf ChondroBlast,  False.
+CellByDevelopmentStage SubClassOf MioBlast,  True.
+CellByDevelopmentStage SubClassOf AnimalCell and Cell and InMatureCell and MatureCell and MioBlast and SclerenchymaCell,  True for
+CellByDevelopmentStage SubClassOf PhotoreceptorCell,  True.
+CellByDevelopmentStage SubClassOf AnimalCell and Cell and InMatureCell and MatureCell and PhotoreceptorCell and SclerenchymaCell,  True for
+CellByDevelopmentStage SubClassOf CellByOrganism,  True.
+CellByDevelopmentStage SubClassOf AnimalCell and Cell and CellByOrganism and InMatureCell and MatureCell and SclerenchymaCell,  True:
+CellByDevelopmentStage SubClassOf ElectricallyActiveCell,  False.
+CellByDevelopmentStage SubClassOf StructuralCell,  True.
+CellByDevelopmentStage SubClassOf AnimalCell and Cell and InMatureCell and MatureCell and SclerenchymaCell and StructuralCell,  True for
+CellByDevelopmentStage SubClassOf Neuron,  True.
+CellByDevelopmentStage SubClassOf AnimalCell and Cell and InMatureCell and MatureCell and Neuron and SclerenchymaCell,  Here are
+CellByDevelopmentStage SubClassOf ChondroCyte,  True\n
+CellByDevelopmentStage SubClassOf AnimalCell and Cell and ChondroCyte and InMatureCell and MatureCell and SclerenchymaCell,  True for
+CellByDevelopmentStage SubClassOf AnimalCell and Cell and Erythrocyte and InMatureCell and MatureCell and SclerenchymaCell,  True:
+CellByDevelopmentStage SubClassOf AnimalCell and Cell and CirculatingCell and InMatureCell and MatureCell and SclerenchymaCell,  True for
+CellByDevelopmentStage SubClassOf AnimalCell and Cell and InMatureCell and MatureCell and PlantCell and SclerenchymaCell,  The answer
+CellByDevelopmentStage SubClassOf AnimalCell and Cell and InMatureCell and MatureCell and Miocyte and SclerenchymaCell,  Here are
+Miocyte and StructuralCell SubClassOf LeafCell,  True.
+Miocyte and StructuralCell SubClassOf SclerenchymaCell,  False.
+Miocyte SubClassOf LeafCell,  False.
+StructuralCell SubClassOf LeafCell,  False.
+CellByDevelopmentStage and ChondroBlast SubClassOf Osteocyte,  False\n
+Cell and MatureCell SubClassOf Osteocyte,  False.
+CellByClass and InMatureCell SubClassOf AnimalCell,  False.
+ChondroCyte and LeafCell SubClassOf Neuron,  False.
+CirculatingCell and LeafCell SubClassOf Neuron,  False.
+CellByOrganism and ChondroCyte SubClassOf AnimalCell,  True\n
+CellByOrganism and ChondroCyte SubClassOf SclerenchymaCell,  False.
+CellByOrganism and ChondroCyte SubClassOf LeafCell,  True\n
+CellByOrganism SubClassOf LeafCell,  False.
+ChondroCyte SubClassOf LeafCell,  True\n
+ChondroCyte SubClassOf SclerenchymaCell,  False.
+ChondroCyte SubClassOf Erythrocyte,  False.
+ChondroCyte SubClassOf PhotosyntheticCell,  False.
+ChondroCyte SubClassOf CirculatingCell,  False.
+ChondroCyte SubClassOf PlantCell,  False.
+ChondroCyte SubClassOf CellByClass,  True.
+ChondroCyte SubClassOf CellByClass and LeafCell,  True.
+ChondroCyte SubClassOf MatureCell,  True.
+ChondroCyte SubClassOf CellByClass and LeafCell and MatureCell,  True.
+ChondroCyte SubClassOf AnimalCell,  True\n
+ChondroCyte SubClassOf AnimalCell and CellByClass and LeafCell and MatureCell,  True,
+ChondroCyte SubClassOf Cell,  True.
+ChondroCyte SubClassOf AnimalCell and Cell and CellByClass and LeafCell and MatureCell,  True,
+ChondroCyte SubClassOf Miocyte,  False.
+ChondroCyte SubClassOf InMatureCell,  True.
+ChondroCyte SubClassOf AnimalCell and Cell and CellByClass and InMatureCell and LeafCell and MatureCell,  True:
+ChondroCyte SubClassOf Osteocyte,  False.
+ChondroCyte SubClassOf ChondroBlast,  True.
+ChondroCyte SubClassOf AnimalCell and Cell and CellByClass and ChondroBlast and LeafCell and MatureCell,  True:
+ChondroCyte SubClassOf MioBlast,  False.
+ChondroCyte SubClassOf CellByDevelopmentStage,  True.
+ChondroCyte SubClassOf AnimalCell and Cell and CellByClass and CellByDevelopmentStage and LeafCell and MatureCell,  True.
+ChondroCyte SubClassOf PhotoreceptorCell,  False.
+ChondroCyte SubClassOf CellByOrganism,  True.
+ChondroCyte SubClassOf AnimalCell and Cell and CellByClass and CellByDevelopmentStage and CellByOrganism and LeafCell and MatureCell,  True for
+ChondroCyte SubClassOf ElectricallyActiveCell,  False.
+ChondroCyte SubClassOf StructuralCell,  True.
+ChondroCyte SubClassOf AnimalCell and Cell and CellByClass and CellByDevelopmentStage and LeafCell and MatureCell and StructuralCell,  True for
+ChondroCyte SubClassOf Neuron,  False.
+ChondroCyte SubClassOf AnimalCell and Cell and CellByClass and CellByDevelopmentStage and InMatureCell and LeafCell and MatureCell,  True:
+ChondroCyte SubClassOf AnimalCell and Cell and CellByClass and CellByDevelopmentStage and ChondroBlast and LeafCell and MatureCell,  True:
+Osteocyte and SclerenchymaCell SubClassOf AnimalCell,  False.
+InMatureCell and Miocyte SubClassOf PhotosyntheticCell,  False.
+Cell and StructuralCell SubClassOf SclerenchymaCell,  True.
+Cell SubClassOf SclerenchymaCell,  True.
+Cell SubClassOf LeafCell,  True\n
+Cell SubClassOf LeafCell and SclerenchymaCell,  True for
+Cell SubClassOf Erythrocyte,  True.
+Cell SubClassOf Erythrocyte and SclerenchymaCell,  Cell is
+Cell SubClassOf PhotosyntheticCell,  True.
+Cell SubClassOf PhotosyntheticCell and SclerenchymaCell,  Cell is
+Cell SubClassOf CirculatingCell,  True,
+Cell SubClassOf CirculatingCell and SclerenchymaCell,  For the
+Cell SubClassOf PlantCell,  True.
+Cell SubClassOf PlantCell and SclerenchymaCell,  Cell is
+Cell SubClassOf CellByClass,  True\n
+Cell SubClassOf CellByClass and SclerenchymaCell,  True.
+Cell SubClassOf MatureCell,  True.
+Cell SubClassOf CellByClass and MatureCell and SclerenchymaCell,  True.
+Cell SubClassOf AnimalCell,  True.
+Cell SubClassOf AnimalCell and CellByClass and MatureCell and SclerenchymaCell,  * Cell
+Cell SubClassOf Miocyte,  True.
+Cell SubClassOf CellByClass and MatureCell and Miocyte and SclerenchymaCell,  True,
+Cell SubClassOf InMatureCell,  False.
+Cell SubClassOf Osteocyte,  True.
+Cell SubClassOf CellByClass and MatureCell and Miocyte and Osteocyte and SclerenchymaCell,  True,
+Cell SubClassOf ChondroBlast,  False.
+Cell SubClassOf MioBlast,  False.
+Cell SubClassOf CellByDevelopmentStage,  True.
+Cell SubClassOf CellByClass and CellByDevelopmentStage and MatureCell and Miocyte and Osteocyte and SclerenchymaCell,  True:
+Cell SubClassOf PhotoreceptorCell,  True.
+Cell SubClassOf CellByClass and MatureCell and Miocyte and Osteocyte and PhotoreceptorCell and SclerenchymaCell,  True:
+Cell SubClassOf CellByOrganism,  True.
+Cell SubClassOf CellByClass and CellByOrganism and MatureCell and Miocyte and Osteocyte and SclerenchymaCell,  True:
+Cell SubClassOf ElectricallyActiveCell,  True.
+Cell SubClassOf CellByClass and ElectricallyActiveCell and MatureCell and Miocyte and Osteocyte and SclerenchymaCell,  True:
+Cell SubClassOf StructuralCell,  True.
+Cell SubClassOf CellByClass and MatureCell and Miocyte and Osteocyte and SclerenchymaCell and StructuralCell,  True:
+Cell SubClassOf Neuron,  True.
+Cell SubClassOf CellByClass and MatureCell and Miocyte and Neuron and Osteocyte and SclerenchymaCell,  True:
+Cell SubClassOf ChondroCyte,  True.
+Cell SubClassOf CellByClass and ChondroCyte and MatureCell and Miocyte and Osteocyte and SclerenchymaCell,  True:
+Cell SubClassOf CellByClass and LeafCell and MatureCell and Miocyte and Osteocyte and SclerenchymaCell,  True:
+Cell SubClassOf CellByClass and Erythrocyte and MatureCell and Miocyte and Osteocyte and SclerenchymaCell,  True,
+Cell SubClassOf CellByClass and Erythrocyte and MatureCell and Miocyte and Osteocyte and PhotosyntheticCell and SclerenchymaCell,  True:
+Cell SubClassOf CellByClass and CirculatingCell and Erythrocyte and MatureCell and Miocyte and Osteocyte and SclerenchymaCell,  True:
+Cell SubClassOf CellByClass and Erythrocyte and MatureCell and Miocyte and Osteocyte and PlantCell and SclerenchymaCell,  True:
+Cell SubClassOf AnimalCell and CellByClass and Erythrocyte and MatureCell and Miocyte and Osteocyte and SclerenchymaCell,  Cell Sub
+Cell SubClassOf CellByClass and CellByDevelopmentStage and Erythrocyte and MatureCell and Miocyte and Osteocyte and SclerenchymaCell,  Cell sub
+Cell SubClassOf CellByClass and Erythrocyte and MatureCell and Miocyte and Osteocyte and PhotoreceptorCell and SclerenchymaCell,  True:
+Cell SubClassOf CellByClass and CellByOrganism and Erythrocyte and MatureCell and Miocyte and Osteocyte and SclerenchymaCell,  True:
+Cell SubClassOf CellByClass and ElectricallyActiveCell and Erythrocyte and MatureCell and Miocyte and Osteocyte and SclerenchymaCell,  CellSub
+Cell SubClassOf CellByClass and Erythrocyte and MatureCell and Miocyte and Osteocyte and SclerenchymaCell and StructuralCell,  True:
+Cell SubClassOf CellByClass and Erythrocyte and MatureCell and Miocyte and Neuron and Osteocyte and SclerenchymaCell,  True:
+Cell SubClassOf CellByClass and ChondroCyte and Erythrocyte and MatureCell and Miocyte and Osteocyte and SclerenchymaCell,  True:
+InMatureCell and StructuralCell SubClassOf ChondroCyte,  False.
+AnimalCell and InMatureCell SubClassOf ChondroCyte,  False.
+CellByClass and ChondroBlast SubClassOf ElectricallyActiveCell,  False.
+InMatureCell and StructuralCell SubClassOf SclerenchymaCell,  False.
+Cell and PhotoreceptorCell SubClassOf ElectricallyActiveCell,  True.
+Cell and PhotoreceptorCell SubClassOf LeafCell,  False.
+Cell and PhotoreceptorCell SubClassOf PhotosyntheticCell,  False.
+Cell and PhotoreceptorCell SubClassOf CirculatingCell,  False.
+Cell and PhotoreceptorCell SubClassOf PlantCell,  False.
+Cell and PhotoreceptorCell SubClassOf AnimalCell,  False.
+Cell and PhotoreceptorCell SubClassOf InMatureCell,  True\n
+PhotoreceptorCell SubClassOf InMatureCell,  True\n
+PhotoreceptorCell SubClassOf SclerenchymaCell,  False.
+PhotoreceptorCell SubClassOf LeafCell,  False.
+PhotoreceptorCell SubClassOf Erythrocyte,  False.
+PhotoreceptorCell SubClassOf PhotosyntheticCell,  False.
+PhotoreceptorCell SubClassOf CirculatingCell,  False.
+PhotoreceptorCell SubClassOf PlantCell,  False.
+PhotoreceptorCell SubClassOf CellByClass,  True.
+PhotoreceptorCell SubClassOf CellByClass and InMatureCell,  True.
+PhotoreceptorCell SubClassOf MatureCell,  True.
+PhotoreceptorCell SubClassOf CellByClass and InMatureCell and MatureCell,  True.
+PhotoreceptorCell SubClassOf AnimalCell,  False.
+PhotoreceptorCell SubClassOf Cell,  True.
+PhotoreceptorCell SubClassOf Cell and CellByClass and InMatureCell and MatureCell,  True,
+PhotoreceptorCell SubClassOf Miocyte,  False.
+PhotoreceptorCell SubClassOf Osteocyte,  False.
+PhotoreceptorCell SubClassOf ChondroBlast,  False.
+PhotoreceptorCell SubClassOf MioBlast,  False.
+PhotoreceptorCell SubClassOf CellByDevelopmentStage,  True.
+PhotoreceptorCell SubClassOf Cell and CellByClass and CellByDevelopmentStage and InMatureCell and MatureCell,  True.
+PhotoreceptorCell SubClassOf CellByOrganism,  True\n
+PhotoreceptorCell SubClassOf Cell and CellByClass and CellByDevelopmentStage and CellByOrganism and InMatureCell and MatureCell,  True,
+PhotoreceptorCell SubClassOf ElectricallyActiveCell,  True.
+PhotoreceptorCell SubClassOf Cell and CellByClass and CellByDevelopmentStage and CellByOrganism and ElectricallyActiveCell and InMatureCell and MatureCell,  True,
+PhotoreceptorCell SubClassOf StructuralCell,  True.
+PhotoreceptorCell SubClassOf Cell and CellByClass and CellByDevelopmentStage and CellByOrganism and ElectricallyActiveCell and InMatureCell and MatureCell and StructuralCell,  True,
+PhotoreceptorCell SubClassOf Neuron,  True.
+PhotoreceptorCell SubClassOf Cell and CellByClass and CellByDevelopmentStage and CellByOrganism and ElectricallyActiveCell and InMatureCell and MatureCell and Neuron and StructuralCell,  True:
+PhotoreceptorCell SubClassOf ChondroCyte,  False.
+CirculatingCell and SclerenchymaCell SubClassOf LeafCell,  False.
+LeafCell and PhotosyntheticCell SubClassOf PhotoreceptorCell,  False.
+CellByDevelopmentStage and Osteocyte SubClassOf PhotoreceptorCell,  False\n
+Neuron and PlantCell SubClassOf LeafCell,  False.
+LeafCell and SclerenchymaCell SubClassOf PhotoreceptorCell,  False.
+CellByClass and Osteocyte SubClassOf LeafCell,  True,
+CellByClass and Osteocyte SubClassOf SclerenchymaCell,  False:
+Osteocyte SubClassOf LeafCell,  False.
+CellByClass SubClassOf LeafCell,  False.
+CellByOrganism and Osteocyte SubClassOf StructuralCell,  True,
+CellByOrganism and Osteocyte SubClassOf SclerenchymaCell,  False.
+CellByOrganism and Osteocyte SubClassOf LeafCell,  True,
+MatureCell and MioBlast SubClassOf CirculatingCell,  True.
+MatureCell and MioBlast SubClassOf SclerenchymaCell,  True.
+MioBlast SubClassOf SclerenchymaCell,  True.
+MioBlast SubClassOf LeafCell,  False.
+MioBlast SubClassOf Erythrocyte,  True.
+MioBlast SubClassOf Erythrocyte and SclerenchymaCell,  False.
+MioBlast SubClassOf PhotosyntheticCell,  True,
+MioBlast SubClassOf PhotosyntheticCell and SclerenchymaCell,  False.
+MioBlast SubClassOf CirculatingCell,  True.
+MioBlast SubClassOf CirculatingCell and SclerenchymaCell,  False.
+MioBlast SubClassOf PlantCell,  True,
+MioBlast SubClassOf PlantCell and SclerenchymaCell,  False.
+MioBlast SubClassOf CellByClass,  True\n
+MioBlast SubClassOf CellByClass and SclerenchymaCell,  True.
+MioBlast SubClassOf MatureCell,  True.
+MioBlast SubClassOf CellByClass and MatureCell and SclerenchymaCell,  True,
+MioBlast SubClassOf AnimalCell,  True,
+MioBlast SubClassOf AnimalCell and CellByClass and MatureCell and SclerenchymaCell,  True.
+MioBlast SubClassOf Cell,  True,
+MioBlast SubClassOf AnimalCell and Cell and CellByClass and MatureCell and SclerenchymaCell,  True\n
+MioBlast SubClassOf Miocyte,  True.
+MioBlast SubClassOf AnimalCell and Cell and CellByClass and MatureCell and Miocyte and SclerenchymaCell,  True,
+MioBlast SubClassOf InMatureCell,  False.
+MioBlast SubClassOf Osteocyte,  True,
+MioBlast SubClassOf AnimalCell and Cell and CellByClass and MatureCell and Miocyte and Osteocyte and SclerenchymaCell,  True:
+MioBlast SubClassOf ChondroBlast,  False.
+MioBlast SubClassOf CellByDevelopmentStage,  True,
+MioBlast SubClassOf AnimalCell and Cell and CellByClass and CellByDevelopmentStage and MatureCell and Miocyte and SclerenchymaCell,  True:
+MioBlast SubClassOf PhotoreceptorCell,  True,
+MioBlast SubClassOf AnimalCell and Cell and CellByClass and MatureCell and Miocyte and PhotoreceptorCell and SclerenchymaCell,  True:
+MioBlast SubClassOf CellByOrganism,  True\n
+MioBlast SubClassOf AnimalCell and Cell and CellByClass and CellByOrganism and MatureCell and Miocyte and SclerenchymaCell,  True:
+MioBlast SubClassOf ElectricallyActiveCell,  True,
+MioBlast SubClassOf AnimalCell and Cell and CellByClass and ElectricallyActiveCell and MatureCell and Miocyte and SclerenchymaCell,  True:
+MioBlast SubClassOf StructuralCell,  True.
+MioBlast SubClassOf AnimalCell and Cell and CellByClass and MatureCell and Miocyte and SclerenchymaCell and StructuralCell,  True\n
+MioBlast SubClassOf Neuron,  True.
+MioBlast SubClassOf AnimalCell and Cell and CellByClass and MatureCell and Miocyte and Neuron and SclerenchymaCell and StructuralCell,  True:
+MioBlast SubClassOf ChondroCyte,  True.
+MioBlast SubClassOf AnimalCell and Cell and CellByClass and ChondroCyte and MatureCell and Miocyte and SclerenchymaCell and StructuralCell,  True\n
+MioBlast SubClassOf AnimalCell and Cell and CellByClass and ChondroCyte and Erythrocyte and MatureCell and Miocyte and SclerenchymaCell and StructuralCell,  True:
+MioBlast SubClassOf AnimalCell and Cell and CellByClass and ChondroCyte and MatureCell and Miocyte and PhotosyntheticCell and SclerenchymaCell and StructuralCell,  Here are
+MioBlast SubClassOf AnimalCell and Cell and CellByClass and ChondroCyte and CirculatingCell and MatureCell and Miocyte and SclerenchymaCell and StructuralCell,  True:
+MioBlast SubClassOf AnimalCell and Cell and CellByClass and ChondroCyte and MatureCell and Miocyte and PlantCell and SclerenchymaCell and StructuralCell,  The statement
+MioBlast SubClassOf AnimalCell and Cell and CellByClass and ChondroCyte and MatureCell and Miocyte and Osteocyte and SclerenchymaCell and StructuralCell,  True:
+MioBlast SubClassOf AnimalCell and Cell and CellByClass and CellByDevelopmentStage and ChondroCyte and MatureCell and Miocyte and SclerenchymaCell and StructuralCell,  True\n
+MioBlast SubClassOf AnimalCell and Cell and CellByClass and CellByDevelopmentStage and ChondroCyte and MatureCell and Miocyte and PhotoreceptorCell and SclerenchymaCell and StructuralCell,  True:
+MioBlast SubClassOf AnimalCell and Cell and CellByClass and CellByDevelopmentStage and CellByOrganism and ChondroCyte and MatureCell and Miocyte and SclerenchymaCell and StructuralCell,  True:
+MioBlast SubClassOf AnimalCell and Cell and CellByClass and CellByDevelopmentStage and ChondroCyte and ElectricallyActiveCell and MatureCell and Miocyte and SclerenchymaCell and StructuralCell,  True:
+MioBlast SubClassOf AnimalCell and Cell and CellByClass and CellByDevelopmentStage and ChondroCyte and MatureCell and Miocyte and Neuron and SclerenchymaCell and StructuralCell,  True:
+ElectricallyActiveCell and PlantCell SubClassOf Cell,  True.
+ElectricallyActiveCell and PlantCell SubClassOf SclerenchymaCell,  False.
+ElectricallyActiveCell and PlantCell SubClassOf LeafCell,  True.
+ElectricallyActiveCell SubClassOf LeafCell,  True.
+ElectricallyActiveCell SubClassOf SclerenchymaCell,  False.
+ElectricallyActiveCell SubClassOf Erythrocyte,  False.
+ElectricallyActiveCell SubClassOf PhotosyntheticCell,  False.
+ElectricallyActiveCell SubClassOf CirculatingCell,  False.
+ElectricallyActiveCell SubClassOf PlantCell,  False.
+ElectricallyActiveCell SubClassOf CellByClass,  False.
+ElectricallyActiveCell SubClassOf MatureCell,  False.
+ElectricallyActiveCell SubClassOf AnimalCell,  False.
+ElectricallyActiveCell SubClassOf Cell,  True.
+ElectricallyActiveCell SubClassOf Cell and LeafCell,  True.
+ElectricallyActiveCell SubClassOf Miocyte,  True.
+ElectricallyActiveCell SubClassOf Cell and LeafCell and Miocyte,  True.
+ElectricallyActiveCell SubClassOf InMatureCell,  False.
+ElectricallyActiveCell SubClassOf Osteocyte,  False.
+ElectricallyActiveCell SubClassOf ChondroBlast,  False.
+ElectricallyActiveCell SubClassOf MioBlast,  False.
+ElectricallyActiveCell SubClassOf CellByDevelopmentStage,  False.
+ElectricallyActiveCell SubClassOf PhotoreceptorCell,  False.
+ElectricallyActiveCell SubClassOf CellByOrganism,  False.
+ElectricallyActiveCell SubClassOf StructuralCell,  True.
+ElectricallyActiveCell SubClassOf Cell and LeafCell and Miocyte and StructuralCell,  True.
+ElectricallyActiveCell SubClassOf Neuron,  True.
+ElectricallyActiveCell SubClassOf Cell and LeafCell and Miocyte and Neuron and StructuralCell,  True.
+ElectricallyActiveCell SubClassOf ChondroCyte,  False.
+ChondroBlast and Neuron SubClassOf StructuralCell,  True\n
+ChondroBlast and Neuron SubClassOf SclerenchymaCell,  False.
+ChondroBlast and Neuron SubClassOf LeafCell,  False.
+ChondroBlast and Neuron SubClassOf Erythrocyte,  False.
+ChondroBlast and Neuron SubClassOf PhotosyntheticCell,  False.
+ChondroBlast and Neuron SubClassOf CirculatingCell,  False.
+ChondroBlast and Neuron SubClassOf PlantCell,  False.
+ChondroBlast and Neuron SubClassOf CellByClass,  True.
+ChondroBlast SubClassOf CellByClass,  True\n
+ChondroBlast SubClassOf SclerenchymaCell,  False.
+ChondroBlast SubClassOf LeafCell,  False.
+ChondroBlast SubClassOf Erythrocyte,  False.
+ChondroBlast SubClassOf PhotosyntheticCell,  False.
+ChondroBlast SubClassOf CirculatingCell,  False.
+ChondroBlast SubClassOf PlantCell,  False.
+ChondroBlast SubClassOf MatureCell,  True\n
+ChondroBlast SubClassOf CellByClass and MatureCell,  True.
+ChondroBlast SubClassOf AnimalCell,  True\n
+ChondroBlast SubClassOf AnimalCell and CellByClass and MatureCell,  True,
+ChondroBlast SubClassOf Cell,  True.
+ChondroBlast SubClassOf AnimalCell and Cell and CellByClass and MatureCell,  True
+ChondroBlast SubClassOf Miocyte,  False.
+ChondroBlast SubClassOf InMatureCell,  True\n
+ChondroBlast SubClassOf AnimalCell and Cell and CellByClass and InMatureCell and MatureCell,  True\n
+ChondroBlast SubClassOf Osteocyte,  False.
+ChondroBlast SubClassOf MioBlast,  False.
+ChondroBlast SubClassOf CellByDevelopmentStage,  True.
+ChondroBlast SubClassOf AnimalCell and Cell and CellByClass and CellByDevelopmentStage and InMatureCell and MatureCell,  True.
+ChondroBlast SubClassOf PhotoreceptorCell,  False.
+ChondroBlast SubClassOf CellByOrganism,  True\n
+ChondroBlast SubClassOf AnimalCell and Cell and CellByClass and CellByDevelopmentStage and CellByOrganism and InMatureCell and MatureCell,  True\n
+ChondroBlast SubClassOf ElectricallyActiveCell,  False.
+ChondroBlast SubClassOf StructuralCell,  True.
+ChondroBlast SubClassOf AnimalCell and Cell and CellByClass and CellByDevelopmentStage and CellByOrganism and InMatureCell and MatureCell and StructuralCell,  True\n
+ChondroBlast SubClassOf Neuron,  False.
+ChondroBlast SubClassOf ChondroCyte,  True.
+ChondroBlast SubClassOf AnimalCell and Cell and CellByClass and CellByDevelopmentStage and CellByOrganism and ChondroCyte and InMatureCell and MatureCell and StructuralCell,  True\n
+Erythrocyte and StructuralCell SubClassOf CirculatingCell,  True.
+Erythrocyte and StructuralCell SubClassOf SclerenchymaCell,  False.
+Erythrocyte and StructuralCell SubClassOf LeafCell,  False.
+Erythrocyte and StructuralCell SubClassOf PhotosyntheticCell,  False.
+Erythrocyte SubClassOf CirculatingCell,  True\n
+Erythrocyte SubClassOf SclerenchymaCell,  False.
+Erythrocyte SubClassOf LeafCell,  False.
+Erythrocyte SubClassOf PhotosyntheticCell,  False.
+Erythrocyte SubClassOf PlantCell,  False.
+Erythrocyte SubClassOf CellByClass,  True\n
+Erythrocyte SubClassOf CellByClass and CirculatingCell,  True.
+Erythrocyte SubClassOf MatureCell,  True\n
+Erythrocyte SubClassOf CellByClass and CirculatingCell and MatureCell,  True.
+Erythrocyte SubClassOf AnimalCell,  True,
+Erythrocyte SubClassOf AnimalCell and CellByClass and CirculatingCell and MatureCell,  True,
+Erythrocyte SubClassOf Cell,  True\n
+Erythrocyte SubClassOf AnimalCell and Cell and CellByClass and CirculatingCell and MatureCell,  True\n
+Erythrocyte SubClassOf Miocyte,  False.
+Erythrocyte SubClassOf InMatureCell,  True.
+Erythrocyte SubClassOf AnimalCell and Cell and CellByClass and CirculatingCell and InMatureCell and MatureCell,  True:
+Erythrocyte SubClassOf Osteocyte,  False.
+Erythrocyte SubClassOf ChondroBlast,  False.
+Erythrocyte SubClassOf MioBlast,  False.
+Erythrocyte SubClassOf CellByDevelopmentStage,  True.
+Erythrocyte SubClassOf AnimalCell and Cell and CellByClass and CellByDevelopmentStage and CirculatingCell and MatureCell,  True\n
+Erythrocyte SubClassOf PhotoreceptorCell,  False.
+Erythrocyte SubClassOf CellByOrganism,  True.
+Erythrocyte SubClassOf AnimalCell and Cell and CellByClass and CellByDevelopmentStage and CellByOrganism and CirculatingCell and MatureCell,  True:
+Erythrocyte SubClassOf ElectricallyActiveCell,  False.
+Erythrocyte SubClassOf StructuralCell,  True\n
+Erythrocyte SubClassOf AnimalCell and Cell and CellByClass and CellByDevelopmentStage and CirculatingCell and MatureCell and StructuralCell,  True\n
+Erythrocyte SubClassOf Neuron,  False.
+Erythrocyte SubClassOf ChondroCyte,  False.
+Erythrocyte SubClassOf AnimalCell and Cell and CellByClass and CellByDevelopmentStage and CirculatingCell and InMatureCell and MatureCell and StructuralCell,  True:
+Erythrocyte SubClassOf AnimalCell and Cell and CellByClass and CellByDevelopmentStage and CellByOrganism and CirculatingCell and MatureCell and StructuralCell,  True:
+AnimalCell SubClassOf Cell,  True.
+AnimalCell SubClassOf SclerenchymaCell,  False.
+AnimalCell SubClassOf LeafCell,  False.
+AnimalCell SubClassOf Erythrocyte,  False.
+AnimalCell SubClassOf PhotosyntheticCell,  False.
+AnimalCell SubClassOf CirculatingCell,  False.
+AnimalCell SubClassOf PlantCell,  False.
+AnimalCell SubClassOf CellByClass,  True.
+AnimalCell SubClassOf MatureCell,  False.
+AnimalCell SubClassOf Cell and CellByClass,  True,
+AnimalCell SubClassOf Miocyte,  False.
+AnimalCell SubClassOf InMatureCell,  False.
+AnimalCell SubClassOf Osteocyte,  False.
+AnimalCell SubClassOf ChondroBlast,  False.
+AnimalCell SubClassOf MioBlast,  False.
+AnimalCell SubClassOf CellByDevelopmentStage,  True.
+AnimalCell SubClassOf Cell and CellByClass and CellByDevelopmentStage,  True,
+AnimalCell SubClassOf PhotoreceptorCell,  False.
+AnimalCell SubClassOf CellByOrganism,  True.
+AnimalCell SubClassOf Cell and CellByClass and CellByDevelopmentStage and CellByOrganism,  True,
+AnimalCell SubClassOf ElectricallyActiveCell,  False.
+AnimalCell SubClassOf StructuralCell,  True.
+AnimalCell SubClassOf Cell and CellByClass and CellByDevelopmentStage and CellByOrganism and StructuralCell,  True,
+AnimalCell SubClassOf Neuron,  False.
+AnimalCell SubClassOf ChondroCyte,  False.
+InMatureCell and PlantCell SubClassOf CellByClass,  True.
+InMatureCell and PlantCell SubClassOf SclerenchymaCell,  False.
+InMatureCell and PlantCell SubClassOf LeafCell,  False.
+InMatureCell and PlantCell SubClassOf Erythrocyte,  False.
+InMatureCell and PlantCell SubClassOf PhotosyntheticCell,  True.
+InMatureCell SubClassOf PhotosyntheticCell,  False.
+PlantCell SubClassOf PhotosyntheticCell,  True.
+PlantCell SubClassOf SclerenchymaCell,  False.
+PlantCell SubClassOf LeafCell,  True.
+PlantCell SubClassOf LeafCell and PhotosyntheticCell,  True for
+PlantCell SubClassOf Erythrocyte,  False.
+PlantCell SubClassOf CirculatingCell,  False.
+PlantCell SubClassOf CellByClass,  True.
+PlantCell SubClassOf CellByClass and PhotosyntheticCell,  True.
+PlantCell SubClassOf MatureCell,  False.
+PlantCell SubClassOf AnimalCell,  False.
+PlantCell SubClassOf Cell,  True.
+PlantCell SubClassOf Cell and CellByClass and PhotosyntheticCell,  True,
+PlantCell SubClassOf Miocyte,  False.
+PlantCell SubClassOf InMatureCell,  True.
+PlantCell SubClassOf Cell and CellByClass and InMatureCell and PhotosyntheticCell,  True,
+PlantCell SubClassOf Osteocyte,  False.
+PlantCell SubClassOf ChondroBlast,  False.
+PlantCell SubClassOf MioBlast,  False.
+PlantCell SubClassOf CellByDevelopmentStage,  False.
+PlantCell SubClassOf PhotoreceptorCell,  False.
+PlantCell SubClassOf CellByOrganism,  True.
+PlantCell SubClassOf Cell and CellByClass and CellByOrganism and InMatureCell and PhotosyntheticCell,  True,
+PlantCell SubClassOf ElectricallyActiveCell,  True.
+PlantCell SubClassOf Cell and CellByClass and CellByOrganism and ElectricallyActiveCell and InMatureCell and PhotosyntheticCell,  True:
+PlantCell SubClassOf StructuralCell,  True.
+PlantCell SubClassOf Cell and CellByClass and CellByOrganism and InMatureCell and PhotosyntheticCell and StructuralCell,  True:
+PlantCell SubClassOf Neuron,  False.
+PlantCell SubClassOf ChondroCyte,  False.
+PlantCell SubClassOf Cell and CellByClass and CellByOrganism and InMatureCell and LeafCell and PhotosyntheticCell,  True:
+CellByOrganism and PhotoreceptorCell SubClassOf ChondroBlast,  False.
+StructuralCell SubClassOf PlantCell,  True.
+StructuralCell SubClassOf SclerenchymaCell,  True.
+StructuralCell SubClassOf Erythrocyte,  False.
+StructuralCell SubClassOf PhotosyntheticCell,  True,
+StructuralCell SubClassOf PhotosyntheticCell and SclerenchymaCell,  False.
+StructuralCell SubClassOf CirculatingCell,  True.
+StructuralCell SubClassOf CirculatingCell and SclerenchymaCell,  False.
+StructuralCell SubClassOf PlantCell and SclerenchymaCell,  The statement
+StructuralCell SubClassOf CellByClass,  True\n
+StructuralCell SubClassOf CellByClass and SclerenchymaCell,  False.
+StructuralCell SubClassOf MatureCell,  True.
+StructuralCell SubClassOf MatureCell and SclerenchymaCell,  True.
+StructuralCell SubClassOf AnimalCell,  False.
+StructuralCell SubClassOf Cell,  True.
+StructuralCell SubClassOf Cell and MatureCell and SclerenchymaCell,  False.
+StructuralCell SubClassOf Miocyte,  True.
+StructuralCell SubClassOf MatureCell and Miocyte and SclerenchymaCell,  False.
+StructuralCell SubClassOf InMatureCell,  True.
+StructuralCell SubClassOf InMatureCell and MatureCell and SclerenchymaCell,  False.
+StructuralCell SubClassOf Osteocyte,  True.
+StructuralCell SubClassOf MatureCell and Osteocyte and SclerenchymaCell,  False.
+StructuralCell SubClassOf ChondroBlast,  False.
+StructuralCell SubClassOf MioBlast,  False.
+StructuralCell SubClassOf CellByDevelopmentStage,  False.
+StructuralCell SubClassOf PhotoreceptorCell,  True.
+StructuralCell SubClassOf MatureCell and PhotoreceptorCell and SclerenchymaCell,  False.
+StructuralCell SubClassOf CellByOrganism,  True\n
+StructuralCell SubClassOf CellByOrganism and MatureCell and SclerenchymaCell,  False\n
+StructuralCell SubClassOf ElectricallyActiveCell,  True.
+StructuralCell SubClassOf ElectricallyActiveCell and MatureCell and SclerenchymaCell,  False.
+StructuralCell SubClassOf Neuron,  True.
+StructuralCell SubClassOf MatureCell and Neuron and SclerenchymaCell,  False.
+StructuralCell SubClassOf ChondroCyte,  False.
+StructuralCell SubClassOf MatureCell and PhotosyntheticCell and SclerenchymaCell,  False.
+StructuralCell SubClassOf CirculatingCell and MatureCell and SclerenchymaCell,  False.
+StructuralCell SubClassOf MatureCell and PlantCell and SclerenchymaCell,  False.
+StructuralCell SubClassOf CellByClass and MatureCell and SclerenchymaCell,  False.
+CirculatingCell and Neuron SubClassOf PhotosyntheticCell,  False.
+Erythrocyte and Miocyte SubClassOf PhotosyntheticCell,  False.
+ChondroBlast and MatureCell SubClassOf PlantCell,  False.
+CellByOrganism and ElectricallyActiveCell SubClassOf PlantCell,  False.
+CellByOrganism and MatureCell SubClassOf ChondroCyte,  The answer
+ChondroBlast and Osteocyte SubClassOf ElectricallyActiveCell,  False.
+CirculatingCell and LeafCell SubClassOf ElectricallyActiveCell,  True.
+CirculatingCell and LeafCell SubClassOf SclerenchymaCell,  True.
+LeafCell SubClassOf SclerenchymaCell,  False.
+CirculatingCell SubClassOf SclerenchymaCell,  True.
+CirculatingCell SubClassOf LeafCell,  False.
+CirculatingCell SubClassOf Erythrocyte,  True.
+CirculatingCell SubClassOf Erythrocyte and SclerenchymaCell,  False:
+CirculatingCell SubClassOf PhotosyntheticCell,  False.
+CirculatingCell SubClassOf PlantCell,  False.
+CirculatingCell SubClassOf CellByClass,  True.
+CirculatingCell SubClassOf CellByClass and SclerenchymaCell,  False.
+CirculatingCell SubClassOf MatureCell,  False.
+CirculatingCell SubClassOf AnimalCell,  False.
+CirculatingCell SubClassOf Cell,  True.
+CirculatingCell SubClassOf Cell and SclerenchymaCell,  True.
+CirculatingCell SubClassOf Miocyte,  False.
+CirculatingCell SubClassOf InMatureCell,  False.
+CirculatingCell SubClassOf Osteocyte,  False.
+CirculatingCell SubClassOf ChondroBlast,  False.
+CirculatingCell SubClassOf MioBlast,  False.
+CirculatingCell SubClassOf CellByDevelopmentStage,  True.
+CirculatingCell SubClassOf Cell and CellByDevelopmentStage and SclerenchymaCell,  True,
+CirculatingCell SubClassOf PhotoreceptorCell,  True.
+CirculatingCell SubClassOf Cell and CellByDevelopmentStage and PhotoreceptorCell and SclerenchymaCell,  True\n
+CirculatingCell SubClassOf CellByOrganism,  True.
+CirculatingCell SubClassOf Cell and CellByDevelopmentStage and CellByOrganism and PhotoreceptorCell and SclerenchymaCell,  True\n
+CirculatingCell SubClassOf ElectricallyActiveCell,  True,
+CirculatingCell SubClassOf Cell and CellByDevelopmentStage and CellByOrganism and ElectricallyActiveCell and PhotoreceptorCell and SclerenchymaCell,  True.
+CirculatingCell SubClassOf StructuralCell,  True.
+CirculatingCell SubClassOf Cell and CellByDevelopmentStage and CellByOrganism and ElectricallyActiveCell and PhotoreceptorCell and SclerenchymaCell and StructuralCell,  True\n
+CirculatingCell SubClassOf Neuron,  False.
+CirculatingCell SubClassOf ChondroCyte,  False.
+CirculatingCell SubClassOf Cell and CellByDevelopmentStage and CellByOrganism and ElectricallyActiveCell and Erythrocyte and PhotoreceptorCell and SclerenchymaCell and StructuralCell,  True,
+CirculatingCell SubClassOf Cell and CellByClass and CellByDevelopmentStage and CellByOrganism and ElectricallyActiveCell and Erythrocyte and PhotoreceptorCell and SclerenchymaCell and StructuralCell,  True:
+SclerenchymaCell SubClassOf PhotoreceptorCell,  False.
+CellByClass and LeafCell SubClassOf SclerenchymaCell,  True\n
+CellByClass SubClassOf SclerenchymaCell,  True.
+CellByClass SubClassOf Erythrocyte,  True.
+CellByClass SubClassOf Erythrocyte and SclerenchymaCell,  False.
+CellByClass SubClassOf PhotosyntheticCell,  True\n
+CellByClass SubClassOf PhotosyntheticCell and SclerenchymaCell,  True,
+CellByClass SubClassOf CirculatingCell,  True.
+CellByClass SubClassOf CirculatingCell and PhotosyntheticCell and SclerenchymaCell,  False.
+CellByClass SubClassOf PlantCell,  True.
+CellByClass SubClassOf PhotosyntheticCell and PlantCell and SclerenchymaCell,  True,
+CellByClass SubClassOf MatureCell,  True\n
+CellByClass SubClassOf MatureCell and PhotosyntheticCell and PlantCell and SclerenchymaCell,  False.
+CellByClass SubClassOf AnimalCell,  True.
+CellByClass SubClassOf AnimalCell and PhotosyntheticCell and PlantCell and SclerenchymaCell,  True\n
+CellByClass SubClassOf Cell,  True.
+CellByClass SubClassOf AnimalCell and Cell and PhotosyntheticCell and PlantCell and SclerenchymaCell,  False.
+CellByClass SubClassOf Miocyte,  True.
+CellByClass SubClassOf AnimalCell and Miocyte and PhotosyntheticCell and PlantCell and SclerenchymaCell,  True:
+CellByClass SubClassOf InMatureCell,  False.
+CellByClass SubClassOf Osteocyte,  True.
+CellByClass SubClassOf AnimalCell and Osteocyte and PhotosyntheticCell and PlantCell and SclerenchymaCell,  True:
+CellByClass SubClassOf ChondroBlast,  False.
+CellByClass SubClassOf MioBlast,  False.
+CellByClass SubClassOf CellByDevelopmentStage,  False.
+CellByClass SubClassOf PhotoreceptorCell,  True.
+CellByClass SubClassOf AnimalCell and PhotoreceptorCell and PhotosyntheticCell and PlantCell and SclerenchymaCell,  The statement
+CellByClass SubClassOf CellByOrganism,  False.
+CellByClass SubClassOf ElectricallyActiveCell,  True.
+CellByClass SubClassOf AnimalCell and ElectricallyActiveCell and PhotosyntheticCell and PlantCell and SclerenchymaCell,  True:
+CellByClass SubClassOf StructuralCell,  True\n
+CellByClass SubClassOf AnimalCell and PhotosyntheticCell and PlantCell and SclerenchymaCell and StructuralCell,  True\n
+CellByClass SubClassOf Neuron,  True.
+CellByClass SubClassOf AnimalCell and Neuron and PhotosyntheticCell and PlantCell and SclerenchymaCell and StructuralCell,  True:
+CellByClass SubClassOf ChondroCyte,  False.
+CellByClass SubClassOf AnimalCell and Erythrocyte and PhotosyntheticCell and PlantCell and SclerenchymaCell and StructuralCell,  Here are
+CellByClass SubClassOf AnimalCell and CirculatingCell and PhotosyntheticCell and PlantCell and SclerenchymaCell and StructuralCell,  True:
+CellByClass SubClassOf AnimalCell and MatureCell and PhotosyntheticCell and PlantCell and SclerenchymaCell and StructuralCell,  True:
+CellByClass SubClassOf AnimalCell and Cell and PhotosyntheticCell and PlantCell and SclerenchymaCell and StructuralCell,  False.
+CellByClass SubClassOf AnimalCell and Miocyte and PhotosyntheticCell and PlantCell and SclerenchymaCell and StructuralCell,  True:
+CellByClass SubClassOf AnimalCell and Osteocyte and PhotosyntheticCell and PlantCell and SclerenchymaCell and StructuralCell,  True:
+CellByClass SubClassOf AnimalCell and PhotoreceptorCell and PhotosyntheticCell and PlantCell and SclerenchymaCell and StructuralCell,  The answer
+CellByClass SubClassOf AnimalCell and ElectricallyActiveCell and PhotosyntheticCell and PlantCell and SclerenchymaCell and StructuralCell,  The statement
+Miocyte and Osteocyte SubClassOf PhotoreceptorCell,  False.
+MatureCell and StructuralCell SubClassOf LeafCell,  False.
+InMatureCell and StructuralCell SubClassOf LeafCell,  False.
+InMatureCell and Neuron SubClassOf Erythrocyte,  False.
+MatureCell and Osteocyte SubClassOf CellByClass,  True.
+MatureCell and Osteocyte SubClassOf SclerenchymaCell,  False.
+MatureCell and Osteocyte SubClassOf LeafCell,  True.
+MatureCell SubClassOf LeafCell,  False.
+MatureCell and MioBlast SubClassOf ChondroBlast,  True.
+MatureCell SubClassOf ChondroBlast,  False.
+ElectricallyActiveCell and SclerenchymaCell SubClassOf ChondroBlast,  False.
+CellByClass and ElectricallyActiveCell SubClassOf ChondroBlast,  False.
+AnimalCell and CellByDevelopmentStage SubClassOf MioBlast,  True.
+AnimalCell and CellByDevelopmentStage SubClassOf ChondroBlast,  False.
+CellByDevelopmentStage SubClassOf MioBlast and SclerenchymaCell,  False.
+CellByDevelopmentStage SubClassOf Erythrocyte and MioBlast,  False.
+CellByDevelopmentStage SubClassOf CirculatingCell and MioBlast,  False.
+CellByDevelopmentStage SubClassOf MioBlast and PlantCell,  False.
+CellByDevelopmentStage SubClassOf MatureCell and MioBlast,  False.
+CellByDevelopmentStage SubClassOf AnimalCell and MioBlast,  False.
+CellByDevelopmentStage SubClassOf Cell and MioBlast,  False.
+CellByDevelopmentStage SubClassOf MioBlast and Miocyte,  False.
+CellByDevelopmentStage SubClassOf InMatureCell and MioBlast,  False.
+CellByDevelopmentStage SubClassOf MioBlast and Osteocyte,  False.
+CellByDevelopmentStage SubClassOf MioBlast and PhotoreceptorCell,  False.
+CellByDevelopmentStage SubClassOf CellByOrganism and MioBlast,  False\n
+CellByDevelopmentStage SubClassOf MioBlast and StructuralCell,  False.
+CellByDevelopmentStage SubClassOf MioBlast and Neuron,  False.
+CellByDevelopmentStage SubClassOf ChondroCyte and MioBlast,  False.
+CellByDevelopmentStage SubClassOf AnimalCell and Cell and Erythrocyte and InMatureCell and MatureCell and MioBlast and SclerenchymaCell,  True:
+CellByDevelopmentStage SubClassOf AnimalCell and Cell and CirculatingCell and InMatureCell and MatureCell and MioBlast and SclerenchymaCell,  True for
+CellByDevelopmentStage SubClassOf AnimalCell and Cell and InMatureCell and MatureCell and MioBlast and PlantCell and SclerenchymaCell,  False\n
+CellByDevelopmentStage SubClassOf AnimalCell and Cell and InMatureCell and MatureCell and MioBlast and Miocyte and SclerenchymaCell,  True for
+CellByDevelopmentStage SubClassOf AnimalCell and Cell and InMatureCell and MatureCell and MioBlast and Osteocyte and SclerenchymaCell,  True for
+CellByDevelopmentStage SubClassOf AnimalCell and Cell and InMatureCell and MatureCell and MioBlast and PhotoreceptorCell and SclerenchymaCell,  True for
+CellByDevelopmentStage SubClassOf AnimalCell and Cell and CellByOrganism and InMatureCell and MatureCell and MioBlast and SclerenchymaCell,  True:
+CellByDevelopmentStage SubClassOf AnimalCell and Cell and InMatureCell and MatureCell and MioBlast and SclerenchymaCell and StructuralCell,  True for
+CellByDevelopmentStage SubClassOf AnimalCell and Cell and InMatureCell and MatureCell and MioBlast and Neuron and SclerenchymaCell,  True for
+CellByDevelopmentStage SubClassOf AnimalCell and Cell and ChondroCyte and InMatureCell and MatureCell and MioBlast and SclerenchymaCell,  True:
+CellByOrganism and InMatureCell SubClassOf ChondroCyte,  The answer
+InMatureCell and Osteocyte SubClassOf Miocyte,  False.
+LeafCell and PhotosyntheticCell SubClassOf AnimalCell,  False.
+Miocyte and Neuron SubClassOf AnimalCell,  True.
+Miocyte and Neuron SubClassOf SclerenchymaCell,  False.
+Miocyte and Neuron SubClassOf LeafCell,  True.
+Neuron SubClassOf LeafCell,  True.
+Neuron SubClassOf SclerenchymaCell,  False.
+Neuron SubClassOf Erythrocyte,  False.
+Neuron SubClassOf PhotosyntheticCell,  False.
+Neuron SubClassOf CirculatingCell,  False.
+Neuron SubClassOf PlantCell,  False.
+Neuron SubClassOf CellByClass,  True.
+Neuron SubClassOf CellByClass and LeafCell,  True.
+Neuron SubClassOf MatureCell,  True\n
+Neuron SubClassOf CellByClass and LeafCell and MatureCell,  True,
+Neuron SubClassOf AnimalCell,  False.
+Neuron SubClassOf Cell,  True,
+Neuron SubClassOf Cell and CellByClass and LeafCell and MatureCell,  True,
+Neuron SubClassOf Miocyte,  False.
+Neuron SubClassOf InMatureCell,  True\n
+Neuron SubClassOf Cell and CellByClass and InMatureCell and LeafCell and MatureCell,  True,
+Neuron SubClassOf Osteocyte,  False.
+Neuron SubClassOf ChondroBlast,  False.
+Neuron SubClassOf MioBlast,  False.
+Neuron SubClassOf CellByDevelopmentStage,  True\n
+Neuron SubClassOf Cell and CellByClass and CellByDevelopmentStage and InMatureCell and LeafCell and MatureCell,  True:
+Neuron SubClassOf PhotoreceptorCell,  False.
+Neuron SubClassOf CellByOrganism,  True\n
+Neuron SubClassOf Cell and CellByClass and CellByOrganism and InMatureCell and LeafCell and MatureCell,  True:
+Neuron SubClassOf ElectricallyActiveCell,  True.
+Neuron SubClassOf Cell and CellByClass and ElectricallyActiveCell and InMatureCell and LeafCell and MatureCell,  True:
+Neuron SubClassOf StructuralCell,  True.
+Neuron SubClassOf Cell and CellByClass and InMatureCell and LeafCell and MatureCell and StructuralCell,  True,
+Neuron SubClassOf ChondroCyte,  False.
+Neuron SubClassOf Cell and CellByClass and CellByDevelopmentStage and InMatureCell and LeafCell and MatureCell and StructuralCell,  True,
+Neuron SubClassOf Cell and CellByClass and CellByDevelopmentStage and CellByOrganism and InMatureCell and LeafCell and MatureCell and StructuralCell,  True for
+Neuron SubClassOf Cell and CellByClass and CellByDevelopmentStage and ElectricallyActiveCell and InMatureCell and LeafCell and MatureCell and StructuralCell,  True:
+CellByOrganism and Osteocyte SubClassOf CirculatingCell,  False\n
+InMatureCell and SclerenchymaCell SubClassOf CellByOrganism,  True.
+InMatureCell and SclerenchymaCell SubClassOf LeafCell,  False.
+InMatureCell and SclerenchymaCell SubClassOf Erythrocyte,  False.
+InMatureCell and SclerenchymaCell SubClassOf PhotosyntheticCell,  False.
+InMatureCell and SclerenchymaCell SubClassOf CirculatingCell,  False.
+InMatureCell and SclerenchymaCell SubClassOf PlantCell,  True.
+SclerenchymaCell SubClassOf PlantCell,  True.
+SclerenchymaCell SubClassOf LeafCell,  False.
+SclerenchymaCell SubClassOf Erythrocyte,  False.
+SclerenchymaCell SubClassOf PhotosyntheticCell,  False.
+SclerenchymaCell SubClassOf CirculatingCell,  False.
+SclerenchymaCell SubClassOf CellByClass,  True.
+SclerenchymaCell SubClassOf CellByClass and PlantCell,  False.
+SclerenchymaCell SubClassOf MatureCell,  True.
+SclerenchymaCell SubClassOf MatureCell and PlantCell,  True.
+SclerenchymaCell SubClassOf AnimalCell,  False.
+SclerenchymaCell SubClassOf Cell,  True,
+SclerenchymaCell SubClassOf Cell and MatureCell and PlantCell,  True,
+SclerenchymaCell SubClassOf Miocyte,  False.
+SclerenchymaCell SubClassOf InMatureCell,  True.
+SclerenchymaCell SubClassOf Cell and InMatureCell and MatureCell and PlantCell,  True,
+SclerenchymaCell SubClassOf Osteocyte,  False.
+SclerenchymaCell SubClassOf ChondroBlast,  False.
+SclerenchymaCell SubClassOf MioBlast,  False.
+SclerenchymaCell SubClassOf CellByDevelopmentStage,  False.
+SclerenchymaCell SubClassOf CellByOrganism,  True.
+SclerenchymaCell SubClassOf Cell and CellByOrganism and InMatureCell and MatureCell and PlantCell,  True.
+SclerenchymaCell SubClassOf ElectricallyActiveCell,  False.
+SclerenchymaCell SubClassOf StructuralCell,  True.
+SclerenchymaCell SubClassOf Cell and CellByOrganism and InMatureCell and MatureCell and PlantCell and StructuralCell,  True.
+SclerenchymaCell SubClassOf Neuron,  False.
+SclerenchymaCell SubClassOf ChondroCyte,  False.
+SclerenchymaCell SubClassOf Cell and CellByClass and CellByOrganism and InMatureCell and MatureCell and PlantCell and StructuralCell,  True for
+Miocyte and PhotosyntheticCell SubClassOf CirculatingCell,  False.
+PhotosyntheticCell SubClassOf PlantCell,  True.
+PhotosyntheticCell SubClassOf SclerenchymaCell,  False.
+PhotosyntheticCell SubClassOf LeafCell,  True.
+PhotosyntheticCell SubClassOf Erythrocyte,  False.
+PhotosyntheticCell SubClassOf CirculatingCell,  False.
+PhotosyntheticCell SubClassOf LeafCell and PlantCell,  True.
+PhotosyntheticCell SubClassOf CellByClass,  True.
+PhotosyntheticCell SubClassOf CellByClass and LeafCell and PlantCell,  True.
+PhotosyntheticCell SubClassOf MatureCell,  True.
+PhotosyntheticCell SubClassOf CellByClass and LeafCell and MatureCell and PlantCell,  True.
+PhotosyntheticCell SubClassOf AnimalCell,  False.
+PhotosyntheticCell SubClassOf Cell,  True.
+PhotosyntheticCell SubClassOf Cell and CellByClass and LeafCell and MatureCell and PlantCell,  True\n
+PhotosyntheticCell SubClassOf Miocyte,  False.
+PhotosyntheticCell SubClassOf InMatureCell,  True.
+PhotosyntheticCell SubClassOf Cell and CellByClass and InMatureCell and LeafCell and MatureCell and PlantCell,  True:
+PhotosyntheticCell SubClassOf Osteocyte,  False.
+PhotosyntheticCell SubClassOf ChondroBlast,  False.
+PhotosyntheticCell SubClassOf MioBlast,  False.
+PhotosyntheticCell SubClassOf CellByDevelopmentStage,  False.
+PhotosyntheticCell SubClassOf PhotoreceptorCell,  False.
+PhotosyntheticCell SubClassOf CellByOrganism,  True.
+PhotosyntheticCell SubClassOf Cell and CellByClass and CellByOrganism and LeafCell and MatureCell and PlantCell,  True,
+PhotosyntheticCell SubClassOf ElectricallyActiveCell,  False.
+PhotosyntheticCell SubClassOf StructuralCell,  True.
+PhotosyntheticCell SubClassOf Cell and CellByClass and CellByOrganism and LeafCell and MatureCell and PlantCell and StructuralCell,  True:
+PhotosyntheticCell SubClassOf Neuron,  False.
+PhotosyntheticCell SubClassOf ChondroCyte,  False.
+PhotosyntheticCell SubClassOf Cell and CellByClass and CellByOrganism and InMatureCell and LeafCell and MatureCell and PlantCell,  True:
+MatureCell and Osteocyte SubClassOf ElectricallyActiveCell,  True.
+MatureCell and Osteocyte SubClassOf Erythrocyte,  False.
+MatureCell and Osteocyte SubClassOf PhotosyntheticCell,  False.
+MatureCell and Osteocyte SubClassOf CirculatingCell,  False.
+MatureCell and Osteocyte SubClassOf PlantCell,  False.
+Osteocyte SubClassOf CellByClass,  True.
+Osteocyte SubClassOf SclerenchymaCell,  False.
+Osteocyte SubClassOf Erythrocyte,  False.
+Osteocyte SubClassOf PhotosyntheticCell,  False.
+Osteocyte SubClassOf CirculatingCell,  False.
+Osteocyte SubClassOf PlantCell,  False.
+Osteocyte SubClassOf MatureCell,  True.
+Osteocyte SubClassOf CellByClass and MatureCell,  True.
+Osteocyte SubClassOf AnimalCell,  True.
+Osteocyte SubClassOf AnimalCell and CellByClass and MatureCell,  True\n
+Osteocyte SubClassOf Cell,  True\n
+Osteocyte SubClassOf AnimalCell and Cell and CellByClass and MatureCell,  True\n
+Osteocyte SubClassOf Miocyte,  False.
+Osteocyte SubClassOf InMatureCell,  True\n
+Osteocyte SubClassOf AnimalCell and Cell and CellByClass and InMatureCell and MatureCell,  True\n
+Osteocyte SubClassOf ChondroBlast,  False.
+Osteocyte SubClassOf MioBlast,  False.
+Osteocyte SubClassOf CellByDevelopmentStage,  True.
+Osteocyte SubClassOf AnimalCell and Cell and CellByClass and CellByDevelopmentStage and InMatureCell and MatureCell,  True\n
+Osteocyte SubClassOf PhotoreceptorCell,  False.
+Osteocyte SubClassOf CellByOrganism,  True.
+Osteocyte SubClassOf AnimalCell and Cell and CellByClass and CellByDevelopmentStage and CellByOrganism and InMatureCell and MatureCell,  True\n
+Osteocyte SubClassOf ElectricallyActiveCell,  True,
+Osteocyte SubClassOf AnimalCell and Cell and CellByClass and CellByDevelopmentStage and CellByOrganism and ElectricallyActiveCell and InMatureCell and MatureCell,  True:
+Osteocyte SubClassOf StructuralCell,  True.
+Osteocyte SubClassOf AnimalCell and Cell and CellByClass and CellByDevelopmentStage and CellByOrganism and InMatureCell and MatureCell and StructuralCell,  True\n
+Osteocyte SubClassOf Neuron,  False.
+Osteocyte SubClassOf ChondroCyte,  False.
+Osteocyte SubClassOf AnimalCell and Cell and CellByClass and CellByDevelopmentStage and CellByOrganism and ElectricallyActiveCell and InMatureCell and MatureCell and StructuralCell,  True for
+CellByOrganism and Miocyte SubClassOf SclerenchymaCell,  False.
+InMatureCell and LeafCell SubClassOf MatureCell,  True.
+InMatureCell and LeafCell SubClassOf SclerenchymaCell,  False.
+InMatureCell and LeafCell SubClassOf Erythrocyte,  False.
+InMatureCell and LeafCell SubClassOf PhotosyntheticCell,  True\n
+LeafCell SubClassOf PhotosyntheticCell,  True.
+LeafCell SubClassOf Erythrocyte,  False.
+LeafCell SubClassOf CirculatingCell,  False.
+LeafCell SubClassOf PlantCell,  True.
+LeafCell SubClassOf PhotosyntheticCell and PlantCell,  False.
+LeafCell SubClassOf CellByClass,  True.
+LeafCell SubClassOf CellByClass and PhotosyntheticCell,  False.
+LeafCell SubClassOf MatureCell,  False.
+LeafCell SubClassOf AnimalCell,  False.
+LeafCell SubClassOf Cell,  True.
+LeafCell SubClassOf Cell and PhotosyntheticCell,  True,
+LeafCell SubClassOf Miocyte,  False.
+LeafCell SubClassOf InMatureCell,  False.
+LeafCell SubClassOf Osteocyte,  False.
+LeafCell SubClassOf ChondroBlast,  False.
+LeafCell SubClassOf MioBlast,  False.
+LeafCell SubClassOf CellByDevelopmentStage,  True.
+LeafCell SubClassOf Cell and CellByDevelopmentStage and PhotosyntheticCell,  True,
+LeafCell SubClassOf PhotoreceptorCell,  False.
+LeafCell SubClassOf CellByOrganism,  True.
+LeafCell SubClassOf Cell and CellByDevelopmentStage and CellByOrganism and PhotosyntheticCell,  True,
+LeafCell SubClassOf ElectricallyActiveCell,  False.
+LeafCell SubClassOf StructuralCell,  True.
+LeafCell SubClassOf Cell and CellByDevelopmentStage and CellByOrganism and PhotosyntheticCell and StructuralCell,  True,
+LeafCell SubClassOf Neuron,  False.
+LeafCell SubClassOf ChondroCyte,  False.
+LeafCell SubClassOf Cell and CellByDevelopmentStage and CellByOrganism and PhotosyntheticCell and PlantCell and StructuralCell,  True:
+LeafCell SubClassOf Cell and CellByClass and CellByDevelopmentStage and CellByOrganism and PhotosyntheticCell and StructuralCell,  True,
+CellByOrganism SubClassOf MioBlast,  False.
+CellByOrganism and MatureCell SubClassOf AnimalCell,  True.
+CellByOrganism and MatureCell SubClassOf SclerenchymaCell,  True\n
+CellByOrganism SubClassOf SclerenchymaCell,  True.
+CellByOrganism SubClassOf Erythrocyte,  True.
+CellByOrganism SubClassOf Erythrocyte and SclerenchymaCell,  False.
+CellByOrganism SubClassOf PhotosyntheticCell,  True.
+CellByOrganism SubClassOf PhotosyntheticCell and SclerenchymaCell,  False.
+CellByOrganism SubClassOf CirculatingCell,  True.
+CellByOrganism SubClassOf CirculatingCell and SclerenchymaCell,  False.
+CellByOrganism SubClassOf PlantCell,  True.
+CellByOrganism SubClassOf PlantCell and SclerenchymaCell,  True.
+CellByOrganism SubClassOf CellByClass,  True.
+CellByOrganism SubClassOf CellByClass and PlantCell and SclerenchymaCell,  True:
+CellByOrganism SubClassOf MatureCell,  True.
+CellByOrganism SubClassOf MatureCell and PlantCell and SclerenchymaCell,  True\n
+CellByOrganism SubClassOf AnimalCell,  True\n
+CellByOrganism SubClassOf AnimalCell and MatureCell and PlantCell and SclerenchymaCell,  False.
+CellByOrganism SubClassOf Cell,  True\n
+CellByOrganism SubClassOf Cell and MatureCell and PlantCell and SclerenchymaCell,  True\n
+CellByOrganism SubClassOf Miocyte,  True.
+CellByOrganism SubClassOf Cell and MatureCell and Miocyte and PlantCell and SclerenchymaCell,  True\n
+CellByOrganism SubClassOf InMatureCell,  True.
+CellByOrganism SubClassOf Cell and InMatureCell and MatureCell and Miocyte and PlantCell and SclerenchymaCell,  True\n
+CellByOrganism SubClassOf Osteocyte,  True.
+CellByOrganism SubClassOf Cell and InMatureCell and MatureCell and Miocyte and Osteocyte and PlantCell and SclerenchymaCell,  True\n
+CellByOrganism SubClassOf ChondroBlast,  False.
+CellByOrganism SubClassOf CellByDevelopmentStage,  False.
+CellByOrganism SubClassOf PhotoreceptorCell,  True.
+CellByOrganism SubClassOf Cell and InMatureCell and MatureCell and Miocyte and Osteocyte and PhotoreceptorCell and PlantCell and SclerenchymaCell,  True.
+CellByOrganism SubClassOf ElectricallyActiveCell,  True.
+CellByOrganism SubClassOf Cell and ElectricallyActiveCell and InMatureCell and MatureCell and Miocyte and Osteocyte and PhotoreceptorCell and PlantCell and SclerenchymaCell,  True\n
+CellByOrganism SubClassOf StructuralCell,  True.
+CellByOrganism SubClassOf Cell and ElectricallyActiveCell and InMatureCell and MatureCell and Miocyte and Osteocyte and PhotoreceptorCell and PlantCell and SclerenchymaCell and StructuralCell,  True\n
+CellByOrganism SubClassOf Neuron,  True.
+CellByOrganism SubClassOf Cell and ElectricallyActiveCell and InMatureCell and MatureCell and Miocyte and Neuron and Osteocyte and PhotoreceptorCell and PlantCell and SclerenchymaCell and StructuralCell,  True\n
+CellByOrganism SubClassOf ChondroCyte,  False.
+CellByOrganism SubClassOf Cell and ElectricallyActiveCell and Erythrocyte and InMatureCell and MatureCell and Miocyte and Neuron and Osteocyte and PhotoreceptorCell and PlantCell and SclerenchymaCell and StructuralCell,  True:
+CellByOrganism SubClassOf Cell and ElectricallyActiveCell and InMatureCell and MatureCell and Miocyte and Neuron and Osteocyte and PhotoreceptorCell and PhotosyntheticCell and PlantCell and SclerenchymaCell and StructuralCell,  True,
+CellByOrganism SubClassOf Cell and CirculatingCell and ElectricallyActiveCell and InMatureCell and MatureCell and Miocyte and Neuron and Osteocyte and PhotoreceptorCell and PhotosyntheticCell and PlantCell and SclerenchymaCell and StructuralCell,  True,
+CellByOrganism SubClassOf Cell and CellByClass and CirculatingCell and ElectricallyActiveCell and InMatureCell and MatureCell and Miocyte and Neuron and Osteocyte and PhotoreceptorCell and PhotosyntheticCell and PlantCell and SclerenchymaCell and StructuralCell,  True:
+CellByOrganism SubClassOf AnimalCell and Cell and CirculatingCell and ElectricallyActiveCell and InMatureCell and MatureCell and Miocyte and Neuron and Osteocyte and PhotoreceptorCell and PhotosyntheticCell and PlantCell and SclerenchymaCell and StructuralCell,  True:
+MatureCell SubClassOf CirculatingCell,  True,
+MatureCell SubClassOf SclerenchymaCell,  True,
+MatureCell SubClassOf Erythrocyte,  False.
+MatureCell SubClassOf PhotosyntheticCell,  False.
+MatureCell SubClassOf CirculatingCell and SclerenchymaCell,  False.
+MatureCell SubClassOf PlantCell,  False.
+MatureCell SubClassOf CellByClass,  True.
+MatureCell SubClassOf CellByClass and SclerenchymaCell,  False.
+MatureCell SubClassOf AnimalCell,  True\n
+MatureCell SubClassOf AnimalCell and SclerenchymaCell,  Mature
+MatureCell SubClassOf Cell,  True.
+MatureCell SubClassOf Cell and SclerenchymaCell,  True,
+MatureCell SubClassOf Miocyte,  True,
+MatureCell SubClassOf Cell and Miocyte and SclerenchymaCell,  True,
+MatureCell SubClassOf InMatureCell,  False.
+MatureCell SubClassOf Osteocyte,  False.
+MatureCell SubClassOf MioBlast,  False.
+MatureCell SubClassOf CellByDevelopmentStage,  True.
+MatureCell SubClassOf Cell and CellByDevelopmentStage and Miocyte and SclerenchymaCell,  True.
+MatureCell SubClassOf PhotoreceptorCell,  False.
+MatureCell SubClassOf CellByOrganism,  True.
+MatureCell SubClassOf Cell and CellByDevelopmentStage and CellByOrganism and Miocyte and SclerenchymaCell,  True.
+MatureCell SubClassOf ElectricallyActiveCell,  True,
+MatureCell SubClassOf Cell and CellByDevelopmentStage and CellByOrganism and ElectricallyActiveCell and Miocyte and SclerenchymaCell,  True:
+MatureCell SubClassOf StructuralCell,  True.
+MatureCell SubClassOf Cell and CellByDevelopmentStage and CellByOrganism and Miocyte and SclerenchymaCell and StructuralCell,  True.
+MatureCell SubClassOf Neuron,  False.
+MatureCell SubClassOf ChondroCyte,  False.
+MatureCell SubClassOf Cell and CellByDevelopmentStage and CellByOrganism and CirculatingCell and Miocyte and SclerenchymaCell and StructuralCell,  True.
+MatureCell SubClassOf Cell and CellByClass and CellByDevelopmentStage and CellByOrganism and CirculatingCell and Miocyte and SclerenchymaCell and StructuralCell,  True:
+MatureCell SubClassOf AnimalCell and Cell and CellByDevelopmentStage and CellByOrganism and CirculatingCell and Miocyte and SclerenchymaCell and StructuralCell,  True:
+MatureCell SubClassOf Cell and CellByDevelopmentStage and CellByOrganism and CirculatingCell and ElectricallyActiveCell and Miocyte and SclerenchymaCell and StructuralCell,  True.
+InMatureCell and Miocyte SubClassOf Erythrocyte,  False.
+InMatureCell SubClassOf PlantCell,  False.
+InMatureCell and Miocyte SubClassOf LeafCell,  False.
+Miocyte SubClassOf PhotosyntheticCell,  False.
+Can Neuron that is also StructuralCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can ElectricallyActiveCell that is also StructuralCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can CellByDevelopmentStage that is also InMatureCell be considered a subcategory of 'Osteocyte'?,  False.
+Can Miocyte that is also StructuralCell be considered a subcategory of 'LeafCell'?,  False.
+Can CellByDevelopmentStage that is also LeafCell be considered a subcategory of 'AnimalCell'?,  False.
+Can CellByDevelopmentStage that is also ChondroBlast be considered a subcategory of 'Osteocyte'?,  False.
+Can Cell that is also MatureCell be considered a subcategory of 'Osteocyte'?,  False.
+Can CellByClass that is also InMatureCell be considered a subcategory of 'AnimalCell'?,  False.
+Can ChondroCyte that is also LeafCell be considered a subcategory of 'Neuron'?,  False.
+Can CirculatingCell that is also LeafCell be considered a subcategory of 'Neuron'?,  False.
+Can CellByOrganism that is also ChondroCyte be considered a subcategory of 'AnimalCell'?,  True.
+Can CellByOrganism that is also ChondroCyte be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can CellByOrganism that is also ChondroCyte be considered a subcategory of 'LeafCell'?,  False.
+Can CellByOrganism that is also ChondroCyte be considered a subcategory of 'Erythrocyte'?,  False.
+Can CellByOrganism that is also ChondroCyte be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can CellByOrganism that is also ChondroCyte be considered a subcategory of 'CirculatingCell'?,  False.
+Can CellByOrganism that is also ChondroCyte be considered a subcategory of 'PlantCell'?,  False.
+Can CellByOrganism that is also ChondroCyte be considered a subcategory of 'CellByClass'?,  True.
+Can CellByOrganism be considered a subcategory of 'CellByClass'?,  False.
+Can ChondroCyte be considered a subcategory of 'CellByClass'?,  True,
+Can ChondroCyte be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can ChondroCyte be considered a subcategory of 'LeafCell'?,  False.
+Can ChondroCyte be considered a subcategory of 'Erythrocyte'?,  False.
+Can ChondroCyte be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can ChondroCyte be considered a subcategory of 'CirculatingCell'?,  False.
+Can ChondroCyte be considered a subcategory of 'PlantCell'?,  False.
+Can ChondroCyte be considered a subcategory of 'MatureCell'?,  True,
+Can ChondroCyte be considered a subcategory of 'CellByClass that is also MatureCell'?,  True.
+Can ChondroCyte be considered a subcategory of 'AnimalCell'?,  True,
+Can ChondroCyte be considered a subcategory of 'AnimalCell that is also CellByClass that is also MatureCell'?,  True,
+Can ChondroCyte be considered a subcategory of 'Cell'?,  True,
+Can ChondroCyte be considered a subcategory of 'AnimalCell that is also Cell that is also CellByClass that is also MatureCell'?,  True.
+Can ChondroCyte be considered a subcategory of 'Miocyte'?,  False.
+Can ChondroCyte be considered a subcategory of 'InMatureCell'?,  False.
+Can ChondroCyte be considered a subcategory of 'Osteocyte'?,  False.
+Can ChondroCyte be considered a subcategory of 'ChondroBlast'?,  False.
+Can ChondroCyte be considered a subcategory of 'MioBlast'?,  False.
+Can ChondroCyte be considered a subcategory of 'CellByDevelopmentStage'?,  True,
+Can ChondroCyte be considered a subcategory of 'AnimalCell that is also Cell that is also CellByClass that is also CellByDevelopmentStage that is also MatureCell'?,  True.
+Can ChondroCyte be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can ChondroCyte be considered a subcategory of 'CellByOrganism'?,  True.
+Can ChondroCyte be considered a subcategory of 'AnimalCell that is also Cell that is also CellByClass that is also CellByDevelopmentStage that is also CellByOrganism that is also MatureCell'?,  True.
+Can ChondroCyte be considered a subcategory of 'ElectricallyActiveCell'?,  False.
+Can ChondroCyte be considered a subcategory of 'StructuralCell'?,  True.
+Can ChondroCyte be considered a subcategory of 'AnimalCell that is also Cell that is also CellByClass that is also CellByDevelopmentStage that is also CellByOrganism that is also MatureCell that is also StructuralCell'?,  True.
+Can ChondroCyte be considered a subcategory of 'Neuron'?,  False.
+Can Osteocyte that is also SclerenchymaCell be considered a subcategory of 'AnimalCell'?,  False.
+Can InMatureCell that is also Miocyte be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can Cell that is also StructuralCell be considered a subcategory of 'SclerenchymaCell'?,  True,
+Can Cell be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can StructuralCell be considered a subcategory of 'SclerenchymaCell'?,  True,
+Can StructuralCell be considered a subcategory of 'LeafCell'?,  False.
+Can StructuralCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can StructuralCell be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can StructuralCell be considered a subcategory of 'CirculatingCell'?,  False.
+Can StructuralCell be considered a subcategory of 'PlantCell'?,  False.
+Can StructuralCell be considered a subcategory of 'CellByClass'?,  False.
+Can StructuralCell be considered a subcategory of 'MatureCell'?,  False.
+Can StructuralCell be considered a subcategory of 'AnimalCell'?,  False.
+Can StructuralCell be considered a subcategory of 'Cell'?,  True,
+Can StructuralCell be considered a subcategory of 'Cell that is also SclerenchymaCell'?,  True,
+Can StructuralCell be considered a subcategory of 'Miocyte'?,  False.
+Can StructuralCell be considered a subcategory of 'InMatureCell'?,  False.
+Can StructuralCell be considered a subcategory of 'Osteocyte'?,  False.
+Can StructuralCell be considered a subcategory of 'ChondroBlast'?,  False.
+Can StructuralCell be considered a subcategory of 'MioBlast'?,  False.
+Can StructuralCell be considered a subcategory of 'CellByDevelopmentStage'?,  False.
+Can StructuralCell be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can StructuralCell be considered a subcategory of 'CellByOrganism'?,  False.
+Can StructuralCell be considered a subcategory of 'ElectricallyActiveCell'?,  False.
+Can StructuralCell be considered a subcategory of 'Neuron'?,  False.
+Can StructuralCell be considered a subcategory of 'ChondroCyte'?,  False.
+Can InMatureCell that is also StructuralCell be considered a subcategory of 'ChondroCyte'?,  False.
+Can AnimalCell that is also InMatureCell be considered a subcategory of 'ChondroCyte'?,  False.
+Can CellByClass that is also ChondroBlast be considered a subcategory of 'ElectricallyActiveCell'?,  False.
+Can CellByDevelopmentStage that is also Miocyte be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can Cell that is also PhotoreceptorCell be considered a subcategory of 'ElectricallyActiveCell'?,  True.
+Can Cell that is also PhotoreceptorCell be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can Cell that is also PhotoreceptorCell be considered a subcategory of 'LeafCell'?,  False.
+Can Cell that is also PhotoreceptorCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can Cell that is also PhotoreceptorCell be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can Cell that is also PhotoreceptorCell be considered a subcategory of 'CirculatingCell'?,  False.
+Can Cell that is also PhotoreceptorCell be considered a subcategory of 'PlantCell'?,  False.
+Can Cell that is also PhotoreceptorCell be considered a subcategory of 'CellByClass'?,  True.
+Can Cell be considered a subcategory of 'CellByClass'?,  False.
+Can PhotoreceptorCell be considered a subcategory of 'CellByClass'?,  True.
+Can PhotoreceptorCell be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can PhotoreceptorCell be considered a subcategory of 'LeafCell'?,  False.
+Can PhotoreceptorCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can PhotoreceptorCell be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can PhotoreceptorCell be considered a subcategory of 'CirculatingCell'?,  False.
+Can PhotoreceptorCell be considered a subcategory of 'PlantCell'?,  False.
+Can PhotoreceptorCell be considered a subcategory of 'MatureCell'?,  It is
+Can PhotoreceptorCell be considered a subcategory of 'AnimalCell'?,  False.
+Can PhotoreceptorCell be considered a subcategory of 'Cell'?,  True,
+Can PhotoreceptorCell be considered a subcategory of 'Cell that is also CellByClass'?,  True,
+Can PhotoreceptorCell be considered a subcategory of 'Miocyte'?,  False.
+Can PhotoreceptorCell be considered a subcategory of 'InMatureCell'?,  False.
+Can PhotoreceptorCell be considered a subcategory of 'Osteocyte'?,  False.
+Can PhotoreceptorCell be considered a subcategory of 'ChondroBlast'?,  False.
+Can PhotoreceptorCell be considered a subcategory of 'MioBlast'?,  False.
+Can PhotoreceptorCell be considered a subcategory of 'CellByDevelopmentStage'?,  False.
+Can PhotoreceptorCell be considered a subcategory of 'CellByOrganism'?,  True,
+Can PhotoreceptorCell be considered a subcategory of 'Cell that is also CellByClass that is also CellByOrganism'?,  True.
+Can PhotoreceptorCell be considered a subcategory of 'ElectricallyActiveCell'?,  True,
+Can PhotoreceptorCell be considered a subcategory of 'Cell that is also CellByClass that is also CellByOrganism that is also ElectricallyActiveCell'?,  True.
+Can PhotoreceptorCell be considered a subcategory of 'StructuralCell'?,  False.
+Can PhotoreceptorCell be considered a subcategory of 'Neuron'?,  True.
+Can PhotoreceptorCell be considered a subcategory of 'Cell that is also CellByClass that is also CellByOrganism that is also ElectricallyActiveCell that is also Neuron'?,  True.
+Can PhotoreceptorCell be considered a subcategory of 'ChondroCyte'?,  False.
+Can CirculatingCell that is also SclerenchymaCell be considered a subcategory of 'LeafCell'?,  False.
+Can LeafCell that is also PhotosyntheticCell be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can CellByDevelopmentStage that is also Osteocyte be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can Neuron that is also PlantCell be considered a subcategory of 'LeafCell'?,  False.
+Can LeafCell that is also SclerenchymaCell be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can CellByClass that is also Osteocyte be considered a subcategory of 'LeafCell'?,  True,
+Can CellByClass that is also Osteocyte be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can Osteocyte be considered a subcategory of 'LeafCell'?,  False.
+Can CellByClass be considered a subcategory of 'LeafCell'?,  False.
+Can CellByOrganism that is also Osteocyte be considered a subcategory of 'StructuralCell'?,  True.
+Can CellByOrganism that is also Osteocyte be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can CellByOrganism that is also Osteocyte be considered a subcategory of 'LeafCell'?,  False.
+Can CellByOrganism that is also Osteocyte be considered a subcategory of 'Erythrocyte'?,  False.
+Can CellByOrganism that is also Osteocyte be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can CellByOrganism that is also Osteocyte be considered a subcategory of 'CirculatingCell'?,  False.
+Can CellByOrganism that is also Osteocyte be considered a subcategory of 'PlantCell'?,  False.
+Can CellByOrganism that is also Osteocyte be considered a subcategory of 'CellByClass'?,  True.
+Can Osteocyte be considered a subcategory of 'CellByClass'?,  True,
+Can Osteocyte be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can Osteocyte be considered a subcategory of 'Erythrocyte'?,  False.
+Can Osteocyte be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can Osteocyte be considered a subcategory of 'CirculatingCell'?,  False.
+Can Osteocyte be considered a subcategory of 'PlantCell'?,  False.
+Can Osteocyte be considered a subcategory of 'MatureCell'?,  True.
+Can Osteocyte be considered a subcategory of 'CellByClass that is also MatureCell'?,  True.
+Can Osteocyte be considered a subcategory of 'AnimalCell'?,  True.
+Can Osteocyte be considered a subcategory of 'AnimalCell that is also CellByClass that is also MatureCell'?,  True.
+Can Osteocyte be considered a subcategory of 'Cell'?,  Yes,
+Can Osteocyte be considered a subcategory of 'Miocyte'?,  False.
+Can Osteocyte be considered a subcategory of 'InMatureCell'?,  False.
+Can Osteocyte be considered a subcategory of 'ChondroBlast'?,  False.
+Can Osteocyte be considered a subcategory of 'MioBlast'?,  False.
+Can Osteocyte be considered a subcategory of 'CellByDevelopmentStage'?,  True.
+Can Osteocyte be considered a subcategory of 'AnimalCell that is also CellByClass that is also CellByDevelopmentStage that is also MatureCell'?,  True.
+Can Osteocyte be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can Osteocyte be considered a subcategory of 'CellByOrganism'?,  True.
+Can Osteocyte be considered a subcategory of 'AnimalCell that is also CellByClass that is also CellByDevelopmentStage that is also CellByOrganism that is also MatureCell'?,  True.
+Can Osteocyte be considered a subcategory of 'ElectricallyActiveCell'?,  False.
+Can Osteocyte be considered a subcategory of 'StructuralCell'?,  True.
+Can Osteocyte be considered a subcategory of 'AnimalCell that is also CellByClass that is also CellByDevelopmentStage that is also CellByOrganism that is also MatureCell that is also StructuralCell'?,  True.
+Can Osteocyte be considered a subcategory of 'Neuron'?,  False.
+Can Osteocyte be considered a subcategory of 'ChondroCyte'?,  False.
+Can MatureCell that is also MioBlast be considered a subcategory of 'CirculatingCell'?,  True.
+Can MatureCell that is also MioBlast be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can MatureCell that is also MioBlast be considered a subcategory of 'LeafCell'?,  False.
+Can MatureCell that is also MioBlast be considered a subcategory of 'Erythrocyte'?,  False.
+Can MatureCell that is also MioBlast be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can MioBlast be considered a subcategory of 'CirculatingCell'?,  False.
+Can MatureCell be considered a subcategory of 'CirculatingCell'?,  True,
+Can MatureCell be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can MatureCell be considered a subcategory of 'LeafCell'?,  False.
+Can MatureCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can MatureCell be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can MatureCell be considered a subcategory of 'PlantCell'?,  False.
+Can MatureCell be considered a subcategory of 'CellByClass'?,  True,
+Can MatureCell be considered a subcategory of 'CellByClass that is also CirculatingCell'?,  True,
+Can MatureCell be considered a subcategory of 'AnimalCell'?,  False.
+Can MatureCell be considered a subcategory of 'Cell'?,  True,
+Can MatureCell be considered a subcategory of 'Cell that is also CellByClass that is also CirculatingCell'?,  True,
+Can MatureCell be considered a subcategory of 'Miocyte'?,  False.
+Can MatureCell be considered a subcategory of 'InMatureCell'?,  False.
+Can MatureCell be considered a subcategory of 'Osteocyte'?,  False.
+Can MatureCell be considered a subcategory of 'ChondroBlast'?,  False.
+Can MatureCell be considered a subcategory of 'MioBlast'?,  False.
+Can MatureCell be considered a subcategory of 'CellByDevelopmentStage'?,  True.
+Can MatureCell be considered a subcategory of 'Cell that is also CellByClass that is also CellByDevelopmentStage that is also CirculatingCell'?,  True,
+Can MatureCell be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can MatureCell be considered a subcategory of 'CellByOrganism'?,  False.
+Can MatureCell be considered a subcategory of 'ElectricallyActiveCell'?,  False.
+Can MatureCell be considered a subcategory of 'StructuralCell'?,  False.
+Can MatureCell be considered a subcategory of 'Neuron'?,  False.
+Can MatureCell be considered a subcategory of 'ChondroCyte'?,  False.
+Can ElectricallyActiveCell that is also PlantCell be considered a subcategory of 'Cell'?,  True.
+Can ElectricallyActiveCell that is also PlantCell be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can ElectricallyActiveCell that is also PlantCell be considered a subcategory of 'LeafCell'?,  True,
+Can ElectricallyActiveCell be considered a subcategory of 'LeafCell'?,  False.
+Can PlantCell be considered a subcategory of 'LeafCell'?,  False.
+Can ChondroBlast that is also Neuron be considered a subcategory of 'StructuralCell'?,  False.
+Can ChondroBlast that is also SclerenchymaCell be considered a subcategory of 'StructuralCell'?,  True.
+Can ChondroBlast that is also SclerenchymaCell be considered a subcategory of 'LeafCell'?,  False.
+Can ChondroBlast that is also SclerenchymaCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can ChondroBlast that is also SclerenchymaCell be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can ChondroBlast that is also SclerenchymaCell be considered a subcategory of 'CirculatingCell'?,  False.
+Can ChondroBlast that is also SclerenchymaCell be considered a subcategory of 'PlantCell'?,  True,
+Can SclerenchymaCell be considered a subcategory of 'PlantCell'?,  True,
+Can SclerenchymaCell be considered a subcategory of 'LeafCell'?,  False.
+Can SclerenchymaCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can SclerenchymaCell be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can SclerenchymaCell be considered a subcategory of 'CirculatingCell'?,  False.
+Can SclerenchymaCell be considered a subcategory of 'CellByClass'?,  True,
+Can SclerenchymaCell be considered a subcategory of 'CellByClass that is also PlantCell'?,  True.
+Can SclerenchymaCell be considered a subcategory of 'MatureCell'?,  True,
+Can SclerenchymaCell be considered a subcategory of 'CellByClass that is also MatureCell that is also PlantCell'?,  True,
+Can SclerenchymaCell be considered a subcategory of 'AnimalCell'?,  False.
+Can SclerenchymaCell be considered a subcategory of 'Cell'?,  Yes,
+Can SclerenchymaCell be considered a subcategory of 'Miocyte'?,  False.
+Can SclerenchymaCell be considered a subcategory of 'InMatureCell'?,  False.
+Can SclerenchymaCell be considered a subcategory of 'Osteocyte'?,  False.
+Can SclerenchymaCell be considered a subcategory of 'ChondroBlast'?,  False.
+Can SclerenchymaCell be considered a subcategory of 'MioBlast'?,  False.
+Can SclerenchymaCell be considered a subcategory of 'CellByDevelopmentStage'?,  False.
+Can SclerenchymaCell be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can SclerenchymaCell be considered a subcategory of 'CellByOrganism'?,  True,
+Can SclerenchymaCell be considered a subcategory of 'CellByClass that is also CellByOrganism that is also MatureCell that is also PlantCell'?,  True.
+Can SclerenchymaCell be considered a subcategory of 'ElectricallyActiveCell'?,  False.
+Can SclerenchymaCell be considered a subcategory of 'StructuralCell'?,  True,
+Can SclerenchymaCell be considered a subcategory of 'CellByClass that is also CellByOrganism that is also MatureCell that is also PlantCell that is also StructuralCell'?,  True.
+Can SclerenchymaCell be considered a subcategory of 'Neuron'?,  False.
+Can SclerenchymaCell be considered a subcategory of 'ChondroCyte'?,  False.
+Can AnimalCell be considered a subcategory of 'Cell'?,  True.
+Can AnimalCell be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can AnimalCell be considered a subcategory of 'LeafCell'?,  False.
+Can AnimalCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can AnimalCell be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can AnimalCell be considered a subcategory of 'CirculatingCell'?,  False.
+Can AnimalCell be considered a subcategory of 'PlantCell'?,  False.
+Can AnimalCell be considered a subcategory of 'CellByClass'?,  True.
+Can AnimalCell be considered a subcategory of 'MatureCell'?,  False.
+Can AnimalCell be considered a subcategory of 'Cell that is also CellByClass'?,  True.
+Can AnimalCell be considered a subcategory of 'Miocyte'?,  False.
+Can AnimalCell be considered a subcategory of 'InMatureCell'?,  False.
+Can AnimalCell be considered a subcategory of 'Osteocyte'?,  False.
+Can AnimalCell be considered a subcategory of 'ChondroBlast'?,  False.
+Can AnimalCell be considered a subcategory of 'MioBlast'?,  False.
+Can AnimalCell be considered a subcategory of 'CellByDevelopmentStage'?,  False.
+Can AnimalCell be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can AnimalCell be considered a subcategory of 'CellByOrganism'?,  True.
+Can AnimalCell be considered a subcategory of 'Cell that is also CellByClass that is also CellByOrganism'?,  True.
+Can AnimalCell be considered a subcategory of 'ElectricallyActiveCell'?,  False.
+Can AnimalCell be considered a subcategory of 'StructuralCell'?,  False.
+Can AnimalCell be considered a subcategory of 'Neuron'?,  False.
+Can AnimalCell be considered a subcategory of 'ChondroCyte'?,  False.
+Can ElectricallyActiveCell that is also LeafCell be considered a subcategory of 'Cell'?,  True.
+Can ElectricallyActiveCell that is also LeafCell be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can ElectricallyActiveCell that is also LeafCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can ElectricallyActiveCell that is also LeafCell be considered a subcategory of 'PhotosyntheticCell'?,  True.
+Can LeafCell be considered a subcategory of 'PhotosyntheticCell'?,  True,
+Can LeafCell be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can LeafCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can LeafCell be considered a subcategory of 'CirculatingCell'?,  False.
+Can LeafCell be considered a subcategory of 'PlantCell'?,  True,
+Can LeafCell be considered a subcategory of 'PhotosyntheticCell that is also PlantCell'?,  True.
+Can LeafCell be considered a subcategory of 'CellByClass'?,  False.
+Can LeafCell be considered a subcategory of 'MatureCell'?,  False.
+Can LeafCell be considered a subcategory of 'AnimalCell'?,  False.
+Can LeafCell be considered a subcategory of 'Cell'?,  True,
+Can LeafCell be considered a subcategory of 'Cell that is also PhotosyntheticCell that is also PlantCell'?,  True.
+Can LeafCell be considered a subcategory of 'Miocyte'?,  False.
+Can LeafCell be considered a subcategory of 'InMatureCell'?,  False.
+Can LeafCell be considered a subcategory of 'Osteocyte'?,  False.
+Can LeafCell be considered a subcategory of 'ChondroBlast'?,  False.
+Can LeafCell be considered a subcategory of 'MioBlast'?,  False.
+Can LeafCell be considered a subcategory of 'CellByDevelopmentStage'?,  False.
+Can LeafCell be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can LeafCell be considered a subcategory of 'CellByOrganism'?,  False.
+Can LeafCell be considered a subcategory of 'ElectricallyActiveCell'?,  False.
+Can LeafCell be considered a subcategory of 'StructuralCell'?,  False.
+Can LeafCell be considered a subcategory of 'Neuron'?,  False.
+Can LeafCell be considered a subcategory of 'ChondroCyte'?,  False.
+Can CellByDevelopmentStage that is also PhotoreceptorCell be considered a subcategory of 'MatureCell'?,  True.
+Can CellByDevelopmentStage that is also PhotoreceptorCell be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can CellByDevelopmentStage that is also PhotoreceptorCell be considered a subcategory of 'LeafCell'?,  False.
+Can CellByDevelopmentStage that is also PhotoreceptorCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can CellByDevelopmentStage that is also PhotoreceptorCell be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can CellByDevelopmentStage that is also PhotoreceptorCell be considered a subcategory of 'CirculatingCell'?,  False.
+Can CellByDevelopmentStage that is also PhotoreceptorCell be considered a subcategory of 'PlantCell'?,  False.
+Can CellByDevelopmentStage be considered a subcategory of 'MatureCell'?,  False.
+Can InMatureCell that is also PlantCell be considered a subcategory of 'CellByClass'?,  True.
+Can InMatureCell that is also PlantCell be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can InMatureCell that is also PlantCell be considered a subcategory of 'LeafCell'?,  False.
+Can InMatureCell that is also PlantCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can InMatureCell that is also PlantCell be considered a subcategory of 'PhotosyntheticCell'?,  True.
+Can InMatureCell be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can PlantCell be considered a subcategory of 'PhotosyntheticCell'?,  True.
+Can PlantCell be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can PlantCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can PlantCell be considered a subcategory of 'CirculatingCell'?,  False.
+Can PlantCell be considered a subcategory of 'CellByClass'?,  True.
+Can PlantCell be considered a subcategory of 'CellByClass that is also PhotosyntheticCell'?,  True.
+Can PlantCell be considered a subcategory of 'MatureCell'?,  True,
+Can PlantCell be considered a subcategory of 'CellByClass that is also MatureCell that is also PhotosyntheticCell'?,  True,
+Can PlantCell be considered a subcategory of 'AnimalCell'?,  False.
+Can PlantCell be considered a subcategory of 'Cell'?,  True,
+Can PlantCell be considered a subcategory of 'Cell that is also CellByClass that is also MatureCell that is also PhotosyntheticCell'?,  True,
+Can PlantCell be considered a subcategory of 'Miocyte'?,  False.
+Can PlantCell be considered a subcategory of 'InMatureCell'?,  True,
+Can PlantCell be considered a subcategory of 'Cell that is also CellByClass that is also InMatureCell that is also MatureCell that is also PhotosyntheticCell'?,  True.
+Can PlantCell be considered a subcategory of 'Osteocyte'?,  False.
+Can PlantCell be considered a subcategory of 'ChondroBlast'?,  False.
+Can PlantCell be considered a subcategory of 'MioBlast'?,  False.
+Can PlantCell be considered a subcategory of 'CellByDevelopmentStage'?,  False.
+Can PlantCell be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can PlantCell be considered a subcategory of 'CellByOrganism'?,  True.
+Can PlantCell be considered a subcategory of 'Cell that is also CellByClass that is also CellByOrganism that is also InMatureCell that is also MatureCell that is also PhotosyntheticCell'?,  True.
+Can PlantCell be considered a subcategory of 'ElectricallyActiveCell'?,  False.
+Can PlantCell be considered a subcategory of 'StructuralCell'?,  True,
+Can PlantCell be considered a subcategory of 'Cell that is also CellByClass that is also CellByOrganism that is also InMatureCell that is also MatureCell that is also PhotosyntheticCell that is also StructuralCell'?,  True.
+Can PlantCell be considered a subcategory of 'Neuron'?,  False.
+Can PlantCell be considered a subcategory of 'ChondroCyte'?,  False.
+Can CellByOrganism that is also PhotoreceptorCell be considered a subcategory of 'ChondroBlast'?,  False.
+Can AnimalCell that is also ElectricallyActiveCell be considered a subcategory of 'MatureCell'?,  False.
+Can Cell that is also PhotosyntheticCell be considered a subcategory of 'MatureCell'?,  True.
+Can Cell that is also PhotosyntheticCell be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can Cell that is also PhotosyntheticCell be considered a subcategory of 'LeafCell'?,  False.
+Can Cell that is also PhotosyntheticCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can Cell that is also PhotosyntheticCell be considered a subcategory of 'CirculatingCell'?,  False.
+Can Cell that is also PhotosyntheticCell be considered a subcategory of 'PlantCell'?,  True.
+Can Cell be considered a subcategory of 'PlantCell'?,  False.
+Can PhotosyntheticCell be considered a subcategory of 'PlantCell'?,  True.
+Can PhotosyntheticCell be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can PhotosyntheticCell be considered a subcategory of 'LeafCell'?,  False.
+Can PhotosyntheticCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can PhotosyntheticCell be considered a subcategory of 'CirculatingCell'?,  False.
+Can PhotosyntheticCell be considered a subcategory of 'CellByClass'?,  True.
+Can PhotosyntheticCell be considered a subcategory of 'CellByClass that is also PlantCell'?,  True.
+Can PhotosyntheticCell be considered a subcategory of 'MatureCell'?,  False.
+Can PhotosyntheticCell be considered a subcategory of 'AnimalCell'?,  False.
+Can PhotosyntheticCell be considered a subcategory of 'Cell'?,  True,
+Can PhotosyntheticCell be considered a subcategory of 'Cell that is also CellByClass that is also PlantCell'?,  True.
+Can PhotosyntheticCell be considered a subcategory of 'Miocyte'?,  False.
+Can PhotosyntheticCell be considered a subcategory of 'InMatureCell'?,  False.
+Can PhotosyntheticCell be considered a subcategory of 'Osteocyte'?,  False.
+Can PhotosyntheticCell be considered a subcategory of 'ChondroBlast'?,  False.
+Can PhotosyntheticCell be considered a subcategory of 'MioBlast'?,  False.
+Can PhotosyntheticCell be considered a subcategory of 'CellByDevelopmentStage'?,  False.
+Can PhotosyntheticCell be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can PhotosyntheticCell be considered a subcategory of 'CellByOrganism'?,  True,
+Can PhotosyntheticCell be considered a subcategory of 'Cell that is also CellByClass that is also CellByOrganism that is also PlantCell'?,  True.
+Can PhotosyntheticCell be considered a subcategory of 'ElectricallyActiveCell'?,  False.
+Can PhotosyntheticCell be considered a subcategory of 'StructuralCell'?,  False.
+Can PhotosyntheticCell be considered a subcategory of 'Neuron'?,  False.
+Can PhotosyntheticCell be considered a subcategory of 'ChondroCyte'?,  False.
+Can CirculatingCell that is also Neuron be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can Erythrocyte that is also Miocyte be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can LeafCell that is also MioBlast be considered a subcategory of 'Miocyte'?,  False.
+Can ElectricallyActiveCell that is also MatureCell be considered a subcategory of 'InMatureCell'?,  False.
+Can ChondroBlast that is also MatureCell be considered a subcategory of 'PlantCell'?,  False.
+Can AnimalCell that is also PhotoreceptorCell be considered a subcategory of 'Miocyte'?,  False.
+Can ChondroCyte that is also Erythrocyte be considered a subcategory of 'Miocyte'?,  False.
+Can CellByDevelopmentStage that is also ElectricallyActiveCell be considered a subcategory of 'Miocyte'?,  True.
+Can CellByDevelopmentStage that is also ElectricallyActiveCell be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can CellByDevelopmentStage that is also ElectricallyActiveCell be considered a subcategory of 'LeafCell'?,  False.
+Can CellByDevelopmentStage that is also ElectricallyActiveCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can CellByDevelopmentStage that is also ElectricallyActiveCell be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can CellByDevelopmentStage that is also ElectricallyActiveCell be considered a subcategory of 'CirculatingCell'?,  False.
+Can CellByDevelopmentStage that is also ElectricallyActiveCell be considered a subcategory of 'PlantCell'?,  False.
+Can CellByDevelopmentStage that is also ElectricallyActiveCell be considered a subcategory of 'CellByClass'?,  True.
+Can CellByDevelopmentStage be considered a subcategory of 'CellByClass'?,  False.
+Can ElectricallyActiveCell be considered a subcategory of 'CellByClass'?,  True,
+Can ElectricallyActiveCell be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can ElectricallyActiveCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can ElectricallyActiveCell be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can ElectricallyActiveCell be considered a subcategory of 'CirculatingCell'?,  False.
+Can ElectricallyActiveCell be considered a subcategory of 'PlantCell'?,  False.
+Can ElectricallyActiveCell be considered a subcategory of 'MatureCell'?,  It is
+Can ElectricallyActiveCell be considered a subcategory of 'AnimalCell'?,  False.
+Can ElectricallyActiveCell be considered a subcategory of 'Cell'?,  True,
+Can ElectricallyActiveCell be considered a subcategory of 'Cell that is also CellByClass'?,  True,
+Can ElectricallyActiveCell be considered a subcategory of 'Miocyte'?,  False.
+Can ElectricallyActiveCell be considered a subcategory of 'InMatureCell'?,  False.
+Can ElectricallyActiveCell be considered a subcategory of 'Osteocyte'?,  False.
+Can ElectricallyActiveCell be considered a subcategory of 'ChondroBlast'?,  False.
+Can ElectricallyActiveCell be considered a subcategory of 'MioBlast'?,  False.
+Can ElectricallyActiveCell be considered a subcategory of 'CellByDevelopmentStage'?,  False.
+Can ElectricallyActiveCell be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can ElectricallyActiveCell be considered a subcategory of 'CellByOrganism'?,  False.
+Can ElectricallyActiveCell be considered a subcategory of 'StructuralCell'?, False.
+Can ElectricallyActiveCell be considered a subcategory of 'Neuron'?,  False.
+Can ElectricallyActiveCell be considered a subcategory of 'ChondroCyte'?,  False.
+Can CellByOrganism that is also ElectricallyActiveCell be considered a subcategory of 'PlantCell'?,  False.
+Can CellByOrganism that is also MatureCell be considered a subcategory of 'ChondroCyte'?,  False.
+Can ChondroBlast that is also Osteocyte be considered a subcategory of 'ElectricallyActiveCell'?,  False.
+Can CirculatingCell that is also LeafCell be considered a subcategory of 'ElectricallyActiveCell'?,  False.
+Can ChondroBlast that is also MatureCell be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can ChondroCyte that is also PhotosyntheticCell be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can Erythrocyte that is also Osteocyte be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can MioBlast that is also Neuron be considered a subcategory of 'LeafCell'?,  False.
+Can Miocyte that is also Osteocyte be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can ElectricallyActiveCell that is also Miocyte be considered a subcategory of 'LeafCell'?,  False.
+Can MatureCell that is also StructuralCell be considered a subcategory of 'LeafCell'?,  False.
+Can InMatureCell that is also StructuralCell be considered a subcategory of 'LeafCell'?,  False.
+Can InMatureCell that is also Neuron be considered a subcategory of 'Erythrocyte'?,  False.
+Can MatureCell that is also MioBlast be considered a subcategory of 'ChondroBlast'?,  False.
+Can CellByOrganism that is also ChondroBlast be considered a subcategory of 'MatureCell'?,  False.
+Can CirculatingCell that is also Miocyte be considered a subcategory of 'CellByClass'?,  True.
+Can CirculatingCell that is also Miocyte be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can CirculatingCell that is also Miocyte be considered a subcategory of 'LeafCell'?,  False.
+Can CirculatingCell that is also Miocyte be considered a subcategory of 'Erythrocyte'?,  False.
+Can CirculatingCell that is also Miocyte be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can CirculatingCell that is also Miocyte be considered a subcategory of 'PlantCell'?,  False.
+Can Miocyte be considered a subcategory of 'CellByClass'?,  True,
+Can Miocyte be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can Miocyte be considered a subcategory of 'LeafCell'?,  False.
+Can Miocyte be considered a subcategory of 'Erythrocyte'?,  False.
+Can Miocyte be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can Miocyte be considered a subcategory of 'CirculatingCell'?,  False.
+Can Miocyte be considered a subcategory of 'PlantCell'?,  False.
+Can Miocyte be considered a subcategory of 'MatureCell'?,  True.
+Can Miocyte be considered a subcategory of 'CellByClass that is also MatureCell'?,  True.
+Can Miocyte be considered a subcategory of 'AnimalCell'?,  True.
+Can Miocyte be considered a subcategory of 'AnimalCell that is also CellByClass that is also MatureCell'?,  True,
+Can Miocyte be considered a subcategory of 'Cell'?,  True,
+Can Miocyte be considered a subcategory of 'AnimalCell that is also Cell that is also CellByClass that is also MatureCell'?,  True.
+Can Miocyte be considered a subcategory of 'InMatureCell'?,  False.
+Can Miocyte be considered a subcategory of 'Osteocyte'?,  False.
+Can Miocyte be considered a subcategory of 'ChondroBlast'?,  False.
+Can Miocyte be considered a subcategory of 'MioBlast'?,  False.
+Can Miocyte be considered a subcategory of 'CellByDevelopmentStage'?,  True.
+Can Miocyte be considered a subcategory of 'AnimalCell that is also Cell that is also CellByClass that is also CellByDevelopmentStage that is also MatureCell'?,  True.
+Can Miocyte be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can Miocyte be considered a subcategory of 'CellByOrganism'?,  True.
+Can Miocyte be considered a subcategory of 'AnimalCell that is also Cell that is also CellByClass that is also CellByDevelopmentStage that is also CellByOrganism that is also MatureCell'?,  True,
+Can Miocyte be considered a subcategory of 'ElectricallyActiveCell'?,  True.
+Can Miocyte be considered a subcategory of 'AnimalCell that is also Cell that is also CellByClass that is also CellByDevelopmentStage that is also CellByOrganism that is also ElectricallyActiveCell that is also MatureCell'?,  True.
+Can Miocyte be considered a subcategory of 'StructuralCell'?,  True.
+Can Miocyte be considered a subcategory of 'AnimalCell that is also Cell that is also CellByClass that is also CellByDevelopmentStage that is also CellByOrganism that is also ElectricallyActiveCell that is also MatureCell that is also StructuralCell'?,  True.
+Can Miocyte be considered a subcategory of 'Neuron'?,  False.
+Can Miocyte be considered a subcategory of 'ChondroCyte'?,  False.
+Can ElectricallyActiveCell that is also SclerenchymaCell be considered a subcategory of 'ChondroBlast'?,  False.
+Can CellByClass that is also ElectricallyActiveCell be considered a subcategory of 'ChondroBlast'?,  False.
+Can ChondroBlast that is also CirculatingCell be considered a subcategory of 'CellByDevelopmentStage'?,  True.
+Can ChondroBlast that is also CirculatingCell be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can ChondroBlast that is also CirculatingCell be considered a subcategory of 'LeafCell'?,  False.
+Can ChondroBlast that is also CirculatingCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can ChondroBlast that is also CirculatingCell be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can ChondroBlast that is also CirculatingCell be considered a subcategory of 'PlantCell'?,  False.
+Can ChondroBlast that is also CirculatingCell be considered a subcategory of 'CellByClass'?,  True.
+Can CirculatingCell be considered a subcategory of 'CellByClass'?,  True.
+Can CirculatingCell be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can CirculatingCell be considered a subcategory of 'LeafCell'?,  False.
+Can CirculatingCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can CirculatingCell be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can CirculatingCell be considered a subcategory of 'PlantCell'?,  False.
+Can CirculatingCell be considered a subcategory of 'MatureCell'?,  False.
+Can CirculatingCell be considered a subcategory of 'AnimalCell'?,  False.
+Can CirculatingCell be considered a subcategory of 'Cell'?,  True,
+Can CirculatingCell be considered a subcategory of 'Cell that is also CellByClass'?,  True.
+Can CirculatingCell be considered a subcategory of 'Miocyte'?,  False.
+Can CirculatingCell be considered a subcategory of 'InMatureCell'?,  False.
+Can CirculatingCell be considered a subcategory of 'Osteocyte'?,  False.
+Can CirculatingCell be considered a subcategory of 'ChondroBlast'?,  False.
+Can CirculatingCell be considered a subcategory of 'MioBlast'?,  False.
+Can CirculatingCell be considered a subcategory of 'CellByDevelopmentStage'?,  False.
+Can CirculatingCell be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can CirculatingCell be considered a subcategory of 'CellByOrganism'?,  False.
+Can CirculatingCell be considered a subcategory of 'ElectricallyActiveCell'?,  False.
+Can CirculatingCell be considered a subcategory of 'StructuralCell'?,  False.
+Can CirculatingCell be considered a subcategory of 'Neuron'?,  False.
+Can CirculatingCell be considered a subcategory of 'ChondroCyte'?,  False.
+Can AnimalCell that is also CellByDevelopmentStage be considered a subcategory of 'MioBlast'?,  False.
+Can AnimalCell that is also StructuralCell be considered a subcategory of 'ChondroCyte'?,  False.
+Can Erythrocyte be considered a subcategory of 'MioBlast'?,  False.
+Can CellByOrganism that is also InMatureCell be considered a subcategory of 'ChondroCyte'?,  False.
+Can AnimalCell that is also PhotosyntheticCell be considered a subcategory of 'MioBlast'?,  False.
+Can ElectricallyActiveCell that is also PlantCell be considered a subcategory of 'MioBlast'?,  False.
+Can Cell that is also MatureCell be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can ChondroBlast that is also InMatureCell be considered a subcategory of 'CellByOrganism'?,  False.
+Can InMatureCell that is also Osteocyte be considered a subcategory of 'Miocyte'?,  False.
+Can Neuron that is also PhotoreceptorCell be considered a subcategory of 'Miocyte'?,  False.
+Can Cell that is also CirculatingCell be considered a subcategory of 'CellByOrganism'?,  True.
+Can Cell that is also CirculatingCell be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can Cell that is also CirculatingCell be considered a subcategory of 'LeafCell'?,  False.
+Can Cell that is also CirculatingCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can Cell that is also CirculatingCell be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can Cell that is also CirculatingCell be considered a subcategory of 'PlantCell'?,  False.
+Can Cell that is also CirculatingCell be considered a subcategory of 'MatureCell'?,  True.
+Can Cell be considered a subcategory of 'MatureCell'?,  False.
+Can Cell that is also Neuron be considered a subcategory of 'StructuralCell'?,  False.
+Can CellByClass that is also CellByDevelopmentStage be considered a subcategory of 'Osteocyte'?,  False.
+Can CellByDevelopmentStage that is also CellByOrganism be considered a subcategory of 'AnimalCell'?,  False.
+Can Cell that is also InMatureCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can Cell that is also LeafCell be considered a subcategory of 'Osteocyte'?,  False.
+Can Cell that is also SclerenchymaCell be considered a subcategory of 'AnimalCell'?,  False.
+Can LeafCell that is also PhotosyntheticCell be considered a subcategory of 'AnimalCell'?,  False.
+Can AnimalCell that is also ChondroCyte be considered a subcategory of 'Erythrocyte'?,  False.
+Can Erythrocyte that is also InMatureCell be considered a subcategory of 'Neuron'?,  False.
+Can CellByClass that is also Osteocyte be considered a subcategory of 'Neuron'?,  False.
+Can Cell that is also SclerenchymaCell be considered a subcategory of 'Neuron'?,  False.
+Can InMatureCell that is also MioBlast be considered a subcategory of 'Neuron'?,  False.
+Can CirculatingCell that is also InMatureCell be considered a subcategory of 'StructuralCell'?,  False.
+Can CellByClass that is also Erythrocyte be considered a subcategory of 'Cell'?,  True.
+Can CellByClass that is also Erythrocyte be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can CellByClass that is also Erythrocyte be considered a subcategory of 'LeafCell'?,  False.
+Can CellByClass that is also Erythrocyte be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can CellByClass that is also Erythrocyte be considered a subcategory of 'CirculatingCell'?,  True.
+Can Erythrocyte be considered a subcategory of 'CirculatingCell'?,  True,
+Can Erythrocyte be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can Erythrocyte be considered a subcategory of 'LeafCell'?,  False.
+Can Erythrocyte be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can Erythrocyte be considered a subcategory of 'PlantCell'?,  False.
+Can Erythrocyte be considered a subcategory of 'CellByClass'?,  True,
+Can Erythrocyte be considered a subcategory of 'CellByClass that is also CirculatingCell'?,  True,
+Can Erythrocyte be considered a subcategory of 'MatureCell'?,  True,
+Can Erythrocyte be considered a subcategory of 'CellByClass that is also CirculatingCell that is also MatureCell'?,  True,
+Can Erythrocyte be considered a subcategory of 'AnimalCell'?,  True.
+Can Erythrocyte be considered a subcategory of 'AnimalCell that is also CellByClass that is also CirculatingCell that is also MatureCell'?,  True,
+Can Erythrocyte be considered a subcategory of 'Cell'?,  True,
+Can Erythrocyte be considered a subcategory of 'AnimalCell that is also Cell that is also CellByClass that is also CirculatingCell that is also MatureCell'?,  True,
+Can Erythrocyte be considered a subcategory of 'Miocyte'?,  False.
+Can Erythrocyte be considered a subcategory of 'InMatureCell'?,  False.
+Can Erythrocyte be considered a subcategory of 'Osteocyte'?,  False.
+Can Erythrocyte be considered a subcategory of 'ChondroBlast'?,  False.
+Can Erythrocyte be considered a subcategory of 'CellByDevelopmentStage'?,  True.
+Can Erythrocyte be considered a subcategory of 'AnimalCell that is also Cell that is also CellByClass that is also CellByDevelopmentStage that is also CirculatingCell that is also MatureCell'?,  True,
+Can Erythrocyte be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can Erythrocyte be considered a subcategory of 'CellByOrganism'?,  True.
+Can Erythrocyte be considered a subcategory of 'AnimalCell that is also Cell that is also CellByClass that is also CellByDevelopmentStage that is also CellByOrganism that is also CirculatingCell that is also MatureCell'?,  True.
+Can Erythrocyte be considered a subcategory of 'ElectricallyActiveCell'?,  False.
+Can Erythrocyte be considered a subcategory of 'StructuralCell'?,  True,
+Can Erythrocyte be considered a subcategory of 'AnimalCell that is also Cell that is also CellByClass that is also CellByDevelopmentStage that is also CellByOrganism that is also CirculatingCell that is also MatureCell that is also StructuralCell'?,  True.
+Can Erythrocyte be considered a subcategory of 'Neuron'?,  False.
+Can Erythrocyte be considered a subcategory of 'ChondroCyte'?,  False.
+Can CellByClass that is also MioBlast be considered a subcategory of 'Cell'?,  True.
+Can CellByClass that is also MioBlast be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can CellByClass that is also MioBlast be considered a subcategory of 'LeafCell'?,  False.
+Can CellByClass that is also MioBlast be considered a subcategory of 'Erythrocyte'?,  False.
+Can CellByClass that is also MioBlast be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can CellByClass that is also MioBlast be considered a subcategory of 'CirculatingCell'?,  True.
+Can CellByClass be considered a subcategory of 'CirculatingCell'?,  False.
+Can ElectricallyActiveCell that is also PhotoreceptorCell be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can ChondroBlast that is also PhotoreceptorCell be considered a subcategory of 'InMatureCell'?,  False.
+Can AnimalCell that is also MioBlast be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can CellByDevelopmentStage that is also MatureCell be considered a subcategory of 'Miocyte'?,  False.
+Can CellByClass that is also CellByOrganism be considered a subcategory of 'Miocyte'?,  False.
+Can ElectricallyActiveCell that is also MioBlast be considered a subcategory of 'StructuralCell'?,  False.
+Can Cell that is also ChondroCyte be considered a subcategory of 'Miocyte'?,  False.
+Can ChondroBlast that is also StructuralCell be considered a subcategory of 'Miocyte'?,  False.
+Can LeafCell that is also Neuron be considered a subcategory of 'ChondroCyte'?,  False.
+Can LeafCell that is also SclerenchymaCell be considered a subcategory of 'ElectricallyActiveCell'?,  False.
+Can MatureCell that is also Osteocyte be considered a subcategory of 'ElectricallyActiveCell'?,  True.
+Can MatureCell that is also Osteocyte be considered a subcategory of 'Erythrocyte'?,  False.
+Can MatureCell that is also Osteocyte be considered a subcategory of 'Miocyte'?,  False.
+Can MatureCell that is also Osteocyte be considered a subcategory of 'ChondroBlast'?,  False.
+Can MatureCell that is also Osteocyte be considered a subcategory of 'MioBlast'?,  False.
+Can MatureCell that is also Osteocyte be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can ChondroCyte that is also StructuralCell be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can CellByDevelopmentStage that is also InMatureCell be considered a subcategory of 'ElectricallyActiveCell'?,  False.
+Can CellByDevelopmentStage that is also ChondroBlast be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can Cell be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can CellByClass that is also InMatureCell be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can MioBlast that is also SclerenchymaCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can Osteocyte that is also SclerenchymaCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can MatureCell that is also SclerenchymaCell be considered a subcategory of 'ChondroBlast'?,  False.
+Can Cell that is also Miocyte be considered a subcategory of 'ChondroBlast'?,  False.
+Can CellByOrganism that is also Neuron be considered a subcategory of 'ChondroBlast'?,  False.
+Can AnimalCell that is also InMatureCell be considered a subcategory of 'CellByDevelopmentStage'?,  True.
+Can AnimalCell that is also InMatureCell be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can AnimalCell that is also InMatureCell be considered a subcategory of 'LeafCell'?,  False.
+Can AnimalCell that is also InMatureCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can AnimalCell that is also InMatureCell be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can AnimalCell that is also InMatureCell be considered a subcategory of 'CirculatingCell'?,  False.
+Can AnimalCell that is also InMatureCell be considered a subcategory of 'PlantCell'?,  False.
+Can AnimalCell that is also InMatureCell be considered a subcategory of 'MatureCell'?,  False.
+Can AnimalCell that is also InMatureCell be considered a subcategory of 'Miocyte'?,  False.
+Can AnimalCell that is also InMatureCell be considered a subcategory of 'Osteocyte'?,  False.
+Can AnimalCell that is also InMatureCell be considered a subcategory of 'ChondroBlast'?,  False.
+Can AnimalCell that is also InMatureCell be considered a subcategory of 'MioBlast'?,  False.
+Can InMatureCell be considered a subcategory of 'CellByDevelopmentStage'?,  False.
+Can CellByClass be considered a subcategory of 'MioBlast'?,  False.
+Can CellByClass that is also Miocyte be considered a subcategory of 'MioBlast'?,  False.
+Can Cell that is also PhotoreceptorCell be considered a subcategory of 'CellByDevelopmentStage'?,  False.
+Can CirculatingCell that is also SclerenchymaCell be considered a subcategory of 'MioBlast'?,  False.
+Can Neuron that is also SclerenchymaCell be considered a subcategory of 'ChondroCyte'?,  False.
+Can CellByDevelopmentStage that is also Erythrocyte be considered a subcategory of 'ChondroCyte'?,  False.
+Can CirculatingCell that is also Erythrocyte be considered a subcategory of 'Neuron'?,  False.
+Can CirculatingCell that is also MioBlast be considered a subcategory of 'InMatureCell'?,  True.
+Can CirculatingCell that is also MioBlast be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can CirculatingCell that is also MioBlast be considered a subcategory of 'LeafCell'?,  False.
+Can CirculatingCell that is also MioBlast be considered a subcategory of 'Erythrocyte'?,  False.
+Can CirculatingCell that is also MioBlast be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can CirculatingCell that is also MioBlast be considered a subcategory of 'PlantCell'?,  False.
+Can CirculatingCell that is also MioBlast be considered a subcategory of 'AnimalCell'?,  True.
+Can MioBlast be considered a subcategory of 'AnimalCell'?,  False.
+Can MatureCell that is also MioBlast be considered a subcategory of 'Miocyte'?,  False.
+Can InMatureCell that is also MioBlast be considered a subcategory of 'CellByOrganism'?,  True.
+Can InMatureCell that is also MioBlast be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can InMatureCell that is also MioBlast be considered a subcategory of 'LeafCell'?,  False.
+Can InMatureCell that is also MioBlast be considered a subcategory of 'Erythrocyte'?,  False.
+Can InMatureCell that is also MioBlast be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can InMatureCell that is also MioBlast be considered a subcategory of 'CirculatingCell'?,  True.
+Can InMatureCell be considered a subcategory of 'CirculatingCell'?,  False.
+Can MatureCell that is also Neuron be considered a subcategory of 'PlantCell'?,  False.
+Can ChondroBlast that is also ElectricallyActiveCell be considered a subcategory of 'Miocyte'?,  False.
+Can ElectricallyActiveCell that is also LeafCell be considered a subcategory of 'Miocyte'?,  False.
+Can ChondroBlast that is also PhotoreceptorCell be considered a subcategory of 'Miocyte'?,  False.
+Can AnimalCell that is also CellByClass be considered a subcategory of 'Osteocyte'?,  False.
+Can PhotosyntheticCell that is also PlantCell be considered a subcategory of 'Osteocyte'?,  False.
+Can CellByOrganism that is also StructuralCell be considered a subcategory of 'Osteocyte'?,  False.
+Can CellByDevelopmentStage that is also PlantCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can ChondroBlast that is also InMatureCell be considered a subcategory of 'AnimalCell'?,  True,
+Can ChondroBlast that is also InMatureCell be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can ChondroBlast that is also InMatureCell be considered a subcategory of 'LeafCell'?,  False.
+Can ChondroBlast that is also InMatureCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can ChondroBlast that is also InMatureCell be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can ChondroBlast that is also InMatureCell be considered a subcategory of 'CirculatingCell'?,  False.
+Can ChondroBlast that is also InMatureCell be considered a subcategory of 'PlantCell'?,  False.
+Can ChondroBlast that is also InMatureCell be considered a subcategory of 'CellByClass'?,  False.
+Can ChondroBlast that is also InMatureCell be considered a subcategory of 'MatureCell'?,  False.
+Can InMatureCell be considered a subcategory of 'AnimalCell'?,  False.
+Can ChondroBlast be considered a subcategory of 'AnimalCell'?,  False.
+Can ElectricallyActiveCell that is also MatureCell be considered a subcategory of 'AnimalCell'?,  False.
+Can Cell that is also MatureCell be considered a subcategory of 'Neuron'?,  False.
+Can ChondroBlast that is also ElectricallyActiveCell be considered a subcategory of 'Neuron'?,  False.
+Can CellByOrganism that is also ElectricallyActiveCell be considered a subcategory of 'Neuron'?,  True.
+Can CellByOrganism that is also ElectricallyActiveCell be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can CellByOrganism that is also ElectricallyActiveCell be considered a subcategory of 'LeafCell'?,  False.
+Can CellByOrganism that is also ElectricallyActiveCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can CellByOrganism that is also ElectricallyActiveCell be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can CellByOrganism that is also ElectricallyActiveCell be considered a subcategory of 'CirculatingCell'?,  False.
+Can CellByOrganism that is also ElectricallyActiveCell be considered a subcategory of 'MatureCell'?,  True.
+Can CellByOrganism be considered a subcategory of 'MatureCell'?,  False.
+Can Cell that is also InMatureCell be considered a subcategory of 'ChondroBlast'?,  False.
+Can ChondroCyte that is also PlantCell be considered a subcategory of 'ChondroBlast'?,  False.
+Can CellByDevelopmentStage that is also CirculatingCell be considered a subcategory of 'ChondroBlast'?,  False.
+Can CellByDevelopmentStage that is also Neuron be considered a subcategory of 'MioBlast'?,  False.
+Can LeafCell that is also MatureCell be considered a subcategory of 'MioBlast'?,  False.
+Can LeafCell that is also PlantCell be considered a subcategory of 'ChondroCyte'?,  False.
+Can CellByClass that is also CellByOrganism be considered a subcategory of 'CirculatingCell'?,  False.
+Can MioBlast that is also Neuron be considered a subcategory of 'Cell'?,  True.
+Can MioBlast that is also Neuron be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can MioBlast that is also Neuron be considered a subcategory of 'Erythrocyte'?,  False.
+Can MioBlast that is also Neuron be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can MioBlast that is also Neuron be considered a subcategory of 'CirculatingCell'?,  False.
+Can MioBlast that is also Neuron be considered a subcategory of 'PlantCell'?,  False.
+Can MioBlast that is also Neuron be considered a subcategory of 'CellByClass'?,  False.
+Can MioBlast that is also Neuron be considered a subcategory of 'MatureCell'?,  False.
+Can MioBlast that is also Neuron be considered a subcategory of 'AnimalCell'?,  False.
+Can MioBlast be considered a subcategory of 'Cell'?,  False.
+Can Neuron be considered a subcategory of 'Cell'?,  True,
+Can Neuron be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can Neuron be considered a subcategory of 'LeafCell'?,  False.
+Can Neuron be considered a subcategory of 'Erythrocyte'?,  False.
+Can Neuron be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can Neuron be considered a subcategory of 'CirculatingCell'?,  False.
+Can Neuron be considered a subcategory of 'PlantCell'?,  False.
+Can Neuron be considered a subcategory of 'CellByClass'?,  True,
+Can Neuron be considered a subcategory of 'Cell that is also CellByClass'?,  True.
+Can Neuron be considered a subcategory of 'MatureCell'?,  False.
+Can Neuron be considered a subcategory of 'AnimalCell'?,  False.
+Can Neuron be considered a subcategory of 'Miocyte'?,  False.
+Can Neuron be considered a subcategory of 'InMatureCell'?,  False.
+Can Neuron be considered a subcategory of 'Osteocyte'?,  False.
+Can Neuron be considered a subcategory of 'ChondroBlast'?,  False.
+Can Neuron be considered a subcategory of 'MioBlast'?,  False.
+Can Neuron be considered a subcategory of 'CellByDevelopmentStage'?,  False.
+Can Neuron be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can Neuron be considered a subcategory of 'CellByOrganism'?,  True.
+Can Neuron be considered a subcategory of 'Cell that is also CellByClass that is also CellByOrganism'?,  True.
+Can Neuron be considered a subcategory of 'ElectricallyActiveCell'?,  True.
+Can Neuron be considered a subcategory of 'Cell that is also CellByClass that is also CellByOrganism that is also ElectricallyActiveCell'?,  True.
+Can Neuron be considered a subcategory of 'StructuralCell'?,  True.
+Can Neuron be considered a subcategory of 'Cell that is also CellByClass that is also CellByOrganism that is also ElectricallyActiveCell that is also StructuralCell'?,  True.
+Can Neuron be considered a subcategory of 'ChondroCyte'?,  False.
+Can AnimalCell that is also CellByOrganism be considered a subcategory of 'MatureCell'?,  False.
+Can ChondroBlast that is also PhotosyntheticCell be considered a subcategory of 'ElectricallyActiveCell'?,  False.
+Can ChondroBlast that is also SclerenchymaCell be considered a subcategory of 'ChondroCyte'?,  False.
+Can CirculatingCell that is also MatureCell be considered a subcategory of 'ElectricallyActiveCell'?,  False.
+Can CellByClass that is also MioBlast be considered a subcategory of 'ChondroCyte'?,  False.
+Can AnimalCell that is also ElectricallyActiveCell be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can MatureCell that is also PhotosyntheticCell be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can Erythrocyte that is also StructuralCell be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can CellByOrganism that is also ChondroBlast be considered a subcategory of 'Erythrocyte'?,  False.
+Can CellByOrganism that is also CirculatingCell be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can InMatureCell that is also PlantCell be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can CirculatingCell that is also Neuron be considered a subcategory of 'ChondroBlast'?,  False.
+Can Erythrocyte that is also MioBlast be considered a subcategory of 'ChondroBlast'?,  False.
+Can AnimalCell that is also Cell be considered a subcategory of 'CellByDevelopmentStage'?,  False.
+Can AnimalCell that is also PhotoreceptorCell be considered a subcategory of 'ChondroBlast'?,  False.
+Can CellByOrganism be considered a subcategory of 'MioBlast'?,  False.
+Can CellByOrganism that is also Osteocyte be considered a subcategory of 'MioBlast'?,  False.
+Can PhotoreceptorCell that is also PhotosyntheticCell be considered a subcategory of 'ChondroCyte'?,  False.
+Can ChondroBlast that is also PlantCell be considered a subcategory of 'ChondroCyte'?,  False.
+Can Cell that is also CellByOrganism be considered a subcategory of 'InMatureCell'?,  False.
+Can AnimalCell that is also CellByClass be considered a subcategory of 'Neuron'?,  False.
+Can CirculatingCell that is also InMatureCell be considered a subcategory of 'Miocyte'?,  False.
+Can Cell that is also PlantCell be considered a subcategory of 'Miocyte'?,  False.
+Can MatureCell that is also StructuralCell be considered a subcategory of 'Miocyte'?,  False.
+Can Cell that is also ChondroBlast be considered a subcategory of 'Erythrocyte'?,  False.
+Can MioBlast that is also PhotosyntheticCell be considered a subcategory of 'Osteocyte'?,  False.
+Can ChondroBlast that is also ChondroCyte be considered a subcategory of 'LeafCell'?,  False.
+Can Miocyte that is also PhotoreceptorCell be considered a subcategory of 'Osteocyte'?,  False.
+Can ElectricallyActiveCell that is also PhotoreceptorCell be considered a subcategory of 'Osteocyte'?,  False.
+Can CellByClass that is also ElectricallyActiveCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can ElectricallyActiveCell that is also PlantCell be considered a subcategory of 'AnimalCell'?,  False.
+Can LeafCell that is also StructuralCell be considered a subcategory of 'Neuron'?,  False.
+Can Cell that is also CellByDevelopmentStage be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can CellByOrganism that is also MatureCell be considered a subcategory of 'AnimalCell'?,  False.
+Can Miocyte that is also PlantCell be considered a subcategory of 'Neuron'?,  False.
+Can ChondroCyte that is also StructuralCell be considered a subcategory of 'ChondroBlast'?,  False.
+Can AnimalCell that is also SclerenchymaCell be considered a subcategory of 'ChondroBlast'?,  False.
+Can InMatureCell that is also Osteocyte be considered a subcategory of 'ChondroBlast'?,  False.
+Can CellByOrganism that is also InMatureCell be considered a subcategory of 'MioBlast'?,  False.
+Can MatureCell that is also PhotoreceptorCell be considered a subcategory of 'ChondroCyte'?,  False.
+Can Cell that is also CirculatingCell be considered a subcategory of 'MioBlast'?,  False.
+Can Cell that is also PhotosyntheticCell be considered a subcategory of 'MioBlast'?,  False.
+Can CellByClass that is also CellByDevelopmentStage be considered a subcategory of 'StructuralCell'?,  False.
+Can MioBlast that is also PhotoreceptorCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can ElectricallyActiveCell that is also Miocyte be considered a subcategory of 'Osteocyte'?,  False.
+Can PhotosyntheticCell that is also SclerenchymaCell be considered a subcategory of 'AnimalCell'?,  False.
+Can MatureCell that is also PhotosyntheticCell be considered a subcategory of 'AnimalCell'?,  False.
+Can CirculatingCell that is also Erythrocyte be considered a subcategory of 'Osteocyte'?,  False.
+Can AnimalCell that is also Neuron be considered a subcategory of 'Osteocyte'?,  False.
+Can CellByDevelopmentStage that is also CirculatingCell be considered a subcategory of 'AnimalCell'?,  False.
+Can CellByOrganism that is also CirculatingCell be considered a subcategory of 'Neuron'?,  False.
+Can CellByOrganism that is also LeafCell be considered a subcategory of 'AnimalCell'?,  False.
+Can Cell that is also ChondroBlast be considered a subcategory of 'Neuron'?,  False.
+Can AnimalCell that is also MatureCell be considered a subcategory of 'Neuron'?,  False.
+Can ChondroBlast that is also ElectricallyActiveCell be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can ElectricallyActiveCell that is also MioBlast be considered a subcategory of 'ChondroCyte'?,  False.
+Can Erythrocyte that is also MioBlast be considered a subcategory of 'ChondroCyte'?,  False.
+Can AnimalCell that is also MatureCell be considered a subcategory of 'ElectricallyActiveCell'?,  False.
+Can CellByOrganism be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can AnimalCell that is also CirculatingCell be considered a subcategory of 'LeafCell'?,  False.
+Can CellByDevelopmentStage that is also PlantCell be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can ChondroBlast that is also PhotosyntheticCell be considered a subcategory of 'LeafCell'?,  False.
+Can ChondroCyte that is also CirculatingCell be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can Cell that is also MatureCell be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can CellByDevelopmentStage that is also InMatureCell be considered a subcategory of 'Neuron'?,  False.
+Can Cell that is also MatureCell be considered a subcategory of 'PlantCell'?,  True,
+Can Cell that is also MatureCell be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can Cell that is also MatureCell be considered a subcategory of 'LeafCell'?,  False.
+Can Cell that is also MatureCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can CellByClass that is also InMatureCell be considered a subcategory of 'PlantCell'?,  True.
+Can CellByClass that is also InMatureCell be considered a subcategory of 'LeafCell'?,  False.
+Can CellByClass that is also InMatureCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can CellByClass that is also InMatureCell be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can CellByClass that is also InMatureCell be considered a subcategory of 'CirculatingCell'?,  False.
+Can InMatureCell be considered a subcategory of 'PlantCell'?,  False.
+Can CellByClass be considered a subcategory of 'PlantCell'?,  False.
+Can CellByOrganism that is also MioBlast be considered a subcategory of 'PlantCell'?,  False.
+Can ElectricallyActiveCell that is also Osteocyte be considered a subcategory of 'Miocyte'?,  False.
+Can CellByDevelopmentStage that is also ChondroBlast be considered a subcategory of 'PlantCell'?,  False.
+Can Erythrocyte that is also PhotosyntheticCell be considered a subcategory of 'Miocyte'?,  False.
+Can Erythrocyte that is also SclerenchymaCell be considered a subcategory of 'Miocyte'?,  False.
+Can LeafCell that is also Osteocyte be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can InMatureCell that is also StructuralCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can Cell that is also PhotoreceptorCell be considered a subcategory of 'Osteocyte'?,  False.
+Can Cell that is also Miocyte be considered a subcategory of 'Osteocyte'?,  False.
+Can ChondroCyte that is also MioBlast be considered a subcategory of 'Neuron'?,  False.
+Can CellByClass that is also ChondroBlast be considered a subcategory of 'Osteocyte'?,  False.
+Can LeafCell that is also SclerenchymaCell be considered a subcategory of 'Neuron'?,  False.
+Can CirculatingCell that is also SclerenchymaCell be considered a subcategory of 'AnimalCell'?,  False.
+Can CellByOrganism that is also Erythrocyte be considered a subcategory of 'ChondroBlast'?,  False.
+Can MatureCell that is also Neuron be considered a subcategory of 'ChondroBlast'?,  False.
+Can CirculatingCell that is also MioBlast be considered a subcategory of 'ChondroBlast'?,  False.
+Can ElectricallyActiveCell that is also LeafCell be considered a subcategory of 'MioBlast'?,  False.
+Can AnimalCell that is also ElectricallyActiveCell be considered a subcategory of 'MioBlast'?,  False.
+Can Cell that is also PhotosyntheticCell be considered a subcategory of 'ChondroCyte'?,  False.
+Can AnimalCell that is also Erythrocyte be considered a subcategory of 'MioBlast'?,  False.
+Can LeafCell that is also StructuralCell be considered a subcategory of 'Osteocyte'?,  False.
+Can ChondroBlast that is also StructuralCell be considered a subcategory of 'LeafCell'?,  False.
+Can InMatureCell that is also Miocyte be considered a subcategory of 'Erythrocyte'?,  False.
+Can CellByDevelopmentStage that is also ChondroCyte be considered a subcategory of 'Osteocyte'?,  False.
+Can Cell that is also CellByOrganism be considered a subcategory of 'Erythrocyte'?,  False.
+Can CellByClass that is also LeafCell be considered a subcategory of 'AnimalCell'?,  False.
+Can LeafCell that is also PlantCell be considered a subcategory of 'AnimalCell'?,  False.
+Can ChondroCyte that is also PhotosyntheticCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can InMatureCell that is also StructuralCell be considered a subcategory of 'AnimalCell'?,  True,
+Can Erythrocyte that is also Osteocyte be considered a subcategory of 'Neuron'?,  False.
+Can CellByOrganism that is also ChondroBlast be considered a subcategory of 'ChondroCyte'?,  False.
+Can InMatureCell that is also PlantCell be considered a subcategory of 'ElectricallyActiveCell'?,  False.
+Can PhotoreceptorCell that is also PlantCell be considered a subcategory of 'MioBlast'?,  False.
+Can Erythrocyte that is also LeafCell be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can CellByClass that is also ElectricallyActiveCell be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can AnimalCell that is also Neuron be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can Osteocyte that is also StructuralCell be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can Neuron that is also StructuralCell be considered a subcategory of 'Miocyte'?,  False.
+Can CellByDevelopmentStage be considered a subcategory of 'CirculatingCell'?,  False.
+Can CellByOrganism that is also MioBlast be considered a subcategory of 'CellByClass'?,  True.
+Can CellByOrganism that is also MioBlast be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can CellByOrganism that is also MioBlast be considered a subcategory of 'LeafCell'?,  False.
+Can CellByOrganism that is also MioBlast be considered a subcategory of 'Erythrocyte'?,  False.
+Can CellByOrganism that is also MioBlast be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can CellByOrganism that is also MioBlast be considered a subcategory of 'CirculatingCell'?,  False.
+Can MioBlast be considered a subcategory of 'CellByClass'?,  False.
+Can ElectricallyActiveCell that is also Miocyte be considered a subcategory of 'Neuron'?,  False.
+Can AnimalCell that is also CellByDevelopmentStage be considered a subcategory of 'InMatureCell'?,  False.
+Can CellByClass that is also ChondroBlast be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can CellByDevelopmentStage that is also CellByOrganism be considered a subcategory of 'InMatureCell'?,  False.
+Can LeafCell that is also PhotosyntheticCell be considered a subcategory of 'Miocyte'?,  False.
+Can Erythrocyte that is also Neuron be considered a subcategory of 'Miocyte'?,  False.
+Can Cell that is also MioBlast be considered a subcategory of 'CellByClass'?,  True.
+Can Cell that is also MioBlast be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can Cell that is also MioBlast be considered a subcategory of 'LeafCell'?,  False.
+Can Cell that is also MioBlast be considered a subcategory of 'Erythrocyte'?,  False.
+Can Cell that is also MioBlast be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can Cell that is also MioBlast be considered a subcategory of 'CirculatingCell'?,  False.
+Can Cell that is also MioBlast be considered a subcategory of 'PlantCell'?,  False.
+Can AnimalCell that is also Osteocyte be considered a subcategory of 'Miocyte'?,  False.
+Can CellByClass that is also ChondroCyte be considered a subcategory of 'Miocyte'?,  False.
+Can CellByOrganism that is also Neuron be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can Osteocyte that is also PhotosyntheticCell be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can MioBlast that is also PlantCell be considered a subcategory of 'LeafCell'?,  False.
+Can MatureCell that is also PlantCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can CellByClass that is also CirculatingCell be considered a subcategory of 'LeafCell'?,  False.
+Can AnimalCell that is also ElectricallyActiveCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can CellByDevelopmentStage that is also MioBlast be considered a subcategory of 'LeafCell'?,  False.
+Can MioBlast that is also StructuralCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can ElectricallyActiveCell that is also PhotoreceptorCell be considered a subcategory of 'ChondroBlast'?,  False.
+Can CellByClass that is also PhotoreceptorCell be considered a subcategory of 'ChondroBlast'?,  False.
+Can PlantCell that is also SclerenchymaCell be considered a subcategory of 'MioBlast'?,  False.
+Can AnimalCell that is also MioBlast be considered a subcategory of 'ChondroBlast'?,  False.
+Can CirculatingCell that is also LeafCell be considered a subcategory of 'MioBlast'?,  False.
+Can CellByDevelopmentStage that is also MatureCell be considered a subcategory of 'ChondroCyte'?,  False.
+Can CirculatingCell that is also PlantCell be considered a subcategory of 'ChondroCyte'?,  False.
+Can ChondroCyte that is also MioBlast be considered a subcategory of 'ElectricallyActiveCell'?,  False.
+Can Cell that is also ElectricallyActiveCell be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can AnimalCell that is also MioBlast be considered a subcategory of 'ElectricallyActiveCell'?,  False.
+Can InMatureCell that is also Neuron be considered a subcategory of 'Miocyte'?,  False.
+Can Osteocyte that is also StructuralCell be considered a subcategory of 'Miocyte'?,  False.
+Can CellByDevelopmentStage that is also PhotoreceptorCell be considered a subcategory of 'Miocyte'?,  False.
+Can CellByClass that is also CellByDevelopmentStage be considered a subcategory of 'CellByOrganism'?,  False.
+Can Cell be considered a subcategory of 'CellByOrganism'?,  False.
+Can CellByClass that is also PhotosyntheticCell be considered a subcategory of 'Miocyte'?,  False.
+Can ChondroBlast that is also Neuron be considered a subcategory of 'Osteocyte'?,  False.
+Can InMatureCell that is also LeafCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can ChondroCyte that is also Miocyte be considered a subcategory of 'Neuron'?,  False.
+Can InMatureCell that is also Osteocyte be considered a subcategory of 'Neuron'?,  False.
+Can CellByClass be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can PhotosyntheticCell that is also SclerenchymaCell be considered a subcategory of 'ChondroBlast'?,  False.
+Can AnimalCell that is also Neuron be considered a subcategory of 'ChondroBlast'?,  False.
+Can CellByOrganism that is also PlantCell be considered a subcategory of 'MioBlast'?,  False.
+Can CellByOrganism that is also Erythrocyte be considered a subcategory of 'MioBlast'?,  False.
+Can Cell that is also MioBlast be considered a subcategory of 'ChondroCyte'?,  False.
+Can AnimalCell that is also MatureCell be considered a subcategory of 'MioBlast'?,  False.
+Can ChondroBlast that is also ElectricallyActiveCell be considered a subcategory of 'ChondroCyte'?,  False.
+Can ElectricallyActiveCell that is also PhotoreceptorCell be considered a subcategory of 'MioBlast'?,  False.
+Can ChondroBlast that is also PhotoreceptorCell be considered a subcategory of 'ChondroCyte'?,  False.
+Can Cell that is also CellByDevelopmentStage be considered a subcategory of 'CellByClass'?,  True.
+Can Cell that is also CellByDevelopmentStage be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can Cell that is also CellByDevelopmentStage be considered a subcategory of 'LeafCell'?,  False.
+Can Cell that is also CellByDevelopmentStage be considered a subcategory of 'Erythrocyte'?,  False.
+Can Cell that is also CellByDevelopmentStage be considered a subcategory of 'CirculatingCell'?,  True.
+Can Cell be considered a subcategory of 'CirculatingCell'?,  False.
+Can LeafCell that is also Osteocyte be considered a subcategory of 'ChondroBlast'?,  False.
+Can MioBlast that is also Osteocyte be considered a subcategory of 'ChondroBlast'?,  False.
+Can Cell that is also MatureCell be considered a subcategory of 'ElectricallyActiveCell'?,  False.
+Can Neuron that is also StructuralCell be considered a subcategory of 'ChondroCyte'?,  False.
+Can CellByDevelopmentStage that is also LeafCell be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can ChondroBlast that is also ChondroCyte be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can Neuron that is also PhotoreceptorCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can ChondroCyte that is also LeafCell be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can CellByClass that is also InMatureCell be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can Cell that is also StructuralCell be considered a subcategory of 'ChondroBlast'?,  False.
+Can CellByClass that is also ChondroBlast be considered a subcategory of 'MioBlast'?,  False.
+Can CellByDevelopmentStage that is also CellByOrganism be considered a subcategory of 'ChondroBlast'?,  False.
+Can Osteocyte that is also SclerenchymaCell be considered a subcategory of 'ChondroCyte'?,  False.
+Can CellByClass that is also Osteocyte be considered a subcategory of 'MioBlast'?,  False.
+Can LeafCell that is also PhotosyntheticCell be considered a subcategory of 'ChondroCyte'?,  False.
+Can InMatureCell that is also MioBlast be considered a subcategory of 'ElectricallyActiveCell'?,  False.
+Can Neuron that is also PlantCell be considered a subcategory of 'ChondroCyte'?,  False.
+Can Erythrocyte that is also InMatureCell be considered a subcategory of 'ChondroCyte'?,  False.
+Can ChondroBlast that is also SclerenchymaCell be considered a subcategory of 'Miocyte'?,  False.
+Can ElectricallyActiveCell that is also PhotosyntheticCell be considered a subcategory of 'Miocyte'?,  False.
+Can CellByClass that is also SclerenchymaCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can CellByDevelopmentStage that is also MatureCell be considered a subcategory of 'Osteocyte'?,  False.
+Can Cell that is also StructuralCell be considered a subcategory of 'Osteocyte'?,  False.
+Can CellByDevelopmentStage that is also SclerenchymaCell be considered a subcategory of 'Neuron'?,  False.
+Can CellByOrganism that is also LeafCell be considered a subcategory of 'Neuron'?,  False.
+Can ChondroCyte that is also PlantCell be considered a subcategory of 'Osteocyte'?,  False.
+Can ChondroCyte that is also MioBlast be considered a subcategory of 'ChondroBlast'?,  False.
+Can CirculatingCell that is also ElectricallyActiveCell be considered a subcategory of 'ChondroBlast'?,  False.
+Can CellByOrganism that is also ChondroBlast be considered a subcategory of 'CellByDevelopmentStage'?,  False.
+Can CellByClass that is also Erythrocyte be considered a subcategory of 'MioBlast'?,  False.
+Can PlantCell that is also StructuralCell be considered a subcategory of 'ChondroCyte'?,  False.
+Can CellByOrganism that is also Neuron be considered a subcategory of 'ChondroCyte'?,  False.
+Can Cell that is also InMatureCell be considered a subcategory of 'ChondroCyte'?,  False.
+Can CellByClass that is also LeafCell be considered a subcategory of 'ElectricallyActiveCell'?,  False.
+Can CirculatingCell that is also MatureCell be considered a subcategory of 'ChondroCyte'?,  False.
+Can CellByOrganism that is also InMatureCell be considered a subcategory of 'CellByClass'?,  True.
+Can CellByOrganism that is also InMatureCell be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can CellByOrganism that is also InMatureCell be considered a subcategory of 'LeafCell'?,  False.
+Can CellByOrganism that is also InMatureCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can CellByOrganism that is also InMatureCell be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can CellByOrganism that is also InMatureCell be considered a subcategory of 'CirculatingCell'?,  False.
+Can CellByOrganism that is also InMatureCell be considered a subcategory of 'PlantCell'?,  True.
+Can CellByOrganism be considered a subcategory of 'PlantCell'?,  False.
+Can CellByOrganism that is also SclerenchymaCell be considered a subcategory of 'Osteocyte'?,  False.
+Can CellByDevelopmentStage that is also LeafCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can ElectricallyActiveCell that is also LeafCell be considered a subcategory of 'Neuron'?,  False.
+Can MioBlast that is also StructuralCell be considered a subcategory of 'Neuron'?,  False.
+Can ChondroBlast that is also InMatureCell be considered a subcategory of 'Neuron'?,  False.
+Can CellByClass that is also CellByDevelopmentStage be considered a subcategory of 'InMatureCell'?,  False.
+Can AnimalCell that is also ChondroCyte be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can ChondroCyte that is also SclerenchymaCell be considered a subcategory of 'ElectricallyActiveCell'?,  False.
+Can CellByClass that is also CellByDevelopmentStage be considered a subcategory of 'ElectricallyActiveCell'?,  False.
+Can CellByDevelopmentStage that is also CellByOrganism be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can InMatureCell that is also Osteocyte be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can CellByClass that is also MatureCell be considered a subcategory of 'Osteocyte'?,  False.
+Can CellByClass that is also PlantCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can Cell that is also SclerenchymaCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can AnimalCell that is also CellByOrganism be considered a subcategory of 'InMatureCell'?,  False.
+Can CellByClass that is also CirculatingCell be considered a subcategory of 'Miocyte'?,  False.
+Can CirculatingCell that is also PlantCell be considered a subcategory of 'Miocyte'?,  False.
+Can CellByDevelopmentStage that is also MioBlast be considered a subcategory of 'PlantCell'?,  False.
+Can CellByDevelopmentStage that is also StructuralCell be considered a subcategory of 'Miocyte'?,  False.
+Can CirculatingCell that is also PhotosyntheticCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can CellByClass that is also CellByOrganism be considered a subcategory of 'AnimalCell'?,  False.
+Can CirculatingCell that is also PlantCell be considered a subcategory of 'Neuron'?,  False.
+Can ChondroBlast that is also StructuralCell be considered a subcategory of 'Neuron'?,  False.
+Can AnimalCell that is also MioBlast be considered a subcategory of 'Neuron'?,  False.
+Can CellByDevelopmentStage that is also InMatureCell be considered a subcategory of 'CellByClass'?,  True.
+Can CellByDevelopmentStage that is also InMatureCell be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can CellByDevelopmentStage that is also InMatureCell be considered a subcategory of 'LeafCell'?,  False.
+Can CellByDevelopmentStage that is also InMatureCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can CellByDevelopmentStage that is also InMatureCell be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can CellByDevelopmentStage that is also InMatureCell be considered a subcategory of 'CirculatingCell'?,  False.
+Can CellByDevelopmentStage that is also InMatureCell be considered a subcategory of 'PlantCell'?,  True.
+Can CellByDevelopmentStage be considered a subcategory of 'PlantCell'?,  True,
+Can CellByDevelopmentStage be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can CellByDevelopmentStage be considered a subcategory of 'LeafCell'?,  False.
+Can CellByDevelopmentStage be considered a subcategory of 'Erythrocyte'?,  False.
+Can CellByDevelopmentStage be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can CellByDevelopmentStage be considered a subcategory of 'AnimalCell'?,  False.
+Can CellByDevelopmentStage be considered a subcategory of 'Cell'?,  True.
+Can CellByDevelopmentStage be considered a subcategory of 'Cell that is also PlantCell'?,  False.
+Can CellByDevelopmentStage be considered a subcategory of 'Miocyte'?,  False.
+Can CellByDevelopmentStage be considered a subcategory of 'InMatureCell'?,  False.
+Can CellByDevelopmentStage be considered a subcategory of 'Osteocyte'?,  False.
+Can CellByDevelopmentStage be considered a subcategory of 'ChondroBlast'?,  False.
+Can CellByDevelopmentStage be considered a subcategory of 'MioBlast'?,  False.
+Can CellByDevelopmentStage be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can CellByDevelopmentStage be considered a subcategory of 'CellByOrganism'?,  False.
+Can CellByDevelopmentStage be considered a subcategory of 'ElectricallyActiveCell'?,  False.
+Can CellByDevelopmentStage be considered a subcategory of 'StructuralCell'?,  False.
+Can CellByDevelopmentStage be considered a subcategory of 'Neuron'?,  False.
+Can CellByDevelopmentStage be considered a subcategory of 'ChondroCyte'?,  False.
+Can CellByOrganism that is also Miocyte be considered a subcategory of 'ChondroBlast'?,  False.
+Can Neuron that is also PlantCell be considered a subcategory of 'ChondroBlast'?,  False.
+Can Cell be considered a subcategory of 'MioBlast'?,  False.
+Can CellByClass that is also InMatureCell be considered a subcategory of 'MioBlast'?,  False.
+Can AnimalCell that is also StructuralCell be considered a subcategory of 'ChondroBlast'?,  False.
+Can ChondroCyte that is also Miocyte be considered a subcategory of 'MioBlast'?,  False.
+Can CellByDevelopmentStage that is also ChondroBlast be considered a subcategory of 'MioBlast'?,  False.
+Can Osteocyte that is also PhotosyntheticCell be considered a subcategory of 'ChondroCyte'?,  False.
+Can MioBlast that is also SclerenchymaCell be considered a subcategory of 'ChondroCyte'?,  False.
+Can CellByClass be considered a subcategory of 'Cell'?,  True.
+Can CellByClass be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can CellByClass be considered a subcategory of 'Erythrocyte'?,  False.
+Can CellByClass be considered a subcategory of 'MatureCell'?,  False.
+Can CellByClass be considered a subcategory of 'AnimalCell'?,  False.
+Can CellByClass be considered a subcategory of 'Miocyte'?,  False.
+Can CellByClass be considered a subcategory of 'InMatureCell'?,  False.
+Can CellByClass be considered a subcategory of 'Osteocyte'?,  False.
+Can CellByClass be considered a subcategory of 'ChondroBlast'?,  False.
+Can CellByClass be considered a subcategory of 'CellByDevelopmentStage'?,  False.
+Can CellByClass be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can CellByClass be considered a subcategory of 'CellByOrganism'?,  False.
+Can CellByClass be considered a subcategory of 'ElectricallyActiveCell'?,  False.
+Can CellByClass be considered a subcategory of 'StructuralCell'?,  False.
+Can CellByClass be considered a subcategory of 'Neuron'?,  False.
+Can CellByClass be considered a subcategory of 'ChondroCyte'?,  False.
+Can CellByOrganism that is also Miocyte be considered a subcategory of 'Osteocyte'?,  False.
+Can PhotosyntheticCell that is also SclerenchymaCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can ChondroBlast that is also ElectricallyActiveCell be considered a subcategory of 'AnimalCell'?,  True.
+Can ChondroBlast that is also ElectricallyActiveCell be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can ChondroBlast that is also ElectricallyActiveCell be considered a subcategory of 'LeafCell'?,  False.
+Can ChondroBlast that is also ElectricallyActiveCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can ChondroBlast that is also ElectricallyActiveCell be considered a subcategory of 'CirculatingCell'?,  False.
+Can ChondroBlast that is also ElectricallyActiveCell be considered a subcategory of 'PlantCell'?,  False.
+Can ChondroBlast that is also ElectricallyActiveCell be considered a subcategory of 'MatureCell'?,  True.
+Can ChondroBlast be considered a subcategory of 'MatureCell'?,  False.
+Can MatureCell that is also StructuralCell be considered a subcategory of 'Osteocyte'?,  False.
+Can MatureCell that is also MioBlast be considered a subcategory of 'Neuron'?,  False.
+Can ElectricallyActiveCell that is also InMatureCell be considered a subcategory of 'Neuron'?,  False.
+Can CellByOrganism that is also Erythrocyte be considered a subcategory of 'Neuron'?,  False.
+Can CellByDevelopmentStage that is also StructuralCell be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can CellByClass that is also ElectricallyActiveCell be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can Cell that is also CellByDevelopmentStage be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can AnimalCell that is also Cell be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can ChondroBlast that is also ElectricallyActiveCell be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can AnimalCell that is also CirculatingCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can AnimalCell that is also PhotosyntheticCell be considered a subcategory of 'Osteocyte'?,  False.
+Can Cell that is also CellByOrganism be considered a subcategory of 'StructuralCell'?,  True.
+Can Cell that is also CellByOrganism be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can Cell that is also CellByOrganism be considered a subcategory of 'LeafCell'?,  False.
+Can Cell that is also CellByOrganism be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can Cell that is also CellByOrganism be considered a subcategory of 'CirculatingCell'?,  True.
+Can CellByOrganism be considered a subcategory of 'CirculatingCell'?,  False.
+Can InMatureCell that is also StructuralCell be considered a subcategory of 'ChondroBlast'?,  False.
+Can ChondroBlast that is also CirculatingCell be considered a subcategory of 'Miocyte'?,  False.
+Can ElectricallyActiveCell that is also MatureCell be considered a subcategory of 'Miocyte'?,  False.
+Can MioBlast that is also SclerenchymaCell be considered a subcategory of 'ChondroBlast'?,  False.
+Can AnimalCell that is also Neuron be considered a subcategory of 'MioBlast'?,  False.
+Can Erythrocyte that is also PhotoreceptorCell be considered a subcategory of 'ChondroBlast'?,  False.
+Can InMatureCell that is also PlantCell be considered a subcategory of 'MioBlast'?,  False.
+Can CellByOrganism that is also LeafCell be considered a subcategory of 'MioBlast'?,  False.
+Can ElectricallyActiveCell that is also PhotosyntheticCell be considered a subcategory of 'MioBlast'?,  False.
+Can ChondroBlast that is also CirculatingCell be considered a subcategory of 'ChondroCyte'?,  False.
+Can CellByOrganism that is also CirculatingCell be considered a subcategory of 'ChondroCyte'?,  False.
+Can InMatureCell that is also PhotoreceptorCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can ChondroCyte that is also MioBlast be considered a subcategory of 'LeafCell'?,  False.
+Can Cell that is also ElectricallyActiveCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can MioBlast that is also Neuron be considered a subcategory of 'Osteocyte'?,  False.
+Can Miocyte that is also SclerenchymaCell be considered a subcategory of 'Neuron'?,  False.
+Can Cell that is also PlantCell be considered a subcategory of 'Neuron'?,  False.
+Can CellByClass that is also Erythrocyte be considered a subcategory of 'Neuron'?,  False.
+Can Cell that is also ChondroBlast be considered a subcategory of 'ChondroCyte'?,  False.
+Can MioBlast that is also PhotosyntheticCell be considered a subcategory of 'ElectricallyActiveCell'?,  False.
+Can PhotosyntheticCell that is also StructuralCell be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can CirculatingCell that is also PlantCell be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can Neuron that is also PhotosyntheticCell be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can PlantCell that is also SclerenchymaCell be considered a subcategory of 'LeafCell'?,  False.
+Can AnimalCell that is also ChondroBlast be considered a subcategory of 'Osteocyte'?,  False.
+Can CellByDevelopmentStage that is also MatureCell be considered a subcategory of 'LeafCell'?,  False.
+Can Erythrocyte that is also SclerenchymaCell be considered a subcategory of 'ChondroBlast'?,  False.
+Can CellByOrganism that is also Neuron be considered a subcategory of 'Miocyte'?,  False.
+Can PhotosyntheticCell that is also StructuralCell be considered a subcategory of 'Miocyte'?,  False.
+Can CirculatingCell that is also Erythrocyte be considered a subcategory of 'ElectricallyActiveCell'?,  False.
+Can MatureCell that is also PlantCell be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can AnimalCell that is also MatureCell be considered a subcategory of 'LeafCell'?,  False.
+Can MatureCell that is also StructuralCell be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can ChondroBlast that is also PhotoreceptorCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can Neuron that is also Osteocyte be considered a subcategory of 'ChondroBlast'?,  False.
+Can LeafCell that is also Miocyte be considered a subcategory of 'ChondroBlast'?,  False.
+Can InMatureCell that is also PlantCell be considered a subcategory of 'ChondroBlast'?,  False.
+Can AnimalCell that is also CirculatingCell be considered a subcategory of 'MioBlast'?,  False.
+Can ChondroBlast that is also MioBlast be considered a subcategory of 'ChondroCyte'?,  False.
+Can ChondroBlast that is also PhotosyntheticCell be considered a subcategory of 'MioBlast'?,  False.
+Can MioBlast that is also PhotoreceptorCell be considered a subcategory of 'ChondroCyte'?,  False.
+Can CellByOrganism that is also PhotosyntheticCell be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can MioBlast be considered a subcategory of 'LeafCell'?,  False.
+Can ChondroBlast that is also Miocyte be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can ChondroBlast that is also Erythrocyte be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can Erythrocyte that is also MatureCell be considered a subcategory of 'LeafCell'?,  False.
+Can AnimalCell that is also PlantCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can AnimalCell that is also CellByOrganism be considered a subcategory of 'Erythrocyte'?,  False.
+Can AnimalCell that is also LeafCell be considered a subcategory of 'Osteocyte'?,  False.
+Can CellByDevelopmentStage that is also PhotosyntheticCell be considered a subcategory of 'Osteocyte'?,  False.
+Can CellByOrganism that is also SclerenchymaCell be considered a subcategory of 'MioBlast'?,  False.
+Can ChondroBlast that is also StructuralCell be considered a subcategory of 'ChondroCyte'?,  True.
+Can ChondroBlast that is also StructuralCell be considered a subcategory of 'Erythrocyte'?,  False.
+Can ChondroBlast that is also StructuralCell be considered a subcategory of 'Osteocyte'?,  False.
+Can ChondroBlast that is also StructuralCell be considered a subcategory of 'MioBlast'?,  False.
+Can ChondroBlast that is also StructuralCell be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can ChondroBlast that is also StructuralCell be considered a subcategory of 'ElectricallyActiveCell'?,  False.
+Can ChondroBlast be considered a subcategory of 'ChondroCyte'?,  False.
+Can Erythrocyte that is also MatureCell be considered a subcategory of 'MioBlast'?,  False.
+Can Erythrocyte that is also LeafCell be considered a subcategory of 'ElectricallyActiveCell'?,  False.
+Can CellByOrganism that is also PhotosyntheticCell be considered a subcategory of 'ChondroCyte'?,  False.
+Can Cell that is also CellByClass be considered a subcategory of 'PlantCell'?,  True.
+Can Cell that is also CellByClass be considered a subcategory of 'SclerenchymaCell'?,  False.
+Can Cell that is also CellByClass be considered a subcategory of 'LeafCell'?,  False.
+Can Cell that is also CellByClass be considered a subcategory of 'Erythrocyte'?,  False.
+Can Cell that is also CellByClass be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can Cell that is also CellByClass be considered a subcategory of 'CirculatingCell'?,  True.
+Can CellByClass that is also InMatureCell be considered a subcategory of 'Miocyte'?,  False.
+Can AnimalCell that is also StructuralCell be considered a subcategory of 'Miocyte'?,  False.
+Can Osteocyte that is also SclerenchymaCell be considered a subcategory of 'Miocyte'?,  False.
+Can CellByOrganism that is also ChondroCyte be considered a subcategory of 'Osteocyte'?,  False.
+Can ElectricallyActiveCell that is also Osteocyte be considered a subcategory of 'Neuron'?,  False.
+Can ChondroBlast be considered a subcategory of 'PhotosyntheticCell'?,  False.
+Can ChondroCyte that is also ElectricallyActiveCell be considered a subcategory of 'MioBlast'?,  False.
+Can CellByDevelopmentStage that is also Osteocyte be considered a subcategory of 'ChondroCyte'?,  False.
+Can Cell that is also Miocyte be considered a subcategory of 'ChondroCyte'?,  False.
+Can CirculatingCell that is also Miocyte be considered a subcategory of 'PhotoreceptorCell'?,  False.
+Can InMatureCell that is also PhotosyntheticCell be considered a subcategory of 'ChondroBlast'?,  False.
+Can Cell that is also Erythrocyte be considered a subcategory of 'ChondroBlast'?,  False.
+Can Miocyte that is also PhotoreceptorCell be considered a subcategory of 'ChondroBlast'?,  False.
+Can MioBlast that is also Osteocyte be considered a subcategory of 'Neuron'?,  False.

@@ -12,7 +12,7 @@ public class OllamaWorkload implements BaseWorkload {
     private final String system;
     private final String query;
     private final int maxTokens;
-    public static final List<String> supportedModels = List.of("mistral", "mixtral", "llama2", "llama2:13b","llama2:70b","megadolphin","llama3","llava-llama3","llama3:70b","llama3-chatqa","dolphin-llama3");
+    public static final List<String> supportedModels = List.of("mistral", "mixtral", "llama2", "llama2:13b","llama2:70b","megadolphin","llama3","llama3.1","llama3.1:70b", "llava-llama3","llama3:70b","llama3-chatqa","dolphin-llama3");
     public static final int timeout = 1000 * 60; // 1 minute
 
     public OllamaWorkload(String model, String system, String query,  int maxTokens) {
@@ -24,30 +24,21 @@ public class OllamaWorkload implements BaseWorkload {
 
     @Override
     public void run() {
-        //clusters.almaai.unibo.it
-        //OllamaBridge bridge = new OllamaBridge("127.0.0.1",11434, model,maxTokens);
         OllamaBridge bridge =  new OllamaBridge(model,maxTokens);
-        checkConnection(bridge);
+        //checkConnection(bridge);
         String response = bridge.ask(query, system);
-        // Sleep for 100 milliseconds to avoid overloading the Ollama bridge and retrying the request
-        if (response == null) {
-            int maxRetries = 2; // So the total number of retries is 3
-            for (int i = 0; i < maxRetries; i++) {
-                try {
-                    Thread.sleep(timeout);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                response = bridge.ask(query, system);
-                if (response != null) {
-                    break;
-                }
+        while (response == null) {
+            // Sleep for 100 milliseconds to avoid overloading the Ollama bridge and retrying the request
+            try {
+                Thread.sleep(timeout);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
-        }
-        if (response == null) {
-            System.out.println("Could not get a response from the Ollama bridge.");
-            System.out.println("Check file " + SmartLogger.getFilename() + " for more information.");
-            response = "";
+            response = bridge.ask(query, system);
+            if (response == null) {
+                System.out.println("Could not get a response from the Ollama bridge.");
+                System.out.println("Trying again.");
+            }
         }
         SmartLogger.log(query + ", " + response);
     }

@@ -14,43 +14,50 @@ import java.io.IOException;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-import static java.lang.Thread.sleep;
 
 public class ResultAnalyzer {
 
     public static void main(String[] args) {
         Configuration config = new YAMLConfigLoader().getConfig(args[0], Configuration.class);
+
         config.getOntologies().forEach(ontology -> config.getModels().forEach(model -> {
             try {
-                new ResultAnalyzer(model.replace(":", "-"), ontology).run();
+                new ResultAnalyzer(model.replace(":", "-"), ontology.substring(0, ontology.length() - 4)).run();
             } catch (OWLOntologyCreationException e) {
                 throw new RuntimeException(e);
             }
         }));
     }
-    private final OWLOntology nlpPredictedOntology;
-    private final OWLOntology predictedOntology;
+    private final OWLOntology nlpBaseOntology;
+    private final OWLOntology manchesterBaseOntology;
     private final OWLOntology expectedOntology;
-    private final OWLOntology enrichedPredictedOntology;
-    private final OWLOntology enrichedNlpPredictedOntology;
+    private final OWLOntology manchesterAdvancedOntology;
+    private final OWLOntology nlpAdvancedOntology;
     private final List<String> allPossibleAxioms;
 
     private final List<Boolean> inferredAxiomsByExpectedOntology = new ArrayList<>();
 
     private final String model;
     private final String ontology;
-    private static final String TF_TYPE = "true_false";
-    private static final String RICH_TYPE = "rich_prompt";
 
     public ResultAnalyzer(String model, String ontology) throws OWLOntologyCreationException {
         this.model = model;
+        // Keep only the name of the ontology without the path
         this.ontology = ontology;
         this.expectedOntology = loadOntology();
-        this.predictedOntology = loadOntology(TF_TYPE, "manchester_", model);
-        this.nlpPredictedOntology = loadOntology(TF_TYPE, "nlp_", model);
-        this.enrichedPredictedOntology = loadOntology(RICH_TYPE, "manchester_", model);
-        this.enrichedNlpPredictedOntology = loadOntology(RICH_TYPE, "nlp_", model);
+        String shortName = Path.of(ontology).getFileName().toString();
+        String sep = FileSystems.getDefault().getSeparator();
+        String ontologyResultPath = "results" + sep + "ontologies";
+        String manchesterBaseOntologyPath = "results" + sep + "ontologies" + sep + shortName + "_" + model + "_" + "manchester_base.owl";
+        this.manchesterBaseOntology = loadOntology(manchesterBaseOntologyPath);
+        String nlpBaseOntologyPath = ontologyResultPath + sep + shortName + "_" + model + "_" + "nlp_base.owl";
+        this.nlpBaseOntology = loadOntology(nlpBaseOntologyPath);
+        String manchesterAdvancedOntologyPath = ontologyResultPath + sep + shortName + "_" + model + "_" + "manchester_advanced.owl";
+        this.manchesterAdvancedOntology = loadOntology(manchesterAdvancedOntologyPath);
+        String nlpAdvancedOntologyPath = ontologyResultPath + sep + shortName + "_" + model + "_" + "nlp_advanced.owl";
+        this.nlpAdvancedOntology = loadOntology(nlpAdvancedOntologyPath);
         this.allPossibleAxioms = OntologyManipulator.getAllPossibleAxiomsCombinations(expectedOntology).stream().sorted().toList();
     }
 
@@ -65,33 +72,49 @@ public class ResultAnalyzer {
     private void compareOntologies() throws InterruptedException {
         System.out.println("Evaluation using Ontology " + ontology + " and Model " + model + "...");
         long startingTime = System.currentTimeMillis();
+
+        // Inizializzazione delle matrici di confusione
         int[][] confusionMatrix = new int[3][3];
         int[][] nlpConfusionMatrix = new int[3][3];
         int[][] enrichedConfusionMatrix = new int[3][3];
         int[][] enrichedNlpConfusionMatrix = new int[3][3];
 
-        Reasoner expectedReasoner = new Reasoner(expectedOntology);
-        Reasoner predictedReasoner = new Reasoner(predictedOntology);
-        Reasoner nlpPredictedReasoner = new Reasoner(nlpPredictedOntology);
-        Reasoner enrichedPredictedReasoner = new Reasoner(enrichedPredictedOntology);
-        Reasoner enrichedNlpPredictedReasoner = new Reasoner(enrichedNlpPredictedOntology);
+        // Creazione e gestione dei Reasoner con controllo null
+        Reasoner expectedReasoner = initializeReasonerOrFillMatrix(expectedOntology, null);
+        Reasoner predictedReasoner = initializeReasonerOrFillMatrix(manchesterBaseOntology, confusionMatrix);
+        Reasoner nlpPredictedReasoner = initializeReasonerOrFillMatrix(nlpBaseOntology, nlpConfusionMatrix);
+        Reasoner enrichedPredictedReasoner = initializeReasonerOrFillMatrix(manchesterAdvancedOntology, enrichedConfusionMatrix);
+        Reasoner enrichedNlpPredictedReasoner = initializeReasonerOrFillMatrix(nlpAdvancedOntology, enrichedNlpConfusionMatrix);
 
-        // Precompute a boolean array of all inferred axioms for the expected ontology
-        allPossibleAxioms.forEach(ax -> {
-            var axiom = OntologyManipulator.createAxiomFromString(ax, expectedOntology);
-            inferredAxiomsByExpectedOntology.add(expectedReasoner.isEntailed(axiom));
-        });
+        if (expectedReasoner != null) {
+            allPossibleAxioms.forEach(ax -> {
+                var axiom = OntologyManipulator.createAxiomFromString(ax, expectedOntology);
+                inferredAxiomsByExpectedOntology.add(expectedReasoner.isEntailed(axiom));
+            });
+        }
 
-        updateConfusionMatrix(predictedReasoner, confusionMatrix);
-        updateConfusionMatrix(enrichedPredictedReasoner, enrichedConfusionMatrix);
-        updateConfusionMatrix(nlpPredictedReasoner, nlpConfusionMatrix);
-        updateConfusionMatrix(enrichedNlpPredictedReasoner, enrichedNlpConfusionMatrix);
+        if (predictedReasoner != null) updateConfusionMatrix(predictedReasoner, confusionMatrix);
+        if (enrichedPredictedReasoner != null) updateConfusionMatrix(enrichedPredictedReasoner, enrichedConfusionMatrix);
+        if (nlpPredictedReasoner != null) updateConfusionMatrix(nlpPredictedReasoner, nlpConfusionMatrix);
+        if (enrichedNlpPredictedReasoner != null) updateConfusionMatrix(enrichedNlpPredictedReasoner, enrichedNlpConfusionMatrix);
 
         printResults(confusionMatrix, nlpConfusionMatrix, enrichedConfusionMatrix, enrichedNlpConfusionMatrix);
         System.out.println("Evaluation completed in " + (System.currentTimeMillis() - startingTime) / 1000 + " seconds.");
-        //System.out.println("Waiting for 2 minutes to cool down...");
-        //sleep(1000 * 60 * 2);
     }
+
+    private Reasoner initializeReasonerOrFillMatrix(OWLOntology ontology, int[][] confusionMatrix) {
+        if (ontology == null) {
+            if (confusionMatrix != null) {
+                for (int[] matrix : confusionMatrix) {
+                    Arrays.fill(matrix, 0);
+                }
+            }
+            System.out.println("Warning: Ontology is null, confusion matrix filled with zeros.");
+            return null;
+        }
+        return new Reasoner(ontology);
+    }
+
 
     private void updateConfusionMatrix(Reasoner predictedReasoner, int[][] confusionMatrix) {
         List<Boolean> inferredAxiomsByPredictedOntology = new ArrayList<>();
@@ -164,23 +187,33 @@ public class ResultAnalyzer {
     }
 
     private OWLOntology loadOntology(String type, String enginePrefix, String model) {
-        return loadOntologyFromFile(getOntologyPath(type, enginePrefix, model).toString());
+        var path = getOntologyPath(type, enginePrefix, model);
+        if (!path.toFile().exists()) {
+            System.err.println("Ontology file not found: " + path);
+            return null;
+        }
+        return loadOntology(getOntologyPath(type, enginePrefix, model).toString());
     }
 
     private OWLOntology loadOntology() {
         String ontologyName = Path.of(ontology).getFileName().toString().replaceAll("\\(.*\\)", "");
         String path = String.format("results%1$sontologies%1$s%2$s_%3$s",
                 FileSystems.getDefault().getSeparator(), "target", ontologyName);
-        return loadOntologyFromFile(path);
+        return loadOntology(path + ".owl");
     }
 
-    private OWLOntology loadOntologyFromFile(String path) {
+    private OWLOntology loadOntology(String path) {
+        if (!new File(path).exists()) {
+            System.out.println("Ontology file not found: " + path + "\nSkipping...");
+            return null;
+        }
         OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
         try {
             return manager.loadOntologyFromOntologyDocument(new File(path));
         } catch (OWLOntologyCreationException e) {
-            System.err.println("ERROR IN READING OWL FILE; CHECK IF LLM LEARNER THROWS SOME ERRORS!!!");
-            throw new RuntimeException(e);
+            System.err.println("Error loading ontology: " + e.getMessage());
+            System.exit(1);
+            return null;
         }
     }
 }

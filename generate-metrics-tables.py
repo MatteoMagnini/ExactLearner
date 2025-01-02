@@ -2,22 +2,32 @@ import os
 from collections import defaultdict
 
 PRETTY_ONTOLOGY_NAMES = {
-    "animals.owl": "Animals",
-    "university.owl": "University",
-    "cl.owl": "Cell",
-    "generations.owl": "Generations",
-    "biosphere.owl": "Biosphere",
-    "football.owl": "Football",
-    "biological-measure-primitive.owl": "Bio-primitive",
+    "animals": "Animals",
+    "university": "University",
+    "cl": "Cell",
+    "generations": "Generations",
+    "biosphere": "Biosphere",
+    "football": "Football",
+    "biological-measure-primitive": "Bio-primitive",
 }
 
 PRETTY_MODEL_NAMES = {
     "llama2:13b": "Llama2 (13b)",
     "llama2": "Llama2 (7b)",
     "llama3": "Llama3 (8b)",
+    "llama3.1": "Llama3.1 (8b)",
+    "llama3.1:70b": "Llama3.1 (70b)",
     "mistral": "Mistral (7b)",
     "mixtral": "Mixtral (47b)",
 }
+
+MODEL_TO_CONSIDER = [
+    "llama2:13b",
+    "llama3",
+    "mistral",
+    "mixtral",
+]
+
 
 
 def read_metrics_from_file(file_path):
@@ -136,6 +146,7 @@ def main():
             # print(f"Processing file: {file_name}")
             file_path = os.path.join(results_dir, file_name)
             file_name = file_name.replace('-13b', '_13b')
+            file_name = file_name.replace('-70b', '_70b')
             parts = file_name.replace('.txt', '').split('-')
             ontology_name = '-'.join(parts[:-1])
             model = parts[-1]
@@ -162,6 +173,8 @@ def main():
         (1, "average metrics grouped by models.", ["Model", "Accuracy", "Recall", "Precision", "F1-Score"]),
         (2, "average metrics grouped by prompts.", ["Prompts Type", "Accuracy", "Recall", "Precision", "F1-Score"])
     ]:
+        # Remove Llama2 (7b) from the average metrics
+        metrics_dict = {key: metrics for key, metrics in metrics_dict.items() if key[1] in MODEL_TO_CONSIDER}
         averages = calculate_averages(metrics_dict, group_by)
         average_latex_table = generate_average_latex_table(averages, caption, headers)
         all_tables.append(average_latex_table)

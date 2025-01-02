@@ -249,7 +249,7 @@ public abstract class LaunchLearner {
         }
         String systemType = "advanced";
         if (system.trim().equals("Answer with only True or False.")) {
-            systemType = "simple";
+            systemType = "base";
         }
         ontologyFolder = "results" + fileSeparator + "ontologies" + fileSeparator + "target_" + name + ".owl";
         ontologyFolderH = "results" + fileSeparator + "ontologies" + fileSeparator + name + "_" + model + "_" + format + "_" + systemType + ".owl";

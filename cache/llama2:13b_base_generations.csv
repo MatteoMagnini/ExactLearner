@@ -1,0 +1,1586 @@
+Parent and Person SubClassOf Father, \nTrue
+Parent and Person SubClassOf GrandMother, \nFalse
+Parent and Person SubClassOf Son, \nTrue
+Person SubClassOf Son, False
+Parent SubClassOf Son, \nTrue
+Parent SubClassOf GrandMother, \nFalse
+Parent SubClassOf Thing, \nTrue
+Parent SubClassOf Son and Thing, \nTrue
+Parent SubClassOf Female, False
+Parent SubClassOf Father, True
+Parent SubClassOf Father and Son and Thing, \nTrue
+Parent SubClassOf Child, \nTrue
+Parent SubClassOf Child and Father and Son and Thing, \nTrue
+Parent SubClassOf Person, True
+Parent SubClassOf Child and Father and Person and Son and Thing, \nHere
+Parent SubClassOf Brother, \nFalse
+Parent SubClassOf Daughter, \nTrue
+Parent SubClassOf Child and Daughter and Father and Son and Thing, \nHere
+Parent SubClassOf Man, False
+Parent SubClassOf Mother, \nTrue
+Parent SubClassOf Child and Father and Mother and Son and Thing, \nHere
+Parent SubClassOf GrandParent, \nTrue
+Parent SubClassOf Child and Father and GrandParent and Son and Thing, \nHere
+Parent SubClassOf Sex, False
+Parent SubClassOf Sister, \nFalse
+Parent SubClassOf OffSpring, \nTrue
+Parent SubClassOf Child and Father and OffSpring and Son and Thing, \nHere
+Parent SubClassOf Woman, False
+Parent SubClassOf Male, False
+Parent SubClassOf Sibling, \nFalse
+Parent SubClassOf GrandFather, \nFalse
+GrandParent and Person SubClassOf Woman, \nTrue
+GrandParent and Person SubClassOf GrandMother, \nFalse
+GrandParent and Person SubClassOf Son, \nTrue
+GrandParent SubClassOf Son, \nFalse
+GrandFather SubClassOf OffSpring, False
+hasParent some GrandMother SubClassOf Male, \nFalse
+GrandMother and GrandParent SubClassOf OffSpring, \nFalse
+Son SubClassOf hasSex some Parent, \nTrue
+Son SubClassOf GrandMother, \nFalse
+Son SubClassOf Female, False
+Son SubClassOf Father, \nFalse
+Son SubClassOf Child, \nTrue
+Son SubClassOf Thing, \nTrue
+Son SubClassOf Child and Thing, \nTrue
+Son SubClassOf Person, False
+Son SubClassOf Brother, \nTrue
+Son SubClassOf Brother and Child and Thing, \nTrue
+Son SubClassOf Parent, \nFalse
+Son SubClassOf Daughter, \nTrue
+Son SubClassOf Brother and Child and Daughter and Thing, \nTrue
+Son SubClassOf Man, \nTrue
+Son SubClassOf Brother and Child and Daughter and Man and Thing, \nHere
+Son SubClassOf Mother, \nTrue
+Son SubClassOf Brother and Child and Daughter and Mother and Thing, \nTrue
+Son SubClassOf GrandParent, \nFalse
+Son SubClassOf Sex, \nFalse
+Son SubClassOf Sister, \nFalse
+Son SubClassOf OffSpring, \nFalse
+Son SubClassOf Woman, \nFalse
+Son SubClassOf Male, False
+Son SubClassOf Sibling, \nTrue
+Son SubClassOf Brother and Child and Daughter and Mother and Sibling and Thing, \nHere
+Son SubClassOf GrandFather, \nFalse
+Son SubClassOf Brother and Child and Daughter and Man and Mother and Thing, \nHere
+Parent SubClassOf hasChild some Male, True
+Parent SubClassOf Person and Thing, \nTrue
+Parent SubClassOf Person and Son and Thing, \nTrue
+Parent SubClassOf Father and Person and Son and Thing, \nTrue
+Parent SubClassOf Daughter and Father and Person and Son and Thing, \nTrue
+Parent SubClassOf Daughter and Father and Mother and Person and Son and Thing, \nHere
+Parent SubClassOf Daughter and Father and GrandParent and Person and Son and Thing, \nHere
+Parent SubClassOf Daughter and Father and OffSpring and Person and Son and Thing, \nTrue
+Parent SubClassOf Child and Daughter and Father and Mother and OffSpring and Person and Son and Thing, \nHere
+Parent SubClassOf Child and Daughter and Father and GrandParent and OffSpring and Person and Son and Thing, \nHere
+Female and GrandMother SubClassOf Daughter, \nTrue
+Female and GrandMother SubClassOf Son, False
+Female and GrandMother SubClassOf Father, \nFalse
+Female and GrandMother SubClassOf Child, \nFalse
+Female and GrandMother SubClassOf Person, False
+Female and GrandMother SubClassOf Brother, False
+Female and GrandMother SubClassOf Parent, \nTrue
+GrandMother SubClassOf Parent, \nTrue
+GrandMother SubClassOf Thing, False
+GrandMother SubClassOf Son, \nFalse
+GrandMother SubClassOf Female, False
+GrandMother SubClassOf Father, False
+GrandMother SubClassOf Child, \nFalse
+GrandMother SubClassOf Person, \nTrue
+GrandMother SubClassOf Parent and Person, True
+GrandMother SubClassOf Brother, \nFalse
+GrandMother SubClassOf Daughter, \nFalse
+GrandMother SubClassOf Man, \nFalse
+GrandMother SubClassOf Mother, \nTrue
+GrandMother SubClassOf Mother and Parent and Person, \nTrue
+GrandMother SubClassOf GrandParent, \nFalse
+GrandMother SubClassOf Sex, False
+GrandMother SubClassOf Sister, False
+GrandMother SubClassOf OffSpring, False
+GrandMother SubClassOf Woman, \nTrue
+GrandMother SubClassOf Mother and Parent and Person and Woman, \nTrue
+GrandMother SubClassOf Male, False
+GrandMother SubClassOf Sibling, \nFalse
+GrandMother SubClassOf GrandFather, False
+GrandFather SubClassOf Daughter, False
+Father and Mother SubClassOf Male, \nFalse
+Daughter and OffSpring SubClassOf Father, \nTrue
+Daughter and OffSpring SubClassOf GrandMother, \nFalse
+Daughter and OffSpring SubClassOf Son, \nTrue
+OffSpring SubClassOf Son, False
+Daughter SubClassOf Son, \nTrue
+Daughter SubClassOf GrandMother, \nFalse
+Daughter SubClassOf Thing, \nTrue
+Daughter SubClassOf Son and Thing, \nTrue
+Daughter SubClassOf Female, \nTrue
+Daughter SubClassOf Female and Son and Thing, \nTrue
+Daughter SubClassOf Father, \nTrue
+Daughter SubClassOf Father and Female and Son and Thing, \nTrue
+Daughter SubClassOf Child, \nTrue
+Daughter SubClassOf Child and Father and Female and Son and Thing, \nHere
+Daughter SubClassOf Person, \nFalse
+Daughter SubClassOf Brother, \nFalse
+Daughter SubClassOf Parent, \nTrue
+Daughter SubClassOf Father and Female and Parent and Son and Thing, \nHere
+Daughter SubClassOf Man, False
+Daughter SubClassOf Mother, \nTrue
+Daughter SubClassOf Father and Female and Mother and Son and Thing, \nHere
+Daughter SubClassOf GrandParent, \nFalse
+Daughter SubClassOf Sex, \nFalse
+Daughter SubClassOf Sister, \nTrue
+Daughter SubClassOf Father and Female and Sister and Son and Thing, \nHere
+Daughter SubClassOf OffSpring, \nTrue
+Daughter SubClassOf Father and Female and OffSpring and Son and Thing, \nHere
+Daughter SubClassOf Woman, True
+Daughter SubClassOf Father and Female and Son and Woman and Thing, \nHere
+Daughter SubClassOf Male, False
+Daughter SubClassOf Sibling, \nFalse
+Daughter SubClassOf GrandFather, \nFalse
+Male and Mother SubClassOf Sister, \nFalse
+hasSex some OffSpring SubClassOf GrandMother, False
+Man and Woman SubClassOf Sister, False
+Male SubClassOf hasSibling some Mother, \nFalse
+hasParent some Sister SubClassOf Sex, False
+Son SubClassOf hasParent some Brother, \nTrue
+Son SubClassOf Man and Thing, \nTrue
+Son SubClassOf Child and Man and Thing, \nTrue
+Son SubClassOf Brother and Child and Man and Thing, \nTrue
+Son SubClassOf Brother and Child and Man and Mother and Thing, \nTrue
+Son SubClassOf Brother and Child and Man and Mother and Sibling and Thing, \nHere
+Son SubClassOf Brother and Child and Daughter and Man and Mother and Sibling and Thing, \nTrue
+GrandFather and OffSpring SubClassOf Son, \nTrue
+GrandFather and OffSpring SubClassOf GrandMother, \nFalse
+GrandFather SubClassOf Son, \nFalse
+Sibling and Son SubClassOf Woman, \nTrue
+Sibling and Son SubClassOf GrandMother, \nFalse
+Sibling and Son SubClassOf Person, \nTrue
+Sibling SubClassOf Person, \nTrue
+Sibling SubClassOf GrandMother, \nFalse
+Sibling SubClassOf Thing, \nTrue
+Sibling SubClassOf Person and Thing, \nTrue
+Sibling SubClassOf Son, \nFalse
+Sibling SubClassOf Female, \nFalse
+Sibling SubClassOf Father, \nFalse
+Sibling SubClassOf Child, \nFalse
+Sibling SubClassOf Brother, \nTrue
+Sibling SubClassOf Brother and Person and Thing, \nFalse
+Sibling SubClassOf Parent, \nTrue
+Sibling SubClassOf Parent and Person and Thing, \nTrue
+Sibling SubClassOf Daughter, \nTrue
+Sibling SubClassOf Daughter and Parent and Person and Thing, \nTrue
+Sibling SubClassOf Man, False
+Sibling SubClassOf Mother, \nTrue
+Sibling SubClassOf Daughter and Mother and Parent and Person and Thing, \nHere
+Sibling SubClassOf GrandParent, \nFalse
+Sibling SubClassOf Sex, \nFalse
+Sibling SubClassOf Sister, \nTrue
+Sibling SubClassOf Daughter and Parent and Person and Sister and Thing, \nHere
+Sibling SubClassOf OffSpring, \nFalse
+Sibling SubClassOf Woman, False
+Sibling SubClassOf Male, \nFalse
+Sibling SubClassOf GrandFather, \nFalse
+Sibling SubClassOf Brother and Daughter and Parent and Person and Thing, \nHere
+hasSibling some Female SubClassOf Sex, False
+Father and Mother SubClassOf Son, \nFalse
+GrandFather and Woman SubClassOf Brother, False
+Child and Person SubClassOf Male, False
+Father and Mother SubClassOf OffSpring, \nFalse
+Man SubClassOf Son, False
+hasSex some Woman SubClassOf Male, False
+hasChild some Child SubClassOf Child, True
+hasChild some Child SubClassOf GrandMother, False
+hasChild some Child SubClassOf Son, False
+hasChild some Child SubClassOf Female, False
+hasChild some Child SubClassOf Father, True
+Child SubClassOf Father, False
+Thing SubClassOf Thing and (hasChild some (Child and Thing)), \nTrue
+Child and Thing SubClassOf GrandMother, \nFalse
+Child and Thing SubClassOf Son, \nTrue
+Thing SubClassOf Son, \nTrue
+GrandFather and Sibling SubClassOf Sex, \nFalse
+Child and Parent SubClassOf Woman, False
+Mother and Person SubClassOf Sex, \nFalse
+Female and Person SubClassOf Woman, False
+GrandParent and Person SubClassOf GrandFather, \nTrue
+GrandParent and Person SubClassOf Sex, \nFalse
+GrandParent and Person SubClassOf Sister, False
+GrandParent SubClassOf Woman, \nFalse
+Person SubClassOf Woman, \nFalse
+hasSibling some Son SubClassOf GrandMother, \nFalse
+Child SubClassOf hasSex some Sister, \nTrue
+Child SubClassOf GrandMother, \nFalse
+Child SubClassOf GrandParent, \nFalse
+Child SubClassOf Sex, False
+Child SubClassOf Sister, False
+Child SubClassOf Woman, False
+Child SubClassOf Male, False
+Child SubClassOf GrandFather, \nFalse
+GrandMother SubClassOf hasSex some Sister, \nTrue
+Thing and (hasSex some Sister) SubClassOf Thing and (hasSex some Sister), \nTrue
+Thing SubClassOf Sister, \nTrue
+Thing SubClassOf GrandMother, False
+Thing SubClassOf Sister and Son, \nFalse
+Thing SubClassOf Female, False
+Thing SubClassOf Father, \nTrue
+Thing SubClassOf Father and Sister, \nTrue
+Thing SubClassOf Child, \nTrue
+Thing SubClassOf Child and Father and Sister, \nTrue
+Thing SubClassOf Person, \nTrue
+Thing SubClassOf Child and Father and Person and Sister, \nTrue
+Thing SubClassOf Brother, \nFalse
+Thing SubClassOf Parent, \nTrue
+Thing SubClassOf Child and Father and Parent and Person and Sister, \nHere
+Thing SubClassOf Daughter, False
+Thing SubClassOf Man, False
+Thing SubClassOf Mother, \nTrue
+Thing SubClassOf Child and Father and Mother and Person and Sister, \nHere
+Thing SubClassOf GrandParent, \nTrue
+Thing SubClassOf Child and Father and GrandParent and Person and Sister, \nHere
+Thing SubClassOf Sex, \nFalse
+Thing SubClassOf OffSpring, \nFalse
+Thing SubClassOf Woman, \nFalse
+Thing SubClassOf Male, False
+Thing SubClassOf Sibling, False
+Thing SubClassOf GrandFather, \nFalse
+Thing SubClassOf Child and Father and Parent and Person and Sister and Son, \nHere
+Thing SubClassOf Child and Father and Mother and Person and Sister and Son, \nHere
+Thing SubClassOf Child and Father and GrandParent and Person and Sister and Son, \nHere
+Daughter and GrandMother SubClassOf GrandParent, \nTrue
+Man and Sex SubClassOf GrandParent, False
+Parent SubClassOf hasChild some Sister, False
+Sex SubClassOf hasSibling some Man,   I
+Brother and GrandParent SubClassOf GrandFather, \nFalse
+Daughter SubClassOf hasParent some GrandFather, \nTrue
+Daughter SubClassOf Woman and Thing, \nTrue
+Daughter SubClassOf Son and Woman and Thing, \nTrue
+Daughter SubClassOf Female and Son and Woman and Thing, \nTrue
+Daughter SubClassOf Child and Female and Son and Woman and Thing, \nHere
+Daughter SubClassOf Female and Parent and Son and Woman and Thing, \nHere
+Daughter SubClassOf Female and Mother and Son and Woman and Thing, \nHere
+Daughter SubClassOf Female and Sister and Son and Woman and Thing, \nHere
+Daughter SubClassOf Female and OffSpring and Son and Woman and Thing, \nHere
+Daughter SubClassOf Child and Father and Female and Son and Woman and Thing, \nHere
+Daughter SubClassOf Father and Female and Parent and Son and Woman and Thing, \nHere
+Daughter SubClassOf Father and Female and Mother and Son and Woman and Thing, \nHere
+Daughter SubClassOf Father and Female and Sister and Son and Woman and Thing, \nHere
+Daughter SubClassOf Father and Female and OffSpring and Son and Woman and Thing, \nHere
+Child and Person SubClassOf GrandMother, False
+GrandFather SubClassOf hasSibling some Woman, \nTrue
+GrandFather SubClassOf GrandMother, \nFalse
+GrandFather SubClassOf GrandParent, False
+GrandFather SubClassOf Sex, \nFalse
+GrandFather SubClassOf Male, False
+GrandMother SubClassOf hasSibling some Woman, \nTrue
+Thing and (hasSibling some Woman) SubClassOf Thing and (hasSibling some Woman), \nTrue
+GrandMother SubClassOf Person and Thing and (hasSibling some Woman), \nTrue
+GrandMother SubClassOf Parent and Person and Thing and (hasSibling some Woman), \nTrue
+GrandMother SubClassOf Mother and Parent and Person and Thing and (hasSibling some Woman), \nTrue
+GrandMother SubClassOf Mother and Parent and Person and Woman and Thing and (hasSibling some Woman), \nTrue
+GrandMother SubClassOf GrandMother, \nFalse
+GrandMother SubClassOf Mother and Parent and Person and Woman and Thing and (hasSibling some (Person and Woman)), \nTrue
+GrandMother SubClassOf Mother and Parent and Person and Woman and Thing and (hasSibling some (Parent and Person and Woman)), \nTrue
+GrandMother SubClassOf Mother and Parent and Person and Woman and Thing and (hasSibling some (Mother and Parent and Person and Woman)), \nTrue
+Mother and Parent and Person and Son and Woman and Thing and (hasSibling some (Mother and Parent and Person and Woman)) SubClassOf Mother and Parent and Person and Son and Woman and Thing and (hasSibling some (Mother and Parent and Person and Woman)), \nTrue
+Female and Mother and Parent and Person and Son and Woman and Thing and (hasSibling some (Mother and Parent and Person and Woman)) SubClassOf Female and Mother and Parent and Person and Son and Woman and Thing and (hasSibling some (Mother and Parent and Person and Woman)), \nTrue
+Father and Female and Mother and Parent and Person and Son and Woman and Thing and (hasSibling some (Mother and Parent and Person and Woman)) SubClassOf Father and Female and Mother and Parent and Person and Son and Woman and Thing and (hasSibling some (Mother and Parent and Person and Woman)), \nHere
+Person SubClassOf GrandMother, False
+Person SubClassOf Father and Female and Mother and Parent and Person and Son and Woman and Thing and (hasSibling some (Mother and Parent and Person and Woman)), \nTrue
+Person SubClassOf Thing, \nFalse
+Person SubClassOf Female, \nFalse
+Person SubClassOf Father, False
+Person SubClassOf Child, False
+Person SubClassOf Person, \nTrue
+Person SubClassOf Brother, False
+Person SubClassOf Parent, True
+Person SubClassOf Daughter, False
+Person SubClassOf Man, False
+Person SubClassOf Mother, False
+Person SubClassOf GrandParent, False
+Person SubClassOf Sex, False
+Person SubClassOf Sister, False
+Person SubClassOf OffSpring, \nFalse
+Person SubClassOf Male, False
+Person SubClassOf Sibling, False
+Person SubClassOf GrandFather, \nFalse
+Daughter and GrandFather SubClassOf Male, \nFalse
+GrandParent and Sister SubClassOf GrandMother, \nFalse
+OffSpring SubClassOf GrandFather, False
+Daughter and Man SubClassOf GrandMother, False
+Daughter SubClassOf hasSex some Child, \nTrue
+GrandMother SubClassOf hasSex some Child, \nTrue
+Thing and (hasSex some Child) SubClassOf Thing and (hasSex some Child), \nTrue
+GrandMother SubClassOf Person and Thing and (hasSex some Child), \nFalse
+GrandMother SubClassOf Parent and Thing and (hasSex some Child), \nTrue
+GrandMother SubClassOf Mother and Parent and Thing and (hasSex some Child), \nTrue
+GrandMother SubClassOf Mother and Parent and Woman and Thing and (hasSex some Child), \nTrue
+GrandMother SubClassOf Mother and Parent and Woman and Thing and (hasSex some (Child and Person)), \nTrue
+GrandMother SubClassOf Mother and Parent and Woman and Thing and (hasSex some (Child and Parent and Person)), \nTrue
+GrandMother SubClassOf Mother and Parent and Woman and Thing and (hasSex some (Child and Mother and Parent and Person)), \nTrue
+GrandMother SubClassOf Mother and Parent and Woman and Thing and (hasSex some (Child and Mother and Parent and Person and Woman)), \nTrue
+Mother and Parent and Son and Woman and Thing and (hasSex some (Child and Mother and Parent and Person and Woman)) SubClassOf Mother and Parent and Son and Woman and Thing and (hasSex some (Child and Mother and Parent and Person and Woman)), \nTrue
+Female and Mother and Parent and Person and Son and Woman and Thing and (hasSex some (Child and Mother and Parent and Person and Woman)) SubClassOf Female and Mother and Parent and Person and Son and Woman and Thing and (hasSex some (Child and Mother and Parent and Person and Woman)), \nTrue
+Father and Female and Mother and Parent and Person and Son and Woman and Thing and (hasSex some (Child and Mother and Parent and Person and Woman)) SubClassOf Father and Female and Mother and Parent and Person and Son and Woman and Thing and (hasSex some (Child and Mother and Parent and Person and Woman)), \nTrue
+Mother SubClassOf hasChild some Son, True
+Mother SubClassOf GrandMother, \nFalse
+Mother SubClassOf GrandParent, False
+Mother SubClassOf Sex, False
+Mother SubClassOf Male, \nFalse
+Mother SubClassOf GrandFather, False
+GrandMother SubClassOf hasChild some Son, \nTrue
+Thing and (hasChild some Son) SubClassOf Thing and (hasChild some Son), \nTrue
+GrandMother SubClassOf Person and Thing and (hasChild some Son), \nTrue
+GrandMother SubClassOf Parent and Person and Thing and (hasChild some Son), \nTrue
+GrandMother SubClassOf Mother and Parent and Person and Thing and (hasChild some Son), \nTrue
+GrandMother SubClassOf Mother and Parent and Person and Woman and Thing and (hasChild some Son), \nTrue
+GrandMother SubClassOf Mother and Parent and Person and Woman and Thing and (hasChild some (Person and Son)), \nTrue
+GrandMother SubClassOf Mother and Parent and Person and Woman and Thing and (hasChild some (Parent and Person and Son)), \nTrue
+GrandMother SubClassOf Mother and Parent and Person and Woman and Thing and (hasChild some (Mother and Parent and Person and Son)), \nTrue
+GrandMother SubClassOf Mother and Parent and Person and Woman and Thing and (hasChild some (Mother and Parent and Person and Son and Woman)), \nTrue
+Mother and Parent and Person and Son and Woman and Thing and (hasChild some (Mother and Parent and Person and Son and Woman)) SubClassOf Mother and Parent and Person and Son and Woman and Thing and (hasChild some (Mother and Parent and Person and Son and Woman)), \nTrue
+Child and Father and Female and Mother and Parent and Person and Son and Woman and Thing and (hasChild some (Mother and Parent and Person and Son and Woman)) SubClassOf Child and Father and Female and Mother and Parent and Person and Son and Woman and Thing and (hasChild some (Mother and Parent and Person and Son and Woman)) and (hasSex some (Child and Mother and Parent and Person and Woman)), \nHere
+Person SubClassOf Child and Father and Female and Mother and Parent and Person and Son and Woman and Thing and (hasChild some (Mother and Parent and Person and Son and Woman)), \nTrue
+Child and Father and Female and Mother and Parent and Person and Son and Woman and Thing and (hasChild some (Mother and Parent and Person and Son and Woman)) SubClassOf Child and Father and Female and Mother and Parent and Person and Son and Woman and Thing and (hasChild some (Mother and Parent and Person and Son and Woman)), \nHere
+Brother and Child and Father and Female and Mother and Parent and Person and Son and Woman and Thing and (hasChild some (Mother and Parent and Person and Son and Woman)) SubClassOf Brother and Child and Father and Female and Mother and Parent and Person and Son and Woman and Thing and (hasChild some (Mother and Parent and Person and Son and Woman)), \nHere
+GrandParent and Sister SubClassOf Male, False
+Child and Woman SubClassOf Sex, False
+Brother SubClassOf hasSex some Mother, \nTrue
+Brother SubClassOf GrandMother, \nFalse
+Brother SubClassOf GrandParent, \nFalse
+Brother SubClassOf Sex, \nFalse
+Brother SubClassOf Male, \nTrue
+Brother SubClassOf Thing, \nTrue
+Brother SubClassOf Male and Thing, \nTrue
+Brother SubClassOf Son, \nFalse
+Brother SubClassOf Female, False
+Brother SubClassOf Father, \nFalse
+Brother SubClassOf Child, False
+Brother SubClassOf Person, \nTrue
+Brother SubClassOf Male and Person and Thing, True
+Brother SubClassOf Parent, False
+Brother SubClassOf Daughter, \nFalse
+Brother SubClassOf Man, \nTrue
+Brother SubClassOf Male and Man and Person and Thing, \nTrue
+Brother SubClassOf Mother, \nFalse
+Brother SubClassOf Sister, \nTrue
+Brother SubClassOf Male and Man and Person and Sister and Thing, \nTrue
+Brother SubClassOf OffSpring, \nFalse
+Brother SubClassOf Woman, False
+Brother SubClassOf Sibling, \nTrue
+Brother SubClassOf Male and Man and Person and Sibling and Sister and Thing, \nTrue
+Brother SubClassOf GrandFather, \nFalse
+Female and Parent SubClassOf GrandParent, \nTrue
+Female and Parent SubClassOf GrandMother, False
+Female SubClassOf GrandParent, False
+Parent SubClassOf GrandParent and Thing, \nTrue
+Parent SubClassOf GrandParent and Son and Thing, \nTrue
+Parent SubClassOf Father and GrandParent and Son and Thing, \nTrue
+Parent SubClassOf Father and GrandParent and Person and Son and Thing, \nTrue
+Parent SubClassOf Father and GrandParent and Mother and Person and Son and Thing, \nTrue
+Parent SubClassOf Father and GrandParent and Mother and OffSpring and Person and Son and Thing, \nHere
+Brother SubClassOf hasParent some GrandParent, \nTrue
+GrandMother SubClassOf hasParent some GrandParent, \nTrue
+Thing and (hasParent some GrandParent) SubClassOf Thing and (hasParent some GrandParent), \nTrue
+GrandMother SubClassOf Person and Thing and (hasParent some GrandParent), \nTrue
+GrandMother SubClassOf Parent and Person and Thing and (hasParent some GrandParent), \nTrue
+GrandMother SubClassOf Mother and Parent and Person and Thing and (hasParent some GrandParent), \nTrue
+GrandMother SubClassOf Mother and Parent and Person and Woman and Thing and (hasParent some GrandParent), \nTrue
+GrandMother SubClassOf Mother and Parent and Person and Woman and Thing and (hasParent some (GrandParent and Person)), \nTrue
+GrandMother SubClassOf Mother and Parent and Person and Woman and Thing and (hasParent some (GrandParent and Parent and Person)), \nTrue
+GrandMother SubClassOf Mother and Parent and Person and Woman and Thing and (hasParent some (GrandParent and Mother and Parent and Person)), \nTrue
+GrandMother SubClassOf Mother and Parent and Person and Woman and Thing and (hasParent some (GrandParent and Mother and Parent and Person and Woman)), \nTrue
+Mother and Parent and Person and Son and Woman and Thing and (hasParent some (GrandParent and Mother and Parent and Person and Woman)) SubClassOf Mother and Parent and Person and Son and Woman and Thing and (hasParent some (GrandParent and Mother and Parent and Person and Woman)), \nTrue
+Child and Father and Female and Mother and Parent and Person and Son and Woman and Thing and (hasParent some (GrandParent and Mother and Parent and Person and Woman)) SubClassOf Child and Father and Female and Mother and Parent and Person and Son and Woman and Thing and (hasParent some (GrandParent and Mother and Parent and Person and Woman)) and (hasSex some (Child and Mother and Parent and Person and Woman)), \nHere
+Person SubClassOf Child and Father and Female and Mother and Parent and Person and Son and Woman and Thing and (hasParent some (GrandParent and Mother and Parent and Person and Woman)), \nTrue
+Child and Father and Female and Mother and Parent and Person and Son and Woman and Thing and (hasParent some (GrandParent and Mother and Parent and Person and Woman)) SubClassOf Child and Father and Female and Mother and Parent and Person and Son and Woman and Thing and (hasParent some (GrandParent and Mother and Parent and Person and Woman)), \nHere
+Brother and Child and Father and Female and Mother and Parent and Person and Son and Woman and Thing and (hasParent some (GrandParent and Mother and Parent and Person and Woman)) SubClassOf Brother and Child and Father and Female and Mother and Parent and Person and Son and Woman and Thing and (hasParent some (GrandParent and Mother and Parent and Person and Woman)), \nHere
+Woman SubClassOf hasSibling some GrandFather, \nFalse
+Male and Sibling SubClassOf GrandFather, \nTrue
+Male and Sibling SubClassOf GrandMother, \nFalse
+Male and Sibling SubClassOf Sex, \nTrue
+Male SubClassOf Sex, \nFalse
+Sister SubClassOf hasSex some Daughter, \nTrue
+Sister SubClassOf GrandMother, \nTrue
+Sister SubClassOf Thing, False
+Sister SubClassOf Son, \nFalse
+Sister SubClassOf Female, False
+Sister SubClassOf Father, False
+Sister SubClassOf Child, \nFalse
+Sister SubClassOf Person, False
+Sister SubClassOf Brother, \nFalse
+Sister SubClassOf Parent, \nTrue
+Sister SubClassOf GrandMother and Parent, \nTrue
+Sister SubClassOf Daughter, \nTrue
+Sister SubClassOf Daughter and GrandMother and Parent, \nTrue
+Sister SubClassOf Man, \nFalse
+Sister SubClassOf Mother, \nFalse
+Sister SubClassOf GrandParent, \nFalse
+Sister SubClassOf Sex, \nFalse
+Sister SubClassOf OffSpring, \nFalse
+Sister SubClassOf Woman, False
+Sister SubClassOf Male, \nFalse
+Sister SubClassOf Sibling, \nFalse
+Sister SubClassOf GrandFather, False
+Man SubClassOf hasSex some GrandFather, \nTrue
+Man SubClassOf GrandFather, False
+GrandMother SubClassOf hasSex some GrandFather, \nTrue
+GrandMother and (hasSex some GrandFather) SubClassOf GrandMother and (hasSex some GrandFather), \nTrue
+Female SubClassOf GrandFather, False
+Father SubClassOf GrandFather, \nFalse
+GrandParent SubClassOf GrandFather, False
+Sex SubClassOf GrandFather, False
+Woman SubClassOf GrandFather, \nFalse
+Male SubClassOf GrandFather, \nFalse
+GrandMother SubClassOf GrandMother and Person and (hasSex some GrandFather), \nTrue
+GrandMother SubClassOf GrandMother and Parent and Person and (hasSex some GrandFather), \nTrue
+GrandMother SubClassOf GrandMother and Mother and Parent and Person and (hasSex some GrandFather), \nTrue
+GrandMother SubClassOf GrandMother and Mother and Parent and Person and Woman and (hasSex some GrandFather), \nTrue
+GrandMother SubClassOf GrandMother and Mother and Parent and Person and Woman and (hasSex some (GrandFather and Person)), \nTrue
+GrandMother SubClassOf GrandMother and Mother and Parent and Person and Woman and (hasSex some (GrandFather and Parent and Person)), \nTrue
+GrandMother SubClassOf GrandMother and Mother and Parent and Person and Woman and (hasSex some (GrandFather and Mother and Parent and Person)), \nTrue
+GrandMother SubClassOf GrandMother and Mother and Parent and Person and Woman and (hasSex some (GrandFather and Mother and Parent and Person and Woman)), \nTrue
+GrandMother and Mother and Parent and Person and Woman and Thing and (hasSex some (GrandFather and Mother and Parent and Person and Woman)) SubClassOf GrandMother and Mother and Parent and Person and Woman and Thing and (hasSex some (GrandFather and Mother and Parent and Person and Woman)), \nTrue
+GrandMother SubClassOf GrandFather and Mother and Parent and Person and Woman, \nTrue
+Father and Female and GrandFather and GrandMother and Mother and Parent and Person and Son and Woman and Thing and (hasSex some (Child and Mother and Parent and Person and Woman)) SubClassOf Father and Female and GrandFather and GrandMother and Mother and Parent and Person and Son and Woman and Thing and (hasSex some (Child and Mother and Parent and Person and Woman)), \nHere
+Person SubClassOf Father and Female and GrandFather and GrandMother and Mother and Parent and Person and Son and Woman and Thing and (hasSex some (Child and Mother and Parent and Person and Woman)), \nHere
+Parent SubClassOf Father and Female and GrandFather and GrandMother and Mother and Parent and Person and Son and Woman and Thing and (hasSex some (Child and Mother and Parent and Person and Woman)), \nHere
+Mother SubClassOf Father and Female and GrandFather and GrandMother and Mother and Parent and Person and Son and Woman and Thing and (hasSex some (Child and Mother and Parent and Person and Woman)), \nHere
+Woman SubClassOf GrandMother, \nFalse
+Woman SubClassOf Father and Female and GrandFather and GrandMother and Mother and Parent and Person and Son and Woman and Thing and (hasSex some (Child and Mother and Parent and Person and Woman)), \nTrue
+Woman SubClassOf Thing, False
+Woman SubClassOf Son, \nFalse
+Woman SubClassOf Female, False
+Woman SubClassOf Father, False
+Woman SubClassOf Child, False
+Woman SubClassOf Person, False
+Woman SubClassOf Brother, False
+Woman SubClassOf Parent, False
+Woman SubClassOf Daughter, \nFalse
+Woman SubClassOf Man, \nFalse
+Woman SubClassOf Mother, \nFalse
+Woman SubClassOf GrandParent, \nFalse
+Woman SubClassOf Sex, False
+Woman SubClassOf Sister, \nTrue
+Sister SubClassOf Father and Female and GrandFather and GrandMother and Mother and Parent and Person and Son and Woman and Thing and (hasSex some (Child and Mother and Parent and Person and Woman)), \nHere
+Woman SubClassOf OffSpring, False
+Woman SubClassOf Woman, \nTrue
+Woman SubClassOf Male, \nFalse
+Woman SubClassOf Sibling, False
+Woman SubClassOf Father and Female and GrandFather and GrandMother and Mother and Parent and Person and Sister and Son and Woman and Thing and (hasSex some (Child and Mother and Parent and Person and Woman)), \nHere
+Woman SubClassOf Father and Female and GrandFather and GrandMother and Mother and Parent and Person and Son and Woman and Thing and (hasSex some (Child and Mother and Parent and Person and Sister and Woman)), \nHere
+Child and Father and Female and GrandFather and GrandMother and Mother and Parent and Person and Son and Woman and Thing and (hasSex some (Child and Mother and Parent and Person and Woman)) SubClassOf Child and Father and Female and GrandFather and GrandMother and Mother and Parent and Person and Son and Woman and Thing and (hasSex some (Child and Mother and Parent and Person and Woman)), \nHere
+Sister SubClassOf Child and Father and Female and GrandFather and GrandMother and Mother and Parent and Person and Son and Woman and Thing and (hasSex some (Child and Mother and Parent and Person and Woman)), \nHere
+Can Parent that is also Person be considered a subcategory of 'Father'?, \nFalse
+Can GrandParent that is also Person be considered a subcategory of 'Woman'?, \nFalse
+Can GrandFather be considered a subcategory of 'OffSpring'?, \nFalse
+Can something that hasParent some GrandMother be considered a subcategory of 'Male'?, \nFalse
+Can GrandMother that is also GrandParent be considered a subcategory of 'OffSpring'?, \nFalse
+Can Son be considered a subcategory of 'something that hasSex some Parent'?, \nFalse
+Can Parent be considered a subcategory of 'something that hasChild some Male'?, \nFalse
+Can Female that is also GrandMother be considered a subcategory of 'Daughter'?, \nFalse
+Can GrandFather be considered a subcategory of 'Daughter'?, \nFalse
+Can Father that is also Mother be considered a subcategory of 'Male'?, \nFalse
+Can Daughter that is also OffSpring be considered a subcategory of 'Father'?, \nFalse
+Can Male that is also Mother be considered a subcategory of 'Sister'?, \nFalse
+Can something that hasSex some OffSpring be considered a subcategory of 'GrandMother'?, \nFalse
+Can Man that is also Woman be considered a subcategory of 'Sister'?, \nFalse
+Can Male be considered a subcategory of 'something that hasSibling some Mother'?, \nFalse
+Can something that hasParent some Sister be considered a subcategory of 'Sex'?, \nFalse
+Can Son be considered a subcategory of 'something that hasParent some Brother'?, \nFalse
+Can GrandFather that is also OffSpring be considered a subcategory of 'Son'?, \nFalse
+Can Sibling that is also Son be considered a subcategory of 'Woman'?, \nFalse
+Can something that hasSibling some Female be considered a subcategory of 'Sex'?, \nFalse
+Can Father that is also Mother be considered a subcategory of 'Son'?, \nFalse
+Can GrandFather that is also Woman be considered a subcategory of 'Brother'?, \nFalse
+Can Child that is also Person be considered a subcategory of 'Male'?, \nFalse
+Can Female that is also GrandMother be considered a subcategory of 'OffSpring'?, \nFalse
+Can Father that is also Mother be considered a subcategory of 'OffSpring'?, \nFalse
+Can Parent that is also Sister be considered a subcategory of 'Child'?, \nFalse
+Can Man be considered a subcategory of 'Son'?, \nFalse
+Can something that hasSex some Woman be considered a subcategory of 'Male'?, \nFalse
+Can something that hasChild some Child be considered a subcategory of 'Child'?, \nFalse
+Can something that hasParent some OffSpring be considered a subcategory of 'Person'?, \nFalse
+Can something that hasSibling some Son be considered a subcategory of 'Person'?, \nFalse
+Can Man that is also Son be considered a subcategory of 'Daughter'?, \nFalse
+Can Male that is also Mother be considered a subcategory of 'Sibling'?, \nFalse
+Can GrandFather that is also Sibling be considered a subcategory of 'Sex'?, \nFalse
+Can Father that is also Male be considered a subcategory of 'Mother'?, \nFalse
+Can Father that is also GrandFather be considered a subcategory of 'Mother'?, \nFalse
+Can Child that is also Parent be considered a subcategory of 'Woman'?, \nFalse
+Can Brother that is also Person be considered a subcategory of 'Daughter'?, \nFalse
+Can Brother that is also Woman be considered a subcategory of 'Female'?, \nFalse
+Can Child that is also Woman be considered a subcategory of 'Daughter'?, \nTrue
+Can Child that is also Woman be considered a subcategory of 'GrandMother'?, \nFalse
+Can Child that is also Woman be considered a subcategory of 'Son'?, \nFalse
+Can Child that is also Woman be considered a subcategory of 'Female'?, \nFalse
+Can Child that is also Woman be considered a subcategory of 'Father'?, \nFalse
+Can Child that is also Woman be considered a subcategory of 'Person'?, \nTrue
+Can Woman be considered a subcategory of 'Person'?, \nFalse
+Can Child be considered a subcategory of 'Person'?, \nFalse
+Can Female that is also Man be considered a subcategory of 'Mother'?, \nFalse
+Can Mother that is also Person be considered a subcategory of 'Sex'?, \nFalse
+Can something that hasChild some GrandParent be considered a subcategory of 'Brother'?, \nFalse
+Can Sibling that is also Sister be considered a subcategory of 'Brother'?, \nFalse
+Can Female that is also Person be considered a subcategory of 'Woman'?, \nTrue
+Can Female that is also Person be considered a subcategory of 'GrandMother'?, \nFalse
+Can Female that is also Person be considered a subcategory of 'Son'?, \nFalse
+Can Female that is also Person be considered a subcategory of 'Father'?, \nFalse
+Can Female that is also Person be considered a subcategory of 'Child'?, \nFalse
+Can Female that is also Person be considered a subcategory of 'Brother'?, \nFalse
+Can Female that is also Person be considered a subcategory of 'Parent'?, \nFalse
+Can Female that is also Person be considered a subcategory of 'Daughter'?, \nFalse
+Can Female that is also Person be considered a subcategory of 'Man'?, \nFalse
+Can Female that is also Person be considered a subcategory of 'Mother'?, \nFalse
+Can Female that is also Person be considered a subcategory of 'GrandParent'?, \nFalse
+Can Female that is also Person be considered a subcategory of 'Sex'?, \nFalse
+Can Female that is also Person be considered a subcategory of 'Sister'?, \nFalse
+Can Female that is also Person be considered a subcategory of 'OffSpring'?, \nFalse
+Can Female be considered a subcategory of 'Woman'?, \nFalse
+Can Person be considered a subcategory of 'Woman'?, \nFalse
+Can GrandParent that is also Person be considered a subcategory of 'GrandFather'?, \nFalse
+Can something that hasSibling some Son be considered a subcategory of 'GrandMother'?, \nFalse
+Can GrandParent be considered a subcategory of 'Woman'?, \nFalse
+Can Male that is also OffSpring be considered a subcategory of 'Father'?, \nFalse
+Can Child be considered a subcategory of 'something that hasSex some Sister'?, \nFalse
+Can Female that is also Sibling be considered a subcategory of 'Man'?, \nFalse
+Can Female that is also Mother be considered a subcategory of 'Father'?, \nFalse
+Can Daughter that is also GrandMother be considered a subcategory of 'GrandParent'?, \nTrue
+Can Daughter that is also GrandMother be considered a subcategory of 'Son'?, \nFalse
+Can Daughter that is also GrandMother be considered a subcategory of 'Female'?, \nFalse
+Can Daughter that is also GrandMother be considered a subcategory of 'Father'?, \nFalse
+Can Daughter that is also GrandMother be considered a subcategory of 'Child'?, \nFalse
+Can Daughter that is also GrandMother be considered a subcategory of 'Person'?, \nFalse
+Can Daughter that is also GrandMother be considered a subcategory of 'Brother'?, \nFalse
+Can Daughter that is also GrandMother be considered a subcategory of 'Parent'?, \nFalse
+Can Daughter that is also GrandMother be considered a subcategory of 'Man'?, \nFalse
+Can Daughter that is also GrandMother be considered a subcategory of 'Mother'?, \nFalse
+Can GrandMother be considered a subcategory of 'GrandParent'?, \nFalse
+Can Daughter be considered a subcategory of 'GrandParent'?, \nFalse
+Can Man that is also Sex be considered a subcategory of 'GrandParent'?, \nFalse
+Can Parent be considered a subcategory of 'something that hasChild some Sister'?, \nFalse
+Can something that hasChild some Person be considered a subcategory of 'Person'?, \nTrue
+Can something that hasChild some Person be considered a subcategory of 'GrandMother'?, \nFalse
+Can something that hasChild some Person be considered a subcategory of 'Son'?, \nFalse
+Can something that hasChild some Person be considered a subcategory of 'Female'?, \nFalse
+Can something that hasChild some Person be considered a subcategory of 'Father'?, \nFalse
+Can something that hasChild some Person be considered a subcategory of 'Child'?, \nTrue
+Can Person be considered a subcategory of 'Child'?, \nFalse
+Can Thing be considered a subcategory of 'something that hasChild some Person'?, \nTrue
+Can Person be considered a subcategory of 'GrandMother'?, \nFalse
+Can Person be considered a subcategory of 'Son'?, \nFalse
+Can Person be considered a subcategory of 'Female'?, \nFalse
+Can Person be considered a subcategory of 'Father'?, \nFalse
+Can Person be considered a subcategory of 'Brother'?, \nFalse
+Can Person be considered a subcategory of 'Parent'?, \nFalse
+Can Person be considered a subcategory of 'Daughter'?, \nFalse
+Can Person be considered a subcategory of 'Man'?, \nFalse
+Can Person be considered a subcategory of 'Mother'?, \nFalse
+Can Person be considered a subcategory of 'GrandParent'?, \nFalse
+Can Person be considered a subcategory of 'Sex'?, \nFalse
+Can Person be considered a subcategory of 'Sister'?, \nFalse
+Can Person be considered a subcategory of 'OffSpring'?, \nFalse
+Can Person be considered a subcategory of 'Male'?, \nFalse
+Can Person be considered a subcategory of 'Sibling'?, \nFalse
+Can Person be considered a subcategory of 'GrandFather'?, \nFalse
+Can something that hasChild some Thing be considered a subcategory of 'Child'?, \nFalse
+Can Sex be considered a subcategory of 'something that hasSibling some Man'?, \nFalse
+Can OffSpring that is also Sister be considered a subcategory of 'Daughter'?, \nFalse
+Can Brother that is also GrandParent be considered a subcategory of 'GrandFather'?, \nFalse
+Can Daughter be considered a subcategory of 'something that hasParent some GrandFather'?, \nFalse
+Can Child that is also Person be considered a subcategory of 'GrandMother'?, \nFalse
+Can GrandFather be considered a subcategory of 'something that hasSibling some Woman'?, \nFalse
+Can Person that is also Sister be considered a subcategory of 'Parent'?, \nFalse
+Can Daughter that is also GrandFather be considered a subcategory of 'Male'?, \nFalse
+Can GrandFather that is also Man be considered a subcategory of 'Daughter'?, \nFalse
+Can Male that is also Sister be considered a subcategory of 'Child'?, \nFalse
+Can OffSpring that is also Sibling be considered a subcategory of 'Man'?, \nFalse
+Can Man be considered a subcategory of 'something that hasSibling some Sister'?, \nFalse
+Can GrandParent that is also Sister be considered a subcategory of 'GrandMother'?, \nFalse
+Can something that hasChild some Brother be considered a subcategory of 'Father'?, \nFalse
+Can GrandMother that is also Woman be considered a subcategory of 'Sister'?, \nFalse
+Can OffSpring be considered a subcategory of 'GrandFather'?, \nFalse
+Can Son be considered a subcategory of 'GrandFather'?, \nFalse
+Can Daughter that is also Man be considered a subcategory of 'GrandMother'?, \nFalse
+Can GrandFather that is also GrandParent be considered a subcategory of 'Daughter'?, \nFalse
+Can GrandMother that is also OffSpring be considered a subcategory of 'Son'?, \nFalse
+Can Child that is also Daughter be considered a subcategory of 'Woman'?, \nFalse
+Can Daughter be considered a subcategory of 'something that hasSex some Child'?, \nFalse
+Can Mother be considered a subcategory of 'something that hasChild some Son'?, \nFalse
+Can GrandMother that is also Woman be considered a subcategory of 'Parent'?, \nTrue
+Can GrandMother that is also Woman be considered a subcategory of 'Son'?, \nFalse
+Can GrandMother that is also Woman be considered a subcategory of 'Female'?, \nTrue
+Can GrandMother be considered a subcategory of 'Female'?, \nTrue
+Can GrandMother be considered a subcategory of 'Thing'?, \nFalse
+Can GrandMother be considered a subcategory of 'Son'?, \nFalse
+Can GrandMother be considered a subcategory of 'Father'?, \nFalse
+Can GrandMother be considered a subcategory of 'Child'?, \nFalse
+Can GrandMother be considered a subcategory of 'Person'?, \nFalse
+Can GrandMother be considered a subcategory of 'Brother'?, \nFalse
+Can GrandMother be considered a subcategory of 'Parent'?, \nFalse
+Can GrandMother be considered a subcategory of 'Daughter'?, \nFalse
+Can GrandMother be considered a subcategory of 'Man'?, \nFalse
+Can GrandMother be considered a subcategory of 'Mother'?, \nFalse
+Can GrandMother be considered a subcategory of 'Sex'?, \nFalse
+Can GrandMother be considered a subcategory of 'Sister'?, \nFalse
+Can GrandMother be considered a subcategory of 'OffSpring'?, \nFalse
+Can GrandMother be considered a subcategory of 'Woman'?, \nTrue
+Can GrandMother be considered a subcategory of 'Female that is also Woman'?, \nTrue
+Can GrandMother be considered a subcategory of 'Male'?, \nFalse
+Can GrandMother be considered a subcategory of 'Sibling'?, \nFalse
+Can GrandMother be considered a subcategory of 'GrandFather'?, \nFalse
+Can Father be considered a subcategory of 'something that hasSibling some Parent'?, \nTrue
+Can Father be considered a subcategory of 'GrandMother'?, \nFalse
+Can Father be considered a subcategory of 'Son'?, \nFalse
+Can Father be considered a subcategory of 'Female'?, \nFalse
+Can Father be considered a subcategory of 'Child'?, \nFalse
+Can Father be considered a subcategory of 'Person'?, \nFalse
+Can Father be considered a subcategory of 'Brother'?, \nFalse
+Can Father be considered a subcategory of 'Parent'?, \nTrue
+Can Father be considered a subcategory of 'Thing'?, \nFalse
+Can Father be considered a subcategory of 'Daughter'?, \nFalse
+Can Father be considered a subcategory of 'Man'?, \nFalse
+Can Father be considered a subcategory of 'Mother'?, \nFalse
+Can Father be considered a subcategory of 'GrandParent'?, \nFalse
+Can Father be considered a subcategory of 'Sex'?, \nFalse
+Can Father be considered a subcategory of 'Sister'?, \nFalse
+Can Father be considered a subcategory of 'OffSpring'?, \nFalse
+Can Father be considered a subcategory of 'Woman'?, \nFalse
+Can Father be considered a subcategory of 'Male'?, \nTrue
+Can Father be considered a subcategory of 'Male that is also Parent'?, \nFalse
+Can Father be considered a subcategory of 'Sibling'?, \nFalse
+Can Father be considered a subcategory of 'GrandFather'?, \nFalse
+Can Parent that is also Sex be considered a subcategory of 'OffSpring'?, \nFalse
+Can something that hasParent some Brother be considered a subcategory of 'OffSpring'?, \nFalse
+Can GrandParent that is also Sex be considered a subcategory of 'Child'?, \nFalse
+Can Brother that is also OffSpring be considered a subcategory of 'Son'?, \nFalse
+Can GrandParent that is also Sister be considered a subcategory of 'Male'?, \nFalse
+Can Man that is also Sibling be considered a subcategory of 'Child'?, \nFalse
+Can Daughter that is also GrandFather be considered a subcategory of 'Woman'?, \nFalse
+Can Father that is also Female be considered a subcategory of 'Sister'?, \nFalse
+Can GrandFather that is also Man be considered a subcategory of 'Woman'?, \nFalse
+Can Child that is also Woman be considered a subcategory of 'Sex'?, \nFalse
+Can Child that is also Parent be considered a subcategory of 'Female'?, \nFalse
+Can Brother that is also OffSpring be considered a subcategory of 'Mother'?, \nFalse
+Can Father that is also GrandParent be considered a subcategory of 'Woman'?, \nFalse
+Can something that hasChild some Sister be considered a subcategory of 'Female'?, \nFalse
+Can Brother be considered a subcategory of 'something that hasSex some Mother'?, \nFalse
+Can GrandFather that is also Son be considered a subcategory of 'Child'?, \nFalse
+Can Sibling that is also Son be considered a subcategory of 'Brother'?, \nFalse
+Can Male that is also Sex be considered a subcategory of 'Brother'?, \nI
+Can something that hasSibling some Sex be considered a subcategory of 'Son'?, \nNo
+Can Father that is also Parent be considered a subcategory of 'Woman'?, \nFalse
+Can Male that is also Person be considered a subcategory of 'Child'?, \nFalse
+Can something that hasParent some Daughter be considered a subcategory of 'Son'?, \nFalse
+Can something that hasSibling some GrandFather be considered a subcategory of 'Father'?, \nFalse
+Can Father that is also Person be considered a subcategory of 'Sister'?, \nFalse
+Can Male that is also Parent be considered a subcategory of 'Man'?, \nFalse
+Can something that hasParent some Father be considered a subcategory of 'Father'?, \nFalse
+Can Female that is also Parent be considered a subcategory of 'GrandParent'?, \nFalse
+Can Brother be considered a subcategory of 'something that hasParent some GrandParent'?, \nFalse
+Can Daughter that is also GrandFather be considered a subcategory of 'Sibling'?, \nFalse
+Can Child that is also Sibling be considered a subcategory of 'Person'?, \nFalse
+Can something that hasSex some Female be considered a subcategory of 'Female'?, \nFalse
+Can something that hasSibling some Mother be considered a subcategory of 'Daughter'?, \nFalse
+Can Woman be considered a subcategory of 'something that hasSibling some GrandFather'?, \nFalse
+Can Male that is also Sibling be considered a subcategory of 'GrandFather'?, \nFalse
+Can Daughter that is also Father be considered a subcategory of 'Brother'?, \nFalse
+Can Sister be considered a subcategory of 'something that hasSex some Daughter'?, \nFalse
+Can Man be considered a subcategory of 'something that hasChild some Sibling'?, \nFalse
+Can something that hasSex some Sibling be considered a subcategory of 'Brother'?, \nFalse
+Can something that hasChild some Female be considered a subcategory of 'Mother'?, \nFalse
+Can Woman be considered a subcategory of 'something that hasParent some OffSpring'?, \nFalse
+Can Child that is also GrandParent be considered a subcategory of 'OffSpring'?, \nFalse
+Can Person be considered a subcategory of 'something that hasChild some Child'?, \nTrue
+Can GrandMother be considered a subcategory of 'something that hasChild some Child'?, \nFalse
+Can Thing be considered a subcategory of 'something that hasChild some Child'?, \nFalse
+Can Son be considered a subcategory of 'something that hasChild some Child'?, \nTrue
+Can something that hasChild some Child be considered a subcategory of 'something that hasChild some Child'?, \nTrue
+Can Thing be considered a subcategory of 'Child'?, \nFalse
+Can Son be considered a subcategory of 'Child'?, \nTrue
+Can Son be considered a subcategory of 'GrandMother'?, \nFalse
+Can Son be considered a subcategory of 'Thing'?, \nTrue
+Can Son be considered a subcategory of 'Child that is also Thing'?, \nFalse
+Can Son be considered a subcategory of 'Female'?, \nFalse
+Can Son be considered a subcategory of 'Father'?, \nFalse
+Can Son be considered a subcategory of 'Person'?, \nFalse
+Can Son be considered a subcategory of 'Brother'?, \nFalse
+Can Son be considered a subcategory of 'Parent'?, \nFalse
+Can Son be considered a subcategory of 'Daughter'?, \nFalse
+Can Son be considered a subcategory of 'Man'?, \nFalse
+Can Son be considered a subcategory of 'Mother'?, \nFalse
+Can Son be considered a subcategory of 'GrandParent'?, \nFalse
+Can Son be considered a subcategory of 'Sex'?, \nFalse
+Can Son be considered a subcategory of 'Sister'?, \nFalse
+Can Son be considered a subcategory of 'OffSpring'?, \nFalse
+Can Son be considered a subcategory of 'Woman'?, \nFalse
+Can Son be considered a subcategory of 'Male'?, \nFalse
+Can Son be considered a subcategory of 'Sibling'?, \nFalse
+Can Man be considered a subcategory of 'something that hasSex some Child'?, \nFalse
+Can Brother that is also Son be considered a subcategory of 'OffSpring'?, \nFalse
+Can Daughter that is also Mother be considered a subcategory of 'Woman'?, \nFalse
+Can OffSpring that is also Sex be considered a subcategory of 'Woman'?, \nFalse
+Can Father that is also Man be considered a subcategory of 'Male'?, \nFalse
+Can GrandParent be considered a subcategory of 'Child'?, \nFalse
+Can Female that is also GrandMother be considered a subcategory of 'Sibling'?, \nFalse
+Can GrandMother that is also Sister be considered a subcategory of 'Male'?, \nFalse
+Can Man be considered a subcategory of 'something that hasSex some GrandFather'?, \nFalse
+Can GrandParent be considered a subcategory of 'something that hasChild some Man'?, \nFalse
+Can something that hasChild some Female be considered a subcategory of 'GrandParent'?, \nFalse
+Can GrandMother that is also Mother be considered a subcategory of 'GrandFather'?, \nFalse
+Can Brother that is also Sex be considered a subcategory of 'Sibling'?, \nI
+Can Brother that is also Son be considered a subcategory of 'Sibling'?, \nTrue
+Can Brother that is also Son be considered a subcategory of 'GrandMother'?, \nFalse
+Can Brother that is also Son be considered a subcategory of 'Female'?, \nFalse
+Can Brother that is also Son be considered a subcategory of 'Father'?, \nFalse
+Can Brother that is also Son be considered a subcategory of 'Person'?, \nTrue
+Can Brother be considered a subcategory of 'Person'?, \nFalse
+Can Father that is also Sex be considered a subcategory of 'Daughter'?, \nI
+Can something that hasSibling some Sister be considered a subcategory of 'Mother'?, \nFalse
+Can Father that is also Man be considered a subcategory of 'Sex'?, \nFalse
+Can Male that is also Woman be considered a subcategory of 'Person'?, \nFalse
+Can something that hasParent some Child be considered a subcategory of 'Brother'?, \nFalse
+Can Female that is also Son be considered a subcategory of 'Daughter'?, \nFalse
+Can Brother that is also Parent be considered a subcategory of 'Woman'?, \nFalse
+Can GrandFather that is also GrandParent be considered a subcategory of 'Sex'?, \nFalse
+Can OffSpring that is also Sibling be considered a subcategory of 'Female'?, \nFalse
+Can GrandParent be considered a subcategory of 'something that hasSex some Sibling'?, \nFalse
+Can Brother that is also Daughter be considered a subcategory of 'GrandParent'?, \nFalse
+Can Father that is also Man be considered a subcategory of 'GrandMother'?, \nFalse
+Can Sister that is also Son be considered a subcategory of 'Man'?, \nFalse
+Can Man that is also Parent be considered a subcategory of 'Father'?, \nFalse
+Can Sex that is also Woman be considered a subcategory of 'GrandFather'?, \nI
+Can Child that is also OffSpring be considered a subcategory of 'Man'?, \nFalse
+Can Father that is also Son be considered a subcategory of 'Person'?, \nFalse
+Can GrandFather that is also Male be considered a subcategory of 'Person'?, \nTrue
+Can GrandFather that is also Male be considered a subcategory of 'GrandMother'?, \nFalse
+Can GrandFather that is also Male be considered a subcategory of 'Son'?, \nFalse
+Can GrandFather that is also Male be considered a subcategory of 'Female'?, \nFalse
+Can GrandFather that is also Male be considered a subcategory of 'Father'?, \nFalse
+Can GrandFather that is also Male be considered a subcategory of 'Child'?, \nFalse
+Can Male be considered a subcategory of 'Person'?, \nFalse
+Can GrandFather be considered a subcategory of 'Person'?, \nFalse
+Can something that hasParent some GrandParent be considered a subcategory of 'Father'?, \nFalse
+Can something that hasSibling some Sibling be considered a subcategory of 'Sibling'?, \nFalse
+Can Brother that is also Person be considered a subcategory of 'GrandFather'?, \nFalse
+Can Daughter that is also Woman be considered a subcategory of 'Female'?, \nFalse
+Can Sibling be considered a subcategory of 'something that hasSex some GrandParent'?, \nFalse
+Can Female be considered a subcategory of 'something that hasChild some GrandFather'?, \nFalse
+Can GrandFather that is also Parent be considered a subcategory of 'Sibling'?, \nFalse
+Can GrandParent that is also Person be considered a subcategory of 'Brother'?, \nFalse
+Can OffSpring that is also Sibling be considered a subcategory of 'Son'?, \nFalse
+Can Female that is also Woman be considered a subcategory of 'Sibling'?, \nFalse
+Can something that hasSibling some Daughter be considered a subcategory of 'Parent'?, \nFalse
+Can Child that is also Sister be considered a subcategory of 'GrandMother'?, \nFalse
+Can Female that is also Sibling be considered a subcategory of 'Parent'?, \nFalse
+Can something that hasSex some Person be considered a subcategory of 'Parent'?, \nI
+Can Daughter that is also Sex be considered a subcategory of 'Parent'?, \nI
+Can Female that is also Woman be considered a subcategory of 'Sister'?, \nFalse
+Can Person be considered a subcategory of 'something that hasSex some OffSpring'?, \nFalse
+Can GrandMother that is also Sibling be considered a subcategory of 'Brother'?, \nFalse
+Can OffSpring that is also Parent be considered a subcategory of 'Father'?, \nFalse
+Can GrandFather that is also Sister be considered a subcategory of 'Sibling'?, \nFalse
+Can Child that is also Mother be considered a subcategory of 'Father'?, \nFalse
+Can Male that is also Sex be considered a subcategory of 'Son'?, \nFalse
+Can GrandFather that is also Sex be considered a subcategory of 'Male'?, \nFalse
+Can Brother that is also Person be considered a subcategory of 'Child'?, \nFalse
+Can Child that is also Mother be considered a subcategory of 'Son'?, \nFalse
+Can GrandFather that is also Sister be considered a subcategory of 'Parent'?, \nFalse
+Can something that hasParent some Parent be considered a subcategory of 'Woman'?, \nFalse
+Can GrandParent be considered a subcategory of 'something that hasSibling some OffSpring'?, \nFalse
+Can Mother that is also OffSpring be considered a subcategory of 'Male'?, \nFalse
+Can Woman be considered a subcategory of 'something that hasChild some Child'?, \nFalse
+Can Female that is also Mother be considered a subcategory of 'Male'?, \nFalse
+Can GrandParent be considered a subcategory of 'OffSpring'?, \nFalse
+Can GrandFather that is also Sibling be considered a subcategory of 'Father'?, \nFalse
+Can Daughter that is also Woman be considered a subcategory of 'Sister'?, \nFalse
+Can Man that is also Person be considered a subcategory of 'Sibling'?, \nFalse
+Can GrandMother that is also Sister be considered a subcategory of 'Sibling'?, \nFalse
+Can Male that is also Sex be considered a subcategory of 'Female'?, \nFalse
+Can Child that is also GrandParent be considered a subcategory of 'Sister'?, \nFalse
+Can Brother that is also Daughter be considered a subcategory of 'Mother'?, \nFalse
+Can Mother that is also Woman be considered a subcategory of 'Sex'?, \nFalse
+Can Father that is also Man be considered a subcategory of 'Brother'?, \nFalse
+Can Person that is also Sex be considered a subcategory of 'Brother'?, \nFalse
+Can Man that is also Parent be considered a subcategory of 'Woman'?, \nFalse
+Can something that hasChild some GrandParent be considered a subcategory of 'Woman'?, \nFalse
+Can Child that is also OffSpring be considered a subcategory of 'Sex'?, \nFalse
+Can Child that is also Sister be considered a subcategory of 'Female'?, \nTrue
+Can Child that is also Sister be considered a subcategory of 'Son'?, \nFalse
+Can Sister be considered a subcategory of 'Female'?, \nFalse
+Can Child be considered a subcategory of 'Female'?, \nFalse
+Can GrandParent that is also Male be considered a subcategory of 'Brother'?, \nFalse
+Can Sibling be considered a subcategory of 'something that hasSex some Mother'?, \nFalse
+Can GrandMother that is also Sibling be considered a subcategory of 'OffSpring'?, \nFalse
+Can Father that is also Son be considered a subcategory of 'OffSpring'?, \nTrue
+Can Father that is also Son be considered a subcategory of 'GrandMother'?, \nFalse
+Can Father that is also Son be considered a subcategory of 'Female'?, \nFalse
+Can Father that is also Son be considered a subcategory of 'Brother'?, \nFalse
+Can Father that is also Son be considered a subcategory of 'Daughter'?, \nFalse
+Can Father that is also Son be considered a subcategory of 'Man'?, \nFalse
+Can Father that is also Son be considered a subcategory of 'Mother'?, \nFalse
+Can Father that is also Son be considered a subcategory of 'GrandParent'?, \nFalse
+Can Father that is also Son be considered a subcategory of 'Sex'?, \nFalse
+Can Father that is also Son be considered a subcategory of 'Sister'?, \nFalse
+Can Brother that is also Sister be considered a subcategory of 'Man'?, \nFalse
+Can GrandFather that is also Woman be considered a subcategory of 'Father'?, \nFalse
+Can something that hasSex some Sister be considered a subcategory of 'GrandFather'?, \nFalse
+Can something that hasSibling some Man be considered a subcategory of 'Man'?, \nFalse
+Can Man that is also Mother be considered a subcategory of 'Person'?, \nFalse
+Can GrandParent that is also OffSpring be considered a subcategory of 'Person'?, \nFalse
+Can Child that is also Person be considered a subcategory of 'Daughter'?, \nFalse
+Can Daughter that is also Sister be considered a subcategory of 'Sibling'?, \nFalse
+Can something that hasChild some Male be considered a subcategory of 'Sex'?, \nFalse
+Can GrandMother be considered a subcategory of 'something that hasSex some Female'?, \nFalse
+Can Child that is also Sibling be considered a subcategory of 'GrandParent'?, \nFalse
+Can Parent that is also Son be considered a subcategory of 'Mother'?, \nFalse
+Can Sex be considered a subcategory of 'OffSpring'?, \nFalse
+Can Man be considered a subcategory of 'something that hasChild some Female'?, \nFalse
+Can GrandParent that is also Person be considered a subcategory of 'Daughter'?, \nFalse
+Can Daughter that is also Parent be considered a subcategory of 'Sister'?, \nFalse
+Can Man that is also Sex be considered a subcategory of 'GrandMother'?, \nFalse
+Can Person that is also Woman be considered a subcategory of 'OffSpring'?, \nFalse
+Can Child that is also GrandParent be considered a subcategory of 'Parent'?, \nFalse
+Can Daughter be considered a subcategory of 'something that hasParent some Father'?, \nTrue
+Can Daughter be considered a subcategory of 'GrandMother'?, \nFalse
+Can Daughter be considered a subcategory of 'Son'?, \nFalse
+Can Daughter be considered a subcategory of 'Female'?, \nFalse
+Can Daughter be considered a subcategory of 'Father'?, \nFalse
+Can Daughter be considered a subcategory of 'Child'?, \nTrue
+Can Daughter be considered a subcategory of 'Thing'?, \nFalse
+Can Daughter be considered a subcategory of 'Person'?, \nFalse
+Can Daughter be considered a subcategory of 'Brother'?, \nFalse
+Can Daughter be considered a subcategory of 'Parent'?, \nFalse
+Can Daughter be considered a subcategory of 'Man'?, \nFalse
+Can Daughter be considered a subcategory of 'Mother'?, \nFalse
+Can Daughter be considered a subcategory of 'Sex'?, \nFalse
+Can Daughter be considered a subcategory of 'Sister'?, \nFalse
+Can Daughter be considered a subcategory of 'OffSpring'?, \nFalse
+Can Daughter be considered a subcategory of 'Woman'?, \nTrue
+Can Daughter be considered a subcategory of 'Child that is also Woman'?, \nFalse
+Can Daughter be considered a subcategory of 'Male'?, \nFalse
+Can Daughter be considered a subcategory of 'Sibling'?, \nFalse
+Can Daughter be considered a subcategory of 'GrandFather'?, \nFalse
+Can GrandMother that is also Person be considered a subcategory of 'OffSpring'?, \nFalse
+Can GrandFather that is also Person be considered a subcategory of 'Father'?, \nFalse
+Can Daughter that is also Sibling be considered a subcategory of 'Sister'?, \nFalse
+Can GrandMother be considered a subcategory of 'something that hasSex some Man'?, \nFalse
+Can Father be considered a subcategory of 'something that hasChild some Father'?, \nTrue
+Can Woman be considered a subcategory of 'something that hasParent some GrandParent'?, \nFalse
+Can Male be considered a subcategory of 'something that hasSibling some GrandParent'?, \nFalse
+Can Female that is also Sex be considered a subcategory of 'Sister'?, \nFalse
+Can Brother be considered a subcategory of 'GrandMother'?, \nFalse
+Can GrandFather be considered a subcategory of 'something that hasChild some GrandParent'?, \nFalse
+Can Person that is also Sibling be considered a subcategory of 'Sex'?, \nFalse
+Can something that hasSibling some Male be considered a subcategory of 'Person'?, \nTrue
+Can something that hasSibling some Male be considered a subcategory of 'GrandMother'?, \nFalse
+Can something that hasSibling some Male be considered a subcategory of 'Son'?, \nFalse
+Can something that hasSibling some Male be considered a subcategory of 'Female'?, \nFalse
+Can something that hasSibling some Male be considered a subcategory of 'Father'?, \nFalse
+Can something that hasSibling some Male be considered a subcategory of 'Child'?, \nFalse
+Can Thing be considered a subcategory of 'something that hasSibling some Male'?, \nFalse
+Can Thing be considered a subcategory of 'GrandMother'?, \nFalse
+Can Thing be considered a subcategory of 'Son'?, \nFalse
+Can Thing be considered a subcategory of 'Female'?, \nFalse
+Can Thing be considered a subcategory of 'Father'?, \nFalse
+Can Thing be considered a subcategory of 'Person'?, \nFalse
+Can Thing be considered a subcategory of 'Brother'?, \nFalse
+Can Thing be considered a subcategory of 'Parent'?, \nFalse
+Can Thing be considered a subcategory of 'Daughter'?, \nFalse
+Can Thing be considered a subcategory of 'Man'?, \nFalse
+Can Thing be considered a subcategory of 'Mother'?, \nFalse
+Can Thing be considered a subcategory of 'GrandParent'?, \nFalse
+Can Thing be considered a subcategory of 'Sex'?, \nFalse
+Can Thing be considered a subcategory of 'Sister'?, \nFalse
+Can Thing be considered a subcategory of 'OffSpring'?, \nFalse
+Can Thing be considered a subcategory of 'Woman'?, \nFalse
+Can Thing be considered a subcategory of 'Male'?, \nFalse
+Can Thing be considered a subcategory of 'Sibling'?, \nFalse
+Can Thing be considered a subcategory of 'GrandFather'?, \nFalse
+Can Male be considered a subcategory of 'GrandMother'?, \nFalse
+Can Male be considered a subcategory of 'Son'?, \nFalse
+Can Male be considered a subcategory of 'Female'?, \nFalse
+Can Male be considered a subcategory of 'Father'?, \nFalse
+Can Male be considered a subcategory of 'Child'?, \nFalse
+Can Male be considered a subcategory of 'Brother'?, \nFalse
+Can Male be considered a subcategory of 'Parent'?, \nFalse
+Can Male be considered a subcategory of 'Daughter'?, \nFalse
+Can Male be considered a subcategory of 'Man'?, \nFalse
+Can Male be considered a subcategory of 'Mother'?, \nFalse
+Can Male be considered a subcategory of 'GrandParent'?, \nFalse
+Can Male be considered a subcategory of 'Sex'?, \nFalse
+Can Male be considered a subcategory of 'Sister'?, \nFalse
+Can Male be considered a subcategory of 'OffSpring'?, \nFalse
+Can Male be considered a subcategory of 'Woman'?, \nFalse
+Can Male be considered a subcategory of 'Sibling'?, \nFalse
+Can Male be considered a subcategory of 'GrandFather'?, \nFalse
+Can something that hasSibling some Thing be considered a subcategory of 'Person'?, \nFalse
+Can Father be considered a subcategory of 'something that hasSex some GrandParent'?, \nFalse
+Can Parent that is also Woman be considered a subcategory of 'Daughter'?, \nFalse
+Can Male be considered a subcategory of 'something that hasParent some Daughter'?, \nFalse
+Can Daughter that is also Female be considered a subcategory of 'Sex'?, \nFalse
+Can Brother that is also Sex be considered a subcategory of 'Female'?, \nI
+Can Female that is also Sister be considered a subcategory of 'Brother'?, \nFalse
+Can Female that is also GrandFather be considered a subcategory of 'GrandParent'?, \nFalse
+Can something that hasChild some Sister be considered a subcategory of 'Brother'?, \nFalse
+Can Father that is also OffSpring be considered a subcategory of 'Son'?, \nFalse
+Can OffSpring that is also Person be considered a subcategory of 'Mother'?, \nFalse
+Can Daughter that is also Son be considered a subcategory of 'Sex'?, \nFalse
+Can Mother be considered a subcategory of 'Man'?, \nFalse
+Can OffSpring that is also Woman be considered a subcategory of 'Father'?, \nFalse
+Can Sibling be considered a subcategory of 'Woman'?, \nFalse
+Can something that hasChild some Father be considered a subcategory of 'GrandMother'?, \nFalse
+Can Child be considered a subcategory of 'something that hasChild some Sister'?, \nFalse
+Can GrandMother that is also Parent be considered a subcategory of 'Sister'?, \nFalse
+Can Child that is also Daughter be considered a subcategory of 'GrandFather'?, \nFalse
+Can Sex that is also Sister be considered a subcategory of 'Man'?, I apolog
+Can Brother that is also Man be considered a subcategory of 'GrandParent'?, \nFalse
+Can GrandParent that is also Woman be considered a subcategory of 'GrandFather'?, \nFalse
+Can something that hasParent some Son be considered a subcategory of 'Sibling'?, \nFalse
+Can Man that is also OffSpring be considered a subcategory of 'Father'?, \nFalse
+Can GrandParent that is also Son be considered a subcategory of 'Father'?, \nFalse
+Can GrandParent that is also Sex be considered a subcategory of 'GrandMother'?, \nFalse
+Can GrandParent that is also Son be considered a subcategory of 'Person'?, \nFalse
+Can Female be considered a subcategory of 'something that hasChild some Child'?, \nFalse
+Can Daughter that is also Sister be considered a subcategory of 'Male'?, \nFalse
+Can Child that is also Daughter be considered a subcategory of 'Male'?, \nFalse
+Can Man that is also Parent be considered a subcategory of 'Sister'?, \nFalse
+Can Father that is also Person be considered a subcategory of 'GrandParent'?, \nFalse
+Can Person that is also Sibling be considered a subcategory of 'Mother'?, \nFalse
+Can Sibling be considered a subcategory of 'something that hasParent some Mother'?, \nFalse
+Can Daughter that is also Sibling be considered a subcategory of 'Mother'?, \nFalse
+Can GrandParent that is also Man be considered a subcategory of 'GrandMother'?, \nFalse
+Can Daughter that is also GrandParent be considered a subcategory of 'GrandMother'?, \nFalse
+Can GrandMother that is also Person be considered a subcategory of 'Father'?, \nFalse
+Can Parent be considered a subcategory of 'something that hasSex some Man'?, \nFalse
+Can something that hasParent some Woman be considered a subcategory of 'OffSpring'?, \nFalse
+Can Child that is also GrandMother be considered a subcategory of 'Brother'?, \nFalse
+Can Child that is also GrandFather be considered a subcategory of 'Woman'?, \nFalse
+Can Parent that is also Person be considered a subcategory of 'Woman'?, \nFalse
+Can GrandParent that is also Sibling be considered a subcategory of 'Child'?, \nFalse
+Can Sex that is also Sibling be considered a subcategory of 'Child'?, \nI
+Can Father that is also Parent be considered a subcategory of 'Brother'?, \nFalse
+Can GrandParent that is also Man be considered a subcategory of 'Male'?, \nFalse
+Can Male be considered a subcategory of 'something that hasSex some Woman'?, \nFalse
+Can GrandMother that is also Sibling be considered a subcategory of 'Male'?, \nFalse
+Can Brother that is also Female be considered a subcategory of 'Son'?, \nFalse
+Can GrandFather that is also Mother be considered a subcategory of 'Parent'?, \nFalse
+Can OffSpring that is also Person be considered a subcategory of 'Male'?, \nFalse
+Can Female that is also Sex be considered a subcategory of 'GrandMother'?, \nFalse
+Can Female that is also Sister be considered a subcategory of 'Parent'?, \nFalse
+Can GrandMother that is also GrandParent be considered a subcategory of 'Daughter'?, \nFalse
+Can Man that is also Sibling be considered a subcategory of 'Daughter'?, \nFalse
+Can Parent be considered a subcategory of 'Sex'?, \nFalse
+Can GrandFather that is also Man be considered a subcategory of 'Mother'?, \nFalse
+Can Sex be considered a subcategory of 'something that hasSex some Brother'?, \nFalse
+Can Brother be considered a subcategory of 'something that hasChild some Mother'?, \nFalse
+Can Female that is also GrandParent be considered a subcategory of 'OffSpring'?, \nFalse
+Can Mother that is also Sibling be considered a subcategory of 'OffSpring'?, \nFalse
+Can something that hasParent some Sex be considered a subcategory of 'Son'?, \nFalse
+Can something that hasSibling some Brother be considered a subcategory of 'Son'?, \nFalse
+Can GrandMother that is also Son be considered a subcategory of 'Mother'?, \nFalse
+Can Daughter that is also Male be considered a subcategory of 'Sex'?, \nFalse
+Can Father that is also Person be considered a subcategory of 'OffSpring'?, \nFalse
+Can Female that is also GrandFather be considered a subcategory of 'Brother'?, \nFalse
+Can Brother that is also Sibling be considered a subcategory of 'GrandMother'?, \nFalse
+Can Female be considered a subcategory of 'something that hasParent some Person'?, \nFalse
+Can Daughter that is also Father be considered a subcategory of 'Sister'?, \nFalse
+Can GrandFather that is also Sex be considered a subcategory of 'Sister'?, \nFalse
+Can Male that is also Man be considered a subcategory of 'GrandFather'?, \nFalse
+Can something that hasSex some Mother be considered a subcategory of 'Man'?, \nFalse
+Can Brother be considered a subcategory of 'something that hasSibling some GrandParent'?, \nFalse
+Can Sister that is also Woman be considered a subcategory of 'GrandFather'?, \nFalse
+Can GrandMother that is also Man be considered a subcategory of 'Sibling'?, \nFalse
+Can Father that is also Person be considered a subcategory of 'Sibling'?, \nFalse
+Can something that hasSibling some OffSpring be considered a subcategory of 'Man'?, \nFalse
+Can Sister that is also Son be considered a subcategory of 'Daughter'?, \nFalse
+Can OffSpring that is also Woman be considered a subcategory of 'Mother'?, \nFalse
+Can Child be considered a subcategory of 'Sex'?, \nFalse
+Can Daughter that is also GrandFather be considered a subcategory of 'Person'?, \nFalse
+Can Mother that is also Person be considered a subcategory of 'GrandParent'?, \nFalse
+Can Female that is also Man be considered a subcategory of 'Father'?, \nFalse
+Can Brother that is also Mother be considered a subcategory of 'Sister'?, \nFalse
+Can GrandParent that is also Sister be considered a subcategory of 'Person'?, \nFalse
+Can Person be considered a subcategory of 'something that hasParent some Person'?, \nTrue
+Can GrandMother be considered a subcategory of 'something that hasParent some Person'?, \nTrue
+Can something that hasParent some Person be considered a subcategory of 'something that hasParent some Person'?, \nTrue
+Can Female be considered a subcategory of 'Person'?, \nFalse
+Can Parent be considered a subcategory of 'Person'?, \nFalse
+Can Man be considered a subcategory of 'Person'?, \nFalse
+Can Mother be considered a subcategory of 'Person'?, \nFalse
+Can GrandParent be considered a subcategory of 'Person'?, \nFalse
+Can Sex be considered a subcategory of 'Person'?, \nFalse
+Can Sister be considered a subcategory of 'Person'?, \nFalse
+Can OffSpring be considered a subcategory of 'Person'?, \nFalse
+Can Sibling be considered a subcategory of 'Person'?, \nTrue
+Can Sibling be considered a subcategory of 'GrandMother'?, \nFalse
+Can Sibling be considered a subcategory of 'Thing'?, \nFalse
+Can Sibling be considered a subcategory of 'Son'?, \nFalse
+Can Sibling be considered a subcategory of 'Female'?, \nFalse
+Can Sibling be considered a subcategory of 'Father'?, \nFalse
+Can Sibling be considered a subcategory of 'Child'?, \nFalse
+Can Sibling be considered a subcategory of 'Brother'?, \nFalse
+Can Sibling be considered a subcategory of 'Parent'?, \nFalse
+Can Sibling be considered a subcategory of 'Daughter'?, \nFalse
+Can Sibling be considered a subcategory of 'Man'?, \nFalse
+Can Sibling be considered a subcategory of 'Mother'?, \nFalse
+Can Sibling be considered a subcategory of 'GrandParent'?, \nFalse
+Can Sibling be considered a subcategory of 'Sex'?, \nFalse
+Can Sibling be considered a subcategory of 'Sister'?, \nFalse
+Can Sibling be considered a subcategory of 'OffSpring'?, \nFalse
+Can Sibling be considered a subcategory of 'Male'?, \nFalse
+Can Sibling be considered a subcategory of 'GrandFather'?, \nFalse
+Can OffSpring that is also Woman be considered a subcategory of 'GrandMother'?, \nFalse
+Can Male that is also Son be considered a subcategory of 'GrandMother'?, \nFalse
+Can Daughter that is also Person be considered a subcategory of 'Man'?, \nFalse
+Can Child that is also Female be considered a subcategory of 'Father'?, \nFalse
+Can GrandFather that is also Person be considered a subcategory of 'Man'?, \nFalse
+Can Child that is also GrandParent be considered a subcategory of 'Person'?, \nFalse
+Can Mother that is also Parent be considered a subcategory of 'Father'?, \nFalse
+Can OffSpring be considered a subcategory of 'something that hasParent some Sister'?, \nFalse
+Can Child be considered a subcategory of 'Male'?, \nFalse
+Can something that hasSex some Parent be considered a subcategory of 'Child'?, \nFalse
+Can Mother that is also Person be considered a subcategory of 'Parent'?, \nTrue
+Can Mother that is also Person be considered a subcategory of 'GrandMother'?, \nFalse
+Can Mother that is also Person be considered a subcategory of 'Son'?, \nFalse
+Can Mother that is also Person be considered a subcategory of 'Female'?, \nFalse
+Can Mother that is also Person be considered a subcategory of 'Father'?, \nFalse
+Can Mother that is also Person be considered a subcategory of 'Child'?, \nFalse
+Can Mother that is also Person be considered a subcategory of 'Brother'?, \nFalse
+Can Mother be considered a subcategory of 'Parent'?, \nTrue
+Can Mother be considered a subcategory of 'GrandMother'?, \nFalse
+Can Mother be considered a subcategory of 'Thing'?, \nFalse
+Can Mother be considered a subcategory of 'Son'?, \nFalse
+Can Mother be considered a subcategory of 'Female'?, \nFalse
+Can Mother be considered a subcategory of 'Father'?, \nFalse
+Can Mother be considered a subcategory of 'Child'?, \nFalse
+Can Mother be considered a subcategory of 'Brother'?, \nFalse
+Can Mother be considered a subcategory of 'Daughter'?, \nFalse
+Can Mother be considered a subcategory of 'GrandParent'?, \nFalse
+Can Mother be considered a subcategory of 'Sex'?, \nFalse
+Can Mother be considered a subcategory of 'Sister'?, \nFalse
+Can Mother be considered a subcategory of 'OffSpring'?, \nFalse
+Can Mother be considered a subcategory of 'Woman'?, \nFalse
+Can Mother be considered a subcategory of 'Male'?, \nFalse
+Can Mother be considered a subcategory of 'Sibling'?, \nFalse
+Can Mother be considered a subcategory of 'GrandFather'?, \nFalse
+Can Woman be considered a subcategory of 'Male'?, \nFalse
+Can GrandParent be considered a subcategory of 'something that hasSex some Brother'?, \nFalse
+Can something that hasChild some Man be considered a subcategory of 'Son'?, \nFalse
+Can GrandParent that is also Sister be considered a subcategory of 'Son'?, \nFalse
+Can OffSpring be considered a subcategory of 'something that hasChild some Parent'?, \nTrue
+Can OffSpring be considered a subcategory of 'GrandMother'?, \nFalse
+Can OffSpring be considered a subcategory of 'Son'?, \nFalse
+Can OffSpring be considered a subcategory of 'Female'?, \nFalse
+Can OffSpring be considered a subcategory of 'Father'?, \nFalse
+Can OffSpring be considered a subcategory of 'Child'?, \nFalse
+Can OffSpring be considered a subcategory of 'Brother'?, \nFalse
+Can OffSpring be considered a subcategory of 'Parent'?, \nFalse
+Can OffSpring be considered a subcategory of 'Daughter'?, \nFalse
+Can OffSpring be considered a subcategory of 'Man'?, \nFalse
+Can OffSpring be considered a subcategory of 'Mother'?, \nFalse
+Can OffSpring be considered a subcategory of 'GrandParent'?, \nFalse
+Can OffSpring be considered a subcategory of 'Sex'?, \nFalse
+Can OffSpring be considered a subcategory of 'Sister'?, \nFalse
+Can OffSpring be considered a subcategory of 'Woman'?, \nFalse
+Can OffSpring be considered a subcategory of 'Male'?, \nFalse
+Can OffSpring be considered a subcategory of 'Sibling'?, \nFalse
+Can GrandMother be considered a subcategory of 'something that hasChild some Parent'?, \nFalse
+Can Thing be considered a subcategory of 'something that hasChild some Parent'?, \nFalse
+Can Son be considered a subcategory of 'something that hasChild some Parent'?, \nFalse
+Can Female be considered a subcategory of 'something that hasChild some Parent'?, \nFalse
+Can Father be considered a subcategory of 'something that hasChild some Parent'?, \nTrue
+Can something that hasChild some Parent be considered a subcategory of 'something that hasChild some Parent'?, \nFalse
+Can Father be considered a subcategory of 'Father'?, \nFalse
+Can Parent be considered a subcategory of 'Father'?, \nFalse
+Can Parent be considered a subcategory of 'something that hasChild some Parent'?, \nTrue
+Can Parent be considered a subcategory of 'GrandMother'?, \nFalse
+Can Parent be considered a subcategory of 'Thing'?, \nFalse
+Can Parent be considered a subcategory of 'Son'?, \nFalse
+Can Parent be considered a subcategory of 'Female'?, \nFalse
+Can Parent be considered a subcategory of 'Child'?, \nFalse
+Can Parent be considered a subcategory of 'Brother'?, \nFalse
+Can Parent be considered a subcategory of 'Parent'?, \nFalse
+Can Parent be considered a subcategory of 'Daughter'?, \nFalse
+Can Parent be considered a subcategory of 'Man'?, \nFalse
+Can Parent be considered a subcategory of 'Mother'?, \nFalse
+Can Parent be considered a subcategory of 'GrandParent'?, \nFalse
+Can Parent be considered a subcategory of 'Sister'?, \nFalse
+Can Parent be considered a subcategory of 'OffSpring'?, \nFalse
+Can Parent be considered a subcategory of 'Woman'?, \nFalse
+Can Parent be considered a subcategory of 'Male'?, \nFalse
+Can Parent be considered a subcategory of 'Sibling'?, \nFalse
+Can Parent be considered a subcategory of 'GrandFather'?, \nFalse
+Can Female be considered a subcategory of 'Parent'?, \nFalse
+Can Child be considered a subcategory of 'Parent'?, \nFalse
+Can Brother be considered a subcategory of 'Parent'?, \nFalse
+Can Man be considered a subcategory of 'Parent'?, \nFalse
+Can GrandParent be considered a subcategory of 'Parent'?, \nFalse
+Can Sex be considered a subcategory of 'Parent'?, \nFalse
+Can Sister be considered a subcategory of 'Parent'?, \nFalse
+Can Woman be considered a subcategory of 'Parent'?, \nFalse
+Can GrandFather be considered a subcategory of 'Parent'?, \nFalse
+Can GrandMother that is also Son be considered a subcategory of 'Male'?, \nFalse
+Can Daughter that is also Female be considered a subcategory of 'Parent'?, \nTrue
+Can Daughter that is also Female be considered a subcategory of 'GrandMother'?, \nFalse
+Can Daughter that is also Female be considered a subcategory of 'Son'?, \nFalse
+Can Daughter that is also Female be considered a subcategory of 'Father'?, \nFalse
+Can Daughter that is also Female be considered a subcategory of 'Person'?, \nFalse
+Can Daughter that is also Female be considered a subcategory of 'Brother'?, \nFalse
+Can Sex be considered a subcategory of 'something that hasSex some Parent'?, \nFalse
+Can Female that is also Mother be considered a subcategory of 'Sister'?, \nFalse
+Can Sex that is also Son be considered a subcategory of 'GrandMother'?, \nI
+Can Person that is also Woman be considered a subcategory of 'Brother'?, \nFalse
+Can OffSpring that is also Parent be considered a subcategory of 'GrandFather'?, \nFalse
+Can Son be considered a subcategory of 'something that hasParent some Man'?, \nFalse
+Can Sex be considered a subcategory of 'something that hasChild some Sex'?, \nFalse
+Can something that hasSibling some Female be considered a subcategory of 'Sister'?, \nFalse
+Can Father that is also Mother be considered a subcategory of 'Sister'?, \nFalse
+Can GrandParent that is also Parent be considered a subcategory of 'Father'?, \nFalse
+Can something that hasParent some Sibling be considered a subcategory of 'Father'?, \nFalse
+Can Female that is also Sister be considered a subcategory of 'GrandParent'?, \nFalse
+Can Brother that is also Man be considered a subcategory of 'GrandFather'?, \nFalse
+Can GrandFather be considered a subcategory of 'something that hasSex some Person'?, \nFalse
+Can Sibling be considered a subcategory of 'something that hasChild some GrandParent'?, \nFalse
+Can something that hasSex some Son be considered a subcategory of 'Daughter'?, \nFalse
+Can something that hasSibling some GrandMother be considered a subcategory of 'Daughter'?, \nFalse
+Can Mother that is also Woman be considered a subcategory of 'Man'?, \nFalse
+Can Male that is also OffSpring be considered a subcategory of 'Female'?, \nFalse
+Can something that hasSex some Daughter be considered a subcategory of 'Parent'?, \nFalse
+Can something that hasSibling some Sex be considered a subcategory of 'Parent'?, \nFalse
+Can Female be considered a subcategory of 'something that hasParent some Female'?, \nFalse
+Can Sex that is also Sister be considered a subcategory of 'Son'?, \nFalse
+Can Child that is also Sex be considered a subcategory of 'Son'?, \nI
+Can GrandParent that is also Sibling be considered a subcategory of 'GrandMother'?, \nFalse
+Can Brother that is also Sister be considered a subcategory of 'Male'?, \nFalse
+Can GrandFather be considered a subcategory of 'something that hasParent some Male'?, \nFalse
+Can Daughter that is also Man be considered a subcategory of 'Sex'?, \nFalse
+Can Son be considered a subcategory of 'something that hasParent some Person'?, \nFalse
+Can Child that is also Sibling be considered a subcategory of 'GrandFather'?, \nFalse
+Can GrandFather that is also Man be considered a subcategory of 'GrandMother'?, \nFalse
+Can Daughter that is also Mother be considered a subcategory of 'GrandFather'?, \nFalse
+Can something that hasChild some Male be considered a subcategory of 'Sister'?, \nFalse
+Can Father that is also GrandMother be considered a subcategory of 'Sister'?, \nFalse
+Can Father that is also Sister be considered a subcategory of 'OffSpring'?, \nFalse
+Can Brother that is also Male be considered a subcategory of 'Son'?, \nTrue
+Can Brother that is also Male be considered a subcategory of 'GrandMother'?, \nFalse
+Can Brother be considered a subcategory of 'Son'?, \nFalse
+Can something that hasParent some Woman be considered a subcategory of 'Son'?, \nFalse
+Can Female that is also OffSpring be considered a subcategory of 'Male'?, \nFalse
+Can Mother that is also Son be considered a subcategory of 'Male'?, \nFalse
+Can GrandFather that is also Man be considered a subcategory of 'OffSpring'?, \nFalse
+Can GrandParent that is also Person be considered a subcategory of 'Parent'?, \nFalse
+Can something that hasSex some GrandFather be considered a subcategory of 'Son'?, \nFalse
+Can Male that is also Woman be considered a subcategory of 'Child'?, \nFalse
+Can Daughter be considered a subcategory of 'something that hasParent some Parent'?, \nTrue
+Can Daughter be considered a subcategory of 'something that hasParent some Sex'?, \nFalse
+Can Female that is also Sibling be considered a subcategory of 'Child'?, \nFalse
+Can Daughter that is also Woman be considered a subcategory of 'Mother'?, \nFalse
+Can Father that is also Sister be considered a subcategory of 'Sibling'?, \nFalse
+Can GrandFather that is also Man be considered a subcategory of 'Person'?, \nTrue
+Can GrandFather that is also Man be considered a subcategory of 'Son'?, \nFalse
+Can GrandFather that is also Man be considered a subcategory of 'Female'?, \nFalse
+Can GrandFather that is also Man be considered a subcategory of 'Father'?, \nFalse
+Can GrandFather that is also Man be considered a subcategory of 'Child'?, \nFalse
+Can Child be considered a subcategory of 'something that hasParent some Female'?, \nFalse
+Can GrandParent that is also Parent be considered a subcategory of 'Female'?, \nFalse
+Can OffSpring that is also Parent be considered a subcategory of 'Sex'?, \nFalse
+Can something that hasChild some Sibling be considered a subcategory of 'Daughter'?, \nFalse
+Can Brother that is also Daughter be considered a subcategory of 'Sex'?, \nFalse
+Can Sibling be considered a subcategory of 'something that hasChild some Brother'?, \nFalse
+Can GrandMother that is also Sex be considered a subcategory of 'Mother'?, \nFalse
+Can Daughter be considered a subcategory of 'something that hasParent some Sister'?, \nFalse
+Can GrandParent that is also Mother be considered a subcategory of 'Sibling'?, \nFalse
+Can Child that is also GrandFather be considered a subcategory of 'Father'?, \nFalse
+Can Mother that is also Parent be considered a subcategory of 'GrandParent'?, \nFalse
+Can Child that is also Female be considered a subcategory of 'GrandParent'?, \nFalse
+Can Father that is also GrandParent be considered a subcategory of 'Daughter'?, \nFalse
+Can GrandMother be considered a subcategory of 'something that hasChild some Sex'?, \nFalse
+Can Child that is also Son be considered a subcategory of 'Brother'?, \nFalse
+Can Male that is also Sister be considered a subcategory of 'Mother'?, \nFalse
+Can Brother that is also Woman be considered a subcategory of 'Person'?, \nFalse
+Can Female be considered a subcategory of 'something that hasChild some Sex'?, \nFalse
+Can Father that is also Sex be considered a subcategory of 'Child'?, \nI
+Can Sex be considered a subcategory of 'something that hasSibling some Male'?, \nI
+Can OffSpring that is also Sibling be considered a subcategory of 'GrandMother'?, \nFalse
+Can Daughter that is also Man be considered a subcategory of 'GrandFather'?, \nFalse
+Can Male that is also Sex be considered a subcategory of 'GrandFather'?, \nFalse
+Can Child that is also Person be considered a subcategory of 'GrandParent'?, \nFalse
+Can Brother that is also Woman be considered a subcategory of 'GrandMother'?, \nFalse
+Can Male that is also Woman be considered a subcategory of 'GrandMother'?, \nFalse
+Can Sex that is also Sibling be considered a subcategory of 'Sister'?, \nI
+Can Brother that is also Female be considered a subcategory of 'Sister'?, \nFalse
+Can something that hasSibling some Person be considered a subcategory of 'GrandFather'?, \nFalse
+Can Daughter that is also Sister be considered a subcategory of 'Man'?, \nFalse
+Can something that hasSex some GrandFather be considered a subcategory of 'GrandFather'?, \nFalse
+Can GrandMother that is also Parent be considered a subcategory of 'Male'?, \nFalse
+Can something that hasParent some Father be considered a subcategory of 'Male'?, \nFalse
+Can GrandFather that is also GrandParent be considered a subcategory of 'Woman'?, \nFalse
+Can Person that is also Son be considered a subcategory of 'GrandParent'?, \nFalse
+Can GrandFather that is also GrandMother be considered a subcategory of 'Child'?, \nFalse
+Can Female that is also Sex be considered a subcategory of 'Child'?, \nI
+Can Male that is also Sibling be considered a subcategory of 'Parent'?, \nFalse
+Can Daughter that is also Person be considered a subcategory of 'Mother'?, \nFalse
+Can Daughter be considered a subcategory of 'something that hasChild some Mother'?, \nFalse
+Can Female that is also Sister be considered a subcategory of 'Male'?, \nFalse
+Can something that hasSex some Child be considered a subcategory of 'GrandMother'?, \nFalse
+Can something that hasSibling some Parent be considered a subcategory of 'GrandMother'?, \nFalse
+Can Father that is also OffSpring be considered a subcategory of 'Female'?, \nFalse
+Can GrandFather that is also Son be considered a subcategory of 'Female'?, \nFalse
+Can something that hasParent some Man be considered a subcategory of 'Mother'?, \nFalse
+Can something that hasSibling some GrandParent be considered a subcategory of 'Sex'?, \nFalse
+Can GrandFather that is also Mother be considered a subcategory of 'OffSpring'?, \nFalse
+Can Male that is also Sibling be considered a subcategory of 'Woman'?, \nFalse
+Can Female be considered a subcategory of 'something that hasSex some OffSpring'?, \nFalse
+Can something that hasChild some Parent be considered a subcategory of 'Child'?, \nFalse
+Can Sister be considered a subcategory of 'something that hasParent some Child'?, \nFalse
+Can Child that is also Daughter be considered a subcategory of 'Brother'?, \nFalse
+Can something that hasSex some Sex be considered a subcategory of 'Mother'?, \nFalse
+Can Man be considered a subcategory of 'something that hasSibling some Son'?, \nFalse
+Can Person that is also Sibling be considered a subcategory of 'Son'?, \nFalse
+Can GrandParent that is also Parent be considered a subcategory of 'Woman'?, \nFalse
+Can something that hasParent some Sibling be considered a subcategory of 'OffSpring'?, \nFalse
+Can GrandMother that is also Sex be considered a subcategory of 'Child'?, \nFalse
+Can GrandParent be considered a subcategory of 'something that hasSex some Parent'?, \nFalse
+Can Sibling be considered a subcategory of 'something that hasChild some Male'?, \nFalse
+Can GrandFather that is also Sex be considered a subcategory of 'OffSpring'?, \nFalse
+Can Person that is also Woman be considered a subcategory of 'Female'?, \nFalse
+Can Sister be considered a subcategory of 'something that hasParent some Sister'?, \nFalse
+Can Man that is also Sister be considered a subcategory of 'Sibling'?, \nFalse
+Can GrandParent that is also Person be considered a subcategory of 'GrandMother'?, \nFalse
+Can Female that is also OffSpring be considered a subcategory of 'GrandMother'?, \nFalse
+Can Child be considered a subcategory of 'something that hasSibling some Son'?, \nFalse
+Can GrandFather that is also Man be considered a subcategory of 'Parent'?, \nFalse
+Can Sibling be considered a subcategory of 'something that hasChild some Mother'?, \nFalse
+Can Female that is also GrandMother be considered a subcategory of 'Sex'?, \nFalse
+Can Father that is also Mother be considered a subcategory of 'Person'?, \nFalse
+Can GrandFather be considered a subcategory of 'something that hasSex some Mother'?, \nFalse
+Can Brother that is also Male be considered a subcategory of 'Woman'?, \nFalse
+Can something that hasSex some Woman be considered a subcategory of 'Woman'?, \nI
+Can Brother that is also Father be considered a subcategory of 'Female'?, \nFalse
+Can Sex that is also Woman be considered a subcategory of 'Female'?, \nI
+Can Man be considered a subcategory of 'Brother'?, \nFalse
+Can GrandParent that is also Person be considered a subcategory of 'Mother'?, \nFalse
+Can something that hasChild some Child be considered a subcategory of 'OffSpring'?, \nFalse
+Can Sister be considered a subcategory of 'Brother'?, \nFalse
+Can Male that is also OffSpring be considered a subcategory of 'Son'?, \nFalse
+Can Child be considered a subcategory of 'something that hasParent some Son'?, \nFalse
+Can Daughter that is also Sibling be considered a subcategory of 'Male'?, \nFalse
+Can Brother that is also Female be considered a subcategory of 'Person'?, \nFalse
+Can Father that is also GrandFather be considered a subcategory of 'Sibling'?, \nFalse
+Can something that hasSex some Man be considered a subcategory of 'Sex'?, \nFalse
+Can something that hasSibling some GrandParent be considered a subcategory of 'Female'?, \nFalse
+Can Child that is also Woman be considered a subcategory of 'GrandParent'?, \nFalse
+Can Male that is also Parent be considered a subcategory of 'GrandFather'?, \nFalse
+Can Male that is also Person be considered a subcategory of 'Sibling'?, \nFalse
+Can Daughter be considered a subcategory of 'something that hasSex some Sibling'?, \nFalse
+Can Sibling that is also Sister be considered a subcategory of 'Daughter'?, \nFalse
+Can Child that is also Daughter be considered a subcategory of 'Mother'?, \nFalse
+Can Mother be considered a subcategory of 'something that hasChild some Brother'?, \nFalse
+Can Sister be considered a subcategory of 'something that hasSex some Father'?, \nFalse
+Can something that hasSibling some Person be considered a subcategory of 'OffSpring'?, \nFalse
+Can GrandFather be considered a subcategory of 'Brother'?, \nFalse
+Can Man that is also Sex be considered a subcategory of 'Father'?, \nI
+Can GrandParent that is also Parent be considered a subcategory of 'Sister'?, \nFalse
+Can something that hasChild some Person be considered a subcategory of 'Man'?, \nFalse
+Can OffSpring that is also Sibling be considered a subcategory of 'GrandParent'?, \nFalse
+Can Female that is also Son be considered a subcategory of 'GrandFather'?, \nFalse
+Can Daughter be considered a subcategory of 'something that hasParent some GrandMother'?, \nTrue
+Can GrandMother be considered a subcategory of 'something that hasParent some GrandMother'?, \nTrue
+Can something that hasParent some (Female that is also GrandMother) be considered a subcategory of 'something that hasParent some (Female that is also GrandMother)'?, \nTrue
+Can Thing be considered a subcategory of 'Female that is also GrandMother'?, \nFalse
+Can Son be considered a subcategory of 'Female that is also GrandMother'?, \nFalse
+Can Female be considered a subcategory of 'Female that is also GrandMother'?, \nFalse
+Can Father be considered a subcategory of 'Female that is also GrandMother'?, \nFalse
+Can Child be considered a subcategory of 'Female that is also GrandMother'?, \nFalse
+Can Person be considered a subcategory of 'Female that is also GrandMother'?, \nFalse
+Can Brother be considered a subcategory of 'Female that is also GrandMother'?, \nFalse
+Can Parent be considered a subcategory of 'Female that is also GrandMother'?, \nFalse
+Can Daughter be considered a subcategory of 'Female that is also GrandMother'?, \nFalse
+Can Man be considered a subcategory of 'Female that is also GrandMother'?, \nFalse
+Can Mother be considered a subcategory of 'Female that is also GrandMother'?, \nFalse
+Can GrandParent be considered a subcategory of 'Female that is also GrandMother'?, \nFalse
+Can Sex be considered a subcategory of 'Female that is also GrandMother'?, \nFalse
+Can Sister be considered a subcategory of 'Female that is also GrandMother'?, \nFalse
+Can OffSpring be considered a subcategory of 'Female that is also GrandMother'?, \nFalse
+Can Woman be considered a subcategory of 'Female that is also GrandMother'?, \nFalse
+Can Male be considered a subcategory of 'Female that is also GrandMother'?, \nFalse
+Can Sibling be considered a subcategory of 'Female that is also GrandMother'?, \nFalse
+Can GrandFather be considered a subcategory of 'Female that is also GrandMother'?, \nFalse
+Can GrandMother be considered a subcategory of 'Female that is also something that (hasParent some (Female that is also GrandMother))'?, \nTrue
+Can GrandMother be considered a subcategory of 'Female that is also Woman that is also something that (hasParent some (Female that is also GrandMother))'?, \nTrue
+Can GrandMother be considered a subcategory of 'Female that is also Woman that is also something that (hasParent some (Female that is also GrandMother that is also Woman))'?, \nTrue
+Can Female that is also Woman that is also something that (hasParent some (Female that is also GrandMother that is also Woman)) be considered a subcategory of 'Female that is also Woman that is also something that (hasParent some (Female that is also GrandMother that is also Woman))'?, \nTrue
+Can Thing be considered a subcategory of 'Female that is also GrandMother that is also Woman'?, \nTrue
+Can Sex be considered a subcategory of 'something that hasSibling some GrandMother'?, \nFalse
+Can GrandMother be considered a subcategory of 'something that hasChild some Man'?, \nFalse
+Can Mother that is also Parent be considered a subcategory of 'GrandFather'?, \nFalse
+Can something that hasParent some OffSpring be considered a subcategory of 'Man'?, \nFalse
+Can something that hasSex some Sex be considered a subcategory of 'Child'?, \nI
+Can Man that is also OffSpring be considered a subcategory of 'GrandParent'?, \nFalse
+Can Person that is also Woman be considered a subcategory of 'Parent'?, \nFalse
+Can GrandFather that is also Woman be considered a subcategory of 'OffSpring'?, \nFalse
+Can Father that is also GrandMother be considered a subcategory of 'Daughter'?, \nFalse
+Can Male be considered a subcategory of 'something that hasSibling some Man'?, \nFalse
+Can GrandParent that is also Woman be considered a subcategory of 'Man'?, \nFalse
+Can something that hasSibling some Sister be considered a subcategory of 'Sex'?, \nFalse
+Can something that hasChild some OffSpring be considered a subcategory of 'Sex'?, \nFalse
+Can GrandMother be considered a subcategory of 'something that hasChild some Son'?, \nFalse
+Can Child that is also Son be considered a subcategory of 'Male'?, \nFalse
+Can Sex that is also Sibling be considered a subcategory of 'OffSpring'?, \nI
+Can something that hasSibling some GrandParent be considered a subcategory of 'Son'?, \nFalse
+Can Father that is also Sibling be considered a subcategory of 'Son'?, \nFalse
+Can something that hasParent some Man be considered a subcategory of 'Child'?, \nFalse
+Can something that hasSibling some Parent be considered a subcategory of 'Father'?, \nFalse
+Can Child that is also Daughter be considered a subcategory of 'OffSpring'?, \nFalse
+Can GrandParent that is also Woman be considered a subcategory of 'Sex'?, \nFalse
+Can GrandMother that is also Man be considered a subcategory of 'GrandParent'?, \nFalse
+Can Brother that is also Man be considered a subcategory of 'Sex'?, \nFalse
+Can GrandParent that is also Son be considered a subcategory of 'OffSpring'?, \nFalse
+Can Male that is also Sibling be considered a subcategory of 'OffSpring'?, \nFalse
+Can Parent that is also Sex be considered a subcategory of 'Daughter'?, \nFalse
+Can Brother that is also Man be considered a subcategory of 'Daughter'?, \nFalse
+Can Father be considered a subcategory of 'something that hasSex some Mother'?, \nFalse
+Can GrandFather be considered a subcategory of 'something that hasChild some Sex'?, \nFalse
+Can something that hasParent some Son be considered a subcategory of 'Brother'?, \nFalse
+Can something that hasSibling some Male be considered a subcategory of 'Mother'?, \nFalse
+Can Person that is also Sibling be considered a subcategory of 'Child'?, \nFalse
+Can Brother that is also Man be considered a subcategory of 'Father'?, \nFalse
+Can GrandParent that is also Woman be considered a subcategory of 'Sister'?, \nFalse
+Can Child that is also Sibling be considered a subcategory of 'Man'?, \nFalse
+Can Female that is also Parent be considered a subcategory of 'Father'?, \nFalse
+Can something that hasSibling some Male be considered a subcategory of 'GrandParent'?, \nFalse
+Can Sister be considered a subcategory of 'something that hasSex some GrandParent'?, \nFalse
+Can something that hasSex some Female be considered a subcategory of 'Person'?, \nFalse
+Can Daughter that is also Female be considered a subcategory of 'Man'?, \nFalse
+Can Mother that is also Sex be considered a subcategory of 'Daughter'?, \nFalse
+Can GrandFather be considered a subcategory of 'something that hasChild some GrandFather'?, \nFalse
+Can GrandMother that is also Person be considered a subcategory of 'Man'?, \nFalse
+Can Parent be considered a subcategory of 'something that hasSibling some Person'?, \nFalse
+Can something that hasChild some Sister be considered a subcategory of 'Person'?, \nFalse
+Can Brother that is also OffSpring be considered a subcategory of 'Sibling'?, \nFalse
+Can Child be considered a subcategory of 'something that hasParent some Sibling'?, \nFalse
+Can Daughter that is also Person be considered a subcategory of 'Brother'?, \nFalse
+Can Man be considered a subcategory of 'something that hasSex some OffSpring'?, \nFalse
+Can Person be considered a subcategory of 'something that hasChild some Brother'?, \nFalse
+Can Parent be considered a subcategory of 'something that hasParent some Son'?, \nFalse
+Can GrandFather be considered a subcategory of 'something that hasSex some Male'?, \nFalse
+Can Brother that is also Child be considered a subcategory of 'Sex'?, \nFalse
+Can GrandParent that is also Mother be considered a subcategory of 'OffSpring'?, \nFalse
+Can OffSpring that is also Sibling be considered a subcategory of 'Brother'?, \nFalse
+Can Father that is also Female be considered a subcategory of 'OffSpring'?, \nFalse
+Can Sex that is also Son be considered a subcategory of 'Parent'?, \nI
+Can Brother that is also GrandMother be considered a subcategory of 'Male'?, \nFalse
+Can OffSpring that is also Son be considered a subcategory of 'GrandFather'?, \nFalse
+Can Parent be considered a subcategory of 'something that hasChild some Man'?, \nFalse
+Can Female that is also Sex be considered a subcategory of 'GrandParent'?, \nFalse
+Can Mother that is also OffSpring be considered a subcategory of 'GrandFather'?, \nFalse
+Can Brother that is also GrandFather be considered a subcategory of 'Person'?, \nFalse
+Can something that hasParent some GrandMother be considered a subcategory of 'Father'?, \nFalse
+Can something that hasSibling some Father be considered a subcategory of 'Daughter'?, \nFalse
+Can Brother that is also Parent be considered a subcategory of 'GrandParent'?, \nFalse
+Can Man that is also Woman be considered a subcategory of 'Sex'?, \nFalse
+Can something that hasChild some Son be considered a subcategory of 'Daughter'?, \nFalse
+Can Male that is also Sister be considered a subcategory of 'Daughter'?, \nFalse
+Can GrandMother that is also Person be considered a subcategory of 'Brother'?, \nFalse
+Can GrandParent that is also Parent be considered a subcategory of 'Man'?, \nFalse
+Can Man that is also Sibling be considered a subcategory of 'Father'?, \nFalse
+Can GrandMother that is also Woman be considered a subcategory of 'GrandFather'?, \nFalse
+Can Child that is also Father be considered a subcategory of 'Man'?, \nFalse
+Can Female that is also Woman be considered a subcategory of 'Person'?, \nFalse
+Can Female that is also GrandParent be considered a subcategory of 'Sister'?, \nFalse
+Can Brother that is also Sibling be considered a subcategory of 'Sister'?, \nFalse
+Can GrandMother that is also Sister be considered a subcategory of 'GrandFather'?, \nFalse
+Can Daughter that is also GrandFather be considered a subcategory of 'Man'?, \nFalse
+Can Father be considered a subcategory of 'something that hasSibling some Brother'?, \nFalse
+Can Sister that is also Son be considered a subcategory of 'Male'?, \nFalse
+Can something that hasParent some Person be considered a subcategory of 'Son'?, \nFalse
+Can Mother that is also Sibling be considered a subcategory of 'Male'?, \nFalse
+Can Female that is also Woman be considered a subcategory of 'Male'?, \nFalse
+Can Father be considered a subcategory of 'something that hasSex some GrandMother'?, \nFalse
+Can Female that is also GrandParent be considered a subcategory of 'Parent'?, \nFalse
+Can Man be considered a subcategory of 'something that hasParent some Person'?, \nTrue
+Can Man be considered a subcategory of 'Father'?, \nFalse
+Can Man be considered a subcategory of 'Child'?, \nFalse
+Can Man be considered a subcategory of 'Daughter'?, \nFalse
+Can Man be considered a subcategory of 'Mother'?, \nFalse
+Can Man be considered a subcategory of 'GrandParent'?, \nFalse
+Can Man be considered a subcategory of 'Sex'?, \nFalse
+Can Man be considered a subcategory of 'Sister'?, \nFalse
+Can Man be considered a subcategory of 'OffSpring'?, \nFalse
+Can Man be considered a subcategory of 'Male'?, \nTrue
+Can Man be considered a subcategory of 'GrandMother'?, \nFalse
+Can Man be considered a subcategory of 'Thing'?, \nFalse
+Can Man be considered a subcategory of 'Female'?, \nFalse
+Can Man be considered a subcategory of 'Woman'?, \nFalse
+Can Man be considered a subcategory of 'Sibling'?, \nFalse
+Can Man be considered a subcategory of 'GrandFather'?, \nFalse
+Can GrandFather that is also Sister be considered a subcategory of 'Person'?, \nFalse
+Can Sibling that is also Sister be considered a subcategory of 'Parent'?, \nFalse
+Can Daughter that is also OffSpring be considered a subcategory of 'Sister'?, \nFalse
+Can Sex that is also Son be considered a subcategory of 'Sister'?, \nI
+Can GrandParent that is also Mother be considered a subcategory of 'Brother'?, \nFalse
+Can Sister be considered a subcategory of 'something that hasChild some Parent'?, \nTrue
+Can Sister be considered a subcategory of 'Son'?, \nFalse
+Can Sister be considered a subcategory of 'Father'?, \nFalse
+Can Sister be considered a subcategory of 'Child'?, \nFalse
+Can Sister be considered a subcategory of 'Daughter'?, \nFalse
+Can Sister be considered a subcategory of 'Man'?, \nFalse
+Can Sister be considered a subcategory of 'Mother'?, \nFalse
+Can Sister be considered a subcategory of 'GrandParent'?, \nFalse
+Can Sister be considered a subcategory of 'Sex'?, \nFalse
+Can Sister be considered a subcategory of 'OffSpring'?, \nFalse
+Can Sister be considered a subcategory of 'Male'?, \nFalse
+Can Sister be considered a subcategory of 'Sibling'?, \nTrue
+Can Sister be considered a subcategory of 'GrandMother'?, \nFalse
+Can Sister be considered a subcategory of 'Thing'?, \nFalse
+Can Sister be considered a subcategory of 'Woman'?, \nTrue
+Can Sister be considered a subcategory of 'Sibling that is also Woman'?, \nFalse
+Can Sister be considered a subcategory of 'GrandFather'?, \nFalse
+Can GrandFather that is also Sibling be considered a subcategory of 'Son'?, \nFalse
+Can Female that is also Sibling be considered a subcategory of 'Son'?, \nFalse
+Can Father that is also GrandParent be considered a subcategory of 'Child'?, \nFalse
+Can Woman be considered a subcategory of 'something that hasChild some OffSpring'?, \nFalse
+Can Child that is also GrandMother be considered a subcategory of 'Parent'?, \nFalse
+Can Mother be considered a subcategory of 'something that hasSex some OffSpring'?, \nFalse
+Can Brother that is also Sister be considered a subcategory of 'Child'?, \nFalse
+Can Man that is also Woman be considered a subcategory of 'Child'?, \nFalse
+Can something that hasSex some Father be considered a subcategory of 'Parent'?, \nFalse
+Can something that hasChild some Sex be considered a subcategory of 'Male'?, \nI
+Can GrandParent be considered a subcategory of 'Brother'?, \nFalse
+Can GrandMother that is also Son be considered a subcategory of 'Parent'?, \nFalse
+Can Person be considered a subcategory of 'something that hasSibling some Son'?, \nFalse
+Can Man that is also Sister be considered a subcategory of 'Brother'?, \nFalse
+Can Mother be considered a subcategory of 'something that hasParent some Sibling'?, \nFalse
+Can OffSpring be considered a subcategory of 'something that hasSibling some Person'?, \nFalse
+Can Person that is also Sex be considered a subcategory of 'Daughter'?, \nFalse
+Can something that hasChild some Mother be considered a subcategory of 'Mother'?, \nTrue
+Can something that hasChild some Mother be considered a subcategory of 'Son'?, \nFalse
+Can something that hasChild some Mother be considered a subcategory of 'Father'?, \nFalse
+Can something that hasChild some Mother be considered a subcategory of 'Child'?, \nFalse
+Can something that hasChild some Mother be considered a subcategory of 'Person'?, \nTrue
+Can Female that is also GrandMother that is also Woman that is also Thing be considered a subcategory of 'Female that is also GrandMother that is also Woman that is also Thing that is also something that (hasChild some (Female that is also GrandMother that is also Mother that is also Parent that is also Woman that is also Thing))'?, \nFalse
+Can Female that is also GrandMother that is also Woman that is also Thing be considered a subcategory of 'Son'?, \nFalse
+Can Female that is also GrandMother that is also Woman that is also Thing be considered a subcategory of 'Father'?, \nFalse
+Can Female that is also GrandMother that is also Woman that is also Thing be considered a subcategory of 'Child'?, \nFalse
+Can Female that is also GrandMother that is also Woman that is also Thing be considered a subcategory of 'Person'?, \nFalse
+Can Female that is also GrandMother that is also Woman that is also Thing be considered a subcategory of 'Brother'?, \nFalse
+Can Female that is also GrandMother that is also Woman that is also Thing be considered a subcategory of 'Parent'?, \nFalse
+Can Female that is also GrandMother that is also Woman that is also Thing be considered a subcategory of 'Daughter'?, \nFalse
+Can Female that is also GrandMother that is also Woman that is also Thing be considered a subcategory of 'Man'?, \nFalse
+Can Female that is also GrandMother that is also Woman that is also Thing be considered a subcategory of 'Mother'?, \nTrue
+Can GrandMother that is also Woman that is also Thing be considered a subcategory of 'Mother'?, \nFalse
+Can Female that is also Woman that is also Thing be considered a subcategory of 'Mother'?, \nFalse
+Can Female that is also GrandMother that is also Thing be considered a subcategory of 'Mother'?, \nFalse
+Can GrandMother that is also OffSpring be considered a subcategory of 'Sex'?, \nFalse
+Can Man that is also Parent be considered a subcategory of 'GrandParent'?, \nFalse
+Can Child that is also Male be considered a subcategory of 'Brother'?, \nFalse
+Can Brother that is also Person be considered a subcategory of 'OffSpring'?, \nFalse
+Can Son that is also Woman be considered a subcategory of 'Brother'?, \nFalse
+Can Child that is also OffSpring be considered a subcategory of 'Father'?, \nFalse
+Can Female that is also Sister be considered a subcategory of 'GrandFather'?, \nFalse
+Can Father that is also GrandMother be considered a subcategory of 'Person'?, \nFalse
+Can GrandFather that is also Man be considered a subcategory of 'GrandParent'?, \nFalse
+Can Parent that is also Son be considered a subcategory of 'Sister'?, \nFalse
+Can something that hasChild some Male be considered a subcategory of 'Sibling'?, \nFalse
+Can Child that is also Sex be considered a subcategory of 'GrandFather'?, \nFalse
+Can something that hasParent some Sibling be considered a subcategory of 'Sibling'?, \nFalse
+Can something that hasSibling some Female be considered a subcategory of 'Sibling'?, \nFalse
+Can Son be considered a subcategory of 'something that hasParent some Daughter'?, \nTrue
+Can GrandMother be considered a subcategory of 'something that hasParent some Daughter'?, \nFalse
+Can Thing be considered a subcategory of 'something that hasParent some Daughter'?, \nFalse
+Can GrandMother that is also something that (hasParent some Daughter) be considered a subcategory of 'GrandMother that is also something that (hasParent some Daughter)'?, \nFalse
+Can Thing be considered a subcategory of 'GrandMother that is also something that (hasParent some Daughter)'?, \nFalse
+Can Son be considered a subcategory of 'Son'?, \nFalse
+Can Child be considered a subcategory of 'Son'?, \nFalse
+Can Child be considered a subcategory of 'GrandMother that is also something that (hasParent some Daughter)'?, \nFalse
+Can Female be considered a subcategory of 'Daughter'?, \nFalse
+Can Child be considered a subcategory of 'Daughter'?, \nFalse
+Can Brother be considered a subcategory of 'Daughter'?, \nFalse
+Can GrandParent be considered a subcategory of 'Daughter'?, \nFalse
+Can Sex be considered a subcategory of 'Daughter'?, \nFalse
+Can Woman be considered a subcategory of 'Daughter'?, \nFalse
+Can Son be considered a subcategory of 'GrandMother that is also Thing that is also something that (hasParent some Daughter)'?, \nFalse
+Can Son be considered a subcategory of 'Child that is also GrandMother that is also something that (hasParent some Daughter)'?, \nFalse
+Can Son be considered a subcategory of 'GrandMother that is also something that (hasParent some (Daughter that is also Thing))'?, \nTrue
+Can Son be considered a subcategory of 'GrandMother that is also something that (hasParent some (Child that is also Daughter that is also Thing))'?, \nFalse
+Can GrandMother that is also Thing that is also something that (hasParent some (Daughter that is also Thing)) be considered a subcategory of 'GrandMother that is also Thing that is also something that (hasParent some (Daughter that is also Thing))'?, \nFalse
+Can Thing be considered a subcategory of 'GrandMother that is also Thing that is also something that (hasParent some (Daughter that is also Thing))'?, \nTrue
+Can Thing be considered a subcategory of 'Thing'?, \nFalse
+Can GrandMother be considered a subcategory of 'Daughter that is also Thing'?, \nFalse
+Can Thing be considered a subcategory of 'Daughter that is also Thing'?, \nFalse
+Can Son be considered a subcategory of 'Daughter that is also Thing'?, \nFalse
+Can Female be considered a subcategory of 'Daughter that is also Thing'?, \nFalse
+Can Father be considered a subcategory of 'Daughter that is also Thing'?, \nFalse
+Can Child be considered a subcategory of 'Daughter that is also Thing'?, \nFalse
+Can Person be considered a subcategory of 'Daughter that is also Thing'?, \nFalse
+Can Brother be considered a subcategory of 'Daughter that is also Thing'?, \nFalse
+Can Parent be considered a subcategory of 'Daughter that is also Thing'?, \nFalse
+Can Man be considered a subcategory of 'Daughter that is also Thing'?, \nFalse
+Can Mother be considered a subcategory of 'Daughter that is also Thing'?, \nFalse
+Can GrandParent be considered a subcategory of 'Daughter that is also Thing'?, \nFalse
+Can Sex be considered a subcategory of 'Daughter that is also Thing'?, \nI
+Can Sister be considered a subcategory of 'Daughter that is also Thing'?, \nFalse
+Can OffSpring be considered a subcategory of 'Daughter that is also Thing'?, \nFalse
+Can Woman be considered a subcategory of 'Daughter that is also Thing'?, \nFalse
+Can Male be considered a subcategory of 'Daughter that is also Thing'?, \nFalse
+Can Sibling be considered a subcategory of 'Daughter that is also Thing'?, \nFalse
+Can GrandFather be considered a subcategory of 'Daughter that is also Thing'?, \nFalse
+Can Female that is also GrandMother that is also Parent that is also Woman that is also Thing that is also something that (hasParent some (Daughter that is also Thing)) be considered a subcategory of 'Female that is also GrandMother that is also Parent that is also Woman that is also Thing that is also something that (hasParent some (Daughter that is also Thing))'?, \nFalse
+Can Female that is also GrandMother that is also Mother that is also Parent that is also Woman that is also Thing that is also something that (hasParent some (Daughter that is also Thing)) be considered a subcategory of 'Female that is also GrandMother that is also Mother that is also Parent that is also Woman that is also Thing that is also something that (hasParent some (Daughter that is also Thing))'?, \nFalse
+Can Male be considered a subcategory of 'something that hasSibling some Daughter'?, \nFalse
+Can something that hasParent some Parent be considered a subcategory of 'Male'?, \nFalse
+Can Father be considered a subcategory of 'something that hasParent some Sister'?, \nFalse
+Can GrandMother that is also Male be considered a subcategory of 'Sister'?, \nFalse
+Can something that hasSex some Daughter be considered a subcategory of 'Sister'?, \nFalse
+Can Woman be considered a subcategory of 'something that hasChild some Father'?, \nFalse
+Can Person be considered a subcategory of 'something that hasSibling some GrandFather'?, \nFalse
+Can Male be considered a subcategory of 'something that hasParent some GrandFather'?, \nFalse
+Can Parent that is also Woman be considered a subcategory of 'GrandParent'?, \nFalse
+Can Man that is also Mother be considered a subcategory of 'Daughter'?, \nFalse
+Can Person be considered a subcategory of 'something that hasSex some Sibling'?, \nFalse
+Can something that hasSibling some Sibling be considered a subcategory of 'Man'?, \nFalse
+Can Man that is also OffSpring be considered a subcategory of 'Brother'?, \nFalse
+Can Daughter be considered a subcategory of 'something that hasChild some Sibling'?, \nFalse
+Can Father that is also Man be considered a subcategory of 'Daughter'?, \nFalse
+Can something that hasChild some Son be considered a subcategory of 'Sex'?, \nFalse
+Can Brother that is also Father be considered a subcategory of 'Sex'?, \nFalse
+Can GrandParent be considered a subcategory of 'something that hasSibling some GrandFather'?, \nFalse
+Can Father that is also Sibling be considered a subcategory of 'Sex'?, \nFalse
+Can Father that is also GrandFather be considered a subcategory of 'Sex'?, \nFalse
+Can Daughter be considered a subcategory of 'something that hasSibling some GrandMother'?, \nFalse
+Can something that hasParent some Son be considered a subcategory of 'Man'?, \nFalse
+Can GrandMother that is also Male be considered a subcategory of 'Man'?, \nFalse
+Can Person that is also Sibling be considered a subcategory of 'Sister'?, \nFalse
+Can GrandFather be considered a subcategory of 'Father'?, \nFalse
+Can something that hasChild some Woman be considered a subcategory of 'Child'?, \nFalse
+Can Sister be considered a subcategory of 'something that hasSibling some Son'?, \nFalse
+Can Father that is also Sibling be considered a subcategory of 'Child'?, \nFalse
+Can Father that is also Male be considered a subcategory of 'Daughter'?, \nFalse
+Can Parent be considered a subcategory of 'something that hasSex some GrandMother'?, \nFalse
+Can Female be considered a subcategory of 'something that hasParent some Father'?, \nFalse
+Can Brother be considered a subcategory of 'something that hasSibling some Father'?, \nTrue
+Can Brother be considered a subcategory of 'Father'?, \nFalse
+Can Brother be considered a subcategory of 'Child'?, \nFalse
+Can Brother be considered a subcategory of 'Man'?, \nFalse
+Can Brother be considered a subcategory of 'GrandParent'?, \nFalse
+Can Brother be considered a subcategory of 'Sex'?, \nFalse
+Can Brother be considered a subcategory of 'Sister'?, \nFalse
+Can Brother be considered a subcategory of 'OffSpring'?, \nFalse
+Can Brother be considered a subcategory of 'Male'?, \nFalse
+Can Brother be considered a subcategory of 'Sibling'?, \nTrue
+Can Brother be considered a subcategory of 'Thing'?, \nFalse
+Can Brother be considered a subcategory of 'Female'?, \nFalse
+Can Brother be considered a subcategory of 'Mother'?, \nFalse
+Can Brother be considered a subcategory of 'Woman'?, \nFalse
+Can Brother be considered a subcategory of 'GrandFather'?, \nFalse
+Can GrandParent be considered a subcategory of 'something that hasChild some GrandParent'?, \nFalse
+Can Sex that is also Woman be considered a subcategory of 'OffSpring'?, \nI
+Can Person that is also Sibling be considered a subcategory of 'OffSpring'?, \nFalse
+Can something that hasParent some GrandParent be considered a subcategory of 'Child'?, \nFalse
+Can something that hasSibling some Sibling be considered a subcategory of 'Child'?, \nFalse
+Can Person be considered a subcategory of 'something that hasSex some Woman'?, \nFalse
+Can Female be considered a subcategory of 'something that hasChild some OffSpring'?, \nFalse
+Can Father that is also Female be considered a subcategory of 'Son'?, \nFalse
+Can Child that is also Sex be considered a subcategory of 'Male'?, \nI
+Can something that hasSex some Brother be considered a subcategory of 'Male'?, \nFalse
+Can Brother be considered a subcategory of 'something that hasSibling some Daughter'?, \nFalse
+Can something that hasSibling some OffSpring be considered a subcategory of 'Brother'?, \nFalse

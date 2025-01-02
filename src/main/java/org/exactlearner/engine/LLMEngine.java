@@ -18,7 +18,7 @@ import java.util.Set;
 
 public class LLMEngine implements BaseEngine {
 
-    private final String queryFormat = "manchester";
+    private final String queryFormat = "";
     private final OWLOntology ontology;
     String ontologyName = "";
     final String model;

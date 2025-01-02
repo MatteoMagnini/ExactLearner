@@ -53,7 +53,7 @@ public class ExperimentTask implements Task {
         } else {
             systemType = "advanced";
         }
-        return modelName + "_" + queryFormat + "_" + systemType + "_" + ontology;
+        return modelName  + "_" + systemType + "_" + ontology;
     }
 
     public String getSystem() {

@@ -1,0 +1,1185 @@
+Can Neuron that is also StructuralCell be considered a subcategory of 'Erythrocyte'?, False
+Can ElectricallyActiveCell that is also StructuralCell be considered a subcategory of 'Erythrocyte'?, False.
+Can CellByDevelopmentStage that is also InMatureCell be considered a subcategory of 'Osteocyte'?, False
+Can Miocyte that is also StructuralCell be considered a subcategory of 'LeafCell'?, False
+Can CellByDevelopmentStage that is also LeafCell be considered a subcategory of 'AnimalCell'?, False
+Can CellByDevelopmentStage that is also ChondroBlast be considered a subcategory of 'Osteocyte'?, False
+Can Cell that is also MatureCell be considered a subcategory of 'Osteocyte'?, False
+Can CellByClass that is also InMatureCell be considered a subcategory of 'AnimalCell'?, False
+Can ChondroCyte that is also LeafCell be considered a subcategory of 'Neuron'?, False
+Can CirculatingCell that is also LeafCell be considered a subcategory of 'Neuron'?, False
+Can CellByOrganism that is also ChondroCyte be considered a subcategory of 'AnimalCell'?, False
+Can Osteocyte that is also SclerenchymaCell be considered a subcategory of 'AnimalCell'?, False
+Can InMatureCell that is also Miocyte be considered a subcategory of 'PhotosyntheticCell'?, False
+Can Cell that is also StructuralCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can InMatureCell that is also StructuralCell be considered a subcategory of 'ChondroCyte'?, False
+Can AnimalCell that is also InMatureCell be considered a subcategory of 'ChondroCyte'?, False
+Can CellByClass that is also ChondroBlast be considered a subcategory of 'ElectricallyActiveCell'?, False
+Can CellByDevelopmentStage that is also Miocyte be considered a subcategory of 'SclerenchymaCell'?, False
+Can InMatureCell that is also StructuralCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can Cell that is also PhotoreceptorCell be considered a subcategory of 'ElectricallyActiveCell'?, True.
+Can Cell that is also PhotoreceptorCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can Cell that is also PhotoreceptorCell be considered a subcategory of 'LeafCell'?, False
+Can Cell that is also PhotoreceptorCell be considered a subcategory of 'Erythrocyte'?, False
+Can Cell that is also PhotoreceptorCell be considered a subcategory of 'PhotosyntheticCell'?, False
+Can Cell that is also PhotoreceptorCell be considered a subcategory of 'CirculatingCell'?, False
+Can Cell that is also PhotoreceptorCell be considered a subcategory of 'PlantCell'?, False
+Can Cell that is also PhotoreceptorCell be considered a subcategory of 'CellByClass'?, True
+Can Cell be considered a subcategory of 'CellByClass'?, False
+Can PhotoreceptorCell be considered a subcategory of 'CellByClass'?, False
+Can CirculatingCell that is also SclerenchymaCell be considered a subcategory of 'LeafCell'?, False
+Can LeafCell that is also PhotosyntheticCell be considered a subcategory of 'PhotoreceptorCell'?, False
+Can CellByDevelopmentStage that is also Osteocyte be considered a subcategory of 'PhotoreceptorCell'?, False.
+Can ChondroCyte be considered a subcategory of 'PhotoreceptorCell'?, False
+Can Neuron that is also PlantCell be considered a subcategory of 'LeafCell'?, False
+Can LeafCell that is also SclerenchymaCell be considered a subcategory of 'PhotoreceptorCell'?, False.
+Can CellByClass that is also Osteocyte be considered a subcategory of 'LeafCell'?, False
+Can CellByOrganism that is also Osteocyte be considered a subcategory of 'StructuralCell'?, True
+Can CellByOrganism that is also Osteocyte be considered a subcategory of 'SclerenchymaCell'?, False
+Can CellByOrganism that is also Osteocyte be considered a subcategory of 'LeafCell'?, False
+Can CellByOrganism that is also Osteocyte be considered a subcategory of 'Erythrocyte'?, False
+Can CellByOrganism that is also Osteocyte be considered a subcategory of 'PhotosyntheticCell'?, False
+Can CellByOrganism that is also Osteocyte be considered a subcategory of 'CirculatingCell'?, False
+Can CellByOrganism that is also Osteocyte be considered a subcategory of 'PlantCell'?, False.
+Can CellByOrganism that is also Osteocyte be considered a subcategory of 'CellByClass'?, False
+Can CellByOrganism that is also Osteocyte be considered a subcategory of 'MatureCell'?, True
+Can Osteocyte be considered a subcategory of 'MatureCell'?, False
+Can CellByOrganism be considered a subcategory of 'MatureCell'?, False
+Can MatureCell that is also MioBlast be considered a subcategory of 'CirculatingCell'?, False
+Can ElectricallyActiveCell that is also PlantCell be considered a subcategory of 'Cell'?, False
+Can ChondroBlast that is also Neuron be considered a subcategory of 'StructuralCell'?, True
+Can ChondroBlast that is also Neuron be considered a subcategory of 'SclerenchymaCell'?, False
+Can ChondroBlast that is also Neuron be considered a subcategory of 'LeafCell'?, False
+Can ChondroBlast that is also Neuron be considered a subcategory of 'Erythrocyte'?, False
+Can ChondroBlast that is also Neuron be considered a subcategory of 'PhotosyntheticCell'?, False
+Can ChondroBlast that is also Neuron be considered a subcategory of 'CirculatingCell'?, False
+Can ChondroBlast that is also Neuron be considered a subcategory of 'PlantCell'?, False
+Can ChondroBlast that is also Neuron be considered a subcategory of 'CellByClass'?, True
+Can ChondroBlast be considered a subcategory of 'CellByClass'?, False
+Can Neuron be considered a subcategory of 'CellByClass'?, True
+Can Neuron be considered a subcategory of 'SclerenchymaCell'?, False
+Can Neuron be considered a subcategory of 'LeafCell'?, False
+Can Neuron be considered a subcategory of 'Erythrocyte'?, False
+Can Neuron be considered a subcategory of 'PhotosyntheticCell'?, False
+Can Neuron be considered a subcategory of 'CirculatingCell'?, False
+Can Neuron be considered a subcategory of 'PlantCell'?, False
+Can Neuron be considered a subcategory of 'MatureCell'?, True
+Can Neuron be considered a subcategory of 'CellByClass that is also MatureCell'?, True
+Can Neuron be considered a subcategory of 'AnimalCell'?, True
+Can Neuron be considered a subcategory of 'AnimalCell that is also CellByClass that is also MatureCell'?, True
+Can Neuron be considered a subcategory of 'Cell'?, True.
+Can Neuron be considered a subcategory of 'AnimalCell that is also Cell that is also CellByClass that is also MatureCell'?, True
+Can Neuron be considered a subcategory of 'Miocyte'?, False
+Can Neuron be considered a subcategory of 'InMatureCell'?, False
+Can Neuron be considered a subcategory of 'Osteocyte'?, False
+Can Neuron be considered a subcategory of 'ChondroBlast'?, False
+Can Neuron be considered a subcategory of 'MioBlast'?, False
+Can Neuron be considered a subcategory of 'CellByDevelopmentStage'?, False
+Can Neuron be considered a subcategory of 'PhotoreceptorCell'?, False
+Can Neuron be considered a subcategory of 'CellByOrganism'?, True
+Can Neuron be considered a subcategory of 'AnimalCell that is also Cell that is also CellByClass that is also CellByOrganism that is also MatureCell'?, True
+Can Neuron be considered a subcategory of 'ElectricallyActiveCell'?, True.
+Can Neuron be considered a subcategory of 'AnimalCell that is also Cell that is also CellByClass that is also CellByOrganism that is also ElectricallyActiveCell that is also MatureCell'?, True
+Can Neuron be considered a subcategory of 'StructuralCell'?, True
+Can Neuron be considered a subcategory of 'AnimalCell that is also Cell that is also CellByClass that is also CellByOrganism that is also ElectricallyActiveCell that is also MatureCell that is also StructuralCell'?, True
+Can Neuron be considered a subcategory of 'ChondroCyte'?, False
+Can ChondroBlast that is also SclerenchymaCell be considered a subcategory of 'StructuralCell'?, True
+Can ChondroBlast that is also SclerenchymaCell be considered a subcategory of 'LeafCell'?, False
+Can ChondroBlast that is also SclerenchymaCell be considered a subcategory of 'Erythrocyte'?, False.
+Can ChondroBlast that is also SclerenchymaCell be considered a subcategory of 'PhotosyntheticCell'?, False
+Can ChondroBlast that is also SclerenchymaCell be considered a subcategory of 'CirculatingCell'?, False
+Can ChondroBlast that is also SclerenchymaCell be considered a subcategory of 'PlantCell'?, True
+Can SclerenchymaCell be considered a subcategory of 'PlantCell'?, True
+Can SclerenchymaCell be considered a subcategory of 'LeafCell'?, False
+Can SclerenchymaCell be considered a subcategory of 'Erythrocyte'?, False
+Can SclerenchymaCell be considered a subcategory of 'PhotosyntheticCell'?, False
+Can SclerenchymaCell be considered a subcategory of 'CirculatingCell'?, False
+Can SclerenchymaCell be considered a subcategory of 'CellByClass'?, True
+Can SclerenchymaCell be considered a subcategory of 'CellByClass that is also PlantCell'?, True
+Can SclerenchymaCell be considered a subcategory of 'MatureCell'?, False
+Can SclerenchymaCell be considered a subcategory of 'AnimalCell'?, False.
+Can SclerenchymaCell be considered a subcategory of 'Cell'?, True
+Can SclerenchymaCell be considered a subcategory of 'Cell that is also CellByClass that is also PlantCell'?, False
+Can SclerenchymaCell be considered a subcategory of 'Miocyte'?, False
+Can SclerenchymaCell be considered a subcategory of 'InMatureCell'?, False
+Can SclerenchymaCell be considered a subcategory of 'Osteocyte'?, False
+Can SclerenchymaCell be considered a subcategory of 'ChondroBlast'?, False
+Can SclerenchymaCell be considered a subcategory of 'MioBlast'?, False
+Can SclerenchymaCell be considered a subcategory of 'CellByDevelopmentStage'?, True
+Can SclerenchymaCell be considered a subcategory of 'CellByClass that is also CellByDevelopmentStage that is also PlantCell'?, False
+Can SclerenchymaCell be considered a subcategory of 'PhotoreceptorCell'?, False
+Can SclerenchymaCell be considered a subcategory of 'CellByOrganism'?, True
+Can SclerenchymaCell be considered a subcategory of 'CellByClass that is also CellByOrganism that is also PlantCell'?, True
+Can SclerenchymaCell be considered a subcategory of 'ElectricallyActiveCell'?, False
+Can SclerenchymaCell be considered a subcategory of 'StructuralCell'?, True
+Can SclerenchymaCell be considered a subcategory of 'CellByClass that is also CellByOrganism that is also PlantCell that is also StructuralCell'?, True
+Can SclerenchymaCell be considered a subcategory of 'Neuron'?, False
+Can SclerenchymaCell be considered a subcategory of 'ChondroCyte'?, False
+Can SclerenchymaCell be considered a subcategory of 'Cell that is also CellByClass that is also CellByOrganism that is also PlantCell that is also StructuralCell'?, True
+Can SclerenchymaCell be considered a subcategory of 'Cell that is also CellByClass that is also CellByDevelopmentStage that is also CellByOrganism that is also PlantCell that is also StructuralCell'?, True
+Can Erythrocyte that is also StructuralCell be considered a subcategory of 'CirculatingCell'?, False.
+Can AnimalCell be considered a subcategory of 'Cell'?, True
+Can AnimalCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can AnimalCell be considered a subcategory of 'LeafCell'?, False
+Can AnimalCell be considered a subcategory of 'Erythrocyte'?, False.
+Can AnimalCell be considered a subcategory of 'PhotosyntheticCell'?, False
+Can AnimalCell be considered a subcategory of 'CirculatingCell'?, False
+Can AnimalCell be considered a subcategory of 'PlantCell'?, False
+Can AnimalCell be considered a subcategory of 'CellByClass'?, True
+Can AnimalCell be considered a subcategory of 'MatureCell'?, False
+Can AnimalCell be considered a subcategory of 'Cell that is also CellByClass'?, True
+Can AnimalCell be considered a subcategory of 'Miocyte'?, False
+Can AnimalCell be considered a subcategory of 'InMatureCell'?, False
+Can AnimalCell be considered a subcategory of 'Osteocyte'?, False
+Can AnimalCell be considered a subcategory of 'ChondroBlast'?, False
+Can AnimalCell be considered a subcategory of 'MioBlast'?, False
+Can AnimalCell be considered a subcategory of 'CellByDevelopmentStage'?, False
+Can AnimalCell be considered a subcategory of 'PhotoreceptorCell'?, False
+Can AnimalCell be considered a subcategory of 'CellByOrganism'?, False
+Can AnimalCell be considered a subcategory of 'ElectricallyActiveCell'?, False
+Can AnimalCell be considered a subcategory of 'StructuralCell'?, False
+Can AnimalCell be considered a subcategory of 'Neuron'?, False
+Can AnimalCell be considered a subcategory of 'ChondroCyte'?, False
+Can ElectricallyActiveCell that is also LeafCell be considered a subcategory of 'Cell'?, True
+Can ElectricallyActiveCell that is also LeafCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can ElectricallyActiveCell that is also LeafCell be considered a subcategory of 'Erythrocyte'?, False.
+Can ElectricallyActiveCell that is also LeafCell be considered a subcategory of 'PhotosyntheticCell'?, True
+Can LeafCell be considered a subcategory of 'PhotosyntheticCell'?, True
+Can LeafCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can LeafCell be considered a subcategory of 'Erythrocyte'?, False
+Can LeafCell be considered a subcategory of 'CirculatingCell'?, False
+Can LeafCell be considered a subcategory of 'PlantCell'?, False
+Can LeafCell be considered a subcategory of 'CellByClass'?, False
+Can LeafCell be considered a subcategory of 'MatureCell'?, False
+Can LeafCell be considered a subcategory of 'AnimalCell'?, False
+Can LeafCell be considered a subcategory of 'Cell'?, True
+Can LeafCell be considered a subcategory of 'Cell that is also PhotosyntheticCell'?, False
+Can LeafCell be considered a subcategory of 'Miocyte'?, False
+Can LeafCell be considered a subcategory of 'InMatureCell'?, True
+Can LeafCell be considered a subcategory of 'InMatureCell that is also PhotosyntheticCell'?, False.
+Can LeafCell be considered a subcategory of 'Osteocyte'?, False
+Can LeafCell be considered a subcategory of 'ChondroBlast'?, False
+Can LeafCell be considered a subcategory of 'MioBlast'?, False
+Can LeafCell be considered a subcategory of 'CellByDevelopmentStage'?, False
+Can LeafCell be considered a subcategory of 'PhotoreceptorCell'?, False
+Can LeafCell be considered a subcategory of 'CellByOrganism'?, False
+Can LeafCell be considered a subcategory of 'ElectricallyActiveCell'?, False
+Can LeafCell be considered a subcategory of 'StructuralCell'?, True
+Can LeafCell be considered a subcategory of 'PhotosyntheticCell that is also StructuralCell'?, True
+Can LeafCell be considered a subcategory of 'Neuron'?, False
+Can LeafCell be considered a subcategory of 'ChondroCyte'?, False
+Can LeafCell be considered a subcategory of 'Cell that is also PhotosyntheticCell that is also StructuralCell'?, False
+Can LeafCell be considered a subcategory of 'InMatureCell that is also PhotosyntheticCell that is also StructuralCell'?, True
+Can CellByDevelopmentStage that is also PhotoreceptorCell be considered a subcategory of 'MatureCell'?, False
+Can InMatureCell that is also PlantCell be considered a subcategory of 'CellByClass'?, True
+Can InMatureCell that is also PlantCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can InMatureCell that is also PlantCell be considered a subcategory of 'LeafCell'?, False
+Can InMatureCell that is also PlantCell be considered a subcategory of 'Erythrocyte'?, False
+Can InMatureCell that is also PlantCell be considered a subcategory of 'PhotosyntheticCell'?, True
+Can InMatureCell be considered a subcategory of 'PhotosyntheticCell'?, False
+Can PlantCell be considered a subcategory of 'PhotosyntheticCell'?, True
+Can PlantCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can PlantCell be considered a subcategory of 'LeafCell'?, False
+Can PlantCell be considered a subcategory of 'Erythrocyte'?, False
+Can PlantCell be considered a subcategory of 'CirculatingCell'?, False
+Can PlantCell be considered a subcategory of 'CellByClass'?, False
+Can PlantCell be considered a subcategory of 'MatureCell'?, False
+Can PlantCell be considered a subcategory of 'AnimalCell'?, False
+Can PlantCell be considered a subcategory of 'Cell'?, True
+Can PlantCell be considered a subcategory of 'Cell that is also PhotosyntheticCell'?, True
+Can PlantCell be considered a subcategory of 'Miocyte'?, False
+Can PlantCell be considered a subcategory of 'InMatureCell'?, False
+Can PlantCell be considered a subcategory of 'Osteocyte'?, False
+Can PlantCell be considered a subcategory of 'ChondroBlast'?, False
+Can PlantCell be considered a subcategory of 'MioBlast'?, False
+Can PlantCell be considered a subcategory of 'CellByDevelopmentStage'?, False
+Can PlantCell be considered a subcategory of 'PhotoreceptorCell'?, False
+Can PlantCell be considered a subcategory of 'CellByOrganism'?, False
+Can PlantCell be considered a subcategory of 'ElectricallyActiveCell'?, False
+Can PlantCell be considered a subcategory of 'StructuralCell'?, False
+Can PlantCell be considered a subcategory of 'Neuron'?, False
+Can PlantCell be considered a subcategory of 'ChondroCyte'?, False.
+Can CellByOrganism that is also PhotoreceptorCell be considered a subcategory of 'ChondroBlast'?, False
+Can AnimalCell that is also ElectricallyActiveCell be considered a subcategory of 'MatureCell'?, True
+Can AnimalCell that is also ElectricallyActiveCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can AnimalCell that is also ElectricallyActiveCell be considered a subcategory of 'LeafCell'?, False
+Can AnimalCell that is also ElectricallyActiveCell be considered a subcategory of 'Erythrocyte'?, False
+Can AnimalCell that is also ElectricallyActiveCell be considered a subcategory of 'PhotosyntheticCell'?, False
+Can AnimalCell that is also ElectricallyActiveCell be considered a subcategory of 'CirculatingCell'?, False
+Can AnimalCell that is also ElectricallyActiveCell be considered a subcategory of 'PlantCell'?, False
+Can ElectricallyActiveCell be considered a subcategory of 'MatureCell'?, False
+Can Cell that is also PhotosyntheticCell be considered a subcategory of 'MatureCell'?, True
+Can Cell that is also PhotosyntheticCell be considered a subcategory of 'SclerenchymaCell'?, False.
+Can Cell that is also PhotosyntheticCell be considered a subcategory of 'LeafCell'?, False
+Can Cell that is also PhotosyntheticCell be considered a subcategory of 'Erythrocyte'?, False
+Can Cell that is also PhotosyntheticCell be considered a subcategory of 'CirculatingCell'?, False
+Can Cell that is also PhotosyntheticCell be considered a subcategory of 'PlantCell'?, True
+Can Cell be considered a subcategory of 'PlantCell'?, False
+Can PhotosyntheticCell be considered a subcategory of 'PlantCell'?, False
+Can StructuralCell be considered a subcategory of 'PlantCell'?, False
+Can CirculatingCell that is also Neuron be considered a subcategory of 'PhotosyntheticCell'?, False
+Can Erythrocyte that is also Miocyte be considered a subcategory of 'PhotosyntheticCell'?, False
+Can MioBlast that is also StructuralCell be considered a subcategory of 'InMatureCell'?, False
+Can LeafCell that is also MioBlast be considered a subcategory of 'Miocyte'?, False
+Can ElectricallyActiveCell that is also MatureCell be considered a subcategory of 'InMatureCell'?, False
+Can ChondroBlast that is also MatureCell be considered a subcategory of 'PlantCell'?, False
+Can AnimalCell that is also PhotoreceptorCell be considered a subcategory of 'Miocyte'?, False
+Can ChondroCyte that is also Erythrocyte be considered a subcategory of 'Miocyte'?, False
+Can CellByDevelopmentStage that is also ElectricallyActiveCell be considered a subcategory of 'Miocyte'?, False
+Can CellByOrganism that is also ElectricallyActiveCell be considered a subcategory of 'PlantCell'?, False.
+Can PhotoreceptorCell that is also PhotosyntheticCell be considered a subcategory of 'StructuralCell'?, False
+Can CellByClass that is also PlantCell be considered a subcategory of 'CellByOrganism'?, False.
+Can AnimalCell that is also Cell be considered a subcategory of 'CellByOrganism'?, False.
+Can AnimalCell that is also PhotosyntheticCell be considered a subcategory of 'CellByOrganism'?, True
+Can AnimalCell that is also PhotosyntheticCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can AnimalCell that is also PhotosyntheticCell be considered a subcategory of 'LeafCell'?, False
+Can AnimalCell that is also PhotosyntheticCell be considered a subcategory of 'Erythrocyte'?, False
+Can AnimalCell that is also PhotosyntheticCell be considered a subcategory of 'CirculatingCell'?, False
+Can AnimalCell that is also PhotosyntheticCell be considered a subcategory of 'MatureCell'?, False
+Can AnimalCell that is also PhotosyntheticCell be considered a subcategory of 'Miocyte'?, False
+Can AnimalCell that is also PhotosyntheticCell be considered a subcategory of 'InMatureCell'?, False
+Can AnimalCell that is also PhotosyntheticCell be considered a subcategory of 'Osteocyte'?, False
+Can AnimalCell that is also PhotosyntheticCell be considered a subcategory of 'ChondroBlast'?, False
+Can AnimalCell that is also PhotosyntheticCell be considered a subcategory of 'MioBlast'?, False
+Can AnimalCell that is also PhotosyntheticCell be considered a subcategory of 'CellByDevelopmentStage'?, False
+Can AnimalCell that is also PhotosyntheticCell be considered a subcategory of 'PhotoreceptorCell'?, False
+Can PhotosyntheticCell be considered a subcategory of 'CellByOrganism'?, False
+Can CellByOrganism that is also MatureCell be considered a subcategory of 'ChondroCyte'?, False
+Can ChondroBlast that is also Osteocyte be considered a subcategory of 'ElectricallyActiveCell'?, False
+Can CirculatingCell that is also LeafCell be considered a subcategory of 'ElectricallyActiveCell'?, True
+Can CirculatingCell that is also LeafCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can CirculatingCell that is also LeafCell be considered a subcategory of 'Erythrocyte'?, False
+Can CirculatingCell that is also LeafCell be considered a subcategory of 'PlantCell'?, False
+Can CirculatingCell that is also LeafCell be considered a subcategory of 'CellByClass'?, False
+Can CirculatingCell that is also LeafCell be considered a subcategory of 'MatureCell'?, False
+Can CirculatingCell that is also LeafCell be considered a subcategory of 'AnimalCell'?, False
+Can CirculatingCell that is also LeafCell be considered a subcategory of 'Cell'?, True
+Can LeafCell be considered a subcategory of 'Cell that is also InMatureCell'?, True
+Can LeafCell be considered a subcategory of 'Cell that is also InMatureCell that is also StructuralCell'?, False
+Can ChondroBlast that is also MatureCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can ChondroCyte that is also PhotosyntheticCell be considered a subcategory of 'PhotoreceptorCell'?, False
+Can CellByDevelopmentStage that is also ChondroCyte be considered a subcategory of 'SclerenchymaCell'?, False
+Can ChondroCyte that is also CirculatingCell be considered a subcategory of 'SclerenchymaCell'?, False.
+Can Erythrocyte that is also Osteocyte be considered a subcategory of 'PhotoreceptorCell'?, False.
+Can MioBlast that is also Neuron be considered a subcategory of 'LeafCell'?, False
+Can CellByClass that is also LeafCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can Miocyte that is also Osteocyte be considered a subcategory of 'PhotoreceptorCell'?, False
+Can ElectricallyActiveCell that is also Miocyte be considered a subcategory of 'LeafCell'?, False
+Can MatureCell that is also StructuralCell be considered a subcategory of 'LeafCell'?, False
+Can InMatureCell that is also StructuralCell be considered a subcategory of 'LeafCell'?, False
+Can InMatureCell that is also Neuron be considered a subcategory of 'Erythrocyte'?, False
+Can MatureCell that is also Osteocyte be considered a subcategory of 'CellByClass'?, True
+Can MatureCell that is also Osteocyte be considered a subcategory of 'SclerenchymaCell'?, False
+Can MatureCell that is also Osteocyte be considered a subcategory of 'LeafCell'?, False.
+Can MatureCell that is also Osteocyte be considered a subcategory of 'Erythrocyte'?, False
+Can MatureCell that is also Osteocyte be considered a subcategory of 'PhotosyntheticCell'?, False
+Can MatureCell that is also Osteocyte be considered a subcategory of 'CirculatingCell'?, False
+Can MatureCell that is also Osteocyte be considered a subcategory of 'PlantCell'?, False
+Can Osteocyte be considered a subcategory of 'CellByClass'?, True
+Can Osteocyte be considered a subcategory of 'SclerenchymaCell'?, False
+Can Osteocyte be considered a subcategory of 'LeafCell'?, False
+Can Osteocyte be considered a subcategory of 'Erythrocyte'?, False
+Can Osteocyte be considered a subcategory of 'PhotosyntheticCell'?, False
+Can Osteocyte be considered a subcategory of 'CirculatingCell'?, False
+Can Osteocyte be considered a subcategory of 'PlantCell'?, False
+Can Osteocyte be considered a subcategory of 'AnimalCell'?, False
+Can Osteocyte be considered a subcategory of 'Cell'?, True
+Can Osteocyte be considered a subcategory of 'Cell that is also CellByClass'?, True
+Can Osteocyte be considered a subcategory of 'Miocyte'?, False
+Can Osteocyte be considered a subcategory of 'InMatureCell'?, False
+Can Osteocyte be considered a subcategory of 'ChondroBlast'?, False
+Can Osteocyte be considered a subcategory of 'MioBlast'?, False
+Can Osteocyte be considered a subcategory of 'CellByDevelopmentStage'?, True
+Can Osteocyte be considered a subcategory of 'Cell that is also CellByClass that is also CellByDevelopmentStage'?, True
+Can Osteocyte be considered a subcategory of 'PhotoreceptorCell'?, False
+Can Osteocyte be considered a subcategory of 'CellByOrganism'?, True
+Can Osteocyte be considered a subcategory of 'Cell that is also CellByClass that is also CellByDevelopmentStage that is also CellByOrganism'?, True
+Can Osteocyte be considered a subcategory of 'ElectricallyActiveCell'?, False
+Can Osteocyte be considered a subcategory of 'StructuralCell'?, True
+Can Osteocyte be considered a subcategory of 'Cell that is also CellByClass that is also CellByDevelopmentStage that is also CellByOrganism that is also StructuralCell'?, False
+Can Osteocyte be considered a subcategory of 'Neuron'?, False
+Can Osteocyte be considered a subcategory of 'ChondroCyte'?, False
+Can MatureCell that is also MioBlast be considered a subcategory of 'ChondroBlast'?, False
+Can CellByOrganism that is also ChondroBlast be considered a subcategory of 'MatureCell'?, False
+Can CirculatingCell that is also Miocyte be considered a subcategory of 'CellByClass'?, False
+Can ElectricallyActiveCell that is also SclerenchymaCell be considered a subcategory of 'ChondroBlast'?, False
+Can CellByClass that is also ElectricallyActiveCell be considered a subcategory of 'ChondroBlast'?, False
+Can ChondroBlast that is also CirculatingCell be considered a subcategory of 'CellByDevelopmentStage'?, True
+Can ChondroBlast that is also CirculatingCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can ChondroBlast that is also CirculatingCell be considered a subcategory of 'LeafCell'?, False
+Can ChondroBlast that is also CirculatingCell be considered a subcategory of 'Erythrocyte'?, False.
+Can ChondroBlast that is also CirculatingCell be considered a subcategory of 'PhotosyntheticCell'?, False
+Can ChondroBlast that is also CirculatingCell be considered a subcategory of 'PlantCell'?, False
+Can ChondroBlast that is also CirculatingCell be considered a subcategory of 'CellByClass'?, False.
+Can ChondroBlast that is also CirculatingCell be considered a subcategory of 'MatureCell'?, False
+Can ChondroBlast that is also CirculatingCell be considered a subcategory of 'AnimalCell'?, True
+Can CirculatingCell be considered a subcategory of 'AnimalCell'?, True
+Can CirculatingCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can CirculatingCell be considered a subcategory of 'LeafCell'?, False
+Can CirculatingCell be considered a subcategory of 'Erythrocyte'?, False
+Can CirculatingCell be considered a subcategory of 'PhotosyntheticCell'?, False.
+Can CirculatingCell be considered a subcategory of 'PlantCell'?, False
+Can CirculatingCell be considered a subcategory of 'CellByClass'?, False
+Can CirculatingCell be considered a subcategory of 'MatureCell'?, False
+Can CirculatingCell be considered a subcategory of 'Cell'?, True
+Can CirculatingCell be considered a subcategory of 'AnimalCell that is also Cell'?, False.
+Can CirculatingCell be considered a subcategory of 'Miocyte'?, False
+Can CirculatingCell be considered a subcategory of 'InMatureCell'?, False
+Can CirculatingCell be considered a subcategory of 'Osteocyte'?, False
+Can CirculatingCell be considered a subcategory of 'ChondroBlast'?, False
+Can CirculatingCell be considered a subcategory of 'MioBlast'?, False.
+Can CirculatingCell be considered a subcategory of 'CellByDevelopmentStage'?, False
+Can CirculatingCell be considered a subcategory of 'PhotoreceptorCell'?, False
+Can CirculatingCell be considered a subcategory of 'CellByOrganism'?, False.
+Can CirculatingCell be considered a subcategory of 'ElectricallyActiveCell'?, False
+Can CirculatingCell be considered a subcategory of 'StructuralCell'?, False
+Can CirculatingCell be considered a subcategory of 'Neuron'?, False
+Can CirculatingCell be considered a subcategory of 'ChondroCyte'?, False
+Can MioBlast that is also PhotosyntheticCell be considered a subcategory of 'CellByDevelopmentStage'?, False
+Can AnimalCell that is also CellByDevelopmentStage be considered a subcategory of 'MioBlast'?, False
+Can AnimalCell that is also StructuralCell be considered a subcategory of 'ChondroCyte'?, False
+Can PhotoreceptorCell that is also PlantCell be considered a subcategory of 'CellByDevelopmentStage'?, False
+Can Erythrocyte be considered a subcategory of 'MioBlast'?, False
+Can CellByOrganism that is also InMatureCell be considered a subcategory of 'ChondroCyte'?, False
+Can ElectricallyActiveCell that is also PlantCell be considered a subcategory of 'MioBlast'?, False
+Can CellByDevelopmentStage that is also ChondroCyte be considered a subcategory of 'PlantCell'?, False
+Can Cell that is also MatureCell be considered a subcategory of 'PhotosyntheticCell'?, False
+Can CellByOrganism that is also ChondroCyte be considered a subcategory of 'PlantCell'?, False.
+Can AnimalCell that is also SclerenchymaCell be considered a subcategory of 'InMatureCell'?, False
+Can ChondroBlast that is also InMatureCell be considered a subcategory of 'CellByOrganism'?, False
+Can InMatureCell that is also Osteocyte be considered a subcategory of 'Miocyte'?, False
+Can Neuron that is also PhotoreceptorCell be considered a subcategory of 'Miocyte'?, False
+Can Cell that is also CirculatingCell be considered a subcategory of 'CellByOrganism'?, False
+Can MioBlast that is also StructuralCell be considered a subcategory of 'CellByOrganism'?, False
+Can CellByClass that is also CellByDevelopmentStage be considered a subcategory of 'Osteocyte'?, False
+Can CellByDevelopmentStage that is also CellByOrganism be considered a subcategory of 'AnimalCell'?, False
+Can Cell that is also InMatureCell be considered a subcategory of 'Erythrocyte'?, False
+Can Cell that is also LeafCell be considered a subcategory of 'Osteocyte'?, False
+Can Cell that is also SclerenchymaCell be considered a subcategory of 'AnimalCell'?, False
+Can LeafCell that is also PhotosyntheticCell be considered a subcategory of 'AnimalCell'?, False
+Can AnimalCell that is also ChondroCyte be considered a subcategory of 'Erythrocyte'?, False
+Can ChondroCyte be considered a subcategory of 'Osteocyte'?, False
+Can Erythrocyte that is also InMatureCell be considered a subcategory of 'Neuron'?, False
+Can Osteocyte that is also PhotoreceptorCell be considered a subcategory of 'Neuron'?, False
+Can CellByClass that is also Osteocyte be considered a subcategory of 'Neuron'?, False
+Can Neuron that is also StructuralCell be considered a subcategory of 'InMatureCell'?, False
+Can Cell that is also SclerenchymaCell be considered a subcategory of 'Neuron'?, False
+Can InMatureCell that is also MioBlast be considered a subcategory of 'Neuron'?, False
+Can CirculatingCell that is also Miocyte be considered a subcategory of 'PhotosyntheticCell'?, False
+Can CirculatingCell that is also InMatureCell be considered a subcategory of 'StructuralCell'?, False
+Can Miocyte that is also PhotosyntheticCell be considered a subcategory of 'CirculatingCell'?, False
+Can Neuron that is also Osteocyte be considered a subcategory of 'CirculatingCell'?, False
+Can Cell that is also Miocyte be considered a subcategory of 'MatureCell'?, True
+Can Cell that is also Miocyte be considered a subcategory of 'SclerenchymaCell'?, False
+Can Cell that is also Miocyte be considered a subcategory of 'LeafCell'?, False
+Can Cell that is also Miocyte be considered a subcategory of 'Erythrocyte'?, False
+Can Cell that is also Miocyte be considered a subcategory of 'PhotosyntheticCell'?, False
+Can Cell that is also Miocyte be considered a subcategory of 'CirculatingCell'?, False
+Can Cell that is also Miocyte be considered a subcategory of 'PlantCell'?, False
+Can Cell that is also Miocyte be considered a subcategory of 'CellByClass'?, False
+Can Cell be considered a subcategory of 'MatureCell'?, False
+Can Miocyte be considered a subcategory of 'MatureCell'?, True
+Can Miocyte be considered a subcategory of 'SclerenchymaCell'?, False.
+Can Miocyte be considered a subcategory of 'LeafCell'?, False
+Can Miocyte be considered a subcategory of 'Erythrocyte'?, False
+Can Miocyte be considered a subcategory of 'PhotosyntheticCell'?, False
+Can Miocyte be considered a subcategory of 'CirculatingCell'?, False
+Can Miocyte be considered a subcategory of 'PlantCell'?, False
+Can Miocyte be considered a subcategory of 'CellByClass'?, True
+Can Miocyte be considered a subcategory of 'CellByClass that is also MatureCell'?, True
+Can Miocyte be considered a subcategory of 'AnimalCell'?, True
+Can Miocyte be considered a subcategory of 'AnimalCell that is also CellByClass that is also MatureCell'?, True
+Can Miocyte be considered a subcategory of 'Cell'?, True
+Can Miocyte be considered a subcategory of 'AnimalCell that is also Cell that is also CellByClass that is also MatureCell'?, True.
+Can Miocyte be considered a subcategory of 'InMatureCell'?, False
+Can Miocyte be considered a subcategory of 'Osteocyte'?, False
+Can Miocyte be considered a subcategory of 'ChondroBlast'?, False
+Can Miocyte be considered a subcategory of 'MioBlast'?, False
+Can Miocyte be considered a subcategory of 'CellByDevelopmentStage'?, True
+Can Miocyte be considered a subcategory of 'AnimalCell that is also Cell that is also CellByClass that is also CellByDevelopmentStage that is also MatureCell'?, False
+Can Miocyte be considered a subcategory of 'PhotoreceptorCell'?, False
+Can Miocyte be considered a subcategory of 'CellByOrganism'?, False
+Can Miocyte be considered a subcategory of 'ElectricallyActiveCell'?, False
+Can Miocyte be considered a subcategory of 'StructuralCell'?, True
+Can Miocyte be considered a subcategory of 'AnimalCell that is also Cell that is also CellByClass that is also MatureCell that is also StructuralCell'?, True
+Can Miocyte be considered a subcategory of 'Neuron'?, False
+Can Miocyte be considered a subcategory of 'ChondroCyte'?, False
+Can Miocyte be considered a subcategory of 'AnimalCell that is also Cell that is also CellByClass that is also CellByDevelopmentStage that is also MatureCell that is also StructuralCell'?, True
+Can CellByClass that is also Erythrocyte be considered a subcategory of 'Cell'?, True.
+Can CellByClass that is also Erythrocyte be considered a subcategory of 'SclerenchymaCell'?, False
+Can CellByClass that is also Erythrocyte be considered a subcategory of 'LeafCell'?, False
+Can CellByClass that is also Erythrocyte be considered a subcategory of 'PhotosyntheticCell'?, False
+Can CellByClass that is also Erythrocyte be considered a subcategory of 'CirculatingCell'?, True
+Can Erythrocyte be considered a subcategory of 'CirculatingCell'?, True
+Can Erythrocyte be considered a subcategory of 'SclerenchymaCell'?, False
+Can Erythrocyte be considered a subcategory of 'LeafCell'?, False
+Can Erythrocyte be considered a subcategory of 'PhotosyntheticCell'?, False
+Can Erythrocyte be considered a subcategory of 'PlantCell'?, False
+Can Erythrocyte be considered a subcategory of 'CellByClass'?, True
+Can Erythrocyte be considered a subcategory of 'CellByClass that is also CirculatingCell'?, True
+Can Erythrocyte be considered a subcategory of 'MatureCell'?, True
+Can Erythrocyte be considered a subcategory of 'CellByClass that is also CirculatingCell that is also MatureCell'?, False
+Can Erythrocyte be considered a subcategory of 'AnimalCell'?, False \n\n
+Can Erythrocyte be considered a subcategory of 'Cell'?, True
+Can Erythrocyte be considered a subcategory of 'Cell that is also CellByClass that is also CirculatingCell'?, True
+Can Erythrocyte be considered a subcategory of 'Miocyte'?, False
+Can Erythrocyte be considered a subcategory of 'InMatureCell'?, False
+Can Erythrocyte be considered a subcategory of 'Osteocyte'?, False
+Can Erythrocyte be considered a subcategory of 'ChondroBlast'?, False
+Can Erythrocyte be considered a subcategory of 'CellByDevelopmentStage'?, False
+Can Erythrocyte be considered a subcategory of 'PhotoreceptorCell'?, False
+Can Erythrocyte be considered a subcategory of 'CellByOrganism'?, True
+Can Erythrocyte be considered a subcategory of 'Cell that is also CellByClass that is also CellByOrganism that is also CirculatingCell'?, True
+Can Erythrocyte be considered a subcategory of 'ElectricallyActiveCell'?, False
+Can Erythrocyte be considered a subcategory of 'StructuralCell'?, False
+Can Erythrocyte be considered a subcategory of 'Neuron'?, False
+Can Erythrocyte be considered a subcategory of 'ChondroCyte'?, False
+Can Erythrocyte be considered a subcategory of 'Cell that is also CellByClass that is also CellByOrganism that is also CirculatingCell that is also MatureCell'?, True
+Can CellByClass that is also StructuralCell be considered a subcategory of 'Cell'?, True
+Can CellByClass that is also StructuralCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can CellByClass that is also StructuralCell be considered a subcategory of 'LeafCell'?, False
+Can CellByClass that is also StructuralCell be considered a subcategory of 'Erythrocyte'?, False
+Can CellByClass that is also StructuralCell be considered a subcategory of 'PhotosyntheticCell'?, False
+Can CellByClass that is also StructuralCell be considered a subcategory of 'CirculatingCell'?, False
+Can CellByClass that is also StructuralCell be considered a subcategory of 'PlantCell'?, False
+Can CellByClass that is also StructuralCell be considered a subcategory of 'MatureCell'?, False
+Can CellByClass that is also StructuralCell be considered a subcategory of 'AnimalCell'?, False
+Can StructuralCell be considered a subcategory of 'Cell'?, False
+Can CellByClass be considered a subcategory of 'Cell'?, True
+Can CellByClass be considered a subcategory of 'SclerenchymaCell'?, False
+Can CellByClass be considered a subcategory of 'LeafCell'?, False
+Can CellByClass be considered a subcategory of 'Erythrocyte'?, False
+Can CellByClass be considered a subcategory of 'PhotosyntheticCell'?, False
+Can CellByClass be considered a subcategory of 'CirculatingCell'?, False
+Can CellByClass be considered a subcategory of 'PlantCell'?, False
+Can CellByClass be considered a subcategory of 'MatureCell'?, False
+Can CellByClass be considered a subcategory of 'AnimalCell'?, False
+Can CellByClass be considered a subcategory of 'Miocyte'?, False
+Can CellByClass be considered a subcategory of 'InMatureCell'?, False
+Can CellByClass be considered a subcategory of 'Osteocyte'?, False
+Can CellByClass be considered a subcategory of 'ChondroBlast'?, False
+Can CellByClass be considered a subcategory of 'MioBlast'?, False
+Can CellByClass be considered a subcategory of 'CellByDevelopmentStage'?, False
+Can CellByClass be considered a subcategory of 'PhotoreceptorCell'?, False
+Can CellByClass be considered a subcategory of 'CellByOrganism'?, False
+Can CellByClass be considered a subcategory of 'ElectricallyActiveCell'?, False
+Can CellByClass be considered a subcategory of 'StructuralCell'?, False
+Can CellByClass be considered a subcategory of 'Neuron'?, False
+Can CellByClass be considered a subcategory of 'ChondroCyte'?, False
+Can CellByDevelopmentStage that is also StructuralCell be considered a subcategory of 'MatureCell'?, False
+Can Miocyte that is also PhotoreceptorCell be considered a subcategory of 'InMatureCell'?, False
+Can Erythrocyte that is also Osteocyte be considered a subcategory of 'PlantCell'?, False
+Can ElectricallyActiveCell that is also PhotoreceptorCell be considered a subcategory of 'PhotosyntheticCell'?, False
+Can ChondroBlast that is also PhotoreceptorCell be considered a subcategory of 'InMatureCell'?, False
+Can AnimalCell that is also MioBlast be considered a subcategory of 'PhotosyntheticCell'?, False
+Can CirculatingCell that is also PhotosyntheticCell be considered a subcategory of 'InMatureCell'?, False
+Can CirculatingCell that is also Erythrocyte be considered a subcategory of 'PlantCell'?, False
+Can CellByDevelopmentStage that is also MatureCell be considered a subcategory of 'Miocyte'?, False
+Can CellByClass that is also CellByOrganism be considered a subcategory of 'Miocyte'?, True
+Can CellByClass that is also CellByOrganism be considered a subcategory of 'SclerenchymaCell'?, False
+Can CellByClass that is also CellByOrganism be considered a subcategory of 'LeafCell'?, False
+Can CellByClass that is also CellByOrganism be considered a subcategory of 'Erythrocyte'?, False
+Can CellByClass that is also CellByOrganism be considered a subcategory of 'PhotosyntheticCell'?, True
+Can CellByOrganism be considered a subcategory of 'PhotosyntheticCell'?, False
+Can CirculatingCell that is also PlantCell be considered a subcategory of 'InMatureCell'?, False
+Can ElectricallyActiveCell that is also MioBlast be considered a subcategory of 'StructuralCell'?, False.
+Can Cell that is also ChondroCyte be considered a subcategory of 'Miocyte'?, False
+Can ChondroBlast that is also StructuralCell be considered a subcategory of 'Miocyte'?, False
+Can AnimalCell that is also ChondroBlast be considered a subcategory of 'CellByOrganism'?, False
+Can Osteocyte that is also PlantCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can LeafCell that is also Neuron be considered a subcategory of 'ChondroCyte'?, False.
+Can LeafCell that is also SclerenchymaCell be considered a subcategory of 'ElectricallyActiveCell'?, False
+Can MatureCell that is also Osteocyte be considered a subcategory of 'ElectricallyActiveCell'?, False
+Can AnimalCell that is also Miocyte be considered a subcategory of 'SclerenchymaCell'?, False
+Can ChondroCyte that is also StructuralCell be considered a subcategory of 'PhotoreceptorCell'?, False
+Can CellByDevelopmentStage that is also InMatureCell be considered a subcategory of 'ElectricallyActiveCell'?, False.
+Can CellByOrganism that is also Miocyte be considered a subcategory of 'SclerenchymaCell'?, False
+Can CellByDevelopmentStage that is also ChondroBlast be considered a subcategory of 'PhotoreceptorCell'?, False
+Can Cell be considered a subcategory of 'PhotoreceptorCell'?, False
+Can CellByClass that is also InMatureCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can MioBlast that is also SclerenchymaCell be considered a subcategory of 'Erythrocyte'?, False
+Can ChondroCyte that is also Miocyte be considered a subcategory of 'LeafCell'?, False
+Can Osteocyte that is also SclerenchymaCell be considered a subcategory of 'Erythrocyte'?, False
+Can MatureCell that is also SclerenchymaCell be considered a subcategory of 'ChondroBlast'?, False
+Can InMatureCell that is also LeafCell be considered a subcategory of 'MatureCell'?, False
+Can Cell that is also Miocyte be considered a subcategory of 'ChondroBlast'?, False
+Can CellByOrganism that is also Neuron be considered a subcategory of 'ChondroBlast'?, False
+Can AnimalCell that is also InMatureCell be considered a subcategory of 'CellByDevelopmentStage'?, False.
+Can CellByClass that is also Miocyte be considered a subcategory of 'MioBlast'?, False
+Can PhotosyntheticCell that is also StructuralCell be considered a subcategory of 'CellByDevelopmentStage'?, False
+Can Cell that is also PhotoreceptorCell be considered a subcategory of 'CellByDevelopmentStage'?, False
+Can CirculatingCell that is also SclerenchymaCell be considered a subcategory of 'MioBlast'?, False
+Can Neuron that is also SclerenchymaCell be considered a subcategory of 'ChondroCyte'?, False
+Can CellByDevelopmentStage that is also Erythrocyte be considered a subcategory of 'ChondroCyte'?, False
+Can CellByClass that is also PlantCell be considered a subcategory of 'InMatureCell'?, False
+Can CirculatingCell that is also Erythrocyte be considered a subcategory of 'Neuron'?, False
+Can CirculatingCell that is also MioBlast be considered a subcategory of 'InMatureCell'?, True.
+Can CirculatingCell that is also MioBlast be considered a subcategory of 'SclerenchymaCell'?, False
+Can CirculatingCell that is also MioBlast be considered a subcategory of 'LeafCell'?, False
+Can CirculatingCell that is also MioBlast be considered a subcategory of 'Erythrocyte'?, False
+Can CirculatingCell that is also MioBlast be considered a subcategory of 'PhotosyntheticCell'?, False
+Can CirculatingCell that is also MioBlast be considered a subcategory of 'PlantCell'?, False
+Can CirculatingCell that is also MioBlast be considered a subcategory of 'MatureCell'?, False
+Can CirculatingCell that is also MioBlast be considered a subcategory of 'Miocyte'?, True
+Can MioBlast be considered a subcategory of 'Miocyte'?, True
+Can MioBlast be considered a subcategory of 'SclerenchymaCell'?, False
+Can MioBlast be considered a subcategory of 'LeafCell'?, False
+Can MioBlast be considered a subcategory of 'Erythrocyte'?, False
+Can MioBlast be considered a subcategory of 'PhotosyntheticCell'?, False
+Can MioBlast be considered a subcategory of 'CirculatingCell'?, False
+Can MioBlast be considered a subcategory of 'PlantCell'?, False
+Can MioBlast be considered a subcategory of 'CellByClass'?, True
+Can MioBlast be considered a subcategory of 'CellByClass that is also Miocyte'?, True.
+Can MioBlast be considered a subcategory of 'MatureCell'?, False
+Can MioBlast be considered a subcategory of 'AnimalCell'?, False
+Can MioBlast be considered a subcategory of 'Cell'?, False
+Can MioBlast be considered a subcategory of 'InMatureCell'?, False
+Can MioBlast be considered a subcategory of 'Osteocyte'?, False
+Can MioBlast be considered a subcategory of 'ChondroBlast'?, False
+Can MioBlast be considered a subcategory of 'CellByDevelopmentStage'?, False.
+Can MioBlast be considered a subcategory of 'PhotoreceptorCell'?, False
+Can MioBlast be considered a subcategory of 'CellByOrganism'?, True
+Can MioBlast be considered a subcategory of 'CellByClass that is also CellByOrganism that is also Miocyte'?, True
+Can MioBlast be considered a subcategory of 'ElectricallyActiveCell'?, False
+Can MioBlast be considered a subcategory of 'StructuralCell'?, False
+Can MioBlast be considered a subcategory of 'Neuron'?, False
+Can MioBlast be considered a subcategory of 'ChondroCyte'?, False
+Can MatureCell that is also StructuralCell be considered a subcategory of 'PlantCell'?, False
+Can ChondroBlast that is also ElectricallyActiveCell be considered a subcategory of 'Miocyte'?, False
+Can ElectricallyActiveCell that is also LeafCell be considered a subcategory of 'Miocyte'?, False.
+Can ChondroBlast that is also PhotoreceptorCell be considered a subcategory of 'Miocyte'?, False
+Can AnimalCell that is also CellByClass be considered a subcategory of 'Osteocyte'?, False
+Can PhotosyntheticCell that is also PlantCell be considered a subcategory of 'Osteocyte'?, False
+Can Neuron that is also Osteocyte be considered a subcategory of 'LeafCell'?, False
+Can CellByOrganism that is also StructuralCell be considered a subcategory of 'Osteocyte'?, False
+Can CellByDevelopmentStage that is also PlantCell be considered a subcategory of 'Erythrocyte'?, False
+Can ChondroBlast that is also InMatureCell be considered a subcategory of 'AnimalCell'?, False
+Can ElectricallyActiveCell that is also MatureCell be considered a subcategory of 'AnimalCell'?, True
+Can ElectricallyActiveCell that is also MatureCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can ElectricallyActiveCell that is also MatureCell be considered a subcategory of 'LeafCell'?, False
+Can ElectricallyActiveCell that is also MatureCell be considered a subcategory of 'Erythrocyte'?, False
+Can ElectricallyActiveCell that is also MatureCell be considered a subcategory of 'PhotosyntheticCell'?, False.
+Can ElectricallyActiveCell that is also MatureCell be considered a subcategory of 'CirculatingCell'?, False.
+Can ElectricallyActiveCell that is also MatureCell be considered a subcategory of 'PlantCell'?, False
+Can ElectricallyActiveCell that is also MatureCell be considered a subcategory of 'CellByClass'?, False
+Can ElectricallyActiveCell be considered a subcategory of 'AnimalCell'?, False
+Can MatureCell be considered a subcategory of 'AnimalCell'?, False
+Can Cell that is also MatureCell be considered a subcategory of 'Neuron'?, False
+Can ChondroCyte that is also Erythrocyte be considered a subcategory of 'InMatureCell'?, False
+Can ChondroBlast that is also ElectricallyActiveCell be considered a subcategory of 'Neuron'?, False
+Can CellByOrganism that is also ElectricallyActiveCell be considered a subcategory of 'Neuron'?, False
+Can Cell that is also InMatureCell be considered a subcategory of 'ChondroBlast'?, False
+Can ChondroCyte that is also PlantCell be considered a subcategory of 'ChondroBlast'?, False.
+Can PhotoreceptorCell that is also StructuralCell be considered a subcategory of 'CellByClass'?, True
+Can PhotoreceptorCell that is also StructuralCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can PhotoreceptorCell that is also StructuralCell be considered a subcategory of 'LeafCell'?, False
+Can PhotoreceptorCell that is also StructuralCell be considered a subcategory of 'Erythrocyte'?, False
+Can PhotoreceptorCell that is also StructuralCell be considered a subcategory of 'PhotosyntheticCell'?, False
+Can PhotoreceptorCell that is also StructuralCell be considered a subcategory of 'CirculatingCell'?, False
+Can PhotoreceptorCell that is also StructuralCell be considered a subcategory of 'PlantCell'?, False.
+Can StructuralCell be considered a subcategory of 'CellByClass'?, False
+Can ChondroCyte that is also Neuron be considered a subcategory of 'CellByDevelopmentStage'?, False
+Can CellByDevelopmentStage that is also CirculatingCell be considered a subcategory of 'ChondroBlast'?, False
+Can Erythrocyte that is also Osteocyte be considered a subcategory of 'ElectricallyActiveCell'?, False
+Can CellByDevelopmentStage that is also Neuron be considered a subcategory of 'MioBlast'?, False
+Can LeafCell that is also MatureCell be considered a subcategory of 'MioBlast'?, False.
+Can LeafCell that is also PlantCell be considered a subcategory of 'ChondroCyte'?, False
+Can PhotosyntheticCell that is also PlantCell be considered a subcategory of 'CellByOrganism'?, True
+Can PhotosyntheticCell that is also PlantCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can PhotosyntheticCell that is also PlantCell be considered a subcategory of 'LeafCell'?, False
+Can PhotosyntheticCell that is also PlantCell be considered a subcategory of 'Erythrocyte'?, False
+Can PhotosyntheticCell that is also PlantCell be considered a subcategory of 'CirculatingCell'?, False
+Can PhotosyntheticCell that is also PlantCell be considered a subcategory of 'CellByClass'?, True
+Can PhotosyntheticCell be considered a subcategory of 'CellByClass'?, False
+Can PhotoreceptorCell that is also PlantCell be considered a subcategory of 'StructuralCell'?, False
+Can AnimalCell that is also ChondroCyte be considered a subcategory of 'StructuralCell'?, True
+Can AnimalCell that is also ChondroCyte be considered a subcategory of 'SclerenchymaCell'?, False
+Can AnimalCell that is also ChondroCyte be considered a subcategory of 'LeafCell'?, False
+Can AnimalCell that is also ChondroCyte be considered a subcategory of 'PhotosyntheticCell'?, False
+Can AnimalCell that is also ChondroCyte be considered a subcategory of 'CirculatingCell'?, False
+Can AnimalCell that is also ChondroCyte be considered a subcategory of 'PlantCell'?, False
+Can AnimalCell that is also ChondroCyte be considered a subcategory of 'MatureCell'?, True
+Can ChondroCyte be considered a subcategory of 'MatureCell'?, False
+Can CellByClass that is also CellByOrganism be considered a subcategory of 'CirculatingCell'?, True
+Can CellByOrganism be considered a subcategory of 'CirculatingCell'?, False
+Can ChondroBlast that is also StructuralCell be considered a subcategory of 'CirculatingCell'?, False
+Can AnimalCell that is also CellByOrganism be considered a subcategory of 'MatureCell'?, True
+Can AnimalCell that is also CellByOrganism be considered a subcategory of 'SclerenchymaCell'?, False
+Can AnimalCell that is also CellByOrganism be considered a subcategory of 'LeafCell'?, False
+Can AnimalCell that is also CellByOrganism be considered a subcategory of 'Erythrocyte'?, False
+Can PhotoreceptorCell that is also PlantCell be considered a subcategory of 'MatureCell'?, False
+Can ChondroBlast that is also PhotosyntheticCell be considered a subcategory of 'ElectricallyActiveCell'?, False
+Can ChondroBlast that is also SclerenchymaCell be considered a subcategory of 'ChondroCyte'?, False
+Can CirculatingCell that is also MatureCell be considered a subcategory of 'ElectricallyActiveCell'?, False
+Can ElectricallyActiveCell that is also Erythrocyte be considered a subcategory of 'SclerenchymaCell'?, False
+Can CellByDevelopmentStage that is also PhotoreceptorCell be considered a subcategory of 'SclerenchymaCell'?, False.
+Can CellByClass that is also MioBlast be considered a subcategory of 'ChondroCyte'?, False
+Can MatureCell that is also PhotosyntheticCell be considered a subcategory of 'PhotoreceptorCell'?, False
+Can Erythrocyte that is also StructuralCell be considered a subcategory of 'PhotoreceptorCell'?, False.
+Can AnimalCell that is also Neuron be considered a subcategory of 'SclerenchymaCell'?, False
+Can CellByOrganism that is also ChondroBlast be considered a subcategory of 'Erythrocyte'?, False
+Can CellByOrganism that is also CirculatingCell be considered a subcategory of 'PhotoreceptorCell'?, False
+Can InMatureCell that is also PlantCell be considered a subcategory of 'PhotoreceptorCell'?, False
+Can ChondroBlast that is also MatureCell be considered a subcategory of 'CellByClass'?, True
+Can ChondroBlast that is also MatureCell be considered a subcategory of 'LeafCell'?, False
+Can ChondroBlast that is also MatureCell be considered a subcategory of 'Erythrocyte'?, False
+Can ChondroBlast that is also MatureCell be considered a subcategory of 'PhotosyntheticCell'?, False.
+Can ChondroBlast that is also MatureCell be considered a subcategory of 'CirculatingCell'?, False
+Can MatureCell be considered a subcategory of 'CellByClass'?, False
+Can CirculatingCell that is also Neuron be considered a subcategory of 'ChondroBlast'?, False
+Can PhotoreceptorCell that is also StructuralCell be considered a subcategory of 'CellByDevelopmentStage'?, False
+Can Erythrocyte that is also MioBlast be considered a subcategory of 'ChondroBlast'?, False.
+Can AnimalCell that is also Cell be considered a subcategory of 'CellByDevelopmentStage'?, False
+Can AnimalCell that is also InMatureCell be considered a subcategory of 'MioBlast'?, False
+Can AnimalCell that is also PhotoreceptorCell be considered a subcategory of 'ChondroBlast'?, False.
+Can ElectricallyActiveCell that is also Erythrocyte be considered a subcategory of 'CellByDevelopmentStage'?, False
+Can CellByOrganism be considered a subcategory of 'MioBlast'?, False
+Can CellByOrganism that is also Osteocyte be considered a subcategory of 'MioBlast'?, False
+Can PhotoreceptorCell that is also PhotosyntheticCell be considered a subcategory of 'ChondroCyte'?, False
+Can ChondroBlast that is also PlantCell be considered a subcategory of 'ChondroCyte'?, False
+Can CellByDevelopmentStage that is also ChondroCyte be considered a subcategory of 'PhotosyntheticCell'?, False
+Can Cell that is also ChondroCyte be considered a subcategory of 'InMatureCell'?, False
+Can Cell that is also CellByOrganism be considered a subcategory of 'InMatureCell'?, False
+Can AnimalCell that is also CellByClass be considered a subcategory of 'Neuron'?, False
+Can Miocyte that is also Osteocyte be considered a subcategory of 'InMatureCell'?, False.
+Can ChondroCyte that is also PhotosyntheticCell be considered a subcategory of 'InMatureCell'?, False
+Can CirculatingCell that is also InMatureCell be considered a subcategory of 'Miocyte'?, False
+Can Cell that is also PlantCell be considered a subcategory of 'Miocyte'?, False
+Can Cell that is also LeafCell be considered a subcategory of 'CellByOrganism'?, True.
+Can Cell that is also LeafCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can Cell that is also LeafCell be considered a subcategory of 'Erythrocyte'?, False
+Can Cell that is also LeafCell be considered a subcategory of 'CirculatingCell'?, False
+Can Cell that is also LeafCell be considered a subcategory of 'MatureCell'?, False.
+Can Cell that is also LeafCell be considered a subcategory of 'AnimalCell'?, False
+Can Cell that is also LeafCell be considered a subcategory of 'Miocyte'?, False
+Can Cell that is also LeafCell be considered a subcategory of 'ChondroBlast'?, False
+Can Cell that is also LeafCell be considered a subcategory of 'MioBlast'?, False
+Can Cell that is also LeafCell be considered a subcategory of 'CellByDevelopmentStage'?, False
+Can Cell that is also LeafCell be considered a subcategory of 'PhotoreceptorCell'?, False
+Can Cell be considered a subcategory of 'CellByOrganism'?, False
+Can MatureCell that is also StructuralCell be considered a subcategory of 'Miocyte'?, False.
+Can Cell that is also ChondroBlast be considered a subcategory of 'Erythrocyte'?, False
+Can MioBlast that is also PhotosyntheticCell be considered a subcategory of 'Osteocyte'?, False.
+Can ChondroBlast that is also ChondroCyte be considered a subcategory of 'LeafCell'?, False
+Can Miocyte that is also PhotoreceptorCell be considered a subcategory of 'Osteocyte'?, False
+Can ElectricallyActiveCell that is also PhotoreceptorCell be considered a subcategory of 'Osteocyte'?, False
+Can CellByClass that is also ElectricallyActiveCell be considered a subcategory of 'Erythrocyte'?, False
+Can ElectricallyActiveCell that is also PlantCell be considered a subcategory of 'AnimalCell'?, False
+Can LeafCell that is also StructuralCell be considered a subcategory of 'Neuron'?, False
+Can Cell that is also CellByDevelopmentStage be considered a subcategory of 'PhotosyntheticCell'?, True
+Can Cell that is also CellByDevelopmentStage be considered a subcategory of 'SclerenchymaCell'?, False
+Can Cell that is also CellByDevelopmentStage be considered a subcategory of 'LeafCell'?, False
+Can Cell that is also CellByDevelopmentStage be considered a subcategory of 'Erythrocyte'?, False
+Can Cell be considered a subcategory of 'PhotosyntheticCell'?, True
+Can Cell be considered a subcategory of 'SclerenchymaCell'?, False
+Can Cell be considered a subcategory of 'LeafCell'?, False
+Can Cell be considered a subcategory of 'Erythrocyte'?, False.
+Can Cell be considered a subcategory of 'CirculatingCell'?, False
+Can Cell be considered a subcategory of 'AnimalCell'?, False
+Can Cell be considered a subcategory of 'Miocyte'?, False
+Can Cell be considered a subcategory of 'InMatureCell'?, False
+Can Cell be considered a subcategory of 'Osteocyte'?, False
+Can Cell be considered a subcategory of 'ChondroBlast'?, False
+Can Cell be considered a subcategory of 'MioBlast'?, False
+Can Cell be considered a subcategory of 'CellByDevelopmentStage'?, False
+Can Cell be considered a subcategory of 'ElectricallyActiveCell'?, False
+Can Cell be considered a subcategory of 'StructuralCell'?, False
+Can Cell be considered a subcategory of 'Neuron'?, False
+Can Cell be considered a subcategory of 'ChondroCyte'?, False
+Can CellByOrganism that is also MatureCell be considered a subcategory of 'AnimalCell'?, False
+Can Miocyte that is also PlantCell be considered a subcategory of 'Neuron'?, False
+Can ChondroCyte that is also StructuralCell be considered a subcategory of 'ChondroBlast'?, False
+Can AnimalCell that is also SclerenchymaCell be considered a subcategory of 'ChondroBlast'?, False
+Can CellByDevelopmentStage that is also ChondroCyte be considered a subcategory of 'CellByClass'?, True
+Can CellByDevelopmentStage that is also ChondroCyte be considered a subcategory of 'LeafCell'?, False
+Can CellByDevelopmentStage that is also ChondroCyte be considered a subcategory of 'Erythrocyte'?, False
+Can CellByDevelopmentStage that is also ChondroCyte be considered a subcategory of 'CirculatingCell'?, False
+Can CellByDevelopmentStage be considered a subcategory of 'CellByClass'?, False
+Can ChondroCyte be considered a subcategory of 'CellByClass'?, False
+Can InMatureCell that is also Osteocyte be considered a subcategory of 'ChondroBlast'?, False.
+Can LeafCell that is also Neuron be considered a subcategory of 'CellByDevelopmentStage'?, False
+Can ChondroCyte that is also StructuralCell be considered a subcategory of 'CellByDevelopmentStage'?, True
+Can ChondroCyte that is also StructuralCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can ChondroCyte that is also StructuralCell be considered a subcategory of 'LeafCell'?, False
+Can ChondroCyte that is also StructuralCell be considered a subcategory of 'Erythrocyte'?, False
+Can ChondroCyte that is also StructuralCell be considered a subcategory of 'PhotosyntheticCell'?, False.
+Can ChondroCyte that is also StructuralCell be considered a subcategory of 'CirculatingCell'?, False
+Can ChondroCyte that is also StructuralCell be considered a subcategory of 'PlantCell'?, False
+Can ChondroCyte that is also StructuralCell be considered a subcategory of 'CellByClass'?, True
+Can ChondroBlast that is also InMatureCell be considered a subcategory of 'CellByDevelopmentStage'?, True
+Can ChondroBlast that is also InMatureCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can ChondroBlast that is also InMatureCell be considered a subcategory of 'LeafCell'?, False.
+Can ChondroBlast that is also InMatureCell be considered a subcategory of 'Erythrocyte'?, False
+Can ChondroBlast that is also InMatureCell be considered a subcategory of 'PhotosyntheticCell'?, False
+Can ChondroBlast that is also InMatureCell be considered a subcategory of 'CirculatingCell'?, False
+Can ChondroBlast that is also InMatureCell be considered a subcategory of 'PlantCell'?, False
+Can ChondroBlast that is also InMatureCell be considered a subcategory of 'CellByClass'?, True
+Can InMatureCell be considered a subcategory of 'CellByClass'?, True
+Can InMatureCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can InMatureCell be considered a subcategory of 'LeafCell'?, False
+Can InMatureCell be considered a subcategory of 'Erythrocyte'?, False
+Can InMatureCell be considered a subcategory of 'CirculatingCell'?, False
+Can InMatureCell be considered a subcategory of 'PlantCell'?, False
+Can InMatureCell be considered a subcategory of 'MatureCell'?, False
+Can InMatureCell be considered a subcategory of 'AnimalCell'?, False.
+Can InMatureCell be considered a subcategory of 'Cell'?, True
+Can InMatureCell be considered a subcategory of 'Cell that is also CellByClass'?, False
+Can InMatureCell be considered a subcategory of 'Miocyte'?, False
+Can InMatureCell be considered a subcategory of 'Osteocyte'?, False
+Can InMatureCell be considered a subcategory of 'ChondroBlast'?, False.
+Can InMatureCell be considered a subcategory of 'MioBlast'?, False
+Can InMatureCell be considered a subcategory of 'CellByDevelopmentStage'?, True
+Can InMatureCell be considered a subcategory of 'CellByClass that is also CellByDevelopmentStage'?, True
+Can InMatureCell be considered a subcategory of 'PhotoreceptorCell'?, False
+Can InMatureCell be considered a subcategory of 'CellByOrganism'?, False
+Can InMatureCell be considered a subcategory of 'ElectricallyActiveCell'?, False
+Can InMatureCell be considered a subcategory of 'StructuralCell'?, False
+Can InMatureCell be considered a subcategory of 'Neuron'?, False
+Can InMatureCell be considered a subcategory of 'ChondroCyte'?, False
+Can InMatureCell be considered a subcategory of 'Cell that is also CellByClass that is also CellByDevelopmentStage'?, True
+Can CellByOrganism that is also InMatureCell be considered a subcategory of 'MioBlast'?, False
+Can MatureCell that is also PhotoreceptorCell be considered a subcategory of 'ChondroCyte'?, False
+Can Cell that is also CirculatingCell be considered a subcategory of 'MioBlast'?, False
+Can Cell that is also PhotosyntheticCell be considered a subcategory of 'MioBlast'?, False
+Can ChondroCyte that is also ElectricallyActiveCell be considered a subcategory of 'CellByOrganism'?, False
+Can CellByClass that is also CellByDevelopmentStage be considered a subcategory of 'StructuralCell'?, True
+Can CellByClass that is also CellByDevelopmentStage be considered a subcategory of 'SclerenchymaCell'?, False
+Can CellByClass that is also CellByDevelopmentStage be considered a subcategory of 'LeafCell'?, False
+Can CellByClass that is also CellByDevelopmentStage be considered a subcategory of 'Erythrocyte'?, False
+Can CellByClass that is also CellByDevelopmentStage be considered a subcategory of 'CirculatingCell'?, True
+Can CellByDevelopmentStage be considered a subcategory of 'CirculatingCell'?, True
+Can CellByDevelopmentStage be considered a subcategory of 'SclerenchymaCell'?, False
+Can CellByDevelopmentStage be considered a subcategory of 'LeafCell'?, False
+Can CellByDevelopmentStage be considered a subcategory of 'Erythrocyte'?, False
+Can CellByDevelopmentStage be considered a subcategory of 'PhotosyntheticCell'?, False
+Can CellByDevelopmentStage be considered a subcategory of 'PlantCell'?, False
+Can CellByDevelopmentStage be considered a subcategory of 'MatureCell'?, False
+Can CellByDevelopmentStage be considered a subcategory of 'AnimalCell'?, False
+Can CellByDevelopmentStage be considered a subcategory of 'Cell'?, False
+Can CellByDevelopmentStage be considered a subcategory of 'Miocyte'?, False
+Can CellByDevelopmentStage be considered a subcategory of 'InMatureCell'?, False
+Can CellByDevelopmentStage be considered a subcategory of 'Osteocyte'?, False
+Can CellByDevelopmentStage be considered a subcategory of 'ChondroBlast'?, False
+Can CellByDevelopmentStage be considered a subcategory of 'MioBlast'?, False
+Can CellByDevelopmentStage be considered a subcategory of 'PhotoreceptorCell'?, False
+Can CellByDevelopmentStage be considered a subcategory of 'CellByOrganism'?, False.
+Can CellByDevelopmentStage be considered a subcategory of 'ElectricallyActiveCell'?, False
+Can CellByDevelopmentStage be considered a subcategory of 'StructuralCell'?, True
+Can CellByDevelopmentStage be considered a subcategory of 'CirculatingCell that is also StructuralCell'?, False.
+Can CellByDevelopmentStage be considered a subcategory of 'Neuron'?, False
+Can CellByDevelopmentStage be considered a subcategory of 'ChondroCyte'?, False
+Can CellByClass that is also PlantCell be considered a subcategory of 'MatureCell'?, False
+Can PhotosyntheticCell that is also StructuralCell be considered a subcategory of 'MatureCell'?, True.
+Can PhotosyntheticCell that is also StructuralCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can PhotosyntheticCell that is also StructuralCell be considered a subcategory of 'LeafCell'?, False
+Can PhotosyntheticCell that is also StructuralCell be considered a subcategory of 'Erythrocyte'?, False
+Can PhotosyntheticCell that is also StructuralCell be considered a subcategory of 'CirculatingCell'?, False
+Can PhotosyntheticCell that is also StructuralCell be considered a subcategory of 'PlantCell'?, True.
+Can Osteocyte that is also PhotoreceptorCell be considered a subcategory of 'LeafCell'?, False
+Can MioBlast that is also PhotoreceptorCell be considered a subcategory of 'Erythrocyte'?, False
+Can CellByClass that is also MioBlast be considered a subcategory of 'Erythrocyte'?, False
+Can ElectricallyActiveCell that is also Miocyte be considered a subcategory of 'Osteocyte'?, False
+Can MatureCell that is also PhotosyntheticCell be considered a subcategory of 'AnimalCell'?, False
+Can CirculatingCell that is also Erythrocyte be considered a subcategory of 'Osteocyte'?, False
+Can AnimalCell that is also Neuron be considered a subcategory of 'Osteocyte'?, False
+Can CellByOrganism that is also CirculatingCell be considered a subcategory of 'Neuron'?, False
+Can Cell that is also ChondroBlast be considered a subcategory of 'Neuron'?, False
+Can AnimalCell that is also MatureCell be considered a subcategory of 'Neuron'?, False.
+Can ChondroBlast that is also ElectricallyActiveCell be considered a subcategory of 'PhotosyntheticCell'?, False
+Can ElectricallyActiveCell that is also MioBlast be considered a subcategory of 'ChondroCyte'?, False
+Can PhotoreceptorCell that is also StructuralCell be considered a subcategory of 'ElectricallyActiveCell'?, False
+Can Erythrocyte that is also MioBlast be considered a subcategory of 'ChondroCyte'?, False
+Can AnimalCell that is also MatureCell be considered a subcategory of 'ElectricallyActiveCell'?, False
+Can InMatureCell that is also PhotosyntheticCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can Neuron that is also PhotoreceptorCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can CellByOrganism be considered a subcategory of 'PhotoreceptorCell'?, False
+Can AnimalCell that is also CirculatingCell be considered a subcategory of 'LeafCell'?, False
+Can LeafCell that is also PhotosyntheticCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can CellByDevelopmentStage that is also PlantCell be considered a subcategory of 'PhotoreceptorCell'?, False
+Can ChondroBlast that is also PhotosyntheticCell be considered a subcategory of 'LeafCell'?, True
+Can ChondroBlast that is also PhotosyntheticCell be considered a subcategory of 'SclerenchymaCell'?, False.
+Can PhotosyntheticCell be considered a subcategory of 'LeafCell'?, False
+Can ChondroBlast be considered a subcategory of 'LeafCell'?, False
+Can MioBlast that is also PhotoreceptorCell be considered a subcategory of 'LeafCell'?, False
+Can ChondroCyte that is also CirculatingCell be considered a subcategory of 'PhotoreceptorCell'?, False
+Can Cell that is also MatureCell be considered a subcategory of 'PhotoreceptorCell'?, False
+Can CellByDevelopmentStage that is also InMatureCell be considered a subcategory of 'Neuron'?, False
+Can Erythrocyte that is also Neuron be considered a subcategory of 'InMatureCell'?, False
+Can AnimalCell that is also Miocyte be considered a subcategory of 'InMatureCell'?, False
+Can ElectricallyActiveCell that is also StructuralCell be considered a subcategory of 'InMatureCell'?, False
+Can ElectricallyActiveCell that is also Osteocyte be considered a subcategory of 'Miocyte'?, False.
+Can Erythrocyte that is also PhotosyntheticCell be considered a subcategory of 'Miocyte'?, False
+Can Erythrocyte that is also SclerenchymaCell be considered a subcategory of 'Miocyte'?, False
+Can AnimalCell that is also InMatureCell be considered a subcategory of 'Erythrocyte'?, False
+Can LeafCell that is also Osteocyte be considered a subcategory of 'PhotoreceptorCell'?, False.
+Can CellByDevelopmentStage that is also Neuron be considered a subcategory of 'LeafCell'?, False
+Can InMatureCell that is also StructuralCell be considered a subcategory of 'Erythrocyte'?, False
+Can Cell that is also PhotoreceptorCell be considered a subcategory of 'Osteocyte'?, False
+Can Cell that is also Miocyte be considered a subcategory of 'Osteocyte'?, False
+Can ChondroCyte that is also MioBlast be considered a subcategory of 'Neuron'?, False
+Can CellByClass that is also ChondroBlast be considered a subcategory of 'Osteocyte'?, False
+Can LeafCell that is also SclerenchymaCell be considered a subcategory of 'Neuron'?, False
+Can CellByOrganism that is also Erythrocyte be considered a subcategory of 'ChondroBlast'?, False
+Can PhotoreceptorCell that is also PhotosyntheticCell be considered a subcategory of 'MatureCell'?, True
+Can PhotoreceptorCell that is also PhotosyntheticCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can PhotoreceptorCell that is also PhotosyntheticCell be considered a subcategory of 'LeafCell'?, False.
+Can PhotoreceptorCell that is also PhotosyntheticCell be considered a subcategory of 'Erythrocyte'?, False.
+Can PhotoreceptorCell that is also PhotosyntheticCell be considered a subcategory of 'CirculatingCell'?, False
+Can PhotoreceptorCell that is also PhotosyntheticCell be considered a subcategory of 'PlantCell'?, False
+Can PhotoreceptorCell that is also PhotosyntheticCell be considered a subcategory of 'CellByClass'?, True.
+Can MatureCell that is also Neuron be considered a subcategory of 'ChondroBlast'?, False
+Can CirculatingCell that is also MioBlast be considered a subcategory of 'ChondroBlast'?, False
+Can ElectricallyActiveCell that is also LeafCell be considered a subcategory of 'MioBlast'?, False
+Can AnimalCell that is also ElectricallyActiveCell be considered a subcategory of 'MioBlast'?, False
+Can Cell that is also PhotosyntheticCell be considered a subcategory of 'ChondroCyte'?, False
+Can CellByOrganism that is also Erythrocyte be considered a subcategory of 'CellByDevelopmentStage'?, False
+Can AnimalCell that is also Erythrocyte be considered a subcategory of 'MioBlast'?, False
+Can Erythrocyte that is also PlantCell be considered a subcategory of 'StructuralCell'?, False
+Can MatureCell be considered a subcategory of 'CirculatingCell'?, True
+Can MatureCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can MatureCell be considered a subcategory of 'LeafCell'?, False
+Can MatureCell be considered a subcategory of 'Erythrocyte'?, False
+Can MatureCell be considered a subcategory of 'PhotosyntheticCell'?, False
+Can MatureCell be considered a subcategory of 'PlantCell'?, False
+Can MatureCell be considered a subcategory of 'Cell'?, True
+Can MatureCell be considered a subcategory of 'Cell that is also CirculatingCell'?, False
+Can MatureCell be considered a subcategory of 'Miocyte'?, False
+Can MatureCell be considered a subcategory of 'InMatureCell'?, False
+Can MatureCell be considered a subcategory of 'Osteocyte'?, False
+Can MatureCell be considered a subcategory of 'ChondroBlast'?, False.
+Can MatureCell be considered a subcategory of 'MioBlast'?, False
+Can MatureCell be considered a subcategory of 'CellByDevelopmentStage'?, True
+Can MatureCell be considered a subcategory of 'CellByDevelopmentStage that is also CirculatingCell'?, True
+Can MatureCell be considered a subcategory of 'PhotoreceptorCell'?, False
+Can MatureCell be considered a subcategory of 'CellByOrganism'?, True
+Can MatureCell be considered a subcategory of 'CellByDevelopmentStage that is also CellByOrganism that is also CirculatingCell'?, True
+Can MatureCell be considered a subcategory of 'ElectricallyActiveCell'?, False
+Can MatureCell be considered a subcategory of 'StructuralCell'?, False
+Can MatureCell be considered a subcategory of 'Neuron'?, False
+Can MatureCell be considered a subcategory of 'ChondroCyte'?, False
+Can MatureCell be considered a subcategory of 'Cell that is also CellByDevelopmentStage that is also CellByOrganism that is also CirculatingCell'?, False
+Can CellByOrganism that is also ElectricallyActiveCell be considered a subcategory of 'Cell'?, True
+Can CellByOrganism that is also ElectricallyActiveCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can CellByOrganism that is also ElectricallyActiveCell be considered a subcategory of 'LeafCell'?, False
+Can CellByOrganism that is also ElectricallyActiveCell be considered a subcategory of 'Erythrocyte'?, False
+Can CellByOrganism that is also ElectricallyActiveCell be considered a subcategory of 'PhotosyntheticCell'?, False
+Can CellByOrganism that is also ElectricallyActiveCell be considered a subcategory of 'CirculatingCell'?, False
+Can CellByOrganism that is also ElectricallyActiveCell be considered a subcategory of 'CellByClass'?, False
+Can CellByOrganism that is also ElectricallyActiveCell be considered a subcategory of 'MatureCell'?, False
+Can CellByOrganism that is also ElectricallyActiveCell be considered a subcategory of 'AnimalCell'?, False
+Can CellByOrganism be considered a subcategory of 'Cell'?, False
+Can ElectricallyActiveCell be considered a subcategory of 'Cell'?, True
+Can ElectricallyActiveCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can ElectricallyActiveCell be considered a subcategory of 'LeafCell'?, False
+Can ElectricallyActiveCell be considered a subcategory of 'Erythrocyte'?, False
+Can ElectricallyActiveCell be considered a subcategory of 'PhotosyntheticCell'?, False.
+Can ElectricallyActiveCell be considered a subcategory of 'CirculatingCell'?, False
+Can ElectricallyActiveCell be considered a subcategory of 'PlantCell'?, False
+Can ElectricallyActiveCell be considered a subcategory of 'CellByClass'?, True
+Can ElectricallyActiveCell be considered a subcategory of 'Cell that is also CellByClass'?, True
+Can ElectricallyActiveCell be considered a subcategory of 'Miocyte'?, False
+Can ElectricallyActiveCell be considered a subcategory of 'InMatureCell'?, False
+Can ElectricallyActiveCell be considered a subcategory of 'Osteocyte'?, False
+Can ElectricallyActiveCell be considered a subcategory of 'ChondroBlast'?, False
+Can ElectricallyActiveCell be considered a subcategory of 'MioBlast'?, False
+Can ElectricallyActiveCell be considered a subcategory of 'CellByDevelopmentStage'?, False
+Can ElectricallyActiveCell be considered a subcategory of 'PhotoreceptorCell'?, False.
+Can ElectricallyActiveCell be considered a subcategory of 'CellByOrganism'?, False
+Can ElectricallyActiveCell be considered a subcategory of 'StructuralCell'?, True
+Can ElectricallyActiveCell be considered a subcategory of 'Cell that is also CellByClass that is also StructuralCell'?, True
+Can ElectricallyActiveCell be considered a subcategory of 'Neuron'?, False
+Can ElectricallyActiveCell be considered a subcategory of 'ChondroCyte'?, False
+Can LeafCell that is also StructuralCell be considered a subcategory of 'Osteocyte'?, False
+Can ChondroBlast that is also StructuralCell be considered a subcategory of 'LeafCell'?, False
+Can InMatureCell that is also Miocyte be considered a subcategory of 'Erythrocyte'?, False
+Can CellByDevelopmentStage that is also ChondroCyte be considered a subcategory of 'Osteocyte'?, False
+Can Cell that is also CellByOrganism be considered a subcategory of 'Erythrocyte'?, False
+Can ChondroCyte that is also PhotosyntheticCell be considered a subcategory of 'Erythrocyte'?, False
+Can Erythrocyte that is also Osteocyte be considered a subcategory of 'Neuron'?, False.
+Can CellByOrganism that is also ChondroBlast be considered a subcategory of 'ChondroCyte'?, False
+Can CirculatingCell that is also Miocyte be considered a subcategory of 'ElectricallyActiveCell'?, False
+Can InMatureCell that is also PlantCell be considered a subcategory of 'ElectricallyActiveCell'?, False
+Can PhotoreceptorCell that is also PlantCell be considered a subcategory of 'MioBlast'?, False
+Can MatureCell that is also MioBlast be considered a subcategory of 'SclerenchymaCell'?, False
+Can Erythrocyte that is also LeafCell be considered a subcategory of 'PhotoreceptorCell'?, False.
+Can CellByClass that is also ElectricallyActiveCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can AnimalCell that is also Neuron be considered a subcategory of 'PhotoreceptorCell'?, False.
+Can ElectricallyActiveCell that is also InMatureCell be considered a subcategory of 'LeafCell'?, False
+Can Osteocyte that is also StructuralCell be considered a subcategory of 'PhotoreceptorCell'?, False.
+Can Cell that is also MatureCell be considered a subcategory of 'StructuralCell'?, True.
+Can Cell that is also MatureCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can Cell that is also MatureCell be considered a subcategory of 'LeafCell'?, False
+Can Cell that is also MatureCell be considered a subcategory of 'Erythrocyte'?, True
+Can CellByClass that is also PlantCell be considered a subcategory of 'StructuralCell'?, True
+Can CellByClass that is also PlantCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can CellByClass that is also PlantCell be considered a subcategory of 'LeafCell'?, False
+Can CellByClass that is also PlantCell be considered a subcategory of 'Erythrocyte'?, False
+Can CellByClass that is also PlantCell be considered a subcategory of 'CirculatingCell'?, False
+Can CellByClass that is also PlantCell be considered a subcategory of 'AnimalCell'?, False
+Can CellByClass that is also PlantCell be considered a subcategory of 'Miocyte'?, False
+Can CellByClass that is also PlantCell be considered a subcategory of 'Osteocyte'?, False
+Can CellByClass that is also PlantCell be considered a subcategory of 'ChondroBlast'?, False
+Can CellByClass that is also PlantCell be considered a subcategory of 'MioBlast'?, False.
+Can CellByClass that is also PlantCell be considered a subcategory of 'CellByDevelopmentStage'?, False.
+Can CellByClass that is also PlantCell be considered a subcategory of 'PhotoreceptorCell'?, False
+Can CellByClass that is also PlantCell be considered a subcategory of 'ElectricallyActiveCell'?, False
+Can Neuron that is also StructuralCell be considered a subcategory of 'Miocyte'?, False
+Can CellByOrganism that is also ChondroCyte be considered a subcategory of 'StructuralCell'?, False.
+Can ElectricallyActiveCell that is also Miocyte be considered a subcategory of 'Neuron'?, False
+Can AnimalCell that is also CellByDevelopmentStage be considered a subcategory of 'InMatureCell'?, True
+Can AnimalCell that is also CellByDevelopmentStage be considered a subcategory of 'SclerenchymaCell'?, False
+Can AnimalCell that is also CellByDevelopmentStage be considered a subcategory of 'LeafCell'?, False
+Can AnimalCell that is also CellByDevelopmentStage be considered a subcategory of 'Miocyte'?, False
+Can ChondroCyte be considered a subcategory of 'PlantCell'?, False
+Can LeafCell that is also PhotosyntheticCell be considered a subcategory of 'Miocyte'?, False
+Can Erythrocyte that is also Neuron be considered a subcategory of 'Miocyte'?, False
+Can ElectricallyActiveCell that is also PhotosyntheticCell be considered a subcategory of 'MatureCell'?, False
+Can AnimalCell that is also Osteocyte be considered a subcategory of 'Miocyte'?, False
+Can CellByClass that is also ChondroCyte be considered a subcategory of 'Miocyte'?, False
+Can ChondroBlast that is also Erythrocyte be considered a subcategory of 'SclerenchymaCell'?, False
+Can InMatureCell that is also PhotoreceptorCell be considered a subcategory of 'ElectricallyActiveCell'?, True
+Can InMatureCell that is also PhotoreceptorCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can InMatureCell that is also PhotoreceptorCell be considered a subcategory of 'LeafCell'?, False
+Can InMatureCell that is also PhotoreceptorCell be considered a subcategory of 'Miocyte'?, False
+Can InMatureCell that is also PhotoreceptorCell be considered a subcategory of 'Osteocyte'?, False
+Can InMatureCell that is also PhotoreceptorCell be considered a subcategory of 'ChondroBlast'?, False
+Can InMatureCell that is also PhotoreceptorCell be considered a subcategory of 'MioBlast'?, False
+Can PhotoreceptorCell be considered a subcategory of 'ElectricallyActiveCell'?, False
+Can CirculatingCell that is also PlantCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can CellByOrganism that is also Neuron be considered a subcategory of 'PhotoreceptorCell'?, False
+Can Osteocyte that is also PhotosyntheticCell be considered a subcategory of 'PhotoreceptorCell'?, False
+Can MioBlast that is also PlantCell be considered a subcategory of 'LeafCell'?, False
+Can CellByClass that is also CirculatingCell be considered a subcategory of 'LeafCell'?, False
+Can CellByDevelopmentStage that is also MioBlast be considered a subcategory of 'LeafCell'?, False
+Can ElectricallyActiveCell that is also PhotoreceptorCell be considered a subcategory of 'ChondroBlast'?, False
+Can CellByClass that is also PhotoreceptorCell be considered a subcategory of 'ChondroBlast'?, False
+Can PlantCell that is also SclerenchymaCell be considered a subcategory of 'MioBlast'?, False
+Can AnimalCell that is also MioBlast be considered a subcategory of 'ChondroBlast'?, False
+Can CirculatingCell that is also LeafCell be considered a subcategory of 'MioBlast'?, False
+Can CellByDevelopmentStage that is also MatureCell be considered a subcategory of 'ChondroCyte'?, True
+Can CellByDevelopmentStage that is also MatureCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can CellByDevelopmentStage that is also MatureCell be considered a subcategory of 'LeafCell'?, True
+Can CirculatingCell that is also PlantCell be considered a subcategory of 'ChondroCyte'?, False
+Can ChondroCyte that is also MioBlast be considered a subcategory of 'ElectricallyActiveCell'?, False
+Can Cell that is also ElectricallyActiveCell be considered a subcategory of 'SclerenchymaCell'?, False.
+Can AnimalCell that is also MioBlast be considered a subcategory of 'ElectricallyActiveCell'?, False
+Can InMatureCell that is also Neuron be considered a subcategory of 'Miocyte'?, False
+Can Osteocyte that is also StructuralCell be considered a subcategory of 'Miocyte'?, False
+Can ChondroCyte that is also StructuralCell be considered a subcategory of 'CellByOrganism'?, True
+Can ChondroCyte that is also StructuralCell be considered a subcategory of 'MatureCell'?, False
+Can ChondroCyte that is also StructuralCell be considered a subcategory of 'AnimalCell'?, False
+Can ChondroCyte that is also StructuralCell be considered a subcategory of 'Miocyte'?, False
+Can ChondroCyte that is also StructuralCell be considered a subcategory of 'InMatureCell'?, True
+Can StructuralCell be considered a subcategory of 'InMatureCell'?, False
+Can ChondroCyte be considered a subcategory of 'InMatureCell'?, False
+Can CellByDevelopmentStage that is also PhotoreceptorCell be considered a subcategory of 'Miocyte'?, False
+Can CellByClass that is also PhotosyntheticCell be considered a subcategory of 'Miocyte'?, False
+Can ChondroBlast that is also Neuron be considered a subcategory of 'Osteocyte'?, False
+Can ChondroCyte that is also Miocyte be considered a subcategory of 'Neuron'?, False
+Can InMatureCell that is also Osteocyte be considered a subcategory of 'Neuron'?, False.
+Can PhotosyntheticCell that is also StructuralCell be considered a subcategory of 'AnimalCell'?, False.
+Can PhotosyntheticCell that is also SclerenchymaCell be considered a subcategory of 'ChondroBlast'?, False.
+Can AnimalCell that is also Neuron be considered a subcategory of 'ChondroBlast'?, False
+Can CellByOrganism that is also PlantCell be considered a subcategory of 'MioBlast'?, False
+Can CellByOrganism that is also Erythrocyte be considered a subcategory of 'MioBlast'?, False
+Can Cell that is also MioBlast be considered a subcategory of 'ChondroCyte'?, False
+Can AnimalCell that is also MatureCell be considered a subcategory of 'MioBlast'?, False
+Can ChondroBlast that is also ElectricallyActiveCell be considered a subcategory of 'ChondroCyte'?, False
+Can Erythrocyte that is also Miocyte be considered a subcategory of 'ElectricallyActiveCell'?, False
+Can AnimalCell that is also Osteocyte be considered a subcategory of 'ElectricallyActiveCell'?, False
+Can ElectricallyActiveCell that is also PhotoreceptorCell be considered a subcategory of 'MioBlast'?, False
+Can ChondroBlast that is also PhotoreceptorCell be considered a subcategory of 'ChondroCyte'?, False
+Can CellByOrganism that is also StructuralCell be considered a subcategory of 'Cell'?, True
+Can CellByOrganism that is also StructuralCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can CellByOrganism that is also StructuralCell be considered a subcategory of 'LeafCell'?, False
+Can CellByOrganism that is also StructuralCell be considered a subcategory of 'Erythrocyte'?, False
+Can CellByOrganism that is also StructuralCell be considered a subcategory of 'PhotosyntheticCell'?, False
+Can CellByOrganism that is also StructuralCell be considered a subcategory of 'CirculatingCell'?, False
+Can CellByOrganism that is also StructuralCell be considered a subcategory of 'PlantCell'?, False.
+Can CellByOrganism that is also StructuralCell be considered a subcategory of 'CellByClass'?, False
+Can CellByOrganism that is also StructuralCell be considered a subcategory of 'MatureCell'?, False
+Can CellByOrganism that is also StructuralCell be considered a subcategory of 'AnimalCell'?, False
+Can ChondroCyte that is also PhotoreceptorCell be considered a subcategory of 'MatureCell'?, False
+Can LeafCell that is also Osteocyte be considered a subcategory of 'ChondroBlast'?, False.
+Can MioBlast that is also Osteocyte be considered a subcategory of 'ChondroBlast'?, False
+Can Cell that is also MatureCell be considered a subcategory of 'ElectricallyActiveCell'?, False
+Can Neuron that is also StructuralCell be considered a subcategory of 'ChondroCyte'?, False
+Can CellByOrganism that is also ChondroCyte be considered a subcategory of 'SclerenchymaCell'?, False
+Can CellByDevelopmentStage that is also LeafCell be considered a subcategory of 'PhotoreceptorCell'?, False.
+Can ChondroBlast that is also ChondroCyte be considered a subcategory of 'PhotoreceptorCell'?, False
+Can ChondroCyte that is also LeafCell be considered a subcategory of 'PhotoreceptorCell'?, False
+Can CellByClass that is also InMatureCell be considered a subcategory of 'PhotoreceptorCell'?, False
+Can Cell that is also StructuralCell be considered a subcategory of 'ChondroBlast'?, False
+Can ChondroCyte be considered a subcategory of 'MioBlast'?, False
+Can CellByClass that is also ChondroBlast be considered a subcategory of 'MioBlast'?, False
+Can CellByDevelopmentStage that is also CellByOrganism be considered a subcategory of 'ChondroBlast'?, False
+Can Osteocyte that is also SclerenchymaCell be considered a subcategory of 'ChondroCyte'?, False
+Can CellByClass that is also Osteocyte be considered a subcategory of 'MioBlast'?, False
+Can LeafCell that is also PhotosyntheticCell be considered a subcategory of 'ChondroCyte'?, False.
+Can InMatureCell that is also MioBlast be considered a subcategory of 'ElectricallyActiveCell'?, False
+Can Miocyte that is also StructuralCell be considered a subcategory of 'ElectricallyActiveCell'?, True
+Can Miocyte that is also StructuralCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can Miocyte that is also StructuralCell be considered a subcategory of 'Osteocyte'?, False
+Can Miocyte that is also StructuralCell be considered a subcategory of 'ChondroBlast'?, False
+Can Miocyte that is also StructuralCell be considered a subcategory of 'MioBlast'?, False
+Can Miocyte that is also StructuralCell be considered a subcategory of 'PhotoreceptorCell'?, False
+Can StructuralCell be considered a subcategory of 'ElectricallyActiveCell'?, False
+Can Neuron that is also PlantCell be considered a subcategory of 'ChondroCyte'?, False
+Can Erythrocyte that is also InMatureCell be considered a subcategory of 'ChondroCyte'?, False
+Can ChondroBlast that is also SclerenchymaCell be considered a subcategory of 'Miocyte'?, False
+Can ElectricallyActiveCell that is also PhotosyntheticCell be considered a subcategory of 'Miocyte'?, False
+Can Cell that is also PhotosyntheticCell be considered a subcategory of 'CellByOrganism'?, False
+Can CellByOrganism that is also PhotoreceptorCell be considered a subcategory of 'StructuralCell'?, True
+Can CellByOrganism that is also PhotoreceptorCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can CellByOrganism that is also PhotoreceptorCell be considered a subcategory of 'LeafCell'?, False
+Can CellByOrganism that is also PhotoreceptorCell be considered a subcategory of 'Erythrocyte'?, False.
+Can CellByOrganism that is also PhotoreceptorCell be considered a subcategory of 'PhotosyntheticCell'?, False
+Can CellByOrganism that is also PhotoreceptorCell be considered a subcategory of 'CirculatingCell'?, False
+Can CellByOrganism that is also PhotoreceptorCell be considered a subcategory of 'PlantCell'?, False
+Can CellByOrganism that is also PhotoreceptorCell be considered a subcategory of 'CellByClass'?, False
+Can CellByOrganism that is also PhotoreceptorCell be considered a subcategory of 'MatureCell'?, False
+Can CellByOrganism that is also PhotoreceptorCell be considered a subcategory of 'AnimalCell'?, True
+Can PhotoreceptorCell be considered a subcategory of 'AnimalCell'?, True
+Can PhotoreceptorCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can PhotoreceptorCell be considered a subcategory of 'LeafCell'?, False
+Can PhotoreceptorCell be considered a subcategory of 'Erythrocyte'?, False
+Can PhotoreceptorCell be considered a subcategory of 'PhotosyntheticCell'?, False
+Can PhotoreceptorCell be considered a subcategory of 'CirculatingCell'?, False
+Can PhotoreceptorCell be considered a subcategory of 'PlantCell'?, False
+Can PhotoreceptorCell be considered a subcategory of 'MatureCell'?, True
+Can PhotoreceptorCell be considered a subcategory of 'AnimalCell that is also MatureCell'?, True
+Can PhotoreceptorCell be considered a subcategory of 'Cell'?, True
+Can PhotoreceptorCell be considered a subcategory of 'AnimalCell that is also Cell that is also MatureCell'?, False
+Can PhotoreceptorCell be considered a subcategory of 'Miocyte'?, False
+Can PhotoreceptorCell be considered a subcategory of 'InMatureCell'?, False
+Can PhotoreceptorCell be considered a subcategory of 'Osteocyte'?, False
+Can PhotoreceptorCell be considered a subcategory of 'ChondroBlast'?, False
+Can PhotoreceptorCell be considered a subcategory of 'MioBlast'?, False
+Can PhotoreceptorCell be considered a subcategory of 'CellByDevelopmentStage'?, False
+Can PhotoreceptorCell be considered a subcategory of 'CellByOrganism'?, False
+Can PhotoreceptorCell be considered a subcategory of 'StructuralCell'?, True
+Can PhotoreceptorCell be considered a subcategory of 'AnimalCell that is also MatureCell that is also StructuralCell'?, False
+Can PhotoreceptorCell be considered a subcategory of 'Neuron'?, False
+Can PhotoreceptorCell be considered a subcategory of 'ChondroCyte'?, False
+Can CellByDevelopmentStage that is also MatureCell be considered a subcategory of 'Osteocyte'?, False
+Can Cell that is also StructuralCell be considered a subcategory of 'Osteocyte'?, False
+Can CellByDevelopmentStage that is also SclerenchymaCell be considered a subcategory of 'Neuron'?, False
+Can CellByOrganism that is also LeafCell be considered a subcategory of 'Neuron'?, False
+Can ChondroCyte that is also PlantCell be considered a subcategory of 'Osteocyte'?, False
+Can ChondroCyte that is also MioBlast be considered a subcategory of 'ChondroBlast'?, False.
+Can CirculatingCell that is also ElectricallyActiveCell be considered a subcategory of 'ChondroBlast'?, False
+Can CellByOrganism that is also ChondroBlast be considered a subcategory of 'CellByDevelopmentStage'?, False
+Can CellByClass that is also Erythrocyte be considered a subcategory of 'MioBlast'?, False
+Can PlantCell that is also StructuralCell be considered a subcategory of 'ChondroCyte'?, False
+Can CellByOrganism that is also Neuron be considered a subcategory of 'ChondroCyte'?, False
+Can Cell that is also InMatureCell be considered a subcategory of 'ChondroCyte'?, False
+Can CellByClass that is also LeafCell be considered a subcategory of 'ElectricallyActiveCell'?, False
+Can CirculatingCell that is also MatureCell be considered a subcategory of 'ChondroCyte'?, False
+Can ChondroBlast that is also ChondroCyte be considered a subcategory of 'StructuralCell'?, True
+Can ChondroBlast that is also ChondroCyte be considered a subcategory of 'SclerenchymaCell'?, False.
+Can ChondroBlast that is also ChondroCyte be considered a subcategory of 'Erythrocyte'?, False.
+Can ChondroBlast that is also ChondroCyte be considered a subcategory of 'PhotosyntheticCell'?, False
+Can ChondroBlast that is also ChondroCyte be considered a subcategory of 'CirculatingCell'?, True
+Can ChondroBlast be considered a subcategory of 'CirculatingCell'?, False
+Can ChondroCyte be considered a subcategory of 'CirculatingCell'?, False
+Can PhotosyntheticCell be considered a subcategory of 'MatureCell'?, True
+Can PhotosyntheticCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can PhotosyntheticCell be considered a subcategory of 'Erythrocyte'?, False
+Can PhotosyntheticCell be considered a subcategory of 'CirculatingCell'?, False
+Can PhotosyntheticCell be considered a subcategory of 'AnimalCell'?, False
+Can PhotosyntheticCell be considered a subcategory of 'Cell'?, True
+Can PhotosyntheticCell be considered a subcategory of 'Cell that is also MatureCell'?, False
+Can PhotosyntheticCell be considered a subcategory of 'Miocyte'?, False
+Can PhotosyntheticCell be considered a subcategory of 'InMatureCell'?, False
+Can PhotosyntheticCell be considered a subcategory of 'Osteocyte'?, False
+Can PhotosyntheticCell be considered a subcategory of 'ChondroBlast'?, False
+Can PhotosyntheticCell be considered a subcategory of 'MioBlast'?, False
+Can PhotosyntheticCell be considered a subcategory of 'CellByDevelopmentStage'?, False
+Can PhotosyntheticCell be considered a subcategory of 'PhotoreceptorCell'?, False
+Can PhotosyntheticCell be considered a subcategory of 'ElectricallyActiveCell'?, False
+Can PhotosyntheticCell be considered a subcategory of 'StructuralCell'?, False
+Can PhotosyntheticCell be considered a subcategory of 'Neuron'?, False.
+Can PhotosyntheticCell be considered a subcategory of 'ChondroCyte'?, False
+Can CellByOrganism that is also SclerenchymaCell be considered a subcategory of 'Osteocyte'?, False
+Can ElectricallyActiveCell that is also LeafCell be considered a subcategory of 'Neuron'?, False.
+Can MioBlast that is also StructuralCell be considered a subcategory of 'Neuron'?, False
+Can ChondroBlast that is also InMatureCell be considered a subcategory of 'Neuron'?, False
+Can AnimalCell that is also ChondroCyte be considered a subcategory of 'PhotoreceptorCell'?, False
+Can ChondroCyte that is also SclerenchymaCell be considered a subcategory of 'ElectricallyActiveCell'?, False
+Can CellByClass that is also CellByDevelopmentStage be considered a subcategory of 'ElectricallyActiveCell'?, False
+Can CellByDevelopmentStage that is also CellByOrganism be considered a subcategory of 'SclerenchymaCell'?, False
+Can InMatureCell that is also Osteocyte be considered a subcategory of 'PhotoreceptorCell'?, False
+Can CellByClass that is also MatureCell be considered a subcategory of 'Osteocyte'?, False
+Can CellByClass that is also CirculatingCell be considered a subcategory of 'Miocyte'?, False
+Can CirculatingCell that is also PlantCell be considered a subcategory of 'Miocyte'?, False.
+Can CellByDevelopmentStage that is also StructuralCell be considered a subcategory of 'Miocyte'?, True
+Can CellByDevelopmentStage that is also StructuralCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can StructuralCell be considered a subcategory of 'Miocyte'?, False
+Can CirculatingCell that is also PlantCell be considered a subcategory of 'Neuron'?, False
+Can ChondroBlast that is also StructuralCell be considered a subcategory of 'Neuron'?, False
+Can AnimalCell that is also MioBlast be considered a subcategory of 'Neuron'?, False.
+Can CellByOrganism that is also Miocyte be considered a subcategory of 'ChondroBlast'?, False
+Can Neuron that is also PlantCell be considered a subcategory of 'ChondroBlast'?, False
+Can CellByClass that is also InMatureCell be considered a subcategory of 'MioBlast'?, True
+Can CellByClass that is also InMatureCell be considered a subcategory of 'Osteocyte'?, False
+Can CellByClass that is also InMatureCell be considered a subcategory of 'ChondroBlast'?, False
+Can AnimalCell that is also StructuralCell be considered a subcategory of 'ChondroBlast'?, False
+Can Osteocyte that is also PhotosyntheticCell be considered a subcategory of 'ChondroCyte'?, False
+Can MioBlast that is also SclerenchymaCell be considered a subcategory of 'ChondroCyte'?, False
+Can CellByOrganism that is also Miocyte be considered a subcategory of 'Osteocyte'?, False
+Can MatureCell that is also StructuralCell be considered a subcategory of 'Osteocyte'?, False
+Can MatureCell that is also MioBlast be considered a subcategory of 'Neuron'?, False \n\n
+Can ElectricallyActiveCell that is also InMatureCell be considered a subcategory of 'Neuron'?, False.
+Can CellByOrganism that is also Erythrocyte be considered a subcategory of 'Neuron'?, False
+Can Erythrocyte that is also Miocyte be considered a subcategory of 'SclerenchymaCell'?, False.
+Can CellByDevelopmentStage that is also StructuralCell be considered a subcategory of 'PhotoreceptorCell'?, False
+Can CellByClass that is also ElectricallyActiveCell be considered a subcategory of 'PhotoreceptorCell'?, False
+Can Cell that is also CellByDevelopmentStage be considered a subcategory of 'PhotoreceptorCell'?, True
+Can Cell that is also CellByDevelopmentStage be considered a subcategory of 'Osteocyte'?, False
+Can Cell that is also CellByDevelopmentStage be considered a subcategory of 'ChondroBlast'?, False
+Can AnimalCell that is also Cell be considered a subcategory of 'SclerenchymaCell'?, False
+Can InMatureCell that is also StructuralCell be considered a subcategory of 'ChondroBlast'?, False.
+Can MioBlast that is also SclerenchymaCell be considered a subcategory of 'ChondroBlast'?, False
+Can Erythrocyte that is also PhotoreceptorCell be considered a subcategory of 'ChondroBlast'?, False
+Can ChondroBlast that is also CirculatingCell be considered a subcategory of 'ChondroCyte'?, False
+Can CellByOrganism that is also CirculatingCell be considered a subcategory of 'ChondroCyte'?, False.
+Can CellByOrganism be considered a subcategory of 'CellByClass'?, False
+Can MioBlast that is also Neuron be considered a subcategory of 'Osteocyte'?, False
+Can Miocyte that is also SclerenchymaCell be considered a subcategory of 'Neuron'?, False.
+Can Cell that is also PlantCell be considered a subcategory of 'Neuron'?, False.
+Can CellByClass that is also Erythrocyte be considered a subcategory of 'Neuron'?, False
+Can ElectricallyActiveCell that is also PhotoreceptorCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can CellByClass that is also PhotoreceptorCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can Cell that is also ChondroBlast be considered a subcategory of 'ChondroCyte'?, False
+Can AnimalCell that is also MioBlast be considered a subcategory of 'SclerenchymaCell'?, False
+Can CellByOrganism that is also MatureCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can AnimalCell that is also ChondroBlast be considered a subcategory of 'Osteocyte'?, False
+Can Erythrocyte that is also SclerenchymaCell be considered a subcategory of 'ChondroBlast'?, False
+Can Osteocyte that is also PhotoreceptorCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can CellByOrganism that is also LeafCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can CellByDevelopmentStage that is also CirculatingCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can Neuron that is also Osteocyte be considered a subcategory of 'ChondroBlast'?, False.
+Can LeafCell that is also Miocyte be considered a subcategory of 'ChondroBlast'?, False.
+Can InMatureCell that is also PlantCell be considered a subcategory of 'ChondroBlast'?, False
+Can ChondroBlast that is also MioBlast be considered a subcategory of 'ChondroCyte'?, False \n\n
+Can MioBlast that is also PhotoreceptorCell be considered a subcategory of 'ChondroCyte'?, False.
+Can CellByClass that is also MatureCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can Cell that is also CellByOrganism be considered a subcategory of 'SclerenchymaCell'?, False
+Can AnimalCell that is also LeafCell be considered a subcategory of 'Osteocyte'?, False
+Can CellByDevelopmentStage that is also PhotosyntheticCell be considered a subcategory of 'Osteocyte'?, False
+Can ChondroBlast that is also StructuralCell be considered a subcategory of 'ChondroCyte'?, False
+Can ChondroCyte that is also PlantCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can AnimalCell that is also ChondroBlast be considered a subcategory of 'SclerenchymaCell'?, False.
+Can CellByOrganism that is also PhotosyntheticCell be considered a subcategory of 'ChondroCyte'?, False.
+Can ChondroBlast that is also PhotoreceptorCell be considered a subcategory of 'Neuron'?, False
+Can CellByOrganism that is also ChondroCyte be considered a subcategory of 'Osteocyte'?, False
+Can ElectricallyActiveCell that is also Osteocyte be considered a subcategory of 'Neuron'?, False
+Can MioBlast that is also PhotoreceptorCell be considered a subcategory of 'Neuron'?, False
+Can ChondroBlast be considered a subcategory of 'PhotosyntheticCell'?, False
+Can CellByDevelopmentStage that is also Osteocyte be considered a subcategory of 'ChondroCyte'?, False.
+Can Cell that is also Miocyte be considered a subcategory of 'ChondroCyte'?, False
+Can CellByClass that is also CirculatingCell be considered a subcategory of 'SclerenchymaCell'?, False
+Can InMatureCell that is also PhotosyntheticCell be considered a subcategory of 'ChondroBlast'?, False
+Can Cell that is also Erythrocyte be considered a subcategory of 'ChondroBlast'?, False
+Can Miocyte that is also PhotoreceptorCell be considered a subcategory of 'ChondroBlast'?, False
+Can MioBlast that is also Osteocyte be considered a subcategory of 'Neuron'?, False.

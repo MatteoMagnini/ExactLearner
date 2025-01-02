@@ -1,0 +1,513 @@
+BallGame and FootballTeam SubClassOf Player,  False.
+plays_for some BallGame SubClassOf Team,  False.
+BallGame and FootballTeam SubClassOf Person,  False.
+FootballPlayer and Person SubClassOf Game,  False.
+BallGame and FootballPlayer SubClassOf Football,  False.
+managed_by some BallGame SubClassOf FootballPlayer,  False.
+FootballTeam and Team SubClassOf FootballPlayer,  False.
+BallGame and Manager SubClassOf Game,  False.
+FootballTeam and Player SubClassOf FootballPlayer,  False.
+Game SubClassOf plays some BallGame,  False.
+Game and Person SubClassOf Football,  False.
+Game and Person SubClassOf BallGame,  False.
+plays some Team SubClassOf FootballPlayer,  The given
+FootballPlayer and Manager SubClassOf Person,  True.
+FootballPlayer and Manager SubClassOf Team,  False.
+FootballPlayer and Manager SubClassOf Player,  False.
+FootballPlayer and Manager SubClassOf FootballTeam,  False.
+FootballPlayer and Manager SubClassOf Game,  False.
+FootballPlayer and Manager SubClassOf Football,  False.
+Manager SubClassOf Person,  The statement
+FootballPlayer SubClassOf Person,  True.
+FootballPlayer SubClassOf Thing,  True.
+FootballPlayer SubClassOf Person and Thing,  The statement
+FootballPlayer SubClassOf Manager,  False.
+FootballPlayer SubClassOf Team,  False.
+FootballPlayer SubClassOf Player,  True.
+FootballPlayer SubClassOf Person and Player,  True.
+FootballPlayer SubClassOf FootballTeam,  False.
+FootballPlayer SubClassOf Game,  False.
+FootballPlayer SubClassOf Football,  False.
+FootballPlayer SubClassOf BallGame,  False.
+FootballPlayer SubClassOf Person and Player and Thing,  False.
+Football and Player SubClassOf Person,  False.
+FootballTeam and Team SubClassOf Football,  False.
+Person SubClassOf FootballPlayer,  False.
+plays_for some Manager SubClassOf Football,  False.
+FootballPlayer and FootballTeam SubClassOf BallGame,  False.
+plays some FootballTeam SubClassOf BallGame,  The given
+Person and Team SubClassOf Football,  False.
+BallGame and Team SubClassOf FootballTeam,  False.
+Manager and Person SubClassOf Player,  False.
+plays some Person SubClassOf Manager,  False.
+plays_for some BallGame SubClassOf Game,  False.
+BallGame and Team SubClassOf Player,  False.
+FootballPlayer and FootballTeam SubClassOf Manager,  False.
+Football and FootballTeam SubClassOf Team,  False.
+Football and Manager SubClassOf Game,  False.
+plays some Team SubClassOf Manager,  False.
+Football and Team SubClassOf FootballTeam,  False.
+Football and FootballPlayer SubClassOf FootballTeam,  False.
+FootballTeam SubClassOf managed_by some Team,  False.
+FootballTeam and Team SubClassOf Person,  False.
+plays_for some Football SubClassOf Football,  False.
+Football and Manager SubClassOf Team,  False.
+FootballPlayer SubClassOf managed_by some Player,  False.
+Person SubClassOf Team,  False.
+Football and Game SubClassOf Manager,  False.
+FootballTeam and Player SubClassOf Manager,  False.
+managed_by some Person SubClassOf FootballTeam,  False.
+managed_by some Team SubClassOf Player,  False.
+Football SubClassOf managed_by some FootballTeam,  False.
+Player and Team SubClassOf Person,  False.
+plays some Football SubClassOf FootballPlayer,  False.
+Game SubClassOf managed_by some FootballPlayer,  False.
+Football SubClassOf managed_by some Player,  False.
+FootballTeam and Game SubClassOf Football,  False.
+Manager SubClassOf managed_by some Football,  False.
+managed_by some Team SubClassOf FootballTeam,  The given
+BallGame and Football SubClassOf Team,  False.
+Player SubClassOf managed_by some FootballPlayer,  False.
+Player SubClassOf plays some Football,  False.
+Person SubClassOf plays some BallGame,  False.
+Football SubClassOf plays some Person,  False.
+plays some Player SubClassOf Person,  The given
+Game and Player SubClassOf BallGame,  False.
+Game SubClassOf plays some Football,  False.
+Manager SubClassOf plays some BallGame,  False.
+Manager SubClassOf managed_by some Game,  False.
+Game and Manager SubClassOf Team,  False.
+FootballPlayer and Person SubClassOf Manager,  False.
+Person SubClassOf BallGame,  False.
+Football and Team SubClassOf Player,  False.
+BallGame SubClassOf managed_by some Person,  False.
+Player SubClassOf FootballPlayer,  False.
+FootballPlayer and Team SubClassOf Football,  False.
+plays_for some Football SubClassOf BallGame,  The given
+Football SubClassOf plays some FootballPlayer,  False.
+BallGame and Team SubClassOf Game,  False.
+Football and Manager SubClassOf Person,  False.
+plays_for some Team SubClassOf Game,  False.
+Game and Team SubClassOf FootballTeam,  False.
+Football and Player SubClassOf Manager,  False.
+FootballPlayer SubClassOf managed_by some FootballTeam,  The given
+BallGame SubClassOf plays some BallGame,  False.
+managed_by some FootballPlayer SubClassOf Person,  The given
+plays_for some Game SubClassOf Football,  False.
+Football and FootballTeam SubClassOf FootballPlayer,  False.
+FootballTeam and Team SubClassOf Game,  False.
+BallGame SubClassOf plays some Manager,  False.
+managed_by some Game SubClassOf Manager,  The given
+plays_for some FootballPlayer SubClassOf BallGame,  False.
+managed_by some FootballTeam SubClassOf Team,  The statement
+Game SubClassOf plays some FootballTeam,  False.
+FootballPlayer and Game SubClassOf FootballTeam,  False.
+managed_by some FootballPlayer SubClassOf Game,  False.
+plays some Football SubClassOf Player,  The given
+Person SubClassOf plays some FootballPlayer,  False.
+Person SubClassOf plays some Game,  False.
+Game and Manager SubClassOf Player,  False.
+plays some FootballPlayer SubClassOf FootballTeam,  False.
+Person and Team SubClassOf Player,  False.
+FootballPlayer and FootballTeam SubClassOf Game,  False.
+FootballTeam SubClassOf plays some Team,  False.
+plays_for some Game SubClassOf FootballPlayer,  False.
+Football and Manager SubClassOf BallGame,  False.
+FootballTeam and Game SubClassOf Person,  False.
+Game and Team SubClassOf Person,  False.
+Player SubClassOf plays some FootballPlayer,  False.
+BallGame and FootballPlayer SubClassOf Game,  False.
+BallGame and FootballPlayer SubClassOf Team,  False.
+Game and Player SubClassOf Football,  False.
+FootballPlayer and Person SubClassOf Football,  False.
+plays_for some FootballTeam SubClassOf Person,  The given
+Team SubClassOf managed_by some Football,  False.
+plays_for some BallGame SubClassOf Football,  False.
+FootballPlayer and Person SubClassOf BallGame,  False.
+Person SubClassOf plays some Manager,  False.
+Game and Manager SubClassOf FootballTeam,  False.
+managed_by some Player SubClassOf FootballPlayer,  True.
+managed_by some Player SubClassOf Manager,  The given
+managed_by some Player SubClassOf Team,  The given
+managed_by some Player SubClassOf Player,  False.
+managed_by some Player SubClassOf FootballTeam,  The given
+managed_by some Player SubClassOf Game,  False.
+Thing SubClassOf managed_by some Player,  False.
+Thing SubClassOf Manager,  False.
+Thing SubClassOf Team,  False.
+Thing SubClassOf Player,  False.
+Thing SubClassOf FootballTeam,  False.
+Thing SubClassOf Game,  False.
+Thing SubClassOf FootballPlayer,  False.
+Thing SubClassOf Football,  False.
+Thing SubClassOf Person,  False.
+Thing SubClassOf BallGame,  False.
+Player SubClassOf Manager,  False.
+Player SubClassOf Team,  False.
+Player SubClassOf FootballTeam,  False.
+Player SubClassOf Game,  False.
+Player SubClassOf Football,  False.
+Player SubClassOf Person,  The given
+Player SubClassOf BallGame,  False.
+managed_by some Thing SubClassOf FootballPlayer,  False.
+BallGame SubClassOf managed_by some BallGame,  False.
+BallGame and Team SubClassOf Football,  False.
+FootballTeam SubClassOf plays some Manager,  False.
+Football SubClassOf managed_by some Game,  False.
+BallGame and Team SubClassOf Manager,  False.
+Football and Player SubClassOf FootballPlayer,  False.
+Manager and Player SubClassOf Football,  False.
+BallGame and Football SubClassOf Game,  The statement
+FootballPlayer and Team SubClassOf Game,  False.
+FootballTeam and Game SubClassOf Manager,  False.
+Game and Person SubClassOf FootballPlayer,  False.
+plays_for some FootballPlayer SubClassOf FootballTeam,  False.
+Game SubClassOf plays some Team,  False.
+BallGame and Player SubClassOf Football,  False.
+managed_by some FootballPlayer SubClassOf Team,  False.
+Manager SubClassOf managed_by some Manager,  False.
+BallGame and Game SubClassOf Player,  False.
+plays_for some Player SubClassOf BallGame,  False.
+Football and Person SubClassOf Manager,  False.
+Game SubClassOf Person,  False.
+Person SubClassOf plays_for some Player,  False.
+Football and Game SubClassOf Team,  False.
+FootballTeam SubClassOf plays some FootballPlayer,  False.
+Manager and Team SubClassOf FootballTeam,  False.
+FootballTeam SubClassOf plays some Football,  False.
+Manager SubClassOf plays some Football,  False.
+Manager and Team SubClassOf Football,  False.
+plays_for some FootballTeam SubClassOf Football,  False.
+Football and FootballTeam SubClassOf BallGame,  False.
+Game and Person SubClassOf Manager,  False.
+Manager SubClassOf plays_for some FootballTeam,  False.
+FootballTeam SubClassOf plays_for some Football,  False.
+Team SubClassOf plays_for some Football,  False.
+Person SubClassOf plays_for some Football,  False.
+FootballPlayer and Player SubClassOf Manager,  False.
+BallGame SubClassOf Game,  True.
+BallGame SubClassOf Manager,  False.
+BallGame SubClassOf Team,  False.
+BallGame SubClassOf Player,  False.
+BallGame SubClassOf FootballTeam,  False.
+BallGame SubClassOf Thing,  True.
+BallGame SubClassOf Game and Thing,  The given
+BallGame SubClassOf FootballPlayer,  False.
+BallGame SubClassOf Football,  False.
+BallGame SubClassOf Person,  False.
+Manager and Team SubClassOf BallGame,  False.
+Player and Team SubClassOf Manager,  False.
+Game SubClassOf managed_by some Team,  The statement
+FootballTeam SubClassOf plays_for some BallGame,  False.
+Football SubClassOf plays some Player,  False.
+FootballTeam and Game SubClassOf BallGame,  False.
+plays_for some Player SubClassOf Person,  False.
+Football SubClassOf plays_for some Manager,  False.
+Manager and Person SubClassOf Football,  False.
+Person and Player SubClassOf Manager,  False.
+Game SubClassOf plays_for some Team,  False.
+BallGame and Manager SubClassOf FootballPlayer,  False.
+plays some Manager SubClassOf Game,  False.
+plays some Player SubClassOf Team,  False.
+Person SubClassOf plays_for some FootballPlayer,  False.
+Manager and Player SubClassOf FootballTeam,  False.
+BallGame and Game SubClassOf Manager,  False.
+Football and FootballTeam SubClassOf Person,  False.
+BallGame and Person SubClassOf FootballTeam,  False.
+managed_by some Person SubClassOf Manager,  False.
+plays some BallGame SubClassOf Game,  The given
+FootballTeam and Person SubClassOf Player,  False.
+Football and Person SubClassOf Player,  False.
+plays some FootballTeam SubClassOf Team,  The given
+Manager and Person SubClassOf Team,  False.
+Football and Person SubClassOf FootballPlayer,  False.
+Player and Team SubClassOf Game,  False.
+FootballPlayer SubClassOf plays_for some Game,  False.
+FootballTeam and Manager SubClassOf Player,  False.
+BallGame SubClassOf plays_for some Player,  False.
+managed_by some Player SubClassOf Football,  False.
+BallGame and Manager SubClassOf Football,  False.
+Game and Manager SubClassOf BallGame,  False.
+FootballTeam and Person SubClassOf Game,  False.
+plays_for some Player SubClassOf Manager,  False.
+FootballPlayer and Player SubClassOf BallGame,  False.
+BallGame SubClassOf managed_by some Player,  False.
+Team SubClassOf BallGame,  False.
+Player SubClassOf plays some BallGame,  False.
+plays some Game SubClassOf FootballPlayer,  False.
+plays_for some Manager SubClassOf Team,  False.
+FootballPlayer SubClassOf plays_for some Manager,  False.
+FootballPlayer and Game SubClassOf BallGame,  False.
+Football SubClassOf plays_for some BallGame,  False.
+FootballPlayer SubClassOf managed_by some BallGame,  False.
+BallGame and FootballTeam SubClassOf FootballPlayer,  False.
+Person and Player SubClassOf FootballTeam,  False.
+Game SubClassOf plays_for some Game,  False.
+Football and Player SubClassOf BallGame,  False.
+managed_by some Manager SubClassOf Manager,  False.
+plays some Player SubClassOf Game,  The given
+Manager SubClassOf plays_for some Person,  False.
+Football and Manager SubClassOf FootballPlayer,  False.
+Person and Team SubClassOf FootballPlayer,  False.
+FootballTeam and Player SubClassOf Game,  False.
+managed_by some Person SubClassOf BallGame,  False.
+managed_by some BallGame SubClassOf Player,  False.
+Person and Player SubClassOf Team,  False.
+BallGame and Player SubClassOf Person,  False.
+plays some FootballTeam SubClassOf FootballPlayer,  False.
+FootballTeam and Game SubClassOf Team,  False.
+BallGame and Football SubClassOf FootballPlayer,  False.
+Game and Team SubClassOf Player,  False.
+Football SubClassOf plays some Game,  False.
+BallGame SubClassOf plays_for some FootballTeam,  The given
+Team SubClassOf plays_for some FootballPlayer,  False.
+Game SubClassOf plays some Manager,  False.
+BallGame SubClassOf plays_for some BallGame,  False.
+Game SubClassOf plays_for some Football,  False.
+plays_for some Football SubClassOf Person,  The given
+FootballTeam and Player SubClassOf Football,  False.
+Team SubClassOf plays_for some Player,  False.
+FootballTeam and Team SubClassOf Player,  False.
+Team SubClassOf Person,  False.
+FootballPlayer and Player SubClassOf Football,  False.
+Can BallGame that is also FootballTeam be considered a subcategory of 'Player'?,  False.
+Can something that plays_for some BallGame be considered a subcategory of 'Team'?,  False.
+Can BallGame that is also FootballTeam be considered a subcategory of 'Person'?,  False.
+Can FootballPlayer that is also Person be considered a subcategory of 'Game'?,  False.
+Can BallGame that is also FootballPlayer be considered a subcategory of 'Football'?,  False.
+Can something that managed_by some BallGame be considered a subcategory of 'FootballPlayer'?,  False.
+Can FootballTeam that is also Team be considered a subcategory of 'FootballPlayer'?,  False.
+Can BallGame that is also Manager be considered a subcategory of 'Game'?,  False.
+Can FootballTeam that is also Player be considered a subcategory of 'FootballPlayer'?,  False.
+Can Game be considered a subcategory of 'something that plays some BallGame'?,  False.
+Can Game that is also Person be considered a subcategory of 'Football'?,  False.
+Can Game that is also Person be considered a subcategory of 'BallGame'?,  False.
+Can something that plays some Team be considered a subcategory of 'FootballPlayer'?,  False.
+Can FootballPlayer that is also Manager be considered a subcategory of 'Person'?,  True\n
+Can FootballPlayer that is also Manager be considered a subcategory of 'Team'?,  False.
+Can FootballPlayer that is also Manager be considered a subcategory of 'Player'?,  False.
+Can FootballPlayer that is also Manager be considered a subcategory of 'FootballTeam'?,  False.
+Can FootballPlayer that is also Manager be considered a subcategory of 'Game'?,  False.
+Can FootballPlayer that is also Manager be considered a subcategory of 'Football'?,  False.
+Can Manager be considered a subcategory of 'Person'?,  False.
+Can FootballPlayer be considered a subcategory of 'Person'?,  True\n
+Can FootballPlayer be considered a subcategory of 'Thing'?,  True\n
+Can FootballPlayer be considered a subcategory of 'Person that is also Thing'?,  False.
+Can FootballPlayer be considered a subcategory of 'Manager'?,  False.
+Can FootballPlayer be considered a subcategory of 'Team'?,  False.
+Can FootballPlayer be considered a subcategory of 'Player'?,  False.
+Can FootballPlayer be considered a subcategory of 'FootballTeam'?,  False.
+Can FootballPlayer be considered a subcategory of 'Game'?,  False.
+Can FootballPlayer be considered a subcategory of 'Football'?,  False.
+Can FootballPlayer be considered a subcategory of 'BallGame'?,  False.
+Can Football that is also Player be considered a subcategory of 'Person'?,  False.
+Can FootballTeam that is also Team be considered a subcategory of 'Football'?,  False.
+Can Person be considered a subcategory of 'FootballPlayer'?,  False.
+Can something that plays_for some Manager be considered a subcategory of 'Football'?,  False.
+Can FootballPlayer that is also FootballTeam be considered a subcategory of 'BallGame'?,  False.
+Can something that plays some FootballTeam be considered a subcategory of 'BallGame'?,  False.
+Can Person that is also Team be considered a subcategory of 'Football'?,  False.
+Can BallGame that is also Team be considered a subcategory of 'FootballTeam'?,  False.
+Can Manager that is also Person be considered a subcategory of 'Player'?,  False.
+Can something that plays some Person be considered a subcategory of 'Manager'?,  False.
+Can something that plays_for some BallGame be considered a subcategory of 'Game'?,  False.
+Can BallGame that is also Team be considered a subcategory of 'Player'?,  False.
+Can FootballPlayer that is also FootballTeam be considered a subcategory of 'Manager'?,  False.
+Can Football that is also FootballTeam be considered a subcategory of 'Team'?,  False.
+Can Football that is also Manager be considered a subcategory of 'Game'?,  False.
+Can something that plays some Team be considered a subcategory of 'Manager'?,  False.
+Can Football that is also Team be considered a subcategory of 'FootballTeam'?,  False.
+Can Football that is also FootballPlayer be considered a subcategory of 'FootballTeam'?,  False.
+Can FootballTeam be considered a subcategory of 'something that managed_by some Team'?,  False.
+Can FootballTeam that is also Team be considered a subcategory of 'Person'?,  False.
+Can something that plays_for some Football be considered a subcategory of 'Football'?,  False.
+Can Football that is also Manager be considered a subcategory of 'Team'?,  False.
+Can FootballPlayer be considered a subcategory of 'something that managed_by some Player'?,  False.
+Can Person be considered a subcategory of 'Team'?,  False.
+Can Football that is also Game be considered a subcategory of 'Manager'?,  False.
+Can FootballTeam that is also Player be considered a subcategory of 'Manager'?,  False.
+Can something that managed_by some Person be considered a subcategory of 'FootballTeam'?,  False.
+Can something that managed_by some Team be considered a subcategory of 'Player'?,  False.
+Can Football be considered a subcategory of 'something that managed_by some FootballTeam'?,  False.
+Can Player that is also Team be considered a subcategory of 'Person'?,  False.
+Can something that plays some Football be considered a subcategory of 'FootballPlayer'?,  False.
+Can Game be considered a subcategory of 'something that managed_by some FootballPlayer'?,  False.
+Can Football be considered a subcategory of 'something that managed_by some Player'?,  False.
+Can FootballTeam that is also Game be considered a subcategory of 'Football'?,  False.
+Can Manager be considered a subcategory of 'something that managed_by some Football'?,  False.
+Can something that managed_by some Team be considered a subcategory of 'FootballTeam'?,  False.
+Can BallGame that is also Football be considered a subcategory of 'Team'?,  False.
+Can Player be considered a subcategory of 'something that managed_by some FootballPlayer'?,  False.
+Can Player be considered a subcategory of 'something that plays some Football'?,  False.
+Can Person be considered a subcategory of 'something that plays some BallGame'?,  False.
+Can Football be considered a subcategory of 'something that plays some Person'?,  False.
+Can something that plays some Player be considered a subcategory of 'Person'?,  False.
+Can Game that is also Player be considered a subcategory of 'BallGame'?,  False.
+Can Game be considered a subcategory of 'something that plays some Football'?,  False.
+Can Manager be considered a subcategory of 'something that plays some BallGame'?,  False.
+Can Manager be considered a subcategory of 'something that managed_by some Game'?,  False.
+Can Game that is also Manager be considered a subcategory of 'Team'?,  False.
+Can FootballPlayer that is also Person be considered a subcategory of 'Manager'?,  False.
+Can Person be considered a subcategory of 'BallGame'?,  False.
+Can Football that is also Team be considered a subcategory of 'Player'?,  False.
+Can BallGame be considered a subcategory of 'something that managed_by some Person'?,  False.
+Can Player be considered a subcategory of 'FootballPlayer'?,  False.
+Can FootballPlayer that is also Team be considered a subcategory of 'Football'?,  False.
+Can something that plays_for some Football be considered a subcategory of 'BallGame'?,  False.
+Can Football be considered a subcategory of 'something that plays some FootballPlayer'?,  False.
+Can BallGame that is also Team be considered a subcategory of 'Game'?,  False.
+Can Football that is also Manager be considered a subcategory of 'Person'?,  False.
+Can something that plays_for some Team be considered a subcategory of 'Game'?,  False.
+Can Game that is also Team be considered a subcategory of 'FootballTeam'?,  False.
+Can Football that is also Player be considered a subcategory of 'Manager'?,  False.
+Can FootballPlayer be considered a subcategory of 'something that managed_by some FootballTeam'?,  False.
+Can BallGame be considered a subcategory of 'something that plays some BallGame'?,  False.
+Can something that managed_by some FootballPlayer be considered a subcategory of 'Person'?,  False.
+Can something that plays_for some Game be considered a subcategory of 'Football'?,  False.
+Can Football that is also FootballTeam be considered a subcategory of 'FootballPlayer'?,  False.
+Can FootballTeam that is also Team be considered a subcategory of 'Game'?,  False.
+Can BallGame be considered a subcategory of 'something that plays some Manager'?,  False.
+Can something that managed_by some Game be considered a subcategory of 'Manager'?,  False.
+Can something that plays_for some FootballPlayer be considered a subcategory of 'BallGame'?,  False.
+Can something that managed_by some FootballTeam be considered a subcategory of 'Team'?,  False.
+Can Game be considered a subcategory of 'something that plays some FootballTeam'?,  False.
+Can FootballPlayer that is also Game be considered a subcategory of 'FootballTeam'?,  False.
+Can something that managed_by some FootballPlayer be considered a subcategory of 'Game'?,  False.
+Can something that plays some Football be considered a subcategory of 'Player'?,  False.
+Can Person be considered a subcategory of 'something that plays some FootballPlayer'?,  False.
+Can Person be considered a subcategory of 'something that plays some Game'?,  False.
+Can Game that is also Manager be considered a subcategory of 'Player'?,  False.
+Can something that plays some FootballPlayer be considered a subcategory of 'FootballTeam'?,  False.
+Can Person that is also Team be considered a subcategory of 'Player'?,  False.
+Can FootballPlayer that is also FootballTeam be considered a subcategory of 'Game'?,  False.
+Can FootballTeam be considered a subcategory of 'something that plays some Team'?,  False.
+Can something that plays_for some Game be considered a subcategory of 'FootballPlayer'?,  False.
+Can Football that is also Manager be considered a subcategory of 'BallGame'?,  False.
+Can FootballTeam that is also Game be considered a subcategory of 'Person'?,  False.
+Can Game that is also Team be considered a subcategory of 'Person'?,  False.
+Can Player be considered a subcategory of 'something that plays some FootballPlayer'?,  False.
+Can BallGame that is also FootballPlayer be considered a subcategory of 'Game'?,  False.
+Can FootballPlayer that is also Game be considered a subcategory of 'Player'?,  False.
+Can BallGame that is also FootballPlayer be considered a subcategory of 'Team'?,  False.
+Can Game that is also Player be considered a subcategory of 'Football'?,  False.
+Can FootballPlayer that is also Person be considered a subcategory of 'Football'?,  False.
+Can something that plays_for some FootballTeam be considered a subcategory of 'Person'?,  False.
+Can Team be considered a subcategory of 'something that managed_by some Football'?,  False.
+Can something that plays_for some BallGame be considered a subcategory of 'Football'?,  False.
+Can FootballPlayer that is also Person be considered a subcategory of 'BallGame'?,  False.
+Can Person be considered a subcategory of 'something that plays some Manager'?,  False.
+Can Game that is also Manager be considered a subcategory of 'FootballTeam'?,  False.
+Can something that managed_by some Player be considered a subcategory of 'FootballPlayer'?,  False.
+Can BallGame be considered a subcategory of 'something that managed_by some BallGame'?,  False.
+Can BallGame that is also Team be considered a subcategory of 'Football'?,  False.
+Can FootballTeam be considered a subcategory of 'something that plays some Manager'?,  False.
+Can Football be considered a subcategory of 'something that managed_by some Game'?,  False.
+Can BallGame that is also Team be considered a subcategory of 'Manager'?,  False.
+Can Football that is also Player be considered a subcategory of 'FootballPlayer'?,  False.
+Can Manager that is also Player be considered a subcategory of 'Football'?,  False.
+Can FootballPlayer that is also Person be considered a subcategory of 'Player'?,  False.
+Can BallGame that is also Football be considered a subcategory of 'Game'?,  False.
+Can FootballPlayer that is also Team be considered a subcategory of 'Game'?,  False.
+Can FootballTeam that is also Game be considered a subcategory of 'Manager'?,  False.
+Can Game that is also Person be considered a subcategory of 'FootballPlayer'?,  False.
+Can something that plays_for some FootballPlayer be considered a subcategory of 'FootballTeam'?,  False.
+Can Game be considered a subcategory of 'something that plays some Team'?,  False.
+Can BallGame that is also Player be considered a subcategory of 'Football'?,  False.
+Can something that managed_by some FootballPlayer be considered a subcategory of 'Team'?,  False.
+Can Manager be considered a subcategory of 'something that managed_by some Manager'?,  False.
+Can BallGame that is also Game be considered a subcategory of 'Player'?,  False.
+Can something that plays_for some Player be considered a subcategory of 'BallGame'?,  False.
+Can Football that is also Person be considered a subcategory of 'Manager'?,  False.
+Can Game be considered a subcategory of 'Person'?,  False.
+Can Person be considered a subcategory of 'something that plays_for some Player'?,  False.
+Can Football that is also Game be considered a subcategory of 'Team'?,  False.
+Can FootballTeam be considered a subcategory of 'something that plays some FootballPlayer'?,  False.
+Can Manager that is also Team be considered a subcategory of 'FootballTeam'?,  False.
+Can FootballTeam be considered a subcategory of 'something that plays some Football'?,  False.
+Can Manager be considered a subcategory of 'something that plays some Football'?,  False.
+Can Manager that is also Team be considered a subcategory of 'Football'?,  False.
+Can something that plays_for some FootballTeam be considered a subcategory of 'Football'?,  False.
+Can Football that is also FootballTeam be considered a subcategory of 'BallGame'?,  False.
+Can Game that is also Person be considered a subcategory of 'Manager'?,  False.
+Can Manager be considered a subcategory of 'something that plays_for some FootballTeam'?,  False.
+Can FootballTeam be considered a subcategory of 'something that plays_for some Football'?,  False.
+Can Team be considered a subcategory of 'something that plays_for some Football'?,  False.
+Can Person be considered a subcategory of 'something that plays_for some Football'?,  False.
+Can FootballPlayer that is also Player be considered a subcategory of 'Manager'?,  False.
+Can BallGame be considered a subcategory of 'Game'?,  The statement
+Can Manager that is also Team be considered a subcategory of 'BallGame'?,  False.
+Can Player that is also Team be considered a subcategory of 'Manager'?,  False.
+Can Game be considered a subcategory of 'something that managed_by some Team'?,  False.
+Can FootballTeam be considered a subcategory of 'something that plays_for some BallGame'?,  False.
+Can Football be considered a subcategory of 'something that plays some Player'?,  False.
+Can FootballTeam that is also Game be considered a subcategory of 'BallGame'?,  False.
+Can something that plays_for some Player be considered a subcategory of 'Person'?,  False.
+Can Football be considered a subcategory of 'something that plays_for some Manager'?,  False.
+Can Manager that is also Person be considered a subcategory of 'Football'?,  False.
+Can Person that is also Player be considered a subcategory of 'Manager'?,  False.
+Can Game be considered a subcategory of 'something that plays_for some Team'?,  False.
+Can BallGame that is also Manager be considered a subcategory of 'FootballPlayer'?,  False.
+Can something that plays some Manager be considered a subcategory of 'Game'?,  False.
+Can something that plays some Player be considered a subcategory of 'Team'?,  False.
+Can Person be considered a subcategory of 'something that plays_for some FootballPlayer'?,  False.
+Can Manager that is also Player be considered a subcategory of 'FootballTeam'?,  False.
+Can BallGame that is also Game be considered a subcategory of 'Manager'?,  False.
+Can Football that is also FootballTeam be considered a subcategory of 'Person'?,  False.
+Can BallGame that is also Person be considered a subcategory of 'FootballTeam'?,  False.
+Can something that managed_by some Person be considered a subcategory of 'Manager'?,  False.
+Can something that plays some BallGame be considered a subcategory of 'Game'?,  False.
+Can FootballTeam that is also Person be considered a subcategory of 'Player'?,  False.
+Can Football that is also Person be considered a subcategory of 'Player'?,  False.
+Can Player be considered a subcategory of 'Manager'?,  False.
+Can something that plays some FootballTeam be considered a subcategory of 'Team'?,  False.
+Can Manager that is also Person be considered a subcategory of 'Team'?,  False.
+Can Football that is also Person be considered a subcategory of 'FootballPlayer'?,  False.
+Can Player that is also Team be considered a subcategory of 'Game'?,  False.
+Can FootballPlayer be considered a subcategory of 'something that plays_for some Game'?,  False.
+Can FootballTeam that is also Manager be considered a subcategory of 'Player'?,  False.
+Can BallGame be considered a subcategory of 'something that plays_for some Player'?,  False.
+Can something that managed_by some Player be considered a subcategory of 'Football'?,  False.
+Can BallGame that is also Manager be considered a subcategory of 'Football'?,  False.
+Can Game that is also Manager be considered a subcategory of 'BallGame'?,  False.
+Can FootballTeam that is also Person be considered a subcategory of 'Game'?,  False.
+Can something that plays_for some Player be considered a subcategory of 'Manager'?,  False.
+Can FootballPlayer that is also Player be considered a subcategory of 'BallGame'?,  False.
+Can BallGame be considered a subcategory of 'something that managed_by some Player'?,  False.
+Can Team be considered a subcategory of 'BallGame'?,  False.
+Can Player be considered a subcategory of 'something that plays some BallGame'?,  False.
+Can something that plays some Game be considered a subcategory of 'FootballPlayer'?,  False.
+Can something that plays_for some Manager be considered a subcategory of 'Team'?,  False.
+Can FootballPlayer be considered a subcategory of 'something that plays_for some Manager'?,  False.
+Can FootballPlayer that is also Game be considered a subcategory of 'BallGame'?,  False.
+Can Football be considered a subcategory of 'something that plays_for some BallGame'?,  False.
+Can FootballPlayer be considered a subcategory of 'something that managed_by some BallGame'?,  False.
+Can BallGame that is also FootballTeam be considered a subcategory of 'FootballPlayer'?,  False.
+Can Person that is also Player be considered a subcategory of 'FootballTeam'?,  False.
+Can Game be considered a subcategory of 'something that plays_for some Game'?,  False.
+Can Football that is also Player be considered a subcategory of 'BallGame'?,  False.
+Can something that managed_by some Manager be considered a subcategory of 'Manager'?,  False.
+Can something that plays some Player be considered a subcategory of 'Game'?,  False.
+Can Manager be considered a subcategory of 'something that plays_for some Person'?,  False.
+Can Football that is also Manager be considered a subcategory of 'FootballPlayer'?,  False.
+Can Person that is also Team be considered a subcategory of 'FootballPlayer'?,  False.
+Can FootballTeam that is also Player be considered a subcategory of 'Game'?,  False.
+Can something that managed_by some Person be considered a subcategory of 'BallGame'?,  False.
+Can something that managed_by some BallGame be considered a subcategory of 'Player'?,  False.
+Can Person that is also Player be considered a subcategory of 'Team'?,  False.
+Can BallGame that is also Player be considered a subcategory of 'Person'?,  False.
+Can something that plays some FootballTeam be considered a subcategory of 'FootballPlayer'?,  False.
+Can FootballTeam that is also Game be considered a subcategory of 'Team'?,  False.
+Can BallGame that is also Football be considered a subcategory of 'FootballPlayer'?,  False.
+Can Game that is also Team be considered a subcategory of 'Player'?,  False.
+Can Football be considered a subcategory of 'something that plays some Game'?,  False.
+Can BallGame be considered a subcategory of 'something that plays_for some FootballTeam'?,  False.
+Can Team be considered a subcategory of 'something that plays_for some FootballPlayer'?,  False.
+Can Game be considered a subcategory of 'something that plays some Manager'?,  False.
+Can BallGame be considered a subcategory of 'something that plays_for some BallGame'?,  False.
+Can Game be considered a subcategory of 'something that plays_for some Football'?,  False.
+Can something that plays_for some Football be considered a subcategory of 'Person'?,  False.
+Can FootballTeam that is also Player be considered a subcategory of 'Football'?,  False.
+Can Team be considered a subcategory of 'something that plays_for some Player'?,  False.
+Can FootballTeam that is also Team be considered a subcategory of 'Player'?,  False.
+Can Team be considered a subcategory of 'Person'?,  False.
+Can FootballPlayer that is also Player be considered a subcategory of 'Football'?,  False.
