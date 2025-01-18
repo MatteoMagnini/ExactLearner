@@ -29,7 +29,7 @@ public class LLMEngineTest extends TestCase {
         ));
     }
 
-    public void testSplitRightConjectionInEntailed() throws OWLOntologyCreationException {
+    public void testSplitAxiomInEntailed() throws OWLOntologyCreationException {
         OWLDataFactory df = man.getOWLDataFactory();
 
         OWLClassExpression a = df.getOWLClass(IRI.create("A"));
@@ -48,5 +48,34 @@ public class LLMEngineTest extends TestCase {
                 "A SubClassOf B",
                 "A SubClassOf C"
         ));
+    }
+
+    public void testSplitAxiomResponseEntailed() throws OWLOntologyCreationException {
+        OWLDataFactory df = man.getOWLDataFactory();
+
+        OWLClassExpression a = df.getOWLClass(IRI.create("A"));
+        OWLClassExpression b = df.getOWLClass(IRI.create("B"));
+        OWLClassExpression c = df.getOWLClass(IRI.create("C"));
+
+        OWLClassExpression expression = df.getOWLObjectIntersectionOf(b, c);
+        OWLAxiom axiom = df.getOWLSubClassOfAxiom(a, expression);
+
+        // Test none are true
+        DummyWorkloadManager dummy = new DummyWorkloadManager(s -> false);
+        LLMEngine engine = new LLMEngine(man.createOntology(), man, dummy);
+
+        assertThat(engine.entailed(axiom), is(false));
+
+        // Test one is true
+        dummy = new DummyWorkloadManager(s -> s.equals("A SubClassOf B"));
+        engine = new LLMEngine(man.createOntology(), man, dummy);
+
+        assertThat(engine.entailed(axiom), is(false));
+
+        // Test both are true
+        dummy = new DummyWorkloadManager(s -> s.equals("A SubClassOf B") || s.equals("A SubClassOf C"));
+        engine = new LLMEngine(man.createOntology(), man, dummy);
+
+        assertThat(engine.entailed(axiom), is(true));
     }
 }
