@@ -7,10 +7,13 @@ import org.experiments.task.ExperimentTask;
 import org.experiments.task.Task;
 import org.experiments.workload.OllamaWorkload;
 import org.experiments.workload.OpenAIWorkload;
+import org.experiments.workload.WorkloadManager;
+import org.experiments.workload.WorkloadManagerImpl;
 import org.semanticweb.elk.owlapi.ElkReasonerFactory;
 import org.semanticweb.owlapi.model.*;
 import org.semanticweb.owlapi.reasoner.NodeSet;
 import org.semanticweb.owlapi.reasoner.OWLReasoner;
+import uk.ac.manchester.cs.owl.owlapi.OWLDataFactoryImpl;
 import uk.ac.manchester.cs.owl.owlapi.mansyntaxrenderer.ManchesterOWLSyntaxOWLObjectRendererImpl;
 
 import java.util.Arrays;
@@ -18,26 +21,25 @@ import java.util.Set;
 
 public class LLMEngine implements BaseEngine {
 
-    private final String queryFormat = "";
-    private final OWLOntology ontology;
-    String ontologyName = "";
-    final String model;
-    final String system;
-    final Integer maxTokens;
     private final OWLOntologyManager manager;
     private final OWLParserImpl parser;
     private final OWLReasoner reasoner;
+    private final WorkloadManager workloadManager;
 
 
     public LLMEngine(OWLOntology ontology, String ontologyName, String model, String system, Integer maxTokens, OWLOntologyManager manager) {
-        this.ontology = ontology;
-        this.ontologyName = ontologyName;
-        this.system = system;
-        this.model = model;
-        this.maxTokens = maxTokens;
         this.manager = manager;
         this.parser = new OWLParserImpl(ontology);
         this.reasoner = new ElkReasonerFactory().createReasoner(parser.getOwl());
+        String queryFormat = "";
+        this.workloadManager = new WorkloadManagerImpl(model, system, maxTokens, queryFormat, ontologyName);
+    }
+
+    public LLMEngine(OWLOntology ontology, OWLOntologyManager manager, WorkloadManager workloadManager) {
+        this.manager = manager;
+        this.parser = new OWLParserImpl(ontology);
+        this.reasoner = new ElkReasonerFactory().createReasoner(parser.getOwl());
+        this.workloadManager = workloadManager;
     }
 
     @Override
@@ -46,20 +48,9 @@ public class LLMEngine implements BaseEngine {
     }
 
 
-    public Boolean runTaskAndGetResult(String message) {
+    protected Boolean runTaskAndGetResult(String message) {
         message = message.replace("  ", " ");
-        Runnable work;
-        if (OllamaWorkload.supportedModels.contains(model)) {
-            work = new OllamaWorkload(model, system, message, maxTokens);
-        } else if (OpenAIWorkload.supportedModels.contains(model)) {
-            work = new OpenAIWorkload(model, system, message, maxTokens);
-        } else {
-            throw new IllegalStateException("Invalid model " + model);
-        }
-        Task task = new ExperimentTask("statementsQuerying", model, queryFormat, ontologyName, message, system, work);
-        Environment.run(task);
-
-        return new Result(task.getFileName()).isStrictlyTrue(message);
+        return workloadManager.runWorkload(message);
     }
 
     @Override
@@ -88,8 +79,7 @@ public class LLMEngine implements BaseEngine {
         if (ax.isOfType(AxiomType.EQUIVALENT_CLASSES)) {
             OWLEquivalentClassesAxiom eax = (OWLEquivalentClassesAxiom) ax;
             for (OWLSubClassOfAxiom sax : eax.asOWLSubClassOfAxioms()) {
-                var query = renderer.render(sax).replaceAll("\r", " ").replaceAll("\n", " ");
-                if (!runTaskAndGetResult(query)) {
+                if (!entailed(sax)) {
                     return false;
                 }
             }
@@ -97,8 +87,7 @@ public class LLMEngine implements BaseEngine {
         }
 
         if (ax.isOfType(AxiomType.SUBCLASS_OF)) {
-            var query = renderer.render(ax).replaceAll("\r", " ").replaceAll("\n", " ");
-            return runTaskAndGetResult(query);
+            return entailed((OWLSubClassOfAxiom) ax);
         }
 
         throw new RuntimeException("Axiom type not supported " + ax);
@@ -113,6 +102,23 @@ public class LLMEngine implements BaseEngine {
             }
         }
         return true;
+    }
+
+    private Boolean entailed(OWLSubClassOfAxiom axiom) {
+        ManchesterOWLSyntaxOWLObjectRendererImpl renderer = new ManchesterOWLSyntaxOWLObjectRendererImpl();
+        if (axiom.getSuperClass() instanceof OWLObjectIntersectionOf intersection) {
+            OWLClassExpression expression = axiom.getSubClass();
+            for (OWLClassExpression sup : intersection.getOperands()) {
+                OWLSubClassOfAxiom ax = getSubClassAxiom(expression, sup);
+                String query = renderer.render(ax).replaceAll("\r", " ").replaceAll("\n", " ");
+                if (!runTaskAndGetResult(query)) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        var query = renderer.render(axiom).replaceAll("\r", " ").replaceAll("\n", " ");
+        return runTaskAndGetResult(query);
     }
 
     @Override

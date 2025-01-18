@@ -12,7 +12,7 @@ public class EnrichedLLMEngine extends LLMEngine {
     }
 
     @Override
-    public Boolean runTaskAndGetResult(String message) {
+    protected Boolean runTaskAndGetResult(String message) {
         message = message.replace("  ", " ");
         message = addExtraSemantic(message);
         return super.runTaskAndGetResult(message);

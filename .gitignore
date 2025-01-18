@@ -10,6 +10,11 @@ results/old
 results/ontologies/*.owl
 warnings.txt
 logging_file_name.txt
+cache.sqlite3
+results.sqlite
+results.sqlite3
+src/main/resources/ontologies/new
+analysis
 
 
 ##############################
